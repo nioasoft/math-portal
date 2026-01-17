@@ -15,8 +15,8 @@ export default function AboutPage() {
         "@context": "https://schema.org",
         "@type": "EducationalOrganization",
         "name": "דפי עבודה חכמים",
-        "alternateName": "Smart Worksheets",
-        "url": "https://www.worksheets.co.il",
+        "alternateName": "Tirgul",
+        "url": "https://www.tirgul.net",
         "description": "מיזם חינוכי המספק כלי חינמי להורים ומורים ליצירת דפי עבודה מותאמים אישית בחשבון לכיתות א'-ו'",
         "foundingDate": "2024",
         "areaServed": {

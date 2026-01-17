@@ -63,13 +63,13 @@ export default async function GradePage({ params }: { params: Promise<{ id: stri
                 "@type": "ListItem",
                 "position": 1,
                 "name": "ראשי",
-                "item": "https://www.smart-worksheets.co.il"
+                "item": "https://www.tirgul.net"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": grade.title,
-                "item": `https://www.smart-worksheets.co.il/grade/${id}`
+                "item": `https://www.tirgul.net/grade/${id}`
             }
         ]
     };

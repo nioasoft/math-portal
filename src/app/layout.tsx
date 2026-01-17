@@ -18,7 +18,7 @@ const assistant = Assistant({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.smart-worksheets.co.il'),
+  metadataBase: new URL('https://www.tirgul.net'),
   title: {
     default: "דפי עבודה בחשבון להדפסה - מחולל תרגילים לכיתות א׳-ו׳",
     template: "%s | דפי עבודה חכמים"
@@ -51,8 +51,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "דפי עבודה בחשבון להדפסה - חינם וללא הרשמה",
     description: "צרו דפי עבודה מותאמים אישית בחשבון והנדסה בקלות. מתאים למורים, הורים ותלמידים.",
-    url: 'https://www.smart-worksheets.co.il',
-    siteName: 'Smart Worksheets',
+    url: 'https://www.tirgul.net',
+    siteName: 'תרגול - דפי עבודה במתמטיקה',
     locale: 'he_IL',
     type: 'website',
     images: [
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
         url: '/opengraph-image.png',
         width: 1200,
         height: 630,
-        alt: 'Smart Worksheets - דפי עבודה חכמים',
+        alt: 'תרגול - דפי עבודה במתמטיקה',
       },
     ],
   },
@@ -82,9 +82,9 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "דפי עבודה חכמים",
-    "alternateName": "Smart Worksheets",
-    "url": "https://www.smart-worksheets.co.il",
-    "logo": "https://www.smart-worksheets.co.il/logo.png",
+    "alternateName": "Tirgul",
+    "url": "https://www.tirgul.net",
+    "logo": "https://www.tirgul.net/logo.png",
     "description": "פורטל דפי עבודה חינוכיים בחשבון לכיתות א-ו",
     "sameAs": [],
     "areaServed": {
@@ -98,12 +98,12 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "דפי עבודה חכמים",
-    "url": "https://www.smart-worksheets.co.il",
+    "url": "https://www.tirgul.net",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://www.smart-worksheets.co.il/search?q={search_term_string}"
+        "urlTemplate": "https://www.tirgul.net/search?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -113,7 +113,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "name": "דפי עבודה חכמים",
-    "url": "https://www.smart-worksheets.co.il",
+    "url": "https://www.tirgul.net",
     "description": "פלטפורמה חינוכית לייצור דפי עבודה בחשבון מותאמים אישית לכיתות א-ו",
     "offers": {
       "@type": "Offer",

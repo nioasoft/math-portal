@@ -98,7 +98,7 @@ export default function DecimalsClient() {
                     <div className="text-center border-b-2 border-slate-100 pb-8 mb-12 print:mb-4 print:pb-2 print:border-b">
                         <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">חיבור וחיסור עשרוניים</h2>
                         <div className="flex justify-between mt-8 text-lg print:hidden">
-                            <div className="text-slate-400 text-sm">smart-worksheets.co.il</div>
+                            <div className="text-slate-400 text-sm">tirgul.net</div>
                         </div>
                     </div>
 

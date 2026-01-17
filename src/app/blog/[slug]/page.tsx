@@ -99,19 +99,19 @@ export default async function BlogPostPage({ params }: Props) {
         } : {
             "@type": "Organization",
             "name": "דפי עבודה חכמים",
-            "url": "https://www.smart-worksheets.co.il"
+            "url": "https://www.tirgul.net"
         },
         "publisher": {
             "@type": "Organization",
             "name": "דפי עבודה חכמים",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.smart-worksheets.co.il/logo.png"
+                "url": "https://www.tirgul.net/logo.png"
             }
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://www.smart-worksheets.co.il/blog/${slug}`
+            "@id": `https://www.tirgul.net/blog/${slug}`
         },
         "keywords": post.tags.join(', '),
         "articleSection": post.categoryLabel,
@@ -126,19 +126,19 @@ export default async function BlogPostPage({ params }: Props) {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "ראשי",
-                "item": "https://www.smart-worksheets.co.il"
+                "item": "https://www.tirgul.net"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "בלוג",
-                "item": "https://www.smart-worksheets.co.il/blog"
+                "item": "https://www.tirgul.net/blog"
             },
             {
                 "@type": "ListItem",
                 "position": 3,
                 "name": post.title,
-                "item": `https://www.smart-worksheets.co.il/blog/${slug}`
+                "item": `https://www.tirgul.net/blog/${slug}`
             }
         ]
     };

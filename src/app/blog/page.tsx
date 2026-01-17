@@ -78,16 +78,18 @@ function BlogContent() {
                                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                         className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                                     />
-                                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-bold text-sky-600 shadow-sm border border-sky-100">
-                                        {post.categoryLabel}
-                                    </div>
                                 </div>
 
                                 <div className="p-6 flex flex-col flex-1">
                                     <header className="mb-4">
-                                        <div className="flex items-center gap-4 text-xs text-slate-400 mb-3">
-                                            <span className="flex items-center gap-1"><Calendar size={14} /> {post.date}</span>
-                                            <span className="flex items-center gap-1"><Clock size={14} /> {post.readTime}</span>
+                                        <div className="flex items-center justify-between mb-3">
+                                            <span className="bg-sky-50 text-sky-600 px-3 py-1 rounded-full text-xs font-bold border border-sky-100">
+                                                {post.categoryLabel}
+                                            </span>
+                                            <div className="flex items-center gap-3 text-xs text-slate-400">
+                                                <span className="flex items-center gap-1"><Calendar size={14} /> {post.date}</span>
+                                                <span className="flex items-center gap-1"><Clock size={14} /> {post.readTime}</span>
+                                            </div>
                                         </div>
                                         <h2 className="text-xl font-bold text-slate-800 group-hover:text-sky-600 transition-colors line-clamp-2">
                                             <Link href={`/blog/${post.slug}`}>

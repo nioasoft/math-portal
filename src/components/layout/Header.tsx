@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Calculator, Menu, X, ChevronDown, GraduationCap, BookOpen, Newspaper } from 'lucide-react';
+import { Calculator, Menu, X, ChevronDown, GraduationCap, BookOpen, Newspaper, Gamepad2 } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
 export function Header() {
@@ -80,6 +80,14 @@ export function Header() {
                     </div>
 
                     <Link
+                        href="/play"
+                        className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 rounded-lg transition-all shadow-sm"
+                    >
+                        <Gamepad2 size={16} />
+                        משחקים
+                    </Link>
+
+                    <Link
                         href="/help"
                         className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all"
                     >
@@ -139,6 +147,15 @@ export function Header() {
                                 ))}
                             </div>
                         </div>
+
+                        <Link
+                            href="/play"
+                            onClick={() => setIsMenuOpen(false)}
+                            className="flex items-center gap-2 text-purple-600 hover:text-purple-700 transition-colors"
+                        >
+                            <Gamepad2 size={20} />
+                            משחקים
+                        </Link>
 
                         <Link
                             href="/help"

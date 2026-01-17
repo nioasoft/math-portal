@@ -218,3 +218,13 @@ a:focus-visible, button:focus-visible {
   background-color: #fed7aa;
   color: #1e3a5f;
 }
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

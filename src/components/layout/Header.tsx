@@ -127,19 +127,19 @@ export function Header() {
                     </span>
                 </Link>
 
-                {/* Mobile Nav - Slide from Right */}
+                {/* Mobile Nav - Slide from Right (RTL) */}
+                {isMenuOpen && (
+                    <div
+                        className="lg:hidden fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
+                        onClick={() => setIsMenuOpen(false)}
+                    />
+                )}
                 <div
-                    className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-300 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
-                    onClick={() => setIsMenuOpen(false)}
-                >
-                    {/* Backdrop */}
-                    <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
-                </div>
-                <div
-                    className={`lg:hidden fixed top-0 right-0 h-full w-[280px] max-w-[85vw] bg-white z-50 shadow-2xl transform transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                    className={`lg:hidden fixed top-0 right-0 h-full w-[280px] max-w-[85vw] bg-white z-50 shadow-2xl transition-all duration-300 ease-out ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
+                    style={{ transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)' }}
                 >
                     {/* Menu Header */}
-                    <div className="flex items-center justify-between p-4 border-b border-slate-100">
+                    <div className="flex items-center justify-between p-4 border-b border-slate-100 h-16">
                         <span className="text-lg font-black text-slate-800">תפריט</span>
                         <button
                             onClick={() => setIsMenuOpen(false)}
@@ -151,7 +151,7 @@ export function Header() {
                     </div>
 
                     {/* Menu Content */}
-                    <nav className="flex flex-col p-4 overflow-y-auto h-[calc(100%-65px)]">
+                    <nav className="flex flex-col p-4 overflow-y-auto" style={{ height: 'calc(100% - 64px)' }}>
                         <Link
                             href="/"
                             onClick={() => setIsMenuOpen(false)}

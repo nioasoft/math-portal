@@ -144,7 +144,7 @@ export function Header() {
                     <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
                 </div>
                 <div
-                    className={`lg:hidden fixed top-0 right-0 h-full w-[280px] max-w-[85vw] bg-white z-50 shadow-2xl transform transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                    className={`lg:hidden fixed top-0 right-0 h-screen w-[280px] max-w-[85vw] bg-white z-50 shadow-2xl transform transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
                 >
                     {/* Menu Header */}
                     <div className="flex items-center justify-between p-4 border-b border-slate-100">

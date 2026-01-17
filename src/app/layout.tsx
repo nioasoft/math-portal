@@ -1,6 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Assistant } from "next/font/google";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  themeColor: "#f97316",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 const assistant = Assistant({
   subsets: ["hebrew", "latin"],
@@ -16,6 +24,29 @@ export const metadata: Metadata = {
   },
   description: "מחולל דפי עבודה חכם המאפשר יצירת דפי תרגול בחשבון והנדסה מותאמים אישית. תרגול 4 פעולות חשבון, שברים, אחוזים, הנדסה ועוד. חינם וללא הרשמה.",
   keywords: ["דפי עבודה בחשבון", "דפי עבודה להדפסה", "תרגילי חשבון", "חשבון לכיתה א", "חשבון לכיתה ב", "מחולל דפי עבודה", "דפי עבודה בשברים", "דפי עבודה באחוזים"],
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "דפי עבודה חכמים",
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  icons: {
+    icon: [
+      { url: "/icons/icon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icons/icon-72.png", sizes: "72x72", type: "image/png" },
+      { url: "/icons/icon-96.png", sizes: "96x96", type: "image/png" },
+      { url: "/icons/icon-144.png", sizes: "144x144", type: "image/png" },
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-384.png", sizes: "384x384", type: "image/png" },
+      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   openGraph: {
     title: "דפי עבודה בחשבון להדפסה - חינם וללא הרשמה",
     description: "צרו דפי עבודה מותאמים אישית בחשבון והנדסה בקלות. מתאים למורים, הורים ותלמידים.",
@@ -35,6 +66,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  other: {
+    "mobile-web-app-capable": "yes",
   }
 };
 

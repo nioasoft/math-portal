@@ -3,11 +3,12 @@ import { Footer } from '@/components/layout/Footer';
 import Link from 'next/link';
 import {
   Calculator, Brain, ArrowLeft, Percent, Divide,
-  Shapes, Scale, Star, BookOpen, GraduationCap, Sparkles, Printer, Zap
+  Shapes, Scale, Star, BookOpen, GraduationCap, Sparkles, Printer, Zap, Gamepad2
 } from 'lucide-react';
 import { FeaturedPosts } from '@/components/FeaturedPosts';
 import { HELP_TOPICS } from '@/lib/help-data';
 import { AdSlot } from '@/components/AdSlot';
+import { blogPosts } from '@/lib/blog-data';
 
 const generators = [
   {
@@ -216,6 +217,61 @@ export default function Home() {
                   </div>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Games Section - Prominent for Mobile */}
+        <section className="py-12 md:py-16 bg-gradient-to-br from-purple-50 via-violet-50 to-indigo-50 relative overflow-hidden">
+          <div className="absolute inset-0 dot-pattern opacity-30"></div>
+          <div className="absolute -top-20 -right-20 w-64 h-64 bg-purple-200/40 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-indigo-200/40 rounded-full blur-3xl"></div>
+
+          <div className="container-custom relative z-10">
+            {/* Mobile-first prominent header */}
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm border border-purple-200 rounded-2xl px-6 py-4 shadow-lg mb-6">
+                <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-purple-200">
+                  <Gamepad2 size={28} className="text-white" />
+                </div>
+                <div className="text-right">
+                  <h2 className="text-2xl md:text-3xl font-black text-slate-800">משחקים ופעילויות</h2>
+                  <p className="text-sm text-slate-500">לומדים חשבון בכיף!</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Games Cards - horizontal scroll on mobile */}
+            <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-3 md:overflow-visible scrollbar-hide">
+              {blogPosts.filter(p => p.category === 'games').slice(0, 3).map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="flex-shrink-0 w-[280px] md:w-auto bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100 hover:border-purple-300 group"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-indigo-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <Gamepad2 size={24} className="text-purple-600" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-bold text-slate-800 mb-1 line-clamp-2 group-hover:text-purple-700 transition-colors">{post.title}</h3>
+                      <p className="text-sm text-slate-500 line-clamp-2">{post.excerpt}</p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            {/* CTA for all games */}
+            <div className="text-center mt-8">
+              <Link
+                href="/blog?category=games"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-purple-200/50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <Gamepad2 size={22} />
+                לכל המשחקים והפעילויות
+                <ArrowLeft size={20} />
+              </Link>
             </div>
           </div>
         </section>

@@ -21,8 +21,30 @@ export default function ContentSection({
     tipsTitle = "טיפים לתרגול מוצלח עם הילדים",
     tips
 }: ContentSectionProps) {
+    // Generate HowTo Schema for worksheet generation instructions
+    const howToSchema = {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": title,
+        "description": description,
+        "step": tips ? tips.map((tip, index) => ({
+            "@type": "HowToStep",
+            "position": index + 1,
+            "text": tip
+        })) : []
+    };
+
     return (
-        <article className="max-w-4xl mx-auto mt-16 px-4 print:hidden space-y-12 pb-20 text-slate-700">
+        <>
+            {tips && tips.length > 0 && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(howToSchema)
+                    }}
+                />
+            )}
+            <article className="max-w-4xl mx-auto mt-16 px-4 print:hidden space-y-12 pb-20 text-slate-700">
             {/* Main Header & Intro */}
             <section className="text-center space-y-4">
                 <h2 className="text-3xl font-bold text-slate-900">{title}</h2>
@@ -76,6 +98,7 @@ export default function ContentSection({
                     </div>
                 </section>
             )}
-        </article>
+            </article>
+        </>
     );
 }

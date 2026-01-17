@@ -74,8 +74,89 @@ export default async function BlogPostPage({ params }: Props) {
         notFound();
     }
 
+    // Convert DD/MM/YYYY to ISO format for schema
+    const [day, month, year] = post.date.split('/');
+    const isoDate = `${year}-${month}-${day}`;
+
+    // Convert lastModified to ISO format if available
+    const isoModifiedDate = post.lastModified
+        ? (() => {
+            const [modDay, modMonth, modYear] = post.lastModified.split('/');
+            return `${modYear}-${modMonth}-${modDay}`;
+        })()
+        : isoDate;
+
+    const articleSchema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": post.title,
+        "description": post.excerpt,
+        "datePublished": isoDate,
+        "dateModified": isoModifiedDate,
+        "author": post.author ? {
+            "@type": "Person",
+            "name": post.author
+        } : {
+            "@type": "Organization",
+            "name": "דפי עבודה חכמים",
+            "url": "https://www.smart-worksheets.co.il"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "דפי עבודה חכמים",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.smart-worksheets.co.il/logo.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://www.smart-worksheets.co.il/blog/${slug}`
+        },
+        "keywords": post.tags.join(', '),
+        "articleSection": post.categoryLabel,
+        "inLanguage": "he"
+    };
+
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ראשי",
+                "item": "https://www.smart-worksheets.co.il"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "בלוג",
+                "item": "https://www.smart-worksheets.co.il/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": post.title,
+                "item": `https://www.smart-worksheets.co.il/blog/${slug}`
+            }
+        ]
+    };
+
     return (
         <div className="min-h-screen flex flex-col bg-[#fffbf5]">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(articleSchema)
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(breadcrumbSchema)
+                }}
+            />
             <Header />
 
             <main className="flex-1">

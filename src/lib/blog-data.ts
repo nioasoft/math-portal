@@ -11,6 +11,8 @@ export interface BlogPost {
   image: string;
   content: string; // HTML content or markdown
   tags: string[];
+  author?: string;
+  lastModified?: string;
 }
 
 export const blogCategories: { id: BlogCategory; label: string }[] = [
@@ -33,6 +35,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'התמודדות עם קושי',
     image: '/blog/anxiety-1-he.png',
     tags: ['חרדה', 'הורים', 'פסיכולוגיה'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '15/01/2026',
     content: `
       <h2>מהי חרדת מתמטיקה?</h2>
       <p>ילדים רבים חווים לחץ משמעותי לפני מבחן בחשבון או אפילו בעת הכנת שיעורי בית. הלחץ הזה, המכונה "חרדת מתמטיקה", יכול לפגוע בביצועים שלהם וליצור מעגל שלילי.</p>
@@ -63,6 +67,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'התמודדות עם קושי',
     image: '/blog/anxiety-1-he.png',
     tags: ['מוטיבציה', 'הורים'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '2026-01-17',
     content: `
         <h2>למה ילדים מפתחים שנאה לחשבון?</h2>
         <p>לרוב זה נובע מתסכול, חוסר הבנה בסיסי שמצטבר, או חווית כישלון מוקדמת. החדשות הטובות: זה הפיך.</p>
@@ -81,6 +87,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'התמודדות עם קושי',
     image: '/blog/anxiety-3-he.png',
     tags: ['לוח הכפל', 'חרדה'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '2026-01-17',
     content: `
         <h2>זה רק נראה הרבה</h2>
         <p>לוח הכפל הוא למעשה הרבה פחות מ-100 תרגילים אם לוקחים בחשבון את חוק החילוף. 7 כפול 8 זה בדיוק כמו 8 כפול 7.</p>
@@ -100,6 +108,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'טיפים ושיטות לימוד',
     image: '/blog/tips-1-he.png',
     tags: ['לוח הכפל', 'זיכרון'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '10/01/2026',
     content: `
       <h2>למה לוח הכפל כל כך חשוב?</h2>
       <p>שליטה בלוח הכפל היא הבסיס לרוב הנושאים בחשבון: חילוק, שברים, אחוזים ועוד. הנה כמה דרכים להפוך את השינון לקל יותר.</p>
@@ -124,6 +134,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'טיפים ושיטות לימוד',
     image: '/blog/tips-2-he.png',
     tags: ['שברים', 'המחשה'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '22/01/2026',
     content: `
         <h2>שברים הם חלק מהחיים</h2>
         <p>אנחנו משתמשים בשברים כל הזמן: חצי שעה, רבע עוף, שליש כוס שמן. חברו את הלימוד לחיים.</p>
@@ -142,6 +154,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'טיפים ושיטות לימוד',
     image: '/blog/tips-3-he.png',
     tags: ['חילוק ארוך', 'כיתה ד'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '2026-01-17',
     content: `
         <h2>אבא, אמא, אחות, אח (ד.מ.כ.ח)</h2>
         <p>שיטת הזיכרון הקלאסית: דוד (Divide - חלק), מרדכי (Multiply - הכפל), כועס (Subtract - חסר), חבל (Bring down - הורד).</p>
@@ -160,6 +174,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'שיעורי בית',
     image: '/blog/homework-1.png',
     tags: ['חינוך', 'הרגלים'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '2026-01-17',
     content: `
         <h2>קבעו זמן קבוע</h2>
         <p>חוסר ודאות יוצר התנגדות. כשהילד יודע שבשעה 16:00 מכינים שיעורים, הויכוח נחסך.</p>
@@ -177,6 +193,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'שיעורי בית',
     image: '/blog/tips-1.png',
     tags: ['בדיקה', 'הורים'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '2026-01-17',
     content: `
         <h2>אל תהיו המורה האדום</h2>
         <p>במקום לסמן X גדול על טעות, סמנו עיגול קטן ושאלו: "אתה בטוח לגבי התשובה הזו? נסה לבדוק שוב".</p>
@@ -195,6 +213,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'תוכנית הלימודים',
     image: '/blog/curriculum-1.png',
     tags: ['כיתה א', 'תוכנית לימודים'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '05/02/2026',
     content: `
         <h2>הבסיס לכל העתיד</h2>
         <p>בכיתה א' הילדים בונים את הבנת המספר. המטרות העיקריות:</p>
@@ -216,6 +236,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'תוכנית הלימודים',
     image: '/blog/tips-1-he.png',
     tags: ['כיתה ד', 'שברים'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '2026-01-17',
     content: `
         <h2>שלב המעבר</h2>
         <p>בכיתה ד' עוברים מחישובים פשוטים להבנה מופשטת יותר של שברים ומספרים עשרוניים.</p>
@@ -234,6 +256,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'משחקים ופעילויות',
     image: '/blog/games-1.png',
     tags: ['משחקים', 'חיי יומיום'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '2026-01-17',
     content: `
         <h2>כמה עודף מגיע לנו?</h2>
         <p>בקשו מהילד לחשב את העודף כשהקופאית מחזירה. זה תרגול מעולה בחיסור.</p>
@@ -251,6 +275,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'משחקים ופעילויות',
     image: '/blog/games-1.png',
     tags: ['משחקים', 'קלפים'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '2026-01-17',
     content: `
         <h2>מלחמה - גרסת הכפל</h2>
         <p>כל שחקן הופך שני קלפים. המנצח הוא זה שמכפלת הקלפים שלו גבוהה יותר.</p>
@@ -270,6 +296,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'משחקים ופעילויות',
     image: '/blog/tips-1-he.png',
     tags: ['הנדסה', 'פעילות'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '2026-01-17',
     content: '<p>הביטו בחלונות (מלבנים), בצלחות (עיגולים) ובמשולשי הפיצה. הנדסה היא בכל מקום.</p>'
   },
   {
@@ -282,6 +310,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'תוכנית הלימודים',
     image: '/blog/curriculum-1.png',
     tags: ['חטיבת ביניים', 'כיתה ו'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '2026-01-17',
     content: '<p>שליטה בשברים, אחוזים, סדר פעולות חשבון ומשוואות פשוטות הם המפתח להצלחה באלגברה.</p>'
   },
   {
@@ -294,6 +324,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'התמודדות עם קושי',
     image: '/blog/anxiety-1-he.png',
     tags: ['לקויות למידה', 'דיסקלקוליה'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '2026-01-17',
     content: '<p>קושי מתמשך בחיבור כמויות למספרים, בלבול בכיוונים, ואי-הבנה של מושגי יסוד.</p>'
   },
   {
@@ -306,6 +338,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'טיפים ושיטות לימוד',
     image: '/blog/tips-1-he.png',
     tags: ['אחוזים', 'צרכנות'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '2026-01-17',
     content: '<p>ראיתם שלט של "30% הנחה"? תנו לילד לחשב את המחיר הסופי. השתמשו ב<a href="/percentage">מחולל האחוזים</a> להכנה בבית.</p>'
   },
   {
@@ -318,6 +352,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'טיפים ושיטות לימוד',
     image: '/blog/tips-1-he.png',
     tags: ['חופש גדול', 'תרגול'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '2026-01-17',
     content: '<p>10 דקות ביומיים. זה כל מה שצריך כדי שהחומר לא יתנדף.</p>'
   },
   {
@@ -330,6 +366,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'טיפים ושיטות לימוד',
     image: '/blog/tips-1-he.png',
     tags: ['בעיות מילוליות', 'אסטרטגיה'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '2026-01-17',
     content: '<p>1. קראו את כל השאלה. 2. הקיפו את המספרים ומילי המפתח. 3. ציירו את הבעיה.</p>'
   },
   {
@@ -342,6 +380,8 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'תוכנית הלימודים',
     image: '/blog/tips-1-he.png',
     tags: ['מדידות', 'המרות'],
+    author: 'צוות דפי עבודה חכמים',
+    lastModified: '2026-01-17',
     content: '<p>זכרו את השיטה העשרונית. 10 מ"מ = 1 ס"מ. 100 ס"מ = 1 מטר. תרגלו ב<a href="/units">מחולל ההמרות</a>.</p>'
   }
 

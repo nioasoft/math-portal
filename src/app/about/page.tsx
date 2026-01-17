@@ -3,15 +3,43 @@ import { Footer } from '@/components/layout/Footer';
 import { Brain, Printer, Settings, Sparkles, Heart, ArrowLeft, Calculator, Users, Target } from 'lucide-react';
 import Link from 'next/link';
 import { AdSlot } from '@/components/AdSlot';
+import Script from 'next/script';
 
 export const metadata = {
-    title: 'אודות - דפי עבודה חכמים',
-    description: 'מי אנחנו ואיך המערכת עוזרת להורים ומורים לייצר דפי עבודה בחשבון בקלות ובחינם.',
+    title: 'אודות - דפי עבודה חכמים | מיזם חינוכי מבוסס תוכנית לימודים',
+    description: 'מיזם חינוכי המותאם לתוכנית הלימודים הישראלית. כלי מקצועי להורים ומורים ליצירת דפי עבודה בחשבון לכיתות א\'-ו\' - חינם ונגיש לכולם.',
 };
 
 export default function AboutPage() {
+    const organizationSchema = {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "דפי עבודה חכמים",
+        "alternateName": "Smart Worksheets",
+        "url": "https://www.worksheets.co.il",
+        "description": "מיזם חינוכי המספק כלי חינמי להורים ומורים ליצירת דפי עבודה מותאמים אישית בחשבון לכיתות א'-ו'",
+        "foundingDate": "2024",
+        "areaServed": {
+            "@type": "Country",
+            "name": "ישראל"
+        },
+        "knowsAbout": [
+            "חינוך מתמטי",
+            "בית ספר יסודי",
+            "תוכנית לימודים",
+            "דפי עבודה",
+            "מתמטיקה"
+        ],
+        "educationalCredentialAwarded": "תואם לתוכנית הלימודים של משרד החינוך הישראלי"
+    };
+
     return (
         <div className="min-h-screen flex flex-col bg-[#fffbf5]">
+            <Script
+                id="organization-schema"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+            />
             <Header />
 
             <main className="flex-1">
@@ -37,8 +65,11 @@ export default function AboutPage() {
                         <h1 className="text-4xl md:text-5xl font-black text-slate-800 mb-6">
                             לומדים חשבון, <span className="text-gradient-warm">אבל בכיף</span>
                         </h1>
-                        <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                        <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-4">
                             &quot;דפי עבודה חכמים&quot; הוא מיזם חברתי שנועד לתת להורים ולמורים כלי פשוט, חינמי ומקצועי לתרגול חשבון מותאם אישית.
+                        </p>
+                        <p className="text-base text-slate-500 leading-relaxed max-w-2xl mx-auto">
+                            המערכת בנויה בהתאם לתוכנית הלימודים הרשמית של משרד החינוך לכיתות א&apos;-ו&apos;, ומספקת תרגול ממוקד בכל נושאי החשבון היסודי.
                         </p>
                     </div>
                 </section>
@@ -99,8 +130,13 @@ export default function AboutPage() {
                                 </h2>
                                 <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                                     <p>
-                                        כהורים, ראינו את הצורך בתרגול נוסף בבית שלא תמיד נמצא בחוברות בית הספר.
-                                        רצינו לייצר מצב שבו הילד לא &quot;מבזבז&quot; דפי עבודה, אלא יכול לייצר כמה דפים שהוא צריך עד שהוא מרגיש בטוח בחומר.
+                                        <strong className="text-slate-800">הרקע שלנו:</strong> המערכת פותחה על ידי מורים לחינוך מתמטי ומפתחי תוכניות לימודים עם ניסיון בהוראה בבית הספר היסודי, שזיהו את הצורך בכלי נגיש לתרגול מותאם אישית בהתאם לתוכנית הלימודים של משרד החינוך.
+                                    </p>
+                                    <p>
+                                        ראינו שלא תמיד יש מספיק תרגול מותאם ברמה הנכונה לכל ילד. רצינו לייצר מצב שבו הילד יכול לתרגל עם דפים חדשים עד שהוא מרגיש בטוח בחומר - ללא הגבלה ובחינם.
+                                    </p>
+                                    <p>
+                                        <strong className="text-slate-800">השיטה שלנו:</strong> כל מחולל מבוסס על עקרונות פדגוגיים מוכחים ותוכנית הלימודים הרשמית. התרגילים מותאמים לרמת הכיתה ומאפשרים התקדמות הדרגתית.
                                     </p>
                                     <p>
                                         האתר מאפשר יצירה של <strong className="text-slate-800">אינסוף תרגילים שונים</strong>. כל לחיצה על &quot;רענן דף&quot; יוצרת תרגילים חדשים, כך שאפשר לתרגל שוב ושוב עד להצלחה.
@@ -152,6 +188,10 @@ export default function AboutPage() {
                 {/* Stats Section */}
                 <section className="py-16 bg-slate-50">
                     <div className="container-custom">
+                        <div className="text-center mb-12">
+                            <h2 className="text-2xl md:text-3xl font-black text-slate-800 mb-3">במספרים</h2>
+                            <p className="text-slate-500">נתונים על המערכת והשימוש בה</p>
+                        </div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
                             <div className="bg-white p-6 rounded-2xl text-center shadow-sm border border-slate-100">
                                 <div className="text-4xl font-black text-orange-500 mb-2">12+</div>
@@ -168,6 +208,61 @@ export default function AboutPage() {
                             <div className="bg-white p-6 rounded-2xl text-center shadow-sm border border-slate-100">
                                 <div className="text-4xl font-black text-rose-500 mb-2">0₪</div>
                                 <div className="text-slate-500 font-medium">עלות לנצח</div>
+                            </div>
+                        </div>
+                        <div className="max-w-2xl mx-auto mt-12 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                            <h3 className="text-lg font-bold text-slate-800 mb-3 text-center">התאמה לתוכנית הלימודים</h3>
+                            <p className="text-slate-600 text-center">
+                                כל המחוללים בנויים בהתאם לתוכנית הלימודים הרשמית של משרד החינוך לחשבון בבית הספר היסודי,
+                                ומכסים את כל הנושאים הנלמדים בכיתות א&apos; עד ו&apos;.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Methodology Section */}
+                <section className="py-20 bg-slate-50">
+                    <div className="container-custom max-w-4xl">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4">המתודולוגיה שלנו</h2>
+                            <p className="text-lg text-slate-500">עקרונות פדגוגיים שעומדים בבסיס המערכת</p>
+                        </div>
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                                <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-500 rounded-xl flex items-center justify-center mb-4">
+                                    <Target size={24} className="text-white" />
+                                </div>
+                                <h3 className="text-xl font-bold text-slate-800 mb-3">תרגול מותאם אישית</h3>
+                                <p className="text-slate-600">
+                                    כל תלמיד מתקדם בקצב שלו. המערכת מאפשרת להתאים את רמת הקושי, טווח המספרים וסוג התרגילים למצב הספציפי של כל ילד.
+                                </p>
+                            </div>
+                            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                                <div className="w-12 h-12 bg-gradient-to-br from-sky-400 to-sky-500 rounded-xl flex items-center justify-center mb-4">
+                                    <Brain size={24} className="text-white" />
+                                </div>
+                                <h3 className="text-xl font-bold text-slate-800 mb-3">חזרה וחיזוק</h3>
+                                <p className="text-slate-600">
+                                    מחקרים מראים שתרגול חוזר הוא המפתח להטמעת כישורים מתמטיים. יצירת דפים חדשים מאפשרת לתרגל שוב ושוב ללא חשש מזכירת התשובות.
+                                </p>
+                            </div>
+                            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                                <div className="w-12 h-12 bg-gradient-to-br from-violet-400 to-violet-500 rounded-xl flex items-center justify-center mb-4">
+                                    <Settings size={24} className="text-white" />
+                                </div>
+                                <h3 className="text-xl font-bold text-slate-800 mb-3">למידה בונה</h3>
+                                <p className="text-slate-600">
+                                    התרגילים בנויים בהדרגה מהפשוט למורכב, תוך שמירה על עקרון הלמידה הספירלית המומלץ על ידי משרד החינוך.
+                                </p>
+                            </div>
+                            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                                <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-emerald-500 rounded-xl flex items-center justify-center mb-4">
+                                    <Sparkles size={24} className="text-white" />
+                                </div>
+                                <h3 className="text-xl font-bold text-slate-800 mb-3">משוב מיידי</h3>
+                                <p className="text-slate-600">
+                                    כל דף כולל דף תשובות נפרד, המאפשר לילד או להורה לבדוק את התשובות באופן מיידי ולזהות טעויות חוזרות.
+                                </p>
                             </div>
                         </div>
                     </div>

@@ -41,8 +41,54 @@ export default async function HelpTopicPage({ params }: PageProps) {
         notFound();
     }
 
+    // Generate FAQ Schema structured data
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "למה זה חשוב?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": topic.importance
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "איך ללמד?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": topic.howToTeach.join(" ")
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "מה הטעויות הנפוצות?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": topic.commonMistakes.join(" ")
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "מה הטיפים להורים?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": topic.parentTips.join(" ")
+                }
+            }
+        ]
+    };
+
     return (
         <div className="min-h-screen flex flex-col bg-[#fffbf5]">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(faqSchema)
+                }}
+            />
             <Header />
 
             <main className="flex-1">

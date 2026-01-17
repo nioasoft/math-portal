@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { CURRICULUM } from '@/lib/curriculum';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -5,6 +6,29 @@ import { AdSlot } from '@/components/AdSlot';
 import Link from 'next/link';
 import { ArrowLeft, GraduationCap, Sparkles } from 'lucide-react';
 import { notFound } from 'next/navigation';
+
+const gradeNames: Record<string, string> = {
+  '1': "כיתה א'",
+  '2': "כיתה ב'",
+  '3': "כיתה ג'",
+  '4': "כיתה ד'",
+  '5': "כיתה ה'",
+  '6': "כיתה ו'",
+};
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const grade = CURRICULUM[id];
+  if (!grade) return {};
+
+  const topicNames = grade.topics.slice(0, 3).map(t => t.title).join(', ');
+
+  return {
+    title: `דפי עבודה ל${gradeNames[id]} - תרגילי חשבון להדפסה`,
+    description: `${grade.description} דפי עבודה בחשבון מותאמים ל${gradeNames[id]} - ${grade.topics.length} נושאים לתרגול: ${topicNames} ועוד.`,
+    keywords: [`דפי עבודה ${gradeNames[id]}`, `חשבון ${gradeNames[id]}`, 'דפי עבודה להדפסה', 'תרגילי חשבון'],
+  };
+}
 
 const gradeColors: Record<string, { gradient: string; bg: string; iconBg: string; shadow: string }> = {
     '1': { gradient: 'from-sky-500 to-sky-600', bg: 'bg-sky-50', iconBg: 'bg-sky-100', shadow: 'shadow-sky-200' },
@@ -31,8 +55,33 @@ export default async function GradePage({ params }: { params: Promise<{ id: stri
 
     const colors = gradeColors[id] || gradeColors['1'];
 
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ראשי",
+                "item": "https://www.smart-worksheets.co.il"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": grade.title,
+                "item": `https://www.smart-worksheets.co.il/grade/${id}`
+            }
+        ]
+    };
+
     return (
         <div className="min-h-screen flex flex-col bg-[#fffbf5]">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(breadcrumbSchema)
+                }}
+            />
             <Header />
 
             <main className="flex-1">

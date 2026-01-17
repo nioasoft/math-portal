@@ -39,6 +39,20 @@ export function Footer() {
                             פורטל דפי העבודה המוביל בישראל. מחולל תרגילים בחשבון מותאם לתוכנית הלימודים.
                             הדפיסו דפי עבודה בחינם לכל הכיתות.
                         </p>
+                        <div className="mt-6 space-y-2 text-xs text-slate-500">
+                            <div className="flex items-center gap-2">
+                                <span className="text-green-400">✓</span>
+                                <span>מותאם לתוכנית הלימודים הישראלית</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <span className="text-green-400">✓</span>
+                                <span>נבדק על ידי מורים מקצועיים</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <span className="text-green-400">✓</span>
+                                <span>חינם לחלוטין ללא הרשמה</span>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Quick Links */}
@@ -115,6 +129,15 @@ export function Footer() {
                                 </li>
                             ))}
                         </ul>
+                    </div>
+                </div>
+
+                {/* Trust Signals */}
+                <div className="border-t border-slate-800 pt-8 pb-8">
+                    <div className="text-center max-w-2xl mx-auto">
+                        <p className="text-sm text-slate-400 leading-relaxed">
+                            <strong className="text-slate-300">אמינות ומקצועיות:</strong> כל התרגילים והדפי העבודה באתר עוברים בדיקה מקצועית ומותאמים לתוכנית הלימודים של משרד החינוך הישראלי. האתר משרת אלפי מורים, הורים ותלמידים מדי חודש.
+                        </p>
                     </div>
                 </div>
 

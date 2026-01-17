@@ -43,11 +43,81 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "דפי עבודה חכמים",
+    "alternateName": "Smart Worksheets",
+    "url": "https://www.smart-worksheets.co.il",
+    "logo": "https://www.smart-worksheets.co.il/logo.png",
+    "description": "פורטל דפי עבודה חינוכיים בחשבון לכיתות א-ו",
+    "sameAs": [],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Israel"
+    },
+    "knowsLanguage": "he"
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "דפי עבודה חכמים",
+    "url": "https://www.smart-worksheets.co.il",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.smart-worksheets.co.il/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  const educationalOrganizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "דפי עבודה חכמים",
+    "url": "https://www.smart-worksheets.co.il",
+    "description": "פלטפורמה חינוכית לייצור דפי עבודה בחשבון מותאמים אישית לכיתות א-ו",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "ILS",
+      "price": "0",
+      "availability": "https://schema.org/InStock",
+      "description": "דפי עבודה בחשבון, שברים, אחוזים, גאומטריה, יחסים, סדרות חשבוניות ובעיות מילוליות - חינם וללא הרשמה"
+    },
+    "educationalLevel": ["כיתה א", "כיתה ב", "כיתה ג", "כיתה ד", "כיתה ה", "כיתה ו"],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Israel"
+    },
+    "inLanguage": "he"
+  };
+
   return (
     <html lang="he" dir="rtl">
       <body
         className={`${assistant.variable} antialiased font-sans bg-slate-50 text-slate-900`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema)
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema)
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(educationalOrganizationSchema)
+          }}
+        />
         {children}
       </body>
     </html>

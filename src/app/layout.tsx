@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Assistant } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { PWAInstallBanner } from "@/components/PWAInstallBanner";
 
@@ -132,6 +133,20 @@ export default function RootLayout({
 
   return (
     <html lang="he" dir="rtl">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-PL0WLGMMHH"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PL0WLGMMHH');
+          `}
+        </Script>
+      </head>
       <body
         className={`${assistant.variable} antialiased font-sans bg-slate-50 text-slate-900`}
       >

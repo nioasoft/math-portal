@@ -15,6 +15,14 @@ export function PWAInstallBanner() {
     const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
 
     useEffect(() => {
+        // Only show on mobile devices
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+            || (window.innerWidth <= 768 && 'ontouchstart' in window);
+
+        if (!isMobile) {
+            return; // Don't show on desktop
+        }
+
         // Check if already installed (standalone mode)
         const isStandalone = window.matchMedia('(display-mode: standalone)').matches
             || (window.navigator as Navigator & { standalone?: boolean }).standalone === true;
@@ -23,13 +31,14 @@ export function PWAInstallBanner() {
             return; // Already installed, don't show banner
         }
 
-        // Check if user dismissed the banner before
+        // Check if user dismissed the banner today
         const dismissed = localStorage.getItem('pwa-banner-dismissed');
         if (dismissed) {
             const dismissedDate = new Date(dismissed);
-            const daysSinceDismissed = (Date.now() - dismissedDate.getTime()) / (1000 * 60 * 60 * 24);
-            if (daysSinceDismissed < 7) {
-                return; // Don't show for 7 days after dismissal
+            const today = new Date();
+            // Check if same day
+            if (dismissedDate.toDateString() === today.toDateString()) {
+                return; // Don't show again today
             }
         }
 

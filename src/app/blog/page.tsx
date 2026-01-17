@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { blogPosts, blogCategories, BlogCategory } from '@/lib/blog-data';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,7 +11,18 @@ import { Footer } from '@/components/layout/Footer';
 import { AdSlot } from '@/components/AdSlot';
 
 export default function BlogIndexPage() {
+    const searchParams = useSearchParams();
+    const categoryParam = searchParams.get('category');
     const [selectedCategory, setSelectedCategory] = useState<BlogCategory | 'all'>('all');
+
+    // Sync with URL param on mount and changes
+    useEffect(() => {
+        if (categoryParam && blogCategories.some(c => c.id === categoryParam)) {
+            setSelectedCategory(categoryParam as BlogCategory);
+        } else {
+            setSelectedCategory('all');
+        }
+    }, [categoryParam]);
 
     const filteredPosts = selectedCategory === 'all'
         ? blogPosts

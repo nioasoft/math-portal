@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Calculator, Menu, X, ChevronDown, GraduationCap, BookOpen, Newspaper } from 'lucide-react';
+import { Calculator, Menu, X, ChevronDown, GraduationCap, BookOpen, Newspaper, Gamepad2 } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
 export function Header() {
@@ -9,7 +9,21 @@ export function Header() {
     const [isGradesOpen, setIsGradesOpen] = useState(false);
     const gradesRef = useRef<HTMLDivElement>(null);
 
-    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    // Lock body scroll when menu is open
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isMenuOpen]);
 
     // Close dropdown when clicking outside
     useEffect(() => {
@@ -34,15 +48,15 @@ export function Header() {
     return (
         <header className="bg-white/95 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50 shadow-sm">
             <div className="container-custom h-16 flex items-center justify-between">
-                {/* Logo */}
-                <Link href="/" className="flex items-center gap-2.5 z-50 relative" onClick={() => setIsMenuOpen(false)}>
-                    <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-2 rounded-xl text-white shadow-md shadow-orange-200">
-                        <Calculator size={22} />
-                    </div>
-                    <span className="text-lg font-black text-slate-800 hidden sm:block">
-                        דפי עבודה חכמים
-                    </span>
-                </Link>
+                {/* Mobile Menu Button - First for RTL (appears on right) */}
+                <button
+                    className="lg:hidden p-2 text-slate-600 z-50 relative hover:bg-slate-100 rounded-lg transition-colors"
+                    onClick={toggleMenu}
+                    aria-label={isMenuOpen ? 'סגור תפריט' : 'פתח תפריט'}
+                    aria-expanded={isMenuOpen}
+                >
+                    {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
+                </button>
 
                 {/* Desktop Nav */}
                 <nav className="hidden lg:flex items-center gap-1">
@@ -103,68 +117,104 @@ export function Header() {
                     </Link>
                 </nav>
 
-                {/* Mobile Menu Button */}
-                <button
-                    className="lg:hidden p-2 text-slate-600 z-50 relative hover:bg-slate-100 rounded-lg transition-colors"
-                    onClick={toggleMenu}
-                    aria-label="תפריט"
-                >
-                    {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
-                </button>
+                {/* Logo - Last for RTL (appears on left in desktop, but always visible) */}
+                <Link href="/" className="flex items-center gap-2.5 z-50 relative" onClick={() => setIsMenuOpen(false)}>
+                    <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-2 rounded-xl text-white shadow-md shadow-orange-200">
+                        <Calculator size={22} />
+                    </div>
+                    <span className="text-lg font-black text-slate-800 hidden sm:block">
+                        דפי עבודה חכמים
+                    </span>
+                </Link>
 
-                {/* Mobile Nav Overlay */}
-                <div className={`fixed inset-0 bg-white/98 backdrop-blur-md z-40 flex flex-col items-center justify-center transition-all duration-300 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
-                    <nav className="flex flex-col items-center gap-6 text-xl font-bold text-slate-800">
+                {/* Mobile Nav - Slide from Right */}
+                <div
+                    className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-300 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
+                    onClick={() => setIsMenuOpen(false)}
+                >
+                    {/* Backdrop */}
+                    <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
+                </div>
+                <div
+                    className={`lg:hidden fixed top-0 right-0 h-full w-[280px] max-w-[85vw] bg-white z-50 shadow-2xl transform transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                >
+                    {/* Menu Header */}
+                    <div className="flex items-center justify-between p-4 border-b border-slate-100">
+                        <span className="text-lg font-black text-slate-800">תפריט</span>
+                        <button
+                            onClick={() => setIsMenuOpen(false)}
+                            className="p-2 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors"
+                            aria-label="סגור תפריט"
+                        >
+                            <X size={24} />
+                        </button>
+                    </div>
+
+                    {/* Menu Content */}
+                    <nav className="flex flex-col p-4 overflow-y-auto h-[calc(100%-65px)]">
                         <Link
                             href="/"
                             onClick={() => setIsMenuOpen(false)}
-                            className="hover:text-orange-600 transition-colors"
+                            className="flex items-center gap-3 px-4 py-3 text-lg font-bold text-slate-700 hover:bg-orange-50 hover:text-orange-600 rounded-xl transition-colors"
                         >
                             ראשי
                         </Link>
 
-                        {/* Mobile Grades */}
-                        <div className="flex flex-col items-center gap-3">
-                            <span className="text-sm font-medium text-slate-400 uppercase tracking-wider">לפי כיתה</span>
-                            <div className="flex flex-wrap justify-center gap-2">
-                                {grades.map((grade) => (
-                                    <Link
-                                        key={grade.href}
-                                        href={grade.href}
-                                        onClick={() => setIsMenuOpen(false)}
-                                        className="px-4 py-2 bg-slate-100 rounded-full text-base font-bold text-slate-600 hover:bg-orange-100 hover:text-orange-600 transition-colors"
-                                    >
-                                        {grade.label}
-                                    </Link>
-                                ))}
-                            </div>
+                        {/* Games Link - Prominent */}
+                        <Link
+                            href="/blog?category=games"
+                            onClick={() => setIsMenuOpen(false)}
+                            className="flex items-center gap-3 px-4 py-3 text-lg font-bold text-purple-700 bg-purple-50 hover:bg-purple-100 rounded-xl transition-colors mt-2"
+                        >
+                            <Gamepad2 size={22} />
+                            משחקים ופעילויות
+                        </Link>
+
+                        {/* Grades Section */}
+                        <div className="mt-4 mb-2">
+                            <span className="px-4 text-xs font-bold text-slate-400 uppercase tracking-wider">לפי כיתה</span>
+                        </div>
+                        <div className="grid grid-cols-2 gap-2 px-2">
+                            {grades.map((grade) => (
+                                <Link
+                                    key={grade.href}
+                                    href={grade.href}
+                                    onClick={() => setIsMenuOpen(false)}
+                                    className="px-4 py-2.5 bg-slate-50 rounded-xl text-center font-bold text-slate-600 hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                                >
+                                    {grade.label}
+                                </Link>
+                            ))}
                         </div>
 
-                        <Link
-                            href="/help"
-                            onClick={() => setIsMenuOpen(false)}
-                            className="flex items-center gap-2 hover:text-emerald-600 transition-colors"
-                        >
-                            <BookOpen size={20} />
-                            הסברים להורים
-                        </Link>
+                        {/* Other Links */}
+                        <div className="mt-4 border-t border-slate-100 pt-4">
+                            <Link
+                                href="/help"
+                                onClick={() => setIsMenuOpen(false)}
+                                className="flex items-center gap-3 px-4 py-3 text-base font-semibold text-slate-600 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-colors"
+                            >
+                                <BookOpen size={20} />
+                                הסברים להורים
+                            </Link>
 
-                        <Link
-                            href="/blog"
-                            onClick={() => setIsMenuOpen(false)}
-                            className="flex items-center gap-2 hover:text-sky-600 transition-colors"
-                        >
-                            <Newspaper size={20} />
-                            בלוג
-                        </Link>
+                            <Link
+                                href="/blog"
+                                onClick={() => setIsMenuOpen(false)}
+                                className="flex items-center gap-3 px-4 py-3 text-base font-semibold text-slate-600 hover:bg-sky-50 hover:text-sky-600 rounded-xl transition-colors"
+                            >
+                                <Newspaper size={20} />
+                                בלוג
+                            </Link>
 
-                        <Link
-                            href="/about"
-                            onClick={() => setIsMenuOpen(false)}
-                            className="hover:text-orange-600 transition-colors"
-                        >
-                            אודות
-                        </Link>
+                            <Link
+                                href="/about"
+                                onClick={() => setIsMenuOpen(false)}
+                                className="flex items-center gap-3 px-4 py-3 text-base font-semibold text-slate-600 hover:bg-orange-50 hover:text-orange-600 rounded-xl transition-colors"
+                            >
+                                אודות
+                            </Link>
+                        </div>
                     </nav>
                 </div>
             </div>

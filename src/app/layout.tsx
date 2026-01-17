@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Assistant } from "next/font/google";
 import "./globals.css";
+import { PWAInstallBanner } from "@/components/PWAInstallBanner";
 
 export const viewport: Viewport = {
   themeColor: "#f97316",
@@ -153,6 +154,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <PWAInstallBanner />
       </body>
     </html>
   );

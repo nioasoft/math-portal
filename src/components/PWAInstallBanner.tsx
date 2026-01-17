@@ -1,0 +1,178 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { X, Download, Share, Plus } from 'lucide-react';
+
+interface BeforeInstallPromptEvent extends Event {
+    prompt: () => Promise<void>;
+    userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
+}
+
+export function PWAInstallBanner() {
+    const [showBanner, setShowBanner] = useState(false);
+    const [isIOS, setIsIOS] = useState(false);
+    const [showIOSInstructions, setShowIOSInstructions] = useState(false);
+    const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
+
+    useEffect(() => {
+        // Check if already installed (standalone mode)
+        const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+            || (window.navigator as Navigator & { standalone?: boolean }).standalone === true;
+
+        if (isStandalone) {
+            return; // Already installed, don't show banner
+        }
+
+        // Check if user dismissed the banner before
+        const dismissed = localStorage.getItem('pwa-banner-dismissed');
+        if (dismissed) {
+            const dismissedDate = new Date(dismissed);
+            const daysSinceDismissed = (Date.now() - dismissedDate.getTime()) / (1000 * 60 * 60 * 24);
+            if (daysSinceDismissed < 7) {
+                return; // Don't show for 7 days after dismissal
+            }
+        }
+
+        // Detect iOS
+        const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as Window & { MSStream?: unknown }).MSStream;
+        setIsIOS(isIOSDevice);
+
+        // For iOS, show banner after a delay
+        if (isIOSDevice) {
+            const timer = setTimeout(() => setShowBanner(true), 3000);
+            return () => clearTimeout(timer);
+        }
+
+        // For Android/Chrome, listen for install prompt
+        const handleBeforeInstallPrompt = (e: Event) => {
+            e.preventDefault();
+            setDeferredPrompt(e as BeforeInstallPromptEvent);
+            setTimeout(() => setShowBanner(true), 3000);
+        };
+
+        window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
+        return () => {
+            window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+        };
+    }, []);
+
+    const handleInstallClick = async () => {
+        if (isIOS) {
+            setShowIOSInstructions(true);
+            return;
+        }
+
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            if (outcome === 'accepted') {
+                setShowBanner(false);
+            }
+            setDeferredPrompt(null);
+        }
+    };
+
+    const handleDismiss = () => {
+        setShowBanner(false);
+        setShowIOSInstructions(false);
+        localStorage.setItem('pwa-banner-dismissed', new Date().toISOString());
+    };
+
+    if (!showBanner) return null;
+
+    // iOS Instructions Modal
+    if (showIOSInstructions) {
+        return (
+            <div className="fixed inset-0 z-[100] flex items-end justify-center p-4 bg-black/50 backdrop-blur-sm">
+                <div className="w-full max-w-md bg-white rounded-t-3xl rounded-b-xl p-6 shadow-2xl animate-slide-up">
+                    <div className="flex items-center justify-between mb-6">
+                        <h3 className="text-xl font-bold text-slate-800">התקנה באייפון</h3>
+                        <button
+                            onClick={handleDismiss}
+                            className="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-full transition-colors"
+                            aria-label="סגור"
+                        >
+                            <X size={24} />
+                        </button>
+                    </div>
+
+                    <div className="space-y-4">
+                        <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
+                            <div className="w-10 h-10 bg-sky-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span className="text-sky-600 font-bold">1</span>
+                            </div>
+                            <div>
+                                <p className="font-semibold text-slate-800 mb-1">לחצו על כפתור השיתוף</p>
+                                <div className="flex items-center gap-2 text-slate-500 text-sm">
+                                    <Share size={18} className="text-sky-500" />
+                                    <span>בתחתית המסך בספארי</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
+                            <div className="w-10 h-10 bg-sky-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span className="text-sky-600 font-bold">2</span>
+                            </div>
+                            <div>
+                                <p className="font-semibold text-slate-800 mb-1">בחרו &quot;הוסף למסך הבית&quot;</p>
+                                <div className="flex items-center gap-2 text-slate-500 text-sm">
+                                    <Plus size={18} className="text-sky-500" />
+                                    <span>גללו למטה אם צריך</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
+                            <div className="w-10 h-10 bg-sky-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span className="text-sky-600 font-bold">3</span>
+                            </div>
+                            <div>
+                                <p className="font-semibold text-slate-800 mb-1">לחצו &quot;הוסף&quot;</p>
+                                <p className="text-slate-500 text-sm">האפליקציה תופיע במסך הבית</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button
+                        onClick={handleDismiss}
+                        className="w-full mt-6 py-3 bg-slate-100 text-slate-600 font-bold rounded-xl hover:bg-slate-200 transition-colors"
+                    >
+                        הבנתי, תודה!
+                    </button>
+                </div>
+            </div>
+        );
+    }
+
+    // Main Banner
+    return (
+        <div className="fixed bottom-0 left-0 right-0 z-[60] p-4 pb-safe">
+            <div className="max-w-md mx-auto bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl shadow-2xl shadow-orange-500/30 p-4 flex items-center gap-4">
+                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Download size={24} className="text-white" />
+                </div>
+                <div className="flex-1 min-w-0">
+                    <p className="font-bold text-white text-sm">התקינו את האפליקציה</p>
+                    <p className="text-white/80 text-xs">גישה מהירה מהמסך הבית</p>
+                </div>
+                <div className="flex items-center gap-2">
+                    <button
+                        onClick={handleInstallClick}
+                        className="px-4 py-2 bg-white text-orange-600 font-bold text-sm rounded-xl hover:bg-orange-50 transition-colors"
+                    >
+                        התקן
+                    </button>
+                    <button
+                        onClick={handleDismiss}
+                        className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"
+                        aria-label="סגור"
+                    >
+                        <X size={20} />
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+}

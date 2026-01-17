@@ -16,7 +16,7 @@ export default function GameShell({ title, children, topBar, onExit }: GameShell
         <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white flex flex-col">
             {/* Header */}
             <header className="bg-slate-800/50 backdrop-blur-sm border-b border-slate-700 sticky top-0 z-50">
-                <div className="container-custom py-4 flex items-center justify-between">
+                <div className="container-custom py-2 md:py-4 flex items-center justify-between">
                     <div className="flex items-center gap-4">
                         <Link
                             href="/play"

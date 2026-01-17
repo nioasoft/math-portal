@@ -183,20 +183,7 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
     // Fraction input
     return (
         <div className="w-full max-w-md mx-auto">
-            <div className="flex items-center justify-center gap-4 mb-6">
-                {/* Whole number */}
-                <input
-                    type="number"
-                    inputMode="numeric"
-                    value={whole}
-                    onChange={(e) => setWhole(e.target.value)}
-                    onKeyDown={handleKeyDown}
-                    disabled={disabled}
-                    placeholder="שלם"
-                    className="w-20 text-center text-3xl font-bold py-3 px-2 bg-slate-700/50 border-2 border-slate-600 rounded-xl focus:border-yellow-400 focus:outline-none transition disabled:opacity-50"
-                    dir="ltr"
-                />
-
+            <div className="flex items-center justify-center gap-3 mb-4">
                 {/* Fraction */}
                 <div className="flex flex-col items-center">
                     <input
@@ -208,10 +195,10 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                         onKeyDown={handleKeyDown}
                         disabled={disabled}
                         placeholder="מונה"
-                        className="w-20 text-center text-2xl font-bold py-2 px-2 bg-slate-700/50 border-2 border-slate-600 rounded-lg focus:border-yellow-400 focus:outline-none transition disabled:opacity-50"
+                        className="w-16 md:w-20 text-center text-xl md:text-2xl font-bold py-1.5 md:py-2 px-2 bg-slate-700/50 border-2 border-slate-600 rounded-lg focus:border-yellow-400 focus:outline-none transition disabled:opacity-50"
                         dir="ltr"
                     />
-                    <div className="w-20 h-1 bg-white my-1"></div>
+                    <div className="w-16 md:w-20 h-0.5 md:h-1 bg-white my-0.5 md:my-1"></div>
                     <input
                         type="number"
                         inputMode="numeric"
@@ -220,16 +207,29 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                         onKeyDown={handleKeyDown}
                         disabled={disabled}
                         placeholder="מכנה"
-                        className="w-20 text-center text-2xl font-bold py-2 px-2 bg-slate-700/50 border-2 border-slate-600 rounded-lg focus:border-yellow-400 focus:outline-none transition disabled:opacity-50"
+                        className="w-16 md:w-20 text-center text-xl md:text-2xl font-bold py-1.5 md:py-2 px-2 bg-slate-700/50 border-2 border-slate-600 rounded-lg focus:border-yellow-400 focus:outline-none transition disabled:opacity-50"
                         dir="ltr"
                     />
                 </div>
+
+                {/* Whole number */}
+                <input
+                    type="number"
+                    inputMode="numeric"
+                    value={whole}
+                    onChange={(e) => setWhole(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    disabled={disabled}
+                    placeholder="שלם"
+                    className="w-16 md:w-20 text-center text-2xl md:text-3xl font-bold py-2 md:py-3 px-2 bg-slate-700/50 border-2 border-slate-600 rounded-xl focus:border-yellow-400 focus:outline-none transition disabled:opacity-50"
+                    dir="ltr"
+                />
             </div>
 
             <button
                 onClick={handleSubmit}
                 disabled={disabled || (!numerator && !whole)}
-                className="w-full p-4 text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl hover:from-green-600 hover:to-emerald-700 active:from-green-700 active:to-emerald-800 transition disabled:opacity-50 flex items-center justify-center gap-2"
+                className="w-full p-3 md:p-4 text-lg md:text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl hover:from-green-600 hover:to-emerald-700 active:from-green-700 active:to-emerald-800 transition disabled:opacity-50 flex items-center justify-center gap-2"
             >
                 <span>בדוק תשובה</span>
                 <CornerDownLeft className="w-5 h-5" />

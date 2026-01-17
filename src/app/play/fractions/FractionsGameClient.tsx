@@ -250,7 +250,7 @@ export default function FractionsGameClient() {
                         )}
 
                         {/* Answer Input */}
-                        <div className="mt-8">
+                        <div className="mt-4 md:mt-8">
                             <AnswerInput
                                 onSubmit={handleAnswer}
                                 disabled={phase === 'feedback'}

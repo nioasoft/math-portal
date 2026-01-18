@@ -109,6 +109,7 @@ export default function WorksheetClient() {
                                     setOperation(newOp);
                                     updateUrl(newOp, range);
                                 }}
+                                aria-label="בחר פעולה חשבונית"
                             >
                                 <option value="+">חיבור (+)</option>
                                 <option value="-">חיסור (-)</option>
@@ -118,7 +119,7 @@ export default function WorksheetClient() {
                         </div>
 
                         <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 p-1.5 rounded-lg">
-                            <span className="text-xs text-slate-400 mr-2">תחום:</span>
+                            <span className="text-xs text-slate-400 mr-2" id="range-label">תחום:</span>
                             <select
                                 className="bg-transparent text-sm font-medium px-2 py-1 outline-none cursor-pointer"
                                 value={range}
@@ -127,6 +128,7 @@ export default function WorksheetClient() {
                                     setRange(newRange);
                                     updateUrl(operation, newRange);
                                 }}
+                                aria-labelledby="range-label"
                             >
                                 <option value="10">עד 10</option>
                                 <option value="20">עד 20</option>
@@ -149,8 +151,9 @@ export default function WorksheetClient() {
                         <button
                             onClick={() => setShowAnswers(!showAnswers)}
                             className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition shadow-sm ${showAnswers ? 'bg-amber-100 text-amber-700 border border-amber-200' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}
+                            aria-pressed={showAnswers}
                         >
-                            {showAnswers ? <EyeOff size={16} /> : <Eye size={16} />}
+                            {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
                             <span className="hidden sm:inline">{showAnswers ? 'הסתר תשובות' : 'הצג תשובות'}</span>
                         </button>
                     </div>

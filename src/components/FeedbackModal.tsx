@@ -88,8 +88,9 @@ export function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
                     <button
                         onClick={handleClose}
                         className="p-2 hover:bg-slate-100 rounded-lg transition-colors"
+                        aria-label="סגור"
                     >
-                        <X className="w-5 h-5 text-slate-500" />
+                        <X className="w-5 h-5 text-slate-500" aria-hidden="true" />
                     </button>
                 </div>
 

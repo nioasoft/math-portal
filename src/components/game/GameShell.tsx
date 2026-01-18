@@ -22,8 +22,9 @@ export default function GameShell({ title, children, topBar, onExit }: GameShell
                             href="/play"
                             className="p-2 bg-slate-700/50 rounded-lg hover:bg-slate-700 transition"
                             onClick={onExit}
+                            aria-label="חזרה למשחקים"
                         >
-                            <ArrowRight className="w-5 h-5" />
+                            <ArrowRight className="w-5 h-5" aria-hidden="true" />
                         </Link>
                         <h1 className="text-lg font-bold">{title}</h1>
                     </div>
@@ -33,8 +34,9 @@ export default function GameShell({ title, children, topBar, onExit }: GameShell
                     <Link
                         href="/"
                         className="p-2 bg-slate-700/50 rounded-lg hover:bg-slate-700 transition"
+                        aria-label="עמוד הבית"
                     >
-                        <Home className="w-5 h-5" />
+                        <Home className="w-5 h-5" aria-hidden="true" />
                     </Link>
                 </div>
             </header>

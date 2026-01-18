@@ -36,7 +36,7 @@ export function FeaturedPosts() {
                         <p className="text-slate-600">טיפים, מאמרים ושיטות לימוד שיעזרו לילדכם להצליח</p>
                     </div>
                     <Link href="/blog" className="hidden sm:flex items-center gap-1 font-bold text-blue-600 hover:gap-2 transition-all">
-                        לכל הכתבות <ArrowLeft size={16} />
+                        לכל הכתבות <ArrowLeft size={16} aria-hidden="true" />
                     </Link>
                 </div>
 
@@ -74,7 +74,7 @@ export function FeaturedPosts() {
 
                 <div className="mt-8 text-center sm:hidden">
                     <Link href="/blog" className="inline-flex items-center gap-2 font-bold text-blue-600">
-                        לכל הכתבות <ArrowLeft size={16} />
+                        לכל הכתבות <ArrowLeft size={16} aria-hidden="true" />
                     </Link>
                 </div>
             </div>

@@ -117,8 +117,9 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                         onClick={handleBackspace}
                         disabled={disabled}
                         className="p-4 bg-slate-700/50 rounded-xl hover:bg-slate-600 active:bg-slate-500 transition disabled:opacity-50 flex items-center justify-center"
+                        aria-label="מחק"
                     >
-                        <Delete className="w-6 h-6" />
+                        <Delete className="w-6 h-6" aria-hidden="true" />
                     </button>
 
                     {/* Row 2: 4 5 6 C */}
@@ -136,6 +137,7 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                         onClick={handleClear}
                         disabled={disabled}
                         className="p-4 text-xl font-bold bg-slate-700/50 rounded-xl hover:bg-slate-600 active:bg-slate-500 transition disabled:opacity-50"
+                        aria-label="נקה"
                     >
                         C
                     </button>

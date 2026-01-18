@@ -118,14 +118,14 @@ export default function SeriesClient() {
                         <h1 className="text-xl font-bold text-slate-800">סדרות חשבוניות</h1>
                     </div>
 
-                    <div className="flex bg-slate-100 p-1 rounded-lg">
-                        <button onClick={() => handleDifficultyChange('easy')} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${difficulty === 'easy' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
+                    <div className="flex bg-slate-100 p-1 rounded-lg" role="tablist" aria-label="רמת קושי">
+                        <button onClick={() => handleDifficultyChange('easy')} role="tab" aria-selected={difficulty === 'easy'} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${difficulty === 'easy' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
                             קל
                         </button>
-                        <button onClick={() => handleDifficultyChange('medium')} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${difficulty === 'medium' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
+                        <button onClick={() => handleDifficultyChange('medium')} role="tab" aria-selected={difficulty === 'medium'} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${difficulty === 'medium' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
                             בינוני
                         </button>
-                        <button onClick={() => handleDifficultyChange('hard')} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${difficulty === 'hard' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
+                        <button onClick={() => handleDifficultyChange('hard')} role="tab" aria-selected={difficulty === 'hard'} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${difficulty === 'hard' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
                             קשה
                         </button>
                     </div>
@@ -137,8 +137,10 @@ export default function SeriesClient() {
                         <button
                             onClick={() => setShowAnswers(!showAnswers)}
                             className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition shadow-sm ${showAnswers ? 'bg-amber-100 text-amber-700 border border-amber-200' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}
+                            aria-pressed={showAnswers}
+                            aria-label={showAnswers ? 'הסתר תשובות' : 'הצג תשובות'}
                         >
-                            {showAnswers ? <EyeOff size={16} /> : <Eye size={16} />}
+                            {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
                             <span className="hidden sm:inline">{showAnswers ? 'הסתר' : 'הצג'}</span>
                         </button>
                         <Link

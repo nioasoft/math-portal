@@ -78,11 +78,12 @@ export default function WordProblemsClient() {
 
                     <div className="flex items-center gap-4 flex-1 justify-center">
                         <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 p-1.5 rounded-lg">
-                            <span className="text-xs text-slate-400 mr-2">כיתה:</span>
+                            <span className="text-xs text-slate-400 mr-2" id="grade-label">כיתה:</span>
                             <select
                                 className="bg-transparent text-sm font-medium px-2 py-1 outline-none cursor-pointer"
                                 value={grade}
                                 onChange={(e) => handleGradeChange(parseInt(e.target.value))}
+                                aria-labelledby="grade-label"
                             >
                                 <option value={1}>כיתה א&apos;</option>
                                 <option value={2}>כיתה ב&apos;</option>
@@ -101,8 +102,9 @@ export default function WordProblemsClient() {
                         <button
                             onClick={() => setShowAnswers(!showAnswers)}
                             className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition shadow-sm ${showAnswers ? 'bg-amber-100 text-amber-700 border border-amber-200' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}
+                            aria-pressed={showAnswers}
                         >
-                            {showAnswers ? <EyeOff size={16} /> : <Eye size={16} />}
+                            {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
                             <span className="hidden sm:inline">{showAnswers ? 'הסתר תשובות' : 'הצג תשובות'}</span>
                         </button>
                     </div>

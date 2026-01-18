@@ -69,14 +69,15 @@ export default function PercentageClient() {
                     </div>
                     <div className="flex-1 flex justify-center">
                         <button onClick={regenerateProblems} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-2 font-bold">
-                            <RefreshCw size={16} /> <span>רענן</span>
+                            <RefreshCw size={16} aria-hidden="true" /> <span>רענן</span>
                         </button>
 
                         <button
                             onClick={() => setShowAnswers(!showAnswers)}
                             className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition shadow-sm ${showAnswers ? 'bg-amber-100 text-amber-700 border border-amber-200' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}
+                            aria-pressed={showAnswers}
                         >
-                            {showAnswers ? <EyeOff size={16} /> : <Eye size={16} />}
+                            {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
                             <span className="hidden sm:inline">{showAnswers ? 'הסתר תשובות' : 'הצג תשובות'}</span>
                         </button>
                     </div>
@@ -84,11 +85,11 @@ export default function PercentageClient() {
                         href="/help/percentage"
                         className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-emerald-200 transition shadow-sm"
                     >
-                        <HelpCircle size={16} />
+                        <HelpCircle size={16} aria-hidden="true" />
                         <span className="hidden sm:inline">הסברים להורים</span>
                     </Link>
                     <button onClick={onPrint} className="bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-slate-800 flex items-center gap-2 font-bold">
-                        <Printer size={16} /> <span>הדפס</span>
+                        <Printer size={16} aria-hidden="true" /> <span>הדפס</span>
                     </button>
                 </div>
             </div>

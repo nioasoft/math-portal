@@ -108,15 +108,15 @@ export default function UnitsClient() {
                         <h1 className="text-xl font-bold text-slate-800">מחולל המרת מידות</h1>
                     </div>
 
-                    <div className="flex bg-slate-100 p-1 rounded-lg">
-                        <button onClick={() => handleUnitTypeChange('length')} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${unitType === 'length' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
-                            <Ruler size={16} /> אורך
+                    <div className="flex bg-slate-100 p-1 rounded-lg" role="tablist" aria-label="סוג יחידות מידה">
+                        <button onClick={() => handleUnitTypeChange('length')} role="tab" aria-selected={unitType === 'length'} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${unitType === 'length' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
+                            <Ruler size={16} aria-hidden="true" /> אורך
                         </button>
-                        <button onClick={() => handleUnitTypeChange('weight')} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${unitType === 'weight' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
-                            <Scale size={16} /> משקל
+                        <button onClick={() => handleUnitTypeChange('weight')} role="tab" aria-selected={unitType === 'weight'} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${unitType === 'weight' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
+                            <Scale size={16} aria-hidden="true" /> משקל
                         </button>
-                        <button onClick={() => handleUnitTypeChange('time')} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${unitType === 'time' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
-                            <Clock size={16} /> זמן
+                        <button onClick={() => handleUnitTypeChange('time')} role="tab" aria-selected={unitType === 'time'} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${unitType === 'time' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
+                            <Clock size={16} aria-hidden="true" /> זמן
                         </button>
                     </div>
 
@@ -127,8 +127,10 @@ export default function UnitsClient() {
                         <button
                             onClick={() => setShowAnswers(!showAnswers)}
                             className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition shadow-sm ${showAnswers ? 'bg-amber-100 text-amber-700 border border-amber-200' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}
+                            aria-pressed={showAnswers}
+                            aria-label={showAnswers ? 'הסתר תשובות' : 'הצג תשובות'}
                         >
-                            {showAnswers ? <EyeOff size={16} /> : <Eye size={16} />}
+                            {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
                             <span className="hidden sm:inline">{showAnswers ? 'הסתר' : 'הצג'}</span>
                         </button>
                         <Link

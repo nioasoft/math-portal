@@ -27,7 +27,7 @@ export default function GameSummary({
     const accuracy = totalProblems > 0 ? Math.round((correctCount / totalProblems) * 100) : 0;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/95 backdrop-blur-sm p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/95 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-labelledby="game-summary-title">
             <div className="w-full max-w-md bg-gradient-to-b from-slate-800 to-slate-900 rounded-3xl p-8 shadow-2xl border border-slate-700">
                 {/* Header */}
                 <div className="text-center mb-8">
@@ -36,7 +36,7 @@ export default function GameSummary({
                             <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center animate-bounce">
                                 <Trophy className="w-10 h-10 text-white" />
                             </div>
-                            <h2 className="text-3xl font-bold text-yellow-400 mb-2">שיא חדש!</h2>
+                            <h2 id="game-summary-title" className="text-3xl font-bold text-yellow-400 mb-2">שיא חדש!</h2>
                             <p className="text-slate-400">
                                 שברת את השיא הקודם של {previousHighScore || 0} נקודות
                             </p>
@@ -46,7 +46,7 @@ export default function GameSummary({
                             <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center">
                                 <Award className="w-10 h-10 text-white" />
                             </div>
-                            <h2 className="text-3xl font-bold text-white mb-2">סיום משחק</h2>
+                            <h2 id="game-summary-title" className="text-3xl font-bold text-white mb-2">סיום משחק</h2>
                             <p className="text-slate-400">כל הכבוד על התרגול!</p>
                         </>
                     )}

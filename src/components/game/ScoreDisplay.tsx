@@ -29,7 +29,7 @@ export default function ScoreDisplay({ score, streak, correctCount, wrongCount, 
     }
 
     return (
-        <div className="flex items-center justify-center gap-4 md:gap-6 py-2 md:py-4">
+        <div className="flex items-center justify-center gap-4 md:gap-6 py-2 md:py-4" aria-live="polite" aria-atomic="true">
             {/* Score */}
             <div className="flex flex-col items-center">
                 <div className="flex items-center gap-1.5 md:gap-2 text-yellow-400">

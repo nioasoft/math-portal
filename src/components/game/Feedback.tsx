@@ -31,7 +31,7 @@ export default function Feedback({ correct, correctAnswer, onComplete }: Feedbac
     if (!show || correct === null) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
+        <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none" role="status" aria-live="polite">
             <div
                 className={`
                     transform transition-all duration-300

@@ -56,7 +56,7 @@ export default function RatioClient() {
     };
 
     return (
-        <div className="min-h-screen bg-slate-100 font-sans text-slate-900 pb-20">
+        <div className="min-h-screen bg-slate-100 font-sans text-slate-900 pb-20 print:bg-white">
             <div className="bg-white border-b border-slate-200 sticky top-0 z-40 print:hidden shadow-sm">
                 <div className="container-custom py-4 flex flex-wrap items-center justify-between gap-4">
                     {/* Header similar to others */}
@@ -131,8 +131,8 @@ export default function RatioClient() {
                         })}
                     </div>
 
-                    <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white">
-                        דפי עבודה חכמים - כל הזכויות שמורות ©
+                    <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
+                        tirgul.net - דפי עבודה חכמים ©
                     </div>
                 </div>
             </div>

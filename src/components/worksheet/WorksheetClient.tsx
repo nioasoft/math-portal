@@ -223,8 +223,8 @@ export default function WorksheetClient() {
                     </div>
 
                     {/* Footer / Copyright on Paper */}
-                    <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white">
-                        דפי עבודה חכמים - כל הזכויות שמורות ©
+                    <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
+                        tirgul.net - דפי עבודה חכמים ©
                     </div>
                 </div>
             </div>

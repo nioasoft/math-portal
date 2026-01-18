@@ -1,7 +1,13 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
-import { Calculator, BookOpen, Newspaper, GraduationCap } from 'lucide-react';
+import { Calculator, BookOpen, Newspaper, GraduationCap, MessageSquare } from 'lucide-react';
+import { FeedbackModal } from '@/components/FeedbackModal';
 
 export function Footer() {
+    const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
+
     const grades = [
         { label: "כיתה א'", href: '/grade/1' },
         { label: "כיתה ב'", href: '/grade/2' },
@@ -144,9 +150,24 @@ export function Footer() {
                 {/* Bottom bar */}
                 <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-500">
                     <p>© 2026 דפי עבודה חכמים. כל הזכויות שמורות.</p>
-                    <p className="text-slate-600">נבנה עם ❤️ עבור למידה מצוינת</p>
+                    <div className="flex items-center gap-4">
+                        <button
+                            onClick={() => setIsFeedbackOpen(true)}
+                            className="flex items-center gap-2 text-slate-400 hover:text-orange-400 transition-colors"
+                        >
+                            <MessageSquare size={16} />
+                            שלח משוב
+                        </button>
+                        <span className="text-slate-700">|</span>
+                        <p className="text-slate-600">נבנה עם ❤️ עבור למידה מצוינת</p>
+                    </div>
                 </div>
             </div>
+
+            <FeedbackModal
+                isOpen={isFeedbackOpen}
+                onClose={() => setIsFeedbackOpen(false)}
+            />
         </footer>
     );
 }

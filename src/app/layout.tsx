@@ -58,9 +58,9 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://www.tirgul.net/opengraph-image.png',
-        width: 1200,
-        height: 630,
+        url: 'https://www.tirgul.net/opengraph-image.jpg',
+        width: 1424,
+        height: 752,
         alt: 'תרגול | דפי עבודה חכמים ומשחקי חשבון',
       },
     ],

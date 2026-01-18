@@ -7,7 +7,7 @@ import Script from 'next/script';
 
 export const metadata = {
     title: 'אודות - דפי עבודה חכמים | מיזם חינוכי מבוסס תוכנית לימודים',
-    description: 'מיזם חינוכי המותאם לתוכנית הלימודים הישראלית. כלי מקצועי להורים ומורים ליצירת דפי עבודה בחשבון לכיתות א\'-ו\' - חינם ונגיש לכולם.',
+    description: 'מיזם חינוכי ליצירת דפי עבודה בחשבון לכיתות א\'-ו\'. כלי חינמי ונגיש להורים, מורים ותלמידים.',
 };
 
 export default function AboutPage() {
@@ -26,11 +26,9 @@ export default function AboutPage() {
         "knowsAbout": [
             "חינוך מתמטי",
             "בית ספר יסודי",
-            "תוכנית לימודים",
             "דפי עבודה",
             "מתמטיקה"
-        ],
-        "educationalCredentialAwarded": "תואם לתוכנית הלימודים של משרד החינוך הישראלי"
+        ]
     };
 
     return (
@@ -69,7 +67,7 @@ export default function AboutPage() {
                             &quot;דפי עבודה חכמים&quot; הוא מיזם חברתי שנועד לתת להורים ולמורים כלי פשוט, חינמי ומקצועי לתרגול חשבון מותאם אישית.
                         </p>
                         <p className="text-base text-slate-500 leading-relaxed max-w-2xl mx-auto">
-                            המערכת בנויה בהתאם לתוכנית הלימודים הרשמית של משרד החינוך לכיתות א&apos;-ו&apos;, ומספקת תרגול ממוקד בכל נושאי החשבון היסודי.
+                            המערכת מכסה את נושאי החשבון הנלמדים בכיתות א&apos;-ו&apos;, ומאפשרת תרגול ממוקד בכל רמה.
                         </p>
                     </div>
                 </section>
@@ -130,13 +128,13 @@ export default function AboutPage() {
                                 </h2>
                                 <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                                     <p>
-                                        <strong className="text-slate-800">הרקע שלנו:</strong> המערכת פותחה על ידי מורים לחינוך מתמטי ומפתחי תוכניות לימודים עם ניסיון בהוראה בבית הספר היסודי, שזיהו את הצורך בכלי נגיש לתרגול מותאם אישית בהתאם לתוכנית הלימודים של משרד החינוך.
+                                        <strong className="text-slate-800">הרקע:</strong> המערכת נבנתה מתוך הבנה שלא תמיד יש מספיק חומרי תרגול מותאמים לכל ילד. רצינו ליצור כלי פשוט ונגיש שיאפשר להורים ומורים לייצר דפי עבודה בקלות.
                                     </p>
                                     <p>
                                         ראינו שלא תמיד יש מספיק תרגול מותאם ברמה הנכונה לכל ילד. רצינו לייצר מצב שבו הילד יכול לתרגל עם דפים חדשים עד שהוא מרגיש בטוח בחומר - ללא הגבלה ובחינם.
                                     </p>
                                     <p>
-                                        <strong className="text-slate-800">השיטה שלנו:</strong> כל מחולל מבוסס על עקרונות פדגוגיים מוכחים ותוכנית הלימודים הרשמית. התרגילים מותאמים לרמת הכיתה ומאפשרים התקדמות הדרגתית.
+                                        <strong className="text-slate-800">השיטה:</strong> התרגילים בנויים בהדרגה מהקל למורכב, ומאפשרים התאמה לרמת הילד והתקדמות בקצב אישי.
                                     </p>
                                     <p>
                                         האתר מאפשר יצירה של <strong className="text-slate-800">אינסוף תרגילים שונים</strong>. כל לחיצה על &quot;רענן דף&quot; יוצרת תרגילים חדשים, כך שאפשר לתרגל שוב ושוב עד להצלחה.
@@ -211,10 +209,10 @@ export default function AboutPage() {
                             </div>
                         </div>
                         <div className="max-w-2xl mx-auto mt-12 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                            <h3 className="text-lg font-bold text-slate-800 mb-3 text-center">התאמה לתוכנית הלימודים</h3>
+                            <h3 className="text-lg font-bold text-slate-800 mb-3 text-center">כיסוי נושאי הלימוד</h3>
                             <p className="text-slate-600 text-center">
-                                כל המחוללים בנויים בהתאם לתוכנית הלימודים הרשמית של משרד החינוך לחשבון בבית הספר היסודי,
-                                ומכסים את כל הנושאים הנלמדים בכיתות א&apos; עד ו&apos;.
+                                המחוללים מכסים את נושאי החשבון הנלמדים בבית הספר היסודי בכיתות א&apos; עד ו&apos;,
+                                כולל חיבור, חיסור, כפל, חילוק, שברים, אחוזים והנדסה.
                             </p>
                         </div>
                     </div>
@@ -252,7 +250,7 @@ export default function AboutPage() {
                                 </div>
                                 <h3 className="text-xl font-bold text-slate-800 mb-3">למידה בונה</h3>
                                 <p className="text-slate-600">
-                                    התרגילים בנויים בהדרגה מהפשוט למורכב, תוך שמירה על עקרון הלמידה הספירלית המומלץ על ידי משרד החינוך.
+                                    התרגילים בנויים בהדרגה מהפשוט למורכב, כך שהילד יכול להתקדם בקצב שלו ולבנות ביטחון עצמי.
                                 </p>
                             </div>
                             <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
@@ -277,7 +275,7 @@ export default function AboutPage() {
                         </div>
                         <h2 className="text-3xl md:text-4xl font-black text-white mb-4">מוכנים להתחיל?</h2>
                         <p className="text-xl text-slate-400 mb-8 max-w-xl mx-auto">
-                            הצטרפו לאלפי הורים ומורים שכבר משתמשים בדפי עבודה חכמים
+                            צרו דפי עבודה מותאמים אישית בחינם - בלי הרשמה
                         </p>
                         <Link
                             href="/"

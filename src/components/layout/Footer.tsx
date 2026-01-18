@@ -36,17 +36,17 @@ export function Footer() {
                             </span>
                         </Link>
                         <p className="text-sm leading-relaxed text-slate-400">
-                            פורטל דפי העבודה המוביל בישראל. מחולל תרגילים בחשבון מותאם לתוכנית הלימודים.
-                            הדפיסו דפי עבודה בחינם לכל הכיתות.
+                            מחולל דפי עבודה בחשבון לכיתות א&apos;-ו&apos;.
+                            הדפיסו דפי עבודה בחינם וללא הרשמה.
                         </p>
                         <div className="mt-6 space-y-2 text-xs text-slate-500">
                             <div className="flex items-center gap-2">
                                 <span className="text-green-400">✓</span>
-                                <span>מותאם לתוכנית הלימודים הישראלית</span>
+                                <span>מכסה נושאי לימוד לכיתות א&apos;-ו&apos;</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <span className="text-green-400">✓</span>
-                                <span>נבדק על ידי מורים מקצועיים</span>
+                                <span>התאמה אישית של רמת הקושי</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <span className="text-green-400">✓</span>
@@ -136,7 +136,7 @@ export function Footer() {
                 <div className="border-t border-slate-800 pt-8 pb-8">
                     <div className="text-center max-w-2xl mx-auto">
                         <p className="text-sm text-slate-400 leading-relaxed">
-                            <strong className="text-slate-300">אמינות ומקצועיות:</strong> כל התרגילים והדפי העבודה באתר עוברים בדיקה מקצועית ומותאמים לתוכנית הלימודים של משרד החינוך הישראלי. האתר משרת אלפי מורים, הורים ותלמידים מדי חודש.
+                            <strong className="text-slate-300">על האתר:</strong> התרגילים ודפי העבודה באתר נבנו בהשראת נושאי הלימוד בחשבון לבית הספר היסודי, ומיועדים לסייע בתרגול עצמאי להורים, מורים ותלמידים.
                         </p>
                     </div>
                 </div>

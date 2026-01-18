@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, Ruler, Scale, Clock, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
 import ContentSection from '@/components/ContentSection';
+import { trackPrintEvent } from '@/lib/analytics';
 
 interface UnitProblem {
     id: string;
@@ -90,7 +91,10 @@ export default function UnitsClient() {
         setProblems(createProblems(newUnitType));
     };
 
-    const onPrint = () => window.print();
+    const onPrint = () => {
+        trackPrintEvent({ worksheet_type: 'units' });
+        window.print();
+    };
 
     return (
         <div className="min-h-screen bg-slate-100 font-sans text-slate-900 pb-20">

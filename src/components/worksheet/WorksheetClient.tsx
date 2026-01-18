@@ -7,6 +7,7 @@ import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-r
 import Link from 'next/link';
 import ContentSection from '@/components/ContentSection';
 import { AdSlot } from '@/components/AdSlot';
+import { trackPrintEvent, trackGenerateEvent } from '@/lib/analytics';
 
 export default function WorksheetClient() {
     const searchParams = useSearchParams();
@@ -42,10 +43,17 @@ export default function WorksheetClient() {
         setTitle(`${opText} בתחום ה-${r.toLocaleString()}`);
     };
 
-    const handleGenerate = (op: MathOperation, r: number, c: number) => {
+    const handleGenerate = (op: MathOperation, r: number, c: number, trackEvent = false) => {
         const newProblems = MathEngine.generateProblems(c, op, r);
         setProblems(newProblems);
         updateTitle(op, r);
+        if (trackEvent) {
+            trackGenerateEvent({
+                worksheet_type: 'math',
+                operation: op,
+                range: r,
+            });
+        }
     };
 
     // Effect to parse params on load
@@ -69,6 +77,11 @@ export default function WorksheetClient() {
     }, [searchParams, count]);
 
     const onPrint = () => {
+        trackPrintEvent({
+            worksheet_type: 'math',
+            operation: operation,
+            range: range,
+        });
         window.print();
     };
 
@@ -126,7 +139,7 @@ export default function WorksheetClient() {
                         </div>
 
                         <button
-                            onClick={() => handleGenerate(operation, range, count)}
+                            onClick={() => handleGenerate(operation, range, count, true)}
                             className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-blue-700 transition shadow-sm"
                         >
                             <RefreshCw size={16} />

@@ -5,6 +5,7 @@ import { WordProblemEngine, Operation } from '@/lib/word-problem-engine';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
 import ContentSection from '@/components/ContentSection';
+import { trackPrintEvent } from '@/lib/analytics';
 
 interface QuestionState {
     id: string;
@@ -58,6 +59,11 @@ export default function WordProblemsClient() {
         setQuestions(createQuestions(newGrade));
     };
 
+    const onPrint = () => {
+        trackPrintEvent({ worksheet_type: 'word-problems' });
+        window.print();
+    };
+
     return (
         <div className="min-h-screen bg-slate-100 font-sans text-slate-900 pb-20">
             {/* Toolbar */}
@@ -109,7 +115,7 @@ export default function WordProblemsClient() {
                         <span className="hidden sm:inline">הסברים להורים</span>
                     </Link>
                     <button
-                        onClick={() => window.print()}
+                        onClick={onPrint}
                         className="bg-slate-900 text-white px-6 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-slate-800 transition"
                     >
                         <Printer size={16} />

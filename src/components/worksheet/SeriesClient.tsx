@@ -5,6 +5,7 @@ import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-r
 import Link from 'next/link';
 import ContentSection from '@/components/ContentSection';
 import { AdSlot } from '@/components/AdSlot';
+import { trackPrintEvent } from '@/lib/analytics';
 
 interface SeriesProblem {
     id: string;
@@ -100,7 +101,10 @@ export default function SeriesClient() {
         setProblems(createProblems(newDifficulty));
     };
 
-    const onPrint = () => window.print();
+    const onPrint = () => {
+        trackPrintEvent({ worksheet_type: 'series', difficulty });
+        window.print();
+    };
 
     return (
         <div className="min-h-screen bg-slate-100 font-sans text-slate-900 pb-20">

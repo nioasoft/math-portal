@@ -5,6 +5,7 @@ import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-r
 import Link from 'next/link';
 import ContentSection from '@/components/ContentSection';
 import { AdSlot } from '@/components/AdSlot';
+import { trackPrintEvent } from '@/lib/analytics';
 
 type GeomTopic = 'rect' | 'triangle' | 'angle' | 'circle';
 
@@ -103,6 +104,11 @@ export default function GeometryClient() {
     const handleTopicChange = (newTopic: GeomTopic) => {
         setTopic(newTopic);
         setProblems(createProblems(newTopic));
+    };
+
+    const onPrint = () => {
+        trackPrintEvent({ worksheet_type: 'geometry' });
+        window.print();
     };
 
     const renderShape = (p: GeomProblem) => {
@@ -294,7 +300,7 @@ export default function GeometryClient() {
                         <span className="hidden sm:inline">הסברים להורים</span>
                     </Link>
                     <button
-                        onClick={() => window.print()}
+                        onClick={onPrint}
                         className="bg-slate-900 text-white px-6 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-slate-800 transition"
                     >
                         <Printer size={16} />

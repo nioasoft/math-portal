@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
 import ContentSection from '@/components/ContentSection';
+import { trackPrintEvent } from '@/lib/analytics';
 
 interface RatioProblem {
     id: string;
@@ -49,7 +50,10 @@ export default function RatioClient() {
         setProblems(createProblems());
     };
 
-    const onPrint = () => window.print();
+    const onPrint = () => {
+        trackPrintEvent({ worksheet_type: 'ratio' });
+        window.print();
+    };
 
     return (
         <div className="min-h-screen bg-slate-100 font-sans text-slate-900 pb-20">

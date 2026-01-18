@@ -5,6 +5,7 @@ import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-r
 import Link from 'next/link';
 import ContentSection from '@/components/ContentSection';
 import { AdSlot } from '@/components/AdSlot';
+import { trackPrintEvent } from '@/lib/analytics';
 
 type Difficulty = 'level1' | 'level2' | 'level3' | 'level4' | 'level5';
 type Operation = '+' | '-' | '*' | ':';
@@ -178,7 +179,10 @@ export default function FractionsClient() {
         return simplify(resN, resD);
     };
 
-    const onPrint = () => window.print();
+    const onPrint = () => {
+        trackPrintEvent({ worksheet_type: 'fractions', difficulty });
+        window.print();
+    };
 
     // Helper to render fraction (Mixed or Simple)
     const FractionDisplay = ({ f }: { f: Fraction }) => (

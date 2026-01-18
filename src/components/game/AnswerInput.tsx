@@ -88,8 +88,8 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                 <div className="mb-4">
                     <input
                         ref={inputRef}
-                        type="number"
-                        inputMode="decimal"
+                        type="text"
+                        inputMode="none"
                         value={value}
                         onChange={(e) => setValue(e.target.value)}
                         onKeyDown={handleKeyDown}
@@ -190,8 +190,8 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                 <div className="flex flex-col items-center">
                     <input
                         ref={inputRef}
-                        type="number"
-                        inputMode="numeric"
+                        type="text"
+                        inputMode="none"
                         value={numerator}
                         onChange={(e) => setNumerator(e.target.value)}
                         onKeyDown={handleKeyDown}
@@ -202,8 +202,8 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                     />
                     <div className="w-16 md:w-20 h-0.5 md:h-1 bg-white my-0.5 md:my-1"></div>
                     <input
-                        type="number"
-                        inputMode="numeric"
+                        type="text"
+                        inputMode="none"
                         value={denominator}
                         onChange={(e) => setDenominator(e.target.value)}
                         onKeyDown={handleKeyDown}
@@ -216,8 +216,8 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
 
                 {/* Whole number */}
                 <input
-                    type="number"
-                    inputMode="numeric"
+                    type="text"
+                    inputMode="none"
                     value={whole}
                     onChange={(e) => setWhole(e.target.value)}
                     onKeyDown={handleKeyDown}

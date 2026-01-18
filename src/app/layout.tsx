@@ -21,16 +21,16 @@ const assistant = Assistant({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.tirgul.net'),
   title: {
-    default: "דפי עבודה בחשבון להדפסה - מחולל תרגילים לכיתות א׳-ו׳",
-    template: "%s | דפי עבודה חכמים"
+    default: "תרגול | דפי עבודה חכמים ומשחקי חשבון",
+    template: "%s | תרגול"
   },
-  description: "מחולל דפי עבודה חכם המאפשר יצירת דפי תרגול בחשבון והנדסה מותאמים אישית. תרגול 4 פעולות חשבון, שברים, אחוזים, הנדסה ועוד. חינם וללא הרשמה.",
-  keywords: ["דפי עבודה בחשבון", "דפי עבודה להדפסה", "תרגילי חשבון", "חשבון לכיתה א", "חשבון לכיתה ב", "מחולל דפי עבודה", "דפי עבודה בשברים", "דפי עבודה באחוזים"],
+  description: "דפי עבודה חכמים להדפסה ומשחקים אינטראקטיביים בחשבון לכיתות א׳-ו׳. חינם וללא הרשמה!",
+  keywords: ["דפי עבודה בחשבון", "משחקי חשבון", "דפי עבודה להדפסה", "תרגילי חשבון", "משחקי מתמטיקה לילדים", "חשבון לכיתה א", "מחולל דפי עבודה", "דפי עבודה בשברים"],
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "דפי עבודה חכמים",
+    title: "תרגול",
   },
   formatDetection: {
     telephone: false,
@@ -50,18 +50,18 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "דפי עבודה בחשבון להדפסה - חינם וללא הרשמה",
-    description: "צרו דפי עבודה מותאמים אישית בחשבון והנדסה בקלות. מתאים למורים, הורים ותלמידים.",
+    title: "תרגול | דפי עבודה חכמים ומשחקי חשבון",
+    description: "דפי עבודה חכמים להדפסה ומשחקים אינטראקטיביים בחשבון לכיתות א׳-ו׳. חינם וללא הרשמה!",
     url: 'https://www.tirgul.net',
-    siteName: 'תרגול - דפי עבודה במתמטיקה',
+    siteName: 'תרגול',
     locale: 'he_IL',
     type: 'website',
     images: [
       {
-        url: '/opengraph-image.png',
+        url: 'https://www.tirgul.net/opengraph-image.png',
         width: 1200,
         height: 630,
-        alt: 'תרגול - דפי עבודה במתמטיקה',
+        alt: 'תרגול | דפי עבודה חכמים ומשחקי חשבון',
       },
     ],
   },

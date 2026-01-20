@@ -13,12 +13,14 @@ export default getRequestConfig(async ({ requestLocale }) => {
   // Load all message files and merge them
   const common = (await import(`../../messages/${locale}/common.json`)).default;
   const home = (await import(`../../messages/${locale}/home.json`)).default;
+  const math = (await import(`../../messages/${locale}/math.json`)).default;
 
   return {
     locale,
     messages: {
       common,
       home,
+      math,
     },
   };
 });

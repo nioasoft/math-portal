@@ -1,8 +1,31 @@
 {
+  "operations": {
+    "addition": "חיבור",
+    "subtraction": "חיסור",
+    "multiplication": "כפל",
+    "division": "חילוק"
+  },
   "notation": {
-    "division": ":",
-    "decimal": ".",
-    "thousands": ","
+    "divisionSymbol": ":",
+    "decimalSeparator": ".",
+    "thousandsSeparator": ","
+  },
+  "labels": {
+    "exercise": "תרגיל",
+    "answer": "תשובה",
+    "answers": "תשובות",
+    "range": "טווח",
+    "from": "מ",
+    "to": "עד",
+    "difficulty": "רמת קושי",
+    "easy": "קלה",
+    "medium": "בינונית",
+    "hard": "קשה",
+    "count": "מספר תרגילים",
+    "generate": "צור תרגילים",
+    "print": "הדפס",
+    "showAnswers": "הצג תשובות",
+    "hideAnswers": "הסתר תשובות"
   },
   "terms": {
     "numerator": "מונה",

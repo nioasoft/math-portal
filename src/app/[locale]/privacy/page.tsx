@@ -86,10 +86,19 @@ export default async function PrivacyPage() {
                                 <p>{t('cookiesSection.intro')}</p>
                                 <ul>
                                     <li><strong>{t('cookiesSection.essential')}</strong> {t('cookiesSection.essentialDesc')}</li>
+                                    <li><strong>{t('cookiesSection.functional')}</strong> {t('cookiesSection.functionalDesc')}</li>
                                     <li><strong>{t('cookiesSection.analytics')}</strong> {t('cookiesSection.analyticsDesc')}</li>
                                     <li><strong>{t('cookiesSection.advertising')}</strong> {t('cookiesSection.advertisingDesc')}</li>
                                 </ul>
-                                <p>{t('cookiesSection.manage')}</p>
+
+                                <h3>{t('cookiesSection.consent')}</h3>
+                                <p>{t('cookiesSection.consentIntro')}</p>
+                                <ul>
+                                    <li>{t('cookiesSection.consentAcceptAll')}</li>
+                                    <li>{t('cookiesSection.consentNecessary')}</li>
+                                    <li>{t('cookiesSection.consentCustom')}</li>
+                                </ul>
+                                <p>{t('cookiesSection.consentChange')}</p>
 
                                 <h2>{t('sharing.heading')}</h2>
                                 <p>{t('sharing.text')}</p>

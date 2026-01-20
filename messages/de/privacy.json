@@ -33,13 +33,20 @@
   "cookiesSection": {
     "heading": "Cookies",
     "intro": "Die Website verwendet die folgenden Arten von Cookies:",
-    "essential": "Wesentliche Cookies:",
-    "essentialDesc": "Erforderlich für den grundlegenden Betrieb der Website.",
+    "essential": "Notwendige Cookies:",
+    "essentialDesc": "Erforderlich für den grundlegenden Betrieb der Website und können nicht deaktiviert werden.",
+    "functional": "Funktionale Cookies:",
+    "functionalDesc": "Speichern Einstellungen wie die Sprache der Benutzeroberfläche.",
     "analytics": "Analyse-Cookies:",
-    "analyticsDesc": "Helfen uns zu verstehen, wie Besucher die Website nutzen.",
+    "analyticsDesc": "Helfen uns zu verstehen, wie Besucher die Website nutzen (Google Analytics).",
     "advertising": "Werbe-Cookies:",
-    "advertisingDesc": "Werden verwendet, um relevante Werbung anzuzeigen.",
-    "manage": "Sie können Ihre Cookie-Einstellungen über Ihre Browsereinstellungen verwalten."
+    "advertisingDesc": "Werden verwendet, um relevante Werbung anzuzeigen (Google AdSense).",
+    "consent": "Cookie-Einstellungen verwalten",
+    "consentIntro": "Bei Ihrem ersten Besuch auf der Website wird ein Cookie-Zustimmungshinweis angezeigt. Sie können:",
+    "consentAcceptAll": "Alle Cookies akzeptieren",
+    "consentNecessary": "Nur notwendige Cookies akzeptieren",
+    "consentCustom": "Ihre Einstellungen nach Kategorie anpassen",
+    "consentChange": "Sie können Ihre Einstellungen jederzeit ändern, indem Sie das Cookie 'cookie_consent' aus Ihrem Browser löschen und die Seite aktualisieren."
   },
   "sharing": {
     "heading": "Informationsweitergabe",

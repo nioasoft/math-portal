@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
 import { AdSlot } from '@/components/AdSlot';
 import { trackPrintEvent } from '@/lib/analytics';
+import { useTranslations } from 'next-intl';
 
 type GeomTopic = 'rect' | 'triangle' | 'angle' | 'circle';
 
@@ -93,6 +94,7 @@ function createProblems(topic: GeomTopic): GeomProblem[] {
 }
 
 export default function GeometryClient() {
+    const t = useTranslations('worksheet');
     const [topic, setTopic] = useState<GeomTopic>('rect');
     const [problems, setProblems] = useState<GeomProblem[]>(() => createProblems('rect'));
     const [showAnswers, setShowAnswers] = useState<boolean>(false);
@@ -113,6 +115,7 @@ export default function GeometryClient() {
 
     const renderShape = (p: GeomProblem) => {
         const { data } = p;
+        const unit = t('geometry.unit');
 
         if (p.topic === 'rect' && data.width && data.height) {
             return (
@@ -123,8 +126,8 @@ export default function GeometryClient() {
                         backgroundImage: 'linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px)',
                         backgroundSize: '15px 15px'
                     }}>
-                    <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-lg font-bold bg-white px-2 whitespace-nowrap">{data.width} ס&quot;מ</span>
-                    <span className="absolute -left-16 top-1/2 -translate-y-1/2 text-lg font-bold bg-white px-2 whitespace-nowrap">{data.height} ס&quot;מ</span>
+                    <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-lg font-bold bg-white px-2 whitespace-nowrap">{data.width} {unit}</span>
+                    <span className="absolute -left-16 top-1/2 -translate-y-1/2 text-lg font-bold bg-white px-2 whitespace-nowrap">{data.height} {unit}</span>
                 </div>
             );
         }
@@ -138,8 +141,8 @@ export default function GeometryClient() {
                     {/* Height Line (Dashed) */}
                     <path d="M75 10 L75 110" stroke="#94a3b8" strokeWidth="2" strokeDasharray="5,3" />
                     {/* Labels */}
-                    <text x="75" y="130" textAnchor="middle" className="text-sm font-bold">בסיס: {data.base}</text>
-                    <text x="80" y="60" textAnchor="start" className="text-sm font-bold text-slate-500">גובה: {data.height}</text>
+                    <text x="75" y="130" textAnchor="middle" className="text-sm font-bold">{t('geometry.labels.base')} {data.base}</text>
+                    <text x="80" y="60" textAnchor="start" className="text-sm font-bold text-slate-500">{t('geometry.labels.height')} {data.height}</text>
                 </svg>
             );
         }
@@ -182,16 +185,23 @@ export default function GeometryClient() {
         }
     };
 
+    const getAngleType = (degrees: number): string => {
+        if (degrees === 90) return t('geometry.angleTypes.right');
+        if (degrees > 90 && degrees < 180) return t('geometry.angleTypes.obtuse');
+        if (degrees === 180) return t('geometry.angleTypes.straight');
+        return t('geometry.angleTypes.acute');
+    };
+
     const renderAnswer = (p: GeomProblem) => {
         if (p.topic === 'rect' && p.data.width && p.data.height) {
             return (
                 <div className="text-lg space-y-1 w-40">
                     <div className="flex justify-between border-b border-dotted border-slate-300">
-                        <span>שטח:</span>
+                        <span>{t('geometry.area')}:</span>
                         {showAnswers && <span className="text-red-600 font-bold">{p.data.width * p.data.height}</span>}
                     </div>
                     <div className="flex justify-between border-b border-dotted border-slate-300">
-                        <span>היקף:</span>
+                        <span>{t('geometry.perimeter')}:</span>
                         {showAnswers && <span className="text-red-600 font-bold">{2 * (p.data.width + p.data.height)}</span>}
                     </div>
                 </div>
@@ -201,23 +211,18 @@ export default function GeometryClient() {
             return (
                 <div className="text-lg space-y-1 w-40">
                     <div className="flex justify-between border-b border-dotted border-slate-300">
-                        <span>שטח:</span>
+                        <span>{t('geometry.area')}:</span>
                         {showAnswers && <span className="text-red-600 font-bold">{(p.data.base * p.data.height) / 2}</span>}
                     </div>
                 </div>
             )
         }
         if (p.topic === 'angle' && p.data.degrees !== undefined) {
-            let type = "חדה";
-            if (p.data.degrees === 90) type = "ישרה";
-            else if (p.data.degrees > 90 && p.data.degrees < 180) type = "קהה";
-            else if (p.data.degrees === 180) type = "שטוחה";
-
             return (
                 <div className="text-lg space-y-1 w-40">
                     <div className="flex justify-between border-b border-dotted border-slate-300">
-                        <span>סוג זווית:</span>
-                        {showAnswers && <span className="text-red-600 font-bold text-sm">{type}</span>}
+                        <span>{t('geometry.labels.angleType')}</span>
+                        {showAnswers && <span className="text-red-600 font-bold text-sm">{getAngleType(p.data.degrees)}</span>}
                     </div>
                 </div>
             )
@@ -226,11 +231,11 @@ export default function GeometryClient() {
             return (
                 <div className="text-lg space-y-1 w-40">
                     <div className="flex justify-between border-b border-dotted border-slate-300">
-                        <span>היקף (P):</span>
+                        <span>{t('geometry.labels.circumference')}</span>
                         {showAnswers && <span className="text-red-600 font-bold text-sm">{(2 * Math.PI * p.data.radius).toFixed(2)}</span>}
                     </div>
                     <div className="flex justify-between border-b border-dotted border-slate-300">
-                        <span>שטח (S):</span>
+                        <span>{t('geometry.labels.circleArea')}</span>
                         {showAnswers && <span className="text-red-600 font-bold text-sm">{(Math.PI * p.data.radius * p.data.radius).toFixed(2)}</span>}
                     </div>
                 </div>
@@ -239,13 +244,7 @@ export default function GeometryClient() {
     };
 
     const getTitle = () => {
-        switch (topic) {
-            case 'rect': return 'שטח והיקף של מלבנים';
-            case 'triangle': return 'שטח משולש';
-            case 'angle': return 'סוגי זוויות';
-            case 'circle': return 'מעגל - שטח והיקף';
-            default: return 'גיאומטריה';
-        }
+        return t(`geometry.worksheetTitles.${topic}`);
     }
 
     return (
@@ -257,22 +256,22 @@ export default function GeometryClient() {
                         <Link href="/" className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
                             <ArrowLeft size={20} />
                         </Link>
-                        <h1 className="text-xl font-bold text-slate-800">גיאומטריה</h1>
+                        <h1 className="text-xl font-bold text-slate-800">{t('geometry.title')}</h1>
                     </div>
 
                     <div className="flex items-center gap-4 flex-1 justify-center">
                         <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 p-1.5 rounded-lg">
-                            <span className="text-xs text-slate-400 mr-2" id="topic-label">נושא:</span>
+                            <span className="text-xs text-slate-400 mr-2" id="topic-label">{t('geometry.topicLabel')}</span>
                             <select
                                 className="bg-transparent text-sm font-medium px-2 py-1 outline-none cursor-pointer"
                                 value={topic}
                                 onChange={(e) => handleTopicChange(e.target.value as GeomTopic)}
                                 aria-labelledby="topic-label"
                             >
-                                <option value="rect">מלבנים (שטח והיקף)</option>
-                                <option value="triangle">משולשים (שטח)</option>
-                                <option value="angle">זוויות (זיהוי)</option>
-                                <option value="circle">מעגלים (שטח והיקף)</option>
+                                <option value="rect">{t('geometry.topics.rect')}</option>
+                                <option value="triangle">{t('geometry.topics.triangle')}</option>
+                                <option value="angle">{t('geometry.topics.angle')}</option>
+                                <option value="circle">{t('geometry.topics.circle')}</option>
                             </select>
                         </div>
 
@@ -281,7 +280,7 @@ export default function GeometryClient() {
                             className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-blue-700 transition"
                         >
                             <RefreshCw size={16} />
-                            <span className="hidden sm:inline">רענן</span>
+                            <span className="hidden sm:inline">{t('controls.refresh')}</span>
                         </button>
 
                         <button
@@ -290,7 +289,7 @@ export default function GeometryClient() {
                             aria-pressed={showAnswers}
                         >
                             {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
-                            <span className="hidden sm:inline">{showAnswers ? 'הסתר תשובות' : 'הצג תשובות'}</span>
+                            <span className="hidden sm:inline">{showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}</span>
                         </button>
                     </div>
 
@@ -299,14 +298,14 @@ export default function GeometryClient() {
                         className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-emerald-200 transition shadow-sm"
                     >
                         <HelpCircle size={16} />
-                        <span className="hidden sm:inline">הסברים להורים</span>
+                        <span className="hidden sm:inline">{t('controls.helpForParents')}</span>
                     </Link>
                     <button
                         onClick={onPrint}
                         className="bg-slate-900 text-white px-6 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-slate-800 transition"
                     >
                         <Printer size={16} />
-                        <span>הדפס</span>
+                        <span>{t('controls.print')}</span>
                     </button>
                 </div>
             </div>
@@ -339,35 +338,26 @@ export default function GeometryClient() {
                     </div>
 
                     <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
-                        tirgul.net - דפי עבודה חכמים ©
+                        {t('print.copyright')}
                     </div>
                 </div>
             </div>
 
             <ContentSection
-                title="הנדסה לכיתות ג'-ו' - תרגול מקיף"
-                description="כל נושאי ההנדסה במקום אחד: מלבנים, משולשים, זוויות ומעגלים."
-                features={[
-                    "מלבנים: חישוב שטחים והיקפים על גבי רשת משבצות",
-                    "משולשים: תרגול נוסחת השטח (גובה כפול בסיס חלקי 2)",
-                    "זוויות: זיהוי סוגי זוויות (חדה, קהה, ישרה, שטוחה)",
-                    "מעגלים: היכרות עם המספר פאי (π) וחישוב שטח והיקף"
-                ]}
+                title={t('geometry.content.title')}
+                description={t('geometry.content.description')}
+                features={t.raw('geometry.content.features') as string[]}
                 benefits={[
                     {
-                        title: "ויזואליזציה ברורה",
-                        text: "כל צורה מוצגת בצורה גרפית ברורה ומדויקת שעוזרת לתלמיד להבין את הנתונים."
+                        title: t('geometry.content.benefits.visualization.title'),
+                        text: t('geometry.content.benefits.visualization.text')
                     },
                     {
-                        title: "התאמה לתוכנית הלימודים",
-                        text: "הנושאים מכסים את דרישות משרד החינוך בהנדסה ליסודי."
+                        title: t('geometry.content.benefits.curriculum.title'),
+                        text: t('geometry.content.benefits.curriculum.text')
                     }
                 ]}
-                tips={[
-                    "במשולש: שימו לב שתמיד כופלים את הגובה בצלע שאליה הוא יורד (הבסיס).",
-                    "בזוויות: היעזרו בפינה של דף כדי לבדוק אם הזווית גדולה או קטנה מ-90 מעלות.",
-                    "במעגל: זכרו שהקוטר הוא בדיוק פעמיים הרדיוס."
-                ]}
+                tips={t.raw('geometry.content.tips') as string[]}
             />
         </div>
     );

@@ -1,47 +1,47 @@
 {
   "shell": {
-    "backToGames": "Back to Games",
-    "home": "Home"
+    "backToGames": "العودة للألعاب",
+    "home": "الصفحة الرئيسية"
   },
   "feedback": {
-    "correct": "Correct!",
-    "incorrect": "Incorrect",
-    "tryAgain": "Try again",
-    "theAnswer": "The answer:"
+    "correct": "صحيح!",
+    "incorrect": "خطأ",
+    "tryAgain": "حاول مرة أخرى",
+    "theAnswer": "الإجابة:"
   },
   "summary": {
-    "title": "Game Over",
-    "score": "Score",
-    "maxStreak": "Best Streak",
-    "accuracy": "Accuracy",
-    "correctWrong": "Correct / Wrong",
-    "newRecord": "New Record!",
-    "brokeRecord": "You beat your previous record of {points} points",
-    "greatJob": "Great job practicing!",
-    "playAgain": "Play Again",
-    "backToMenu": "Back to Menu"
+    "title": "انتهت اللعبة",
+    "score": "النتيجة",
+    "maxStreak": "أفضل سلسلة",
+    "accuracy": "الدقة",
+    "correctWrong": "صحيح / خطأ",
+    "newRecord": "رقم قياسي جديد!",
+    "brokeRecord": "تجاوزت رقمك القياسي السابق {points} نقطة",
+    "greatJob": "أحسنت على التدريب!",
+    "playAgain": "العب مرة أخرى",
+    "backToMenu": "العودة للقائمة"
   },
   "score": {
-    "score": "Score",
-    "streak": "Streak",
-    "correctWrong": "Correct/Wrong"
+    "score": "النتيجة",
+    "streak": "السلسلة",
+    "correctWrong": "صحيح/خطأ"
   },
   "problem": {
-    "of": "of"
+    "of": "من"
   },
   "modes": {
-    "practice": "Practice",
-    "quiz": "Quiz",
-    "timed": "Timed"
+    "practice": "تدريب",
+    "quiz": "اختبار",
+    "timed": "ضد الوقت"
   },
   "timer": {
-    "timeLeft": "Time left",
-    "seconds": "seconds"
+    "timeLeft": "الوقت المتبقي",
+    "seconds": "ثواني"
   },
   "ui": {
-    "start": "Start",
-    "pause": "Pause",
-    "resume": "Resume",
-    "quit": "Quit"
+    "start": "ابدأ",
+    "pause": "إيقاف مؤقت",
+    "resume": "استمرار",
+    "quit": "إنهاء"
   }
 }

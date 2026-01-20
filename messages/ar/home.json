@@ -1,104 +1,104 @@
 {
   "hero": {
-    "badge": "New: Arithmetic Sequences Worksheet Generator",
-    "title": "Practice Math",
-    "titleHighlight": "Fun & Easy",
-    "description": "Create custom worksheets in seconds.",
-    "descriptionLine2": "Pick a topic, click 'Print', and get a perfect practice sheet –",
-    "free": "Free",
-    "cta": "Start Practicing",
-    "ctaSecondary": "How does it work?",
-    "trustPrint": "Direct Print",
-    "trustNoSignup": "No Registration",
-    "trustFree": "100% Free"
+    "badge": "جديد: مولد المتتاليات الحسابية للطباعة",
+    "title": "تدريب على الرياضيات",
+    "titleHighlight": "بمتعة وسهولة",
+    "description": "أنشئ أوراق عمل مخصصة في ثوانٍ.",
+    "descriptionLine2": "اختر موضوعاً، انقر \"طباعة\" واحصل على ورقة تدريب مثالية -",
+    "free": "مجاناً",
+    "cta": "ابدأ التدريب",
+    "ctaSecondary": "كيف يعمل؟",
+    "trustPrint": "طباعة مباشرة",
+    "trustNoSignup": "بدون تسجيل",
+    "trustFree": "مجاني 100%"
   },
   "generators": {
-    "title": "What would you like to practice today?",
-    "subtitle": "Choose a topic and start creating custom worksheets",
-    "cta": "Create Worksheet",
+    "title": "ماذا تريد أن تتدرب اليوم؟",
+    "subtitle": "اختر موضوعاً وابدأ بإنشاء أوراق عمل مخصصة",
+    "cta": "إنشاء ورقة عمل",
     "addSubtract": {
-      "title": "Addition & Subtraction",
-      "desc": "Up to 20, 100, and larger numbers"
+      "title": "الجمع والطرح",
+      "desc": "حتى 20، 100 وأعداد كبيرة"
     },
     "mulDiv": {
-      "title": "Multiplication & Division",
-      "desc": "Times tables, long division, and powers"
+      "title": "الضرب والقسمة",
+      "desc": "جدول الضرب، القسمة المطولة والأُسس"
     },
     "fractions": {
-      "title": "Fractions",
-      "desc": "Beginners to advanced, simplifying and expanding"
+      "title": "الكسور",
+      "desc": "للمبتدئين والمتقدمين، الاختصار والتوسيع"
     },
     "geometry": {
-      "title": "Geometry",
-      "desc": "Areas, perimeters, and polygons"
+      "title": "الهندسة",
+      "desc": "المساحات، المحيطات والمضلعات"
     },
     "percentage": {
-      "title": "Percentages",
-      "desc": "Percentage calculations, discounts, and interest"
+      "title": "النسب المئوية",
+      "desc": "حسابات النسب المئوية، الخصومات والفوائد"
     },
     "units": {
-      "title": "Unit Conversions",
-      "desc": "Length, weight, and time"
+      "title": "تحويل الوحدات",
+      "desc": "الطول، الوزن والوقت"
     }
   },
   "games": {
-    "title": "Games & Activities",
-    "subtitle": "Learn math the fun way!",
-    "cta": "All Games & Activities"
+    "title": "ألعاب وأنشطة",
+    "subtitle": "تعلم الرياضيات بمتعة!",
+    "cta": "جميع الألعاب والأنشطة"
   },
   "grades": {
-    "label": "By Grade:",
-    "grade": "Grade"
+    "label": "حسب الصف:",
+    "grade": "الصف"
   },
   "help": {
-    "badge": "Parent Guide",
-    "title": "How to teach your child?",
-    "subtitle": "Simple explanations, detailed examples, and practical tips",
-    "cta": "View All Guides"
+    "badge": "دليل الوالدين",
+    "title": "كيف تعلم طفلك؟",
+    "subtitle": "شروحات بسيطة، أمثلة مفصلة ونصائح عملية",
+    "cta": "جميع الشروحات"
   },
   "whyUs": {
-    "title": "Why parents and teachers choose",
-    "titleHighlight": "Smart Worksheets?",
+    "title": "لماذا يختار الآباء والمعلمون",
+    "titleHighlight": "أوراق العمل الذكية؟",
     "feature1": {
-      "title": "Personalized for your child",
-      "desc": "Unlike standard workbooks, here you control the difficulty level. Start easy and gradually increase the challenge."
+      "title": "مخصصة لطفلك",
+      "desc": "على عكس الكراسات القياسية، أنت تتحكم في مستوى الصعوبة. يمكنك البدء بسهولة ورفع المستوى تدريجياً."
     },
     "feature2": {
-      "title": "Unlimited Practice",
-      "desc": "Run out of pages in the workbook? Need more multiplication table practice? One click generates a new worksheet."
+      "title": "تدريب بلا حدود",
+      "desc": "نفدت الصفحات في الكراسة؟ الطفل يحتاج تقوية في جدول الضرب؟ بنقرة واحدة تحصل على ورقة جديدة."
     },
     "feature3": {
-      "title": "Instant Printing",
-      "desc": "No registration, no payment. Just choose a topic, set the level, and print directly from your browser."
+      "title": "طباعة فورية",
+      "desc": "بدون تسجيل، بدون دفع. فقط اختر موضوعاً، حدد المستوى واطبع مباشرة من المتصفح."
     }
   },
   "preview": {
-    "title": "Addition & Subtraction Practice",
-    "subtitle": "Numbers up to 100 | Level: Medium",
-    "name": "Name:",
-    "class": "Class:",
-    "tipLabel": "Tip:",
-    "tip": "When adding with carrying, remember to add 1 to the left column!",
-    "answerSheet": "Separate answer sheet"
+    "title": "تدريب على الجمع والطرح",
+    "subtitle": "أعداد حتى 100 | المستوى: متوسط",
+    "name": "الاسم:",
+    "class": "الصف:",
+    "tipLabel": "نصيحة:",
+    "tip": "عند الجمع مع الحمل، تذكر إضافة 1 للعمود الأيسر!",
+    "answerSheet": "ورقة إجابات منفصلة"
   },
   "topics": {
-    "title": "Topics",
-    "math": "Math",
-    "fractions": "Fractions",
-    "geometry": "Geometry",
-    "percentage": "Percentages",
-    "decimals": "Decimals",
-    "ratio": "Ratios",
-    "units": "Units of Measurement",
-    "series": "Sequences",
-    "wordProblems": "Word Problems"
+    "title": "المواضيع",
+    "math": "الرياضيات",
+    "fractions": "الكسور",
+    "geometry": "الهندسة",
+    "percentage": "النسب المئوية",
+    "decimals": "الأعداد العشرية",
+    "ratio": "النسب",
+    "units": "وحدات القياس",
+    "series": "المتتاليات",
+    "wordProblems": "المسائل الكلامية"
   },
   "features": {
-    "free": "Free",
-    "freeDesc": "No cost and no registration",
-    "print": "Printable",
-    "printDesc": "Worksheets designed for printing",
-    "interactive": "Interactive",
-    "interactiveDesc": "Online games and exercises"
+    "free": "مجاني",
+    "freeDesc": "بدون تكلفة وبدون تسجيل",
+    "print": "للطباعة",
+    "printDesc": "أوراق عمل مصممة للطباعة",
+    "interactive": "تفاعلي",
+    "interactiveDesc": "ألعاب وتمارين عبر الإنترنت"
   }
 }

@@ -1,33 +1,33 @@
 {
   "site": {
-    "name": "Smart Worksheets",
-    "title": "Smart Worksheets | Math Practice & Games",
-    "description": "Printable smart worksheets and interactive math games for grades 1-6. Free and no registration required!"
+    "name": "أوراق عمل ذكية",
+    "title": "أوراق عمل ذكية | تدريب رياضيات وألعاب",
+    "description": "أوراق عمل ذكية للطباعة وألعاب رياضيات تفاعلية للصفوف 1-6. مجاناً وبدون تسجيل!"
   },
   "pages": {
     "home": {
-      "title": "Smart Worksheets & Math Games",
-      "description": "Printable smart worksheets and interactive math games for grades 1-6. Free and no registration required!"
+      "title": "أوراق عمل ذكية وألعاب رياضيات",
+      "description": "أوراق عمل ذكية للطباعة وألعاب رياضيات تفاعلية للصفوف 1-6. مجاناً وبدون تسجيل!"
     },
     "fractions": {
-      "title": "Fractions Worksheets",
-      "description": "Printable fractions worksheets - adding, subtracting, multiplying, and dividing fractions. Aligned with curriculum standards."
+      "title": "أوراق عمل في الكسور",
+      "description": "أوراق عمل للطباعة في الكسور - جمع، طرح، ضرب وقسمة الكسور. متوافقة مع المنهج الدراسي."
     },
     "geometry": {
-      "title": "Geometry Worksheets",
-      "description": "Geometry worksheets - area and perimeter of geometric shapes. Suitable for grades 1-6."
+      "title": "أوراق عمل في الهندسة",
+      "description": "أوراق عمل في الهندسة - مساحة ومحيط الأشكال الهندسية. مناسبة للصفوف 1-6."
     },
     "percentage": {
-      "title": "Percentage Worksheets",
-      "description": "Percentage worksheets - calculating percentages, converting between percentages and fractions. Aligned with curriculum standards."
+      "title": "أوراق عمل في النسب المئوية",
+      "description": "أوراق عمل في النسب المئوية - حساب النسب المئوية، التحويل بين النسب والكسور. متوافقة مع المنهج الدراسي."
     },
     "decimals": {
-      "title": "Decimal Worksheets",
-      "description": "Decimal worksheets - addition, subtraction, and conversion. Aligned with curriculum standards."
+      "title": "أوراق عمل في الأعداد العشرية",
+      "description": "أوراق عمل في الأعداد العشرية - جمع، طرح وتحويل. متوافقة مع المنهج الدراسي."
     },
     "games": {
-      "title": "Math Games",
-      "description": "Interactive math games for practice - addition, subtraction, multiplication, and division."
+      "title": "ألعاب رياضيات",
+      "description": "ألعاب رياضيات تفاعلية للتدريب - جمع، طرح، ضرب وقسمة."
     }
   }
 }

@@ -2,7 +2,6 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Brain, Printer, Settings, Sparkles, Heart, ArrowLeft, Calculator, Users, Target } from 'lucide-react';
 import Link from 'next/link';
-import { AdSlot } from '@/components/AdSlot';
 import Script from 'next/script';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
@@ -117,11 +116,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                         </div>
                     </div>
                 </section>
-
-                {/* Ad Slot */}
-                <div className="container-custom py-8">
-                    <AdSlot slotId="about-middle" format="horizontal" className="mx-auto max-w-3xl" />
-                </div>
 
                 {/* Why we built this */}
                 <section className="py-20 bg-white">

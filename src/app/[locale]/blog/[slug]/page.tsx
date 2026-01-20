@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { ArrowRight, Calendar, Clock, BookOpen, GraduationCap, ArrowLeft } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { AdSlot } from '@/components/AdSlot';
 import { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { locales, type Locale } from '@/i18n/config';
@@ -268,11 +267,6 @@ export default async function BlogPostPage({ params }: Props) {
                                 );
                             })()}
                         </article>
-
-                        {/* Ad Slot - After Article */}
-                        <div className="mt-8">
-                            <AdSlot slotId="blog-post-bottom" format="horizontal" />
-                        </div>
 
                         {/* CTA */}
                         <div className="mt-8 bg-gradient-to-br from-orange-500 to-orange-600 text-white p-8 rounded-3xl shadow-xl shadow-orange-200/50">

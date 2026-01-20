@@ -4,7 +4,6 @@ import { getHelpTopics } from '@/lib/content';
 import { Locale } from '@/i18n/config';
 import Link from 'next/link';
 import { ArrowLeft, GraduationCap, Sparkles } from 'lucide-react';
-import { AdSlot } from '@/components/AdSlot';
 import { HelpIndexClient } from './HelpIndexClient';
 import { getTranslations } from 'next-intl/server';
 
@@ -68,11 +67,6 @@ export default async function HelpIndexPage({ params }: PageProps) {
                         <HelpIndexClient topics={topics} />
                     </div>
                 </section>
-
-                {/* Ad Slot */}
-                <div className="container-custom py-8">
-                    <AdSlot slotId="help-bottom" format="horizontal" className="mx-auto max-w-3xl" />
-                </div>
 
                 {/* CTA */}
                 <section className="py-16 bg-white">

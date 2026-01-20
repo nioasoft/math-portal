@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
-import { AdSlot } from '@/components/AdSlot';
 import { trackPrintEvent } from '@/lib/analytics';
 import { useTranslations } from 'next-intl';
 
@@ -308,11 +307,6 @@ export default function FractionsClient() {
                         {t('print.copyright')}
                     </div>
                 </div>
-            </div>
-
-            {/* Ad Slot - After Worksheet */}
-            <div className="container-custom py-8 print:hidden">
-                <AdSlot slotId="fractions-bottom" format="horizontal" className="mx-auto max-w-3xl" />
             </div>
 
             <ContentSection

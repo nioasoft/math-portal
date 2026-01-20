@@ -4,7 +4,6 @@ import { BlogIndexClient } from './BlogIndexClient';
 import { getBlogPosts, blogCategories } from '@/lib/content';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { AdSlot } from '@/components/AdSlot';
 import { Newspaper, Sparkles, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Locale } from '@/i18n/config';
@@ -103,11 +102,6 @@ export default async function BlogIndexPage({ params }: Props) {
                 <Suspense fallback={<BlogContentFallback />}>
                     <BlogIndexClient posts={posts} categories={blogCategories} />
                 </Suspense>
-
-                {/* Ad Slot */}
-                <div className="container-custom py-8">
-                    <AdSlot slotId="blog-index-bottom" format="horizontal" className="mx-auto max-w-3xl" />
-                </div>
 
                 {/* CTA Section */}
                 <section className="py-16 bg-white">

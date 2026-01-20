@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { GRADE_TOPICS, GRADE_IDS, TOPIC_ICONS, TOPIC_HREFS } from '@/lib/curriculum';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { AdSlot } from '@/components/AdSlot';
 import Link from 'next/link';
 import { ArrowLeft, GraduationCap, Sparkles } from 'lucide-react';
 import { notFound } from 'next/navigation';
@@ -170,11 +169,6 @@ export default async function GradePage({ params }: { params: Promise<{ id: stri
                         </div>
                     </div>
                 </section>
-
-                {/* Ad Slot */}
-                <div className="container-custom py-8">
-                    <AdSlot slotId={`grade-${id}-bottom`} format="horizontal" className="mx-auto max-w-3xl" />
-                </div>
 
                 {/* Other Grades */}
                 <section className="py-12 bg-white">

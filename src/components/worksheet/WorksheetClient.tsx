@@ -6,7 +6,6 @@ import { MathEngine, MathOperation, MathProblem } from '@/lib/math-engine';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
-import { AdSlot } from '@/components/AdSlot';
 import { trackPrintEvent, trackGenerateEvent } from '@/lib/analytics';
 import { useTranslations } from 'next-intl';
 
@@ -240,11 +239,6 @@ export default function WorksheetClient() {
             {/* Helper Text */}
             <div className="text-center mt-8 text-slate-500 text-sm print:hidden">
                 {t('print.hint')}
-            </div>
-
-            {/* Ad Slot - After Worksheet */}
-            <div className="container-custom py-8 print:hidden">
-                <AdSlot slotId="worksheet-bottom" format="horizontal" className="mx-auto max-w-3xl" />
             </div>
 
             <ContentSection

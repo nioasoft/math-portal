@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Calculator, Percent, PieChart, Gamepad2, Trophy, Zap } from 'lucide-react';
-import { AdSlot } from '@/components/AdSlot';
 import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -123,11 +122,6 @@ export default async function PlayPage({ params }: { params: Promise<{ locale: s
                             {t('gameModes.quiz.description')}
                         </p>
                     </div>
-                </div>
-
-                {/* Ad Slot */}
-                <div className="mt-8 md:mt-12">
-                    <AdSlot slotId="play-page-bottom" format="horizontal" className="mx-auto max-w-3xl" />
                 </div>
 
                 {/* Back to worksheets link */}

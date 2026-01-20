@@ -2,7 +2,6 @@
 
 import { Trophy, Star, Flame, Target, RotateCcw, Home, Award } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { AdSlot } from '@/components/AdSlot';
 import { useTranslations } from 'next-intl';
 
 interface GameSummaryProps {
@@ -94,11 +93,6 @@ export default function GameSummary({
                         </div>
                         <span className="text-xs text-slate-400">{t('summary.correctWrong')}</span>
                     </div>
-                </div>
-
-                {/* Ad Slot */}
-                <div className="mb-6">
-                    <AdSlot slotId="game-summary-ad" format="rectangle" className="mx-auto" />
                 </div>
 
                 {/* Actions */}

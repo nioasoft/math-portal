@@ -2,7 +2,6 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { getHelpTopic, getHelpTopics, getHelpSlugs } from '@/lib/content';
 import { Locale, locales } from '@/i18n/config';
-import { AdSlot } from '@/components/AdSlot';
 import { Link } from '@/i18n/navigation';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowRight, BookOpen, AlertTriangle, Lightbulb, CheckCircle, ExternalLink, GraduationCap } from 'lucide-react';
@@ -250,11 +249,6 @@ export default async function HelpTopicPage({ params }: PageProps) {
                                     <ExternalLink size={18} />
                                 </Link>
                             </div>
-                        </div>
-
-                        {/* Ad Slot */}
-                        <div className="mt-8">
-                            <AdSlot slotId="help-topic-bottom" format="horizontal" />
                         </div>
                     </div>
                 </section>

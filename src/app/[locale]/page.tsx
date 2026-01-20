@@ -6,7 +6,6 @@ import {
   Shapes, Scale, Star, BookOpen, GraduationCap, Sparkles, Printer, Zap, Gamepad2
 } from 'lucide-react';
 import { FeaturedPosts } from '@/components/FeaturedPosts';
-import { AdSlot } from '@/components/AdSlot';
 import { getBlogPosts, getHelpTopics } from '@/lib/content';
 import { getTranslations, getLocale } from 'next-intl/server';
 import { Locale } from '@/i18n/config';
@@ -295,11 +294,6 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* Ad Slot - After Generators */}
-        <div className="container-custom py-8">
-          <AdSlot slotId="home-after-generators" format="horizontal" className="mx-auto max-w-3xl" />
-        </div>
-
         {/* Grade Levels Strip */}
         <section className="py-12 border-y border-slate-100 bg-white">
           <div className="container-custom">
@@ -320,11 +314,6 @@ export default async function Home() {
 
         {/* Featured Blog Posts */}
         <FeaturedPosts posts={featuredPosts} />
-
-        {/* Ad Slot - After Blog Posts */}
-        <div className="container-custom py-8 bg-slate-50">
-          <AdSlot slotId="home-after-blog" format="horizontal" className="mx-auto max-w-3xl" />
-        </div>
 
         {/* Parents Help Section */}
         <section className="py-20 bg-white">

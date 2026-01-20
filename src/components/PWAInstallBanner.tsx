@@ -8,12 +8,62 @@ interface BeforeInstallPromptEvent extends Event {
     userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
 }
 
+// Cached server snapshots to avoid infinite loops with useSyncExternalStore
+const serverIsIOS = false;
+const serverBannerState = { shouldShow: false, isStandalone: false };
+
+// Cached client snapshots (computed once)
+let cachedIsIOS: boolean | null = null;
+function getClientIsIOS(): boolean {
+    if (cachedIsIOS === null) {
+        cachedIsIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as Window & { MSStream?: unknown }).MSStream;
+    }
+    return cachedIsIOS;
+}
+
+let cachedBannerState: { shouldShow: boolean; isStandalone: boolean } | null = null;
+function getClientBannerState(): { shouldShow: boolean; isStandalone: boolean } {
+    if (cachedBannerState === null) {
+        // Only show on mobile devices
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+            || (window.innerWidth <= 768 && 'ontouchstart' in window);
+
+        if (!isMobile) {
+            cachedBannerState = { shouldShow: false, isStandalone: false };
+            return cachedBannerState;
+        }
+
+        // Check if already installed (standalone mode)
+        const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+            || (window.navigator as Navigator & { standalone?: boolean }).standalone === true;
+
+        if (isStandalone) {
+            cachedBannerState = { shouldShow: false, isStandalone: true };
+            return cachedBannerState;
+        }
+
+        // Check if user dismissed the banner today
+        const dismissed = localStorage.getItem('pwa-banner-dismissed');
+        if (dismissed) {
+            const dismissedDate = new Date(dismissed);
+            const today = new Date();
+            if (dismissedDate.toDateString() === today.toDateString()) {
+                cachedBannerState = { shouldShow: false, isStandalone: false };
+                return cachedBannerState;
+            }
+        }
+
+        cachedBannerState = { shouldShow: true, isStandalone: false };
+    }
+    return cachedBannerState;
+}
+
 // Detect iOS device - client-only detection using useSyncExternalStore
 function useIsIOS(): boolean {
     return useSyncExternalStore(
         () => () => {}, // subscribe - no-op
-        () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as Window & { MSStream?: unknown }).MSStream, // client
-        () => false // server - assume not iOS
+        getClientIsIOS, // client - cached
+        () => serverIsIOS // server - cached
     );
 }
 
@@ -21,36 +71,8 @@ function useIsIOS(): boolean {
 function useShouldShowBanner(): { shouldShow: boolean; isStandalone: boolean } {
     return useSyncExternalStore(
         () => () => {},
-        () => {
-            // Only show on mobile devices
-            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-                || (window.innerWidth <= 768 && 'ontouchstart' in window);
-
-            if (!isMobile) {
-                return { shouldShow: false, isStandalone: false };
-            }
-
-            // Check if already installed (standalone mode)
-            const isStandalone = window.matchMedia('(display-mode: standalone)').matches
-                || (window.navigator as Navigator & { standalone?: boolean }).standalone === true;
-
-            if (isStandalone) {
-                return { shouldShow: false, isStandalone: true };
-            }
-
-            // Check if user dismissed the banner today
-            const dismissed = localStorage.getItem('pwa-banner-dismissed');
-            if (dismissed) {
-                const dismissedDate = new Date(dismissed);
-                const today = new Date();
-                if (dismissedDate.toDateString() === today.toDateString()) {
-                    return { shouldShow: false, isStandalone: false };
-                }
-            }
-
-            return { shouldShow: true, isStandalone: false };
-        },
-        () => ({ shouldShow: false, isStandalone: false }) // server
+        getClientBannerState, // client - cached
+        () => serverBannerState // server - cached
     );
 }
 

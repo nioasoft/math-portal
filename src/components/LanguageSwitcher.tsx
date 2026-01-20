@@ -6,6 +6,11 @@ import { locales, localeConfig, type Locale } from '@/i18n/config';
 import { Globe, ChevronDown } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
+// Utility function to set locale preference cookie (outside component for React Compiler)
+function setLocaleCookie(locale: string) {
+  document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000`;
+}
+
 export function LanguageSwitcher() {
   const locale = useLocale() as Locale;
   const pathname = usePathname();
@@ -14,6 +19,8 @@ export function LanguageSwitcher() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleChange = (newLocale: Locale) => {
+    // Save user preference in cookie for 1 year
+    setLocaleCookie(newLocale);
     router.replace(pathname, { locale: newLocale });
     setIsOpen(false);
   };

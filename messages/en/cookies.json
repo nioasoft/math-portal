@@ -1,0 +1,18 @@
+{
+  "message": "We use cookies to enhance your browsing experience and show personalized ads.",
+  "learnMore": "Privacy Policy",
+  "acceptAll": "Accept All",
+  "necessaryOnly": "Necessary Only",
+  "settings": "Settings",
+  "savePreferences": "Save Preferences",
+  "categories": {
+    "necessary": "Necessary Cookies",
+    "necessaryDesc": "Required for the website to function properly",
+    "functional": "Functional Cookies",
+    "functionalDesc": "Remember preferences like language",
+    "analytics": "Analytics Cookies",
+    "analyticsDesc": "Help us understand how the site is used",
+    "marketing": "Marketing Cookies",
+    "marketingDesc": "Used to show relevant advertisements"
+  }
+}

@@ -5,6 +5,7 @@ export default createMiddleware({
   locales,
   defaultLocale,
   localePrefix: 'as-needed', // Hebrew at root, others with prefix
+  localeDetection: true, // Detect user's preferred language from Accept-Language header
 });
 
 export const config = {

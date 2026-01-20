@@ -1,0 +1,18 @@
+{
+  "message": "Utilizamos cookies para mejorar tu experiencia de navegación y mostrar anuncios personalizados.",
+  "learnMore": "Política de Privacidad",
+  "acceptAll": "Aceptar todo",
+  "necessaryOnly": "Solo necesarias",
+  "settings": "Configuración",
+  "savePreferences": "Guardar preferencias",
+  "categories": {
+    "necessary": "Cookies necesarias",
+    "necessaryDesc": "Requeridas para el funcionamiento del sitio",
+    "functional": "Cookies funcionales",
+    "functionalDesc": "Recuerdan preferencias como el idioma",
+    "analytics": "Cookies de análisis",
+    "analyticsDesc": "Nos ayudan a entender cómo se usa el sitio",
+    "marketing": "Cookies de marketing",
+    "marketingDesc": "Se utilizan para mostrar anuncios relevantes"
+  }
+}

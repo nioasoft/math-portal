@@ -1,11 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { Assistant, Noto_Sans_Arabic, Inter } from "next/font/google";
-import Script from "next/script";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { PWAInstallBanner } from "@/components/PWAInstallBanner";
+import { CookieConsent } from "@/components/CookieConsent";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { GoogleAdsense } from "@/components/GoogleAdsense";
 import { locales, localeConfig, defaultLocale, type Locale } from "@/i18n/config";
 import { BASE_URL } from "@/lib/seo";
 
@@ -232,21 +234,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={dir} className={fontVar}>
       <head>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-PL0WLGMMHH"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-PL0WLGMMHH', {
-              custom_map: { dimension1: 'content_language' }
-            });
-            gtag('set', 'content_language', '${locale}');
-          `}
-        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: orgSchemaJson }}
@@ -266,7 +253,11 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           {children}
           <PWAInstallBanner />
+          <CookieConsent />
         </NextIntlClientProvider>
+        {/* Conditional scripts - load only after consent */}
+        <GoogleAnalytics locale={locale} />
+        <GoogleAdsense />
       </body>
     </html>
   );

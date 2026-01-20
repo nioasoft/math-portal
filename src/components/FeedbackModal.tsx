@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { X, Send, MessageSquare, Loader2, CheckCircle } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface FeedbackModalProps {
     isOpen: boolean;
@@ -9,6 +10,7 @@ interface FeedbackModalProps {
 }
 
 export function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
+    const t = useTranslations('common.feedback');
     const [formData, setFormData] = useState({
         type: '',
         message: '',
@@ -24,7 +26,7 @@ export function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
 
         if (!formData.type || !formData.message) {
             setSubmitStatus('error');
-            setErrorMessage('יש למלא את כל שדות החובה');
+            setErrorMessage(t('errorRequired'));
             return;
         }
 
@@ -48,11 +50,11 @@ export function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
             } else {
                 const data = await response.json();
                 setSubmitStatus('error');
-                setErrorMessage(data.error || 'שגיאה בשליחת המשוב');
+                setErrorMessage(data.error || t('errorSubmit'));
             }
         } catch {
             setSubmitStatus('error');
-            setErrorMessage('שגיאה בשליחת המשוב, נסו שוב מאוחר יותר');
+            setErrorMessage(t('errorRetry'));
         } finally {
             setIsSubmitting(false);
         }
@@ -83,12 +85,12 @@ export function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
                         <div className="bg-orange-100 p-2 rounded-xl">
                             <MessageSquare className="w-5 h-5 text-orange-600" />
                         </div>
-                        <h2 className="text-xl font-bold text-slate-800">שלחו לנו משוב</h2>
+                        <h2 className="text-xl font-bold text-slate-800">{t('modalTitle')}</h2>
                     </div>
                     <button
                         onClick={handleClose}
                         className="p-2 hover:bg-slate-100 rounded-lg transition-colors"
-                        aria-label="סגור"
+                        aria-label={t('close')}
                     >
                         <X className="w-5 h-5 text-slate-500" aria-hidden="true" />
                     </button>
@@ -99,11 +101,11 @@ export function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
                         <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
                             <CheckCircle className="w-8 h-8 text-green-600" />
                         </div>
-                        <h3 className="text-lg font-bold text-slate-800 mb-2">תודה על המשוב!</h3>
-                        <p className="text-slate-600 mb-2">קיבלנו את ההודעה שלכם ונחזור אליכם בהקדם.</p>
+                        <h3 className="text-lg font-bold text-slate-800 mb-2">{t('successTitle')}</h3>
+                        <p className="text-slate-600 mb-2">{t('successMessage')}</p>
                         {feedbackId && (
                             <p className="text-sm bg-orange-50 text-orange-700 px-3 py-2 rounded-lg inline-block mb-4">
-                                מספר פנייה: <span className="font-bold">{feedbackId}</span>
+                                {t('feedbackId')} <span className="font-bold">{feedbackId}</span>
                             </p>
                         )}
                         <div>
@@ -111,7 +113,7 @@ export function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
                                 onClick={handleClose}
                                 className="px-6 py-2 bg-slate-100 hover:bg-slate-200 rounded-lg font-medium transition-colors"
                             >
-                                סגור
+                                {t('close')}
                             </button>
                         </div>
                     </div>
@@ -120,7 +122,7 @@ export function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
                         {/* Type */}
                         <div>
                             <label className="block text-sm font-medium text-slate-700 mb-1.5">
-                                סוג הפנייה <span className="text-red-500">*</span>
+                                {t('type')} <span className="text-red-500">{t('required')}</span>
                             </label>
                             <select
                                 value={formData.type}
@@ -128,24 +130,24 @@ export function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
                                 className="w-full px-4 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all bg-white text-slate-800"
                                 required
                             >
-                                <option value="">בחרו סוג פנייה</option>
-                                <option value="general">משוב כללי</option>
-                                <option value="bug">דיווח על תקלה</option>
-                                <option value="suggestion">הצעה לשיפור</option>
+                                <option value="">{t('typePlaceholder')}</option>
+                                <option value="general">{t('typeGeneral')}</option>
+                                <option value="bug">{t('typeBug')}</option>
+                                <option value="suggestion">{t('typeSuggestion')}</option>
                             </select>
                         </div>
 
                         {/* Message */}
                         <div>
                             <label className="block text-sm font-medium text-slate-700 mb-1.5">
-                                תיאור <span className="text-red-500">*</span>
+                                {t('description')} <span className="text-red-500">{t('required')}</span>
                             </label>
                             <textarea
                                 value={formData.message}
                                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                 rows={4}
                                 className="w-full px-4 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all resize-none text-slate-800"
-                                placeholder="ספרו לנו מה עובר עליכם..."
+                                placeholder={t('descriptionPlaceholder')}
                                 required
                             />
                         </div>
@@ -153,7 +155,7 @@ export function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
                         {/* Email */}
                         <div>
                             <label className="block text-sm font-medium text-slate-700 mb-1.5">
-                                אימייל לחזרה <span className="text-slate-400">(אופציונלי)</span>
+                                {t('email')} <span className="text-slate-400">({t('emailOptional')})</span>
                             </label>
                             <input
                                 type="email"
@@ -180,12 +182,12 @@ export function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
                             {isSubmitting ? (
                                 <>
                                     <Loader2 className="w-5 h-5 animate-spin" />
-                                    שולח...
+                                    {t('sending')}
                                 </>
                             ) : (
                                 <>
                                     <Send className="w-5 h-5" />
-                                    שלח משוב
+                                    {t('send')}
                                 </>
                             )}
                         </button>

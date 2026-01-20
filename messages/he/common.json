@@ -43,13 +43,27 @@
     "units": "המרת מידות"
   },
   "feedback": {
-    "title": "משוב",
+    "modalTitle": "שלחו לנו משוב",
+    "close": "סגור",
     "type": "סוג הפנייה",
+    "typeRequired": "סוג הפנייה",
+    "typePlaceholder": "בחרו סוג פנייה",
+    "typeGeneral": "משוב כללי",
+    "typeBug": "דיווח על תקלה",
+    "typeSuggestion": "הצעה לשיפור",
     "description": "תיאור",
+    "descriptionPlaceholder": "ספרו לנו מה עובר עליכם...",
     "email": "אימייל לחזרה",
-    "send": "שלח",
-    "success": "תודה על המשוב!",
-    "error": "יש למלא את כל שדות החובה"
+    "emailOptional": "אופציונלי",
+    "required": "*",
+    "send": "שלח משוב",
+    "sending": "שולח...",
+    "successTitle": "תודה על המשוב!",
+    "successMessage": "קיבלנו את ההודעה שלכם ונחזור אליכם בהקדם.",
+    "feedbackId": "מספר פנייה:",
+    "errorRequired": "יש למלא את כל שדות החובה",
+    "errorSubmit": "שגיאה בשליחת המשוב",
+    "errorRetry": "שגיאה בשליחת המשוב, נסו שוב מאוחר יותר"
   },
   "siteName": "דפי עבודה חכמים"
 }

@@ -1,29 +1,31 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Calculator, BookOpen, Newspaper, GraduationCap, MessageSquare } from 'lucide-react';
 import { FeedbackModal } from '@/components/FeedbackModal';
+import { useTranslations } from 'next-intl';
 
 export function Footer() {
+    const t = useTranslations('common');
     const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
     const grades = [
-        { label: "כיתה א'", href: '/grade/1' },
-        { label: "כיתה ב'", href: '/grade/2' },
-        { label: "כיתה ג'", href: '/grade/3' },
-        { label: "כיתה ד'", href: '/grade/4' },
-        { label: "כיתה ה'", href: '/grade/5' },
-        { label: "כיתה ו'", href: '/grade/6' },
+        { label: t('grades.grade1'), href: '/grade/1' },
+        { label: t('grades.grade2'), href: '/grade/2' },
+        { label: t('grades.grade3'), href: '/grade/3' },
+        { label: t('grades.grade4'), href: '/grade/4' },
+        { label: t('grades.grade5'), href: '/grade/5' },
+        { label: t('grades.grade6'), href: '/grade/6' },
     ];
 
     const topics = [
-        { label: 'חיבור וחיסור', href: '/worksheet/math?op=add' },
-        { label: 'כפל וחילוק', href: '/worksheet/math?op=mul' },
-        { label: 'שברים', href: '/fractions' },
-        { label: 'אחוזים', href: '/percentage' },
-        { label: 'הנדסה', href: '/geometry' },
-        { label: 'המרת מידות', href: '/units' },
+        { label: t('footer.addSubtract'), href: '/worksheet/math?op=add' },
+        { label: t('footer.mulDiv'), href: '/worksheet/math?op=mul' },
+        { label: t('footer.fractions'), href: '/fractions' },
+        { label: t('footer.percentage'), href: '/percentage' },
+        { label: t('footer.geometry'), href: '/geometry' },
+        { label: t('footer.units'), href: '/units' },
     ];
 
     return (
@@ -38,25 +40,24 @@ export function Footer() {
                                 <Calculator size={20} />
                             </div>
                             <span className="text-lg font-black text-white">
-                                דפי עבודה חכמים
+                                {t('siteName')}
                             </span>
                         </Link>
                         <p className="text-sm leading-relaxed text-slate-400">
-                            מחולל דפי עבודה בחשבון לכיתות א&apos;-ו&apos;.
-                            הדפיסו דפי עבודה בחינם וללא הרשמה.
+                            {t('footer.description')}
                         </p>
                         <div className="mt-6 space-y-2 text-xs text-slate-500">
                             <div className="flex items-center gap-2">
                                 <span className="text-green-400">✓</span>
-                                <span>מכסה נושאי לימוד לכיתות א&apos;-ו&apos;</span>
+                                <span>{t('footer.feature1')}</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <span className="text-green-400">✓</span>
-                                <span>התאמה אישית של רמת הקושי</span>
+                                <span>{t('footer.feature2')}</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <span className="text-green-400">✓</span>
-                                <span>חינם לחלוטין ללא הרשמה</span>
+                                <span>{t('footer.feature3')}</span>
                             </div>
                         </div>
                     </div>
@@ -65,37 +66,37 @@ export function Footer() {
                     <div>
                         <h3 className="text-white font-bold mb-4 flex items-center gap-2">
                             <BookOpen size={16} className="text-orange-400" />
-                            ניווט מהיר
+                            {t('footer.quickNav')}
                         </h3>
                         <ul className="space-y-2.5 text-sm">
                             <li>
                                 <Link href="/" className="hover:text-orange-400 transition-colors">
-                                    דף הבית
+                                    {t('footer.home')}
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/help" className="hover:text-emerald-400 transition-colors">
-                                    הסברים להורים
+                                    {t('nav.help')}
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/blog" className="hover:text-sky-400 transition-colors">
-                                    בלוג
+                                    {t('nav.blog')}
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/about" className="hover:text-orange-400 transition-colors">
-                                    אודות
+                                    {t('nav.about')}
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/privacy" className="hover:text-orange-400 transition-colors">
-                                    מדיניות פרטיות
+                                    {t('nav.privacy')}
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/contact" className="hover:text-orange-400 transition-colors">
-                                    צור קשר
+                                    {t('nav.contact')}
                                 </Link>
                             </li>
                         </ul>
@@ -105,7 +106,7 @@ export function Footer() {
                     <div>
                         <h3 className="text-white font-bold mb-4 flex items-center gap-2">
                             <GraduationCap size={16} className="text-orange-400" />
-                            לפי כיתה
+                            {t('footer.byGrade')}
                         </h3>
                         <div className="grid grid-cols-2 gap-2 text-sm">
                             {grades.map((grade) => (
@@ -124,7 +125,7 @@ export function Footer() {
                     <div>
                         <h3 className="text-white font-bold mb-4 flex items-center gap-2">
                             <Newspaper size={16} className="text-orange-400" />
-                            נושאים
+                            {t('footer.topics')}
                         </h3>
                         <ul className="space-y-2 text-sm">
                             {topics.map((topic) => (
@@ -142,24 +143,24 @@ export function Footer() {
                 <div className="border-t border-slate-800 pt-8 pb-8">
                     <div className="text-center max-w-2xl mx-auto">
                         <p className="text-sm text-slate-400 leading-relaxed">
-                            <strong className="text-slate-300">על האתר:</strong> התרגילים ודפי העבודה באתר נבנו בהשראת נושאי הלימוד בחשבון לבית הספר היסודי, ומיועדים לסייע בתרגול עצמאי להורים, מורים ותלמידים.
+                            <strong className="text-slate-300">{t('footer.aboutSite')}</strong> {t('footer.aboutDescription')}
                         </p>
                     </div>
                 </div>
 
                 {/* Bottom bar */}
                 <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-                    <p>© 2026 דפי עבודה חכמים. כל הזכויות שמורות.</p>
+                    <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
                     <div className="flex items-center gap-4">
                         <button
                             onClick={() => setIsFeedbackOpen(true)}
                             className="flex items-center gap-2 text-slate-400 hover:text-orange-400 transition-colors"
                         >
                             <MessageSquare size={16} />
-                            שלח משוב
+                            {t('footer.sendFeedback')}
                         </button>
                         <span className="text-slate-700">|</span>
-                        <p className="text-slate-600">נבנה עם ❤️ עבור למידה מצוינת</p>
+                        <p className="text-slate-600">{t('footer.madeWith')}</p>
                     </div>
                 </div>
             </div>

@@ -2,9 +2,10 @@
 
 import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, Ruler, Scale, Clock, HelpCircle } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
 import { trackPrintEvent } from '@/lib/analytics';
+import { useTranslations } from 'next-intl';
 
 interface UnitProblem {
     id: string;
@@ -78,6 +79,7 @@ function createProblems(unitType: UnitType): UnitProblem[] {
 }
 
 export default function UnitsClient() {
+    const t = useTranslations('worksheet');
     const [unitType, setUnitType] = useState<UnitType>('length');
     const [problems, setProblems] = useState<UnitProblem[]>(() => createProblems('length'));
     const [showAnswers, setShowAnswers] = useState<boolean>(false);
@@ -105,43 +107,43 @@ export default function UnitsClient() {
                         <Link href="/" className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
                             <ArrowLeft size={20} />
                         </Link>
-                        <h1 className="text-xl font-bold text-slate-800">מחולל המרת מידות</h1>
+                        <h1 className="text-xl font-bold text-slate-800">{t('units.title')}</h1>
                     </div>
 
-                    <div className="flex bg-slate-100 p-1 rounded-lg" role="tablist" aria-label="סוג יחידות מידה">
+                    <div className="flex bg-slate-100 p-1 rounded-lg" role="tablist" aria-label={t('units.tabLabel')}>
                         <button onClick={() => handleUnitTypeChange('length')} role="tab" aria-selected={unitType === 'length'} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${unitType === 'length' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
-                            <Ruler size={16} aria-hidden="true" /> אורך
+                            <Ruler size={16} aria-hidden="true" /> {t('units.types.length')}
                         </button>
                         <button onClick={() => handleUnitTypeChange('weight')} role="tab" aria-selected={unitType === 'weight'} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${unitType === 'weight' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
-                            <Scale size={16} aria-hidden="true" /> משקל
+                            <Scale size={16} aria-hidden="true" /> {t('units.types.weight')}
                         </button>
                         <button onClick={() => handleUnitTypeChange('time')} role="tab" aria-selected={unitType === 'time'} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${unitType === 'time' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
-                            <Clock size={16} aria-hidden="true" /> זמן
+                            <Clock size={16} aria-hidden="true" /> {t('units.types.time')}
                         </button>
                     </div>
 
                     <div className="flex items-center gap-4">
                         <button onClick={regenerateProblems} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-2 font-bold text-sm">
-                            <RefreshCw size={16} /> <span className="hidden sm:inline">רענן</span>
+                            <RefreshCw size={16} /> <span className="hidden sm:inline">{t('controls.refresh')}</span>
                         </button>
                         <button
                             onClick={() => setShowAnswers(!showAnswers)}
                             className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition shadow-sm ${showAnswers ? 'bg-amber-100 text-amber-700 border border-amber-200' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}
                             aria-pressed={showAnswers}
-                            aria-label={showAnswers ? 'הסתר תשובות' : 'הצג תשובות'}
+                            aria-label={showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}
                         >
                             {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
-                            <span className="hidden sm:inline">{showAnswers ? 'הסתר' : 'הצג'}</span>
+                            <span className="hidden sm:inline">{showAnswers ? t('units.showHide.hide') : t('units.showHide.show')}</span>
                         </button>
                         <Link
                             href="/help/units"
                             className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-emerald-200 transition shadow-sm"
                         >
                             <HelpCircle size={16} />
-                            <span className="hidden sm:inline">הסברים</span>
+                            <span className="hidden sm:inline">{t('units.help')}</span>
                         </Link>
                         <button onClick={onPrint} className="bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-slate-800 flex items-center gap-2 font-bold text-sm">
-                            <Printer size={16} /> <span>הדפס</span>
+                            <Printer size={16} /> <span>{t('controls.print')}</span>
                         </button>
                     </div>
                 </div>
@@ -151,9 +153,9 @@ export default function UnitsClient() {
                 <div className="min-w-[210mm] max-w-[210mm] mx-auto mt-8 bg-white shadow-xl min-h-[297mm] p-[20mm] print:p-[10mm] print:shadow-none print:mt-0 print:mx-0 print:w-full print:min-h-0 print:h-auto print:overflow-visible">
                     <div className="text-center border-b-2 border-slate-100 pb-8 mb-12 print:mb-4 print:pb-2 print:border-b">
                         <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">
-                            {unitType === 'length' ? 'המרת מידות אורך' : unitType === 'weight' ? 'המרת מידות משקל' : 'המרת יחידות זמן'}
+                            {t(`units.worksheetTitles.${unitType}`)}
                         </h2>
-                        <p className="text-slate-500 print:hidden">השלימו את המספר החסר</p>
+                        <p className="text-slate-500 print:hidden">{t('units.instruction')}</p>
                     </div>
 
                     <div className="grid grid-cols-2 gap-y-12 gap-x-20" dir="rtl">
@@ -180,39 +182,30 @@ export default function UnitsClient() {
                     </div>
 
                     <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
-                        tirgul.net - דפי עבודה חכמים ©
+                        {t('print.copyright')}
                     </div>
                 </div>
             </div>
 
             <ContentSection
-                title="דפי עבודה להמרת מידות (אורך, משקל וזמן) להדפסה"
-                description="יחידות מידה הן חלק בלתי נפרד מחיי היומיום שלנו. המחולל מאפשר ליצור דפי עבודה לתרגול המרות בין יחידות שונות."
-                features={[
-                    "אורך: המרות בין קילומטר, מטר, סנטימטר ומילימטר",
-                    "משקל: המרות בין טון, קילוגרם וגרם",
-                    "זמן: המרות בין ימים, שעות, דקות ושניות",
-                    "התאמה לכיתות ג', ד' ו-ה'"
-                ]}
+                title={t('units.content.title')}
+                description={t('units.content.description')}
+                features={t.raw('units.content.features') as string[]}
                 benefits={[
                     {
-                        title: "הבנת סדרי גודל",
-                        text: "התרגול עוזר לילד להבין את היחס בין היחידות השונות (1 ק\"מ הוא 1000 מטר)."
+                        title: t('units.content.benefits.magnitude.title'),
+                        text: t('units.content.benefits.magnitude.text')
                     },
                     {
-                        title: "תרגול כפל וחילוק ב-10, 100, 1000",
-                        text: "המרת מידות היא דרך מעולה לתרגל כפל וחילוק במספרים עגולים."
+                        title: t('units.content.benefits.multiplication.title'),
+                        text: t('units.content.benefits.multiplication.text')
                     },
                     {
-                        title: "ידע מעשי לחיים",
-                        text: "קריאת מפות, בישול ומדידת זמנים דורשים שליטה בהמרות אלו."
+                        title: t('units.content.benefits.practical.title'),
+                        text: t('units.content.benefits.practical.text')
                     }
                 ]}
-                tips={[
-                    "הראו לילד סרגל: בתוך 1 סנטימטר יש 10 קווים קטנים (מילימטר).",
-                    "זכרו את הקידומות: 'קילו' ביוונית זה אלף (ק\"מ, ק\"ג).",
-                    "בזמן המקדמים הם אחרים: 60 שניות בדקה, 60 דקות בשעה, 24 שעות ביממה."
-                ]}
+                tips={t.raw('units.content.tips') as string[]}
             />
         </div>
     );

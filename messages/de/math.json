@@ -1,0 +1,41 @@
+{
+  "notation": {
+    "division": ":",
+    "decimal": ".",
+    "thousands": ","
+  },
+  "terms": {
+    "numerator": "מונה",
+    "denominator": "מכנה",
+    "fraction": "שבר",
+    "mixedNumber": "מספר מעורב",
+    "improperFraction": "שבר לא תקין",
+    "percent": "אחוז",
+    "ratio": "יחס",
+    "decimal": "שבר עשרוני"
+  },
+  "shapes": {
+    "square": "ריבוע",
+    "rectangle": "מלבן",
+    "triangle": "משולש",
+    "circle": "עיגול",
+    "parallelogram": "מקבילית",
+    "trapezoid": "טרפז"
+  },
+  "units": {
+    "length": {
+      "meter": "מטר",
+      "centimeter": "סנטימטר",
+      "kilometer": "קילומטר"
+    },
+    "weight": {
+      "kilogram": "קילוגרם",
+      "gram": "גרם"
+    },
+    "time": {
+      "hour": "שעה",
+      "minute": "דקה",
+      "second": "שנייה"
+    }
+  }
+}

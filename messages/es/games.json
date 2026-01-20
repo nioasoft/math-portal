@@ -1,0 +1,33 @@
+{
+  "feedback": {
+    "correct": "נכון!",
+    "incorrect": "לא נכון",
+    "tryAgain": "נסה שוב"
+  },
+  "summary": {
+    "title": "סיום משחק",
+    "score": "ניקוד",
+    "maxStreak": "סטריק מקסימלי",
+    "accuracy": "דיוק",
+    "correctWrong": "נכון / שגוי",
+    "newRecord": "שיא חדש!",
+    "greatJob": "כל הכבוד על התרגול!",
+    "playAgain": "שחק שוב",
+    "backToMenu": "חזרה לתפריט"
+  },
+  "modes": {
+    "practice": "תרגול",
+    "quiz": "מבחן",
+    "timed": "נגד הזמן"
+  },
+  "timer": {
+    "timeLeft": "זמן נותר",
+    "seconds": "שניות"
+  },
+  "ui": {
+    "start": "התחל",
+    "pause": "השהה",
+    "resume": "המשך",
+    "quit": "סיים"
+  }
+}

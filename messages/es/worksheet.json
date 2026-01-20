@@ -1,0 +1,39 @@
+{
+  "controls": {
+    "print": "הדפס",
+    "refresh": "רענן",
+    "showAnswers": "הצג תשובות",
+    "hideAnswers": "הסתר תשובות",
+    "settings": "הגדרות",
+    "problemCount": "מספר תרגילים"
+  },
+  "print": {
+    "title": "דף תרגול",
+    "name": "שם:",
+    "date": "תאריך:",
+    "grade": "כיתה:",
+    "answerKey": "דף תשובות"
+  },
+  "operations": {
+    "addition": "חיבור",
+    "subtraction": "חיסור",
+    "multiplication": "כפל",
+    "division": "חילוק",
+    "mixed": "מעורב"
+  },
+  "fractions": {
+    "title": "שברים",
+    "sameDenominator": "מכנה משותף",
+    "differentDenominator": "מכנים שונים",
+    "mixedNumbers": "מספרים מעורבים"
+  },
+  "geometry": {
+    "title": "גיאומטריה",
+    "perimeter": "היקף",
+    "area": "שטח"
+  },
+  "range": {
+    "min": "מינימום",
+    "max": "מקסימום"
+  }
+}

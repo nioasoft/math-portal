@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation';
 import { Calculator, Menu, X, ChevronDown, GraduationCap, BookOpen, Newspaper, Gamepad2 } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
 export function Header() {
     const t = useTranslations('common');
@@ -125,6 +126,11 @@ export function Header() {
                     >
                         {t('nav.about')}
                     </Link>
+
+                    {/* Language Switcher */}
+                    <div className="ms-2 border-s border-slate-200 ps-2">
+                        <LanguageSwitcher />
+                    </div>
                 </nav>
 
                 {/* Logo - Last for RTL (appears on left in desktop, but always visible) */}
@@ -224,6 +230,11 @@ export function Header() {
                             >
                                 {t('nav.about')}
                             </Link>
+                        </div>
+
+                        {/* Language Switcher in Mobile Menu */}
+                        <div className="mt-4 border-t border-slate-100 pt-4">
+                            <LanguageSwitcher />
                         </div>
                     </nav>
                 </div>

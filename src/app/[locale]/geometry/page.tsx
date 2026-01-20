@@ -7,9 +7,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'meta' });
 
+    const baseUrl = 'https://www.tirgul.net';
+    const canonicalPath = `${baseUrl}${locale !== 'he' ? `/${locale}` : ''}/geometry`;
+
     return {
         title: t('pages.geometry.title'),
         description: t('pages.geometry.description'),
+        alternates: {
+            canonical: canonicalPath,
+        },
     };
 }
 

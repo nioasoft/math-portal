@@ -37,9 +37,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         };
     }
 
+    // Build the canonical URL for the related generator
+    const baseUrl = 'https://www.tirgul.net';
+    const generatorPath = topic.relatedGeneratorHref;
+
     return {
         title: t('topic.metaTitle', { title: topic.title }),
         description: topic.shortDescription,
+        alternates: {
+            canonical: `${baseUrl}${locale !== 'he' ? `/${locale}` : ''}/help/${topicSlug}`,
+        },
+        other: {
+            // Hint to search engines about the primary transactional page
+            'x-related-generator': `${baseUrl}${locale !== 'he' ? `/${locale}` : ''}${generatorPath}`,
+        },
     };
 }
 

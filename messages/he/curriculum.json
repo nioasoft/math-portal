@@ -1,13 +1,13 @@
 {
   "grade": {
     "meta": {
-      "titleTemplate": "דפי עבודה ל{gradeTitle} - תרגילי חשבון להדפסה",
-      "descriptionTemplate": "{gradeDescription} דפי עבודה בחשבון מותאמים ל{gradeTitle} - {count} נושאים לתרגול: {topicNames} ועוד.",
+      "titleTemplate": "מתמטיקה ל{gradeTitle} - תוכנית לימודים ונושאי תרגול",
+      "descriptionTemplate": "תוכנית הלימודים במתמטיקה ל{gradeTitle}: {gradeDescription} צפו ב-{count} נושאים מרכזיים: {topicNames} ועוד. מפת נושאים לפי משרד החינוך.",
       "keywords": {
-        "worksheets": "דפי עבודה {gradeTitle}",
-        "math": "חשבון {gradeTitle}",
-        "printable": "דפי עבודה להדפסה",
-        "exercises": "תרגילי חשבון"
+        "worksheets": "תוכנית לימודים {gradeTitle}",
+        "math": "מתמטיקה {gradeTitle}",
+        "printable": "נושאי לימוד לפי כיתה",
+        "exercises": "מה לומדים ב{gradeTitle}"
       }
     },
     "breadcrumb": {

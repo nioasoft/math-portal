@@ -10,44 +10,44 @@
       "description": "Hojas de trabajo inteligentes imprimibles y juegos de matemáticas interactivos para grados 1-6. ¡Gratis y sin registro!"
     },
     "fractions": {
-      "title": "Hojas de Trabajo de Fracciones",
-      "description": "Hojas de trabajo de fracciones imprimibles - sumar, restar, multiplicar y dividir fracciones. Alineado con los estándares del currículo."
+      "title": "Generador de Fracciones - Crear e Imprimir Ahora",
+      "description": "Crea ejercicios de fracciones personalizados: sumar, restar, multiplicar y dividir. Elige dificultad, define rango e imprime gratis."
     },
     "geometry": {
-      "title": "Hojas de Trabajo de Geometría",
-      "description": "Hojas de trabajo de geometría - área y perímetro de figuras geométricas. Adecuado para grados 1-6."
+      "title": "Generador de Geometría - Crear Hojas de Trabajo",
+      "description": "Crea ejercicios de geometría personalizados: área, perímetro y triángulos. Elige figuras, define complejidad e imprime."
     },
     "percentage": {
-      "title": "Hojas de Trabajo de Porcentajes",
-      "description": "Hojas de trabajo de porcentajes - calcular porcentajes, convertir entre porcentajes y fracciones. Alineado con los estándares del currículo."
+      "title": "Generador de Porcentajes - Crear e Imprimir",
+      "description": "Crea ejercicios de porcentajes personalizados: calcular porcentaje de cantidad, encontrar el total y descuentos. Elige tipo e imprime gratis."
     },
     "decimals": {
-      "title": "Hojas de Trabajo de Decimales",
-      "description": "Hojas de trabajo de decimales - suma, resta y conversión. Alineado con los estándares del currículo."
+      "title": "Generador de Decimales - Crear Hojas de Trabajo",
+      "description": "Crea ejercicios de decimales personalizados: suma, resta y conversión. Define lugares decimales e imprime hojas de trabajo."
     },
     "games": {
-      "title": "Juegos de Matemáticas",
-      "description": "Juegos de matemáticas interactivos para practicar - suma, resta, multiplicación y división."
+      "title": "Juegos de Matemáticas Interactivos",
+      "description": "Juegos de matemáticas interactivos para practicar operaciones - suma, resta, multiplicación y división."
     },
     "series": {
-      "title": "Hojas de Trabajo de Secuencias Aritméticas",
-      "description": "Hojas de trabajo para practicar secuencias aritméticas, reconocimiento de patrones y completar patrones numéricos. Adecuado para grados 1-6."
+      "title": "Generador de Secuencias Numéricas",
+      "description": "Crea ejercicios de secuencias personalizados: reconocimiento de patrones y patrones numéricos. Define dificultad e imprime gratis."
     },
     "ratio": {
-      "title": "Hojas de Trabajo de Razón y Proporción",
-      "description": "Hojas de trabajo de razón y proporción - encontrar valores faltantes y comprender relaciones multiplicativas. Alineado con los estándares del currículo."
+      "title": "Generador de Razón y Proporción",
+      "description": "Crea ejercicios de razón personalizados: encontrar valores faltantes y relaciones multiplicativas. Elige tipos e imprime."
     },
     "units": {
-      "title": "Hojas de Trabajo de Conversión de Unidades",
-      "description": "Hojas de trabajo de conversión de unidades - longitud, peso y tiempo. Práctica de conversión entre diferentes unidades."
+      "title": "Generador de Conversión de Unidades",
+      "description": "Crea ejercicios de conversión personalizados: longitud, peso y tiempo. Elige unidades e imprime hojas de trabajo gratis."
     },
     "wordProblems": {
-      "title": "Hojas de Trabajo de Problemas de Palabras",
-      "description": "Hojas de trabajo de problemas de palabras - preguntas de la vida real con suma, resta, multiplicación y división."
+      "title": "Generador de Problemas de Palabras",
+      "description": "Crea problemas de palabras personalizados: compras, distancias y vida diaria. Elige temas e imprime gratis."
     },
     "worksheet": {
-      "title": "Generador de Hojas de Trabajo de Matemáticas",
-      "description": "Crea hojas de trabajo de matemáticas personalizadas - suma, resta, multiplicación y división. Gratis para imprimir."
+      "title": "Generador de Matemáticas - Suma, Resta, Multiplicación y División",
+      "description": "Crea hojas de trabajo de matemáticas personalizadas: define operación, rango de números y dificultad. Imprime gratis al instante."
     },
     "about": {
       "title": "Sobre Nosotros",

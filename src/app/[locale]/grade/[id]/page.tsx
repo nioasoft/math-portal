@@ -18,6 +18,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     const gradeDescription = t(`grades.${id}.description`);
     const topicNames = gradeData.slice(0, 3).map(topicId => t(`grades.${id}.topics.${topicId}.title`)).join(', ');
 
+    const baseUrl = 'https://www.tirgul.net';
+    const canonicalPath = `${baseUrl}${locale !== 'he' ? `/${locale}` : ''}/grade/${id}`;
+
     return {
         title: t('grade.meta.titleTemplate', { gradeTitle }),
         description: t('grade.meta.descriptionTemplate', {
@@ -32,6 +35,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
             t('grade.meta.keywords.printable'),
             t('grade.meta.keywords.exercises')
         ],
+        alternates: {
+            canonical: canonicalPath,
+        },
     };
 }
 

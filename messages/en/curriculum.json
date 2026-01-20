@@ -1,13 +1,13 @@
 {
   "grade": {
     "meta": {
-      "titleTemplate": "Worksheets for {gradeTitle} - Math Exercises to Print",
-      "descriptionTemplate": "{gradeDescription} Math worksheets adapted for {gradeTitle} - {count} topics to practice: {topicNames} and more.",
+      "titleTemplate": "{gradeTitle} Math - Curriculum Topics & Learning Roadmap",
+      "descriptionTemplate": "{gradeTitle} math curriculum: {gradeDescription} Explore {count} key topics: {topicNames} and more. Aligned with educational standards.",
       "keywords": {
-        "worksheets": "{gradeTitle} worksheets",
-        "math": "{gradeTitle} math",
-        "printable": "printable worksheets",
-        "exercises": "math exercises"
+        "worksheets": "{gradeTitle} curriculum",
+        "math": "{gradeTitle} math topics",
+        "printable": "grade-level learning",
+        "exercises": "what to learn in {gradeTitle}"
       }
     },
     "breadcrumb": {

@@ -10,44 +10,44 @@
       "description": "Druckbare clevere Arbeitsblätter und interaktive Mathe-Spiele für die Klassen 1-6. Kostenlos und ohne Registrierung!"
     },
     "fractions": {
-      "title": "Bruch-Arbeitsblätter",
-      "description": "Druckbare Bruch-Arbeitsblätter - Brüche addieren, subtrahieren, multiplizieren und dividieren. Lehrplangerecht."
+      "title": "Bruch-Generator - Erstellen & Jetzt Drucken",
+      "description": "Individuelle Bruch-Übungen erstellen: Addieren, Subtrahieren, Multiplizieren und Dividieren. Schwierigkeit wählen, Bereich festlegen und kostenlos drucken."
     },
     "geometry": {
-      "title": "Geometrie-Arbeitsblätter",
-      "description": "Geometrie-Arbeitsblätter - Fläche und Umfang geometrischer Formen. Geeignet für die Klassen 1-6."
+      "title": "Geometrie-Generator - Übungsblätter Erstellen",
+      "description": "Individuelle Geometrie-Übungen erstellen: Fläche, Umfang und Dreiecke. Formen wählen, Komplexität festlegen und sofort drucken."
     },
     "percentage": {
-      "title": "Prozent-Arbeitsblätter",
-      "description": "Prozent-Arbeitsblätter - Prozentberechnungen, Umrechnung zwischen Prozenten und Brüchen. Lehrplangerecht."
+      "title": "Prozent-Generator - Erstellen & Drucken",
+      "description": "Individuelle Prozent-Übungen erstellen: Prozente berechnen, Grundwerte finden und Rabatte. Aufgabentyp wählen und kostenlos drucken."
     },
     "decimals": {
-      "title": "Dezimalzahl-Arbeitsblätter",
-      "description": "Dezimalzahl-Arbeitsblätter - Addition, Subtraktion und Umrechnung. Lehrplangerecht."
+      "title": "Dezimalzahl-Generator - Übungsblätter Erstellen",
+      "description": "Individuelle Dezimalzahl-Übungen erstellen: Addition, Subtraktion und Umrechnung. Nachkommastellen festlegen und passende Arbeitsblätter drucken."
     },
     "games": {
-      "title": "Mathe-Spiele",
-      "description": "Interaktive Mathe-Spiele zum Üben - Addition, Subtraktion, Multiplikation und Division."
+      "title": "Interaktive Mathe-Spiele",
+      "description": "Interaktive Mathe-Spiele zum Üben von Rechenoperationen - Addition, Subtraktion, Multiplikation und Division."
     },
     "series": {
-      "title": "Arbeitsblätter Zahlenfolgen",
-      "description": "Arbeitsblätter zum Üben von Zahlenfolgen, Mustererkennung und Vervollständigen von Zahlenmustern. Geeignet für die Klassen 1-6."
+      "title": "Zahlenfolgen-Generator",
+      "description": "Individuelle Zahlenfolgen-Übungen erstellen: Mustererkennung und Zahlenmuster. Schwierigkeit festlegen und kostenlos drucken."
     },
     "ratio": {
-      "title": "Verhältnis & Proportion Arbeitsblätter",
-      "description": "Arbeitsblätter zu Verhältnis und Proportion - fehlende Werte finden und multiplikative Beziehungen verstehen. Lehrplangerecht."
+      "title": "Verhältnis & Proportion Generator",
+      "description": "Individuelle Verhältnis-Übungen erstellen: Fehlende Werte finden und multiplikative Beziehungen. Aufgabentypen wählen und drucken."
     },
     "units": {
-      "title": "Einheiten-Umrechnung Arbeitsblätter",
-      "description": "Arbeitsblätter zur Einheiten-Umrechnung - Länge, Gewicht und Zeit. Übung zur Umrechnung zwischen verschiedenen Einheiten."
+      "title": "Einheiten-Umrechnung Generator",
+      "description": "Individuelle Umrechnungs-Übungen erstellen: Länge, Gewicht und Zeit. Einheiten wählen und kostenlos Arbeitsblätter drucken."
     },
     "wordProblems": {
-      "title": "Textaufgaben Arbeitsblätter",
-      "description": "Textaufgaben Arbeitsblätter - Aufgaben aus dem echten Leben mit Addition, Subtraktion, Multiplikation und Division."
+      "title": "Textaufgaben-Generator",
+      "description": "Individuelle Textaufgaben erstellen: Einkaufen, Entfernungen und Alltagssituationen. Themen wählen und kostenlos drucken."
     },
     "worksheet": {
-      "title": "Mathe-Arbeitsblatt-Generator",
-      "description": "Erstellen Sie individuelle Mathe-Arbeitsblätter - Addition, Subtraktion, Multiplikation und Division. Kostenlos zum Drucken."
+      "title": "Mathe-Generator - Addition, Subtraktion, Multiplikation, Division",
+      "description": "Individuelle Mathe-Arbeitsblätter erstellen: Operation festlegen, Zahlenbereich und Schwierigkeit wählen. Sofort kostenlos drucken."
     },
     "about": {
       "title": "Über uns",

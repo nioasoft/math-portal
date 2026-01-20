@@ -55,9 +55,16 @@ export async function generateMetadata(
     const { locale, slug } = await params;
     const post = await getBlogPost(slug, locale as Locale);
     if (!post) return {};
+
+    const baseUrl = 'https://www.tirgul.net';
+    const canonicalPath = `${baseUrl}${locale !== 'he' ? `/${locale}` : ''}/blog/${slug}`;
+
     return {
         title: `${post.title} | בלוג דפי עבודה חכמים`,
         description: post.excerpt,
+        alternates: {
+            canonical: canonicalPath,
+        },
     };
 }
 

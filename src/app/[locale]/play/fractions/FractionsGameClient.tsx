@@ -26,8 +26,13 @@ export default function FractionsGameClient() {
 
     // Load high score from localStorage after mount to avoid hydration mismatch
     useEffect(() => {
-        const highScore = getHighScore('fractions', 'practice');
-        setPreviousHighScore(highScore?.score || 0);
+        const loadHighScore = () => {
+            const highScore = getHighScore('fractions', 'practice');
+            setPreviousHighScore(highScore?.score || 0);
+        };
+        // Use requestAnimationFrame to avoid synchronous setState in effect
+        const frameId = requestAnimationFrame(loadHighScore);
+        return () => cancelAnimationFrame(frameId);
     }, []);
 
     // Setup options

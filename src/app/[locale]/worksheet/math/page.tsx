@@ -7,9 +7,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'meta' });
 
+    const baseUrl = 'https://www.tirgul.net';
+    const canonicalPath = `${baseUrl}${locale !== 'he' ? `/${locale}` : ''}/worksheet/math`;
+
     return {
         title: t('pages.worksheet.title'),
         description: t('pages.worksheet.description'),
+        alternates: {
+            canonical: canonicalPath,
+        },
     };
 }
 

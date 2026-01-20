@@ -1,13 +1,13 @@
 {
   "grade": {
     "meta": {
-      "titleTemplate": "Arbeitsblätter für {gradeTitle} - Mathe-Übungen zum Ausdrucken",
-      "descriptionTemplate": "{gradeDescription} Mathe-Arbeitsblätter angepasst für {gradeTitle} - {count} Themen zum Üben: {topicNames} und mehr.",
+      "titleTemplate": "Mathematik {gradeTitle} - Lehrplan & Themenübersicht",
+      "descriptionTemplate": "Mathe-Lehrplan für {gradeTitle}: {gradeDescription} Entdecken Sie {count} Kernthemen: {topicNames} und mehr. Was lernt man in {gradeTitle}?",
       "keywords": {
-        "worksheets": "{gradeTitle} Arbeitsblätter",
-        "math": "{gradeTitle} Mathematik",
-        "printable": "druckbare Arbeitsblätter",
-        "exercises": "Mathe-Übungen"
+        "worksheets": "Lehrplan {gradeTitle}",
+        "math": "Mathe-Themen {gradeTitle}",
+        "printable": "Lernen nach Klassenstufe",
+        "exercises": "Was lernt man in {gradeTitle}"
       }
     },
     "breadcrumb": {

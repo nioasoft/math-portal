@@ -1,13 +1,13 @@
 {
   "grade": {
     "meta": {
-      "titleTemplate": "Hojas de trabajo para {gradeTitle} - Ejercicios de matemáticas para imprimir",
-      "descriptionTemplate": "{gradeDescription} Hojas de trabajo de matemáticas adaptadas para {gradeTitle} - {count} temas para practicar: {topicNames} y más.",
+      "titleTemplate": "Matemáticas {gradeTitle} - Currículo y Mapa de Temas",
+      "descriptionTemplate": "Currículo de matemáticas para {gradeTitle}: {gradeDescription} Descubre {count} temas principales: {topicNames} y más. ¿Qué se aprende en {gradeTitle}?",
       "keywords": {
-        "worksheets": "hojas de trabajo {gradeTitle}",
-        "math": "matemáticas {gradeTitle}",
-        "printable": "hojas de trabajo para imprimir",
-        "exercises": "ejercicios de matemáticas"
+        "worksheets": "currículo {gradeTitle}",
+        "math": "temas matemáticas {gradeTitle}",
+        "printable": "aprendizaje por grado",
+        "exercises": "qué se aprende en {gradeTitle}"
       }
     },
     "breadcrumb": {

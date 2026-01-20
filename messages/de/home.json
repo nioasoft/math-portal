@@ -1,104 +1,104 @@
 {
   "hero": {
-    "badge": "New: Arithmetic Sequences Worksheet Generator",
-    "title": "Practice Math",
-    "titleHighlight": "Fun & Easy",
-    "description": "Create custom worksheets in seconds.",
-    "descriptionLine2": "Pick a topic, click 'Print', and get a perfect practice sheet –",
-    "free": "Free",
-    "cta": "Start Practicing",
-    "ctaSecondary": "How does it work?",
-    "trustPrint": "Direct Print",
-    "trustNoSignup": "No Registration",
-    "trustFree": "100% Free"
+    "badge": "Neu: Generator für arithmetische Folgen",
+    "title": "Mathe üben",
+    "titleHighlight": "spielend leicht",
+    "description": "Erstellen Sie individuelle Arbeitsblätter in wenigen Sekunden.",
+    "descriptionLine2": "Wählen Sie ein Thema, klicken Sie auf 'Drucken' und erhalten Sie ein perfektes Übungsblatt –",
+    "free": "kostenlos",
+    "cta": "Jetzt üben",
+    "ctaSecondary": "Wie funktioniert es?",
+    "trustPrint": "Direkter Druck",
+    "trustNoSignup": "Keine Registrierung",
+    "trustFree": "100% kostenlos"
   },
   "generators": {
-    "title": "What would you like to practice today?",
-    "subtitle": "Choose a topic and start creating custom worksheets",
-    "cta": "Create Worksheet",
+    "title": "Was möchten Sie heute üben?",
+    "subtitle": "Wählen Sie ein Thema und erstellen Sie individuelle Arbeitsblätter",
+    "cta": "Arbeitsblatt erstellen",
     "addSubtract": {
-      "title": "Addition & Subtraction",
-      "desc": "Up to 20, 100, and larger numbers"
+      "title": "Addition & Subtraktion",
+      "desc": "Bis 20, 100 und größere Zahlen"
     },
     "mulDiv": {
-      "title": "Multiplication & Division",
-      "desc": "Times tables, long division, and powers"
+      "title": "Multiplikation & Division",
+      "desc": "Einmaleins, schriftliche Division und Potenzen"
     },
     "fractions": {
-      "title": "Fractions",
-      "desc": "Beginners to advanced, simplifying and expanding"
+      "title": "Brüche",
+      "desc": "Anfänger bis Fortgeschrittene, Kürzen und Erweitern"
     },
     "geometry": {
-      "title": "Geometry",
-      "desc": "Areas, perimeters, and polygons"
+      "title": "Geometrie",
+      "desc": "Flächen, Umfänge und Vielecke"
     },
     "percentage": {
-      "title": "Percentages",
-      "desc": "Percentage calculations, discounts, and interest"
+      "title": "Prozentrechnung",
+      "desc": "Prozentberechnungen, Rabatte und Zinsen"
     },
     "units": {
-      "title": "Unit Conversions",
-      "desc": "Length, weight, and time"
+      "title": "Einheitenumrechnung",
+      "desc": "Länge, Gewicht und Zeit"
     }
   },
   "games": {
-    "title": "Games & Activities",
-    "subtitle": "Learn math the fun way!",
-    "cta": "All Games & Activities"
+    "title": "Spiele & Aktivitäten",
+    "subtitle": "Mathe lernen mit Spaß!",
+    "cta": "Alle Spiele & Aktivitäten"
   },
   "grades": {
-    "label": "By Grade:",
-    "grade": "Grade"
+    "label": "Nach Klassenstufe:",
+    "grade": "Klasse"
   },
   "help": {
-    "badge": "Parent Guide",
-    "title": "How to teach your child?",
-    "subtitle": "Simple explanations, detailed examples, and practical tips",
-    "cta": "View All Guides"
+    "badge": "Elternratgeber",
+    "title": "Wie bringe ich meinem Kind das bei?",
+    "subtitle": "Einfache Erklärungen, ausführliche Beispiele und praktische Tipps",
+    "cta": "Alle Ratgeber anzeigen"
   },
   "whyUs": {
-    "title": "Why parents and teachers choose",
-    "titleHighlight": "Smart Worksheets?",
+    "title": "Warum Eltern und Lehrer",
+    "titleHighlight": "'Clevere Arbeitsblätter' wählen?",
     "feature1": {
-      "title": "Personalized for your child",
-      "desc": "Unlike standard workbooks, here you control the difficulty level. Start easy and gradually increase the challenge."
+      "title": "Individuell für Ihr Kind",
+      "desc": "Anders als bei Standardarbeitsheften bestimmen Sie hier den Schwierigkeitsgrad. Beginnen Sie leicht und steigern Sie die Herausforderung schrittweise."
     },
     "feature2": {
-      "title": "Unlimited Practice",
-      "desc": "Run out of pages in the workbook? Need more multiplication table practice? One click generates a new worksheet."
+      "title": "Unbegrenztes Üben",
+      "desc": "Arbeitsheft leer? Ihr Kind braucht mehr Übung beim Einmaleins? Ein Klick generiert ein neues Arbeitsblatt."
     },
     "feature3": {
-      "title": "Instant Printing",
-      "desc": "No registration, no payment. Just choose a topic, set the level, and print directly from your browser."
+      "title": "Sofort druckbar",
+      "desc": "Keine Registrierung, keine Kosten. Einfach Thema wählen, Niveau einstellen und direkt aus dem Browser drucken."
     }
   },
   "preview": {
-    "title": "Addition & Subtraction Practice",
-    "subtitle": "Numbers up to 100 | Level: Medium",
+    "title": "Übung Addition & Subtraktion",
+    "subtitle": "Zahlen bis 100 | Niveau: Mittel",
     "name": "Name:",
-    "class": "Class:",
-    "tipLabel": "Tip:",
-    "tip": "When adding with carrying, remember to add 1 to the left column!",
-    "answerSheet": "Separate answer sheet"
+    "class": "Klasse:",
+    "tipLabel": "Tipp:",
+    "tip": "Beim Addieren mit Übertrag: Denken Sie daran, 1 zur linken Spalte hinzuzufügen!",
+    "answerSheet": "Separates Lösungsblatt"
   },
   "topics": {
-    "title": "Topics",
-    "math": "Math",
-    "fractions": "Fractions",
-    "geometry": "Geometry",
-    "percentage": "Percentages",
-    "decimals": "Decimals",
-    "ratio": "Ratios",
-    "units": "Units of Measurement",
-    "series": "Sequences",
-    "wordProblems": "Word Problems"
+    "title": "Themen",
+    "math": "Rechnen",
+    "fractions": "Brüche",
+    "geometry": "Geometrie",
+    "percentage": "Prozentrechnung",
+    "decimals": "Dezimalzahlen",
+    "ratio": "Verhältnisse",
+    "units": "Maßeinheiten",
+    "series": "Zahlenfolgen",
+    "wordProblems": "Textaufgaben"
   },
   "features": {
-    "free": "Free",
-    "freeDesc": "No cost and no registration",
-    "print": "Printable",
-    "printDesc": "Worksheets designed for printing",
-    "interactive": "Interactive",
-    "interactiveDesc": "Online games and exercises"
+    "free": "Kostenlos",
+    "freeDesc": "Ohne Kosten und ohne Registrierung",
+    "print": "Druckbar",
+    "printDesc": "Arbeitsblätter zum Ausdrucken",
+    "interactive": "Interaktiv",
+    "interactiveDesc": "Online-Spiele und Übungen"
   }
 }

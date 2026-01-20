@@ -1,33 +1,33 @@
 {
   "site": {
-    "name": "Smart Worksheets",
-    "title": "Smart Worksheets | Math Practice & Games",
-    "description": "Printable smart worksheets and interactive math games for grades 1-6. Free and no registration required!"
+    "name": "Clevere Arbeitsblätter",
+    "title": "Clevere Arbeitsblätter | Mathe-Übungen & Spiele",
+    "description": "Druckbare clevere Arbeitsblätter und interaktive Mathe-Spiele für die Klassen 1-6. Kostenlos und ohne Registrierung!"
   },
   "pages": {
     "home": {
-      "title": "Smart Worksheets & Math Games",
-      "description": "Printable smart worksheets and interactive math games for grades 1-6. Free and no registration required!"
+      "title": "Clevere Arbeitsblätter & Mathe-Spiele",
+      "description": "Druckbare clevere Arbeitsblätter und interaktive Mathe-Spiele für die Klassen 1-6. Kostenlos und ohne Registrierung!"
     },
     "fractions": {
-      "title": "Fractions Worksheets",
-      "description": "Printable fractions worksheets - adding, subtracting, multiplying, and dividing fractions. Aligned with curriculum standards."
+      "title": "Bruch-Arbeitsblätter",
+      "description": "Druckbare Bruch-Arbeitsblätter - Brüche addieren, subtrahieren, multiplizieren und dividieren. Lehrplangerecht."
     },
     "geometry": {
-      "title": "Geometry Worksheets",
-      "description": "Geometry worksheets - area and perimeter of geometric shapes. Suitable for grades 1-6."
+      "title": "Geometrie-Arbeitsblätter",
+      "description": "Geometrie-Arbeitsblätter - Fläche und Umfang geometrischer Formen. Geeignet für die Klassen 1-6."
     },
     "percentage": {
-      "title": "Percentage Worksheets",
-      "description": "Percentage worksheets - calculating percentages, converting between percentages and fractions. Aligned with curriculum standards."
+      "title": "Prozent-Arbeitsblätter",
+      "description": "Prozent-Arbeitsblätter - Prozentberechnungen, Umrechnung zwischen Prozenten und Brüchen. Lehrplangerecht."
     },
     "decimals": {
-      "title": "Decimal Worksheets",
-      "description": "Decimal worksheets - addition, subtraction, and conversion. Aligned with curriculum standards."
+      "title": "Dezimalzahl-Arbeitsblätter",
+      "description": "Dezimalzahl-Arbeitsblätter - Addition, Subtraktion und Umrechnung. Lehrplangerecht."
     },
     "games": {
-      "title": "Math Games",
-      "description": "Interactive math games for practice - addition, subtraction, multiplication, and division."
+      "title": "Mathe-Spiele",
+      "description": "Interaktive Mathe-Spiele zum Üben - Addition, Subtraktion, Multiplikation und Division."
     }
   }
 }

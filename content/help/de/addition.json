@@ -1,0 +1,38 @@
+{
+  "slug": "addition",
+  "title": "Addition",
+  "shortDescription": "Addition ist die Grundlage aller Mathematik. Kinder lernen, Mengen zu kombinieren und das Konzept von 'mehr' zu verstehen.",
+  "importance": "Addition ist die erste Operation, die Kinder lernen, und bildet die Basis für alle anderen Rechenoperationen. Die Beherrschung der Addition wird beim Einkaufen, bei der Geldverwaltung, beim Messen und mehr benötigt.",
+  "howToTeach": [
+    "Beginnen Sie mit greifbaren Objekten - Bauklötze, Stifte, Bonbons",
+    "Erklären Sie, dass 'Addition' wie 'hinzufügen' oder 'zusammenzählen' ist",
+    "Üben Sie zuerst mit kleinen Zahlen (bis 10)",
+    "Wenn das Kind bereit ist, führen Sie den Zehnerübertrag schrittweise ein",
+    "Verwenden Sie einen Zahlenstrahl als visuelle Hilfe"
+  ],
+  "examples": [
+    {
+      "problem": "7 + 5 = ?",
+      "solution": "12",
+      "explanation": "Beginnen Sie bei 7, zählen Sie 5 weiter: 8, 9, 10, 11, 12. Oder: 7 + 3 = 10, plus 2 mehr = 12."
+    },
+    {
+      "problem": "25 + 38 = ?",
+      "solution": "63",
+      "explanation": "Einer: 5 + 8 = 13 (schreibe 3, merke 1). Zehner: 2 + 3 + 1 = 6. Antwort: 63."
+    }
+  ],
+  "commonMistakes": [
+    "Vergessen des Übertrags - wenn die Einer 10 überschreiten",
+    "Fehler in der Ziffernreihenfolge beim senkrechten Schreiben",
+    "Überspringen einer Zahl beim Zählen"
+  ],
+  "parentTips": [
+    "Nicht hetzen - geben Sie dem Kind Zeit zum Nachdenken",
+    "Ermutigen Sie anfangs das Benutzen von Fingern - das ist in Ordnung!",
+    "Machen Sie das Üben zum Spiel: 'Ich habe 3 Äpfel, du gibst mir 4 dazu, wie viele haben wir?'",
+    "Feiern Sie kleine Erfolge"
+  ],
+  "relatedGeneratorHref": "/de/worksheet/math?op=add",
+  "relatedGeneratorTitle": "Additions-Arbeitsblatt-Generator"
+}

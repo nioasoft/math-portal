@@ -1,0 +1,36 @@
+{
+  "slug": "geometry",
+  "title": "Geometrie",
+  "shortDescription": "Geometrie beschäftigt sich mit Formen, Größen und räumlichen Beziehungen. Kinder lernen, Formen zu erkennen und Fläche und Umfang zu berechnen.",
+  "importance": "Geometrie entwickelt räumliches Denken, das für Architektur, Design, Navigation und das Lösen von Ingenieurproblemen benötigt wird.",
+  "howToTeach": [
+    "Beginnen Sie damit, Formen in der Umgebung zu erkennen - quadratische Fenster, runde Uhren",
+    "Erklären Sie den Unterschied zwischen Fläche (das Innere) und Umfang (die Linie drumherum)",
+    "Lehren Sie Formeln schrittweise: Rechteck, Dreieck, Kreis",
+    "Verwenden Sie Karopapier zum Zählen, bevor Sie Formeln benutzen"
+  ],
+  "examples": [
+    {
+      "problem": "Ein Rechteck mit Länge 5 und Breite 3. Was ist Fläche und Umfang?",
+      "solution": "Fläche: 15, Umfang: 16",
+      "explanation": "Fläche = Länge × Breite = 5×3 = 15. Umfang = 2×(Länge+Breite) = 2×(5+3) = 16."
+    },
+    {
+      "problem": "Ein Dreieck mit Grundseite 8 und Höhe 6. Was ist die Fläche?",
+      "solution": "24",
+      "explanation": "Dreiecksfläche = (Grundseite × Höhe) : 2 = (8×6):2 = 48:2 = 24."
+    }
+  ],
+  "commonMistakes": [
+    "Verwechslung von Fläche und Umfang",
+    "Vergessen, für die Dreiecksfläche durch 2 zu teilen",
+    "Die falsche Seite als Höhe bei Dreiecken verwenden"
+  ],
+  "parentTips": [
+    "Messen Sie gemeinsam Räume im Haus",
+    "Zeichnen Sie auf Karopapier und zählen Sie Quadrate",
+    "Verwenden Sie Schachteln und Lego für Demonstrationen"
+  ],
+  "relatedGeneratorHref": "/de/geometry",
+  "relatedGeneratorTitle": "Geometrie-Arbeitsblatt-Generator"
+}

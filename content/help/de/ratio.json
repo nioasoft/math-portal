@@ -1,0 +1,36 @@
+{
+  "slug": "ratio",
+  "title": "Verhältnis & Proportion",
+  "shortDescription": "Verhältnis beschreibt die Beziehung zwischen zwei Mengen. Proportion ist eine Gleichheit zwischen zwei Verhältnissen.",
+  "importance": "Verhältnisse werden bei Rezepten (Mengen verdoppeln), Karten (Maßstab) und in den Naturwissenschaften benötigt. Es ist Vorbereitung für Algebra.",
+  "howToTeach": [
+    "Beginnen Sie mit konkreten Beispielen: 'Für jeden 2 Äpfel gibt es 3 Bananen'",
+    "Erklären Sie, dass ein gleiches Verhältnis erhalten bleibt, wenn man beide Seiten multipliziert oder dividiert",
+    "Üben Sie das Finden des fehlenden Glieds in einer Proportion",
+    "Zeigen Sie die Kreuzprodukt-Methode"
+  ],
+  "examples": [
+    {
+      "problem": "2:3 = 6:?",
+      "solution": "9",
+      "explanation": "Von 2 zu 6 haben wir mit 3 multipliziert. Also muss 3 auch mit 3 multipliziert werden: 3×3=9."
+    },
+    {
+      "problem": "4:5 = ?:15",
+      "solution": "12",
+      "explanation": "Von 5 zu 15 haben wir mit 3 multipliziert. Also muss 4 auch mit 3 multipliziert werden: 4×3=12."
+    }
+  ],
+  "commonMistakes": [
+    "Addieren statt multiplizieren",
+    "Vergessen, die gleiche Operation auf beiden Seiten durchzuführen",
+    "Fehler beim Erkennen, welche Zahl sich geändert hat"
+  ],
+  "parentTips": [
+    "Üben Sie mit Rezepten: 'Wenn wir 2 Eier für 4 Personen brauchen, wie viele für 8?'",
+    "Verwenden Sie Karten oder Gegenstände, um Verhältnisse zu demonstrieren",
+    "Betonen Sie, dass das Verhältnis konstant bleibt!"
+  ],
+  "relatedGeneratorHref": "/de/ratio",
+  "relatedGeneratorTitle": "Verhältnis-Arbeitsblatt-Generator"
+}

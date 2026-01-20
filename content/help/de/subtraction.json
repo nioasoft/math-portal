@@ -1,0 +1,36 @@
+{
+  "slug": "subtraction",
+  "title": "Subtraktion",
+  "shortDescription": "Subtraktion lehrt Kinder, Unterschiede zu verstehen und was fehlt. Es ist die Umkehroperation der Addition.",
+  "importance": "Subtraktion wird im täglichen Leben benötigt: Wechselgeld beim Einkaufen berechnen, verstehen, wie viel fehlt, um ein Ziel zu erreichen, und Unterschiede zwischen Mengen finden.",
+  "howToTeach": [
+    "Beginnen Sie mit einer praktischen Demonstration - 'Es waren 7 Äpfel da, wir haben 3 gegessen, wie viele sind übrig?'",
+    "Erklären Sie, dass 'Subtraktion' wie 'wegnehmen' oder 'entfernen' ist",
+    "Zeigen Sie die Verbindung zwischen Addition und Subtraktion (wenn 3+4=7, dann 7-4=3)",
+    "Beim Erreichen des Entbündelns (Borgen) erklären Sie es mit Zehnern und Einern"
+  ],
+  "examples": [
+    {
+      "problem": "12 - 5 = ?",
+      "solution": "7",
+      "explanation": "Beginne bei 12, zähle 5 zurück: 11, 10, 9, 8, 7. Oder: 12 - 2 = 10, minus 3 mehr = 7."
+    },
+    {
+      "problem": "53 - 27 = ?",
+      "solution": "26",
+      "explanation": "Einer: 3 - 7 nicht möglich, bei den Zehnern borgen. 13 - 7 = 6. Zehner: 4 - 2 = 2. Antwort: 26."
+    }
+  ],
+  "commonMistakes": [
+    "Die kleinere von der größeren Zahl in allen Fällen abziehen (anstatt zu entbündeln)",
+    "Vergessen, bei den Zehnern zu entbündeln (borgen)",
+    "Verwirrung bei der Zahlenreihenfolge - Subtraktion ist nicht kommutativ!"
+  ],
+  "parentTips": [
+    "Spiele verwenden: 'Du hattest 10 Punkte, du hast 3 verloren, wie viele sind übrig?'",
+    "Mit Geld üben - es ist greifbar und interessant",
+    "Wenn das Kind beim Entbündeln verwirrt wird, gehen Sie mit Bauklötzen zu Zehnern und Einern zurück"
+  ],
+  "relatedGeneratorHref": "/de/worksheet/math?op=sub",
+  "relatedGeneratorTitle": "Subtraktions-Arbeitsblatt-Generator"
+}

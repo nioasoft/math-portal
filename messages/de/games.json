@@ -1,47 +1,47 @@
 {
   "shell": {
-    "backToGames": "Back to Games",
-    "home": "Home"
+    "backToGames": "Zurück zu den Spielen",
+    "home": "Startseite"
   },
   "feedback": {
-    "correct": "Correct!",
-    "incorrect": "Incorrect",
-    "tryAgain": "Try again",
-    "theAnswer": "The answer:"
+    "correct": "Richtig!",
+    "incorrect": "Falsch",
+    "tryAgain": "Versuchen Sie es nochmal",
+    "theAnswer": "Die Antwort:"
   },
   "summary": {
-    "title": "Game Over",
-    "score": "Score",
-    "maxStreak": "Best Streak",
-    "accuracy": "Accuracy",
-    "correctWrong": "Correct / Wrong",
-    "newRecord": "New Record!",
-    "brokeRecord": "You beat your previous record of {points} points",
-    "greatJob": "Great job practicing!",
-    "playAgain": "Play Again",
-    "backToMenu": "Back to Menu"
+    "title": "Spiel beendet",
+    "score": "Punktzahl",
+    "maxStreak": "Beste Serie",
+    "accuracy": "Genauigkeit",
+    "correctWrong": "Richtig / Falsch",
+    "newRecord": "Neuer Rekord!",
+    "brokeRecord": "Sie haben Ihren vorherigen Rekord von {points} Punkten übertroffen",
+    "greatJob": "Toll geübt!",
+    "playAgain": "Nochmal spielen",
+    "backToMenu": "Zurück zum Menü"
   },
   "score": {
-    "score": "Score",
-    "streak": "Streak",
-    "correctWrong": "Correct/Wrong"
+    "score": "Punktzahl",
+    "streak": "Serie",
+    "correctWrong": "Richtig/Falsch"
   },
   "problem": {
-    "of": "of"
+    "of": "von"
   },
   "modes": {
-    "practice": "Practice",
+    "practice": "Übung",
     "quiz": "Quiz",
-    "timed": "Timed"
+    "timed": "Zeitspiel"
   },
   "timer": {
-    "timeLeft": "Time left",
-    "seconds": "seconds"
+    "timeLeft": "Verbleibende Zeit",
+    "seconds": "Sekunden"
   },
   "ui": {
     "start": "Start",
     "pause": "Pause",
-    "resume": "Resume",
-    "quit": "Quit"
+    "resume": "Fortsetzen",
+    "quit": "Beenden"
   }
 }

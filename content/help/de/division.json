@@ -1,0 +1,36 @@
+{
+  "slug": "division",
+  "title": "Division",
+  "shortDescription": "Division ist die Umkehroperation der Multiplikation. Kinder lernen, eine Menge in gleiche Teile aufzuteilen.",
+  "importance": "Division wird für gerechtes Teilen, Durchschnittberechnungen und das spätere Verständnis von Brüchen und Prozenten benötigt.",
+  "howToTeach": [
+    "Beginnen Sie mit praktischem Aufteilen: 'Teile 12 Bonbons unter 3 Kindern auf'",
+    "Zeigen Sie die Verbindung zur Multiplikation: wenn 3×4=12, dann 12:3=4",
+    "Üben Sie Division ohne Rest, bevor Sie zu Division mit Rest übergehen",
+    "Erklären Sie die schriftliche Division schrittweise mit einfachen Zahlen"
+  ],
+  "examples": [
+    {
+      "problem": "24 : 6 = ?",
+      "solution": "4",
+      "explanation": "Wie oft passt 6 in 24? 6×4=24, also 24:6=4."
+    },
+    {
+      "problem": "84 : 7 = ?",
+      "solution": "12",
+      "explanation": "Schriftliche Division: 7 passt in 8 einmal (7), Rest 1. Hole 4 herunter, ergibt 14. 7 passt in 14 zweimal (14). Antwort: 12."
+    }
+  ],
+  "commonMistakes": [
+    "Verwechslung von Dividend und Divisor",
+    "Vergessen, die Antwort durch Multiplizieren zu überprüfen",
+    "Fehler bei der schriftlichen Division durch Überspringen von Schritten"
+  ],
+  "parentTips": [
+    "Immer mit Multiplikation überprüfen: wenn 24:6=4, dann muss 6×4 gleich 24 sein",
+    "Üben Sie durch Aufteilen von Bonbons oder Spielzeug",
+    "Bei der schriftlichen Division - arbeiten Sie Schritt für Schritt, langsam"
+  ],
+  "relatedGeneratorHref": "/de/worksheet/math?op=div",
+  "relatedGeneratorTitle": "Divisions-Arbeitsblatt-Generator"
+}

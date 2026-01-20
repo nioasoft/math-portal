@@ -1,0 +1,36 @@
+{
+  "slug": "percentage",
+  "title": "Prozentrechnung",
+  "shortDescription": "Prozente sind Brüche mit Nenner 100. Sie ermöglichen einen einfachen Vergleich verschiedener Mengen.",
+  "importance": "Prozente sind überall: Rabatte im Geschäft, Testergebnisse, Bankzinsen und Statistiken in den Nachrichten.",
+  "howToTeach": [
+    "Erklären Sie, dass 'Prozent' 'von hundert' bedeutet",
+    "Beginnen Sie mit einfachen Prozentsätzen: 50% = Hälfte, 25% = Viertel",
+    "Zeigen Sie die Verbindung zu Brüchen: 50% = 50/100 = 1/2",
+    "Üben Sie zuerst 10% zu berechnen (durch 10 teilen), dann entsprechend multiplizieren"
+  ],
+  "examples": [
+    {
+      "problem": "25% von 80 = ?",
+      "solution": "20",
+      "explanation": "25% ist ein Viertel. 80:4 = 20. Oder: 80 × 0,25 = 20."
+    },
+    {
+      "problem": "15% von 200 = ?",
+      "solution": "30",
+      "explanation": "10% von 200 = 20. 5% = 10. Insgesamt 15% = 30."
+    }
+  ],
+  "commonMistakes": [
+    "Durch 100 teilen statt mit dem Prozentsatz zu multiplizieren",
+    "Vergessen, den Prozentsatz in einen Bruch oder eine Dezimalzahl umzuwandeln",
+    "Verwirrung beim Berechnen von Rabatten (der neue Preis, nicht der Rabatt)"
+  ],
+  "parentTips": [
+    "Beim Einkaufen üben: 'Es gibt 20% Rabatt, wie viel sparen wir?'",
+    "Zeigen Sie eine Umrechnungstabelle: 10%=0,1, 25%=0,25, 50%=0,5",
+    "Berechnen Sie immer zuerst 10% - das ist am einfachsten!"
+  ],
+  "relatedGeneratorHref": "/de/percentage",
+  "relatedGeneratorTitle": "Prozent-Arbeitsblatt-Generator"
+}

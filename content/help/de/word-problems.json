@@ -1,0 +1,37 @@
+{
+  "slug": "word-problems",
+  "title": "Textaufgaben",
+  "shortDescription": "Textaufgaben sind mathematische Geschichten, die in eine Gleichung übersetzt und gelöst werden müssen.",
+  "importance": "Textaufgaben lehren, wie man Mathematik in der Realität anwendet. Sie entwickeln Leseverständnis und logisches Denken.",
+  "howToTeach": [
+    "Lehren Sie, die Aufgabe mindestens zweimal zu lesen",
+    "Bitten Sie sie, die Zahlen und 'Schlüsselwörter' zu markieren",
+    "Ermutigen Sie zum Zeichnen oder Erstellen eines Diagramms der Aufgabe",
+    "Am Ende - prüfen, ob die Antwort Sinn ergibt"
+  ],
+  "examples": [
+    {
+      "problem": "Daniel hatte 15 Murmeln. Er gab 7 Murmeln an Jonas. Wie viele Murmeln hat Daniel noch?",
+      "solution": "8",
+      "explanation": "Gab = Subtraktion. 15 - 7 = 8 Murmeln."
+    },
+    {
+      "problem": "Jede Reihe hat 6 Stühle. Es gibt 4 Reihen. Wie viele Stühle gibt es insgesamt?",
+      "solution": "24",
+      "explanation": "Jede Reihe × Anzahl der Reihen = Multiplikation. 6 × 4 = 24 Stühle."
+    }
+  ],
+  "commonMistakes": [
+    "Die ganze Frage nicht bis zum Ende lesen",
+    "Verwirrung mit Schlüsselwörtern (gab = Subtraktion, bekam = Addition)",
+    "Nicht prüfen, ob die Antwort Sinn ergibt"
+  ],
+  "parentTips": [
+    "Bitten Sie das Kind, Ihnen die Geschichte in eigenen Worten zu erzählen",
+    "Ermutigen Sie zum Zeichnen - es hilft beim Verstehen!",
+    "Fragen Sie: 'Was wird von uns gefragt?' bevor Sie anfangen zu lösen",
+    "Nach dem Lösen fragen: 'Ergibt das Sinn?'"
+  ],
+  "relatedGeneratorHref": "/de/word-problems",
+  "relatedGeneratorTitle": "Textaufgaben-Generator"
+}

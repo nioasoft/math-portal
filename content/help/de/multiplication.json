@@ -1,0 +1,37 @@
+{
+  "slug": "multiplication",
+  "title": "Multiplikation",
+  "shortDescription": "Multiplikation ist wiederholte Addition. Kinder lernen, dass Multiplikation das mehrfache Addieren derselben Zahl abkürzt.",
+  "importance": "Multiplikation ist die Grundlage für fortgeschrittene Mathematik, Flächenberechnungen und das Lösen alltäglicher Probleme wie die Berechnung des Gesamtpreises für mehrere Artikel.",
+  "howToTeach": [
+    "Beginnen Sie mit dem Verständnis des Konzepts: 3×4 ist wie 3+3+3+3 oder 4+4+4",
+    "Lehren Sie das Einmaleins schrittweise - beginnen Sie mit 2, 5, 10",
+    "Verwenden Sie visuelle Muster (Reihen und Spalten)",
+    "Wiederholen Sie die Fakten, bis sie automatisch werden"
+  ],
+  "examples": [
+    {
+      "problem": "4 × 7 = ?",
+      "solution": "28",
+      "explanation": "4 mal 7: 7+7+7+7 = 28. Oder verwenden Sie das Einmaleins."
+    },
+    {
+      "problem": "23 × 4 = ?",
+      "solution": "92",
+      "explanation": "Einer: 3×4 = 12 (schreibe 2, merke 1). Zehner: 2×4 = 8, + 1 = 9. Antwort: 92."
+    }
+  ],
+  "commonMistakes": [
+    "Verwechslung ähnlicher Multiplikationsfakten (6×7 und 7×8)",
+    "Vergessen des Übertrags bei zweistelliger Multiplikation",
+    "Überspringen eines Schritts beim Multiplizieren großer Zahlen"
+  ],
+  "parentTips": [
+    "Üben Sie das Einmaleins jeden Tag - 5 Minuten reichen",
+    "Machen Sie es zu einem Lied oder Familienquiz",
+    "Zeigen Sie Muster: alle Vielfachen von 5 enden auf 0 oder 5",
+    "Zwingen Sie kein mechanisches Auswendiglernen - Verständnis kommt zuerst"
+  ],
+  "relatedGeneratorHref": "/de/worksheet/math?op=mul",
+  "relatedGeneratorTitle": "Multiplikations-Arbeitsblatt-Generator"
+}

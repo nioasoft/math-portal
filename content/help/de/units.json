@@ -1,0 +1,36 @@
+{
+  "slug": "units",
+  "title": "Einheitenumrechnung",
+  "shortDescription": "Einheitenumrechnung ermöglicht das Wechseln zwischen verschiedenen Einheiten für Länge, Gewicht und Zeit.",
+  "importance": "Einheitenumrechnung wird beim Kochen, Bauen, Sport und Reisen benötigt. Sie lehrt auch das Dezimalsystem.",
+  "howToTeach": [
+    "Beginnen Sie mit Grundeinheiten und den Beziehungen zwischen ihnen",
+    "Erklären Sie, dass das Wort 'Kilo' = tausend bedeutet",
+    "Üben Sie das Multiplizieren und Dividieren mit 10, 100, 1000",
+    "Für Zeit - denken Sie daran, dass 60 (nicht 10) die wichtige Zahl ist"
+  ],
+  "examples": [
+    {
+      "problem": "3 Meter = ? cm",
+      "solution": "300",
+      "explanation": "Ein Meter = 100 cm. 3 Meter = 3 × 100 = 300 cm."
+    },
+    {
+      "problem": "2 Stunden = ? Minuten",
+      "solution": "120",
+      "explanation": "Eine Stunde = 60 Minuten. 2 Stunden = 2 × 60 = 120 Minuten."
+    }
+  ],
+  "commonMistakes": [
+    "Verwechslung zwischen Einheiten (Meter/cm/mm)",
+    "Vergessen, dass Zeit in 60ern funktioniert, nicht in 10ern",
+    "Multiplizieren statt dividieren oder umgekehrt"
+  ],
+  "parentTips": [
+    "Zeigen Sie ein Lineal und einen Meterstab für praktische Beispiele",
+    "Üben Sie mit einer echten Uhr",
+    "Erstellen Sie eine Umrechnungstabelle an der Wand"
+  ],
+  "relatedGeneratorHref": "/de/units",
+  "relatedGeneratorTitle": "Einheitenumrechnung-Arbeitsblatt-Generator"
+}

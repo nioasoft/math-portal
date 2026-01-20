@@ -1,0 +1,36 @@
+{
+  "slug": "series",
+  "title": "Arithmetische Folgen",
+  "shortDescription": "Folgen sind eine Reihe von Zahlen mit einem konstanten Muster. Kinder lernen, Muster zu erkennen und die Folge fortzusetzen.",
+  "importance": "Mustererkennung ist eine grundlegende Denkfähigkeit. Folgen bereiten Schüler auf Algebra und das Lösen komplexer Probleme vor.",
+  "howToTeach": [
+    "Beginnen Sie mit einfachen Folgen: 2, 4, 6, 8...",
+    "Ermutigen Sie das Kind, die 'Regel' zu finden (was machst du, um von einer Zahl zur nächsten zu kommen)",
+    "Üben Sie aufsteigende und absteigende Folgen",
+    "Führen Sie Multiplikationsfolgen erst nach Beherrschung der Additions-/Subtraktionsfolgen ein"
+  ],
+  "examples": [
+    {
+      "problem": "3, 6, 9, 12, ?",
+      "solution": "15",
+      "explanation": "Die Regel ist +3 jedes Mal. 12+3=15."
+    },
+    {
+      "problem": "2, 4, 8, 16, ?",
+      "solution": "32",
+      "explanation": "Die Regel ist ×2 jedes Mal. 16×2=32."
+    }
+  ],
+  "commonMistakes": [
+    "Nach einer zu komplizierten Regel suchen, wenn sie einfach ist",
+    "Verwechslung zwischen Additions- und Multiplikationsfolgen",
+    "Rechenfehler nach dem Finden der Regel"
+  ],
+  "parentTips": [
+    "Beginnen Sie mit der Frage: 'Was ist der Unterschied zwischen den Zahlen?'",
+    "Ermutigen Sie das Kind, das Muster in Worten zu erklären",
+    "Erstellen Sie eigene Folgen und lassen Sie das Kind die Regel finden"
+  ],
+  "relatedGeneratorHref": "/de/series",
+  "relatedGeneratorTitle": "Folgen-Arbeitsblatt-Generator"
+}

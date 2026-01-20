@@ -1,8 +1,9 @@
 'use client';
 
 import { Trophy, Star, Flame, Target, RotateCcw, Home, Award } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { AdSlot } from '@/components/AdSlot';
+import { useTranslations } from 'next-intl';
 
 interface GameSummaryProps {
     score: number;
@@ -23,6 +24,7 @@ export default function GameSummary({
     previousHighScore,
     onPlayAgain
 }: GameSummaryProps) {
+    const t = useTranslations('games');
     const totalProblems = correctCount + wrongCount;
     const accuracy = totalProblems > 0 ? Math.round((correctCount / totalProblems) * 100) : 0;
 
@@ -36,9 +38,9 @@ export default function GameSummary({
                             <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center animate-bounce">
                                 <Trophy className="w-10 h-10 text-white" />
                             </div>
-                            <h2 id="game-summary-title" className="text-3xl font-bold text-yellow-400 mb-2">שיא חדש!</h2>
+                            <h2 id="game-summary-title" className="text-3xl font-bold text-yellow-400 mb-2">{t('summary.newRecord')}</h2>
                             <p className="text-slate-400">
-                                שברת את השיא הקודם של {previousHighScore || 0} נקודות
+                                {t('summary.brokeRecord', { points: previousHighScore || 0 })}
                             </p>
                         </>
                     ) : (
@@ -46,8 +48,8 @@ export default function GameSummary({
                             <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center">
                                 <Award className="w-10 h-10 text-white" />
                             </div>
-                            <h2 id="game-summary-title" className="text-3xl font-bold text-white mb-2">סיום משחק</h2>
-                            <p className="text-slate-400">כל הכבוד על התרגול!</p>
+                            <h2 id="game-summary-title" className="text-3xl font-bold text-white mb-2">{t('summary.title')}</h2>
+                            <p className="text-slate-400">{t('summary.greatJob')}</p>
                         </>
                     )}
                 </div>
@@ -60,7 +62,7 @@ export default function GameSummary({
                             <Star className="w-5 h-5" fill="currentColor" />
                             <span className="text-2xl font-bold">{score}</span>
                         </div>
-                        <span className="text-xs text-slate-400">ניקוד</span>
+                        <span className="text-xs text-slate-400">{t('summary.score')}</span>
                     </div>
 
                     {/* Best Streak */}
@@ -69,7 +71,7 @@ export default function GameSummary({
                             <Flame className="w-5 h-5" fill="currentColor" />
                             <span className="text-2xl font-bold">{bestStreak}</span>
                         </div>
-                        <span className="text-xs text-slate-400">סטריק מקסימלי</span>
+                        <span className="text-xs text-slate-400">{t('summary.maxStreak')}</span>
                     </div>
 
                     {/* Accuracy */}
@@ -78,7 +80,7 @@ export default function GameSummary({
                             <Target className="w-5 h-5" />
                             <span className="text-2xl font-bold">{accuracy}%</span>
                         </div>
-                        <span className="text-xs text-slate-400">דיוק</span>
+                        <span className="text-xs text-slate-400">{t('summary.accuracy')}</span>
                     </div>
 
                     {/* Problems Solved */}
@@ -90,7 +92,7 @@ export default function GameSummary({
                                 <span className="text-red-400">{wrongCount}</span>
                             </span>
                         </div>
-                        <span className="text-xs text-slate-400">נכון / שגוי</span>
+                        <span className="text-xs text-slate-400">{t('summary.correctWrong')}</span>
                     </div>
                 </div>
 
@@ -106,7 +108,7 @@ export default function GameSummary({
                         className="w-full py-4 px-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold text-lg rounded-xl hover:from-green-600 hover:to-emerald-700 transition flex items-center justify-center gap-2"
                     >
                         <RotateCcw className="w-5 h-5" />
-                        <span>שחק שוב</span>
+                        <span>{t('summary.playAgain')}</span>
                     </button>
 
                     <Link
@@ -114,7 +116,7 @@ export default function GameSummary({
                         className="w-full py-4 px-6 bg-slate-700/50 text-white font-bold text-lg rounded-xl hover:bg-slate-700 transition flex items-center justify-center gap-2"
                     >
                         <Home className="w-5 h-5" />
-                        <span>חזרה לתפריט</span>
+                        <span>{t('summary.backToMenu')}</span>
                     </Link>
                 </div>
             </div>

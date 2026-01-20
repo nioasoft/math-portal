@@ -1,8 +1,9 @@
 'use client';
 
 import { ReactNode } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { ArrowRight, Home } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface GameShellProps {
     title: string;
@@ -12,6 +13,8 @@ interface GameShellProps {
 }
 
 export default function GameShell({ title, children, topBar, onExit }: GameShellProps) {
+    const t = useTranslations('games');
+
     return (
         <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white flex flex-col">
             {/* Header */}
@@ -22,7 +25,7 @@ export default function GameShell({ title, children, topBar, onExit }: GameShell
                             href="/play"
                             className="p-2 bg-slate-700/50 rounded-lg hover:bg-slate-700 transition"
                             onClick={onExit}
-                            aria-label="חזרה למשחקים"
+                            aria-label={t('shell.backToGames')}
                         >
                             <ArrowRight className="w-5 h-5" aria-hidden="true" />
                         </Link>
@@ -34,7 +37,7 @@ export default function GameShell({ title, children, topBar, onExit }: GameShell
                     <Link
                         href="/"
                         className="p-2 bg-slate-700/50 rounded-lg hover:bg-slate-700 transition"
-                        aria-label="עמוד הבית"
+                        aria-label={t('shell.home')}
                     >
                         <Home className="w-5 h-5" aria-hidden="true" />
                     </Link>

@@ -1,8 +1,13 @@
 {
+  "shell": {
+    "backToGames": "חזרה למשחקים",
+    "home": "עמוד הבית"
+  },
   "feedback": {
     "correct": "נכון!",
     "incorrect": "לא נכון",
-    "tryAgain": "נסה שוב"
+    "tryAgain": "נסה שוב",
+    "theAnswer": "התשובה:"
   },
   "summary": {
     "title": "סיום משחק",
@@ -11,9 +16,18 @@
     "accuracy": "דיוק",
     "correctWrong": "נכון / שגוי",
     "newRecord": "שיא חדש!",
+    "brokeRecord": "שברת את השיא הקודם של {points} נקודות",
     "greatJob": "כל הכבוד על התרגול!",
     "playAgain": "שחק שוב",
     "backToMenu": "חזרה לתפריט"
+  },
+  "score": {
+    "score": "ניקוד",
+    "streak": "סטריק",
+    "correctWrong": "נכון/שגוי"
+  },
+  "problem": {
+    "of": "מתוך"
   },
   "modes": {
     "practice": "תרגול",

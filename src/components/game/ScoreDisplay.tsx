@@ -1,6 +1,7 @@
 'use client';
 
 import { Star, Flame, Target } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface ScoreDisplayProps {
     score: number;
@@ -11,6 +12,8 @@ interface ScoreDisplayProps {
 }
 
 export default function ScoreDisplay({ score, streak, correctCount, wrongCount, compact = false }: ScoreDisplayProps) {
+    const t = useTranslations('games');
+
     if (compact) {
         return (
             <div className="flex items-center gap-4">
@@ -36,7 +39,7 @@ export default function ScoreDisplay({ score, streak, correctCount, wrongCount, 
                     <Star className="w-6 h-6 md:w-8 md:h-8" fill="currentColor" />
                     <span className="font-bold text-2xl md:text-3xl">{score}</span>
                 </div>
-                <span className="text-xs text-slate-400">ניקוד</span>
+                <span className="text-xs text-slate-400">{t('score.score')}</span>
             </div>
 
             {/* Streak */}
@@ -45,7 +48,7 @@ export default function ScoreDisplay({ score, streak, correctCount, wrongCount, 
                     <Flame className="w-6 h-6 md:w-8 md:h-8" fill={streak > 0 ? 'currentColor' : 'none'} />
                     <span className="font-bold text-2xl md:text-3xl">{streak}</span>
                 </div>
-                <span className="text-xs text-slate-400">סטריק</span>
+                <span className="text-xs text-slate-400">{t('score.streak')}</span>
             </div>
 
             {/* Correct/Wrong counts */}
@@ -59,7 +62,7 @@ export default function ScoreDisplay({ score, streak, correctCount, wrongCount, 
                             <span className="text-red-400">{wrongCount || 0}</span>
                         </span>
                     </div>
-                    <span className="text-xs text-slate-400">נכון/שגוי</span>
+                    <span className="text-xs text-slate-400">{t('score.correctWrong')}</span>
                 </div>
             )}
         </div>

@@ -1,12 +1,15 @@
 'use client';
 
-import { GameProblem, formatFraction } from '@/lib/game/game-engine';
+import { GameProblem } from '@/lib/game/game-engine';
+import { useTranslations } from 'next-intl';
 
 interface ProblemDisplayProps {
     problem: GameProblem;
 }
 
 export default function ProblemDisplay({ problem }: ProblemDisplayProps) {
+    const t = useTranslations('games');
+
     // Render fraction component
     const FractionDisplay = ({ n, d, whole }: { n: number; d: number; whole?: number }) => (
         <span className="inline-flex items-center gap-0.5 md:gap-1 mx-0.5 md:mx-1">
@@ -56,7 +59,7 @@ export default function ProblemDisplay({ problem }: ProblemDisplayProps) {
             <div className="text-center py-8">
                 <div className="text-4xl md:text-5xl font-bold">
                     <span className="text-yellow-400">{percent}%</span>
-                    <span className="mx-4 text-slate-400 text-3xl">מתוך</span>
+                    <span className="mx-4 text-slate-400 text-3xl">{t('problem.of')}</span>
                     <span>{total}</span>
                     <span className="mx-4 text-slate-500">=</span>
                     <span className="text-slate-600">?</span>

@@ -6,6 +6,13 @@
   "readArticle": "Weiterlesen",
   "noArticlesFound": "Keine Artikel in dieser Kategorie gefunden.",
   "backToAll": "Zurück zu allen Artikeln",
+  "categories": {
+    "tips": "Tipps & Lernmethoden",
+    "anxiety": "Umgang mit Schwierigkeiten",
+    "games": "Spiele & Aktivitäten",
+    "curriculum": "Lehrplan",
+    "homework": "Hausaufgaben"
+  },
   "ctaTitle": "Bereit zum Üben?",
   "ctaDescription": "Nach der Lektüre der Artikel besuchen Sie unsere Generatoren und erstellen Sie personalisierte Arbeitsblätter",
   "ctaButton": "Alle Generatoren"

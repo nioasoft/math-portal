@@ -6,6 +6,13 @@
   "readArticle": "Leer más",
   "noArticlesFound": "No se encontraron artículos en esta categoría.",
   "backToAll": "Volver a todos los artículos",
+  "categories": {
+    "tips": "Consejos y Métodos de Aprendizaje",
+    "anxiety": "Manejo de Dificultades",
+    "games": "Juegos y Actividades",
+    "curriculum": "Plan de Estudios",
+    "homework": "Tareas"
+  },
   "ctaTitle": "¿Listo para Practicar?",
   "ctaDescription": "Después de leer los artículos, visita nuestros generadores y crea hojas de trabajo personalizadas",
   "ctaButton": "Todos los Generadores"

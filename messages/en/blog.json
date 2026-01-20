@@ -6,6 +6,13 @@
   "readArticle": "Read more",
   "noArticlesFound": "No articles found in this category.",
   "backToAll": "Back to all articles",
+  "categories": {
+    "tips": "Tips & Learning Methods",
+    "anxiety": "Dealing with Difficulties",
+    "games": "Games & Activities",
+    "curriculum": "Curriculum",
+    "homework": "Homework"
+  },
   "ctaTitle": "Ready to Practice?",
   "ctaDescription": "After reading the articles, visit our generators and create personalized worksheets",
   "ctaButton": "All Generators"

@@ -56,7 +56,7 @@ export function BlogIndexClient({ posts, categories }: Props) {
                                     : 'bg-white text-slate-600 hover:bg-sky-50 border border-slate-200 hover:border-sky-200'
                                     }`}
                             >
-                                {cat.label}
+                                {t(`categories.${cat.id}`)}
                             </button>
                         ))}
                     </div>

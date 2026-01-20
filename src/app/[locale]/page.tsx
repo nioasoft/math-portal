@@ -6,10 +6,10 @@ import {
   Shapes, Scale, Star, BookOpen, GraduationCap, Sparkles, Printer, Zap, Gamepad2
 } from 'lucide-react';
 import { FeaturedPosts } from '@/components/FeaturedPosts';
-import { HELP_TOPICS } from '@/lib/help-data';
 import { AdSlot } from '@/components/AdSlot';
-import { blogPosts } from '@/lib/blog-data';
-import { getTranslations } from 'next-intl/server';
+import { getBlogPosts, getHelpTopics } from '@/lib/content';
+import { getTranslations, getLocale } from 'next-intl/server';
+import { Locale } from '@/i18n/config';
 
 const getGenerators = (t: Awaited<ReturnType<typeof getTranslations<'home'>>>) => [
   {
@@ -78,9 +78,23 @@ function MathSymbol({ symbol, className }: { symbol: string; className: string }
 }
 
 export default async function Home() {
+  const locale = await getLocale() as Locale;
   const t = await getTranslations('home');
   const tCommon = await getTranslations('common');
   const generators = getGenerators(t);
+
+  // Fetch locale-specific content
+  const allPosts = await getBlogPosts(locale);
+  const helpTopics = await getHelpTopics(locale);
+  const gamePosts = allPosts.filter(p => p.category === 'games').slice(0, 3);
+  const featuredPosts = allPosts.slice(0, 6).map(p => ({
+    slug: p.slug,
+    title: p.title,
+    excerpt: p.excerpt,
+    date: p.date,
+    image: p.image,
+    categoryLabel: p.categoryLabel,
+  }));
 
   return (
     <div className="min-h-screen flex flex-col bg-[#fffbf5]">
@@ -248,7 +262,7 @@ export default async function Home() {
 
             {/* Games Cards - horizontal scroll on mobile */}
             <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-3 md:overflow-visible scrollbar-hide">
-              {blogPosts.filter(p => p.category === 'games').slice(0, 3).map((post) => (
+              {gamePosts.map((post) => (
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
@@ -305,7 +319,7 @@ export default async function Home() {
         </section>
 
         {/* Featured Blog Posts */}
-        <FeaturedPosts />
+        <FeaturedPosts posts={featuredPosts} />
 
         {/* Ad Slot - After Blog Posts */}
         <div className="container-custom py-8 bg-slate-50">
@@ -331,7 +345,7 @@ export default async function Home() {
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {HELP_TOPICS.slice(0, 8).map((topic) => (
+              {helpTopics.slice(0, 8).map((topic) => (
                 <Link
                   key={topic.slug}
                   href={`/help/${topic.slug}`}

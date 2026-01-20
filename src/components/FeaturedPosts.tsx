@@ -1,14 +1,26 @@
 'use client';
 
-import { useSyncExternalStore } from 'react';
-import { BlogPost, blogPosts } from '@/lib/blog-data';
-import Link from 'next/link';
+import { useSyncExternalStore, useMemo } from 'react';
+import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
+export interface FeaturedPost {
+    slug: string;
+    title: string;
+    excerpt: string;
+    date: string;
+    image: string;
+    categoryLabel: string;
+}
+
+interface FeaturedPostsProps {
+    posts: FeaturedPost[];
+}
+
 // Fisher-Yates shuffle
-function shuffleArray(array: BlogPost[]): BlogPost[] {
+function shuffleArray<T>(array: T[]): T[] {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -17,35 +29,32 @@ function shuffleArray(array: BlogPost[]): BlogPost[] {
     return shuffled;
 }
 
-// Get shuffled posts - memoized per client session
-let cachedShuffledPosts: BlogPost[] | null = null;
-function getShuffledPosts(): BlogPost[] {
-    if (cachedShuffledPosts === null) {
-        cachedShuffledPosts = shuffleArray(blogPosts).slice(0, 3);
-    }
-    return cachedShuffledPosts;
-}
+// Cache for shuffled posts per session
+const shuffleCache = new Map<string, FeaturedPost[]>();
 
-// Server snapshot must be cached to avoid infinite loops
-const serverSnapshot = blogPosts.slice(0, 3);
-function getServerPosts(): BlogPost[] {
-    return serverSnapshot;
+function getShuffledPosts(posts: FeaturedPost[], cacheKey: string): FeaturedPost[] {
+    if (!shuffleCache.has(cacheKey)) {
+        shuffleCache.set(cacheKey, shuffleArray(posts).slice(0, 3));
+    }
+    return shuffleCache.get(cacheKey)!;
 }
 
 // Use useSyncExternalStore to get client-only shuffled posts
-function useClientPosts(): BlogPost[] {
+function useClientPosts(posts: FeaturedPost[]): FeaturedPost[] {
+    const cacheKey = useMemo(() => posts.map(p => p.slug).join(','), [posts]);
+
     return useSyncExternalStore(
         () => () => {}, // subscribe - no-op since data doesn't change
-        getShuffledPosts, // client snapshot - shuffled
-        getServerPosts // server snapshot - deterministic and cached
+        () => getShuffledPosts(posts, cacheKey), // client snapshot - shuffled
+        () => posts.slice(0, 3) // server snapshot - deterministic
     );
 }
 
-export function FeaturedPosts() {
-    const posts = useClientPosts();
+export function FeaturedPosts({ posts }: FeaturedPostsProps) {
+    const displayPosts = useClientPosts(posts);
     const t = useTranslations('common');
 
-    if (posts.length === 0) return null;
+    if (displayPosts.length === 0) return null;
 
     return (
         <section className="py-20 bg-slate-50">
@@ -61,7 +70,7 @@ export function FeaturedPosts() {
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8">
-                    {posts.map((post) => (
+                    {displayPosts.map((post) => (
                         <Link key={post.slug} href={`/blog/${post.slug}`} className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full">
                             <div className="h-48 bg-slate-100 relative overflow-hidden group-hover:opacity-90 transition-opacity">
                                 <Image

@@ -1,10 +1,12 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Calculator, Menu, X, ChevronDown, GraduationCap, BookOpen, Newspaper, Gamepad2 } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 
 export function Header() {
+    const t = useTranslations('common');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isGradesOpen, setIsGradesOpen] = useState(false);
     const gradesRef = useRef<HTMLDivElement>(null);
@@ -37,12 +39,12 @@ export function Header() {
     }, []);
 
     const grades = [
-        { label: "כיתה א'", href: '/grade/1' },
-        { label: "כיתה ב'", href: '/grade/2' },
-        { label: "כיתה ג'", href: '/grade/3' },
-        { label: "כיתה ד'", href: '/grade/4' },
-        { label: "כיתה ה'", href: '/grade/5' },
-        { label: "כיתה ו'", href: '/grade/6' },
+        { label: t('grades.grade1'), href: '/grade/1' },
+        { label: t('grades.grade2'), href: '/grade/2' },
+        { label: t('grades.grade3'), href: '/grade/3' },
+        { label: t('grades.grade4'), href: '/grade/4' },
+        { label: t('grades.grade5'), href: '/grade/5' },
+        { label: t('grades.grade6'), href: '/grade/6' },
     ];
 
     return (
@@ -52,7 +54,7 @@ export function Header() {
                 <button
                     className="lg:hidden p-2 text-slate-600 z-50 relative hover:bg-slate-100 rounded-lg transition-colors"
                     onClick={toggleMenu}
-                    aria-label={isMenuOpen ? 'סגור תפריט' : 'פתח תפריט'}
+                    aria-label={isMenuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
                     aria-expanded={isMenuOpen}
                 >
                     {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
@@ -64,7 +66,7 @@ export function Header() {
                         href="/"
                         className="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all"
                     >
-                        ראשי
+                        {t('nav.home')}
                     </Link>
 
                     {/* Grades Dropdown */}
@@ -74,7 +76,7 @@ export function Header() {
                             className={`flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-lg transition-all ${isGradesOpen ? 'text-orange-600 bg-orange-50' : 'text-slate-600 hover:text-orange-600 hover:bg-orange-50'}`}
                         >
                             <GraduationCap size={16} />
-                            לפי כיתה
+                            {t('nav.byGrade')}
                             <ChevronDown size={14} className={`transition-transform ${isGradesOpen ? 'rotate-180' : ''}`} />
                         </button>
 
@@ -98,7 +100,7 @@ export function Header() {
                         className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 rounded-lg transition-all shadow-sm"
                     >
                         <Gamepad2 size={16} />
-                        משחקים
+                        {t('nav.games')}
                     </Link>
 
                     <Link
@@ -106,7 +108,7 @@ export function Header() {
                         className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all"
                     >
                         <BookOpen size={16} />
-                        הסברים להורים
+                        {t('nav.help')}
                     </Link>
 
                     <Link
@@ -114,14 +116,14 @@ export function Header() {
                         className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50 rounded-lg transition-all"
                     >
                         <Newspaper size={16} />
-                        בלוג
+                        {t('nav.blog')}
                     </Link>
 
                     <Link
                         href="/about"
                         className="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all"
                     >
-                        אודות
+                        {t('nav.about')}
                     </Link>
                 </nav>
 
@@ -131,7 +133,7 @@ export function Header() {
                         <Calculator size={22} />
                     </div>
                     <span className="text-lg font-black text-slate-800 hidden sm:block">
-                        דפי עבודה חכמים
+                        {t('siteName')}
                     </span>
                 </Link>
 
@@ -148,11 +150,11 @@ export function Header() {
                 >
                     {/* Menu Header */}
                     <div className="flex items-center justify-between p-4 border-b border-slate-100">
-                        <span className="text-lg font-black text-slate-800">תפריט</span>
+                        <span className="text-lg font-black text-slate-800">{t('nav.menu')}</span>
                         <button
                             onClick={() => setIsMenuOpen(false)}
                             className="p-2 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors"
-                            aria-label="סגור תפריט"
+                            aria-label={t('nav.closeMenu')}
                         >
                             <X size={24} />
                         </button>
@@ -165,7 +167,7 @@ export function Header() {
                             onClick={() => setIsMenuOpen(false)}
                             className="flex items-center gap-3 px-4 py-3 text-lg font-bold text-slate-700 hover:bg-orange-50 hover:text-orange-600 rounded-xl transition-colors"
                         >
-                            ראשי
+                            {t('nav.home')}
                         </Link>
 
                         {/* Games Link - Prominent - Points to interactive games */}
@@ -175,12 +177,12 @@ export function Header() {
                             className="flex items-center gap-3 px-4 py-3 text-lg font-bold text-purple-700 bg-purple-50 hover:bg-purple-100 rounded-xl transition-colors mt-2"
                         >
                             <Gamepad2 size={22} />
-                            משחקים אינטראקטיביים
+                            {t('nav.interactiveGames')}
                         </Link>
 
                         {/* Grades Section */}
                         <div className="mt-4 mb-2">
-                            <span className="px-4 text-xs font-bold text-slate-400 uppercase tracking-wider">לפי כיתה</span>
+                            <span className="px-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t('nav.byGrade')}</span>
                         </div>
                         <div className="grid grid-cols-2 gap-2 px-2">
                             {grades.map((grade) => (
@@ -203,7 +205,7 @@ export function Header() {
                                 className="flex items-center gap-3 px-4 py-3 text-base font-semibold text-slate-600 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-colors"
                             >
                                 <BookOpen size={20} />
-                                הסברים להורים
+                                {t('nav.help')}
                             </Link>
 
                             <Link
@@ -212,7 +214,7 @@ export function Header() {
                                 className="flex items-center gap-3 px-4 py-3 text-base font-semibold text-slate-600 hover:bg-sky-50 hover:text-sky-600 rounded-xl transition-colors"
                             >
                                 <Newspaper size={20} />
-                                בלוג
+                                {t('nav.blog')}
                             </Link>
 
                             <Link
@@ -220,7 +222,7 @@ export function Header() {
                                 onClick={() => setIsMenuOpen(false)}
                                 className="flex items-center gap-3 px-4 py-3 text-base font-semibold text-slate-600 hover:bg-orange-50 hover:text-orange-600 rounded-xl transition-colors"
                             >
-                                אודות
+                                {t('nav.about')}
                             </Link>
                         </div>
                     </nav>

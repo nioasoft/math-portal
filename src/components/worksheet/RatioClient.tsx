@@ -2,9 +2,10 @@
 
 import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
 import { trackPrintEvent } from '@/lib/analytics';
+import { useTranslations } from 'next-intl';
 
 interface RatioProblem {
     id: string;
@@ -43,6 +44,7 @@ function createProblems(): RatioProblem[] {
 }
 
 export default function RatioClient() {
+    const t = useTranslations('worksheet');
     const [problems, setProblems] = useState<RatioProblem[]>(() => createProblems());
     const [showAnswers, setShowAnswers] = useState<boolean>(false);
 
@@ -64,11 +66,11 @@ export default function RatioClient() {
                         <Link href="/" className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition text-slate-900">
                             <ArrowLeft size={20} />
                         </Link>
-                        <h1 className="text-xl font-bold text-slate-800">מחולל יחס ופרופורציה</h1>
+                        <h1 className="text-xl font-bold text-slate-800">{t('ratio.title')}</h1>
                     </div>
                     <div className="flex-1 flex justify-center">
                         <button onClick={regenerateProblems} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-2 font-bold">
-                            <RefreshCw size={16} aria-hidden="true" /> <span>רענן</span>
+                            <RefreshCw size={16} aria-hidden="true" /> <span>{t('controls.refresh')}</span>
                         </button>
 
                         <button
@@ -77,7 +79,7 @@ export default function RatioClient() {
                             aria-pressed={showAnswers}
                         >
                             {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
-                            <span className="hidden sm:inline">{showAnswers ? 'הסתר תשובות' : 'הצג תשובות'}</span>
+                            <span className="hidden sm:inline">{showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}</span>
                         </button>
                     </div>
                     <Link
@@ -85,10 +87,10 @@ export default function RatioClient() {
                         className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-emerald-200 transition shadow-sm"
                     >
                         <HelpCircle size={16} aria-hidden="true" />
-                        <span className="hidden sm:inline">הסברים להורים</span>
+                        <span className="hidden sm:inline">{t('controls.helpForParents')}</span>
                     </Link>
                     <button onClick={onPrint} className="bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-slate-800 flex items-center gap-2 font-bold">
-                        <Printer size={16} aria-hidden="true" /> <span>הדפס</span>
+                        <Printer size={16} aria-hidden="true" /> <span>{t('controls.print')}</span>
                     </button>
                 </div>
             </div>
@@ -96,8 +98,8 @@ export default function RatioClient() {
             <div className="w-full overflow-x-auto pb-12 print:pb-0 print:overflow-visible custom-scrollbar">
                 <div className="min-w-[210mm] max-w-[210mm] mx-auto mt-8 bg-white shadow-xl min-h-[297mm] p-[20mm] print:p-[10mm] print:shadow-none print:mt-0 print:mx-0 print:w-full print:min-h-0 print:h-auto print:overflow-visible">
                     <div className="text-center border-b-2 border-slate-100 pb-8 mb-12 print:mb-4 print:pb-2 print:border-b">
-                        <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">יחס ופרופורציה</h2>
-                        <p className="text-slate-500 print:hidden">השלימו את המספר החסר כדי לקיים את הפרופורציה</p>
+                        <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">{t('ratio.worksheetTitle')}</h2>
+                        <p className="text-slate-500 print:hidden">{t('ratio.instruction')}</p>
                     </div>
 
                     <div className="grid grid-cols-2 gap-y-16 gap-x-20" dir="ltr">
@@ -132,39 +134,30 @@ export default function RatioClient() {
                     </div>
 
                     <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
-                        tirgul.net - דפי עבודה חכמים ©
+                        {t('print.copyright')}
                     </div>
                 </div>
             </div>
 
             <ContentSection
-                title="דפי עבודה ביחס ופרופורציה להדפסה"
-                description="יחס ופרופורציה הם עמודי התווך של החשיבה האלגברית. דפי העבודה שלנו עוזרים לתלמידים לזהות קשרים כפליים בין מספרים ולפתור משוואות פשוטות."
-                features={[
-                    "השלמת האיבר החסר במשוואת יחס (1:2 = ?:8)",
-                    "תרגול כפל וחילוק בהקשר של יחסר",
-                    "זיהוי המקדם המקשר בין זוגות היחסים",
-                    "הכנה למבחני מיצ\"ב וללימודי מדעים"
-                ]}
+                title={t('ratio.content.title')}
+                description={t('ratio.content.description')}
+                features={t.raw('ratio.content.features') as string[]}
                 benefits={[
                     {
-                        title: "חשיבה לוגית",
-                        text: "פתרון תרגילי יחס דורש הבנה עמוקה יותר מאשר סתם חישוב טכני - יש למצוא את החוקיות."
+                        title: t('ratio.content.benefits.logicalThinking.title'),
+                        text: t('ratio.content.benefits.logicalThinking.text')
                     },
                     {
-                        title: "שימושי במטבח ובמפות",
-                        text: "הגדלת כמויות במתכון או קריאת קנה מידה במפה - הכל זה יחס ופרופורציה."
+                        title: t('ratio.content.benefits.practicalUse.title'),
+                        text: t('ratio.content.benefits.practicalUse.text')
                     },
                     {
-                        title: "מעבר קל לאלגברה",
-                        text: "מציאת הנעלם בפרופורציה היא למעשה פתרון המשוואה הראשונה של הילד (X)."
+                        title: t('ratio.content.benefits.algebraPrep.title'),
+                        text: t('ratio.content.benefits.algebraPrep.text')
                     }
                 ]}
-                tips={[
-                    "שאלו: 'פי כמה גדל המספר הראשון? המספר השני חייב לגדול באותו יחס'.",
-                    "ציירו את היחסים כדי להמחיש (למשל כדורים אדומים מול כחולים).",
-                    "אל תמהרו לפתור, תנו לילד לנסות לגלות את החוקיות בעצמו."
-                ]}
+                tips={t.raw('ratio.content.tips') as string[]}
             />
         </div>
     );

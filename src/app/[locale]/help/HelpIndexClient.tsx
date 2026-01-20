@@ -3,12 +3,14 @@
 import Link from 'next/link';
 import { BookOpen, ArrowLeft } from 'lucide-react';
 import { HelpTopicJSON } from '@/lib/content';
+import { useTranslations } from 'next-intl';
 
 interface HelpIndexClientProps {
     topics: HelpTopicJSON[];
 }
 
 export function HelpIndexClient({ topics }: HelpIndexClientProps) {
+    const t = useTranslations('common');
     return (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {topics.map((topic, index) => (
@@ -32,8 +34,8 @@ export function HelpIndexClient({ topics }: HelpIndexClientProps) {
                         </div>
                     </div>
                     <div className="mt-4 pt-4 border-t border-slate-100 flex items-center text-emerald-600 font-bold text-sm">
-                        <span>קראו עוד</span>
-                        <ArrowLeft size={16} className="mr-2 opacity-0 group-hover:opacity-100 group-hover:-translate-x-1 transition-all" />
+                        <span>{t('readMore')}</span>
+                        <ArrowLeft size={16} className="ms-2 opacity-0 group-hover:opacity-100 group-hover:-translate-x-1 transition-all" />
                     </div>
                 </Link>
             ))}

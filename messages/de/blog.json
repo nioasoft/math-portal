@@ -2,6 +2,10 @@
   "badge": "Artikel & Tipps",
   "title": "Unser Blog",
   "subtitle": "Artikel, Tipps und Tools für Eltern und Lehrer für erfahrungsorientiertes und erfolgreiches Mathematiklernen",
+  "allCategories": "Alle",
+  "readArticle": "Weiterlesen",
+  "noArticlesFound": "Keine Artikel in dieser Kategorie gefunden.",
+  "backToAll": "Zurück zu allen Artikeln",
   "ctaTitle": "Bereit zum Üben?",
   "ctaDescription": "Nach der Lektüre der Artikel besuchen Sie unsere Generatoren und erstellen Sie personalisierte Arbeitsblätter",
   "ctaButton": "Alle Generatoren"

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, Clock, ArrowLeft, Newspaper } from 'lucide-react';
 import type { BlogPostJSON, BlogCategory } from '@/lib/content';
+import { useTranslations } from 'next-intl';
 
 interface Props {
     posts: BlogPostJSON[];
@@ -13,6 +14,7 @@ interface Props {
 }
 
 export function BlogIndexClient({ posts, categories }: Props) {
+    const t = useTranslations('blog');
     const searchParams = useSearchParams();
     const categoryParam = searchParams.get('category');
 
@@ -43,7 +45,7 @@ export function BlogIndexClient({ posts, categories }: Props) {
                                 : 'bg-white text-slate-600 hover:bg-sky-50 border border-slate-200 hover:border-sky-200'
                                 }`}
                         >
-                            הכל
+                            {t('allCategories')}
                         </button>
                         {categories.map(cat => (
                             <button
@@ -106,7 +108,7 @@ export function BlogIndexClient({ posts, categories }: Props) {
 
                                     <div className="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
                                         <Link href={`/blog/${post.slug}`} className="text-sky-600 font-bold text-sm flex items-center gap-1 group/btn hover:gap-2 transition-all">
-                                            קרא עוד
+                                            {t('readArticle')}
                                             <ArrowLeft size={16} className="transition-transform" />
                                         </Link>
                                         <div className="flex gap-2">
@@ -127,12 +129,12 @@ export function BlogIndexClient({ posts, categories }: Props) {
                             <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6">
                                 <Newspaper size={32} className="text-slate-400" />
                             </div>
-                            <p className="text-slate-500 text-lg mb-4">לא נמצאו כתבות בקטגוריה זו.</p>
+                            <p className="text-slate-500 text-lg mb-4">{t('noArticlesFound')}</p>
                             <button
                                 onClick={() => setSelectedCategory('all')}
                                 className="text-sky-600 font-bold hover:underline"
                             >
-                                חזור לכל הכתבות
+                                {t('backToAll')}
                             </button>
                         </div>
                     )}

@@ -2,6 +2,10 @@
   "badge": "Artículos y Consejos",
   "title": "Nuestro Blog",
   "subtitle": "Artículos, consejos y herramientas para padres y maestros para el aprendizaje de matemáticas experiencial y exitoso",
+  "allCategories": "Todos",
+  "readArticle": "Leer más",
+  "noArticlesFound": "No se encontraron artículos en esta categoría.",
+  "backToAll": "Volver a todos los artículos",
   "ctaTitle": "¿Listo para Practicar?",
   "ctaDescription": "Después de leer los artículos, visita nuestros generadores y crea hojas de trabajo personalizadas",
   "ctaButton": "Todos los Generadores"

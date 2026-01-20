@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { MathOperation } from '@/lib/math-engine';
 import { GameEngine, GameMode, GameState } from '@/lib/game/game-engine';
 import { getHighScore, updateHighScore } from '@/lib/game/storage';
@@ -16,15 +17,19 @@ import { Play, Clock, Zap, Settings } from 'lucide-react';
 type GamePhase = 'setup' | 'playing' | 'feedback' | 'summary';
 
 export default function MathGameClient() {
+    const t = useTranslations('games');
     const [gameEngine] = useState(() => new GameEngine());
     const [gameState, setGameState] = useState<GameState | null>(null);
     const [phase, setPhase] = useState<GamePhase>('setup');
     const [feedbackResult, setFeedbackResult] = useState<{ correct: boolean; answer: number } | null>(null);
     const [isNewHighScore, setIsNewHighScore] = useState(false);
-    const [previousHighScore, setPreviousHighScore] = useState(() => {
+    const [previousHighScore, setPreviousHighScore] = useState(0);
+
+    // Load high score from localStorage after mount to avoid hydration mismatch
+    useEffect(() => {
         const highScore = getHighScore('math', 'practice');
-        return highScore?.score || 0;
-    });
+        setPreviousHighScore(highScore?.score || 0);
+    }, []);
 
     // Setup options
     const [selectedMode, setSelectedMode] = useState<GameMode>('practice');
@@ -115,14 +120,14 @@ export default function MathGameClient() {
     // Setup screen
     if (phase === 'setup') {
         return (
-            <GameShell title="משחק חשבון">
+            <GameShell title={t('gameTitle.math')}>
                 <div className="flex-1 flex items-center justify-center p-4">
                     <div className="w-full max-w-md">
                         {/* Mode Selection */}
                         <div className="mb-8">
                             <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
                                 <Settings className="w-5 h-5" />
-                                מצב משחק
+                                {t('setup.gameMode')}
                             </h2>
                             <div className="grid grid-cols-2 gap-3">
                                 <button
@@ -134,8 +139,8 @@ export default function MathGameClient() {
                                     }`}
                                 >
                                     <Zap className={`w-6 h-6 mx-auto mb-2 ${selectedMode === 'practice' ? 'text-green-400' : 'text-slate-400'}`} />
-                                    <span className="font-bold">תרגול חופשי</span>
-                                    <p className="text-xs text-slate-400 mt-1">ללא הגבלת זמן</p>
+                                    <span className="font-bold">{t('setup.freePractice')}</span>
+                                    <p className="text-xs text-slate-400 mt-1">{t('setup.noTimeLimit')}</p>
                                 </button>
                                 <button
                                     onClick={() => handleModeChange('quiz')}
@@ -146,8 +151,8 @@ export default function MathGameClient() {
                                     }`}
                                 >
                                     <Clock className={`w-6 h-6 mx-auto mb-2 ${selectedMode === 'quiz' ? 'text-orange-400' : 'text-slate-400'}`} />
-                                    <span className="font-bold">חידון</span>
-                                    <p className="text-xs text-slate-400 mt-1">נגד השעון</p>
+                                    <span className="font-bold">{t('setup.quiz')}</span>
+                                    <p className="text-xs text-slate-400 mt-1">{t('setup.againstClock')}</p>
                                 </button>
                             </div>
                         </div>
@@ -155,7 +160,7 @@ export default function MathGameClient() {
                         {/* Quiz Duration (only for quiz mode) */}
                         {selectedMode === 'quiz' && (
                             <div className="mb-8">
-                                <h2 className="text-lg font-bold mb-4">זמן החידון</h2>
+                                <h2 className="text-lg font-bold mb-4">{t('setup.quizDuration')}</h2>
                                 <div className="grid grid-cols-3 gap-3">
                                     {[60, 90, 120].map((duration) => (
                                         <button
@@ -167,7 +172,7 @@ export default function MathGameClient() {
                                                     : 'border-slate-600 bg-slate-800/50 hover:border-slate-500'
                                             }`}
                                         >
-                                            <span className="font-bold">{duration} שניות</span>
+                                            <span className="font-bold">{t('setup.seconds', { duration })}</span>
                                         </button>
                                     ))}
                                 </div>
@@ -176,14 +181,14 @@ export default function MathGameClient() {
 
                         {/* Operation Selection */}
                         <div className="mb-8">
-                            <h2 className="text-lg font-bold mb-4">פעולה</h2>
+                            <h2 className="text-lg font-bold mb-4">{t('setup.operation')}</h2>
                             <div className="grid grid-cols-5 gap-2">
                                 {[
                                     { op: '+', label: '+' },
                                     { op: '-', label: '-' },
                                     { op: '*', label: '×' },
                                     { op: ':', label: ':' },
-                                    { op: 'mixed', label: 'מעורב' },
+                                    { op: 'mixed', label: t('setup.mixed') },
                                 ].map(({ op, label }) => (
                                     <button
                                         key={op}
@@ -202,7 +207,7 @@ export default function MathGameClient() {
 
                         {/* Range Selection */}
                         <div className="mb-8">
-                            <h2 className="text-lg font-bold mb-4">טווח מספרים</h2>
+                            <h2 className="text-lg font-bold mb-4">{t('setup.numberRange')}</h2>
                             <div className="grid grid-cols-4 gap-2">
                                 {[20, 50, 100, 1000].map((range) => (
                                     <button
@@ -214,7 +219,7 @@ export default function MathGameClient() {
                                                 : 'border-slate-600 bg-slate-800/50 hover:border-slate-500'
                                         }`}
                                     >
-                                        עד {range}
+                                        {t('setup.upTo', { range })}
                                     </button>
                                 ))}
                             </div>
@@ -223,7 +228,7 @@ export default function MathGameClient() {
                         {/* High Score Display */}
                         {previousHighScore > 0 && (
                             <div className="mb-6 text-center">
-                                <span className="text-slate-400">שיא קודם: </span>
+                                <span className="text-slate-400">{t('setup.previousHighScore')} </span>
                                 <span className="text-yellow-400 font-bold">{previousHighScore}</span>
                             </div>
                         )}
@@ -234,7 +239,7 @@ export default function MathGameClient() {
                             className="w-full py-4 px-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold text-xl rounded-xl hover:from-green-600 hover:to-emerald-700 transition flex items-center justify-center gap-2"
                         >
                             <Play className="w-6 h-6" />
-                            <span>התחל לשחק</span>
+                            <span>{t('setup.startPlaying')}</span>
                         </button>
                     </div>
                 </div>
@@ -246,7 +251,7 @@ export default function MathGameClient() {
     if (gameState && (phase === 'playing' || phase === 'feedback')) {
         return (
             <GameShell
-                title="משחק חשבון"
+                title={t('gameTitle.math')}
                 topBar={
                     gameState.mode === 'quiz' && gameState.timeRemaining !== null ? (
                         <Timer
@@ -289,7 +294,7 @@ export default function MathGameClient() {
                                 onClick={endGame}
                                 className="text-slate-400 hover:text-white transition text-sm"
                             >
-                                סיים משחק
+                                {t('setup.endGame')}
                             </button>
                         </div>
                     )}
@@ -308,7 +313,7 @@ export default function MathGameClient() {
     // Summary screen
     if (phase === 'summary' && gameState) {
         return (
-            <GameShell title="משחק חשבון">
+            <GameShell title={t('gameTitle.math')}>
                 <GameSummary
                     score={gameState.score}
                     correctCount={gameState.correctCount}

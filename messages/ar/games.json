@@ -90,5 +90,36 @@
       "worksheetsPrompt": "تريد طباعة أوراق عمل؟",
       "backToHome": "عد إلى الصفحة الرئيسية للطباعة"
     }
+  },
+  "setup": {
+    "gameMode": "وضع اللعبة",
+    "freePractice": "تدريب حر",
+    "noTimeLimit": "بدون حد زمني",
+    "quiz": "اختبار",
+    "againstClock": "ضد الساعة",
+    "quizDuration": "مدة الاختبار",
+    "seconds": "{duration} ثانية",
+    "operation": "العملية",
+    "mixed": "مختلط",
+    "numberRange": "نطاق الأرقام",
+    "upTo": "حتى {range}",
+    "previousHighScore": "أعلى نتيجة سابقة:",
+    "startPlaying": "ابدأ اللعب",
+    "endGame": "إنهاء اللعبة",
+    "difficulty": "مستوى الصعوبة",
+    "whatWePractice": "ماذا سنتدرب؟",
+    "percentageInfo": "احسب النسبة المئوية من العدد الكامل. مثال: ما هو 25% من 80؟",
+    "percentageTip": "نصيحة: 10% يعني دائماً القسمة على 10!"
+  },
+  "gameTitle": {
+    "math": "لعبة الحساب",
+    "fractions": "لعبة الكسور",
+    "percentage": "لعبة النسب المئوية"
+  },
+  "fractionDifficulty": {
+    "level1": { "title": "المستوى 1", "description": "مقامات متساوية (+/-)" },
+    "level2": { "title": "المستوى 2", "description": "مقامات مختلفة (+/-)" },
+    "level3": { "title": "المستوى 3", "description": "أعداد مختلطة" },
+    "level4": { "title": "المستوى 4", "description": "الضرب والقسمة" }
   }
 }

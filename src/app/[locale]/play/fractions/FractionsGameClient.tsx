@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { GameEngine, GameMode, GameState, FractionDifficulty, formatFractionAnswer } from '@/lib/game/game-engine';
 import { getHighScore, updateHighScore } from '@/lib/game/storage';
 import GameShell from '@/components/game/GameShell';
@@ -15,15 +16,19 @@ import { Play, Clock, Zap, Settings } from 'lucide-react';
 type GamePhase = 'setup' | 'playing' | 'feedback' | 'summary';
 
 export default function FractionsGameClient() {
+    const t = useTranslations('games');
     const [gameEngine] = useState(() => new GameEngine());
     const [gameState, setGameState] = useState<GameState | null>(null);
     const [phase, setPhase] = useState<GamePhase>('setup');
     const [feedbackResult, setFeedbackResult] = useState<{ correct: boolean; answer: number; displayAnswer?: string } | null>(null);
     const [isNewHighScore, setIsNewHighScore] = useState(false);
-    const [previousHighScore, setPreviousHighScore] = useState(() => {
+    const [previousHighScore, setPreviousHighScore] = useState(0);
+
+    // Load high score from localStorage after mount to avoid hydration mismatch
+    useEffect(() => {
         const highScore = getHighScore('fractions', 'practice');
-        return highScore?.score || 0;
-    });
+        setPreviousHighScore(highScore?.score || 0);
+    }, []);
 
     // Setup options
     const [selectedMode, setSelectedMode] = useState<GameMode>('practice');
@@ -111,23 +116,23 @@ export default function FractionsGameClient() {
     };
 
     const difficultyLabels: Record<FractionDifficulty, { title: string; description: string }> = {
-        level1: { title: 'רמה 1', description: 'מכנים זהים (+/-)' },
-        level2: { title: 'רמה 2', description: 'מכנים שונים (+/-)' },
-        level3: { title: 'רמה 3', description: 'מספרים מעורבים' },
-        level4: { title: 'רמה 4', description: 'כפל וחילוק' },
+        level1: { title: t('fractionDifficulty.level1.title'), description: t('fractionDifficulty.level1.description') },
+        level2: { title: t('fractionDifficulty.level2.title'), description: t('fractionDifficulty.level2.description') },
+        level3: { title: t('fractionDifficulty.level3.title'), description: t('fractionDifficulty.level3.description') },
+        level4: { title: t('fractionDifficulty.level4.title'), description: t('fractionDifficulty.level4.description') },
     };
 
     // Setup screen
     if (phase === 'setup') {
         return (
-            <GameShell title="משחק שברים">
+            <GameShell title={t('gameTitle.fractions')}>
                 <div className="flex-1 flex items-center justify-center p-4">
                     <div className="w-full max-w-md">
                         {/* Mode Selection */}
                         <div className="mb-8">
                             <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
                                 <Settings className="w-5 h-5" />
-                                מצב משחק
+                                {t('setup.gameMode')}
                             </h2>
                             <div className="grid grid-cols-2 gap-3">
                                 <button
@@ -139,8 +144,8 @@ export default function FractionsGameClient() {
                                     }`}
                                 >
                                     <Zap className={`w-6 h-6 mx-auto mb-2 ${selectedMode === 'practice' ? 'text-green-400' : 'text-slate-400'}`} />
-                                    <span className="font-bold">תרגול חופשי</span>
-                                    <p className="text-xs text-slate-400 mt-1">ללא הגבלת זמן</p>
+                                    <span className="font-bold">{t('setup.freePractice')}</span>
+                                    <p className="text-xs text-slate-400 mt-1">{t('setup.noTimeLimit')}</p>
                                 </button>
                                 <button
                                     onClick={() => handleModeChange('quiz')}
@@ -151,8 +156,8 @@ export default function FractionsGameClient() {
                                     }`}
                                 >
                                     <Clock className={`w-6 h-6 mx-auto mb-2 ${selectedMode === 'quiz' ? 'text-orange-400' : 'text-slate-400'}`} />
-                                    <span className="font-bold">חידון</span>
-                                    <p className="text-xs text-slate-400 mt-1">נגד השעון</p>
+                                    <span className="font-bold">{t('setup.quiz')}</span>
+                                    <p className="text-xs text-slate-400 mt-1">{t('setup.againstClock')}</p>
                                 </button>
                             </div>
                         </div>
@@ -160,7 +165,7 @@ export default function FractionsGameClient() {
                         {/* Quiz Duration */}
                         {selectedMode === 'quiz' && (
                             <div className="mb-8">
-                                <h2 className="text-lg font-bold mb-4">זמן החידון</h2>
+                                <h2 className="text-lg font-bold mb-4">{t('setup.quizDuration')}</h2>
                                 <div className="grid grid-cols-3 gap-3">
                                     {[60, 90, 120].map((duration) => (
                                         <button
@@ -172,7 +177,7 @@ export default function FractionsGameClient() {
                                                     : 'border-slate-600 bg-slate-800/50 hover:border-slate-500'
                                             }`}
                                         >
-                                            <span className="font-bold">{duration} שניות</span>
+                                            <span className="font-bold">{t('setup.seconds', { duration })}</span>
                                         </button>
                                     ))}
                                 </div>
@@ -181,7 +186,7 @@ export default function FractionsGameClient() {
 
                         {/* Difficulty Selection */}
                         <div className="mb-8">
-                            <h2 className="text-lg font-bold mb-4">רמת קושי</h2>
+                            <h2 className="text-lg font-bold mb-4">{t('setup.difficulty')}</h2>
                             <div className="grid grid-cols-2 gap-3">
                                 {(Object.keys(difficultyLabels) as FractionDifficulty[]).map((level) => (
                                     <button
@@ -203,7 +208,7 @@ export default function FractionsGameClient() {
                         {/* High Score Display */}
                         {previousHighScore > 0 && (
                             <div className="mb-6 text-center">
-                                <span className="text-slate-400">שיא קודם: </span>
+                                <span className="text-slate-400">{t('setup.previousHighScore')} </span>
                                 <span className="text-yellow-400 font-bold">{previousHighScore}</span>
                             </div>
                         )}
@@ -214,7 +219,7 @@ export default function FractionsGameClient() {
                             className="w-full py-4 px-6 bg-gradient-to-r from-purple-500 to-violet-600 text-white font-bold text-xl rounded-xl hover:from-purple-600 hover:to-violet-700 transition flex items-center justify-center gap-2"
                         >
                             <Play className="w-6 h-6" />
-                            <span>התחל לשחק</span>
+                            <span>{t('setup.startPlaying')}</span>
                         </button>
                     </div>
                 </div>
@@ -226,7 +231,7 @@ export default function FractionsGameClient() {
     if (gameState && (phase === 'playing' || phase === 'feedback')) {
         return (
             <GameShell
-                title="משחק שברים"
+                title={t('gameTitle.fractions')}
                 topBar={
                     gameState.mode === 'quiz' && gameState.timeRemaining !== null ? (
                         <Timer
@@ -270,7 +275,7 @@ export default function FractionsGameClient() {
                                 onClick={endGame}
                                 className="text-slate-400 hover:text-white transition text-sm"
                             >
-                                סיים משחק
+                                {t('setup.endGame')}
                             </button>
                         </div>
                     )}
@@ -289,7 +294,7 @@ export default function FractionsGameClient() {
     // Summary screen
     if (phase === 'summary' && gameState) {
         return (
-            <GameShell title="משחק שברים">
+            <GameShell title={t('gameTitle.fractions')}>
                 <GameSummary
                     score={gameState.score}
                     correctCount={gameState.correctCount}

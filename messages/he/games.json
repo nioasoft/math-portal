@@ -90,5 +90,36 @@
       "worksheetsPrompt": "רוצים להדפיס דפי עבודה?",
       "backToHome": "חזרו לדף הראשי להדפסה"
     }
+  },
+  "setup": {
+    "gameMode": "מצב משחק",
+    "freePractice": "תרגול חופשי",
+    "noTimeLimit": "ללא הגבלת זמן",
+    "quiz": "חידון",
+    "againstClock": "נגד השעון",
+    "quizDuration": "זמן החידון",
+    "seconds": "{duration} שניות",
+    "operation": "פעולה",
+    "mixed": "מעורב",
+    "numberRange": "טווח מספרים",
+    "upTo": "עד {range}",
+    "previousHighScore": "שיא קודם:",
+    "startPlaying": "התחל לשחק",
+    "endGame": "סיים משחק",
+    "difficulty": "רמת קושי",
+    "whatWePractice": "מה נתרגל?",
+    "percentageInfo": "חישוב אחוז מתוך שלם. למשל: כמה זה 25% מתוך 80?",
+    "percentageTip": "טיפ: 10% זה תמיד לחלק ב-10!"
+  },
+  "gameTitle": {
+    "math": "משחק חשבון",
+    "fractions": "משחק שברים",
+    "percentage": "משחק אחוזים"
+  },
+  "fractionDifficulty": {
+    "level1": { "title": "רמה 1", "description": "מכנים זהים (+/-)" },
+    "level2": { "title": "רמה 2", "description": "מכנים שונים (+/-)" },
+    "level3": { "title": "רמה 3", "description": "מספרים מעורבים" },
+    "level4": { "title": "רמה 4", "description": "כפל וחילוק" }
   }
 }

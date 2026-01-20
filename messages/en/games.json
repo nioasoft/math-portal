@@ -90,5 +90,36 @@
       "worksheetsPrompt": "Want to print worksheets?",
       "backToHome": "Go back to the homepage to print"
     }
+  },
+  "setup": {
+    "gameMode": "Game Mode",
+    "freePractice": "Free Practice",
+    "noTimeLimit": "No time limit",
+    "quiz": "Quiz",
+    "againstClock": "Against the clock",
+    "quizDuration": "Quiz Duration",
+    "seconds": "{duration} seconds",
+    "operation": "Operation",
+    "mixed": "Mixed",
+    "numberRange": "Number Range",
+    "upTo": "Up to {range}",
+    "previousHighScore": "Previous High Score:",
+    "startPlaying": "Start Playing",
+    "endGame": "End Game",
+    "difficulty": "Difficulty Level",
+    "whatWePractice": "What will we practice?",
+    "percentageInfo": "Calculate percentage of a whole. For example: What is 25% of 80?",
+    "percentageTip": "Tip: 10% is always divide by 10!"
+  },
+  "gameTitle": {
+    "math": "Math Game",
+    "fractions": "Fractions Game",
+    "percentage": "Percentage Game"
+  },
+  "fractionDifficulty": {
+    "level1": { "title": "Level 1", "description": "Same denominators (+/-)" },
+    "level2": { "title": "Level 2", "description": "Different denominators (+/-)" },
+    "level3": { "title": "Level 3", "description": "Mixed numbers" },
+    "level4": { "title": "Level 4", "description": "Multiplication & Division" }
   }
 }

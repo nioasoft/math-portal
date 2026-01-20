@@ -90,5 +90,36 @@
       "worksheetsPrompt": "Möchten Sie Arbeitsblätter drucken?",
       "backToHome": "Zurück zur Startseite zum Drucken"
     }
+  },
+  "setup": {
+    "gameMode": "Spielmodus",
+    "freePractice": "Freies Üben",
+    "noTimeLimit": "Ohne Zeitlimit",
+    "quiz": "Quiz",
+    "againstClock": "Gegen die Uhr",
+    "quizDuration": "Quiz-Dauer",
+    "seconds": "{duration} Sekunden",
+    "operation": "Rechenart",
+    "mixed": "Gemischt",
+    "numberRange": "Zahlenbereich",
+    "upTo": "Bis {range}",
+    "previousHighScore": "Vorheriger Rekord:",
+    "startPlaying": "Spiel starten",
+    "endGame": "Spiel beenden",
+    "difficulty": "Schwierigkeitsgrad",
+    "whatWePractice": "Was üben wir?",
+    "percentageInfo": "Berechne den Prozentsatz eines Ganzen. Beispiel: Was ist 25% von 80?",
+    "percentageTip": "Tipp: 10% bedeutet immer durch 10 teilen!"
+  },
+  "gameTitle": {
+    "math": "Rechenspiel",
+    "fractions": "Bruchrechnen",
+    "percentage": "Prozentrechnen"
+  },
+  "fractionDifficulty": {
+    "level1": { "title": "Stufe 1", "description": "Gleiche Nenner (+/-)" },
+    "level2": { "title": "Stufe 2", "description": "Verschiedene Nenner (+/-)" },
+    "level3": { "title": "Stufe 3", "description": "Gemischte Zahlen" },
+    "level4": { "title": "Stufe 4", "description": "Multiplikation & Division" }
   }
 }

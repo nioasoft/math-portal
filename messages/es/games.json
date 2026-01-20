@@ -90,5 +90,36 @@
       "worksheetsPrompt": "¿Quieres imprimir hojas de trabajo?",
       "backToHome": "Vuelve a la página principal para imprimir"
     }
+  },
+  "setup": {
+    "gameMode": "Modo de juego",
+    "freePractice": "Práctica libre",
+    "noTimeLimit": "Sin límite de tiempo",
+    "quiz": "Quiz",
+    "againstClock": "Contra el reloj",
+    "quizDuration": "Duración del quiz",
+    "seconds": "{duration} segundos",
+    "operation": "Operación",
+    "mixed": "Mixto",
+    "numberRange": "Rango de números",
+    "upTo": "Hasta {range}",
+    "previousHighScore": "Récord anterior:",
+    "startPlaying": "Empezar a jugar",
+    "endGame": "Terminar juego",
+    "difficulty": "Nivel de dificultad",
+    "whatWePractice": "¿Qué practicaremos?",
+    "percentageInfo": "Calcula el porcentaje de un total. Ejemplo: ¿Cuánto es 25% de 80?",
+    "percentageTip": "Consejo: ¡10% siempre es dividir entre 10!"
+  },
+  "gameTitle": {
+    "math": "Juego de matemáticas",
+    "fractions": "Juego de fracciones",
+    "percentage": "Juego de porcentajes"
+  },
+  "fractionDifficulty": {
+    "level1": { "title": "Nivel 1", "description": "Denominadores iguales (+/-)" },
+    "level2": { "title": "Nivel 2", "description": "Denominadores diferentes (+/-)" },
+    "level3": { "title": "Nivel 3", "description": "Números mixtos" },
+    "level4": { "title": "Nivel 4", "description": "Multiplicación y División" }
   }
 }

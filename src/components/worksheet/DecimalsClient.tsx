@@ -3,10 +3,11 @@
 // Similar to math worksheet but generates floats
 import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
 import { AdSlot } from '@/components/AdSlot';
 import { trackPrintEvent } from '@/lib/analytics';
+import { useTranslations } from 'next-intl';
 
 interface MathProblem {
     id: string;
@@ -47,6 +48,7 @@ function createProblems(): MathProblem[] {
 }
 
 export default function DecimalsClient() {
+    const t = useTranslations('worksheet');
     const [problems, setProblems] = useState<MathProblem[]>(() => createProblems());
     const [showAnswers, setShowAnswers] = useState<boolean>(false);
 
@@ -68,11 +70,11 @@ export default function DecimalsClient() {
                         <Link href="/" className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
                             <ArrowLeft size={20} />
                         </Link>
-                        <h1 className="text-xl font-bold text-slate-800">דפי עבודה - מספרים עשרוניים</h1>
+                        <h1 className="text-xl font-bold text-slate-800">{t('decimals.title')}</h1>
                     </div>
                     <div className="flex-1 flex justify-center">
                         <button onClick={regenerateProblems} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-2 font-bold">
-                            <RefreshCw size={16} aria-hidden="true" /> <span>רענן</span>
+                            <RefreshCw size={16} aria-hidden="true" /> <span>{t('controls.refresh')}</span>
                         </button>
 
                         <button
@@ -81,7 +83,7 @@ export default function DecimalsClient() {
                             aria-pressed={showAnswers}
                         >
                             {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
-                            <span className="hidden sm:inline">{showAnswers ? 'הסתר תשובות' : 'הצג תשובות'}</span>
+                            <span className="hidden sm:inline">{showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}</span>
                         </button>
                     </div>
                     <Link
@@ -89,10 +91,10 @@ export default function DecimalsClient() {
                         className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-emerald-200 transition shadow-sm"
                     >
                         <HelpCircle size={16} aria-hidden="true" />
-                        <span className="hidden sm:inline">הסברים להורים</span>
+                        <span className="hidden sm:inline">{t('controls.helpForParents')}</span>
                     </Link>
                     <button onClick={onPrint} className="bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-slate-800 flex items-center gap-2 font-bold">
-                        <Printer size={16} aria-hidden="true" /> <span>הדפס</span>
+                        <Printer size={16} aria-hidden="true" /> <span>{t('controls.print')}</span>
                     </button>
                 </div>
             </div>
@@ -101,7 +103,7 @@ export default function DecimalsClient() {
             <div className="w-full overflow-x-auto pb-12 print:pb-0 print:overflow-visible custom-scrollbar">
                 <div className="min-w-[210mm] max-w-[210mm] mx-auto mt-8 bg-white shadow-xl min-h-[297mm] p-[20mm] print:p-[10mm] print:shadow-none print:mt-0 print:mx-0 print:w-full print:min-h-0 print:h-auto print:overflow-visible">
                     <div className="text-center border-b-2 border-slate-100 pb-8 mb-12 print:mb-4 print:pb-2 print:border-b">
-                        <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">חיבור וחיסור עשרוניים</h2>
+                        <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">{t('decimals.worksheetTitle')}</h2>
                         <div className="flex justify-between mt-8 text-lg print:hidden">
                             <div className="text-slate-400 text-sm">tirgul.net</div>
                         </div>
@@ -135,39 +137,30 @@ export default function DecimalsClient() {
                     </div>
 
                     <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
-                        tirgul.net - דפי עבודה חכמים ©
+                        {t('print.copyright')}
                     </div>
                 </div>
             </div>
 
             <ContentSection
-                title="דפי עבודה במספרים עשרוניים להדפסה"
-                description="תרגול מספרים עשרוניים הוא שלב חשוב המכין את התלמיד לחישובים מורכבים יותר בחיי היומיום ובחטיבת הביניים. דפי העבודה מתמקדים בדיוק בביצוע הפעולות."
-                features={[
-                    "חיבור וחיסור מספרים עשרוניים במאונך",
-                    "דיוק בכתיבה: נקודה מתחת לנקודה",
-                    "תרגילים עם מספר ספרות משתנה אחרי הנקודה",
-                    "מתאים לתרגול לקראת מבחנים בכיתות ה' ו-ו'"
-                ]}
+                title={t('decimals.content.title')}
+                description={t('decimals.content.description')}
+                features={t.raw('decimals.content.features') as string[]}
                 benefits={[
                     {
-                        title: "הבנת הנקודה העשרונית",
-                        text: "מיקום הנקודה הוא הקושי העיקרי בנושא זה. דפי העבודה מחייבים את התלמיד למקם את המספרים נכון במאונך."
+                        title: t('decimals.content.benefits.decimalPoint.title'),
+                        text: t('decimals.content.benefits.decimalPoint.text')
                     },
                     {
-                        title: "הכנה לחיים האמיתיים",
-                        text: "חישובים בכסף, מידות ומשקל דורשים כולם שליטה במספרים עשרוניים."
+                        title: t('decimals.content.benefits.realLife.title'),
+                        text: t('decimals.content.benefits.realLife.text')
                     },
                     {
-                        title: "עצמאות בתרגול",
-                        text: "התרגילים מובנים בצורה כזו שהתלמיד יכול לפתור אותם בעצמו ולפתח תחושת מסוגלות."
+                        title: t('decimals.content.benefits.independence.title'),
+                        text: t('decimals.content.benefits.independence.text')
                     }
                 ]}
-                tips={[
-                    "הקפידו תמיד שהנקודות העשרוניות יהיו בקו ישר אחד (מתחת לשנייה).",
-                    "אפשר להוסיף אפסים בסוף המספר כדי 'ליישר' את אורכי המספרים (למשל 0.5 הופך ל-0.50).",
-                    "בחיסור, אם חסרה ספרה למעלה, חובה להוסיף 0 כדי לא לטעות בפריטה."
-                ]}
+                tips={t.raw('decimals.content.tips') as string[]}
             />
         </div>
     );

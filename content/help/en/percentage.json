@@ -1,0 +1,36 @@
+{
+  "slug": "percentage",
+  "title": "Percentages",
+  "shortDescription": "Percentages are fractions with a denominator of 100. They allow easy comparison between different quantities.",
+  "importance": "Percentages are everywhere: discounts in stores, test scores, bank interest, and statistics in the news.",
+  "howToTeach": [
+    "Explain that 'percent' means 'out of one hundred'",
+    "Start with simple percentages: 50% = half, 25% = quarter",
+    "Show the connection to fractions: 50% = 50/100 = 1/2",
+    "Practice calculating 10% first (divide by 10) then multiply as needed"
+  ],
+  "examples": [
+    {
+      "problem": "25% of 80 = ?",
+      "solution": "20",
+      "explanation": "25% is a quarter. 80÷4 = 20. Or: 80 × 0.25 = 20."
+    },
+    {
+      "problem": "15% of 200 = ?",
+      "solution": "30",
+      "explanation": "10% of 200 = 20. 5% = 10. Total 15% = 30."
+    }
+  ],
+  "commonMistakes": [
+    "Dividing by 100 instead of multiplying by the percentage",
+    "Forgetting to convert the percentage to a fraction or decimal",
+    "Confusion when calculating discounts (the new price, not the discount)"
+  ],
+  "parentTips": [
+    "Practice while shopping: 'There's a 20% discount, how much will we save?'",
+    "Show a conversion table: 10%=0.1, 25%=0.25, 50%=0.5",
+    "Always calculate 10% first - it's the easiest!"
+  ],
+  "relatedGeneratorHref": "/percentage",
+  "relatedGeneratorTitle": "Percentage Worksheet Generator"
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "decimals",
+  "title": "Decimals",
+  "shortDescription": "Decimals are another way to represent fractions, especially tenths and hundredths.",
+  "importance": "Decimals are everywhere: money (dollars and cents), measurements (meters and centimeters), and scientific calculations.",
+  "howToTeach": [
+    "Start with money - dollars and cents are decimals!",
+    "Explain that the decimal point separates whole numbers from parts",
+    "Practice reading numbers: 3.45 = three and forty-five hundredths",
+    "In addition and subtraction - always align the decimal points"
+  ],
+  "examples": [
+    {
+      "problem": "2.5 + 1.3 = ?",
+      "solution": "3.8",
+      "explanation": "Align decimal points: 2.5 + 1.3. Units: 5+3=8. Wholes: 2+1=3. Answer: 3.8"
+    },
+    {
+      "problem": "5.00 - 2.75 = ?",
+      "solution": "2.25",
+      "explanation": "Like calculating with money: 5 dollars minus 2.75 = 2 dollars and 25 cents."
+    }
+  ],
+  "commonMistakes": [
+    "Not aligning the decimal points",
+    "Treating 0.5 and 0.50 as different numbers",
+    "Forgetting to add zeros for alignment (0.5 = 0.50)"
+  ],
+  "parentTips": [
+    "Practice with real money at the store",
+    "Show a ruler with centimeters and millimeters",
+    "Watch the decimal point! It's the most common mistake"
+  ],
+  "relatedGeneratorHref": "/decimals",
+  "relatedGeneratorTitle": "Decimals Worksheet Generator"
+}

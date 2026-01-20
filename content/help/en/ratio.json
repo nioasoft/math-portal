@@ -1,0 +1,36 @@
+{
+  "slug": "ratio",
+  "title": "Ratio & Proportion",
+  "shortDescription": "Ratio describes the relationship between two quantities. Proportion is an equality between two ratios.",
+  "importance": "Ratio is needed in recipes (doubling quantities), maps (scale), and science. It's preparation for algebra.",
+  "howToTeach": [
+    "Start with concrete examples: 'For every 2 apples there are 3 bananas'",
+    "Explain that an equal ratio is maintained when multiplying or dividing both sides",
+    "Practice finding the missing term in a proportion",
+    "Show the cross-multiplication method"
+  ],
+  "examples": [
+    {
+      "problem": "2:3 = 6:?",
+      "solution": "9",
+      "explanation": "From 2 to 6 we multiplied by 3. So 3 also needs to be multiplied by 3: 3×3=9."
+    },
+    {
+      "problem": "4:5 = ?:15",
+      "solution": "12",
+      "explanation": "From 5 to 15 we multiplied by 3. So 4 also needs to be multiplied by 3: 4×3=12."
+    }
+  ],
+  "commonMistakes": [
+    "Adding instead of multiplying",
+    "Forgetting to do the same operation to both sides",
+    "Errors in identifying which number changed"
+  ],
+  "parentTips": [
+    "Practice with recipes: 'If we need 2 eggs for 4 people, how many for 8?'",
+    "Use cards or objects to demonstrate ratios",
+    "Emphasize that the ratio stays constant!"
+  ],
+  "relatedGeneratorHref": "/ratio",
+  "relatedGeneratorTitle": "Ratio Worksheet Generator"
+}

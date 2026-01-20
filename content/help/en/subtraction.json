@@ -1,0 +1,36 @@
+{
+  "slug": "subtraction",
+  "title": "Subtraction",
+  "shortDescription": "Subtraction teaches children to understand differences and what's missing. It's the inverse operation of addition.",
+  "importance": "Subtraction is needed in daily life: calculating change when shopping, understanding how much is missing to reach a goal, and finding differences between quantities.",
+  "howToTeach": [
+    "Start with a physical demonstration - 'There were 7 apples, we ate 3, how many are left?'",
+    "Explain that 'subtraction' is like 'taking away' or 'removing'",
+    "Show the connection between addition and subtraction (if 3+4=7 then 7-4=3)",
+    "When reaching regrouping (borrowing), explain using tens and units"
+  ],
+  "examples": [
+    {
+      "problem": "12 - 5 = ?",
+      "solution": "7",
+      "explanation": "Start from 12, count down 5: 11, 10, 9, 8, 7. Or: 12 - 2 = 10, minus 3 more = 7."
+    },
+    {
+      "problem": "53 - 27 = ?",
+      "solution": "26",
+      "explanation": "Units: 3 - 7 not possible, borrow from tens. 13 - 7 = 6. Tens: 4 - 2 = 2. Answer: 26."
+    }
+  ],
+  "commonMistakes": [
+    "Subtracting the smaller from the larger in all cases (instead of regrouping)",
+    "Forgetting to regroup (borrow) from the tens place",
+    "Confusion in number order - subtraction is not commutative!"
+  ],
+  "parentTips": [
+    "Use games: 'You had 10 points, you lost 3, how many are left?'",
+    "Practice with money - it's tangible and interesting",
+    "If the child gets confused with regrouping, go back to tens and units with blocks"
+  ],
+  "relatedGeneratorHref": "/worksheet/math?op=sub",
+  "relatedGeneratorTitle": "Subtraction Worksheet Generator"
+}

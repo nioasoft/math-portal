@@ -1,33 +1,33 @@
 {
   "site": {
-    "name": "תרגול",
-    "title": "תרגול | דפי עבודה חכמים ומשחקי חשבון",
-    "description": "דפי עבודה חכמים להדפסה ומשחקים אינטראקטיביים בחשבון לכיתות א׳-ו׳. חינם וללא הרשמה!"
+    "name": "Smart Worksheets",
+    "title": "Smart Worksheets | Math Practice & Games",
+    "description": "Printable smart worksheets and interactive math games for grades 1-6. Free and no registration required!"
   },
   "pages": {
     "home": {
-      "title": "דפי עבודה חכמים ומשחקי חשבון",
-      "description": "דפי עבודה חכמים להדפסה ומשחקים אינטראקטיביים בחשבון לכיתות א׳-ו׳. חינם וללא הרשמה!"
+      "title": "Smart Worksheets & Math Games",
+      "description": "Printable smart worksheets and interactive math games for grades 1-6. Free and no registration required!"
     },
     "fractions": {
-      "title": "דפי עבודה בשברים",
-      "description": "דפי עבודה להדפסה בנושא שברים - חיבור, חיסור, כפל וחילוק שברים. מותאם לתכנית הלימודים."
+      "title": "Fractions Worksheets",
+      "description": "Printable fractions worksheets - adding, subtracting, multiplying, and dividing fractions. Aligned with curriculum standards."
     },
     "geometry": {
-      "title": "דפי עבודה בגיאומטריה",
-      "description": "דפי עבודה בגיאומטריה - שטח והיקף של צורות הנדסיות. מותאם לכיתות א׳-ו׳."
+      "title": "Geometry Worksheets",
+      "description": "Geometry worksheets - area and perimeter of geometric shapes. Suitable for grades 1-6."
     },
     "percentage": {
-      "title": "דפי עבודה באחוזים",
-      "description": "דפי עבודה באחוזים - חישוב אחוזים, המרה בין אחוזים לשברים. מותאם לתכנית הלימודים."
+      "title": "Percentage Worksheets",
+      "description": "Percentage worksheets - calculating percentages, converting between percentages and fractions. Aligned with curriculum standards."
     },
     "decimals": {
-      "title": "דפי עבודה בשברים עשרוניים",
-      "description": "דפי עבודה בשברים עשרוניים - חיבור, חיסור והמרה. מותאם לתכנית הלימודים."
+      "title": "Decimal Worksheets",
+      "description": "Decimal worksheets - addition, subtraction, and conversion. Aligned with curriculum standards."
     },
     "games": {
-      "title": "משחקי חשבון",
-      "description": "משחקי חשבון אינטראקטיביים לתרגול - חיבור, חיסור, כפל וחילוק."
+      "title": "Math Games",
+      "description": "Interactive math games for practice - addition, subtraction, multiplication, and division."
     }
   }
 }

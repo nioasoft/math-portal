@@ -1,0 +1,38 @@
+{
+  "slug": "addition",
+  "title": "Addition",
+  "shortDescription": "Addition is the foundation of all mathematics. Children learn to combine quantities and understand the concept of 'more'.",
+  "importance": "Addition is the first operation children learn and is the basis for all other arithmetic operations. Mastery of addition is needed for shopping, money management, measurements, and more.",
+  "howToTeach": [
+    "Start with tangible objects - blocks, pencils, candies",
+    "Explain that 'addition' is like 'adding' or 'collecting together'",
+    "Practice first with small numbers (up to 10)",
+    "When the child is ready, introduce carrying (regrouping) gradually",
+    "Use a number line as a visual aid"
+  ],
+  "examples": [
+    {
+      "problem": "7 + 5 = ?",
+      "solution": "12",
+      "explanation": "Start from 7, count 5 more: 8, 9, 10, 11, 12. Or: 7 + 3 = 10, plus 2 more = 12."
+    },
+    {
+      "problem": "25 + 38 = ?",
+      "solution": "63",
+      "explanation": "Units: 5 + 8 = 13 (write 3, carry 1). Tens: 2 + 3 + 1 = 6. Answer: 63."
+    }
+  ],
+  "commonMistakes": [
+    "Forgetting to carry - when units exceed 10",
+    "Errors in digit order when writing vertically",
+    "Skipping a number when counting"
+  ],
+  "parentTips": [
+    "Don't rush - give the child time to think",
+    "Encourage using fingers at the beginning - that's okay!",
+    "Turn practice into a game: 'I have 3 apples, you give me 4 more, how many do we have?'",
+    "Celebrate small successes"
+  ],
+  "relatedGeneratorHref": "/worksheet/math?op=add",
+  "relatedGeneratorTitle": "Addition Worksheet Generator"
+}

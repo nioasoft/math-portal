@@ -1,0 +1,36 @@
+{
+  "slug": "units",
+  "title": "Unit Conversions",
+  "shortDescription": "Unit conversion allows moving between different units of length, weight, and time.",
+  "importance": "Unit conversion is needed in cooking, construction, sports, and travel. It also teaches about the decimal system.",
+  "howToTeach": [
+    "Start with basic units and the relationships between them",
+    "Explain that the word 'kilo' = thousand",
+    "Practice multiplying and dividing by 10, 100, 1000",
+    "For time - remember that 60 (not 10) is the important number"
+  ],
+  "examples": [
+    {
+      "problem": "3 meters = ? cm",
+      "solution": "300",
+      "explanation": "One meter = 100 cm. 3 meters = 3 × 100 = 300 cm."
+    },
+    {
+      "problem": "2 hours = ? minutes",
+      "solution": "120",
+      "explanation": "One hour = 60 minutes. 2 hours = 2 × 60 = 120 minutes."
+    }
+  ],
+  "commonMistakes": [
+    "Confusion between units (meter/cm/mm)",
+    "Forgetting that time works in 60s, not 10s",
+    "Multiplying instead of dividing or vice versa"
+  ],
+  "parentTips": [
+    "Show a ruler and meter stick for practical examples",
+    "Practice with a real clock",
+    "Create a conversion chart on the wall"
+  ],
+  "relatedGeneratorHref": "/units",
+  "relatedGeneratorTitle": "Unit Conversion Worksheet Generator"
+}

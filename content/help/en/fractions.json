@@ -1,0 +1,36 @@
+{
+  "slug": "fractions",
+  "title": "Fractions",
+  "shortDescription": "Fractions represent parts of a whole. Children learn to read, compare, and perform operations with fractions.",
+  "importance": "Fractions are the foundation for understanding percentages, ratios, and advanced mathematics. They're also useful in cooking, measurements, and daily life.",
+  "howToTeach": [
+    "Start with physical division - half a cake, a quarter of a pizza",
+    "Explain that the denominator (bottom) tells how many parts we divided into, and the numerator (top) tells how many parts we took",
+    "Practice comparing fractions with the same denominator",
+    "Only after solid understanding, move to common denominators"
+  ],
+  "examples": [
+    {
+      "problem": "1/4 + 2/4 = ?",
+      "solution": "3/4",
+      "explanation": "When denominators are the same, just add the numerators: 1+2=3. The denominator stays 4."
+    },
+    {
+      "problem": "1/2 + 1/4 = ?",
+      "solution": "3/4",
+      "explanation": "Find a common denominator: 1/2 = 2/4. Now 2/4 + 1/4 = 3/4."
+    }
+  ],
+  "commonMistakes": [
+    "Adding denominators together with numerators (1/2+1/3 is NOT 2/5!)",
+    "Forgetting to simplify the final answer",
+    "Errors in finding a common denominator"
+  ],
+  "parentTips": [
+    "Use pizza, cake, or chocolate for examples",
+    "Draw circles and divide them into parts",
+    "Show equivalent fractions: 1/2 = 2/4 = 4/8"
+  ],
+  "relatedGeneratorHref": "/fractions",
+  "relatedGeneratorTitle": "Fractions Worksheet Generator"
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "division",
+  "title": "Division",
+  "shortDescription": "Division is the inverse operation of multiplication. Children learn to divide a quantity into equal parts.",
+  "importance": "Division is needed for fair sharing, calculating averages, and understanding fractions and percentages later on.",
+  "howToTeach": [
+    "Start with physical division: 'Divide 12 candies among 3 children'",
+    "Show the connection to multiplication: if 3×4=12 then 12÷3=4",
+    "Practice division without remainders before moving to division with remainders",
+    "Explain long division gradually with simple numbers"
+  ],
+  "examples": [
+    {
+      "problem": "24 ÷ 6 = ?",
+      "solution": "4",
+      "explanation": "How many times does 6 go into 24? 6×4=24, so 24÷6=4."
+    },
+    {
+      "problem": "84 ÷ 7 = ?",
+      "solution": "12",
+      "explanation": "Long division: 7 goes into 8 once (7), remainder 1. Bring down 4, get 14. 7 goes into 14 twice (14). Answer: 12."
+    }
+  ],
+  "commonMistakes": [
+    "Confusion between dividend and divisor",
+    "Forgetting to check the answer by multiplying",
+    "Errors in long division due to skipping steps"
+  ],
+  "parentTips": [
+    "Always check with multiplication: if 24÷6=4, then 6×4 must equal 24",
+    "Practice by dividing candies or toys",
+    "In long division - work step by step, slowly"
+  ],
+  "relatedGeneratorHref": "/worksheet/math?op=div",
+  "relatedGeneratorTitle": "Division Worksheet Generator"
+}

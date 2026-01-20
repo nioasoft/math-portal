@@ -1,0 +1,36 @@
+{
+  "slug": "series",
+  "title": "Arithmetic Sequences",
+  "shortDescription": "Sequences are a series of numbers with a constant pattern. Children learn to identify patterns and continue the sequence.",
+  "importance": "Pattern recognition is a basic thinking skill. Sequences prepare students for algebra and solving complex problems.",
+  "howToTeach": [
+    "Start with simple sequences: 2, 4, 6, 8...",
+    "Encourage the child to find the 'rule' (what do you do to get from one number to the next)",
+    "Practice ascending and descending sequences",
+    "Introduce multiplication sequences only after mastery of addition/subtraction sequences"
+  ],
+  "examples": [
+    {
+      "problem": "3, 6, 9, 12, ?",
+      "solution": "15",
+      "explanation": "The rule is +3 each time. 12+3=15."
+    },
+    {
+      "problem": "2, 4, 8, 16, ?",
+      "solution": "32",
+      "explanation": "The rule is ×2 each time. 16×2=32."
+    }
+  ],
+  "commonMistakes": [
+    "Looking for a rule that's too complicated when it's simple",
+    "Confusion between addition and multiplication sequences",
+    "Calculation errors after finding the rule"
+  ],
+  "parentTips": [
+    "Start with the question: 'What's the difference between the numbers?'",
+    "Encourage the child to explain the pattern in words",
+    "Create your own sequences and let the child find the rule"
+  ],
+  "relatedGeneratorHref": "/series",
+  "relatedGeneratorTitle": "Sequences Worksheet Generator"
+}

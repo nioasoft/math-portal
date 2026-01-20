@@ -1,39 +1,414 @@
 {
+  "generator": {
+    "title": "Worksheet Generator",
+    "defaultWorksheetTitle": "Math Worksheet",
+    "titleFormat": "{operation} in the range of {range}"
+  },
   "controls": {
-    "print": "הדפס",
-    "refresh": "רענן",
-    "showAnswers": "הצג תשובות",
-    "hideAnswers": "הסתר תשובות",
-    "settings": "הגדרות",
-    "problemCount": "מספר תרגילים"
+    "print": "Print",
+    "refresh": "Refresh",
+    "showAnswers": "Show Answers",
+    "hideAnswers": "Hide Answers",
+    "settings": "Settings",
+    "problemCount": "Number of problems",
+    "selectOperation": "Select operation",
+    "helpForParents": "Parent Guide"
   },
   "print": {
-    "title": "דף תרגול",
-    "name": "שם:",
-    "date": "תאריך:",
-    "grade": "כיתה:",
-    "answerKey": "דף תשובות"
+    "title": "Practice Sheet",
+    "name": "Name:",
+    "date": "Date:",
+    "grade": "Grade:",
+    "answerKey": "Answer Key",
+    "hint": "Click the print button above or use CTRL+P",
+    "copyright": "tirgul.net - Smart Worksheets ©"
   },
   "operations": {
-    "addition": "חיבור",
-    "subtraction": "חיסור",
-    "multiplication": "כפל",
-    "division": "חילוק",
-    "mixed": "מעורב"
-  },
-  "fractions": {
-    "title": "שברים",
-    "sameDenominator": "מכנה משותף",
-    "differentDenominator": "מכנים שונים",
-    "mixedNumbers": "מספרים מעורבים"
-  },
-  "geometry": {
-    "title": "גיאומטריה",
-    "perimeter": "היקף",
-    "area": "שטח"
+    "addition": "Addition",
+    "subtraction": "Subtraction",
+    "multiplication": "Multiplication",
+    "division": "Division",
+    "mixed": "Mixed",
+    "additionWithSymbol": "Addition (+)",
+    "subtractionWithSymbol": "Subtraction (-)",
+    "multiplicationWithSymbol": "Multiplication (×)",
+    "divisionWithSymbol": "Division (÷)"
   },
   "range": {
-    "min": "מינימום",
-    "max": "מקסימום"
+    "label": "Range:",
+    "upTo": "Up to {value}",
+    "min": "Minimum",
+    "max": "Maximum"
+  },
+  "content": {
+    "title": "Printable Math Worksheets - Addition, Subtraction, Multiplication & Division",
+    "description": "Our smart generator lets you create custom math worksheets quickly and easily. Perfect for students in grades 1-6 and home practice.",
+    "features": [
+      "Practice all 4 operations: addition, subtraction, multiplication, and division",
+      "Customize difficulty level and number range (up to one million!)",
+      "Create unlimited worksheets - each click generates new problems",
+      "Clean, clear design optimized for economical printing (A4)",
+      "Suitable for teachers, parents, and students alike"
+    ],
+    "benefits": {
+      "saveMoney": {
+        "title": "Save Time and Money",
+        "text": "Instead of buying expensive workbooks that run out quickly, print exactly what your child needs, when they need it."
+      },
+      "focusedPractice": {
+        "title": "Focused and Effective Practice",
+        "text": "Struggling with multiplication? Create a sheet that's all multiplication. Need to strengthen addition with millions? No problem. The system adapts to your needs."
+      },
+      "alwaysAvailable": {
+        "title": "Always Available",
+        "text": "The site is accessible from any computer or phone, 24/7. Run out of worksheets in class? Your home printer is ready to go."
+      }
+    },
+    "tips": [
+      "Start at an easy level to build confidence, then gradually increase difficulty.",
+      "Aim for short, consistent practice (10 minutes daily) rather than long sessions once a week.",
+      "Make learning a game - time yourself and try to beat your personal best for completing a worksheet.",
+      "Check answers together and encourage self-correction of mistakes."
+    ]
+  },
+  "fractions": {
+    "title": "Fractions",
+    "generatorTitle": "Worksheet Generator - Fractions",
+    "sameDenominator": "Same denominator",
+    "differentDenominator": "Different denominators",
+    "mixedNumbers": "Mixed numbers",
+    "difficultyLabel": "Type:",
+    "levels": {
+      "level1": "Level 1: Same denominators (+/-)",
+      "level2": "Level 2: Easy different denominators (+/-)",
+      "level3": "Level 3: Mixed numbers",
+      "level4": "Level 4: Multiplying & dividing fractions",
+      "level5": "Level 5: Simplifying & expanding"
+    },
+    "worksheetTitles": {
+      "level1": "Adding & Subtracting Fractions - Same Denominators",
+      "level2": "Adding & Subtracting Fractions - Different Denominators",
+      "level3": "Mixed Numbers",
+      "level4": "Multiplying & Dividing Fractions",
+      "level5": "Simplifying Fractions"
+    },
+    "content": {
+      "title": "Fractions Worksheets - The Complete Guide",
+      "description": "Our advanced generator creates practice sheets covering all fraction topics: from understanding fractions, through arithmetic operations, to mixed numbers.",
+      "features": [
+        "Five built-in difficulty levels for gradual progression",
+        "Full support for mixed numbers and improper fractions",
+        "Focused practice on multiplying and dividing fractions",
+        "Special worksheets for practicing simplifying and expanding"
+      ],
+      "benefits": {
+        "deepUnderstanding": {
+          "title": "Deep Understanding of Fractions",
+          "text": "Our modular practice lets children isolate each difficulty separately (just common denominators, or just converting to mixed numbers) and master it."
+        },
+        "examPrep": {
+          "title": "Exam Preparation",
+          "text": "All types of problems from standardized tests for grades 4-6 are covered here."
+        }
+      },
+      "tips": [
+        "When multiplying fractions: multiply numerator by numerator and denominator by denominator. Simple!",
+        "When dividing fractions: flip the second fraction (the divisor) and multiply.",
+        "Always try to simplify the final answer as much as possible."
+      ]
+    }
+  },
+  "wordProblems": {
+    "title": "Word Problems",
+    "worksheetTitle": "Math Word Problems",
+    "instruction": "Read the questions carefully and write the equation and answer",
+    "gradeLabel": "Grade:",
+    "grades": {
+      "grade1": "Grade 1",
+      "grade2": "Grade 2",
+      "grade3": "Grade 3"
+    },
+    "exercise": "Equation:",
+    "answer": "Answer:",
+    "content": {
+      "title": "Math Word Problems - Practicing Real Life",
+      "description": "Word problems bridge the gap between numbers and reality. They help children understand why we learn math and how to use it in everyday life.",
+      "features": [
+        "Variety of real-life questions: shopping, sharing candy, games, and more",
+        "Gender-balanced: names of boys and girls, proper phrasing",
+        "Varying difficulty levels: from simple addition and subtraction to multi-step problems (coming soon)",
+        "Space for writing the equation and answer neatly"
+      ],
+      "benefits": {
+        "mathThinking": {
+          "title": "Developing Mathematical Thinking",
+          "text": "Children learn to 'translate' a story into math language - a critical skill for success in mathematics."
+        },
+        "readingComprehension": {
+          "title": "Reading Comprehension",
+          "text": "Solving word problems requires deep reading and understanding the important details versus the irrelevant ones."
+        }
+      },
+      "tips": [
+        "Ask your child to highlight the numbers in the story and the key word (like 'gave', 'received', 'shared').",
+        "Drawing helps! Encourage your child to draw the problem before writing the equation.",
+        "Ask at the end: 'Does the answer make sense?'. If Danny ended up with a million apples, there's probably a mistake."
+      ]
+    }
+  },
+  "series": {
+    "title": "Arithmetic Sequences",
+    "worksheetTitle": "Complete the Arithmetic Sequences",
+    "instruction": "Discover the pattern and complete the missing number",
+    "difficultyLabel": "Difficulty level",
+    "difficulties": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    },
+    "showHide": {
+      "show": "Show",
+      "hide": "Hide"
+    },
+    "help": "Explanations",
+    "rule": "Pattern:",
+    "content": {
+      "title": "Printable Arithmetic Sequences Worksheets",
+      "description": "Arithmetic sequences are the foundation for understanding patterns and rules in mathematics. Our worksheets allow practice in identifying patterns and completing missing terms at various difficulty levels.",
+      "features": [
+        "Various difficulty levels: from simple addition to multiplication",
+        "Ascending and descending sequences",
+        "Developing logical and algebraic thinking",
+        "Suitable as preparation for gifted student tests and standardized assessments"
+      ],
+      "benefits": {
+        "patterns": {
+          "title": "Pattern Recognition",
+          "text": "The ability to recognize repeating patterns is a critical skill not only in mathematics but also in programming and science."
+        },
+        "flexibility": {
+          "title": "Mental Flexibility",
+          "text": "The need to discover the 'rule' behind the numbers encourages creative thinking and problem solving."
+        },
+        "arithmetic": {
+          "title": "Strengthening Arithmetic Operations",
+          "text": "Practicing sequences requires repeated calculations (e.g., +3, +3, +3), strengthening mastery of multiplication tables and addition."
+        }
+      },
+      "tips": [
+        "Start by checking the difference between the first two adjacent numbers.",
+        "Check if the difference holds for subsequent pairs. If not, try multiplication or division.",
+        "In descending sequences, the pattern is usually subtraction or division."
+      ]
+    }
+  },
+  "units": {
+    "title": "Unit Conversion Generator",
+    "instruction": "Complete the missing number",
+    "tabLabel": "Type of units",
+    "types": {
+      "length": "Length",
+      "weight": "Weight",
+      "time": "Time"
+    },
+    "worksheetTitles": {
+      "length": "Length Unit Conversions",
+      "weight": "Weight Unit Conversions",
+      "time": "Time Unit Conversions"
+    },
+    "showHide": {
+      "show": "Show",
+      "hide": "Hide"
+    },
+    "help": "Explanations",
+    "content": {
+      "title": "Printable Unit Conversion Worksheets (Length, Weight, and Time)",
+      "description": "Units of measurement are an integral part of our daily lives. Our generator creates worksheets for practicing conversions between different units.",
+      "features": [
+        "Length: conversions between kilometer, meter, centimeter, and millimeter",
+        "Weight: conversions between ton, kilogram, and gram",
+        "Time: conversions between days, hours, minutes, and seconds",
+        "Suitable for grades 3, 4, and 5"
+      ],
+      "benefits": {
+        "magnitude": {
+          "title": "Understanding Orders of Magnitude",
+          "text": "Practice helps children understand the relationship between different units (1 km is 1000 meters)."
+        },
+        "multiplication": {
+          "title": "Practicing Multiplication & Division by 10, 100, 1000",
+          "text": "Unit conversion is an excellent way to practice multiplication and division by round numbers."
+        },
+        "practical": {
+          "title": "Practical Life Knowledge",
+          "text": "Reading maps, cooking, and measuring time all require mastery of these conversions."
+        }
+      },
+      "tips": [
+        "Show your child a ruler: within 1 centimeter there are 10 small lines (millimeters).",
+        "Remember the prefixes: 'kilo' in Greek means thousand (km, kg).",
+        "In time, the multipliers are different: 60 seconds in a minute, 60 minutes in an hour, 24 hours in a day."
+      ]
+    }
+  },
+  "ratio": {
+    "title": "Ratio & Proportion Generator",
+    "worksheetTitle": "Ratio & Proportion",
+    "instruction": "Complete the missing number to maintain the proportion",
+    "content": {
+      "title": "Printable Ratio & Proportion Worksheets",
+      "description": "Ratio and proportion are the pillars of algebraic thinking. Our worksheets help students identify multiplicative relationships between numbers and solve simple equations.",
+      "features": [
+        "Completing the missing term in a ratio equation (1:2 = ?:8)",
+        "Practicing multiplication and division in the context of ratios",
+        "Identifying the connecting factor between ratio pairs",
+        "Preparation for standardized tests and science studies"
+      ],
+      "benefits": {
+        "logicalThinking": {
+          "title": "Logical Thinking",
+          "text": "Solving ratio problems requires deeper understanding than just technical calculation - you need to find the pattern."
+        },
+        "practicalUse": {
+          "title": "Useful in Kitchen and Maps",
+          "text": "Scaling recipe quantities or reading map scales - it's all ratio and proportion."
+        },
+        "algebraPrep": {
+          "title": "Easy Transition to Algebra",
+          "text": "Finding the unknown in a proportion is actually solving the child's first equation (X)."
+        }
+      },
+      "tips": [
+        "Ask: 'How many times did the first number grow? The second number must grow by the same factor'.",
+        "Draw the ratios to illustrate (for example, red balls versus blue balls).",
+        "Don't rush to solve - let the child try to discover the pattern themselves."
+      ]
+    }
+  },
+  "decimals": {
+    "title": "Worksheets - Decimals",
+    "worksheetTitle": "Adding & Subtracting Decimals",
+    "content": {
+      "title": "Printable Decimal Worksheets",
+      "description": "Practicing decimals is an important step that prepares students for more complex calculations in everyday life and middle school. Our worksheets focus on precision in performing operations.",
+      "features": [
+        "Vertical addition and subtraction of decimals",
+        "Precision in writing: decimal point below decimal point",
+        "Problems with varying numbers of digits after the decimal point",
+        "Suitable for test preparation in grades 5 and 6"
+      ],
+      "benefits": {
+        "decimalPoint": {
+          "title": "Understanding the Decimal Point",
+          "text": "Decimal point placement is the main difficulty in this topic. Our worksheets require students to place numbers correctly in vertical format."
+        },
+        "realLife": {
+          "title": "Preparation for Real Life",
+          "text": "Calculations with money, measurements, and weights all require mastery of decimals."
+        },
+        "independence": {
+          "title": "Independent Practice",
+          "text": "The exercises are structured so students can solve them independently and develop a sense of capability."
+        }
+      },
+      "tips": [
+        "Always make sure the decimal points are in a straight line (one below the other).",
+        "You can add zeros at the end of a number to 'align' the lengths (e.g., 0.5 becomes 0.50).",
+        "In subtraction, if a digit is missing on top, you must add 0 to avoid mistakes in borrowing."
+      ]
+    }
+  },
+  "percentage": {
+    "title": "Worksheets - Percentages",
+    "worksheetTitle": "Percentage Calculations",
+    "instruction": "Calculate the percentage value of the whole",
+    "of": "of",
+    "content": {
+      "title": "Printable Percentage Worksheets - Calculating Percentages of a Whole",
+      "description": "Our smart generator creates worksheets on percentages. This practice is essential for developing financial literacy and mathematical understanding before transitioning to middle school.",
+      "features": [
+        "Calculating the percentage value of a whole (e.g., what is 20% of 80?)",
+        "Combination of 'easy' percentages (10%, 25%, 50%) and general percentages",
+        "Space for showing the calculation method (fraction multiplication or the triangle method)",
+        "Especially suitable for grades 5 and 6 as a direct continuation of fractions"
+      ],
+      "benefits": {
+        "realLife": {
+          "title": "Connection to Reality",
+          "text": "Percentages are perhaps the most useful topic in daily life: discounts in stores, bank interest, and statistics in the news. This practice prepares children for life."
+        },
+        "fractionConnection": {
+          "title": "The Connection Between Fractions and Percentages",
+          "text": "Practice helps students see the direct connection: 50% is half, 25% is a quarter. This understanding strengthens mastery of both topics."
+        },
+        "quickThinking": {
+          "title": "Developing Quick Thinking",
+          "text": "Practicing basic percentages (like 10%) encourages mental math and develops quick numerical estimation."
+        }
+      },
+      "tips": [
+        "Explain that it's always easy to start by calculating 10% (divide by 10) and then multiply as needed.",
+        "Show the connection to simple fractions: 50% is like dividing by 2, 25% is like dividing by 4.",
+        "Use 'store discount' examples to make abstract questions concrete and interesting.",
+        "Encourage self-checking: if they asked for 200%, the result must be larger than the original number!"
+      ]
+    }
+  },
+  "geometry": {
+    "title": "Geometry",
+    "perimeter": "Perimeter",
+    "area": "Area",
+    "topicLabel": "Topic:",
+    "unit": "cm",
+    "topics": {
+      "rect": "Rectangles (area and perimeter)",
+      "triangle": "Triangles (area)",
+      "angle": "Angles (identification)",
+      "circle": "Circles (area and circumference)"
+    },
+    "worksheetTitles": {
+      "rect": "Area and Perimeter of Rectangles",
+      "triangle": "Area of Triangles",
+      "angle": "Types of Angles",
+      "circle": "Circle - Area and Circumference"
+    },
+    "labels": {
+      "base": "Base:",
+      "height": "Height:",
+      "angleType": "Angle type:",
+      "circumference": "Circumference (P):",
+      "circleArea": "Area (S):"
+    },
+    "angleTypes": {
+      "acute": "Acute",
+      "right": "Right",
+      "obtuse": "Obtuse",
+      "straight": "Straight"
+    },
+    "content": {
+      "title": "Geometry for Grades 3-6 - Comprehensive Practice",
+      "description": "All geometry topics in one place: rectangles, triangles, angles, and circles.",
+      "features": [
+        "Rectangles: calculating areas and perimeters on a grid",
+        "Triangles: practicing the area formula (base times height divided by 2)",
+        "Angles: identifying angle types (acute, obtuse, right, straight)",
+        "Circles: introduction to pi (π) and calculating area and circumference"
+      ],
+      "benefits": {
+        "visualization": {
+          "title": "Clear Visualization",
+          "text": "Each shape is displayed graphically in a clear and accurate way that helps students understand the given data."
+        },
+        "curriculum": {
+          "title": "Curriculum Alignment",
+          "text": "The topics cover elementary school geometry requirements."
+        }
+      },
+      "tips": [
+        "For triangles: note that you always multiply the height by the side it drops to (the base).",
+        "For angles: use the corner of a sheet of paper to check if the angle is greater or less than 90 degrees.",
+        "For circles: remember that the diameter is exactly twice the radius."
+      ]
+    }
   }
 }

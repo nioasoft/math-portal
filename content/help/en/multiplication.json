@@ -1,0 +1,37 @@
+{
+  "slug": "multiplication",
+  "title": "Multiplication",
+  "shortDescription": "Multiplication is repeated addition. Children learn that multiplication shortcuts adding the same number many times.",
+  "importance": "Multiplication is the foundation for advanced math, area calculations, and solving everyday problems like calculating total price for multiple items.",
+  "howToTeach": [
+    "Start with understanding the concept: 3×4 is like 3+3+3+3 or 4+4+4",
+    "Teach the multiplication table gradually - start with 2, 5, 10",
+    "Use visual patterns (rows and columns)",
+    "Review facts until they become automatic"
+  ],
+  "examples": [
+    {
+      "problem": "4 × 7 = ?",
+      "solution": "28",
+      "explanation": "4 times 7: 7+7+7+7 = 28. Or use the multiplication table."
+    },
+    {
+      "problem": "23 × 4 = ?",
+      "solution": "92",
+      "explanation": "Units: 3×4 = 12 (write 2, carry 1). Tens: 2×4 = 8, + 1 = 9. Answer: 92."
+    }
+  ],
+  "commonMistakes": [
+    "Confusion between similar multiplication facts (6×7 and 7×8)",
+    "Forgetting to carry in two-digit multiplication",
+    "Skipping a step when multiplying large numbers"
+  ],
+  "parentTips": [
+    "Practice the multiplication table every day - 5 minutes is enough",
+    "Turn it into a song or family quiz",
+    "Show patterns: all multiples of 5 end in 0 or 5",
+    "Don't force mechanical memorization - understanding comes first"
+  ],
+  "relatedGeneratorHref": "/worksheet/math?op=mul",
+  "relatedGeneratorTitle": "Multiplication Worksheet Generator"
+}

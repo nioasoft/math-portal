@@ -15,6 +15,9 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const home = (await import(`../../messages/${locale}/home.json`)).default;
   const math = (await import(`../../messages/${locale}/math.json`)).default;
   const curriculum = (await import(`../../messages/${locale}/curriculum.json`)).default;
+  const worksheet = (await import(`../../messages/${locale}/worksheet.json`)).default;
+  const games = (await import(`../../messages/${locale}/games.json`)).default;
+  const meta = (await import(`../../messages/${locale}/meta.json`)).default;
 
   return {
     locale,
@@ -23,6 +26,9 @@ export default getRequestConfig(async ({ requestLocale }) => {
       home,
       math,
       curriculum,
+      worksheet,
+      games,
+      meta,
     },
   };
 });

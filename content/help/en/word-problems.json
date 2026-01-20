@@ -1,0 +1,37 @@
+{
+  "slug": "word-problems",
+  "title": "Word Problems",
+  "shortDescription": "Word problems are mathematical stories that need to be translated into an equation and solved.",
+  "importance": "Word problems teach how to apply mathematics in reality. They develop reading comprehension and logical thinking.",
+  "howToTeach": [
+    "Teach them to read the problem at least twice",
+    "Ask them to mark the numbers and 'key words'",
+    "Encourage drawing or making a diagram of the problem",
+    "At the end - check if the answer makes sense"
+  ],
+  "examples": [
+    {
+      "problem": "Danny had 15 marbles. He gave 7 marbles to Yossi. How many marbles does Danny have left?",
+      "solution": "8",
+      "explanation": "Gave = subtraction. 15 - 7 = 8 marbles."
+    },
+    {
+      "problem": "Each row has 6 chairs. There are 4 rows. How many chairs are there in total?",
+      "solution": "24",
+      "explanation": "Each row × number of rows = multiplication. 6 × 4 = 24 chairs."
+    }
+  ],
+  "commonMistakes": [
+    "Not reading the entire question to the end",
+    "Confusion with key words (gave = subtraction, received = addition)",
+    "Not checking if the answer makes sense"
+  ],
+  "parentTips": [
+    "Ask the child to tell you the story in their own words",
+    "Encourage drawing - it helps understanding!",
+    "Ask: 'What are they asking us?' before starting to solve",
+    "After solving, ask: 'Does this make sense?'"
+  ],
+  "relatedGeneratorHref": "/word-problems",
+  "relatedGeneratorTitle": "Word Problems Generator"
+}

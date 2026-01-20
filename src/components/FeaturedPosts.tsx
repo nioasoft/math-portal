@@ -69,7 +69,7 @@ export function FeaturedPosts() {
                                     sizes="(max-width: 768px) 100vw, 33vw"
                                     className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                                 />
-                                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-indigo-600 shadow-sm border border-indigo-100">
+                                <div className="absolute top-4 end-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-indigo-600 shadow-sm border border-indigo-100">
                                     {post.categoryLabel}
                                 </div>
                             </div>
@@ -83,7 +83,7 @@ export function FeaturedPosts() {
                                 </p>
                                 <div className="mt-auto flex items-center text-xs text-slate-400 gap-4 pt-4 border-t border-slate-50">
                                     <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
-                                    <span className="text-blue-600 font-bold mr-auto">קרא עוד</span>
+                                    <span className="text-blue-600 font-bold ms-auto">קרא עוד</span>
                                 </div>
                             </div>
                         </Link>

@@ -82,7 +82,7 @@ export function Header() {
                         </button>
 
                         {/* Dropdown Menu */}
-                        <div className={`absolute top-full right-0 mt-2 bg-white rounded-xl shadow-xl border border-slate-100 py-2 min-w-[140px] transition-all ${isGradesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+                        <div className={`absolute top-full end-0 mt-2 bg-white rounded-xl shadow-xl border border-slate-100 py-2 min-w-[140px] transition-all ${isGradesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
                             {grades.map((grade) => (
                                 <Link
                                     key={grade.href}
@@ -152,7 +152,7 @@ export function Header() {
                     <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
                 </div>
                 <div
-                    className={`lg:hidden fixed top-0 right-0 h-screen w-[280px] max-w-[85vw] bg-white z-50 shadow-2xl transform transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                    className={`lg:hidden fixed top-0 start-0 h-screen w-[280px] max-w-[85vw] bg-white z-50 shadow-2xl transform transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-0' : 'ltr:-translate-x-full rtl:translate-x-full'}`}
                 >
                     {/* Menu Header */}
                     <div className="flex items-center justify-between p-4 border-b border-slate-100">

@@ -1,0 +1,77 @@
+{
+  "grades": {
+    "1": {
+      "title": "Grado 1",
+      "description": "Primeros pasos en el mundo de los números.",
+      "topics": {
+        "add-10": { "title": "Suma hasta 10", "description": "Ejercicios de suma simples" },
+        "sub-10": { "title": "Resta hasta 10", "description": "Ejercicios de resta simples" },
+        "add-20": { "title": "Suma hasta 20", "description": "Incluyendo llevar a la siguiente decena" },
+        "sub-20": { "title": "Resta hasta 20", "description": "Práctica de resta avanzada" },
+        "word-1": { "title": "Problemas de Palabras", "description": "Suma y resta simples" }
+      }
+    },
+    "2": {
+      "title": "Grado 2",
+      "description": "Ampliando el rango de números a cien y aprendiendo multiplicación.",
+      "topics": {
+        "add-100": { "title": "Suma hasta 100", "description": "Suma sin reagrupación" },
+        "sub-100": { "title": "Resta hasta 100", "description": "Resta sin reagrupación" },
+        "mul-basic": { "title": "Introducción a la Multiplicación", "description": "Primeros ejercicios de multiplicación" },
+        "mul-table": { "title": "Tablas de Multiplicar (1-5)", "description": "Múltiplos de 1 a 5" },
+        "word-2": { "title": "Problemas de Palabras", "description": "Incluyendo multiplicación" },
+        "series-easy": { "title": "Secuencias Fáciles", "description": "Reconocimiento de patrones simples" }
+      }
+    },
+    "3": {
+      "title": "Grado 3",
+      "description": "Números hasta 1000, multiplicación y división.",
+      "topics": {
+        "add-1000": { "title": "Suma hasta 1,000", "description": "Suma en columna" },
+        "sub-1000": { "title": "Resta hasta 1,000", "description": "Resta en columna" },
+        "mul-100": { "title": "Tablas de Multiplicar Completas", "description": "Multiplicación hasta 100" },
+        "div-basic": { "title": "División sin Residuo", "description": "Introducción a la división" },
+        "units-length": { "title": "Conversión de Longitud", "description": "Metros, cm, mm" },
+        "word-3": { "title": "Problemas de Palabras", "description": "Incluyendo división" },
+        "series-medium": { "title": "Secuencias Aritméticas", "description": "Nivel intermedio" }
+      }
+    },
+    "4": {
+      "title": "Grado 4",
+      "description": "Números grandes, fracciones y operaciones aritméticas avanzadas.",
+      "topics": {
+        "add-10000": { "title": "Suma hasta 10,000", "description": "Números de varios dígitos" },
+        "sub-10000": { "title": "Resta hasta 10,000", "description": "Resta de varios dígitos" },
+        "mul-1000": { "title": "Multiplicación hasta 1,000", "description": "Multiplicar números grandes" },
+        "long-div": { "title": "División Larga", "description": "Práctica de división larga" },
+        "area-rect": { "title": "Área del Rectángulo", "description": "Cálculo de área y perímetro" },
+        "units-time": { "title": "Conversión de Tiempo", "description": "Horas, minutos, segundos" },
+        "series-4": { "title": "Secuencias Aritméticas", "description": "Suma y resta" }
+      }
+    },
+    "5": {
+      "title": "Grado 5",
+      "description": "Fracciones, decimales y geometría ampliada.",
+      "topics": {
+        "add-large": { "title": "Suma de Números Grandes", "description": "Hasta un millón" },
+        "mul-large": { "title": "Multiplicación y División Grandes", "description": "Números de varios dígitos" },
+        "fractions": { "title": "Suma de Fracciones", "description": "Denominadores iguales/diferentes" },
+        "decimals": { "title": "Números Decimales", "description": "Suma y resta" },
+        "units-adv": { "title": "Conversión de Unidades", "description": "Longitud, peso y tiempo" },
+        "triangle-area": { "title": "Área del Triángulo", "description": "Base por altura dividido por 2" },
+        "series-hard": { "title": "Secuencias Avanzadas", "description": "Incluyendo multiplicación" }
+      }
+    },
+    "6": {
+      "title": "Grado 6",
+      "description": "Preparación para la secundaria: porcentajes, razones y ecuaciones.",
+      "topics": {
+        "percentage": { "title": "Porcentajes", "description": "Calcular porcentaje de una cantidad" },
+        "ratio": { "title": "Razón y Proporción", "description": "Problemas de razón" },
+        "angles": { "title": "Ángulos", "description": "Identificar tipos de ángulos" },
+        "circle": { "title": "Círculos", "description": "Área y circunferencia del círculo" },
+        "word-adv": { "title": "Problemas de Palabras", "description": "Problemas complejos" }
+      }
+    }
+  }
+}

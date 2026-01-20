@@ -1,6 +1,7 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { HELP_TOPICS, getHelpTopicBySlug } from '@/lib/help-data';
+import { getHelpTopic, getHelpTopics, getHelpSlugs } from '@/lib/content';
+import { Locale, locales } from '@/i18n/config';
 import { AdSlot } from '@/components/AdSlot';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -8,18 +9,26 @@ import { ArrowLeft, ArrowRight, BookOpen, AlertTriangle, Lightbulb, CheckCircle,
 import { Metadata } from 'next';
 
 interface PageProps {
-    params: Promise<{ topic: string }>;
+    params: Promise<{ topic: string; locale: string }>;
 }
 
 export async function generateStaticParams() {
-    return HELP_TOPICS.map((topic) => ({
-        topic: topic.slug,
-    }));
+    const slugs = await getHelpSlugs();
+
+    // Generate params for all locales and all topics
+    const params: { locale: string; topic: string }[] = [];
+    for (const locale of locales) {
+        for (const topic of slugs) {
+            params.push({ locale, topic });
+        }
+    }
+
+    return params;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-    const resolvedParams = await params;
-    const topic = getHelpTopicBySlug(resolvedParams.topic);
+    const { topic: topicSlug, locale } = await params;
+    const topic = await getHelpTopic(topicSlug, locale as Locale);
 
     if (!topic) {
         return {
@@ -34,12 +43,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function HelpTopicPage({ params }: PageProps) {
-    const resolvedParams = await params;
-    const topic = getHelpTopicBySlug(resolvedParams.topic);
+    const { topic: topicSlug, locale } = await params;
+    const topic = await getHelpTopic(topicSlug, locale as Locale);
 
     if (!topic) {
         notFound();
     }
+
+    // Get all topics for "other topics" section
+    const allTopics = await getHelpTopics(locale as Locale);
 
     // Generate FAQ Schema structured data
     const faqSchema = {
@@ -249,7 +261,7 @@ export default async function HelpTopicPage({ params }: PageProps) {
                     <div className="container-custom max-w-4xl">
                         <h2 className="text-2xl font-black text-slate-800 mb-8 text-center">נושאים נוספים</h2>
                         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-                            {HELP_TOPICS.filter(t => t.slug !== topic.slug).slice(0, 6).map((otherTopic) => (
+                            {allTopics.filter(t => t.slug !== topic.slug).slice(0, 6).map((otherTopic) => (
                                 <Link
                                     key={otherTopic.slug}
                                     href={`/help/${otherTopic.slug}`}

@@ -1,0 +1,77 @@
+{
+  "grades": {
+    "1": {
+      "title": "Grade 1",
+      "description": "First steps in the world of numbers.",
+      "topics": {
+        "add-10": { "title": "Addition up to 10", "description": "Simple addition exercises" },
+        "sub-10": { "title": "Subtraction up to 10", "description": "Simple subtraction exercises" },
+        "add-20": { "title": "Addition up to 20", "description": "Including carrying to the next ten" },
+        "sub-20": { "title": "Subtraction up to 20", "description": "Advanced subtraction practice" },
+        "word-1": { "title": "Word Problems", "description": "Simple addition and subtraction" }
+      }
+    },
+    "2": {
+      "title": "Grade 2",
+      "description": "Expanding the number range to one hundred and learning multiplication.",
+      "topics": {
+        "add-100": { "title": "Addition up to 100", "description": "Addition without regrouping" },
+        "sub-100": { "title": "Subtraction up to 100", "description": "Subtraction without regrouping" },
+        "mul-basic": { "title": "Introduction to Multiplication", "description": "First multiplication exercises" },
+        "mul-table": { "title": "Times Tables (1-5)", "description": "Multiples of 1 to 5" },
+        "word-2": { "title": "Word Problems", "description": "Including multiplication" },
+        "series-easy": { "title": "Easy Sequences", "description": "Simple pattern recognition" }
+      }
+    },
+    "3": {
+      "title": "Grade 3",
+      "description": "Numbers up to 1000, multiplication and division.",
+      "topics": {
+        "add-1000": { "title": "Addition up to 1,000", "description": "Column addition" },
+        "sub-1000": { "title": "Subtraction up to 1,000", "description": "Column subtraction" },
+        "mul-100": { "title": "Full Times Tables", "description": "Multiplication up to 100" },
+        "div-basic": { "title": "Division without Remainder", "description": "Introduction to division" },
+        "units-length": { "title": "Length Conversion", "description": "Meters, cm, mm" },
+        "word-3": { "title": "Word Problems", "description": "Including division" },
+        "series-medium": { "title": "Arithmetic Sequences", "description": "Medium level" }
+      }
+    },
+    "4": {
+      "title": "Grade 4",
+      "description": "Large numbers, fractions and advanced arithmetic operations.",
+      "topics": {
+        "add-10000": { "title": "Addition up to 10,000", "description": "Multi-digit numbers" },
+        "sub-10000": { "title": "Subtraction up to 10,000", "description": "Multi-digit subtraction" },
+        "mul-1000": { "title": "Multiplication up to 1,000", "description": "Multiplying large numbers" },
+        "long-div": { "title": "Long Division", "description": "Long division practice" },
+        "area-rect": { "title": "Rectangle Area", "description": "Area and perimeter calculation" },
+        "units-time": { "title": "Time Conversion", "description": "Hours, minutes, seconds" },
+        "series-4": { "title": "Arithmetic Sequences", "description": "Addition and subtraction" }
+      }
+    },
+    "5": {
+      "title": "Grade 5",
+      "description": "Fractions, decimals and expanding geometry.",
+      "topics": {
+        "add-large": { "title": "Adding Large Numbers", "description": "Up to one million" },
+        "mul-large": { "title": "Large Multiplication & Division", "description": "Multi-digit numbers" },
+        "fractions": { "title": "Adding Fractions", "description": "Same/different denominators" },
+        "decimals": { "title": "Decimal Numbers", "description": "Addition and subtraction" },
+        "units-adv": { "title": "Unit Conversion", "description": "Length, weight and time" },
+        "triangle-area": { "title": "Triangle Area", "description": "Base times height divided by 2" },
+        "series-hard": { "title": "Advanced Sequences", "description": "Including multiplication" }
+      }
+    },
+    "6": {
+      "title": "Grade 6",
+      "description": "Preparation for middle school: percentages, ratios and equations.",
+      "topics": {
+        "percentage": { "title": "Percentages", "description": "Calculating percentage of a quantity" },
+        "ratio": { "title": "Ratio and Proportion", "description": "Ratio problems" },
+        "angles": { "title": "Angles", "description": "Identifying angle types" },
+        "circle": { "title": "Circles", "description": "Circle area and circumference" },
+        "word-adv": { "title": "Word Problems", "description": "Complex problems" }
+      }
+    }
+  }
+}

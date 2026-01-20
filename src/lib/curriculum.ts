@@ -16,6 +16,103 @@ export interface GradeConfig {
     topics: Topic[];
 }
 
+// Icon mapping for topics - used to get the correct icon for a topic ID
+export const TOPIC_ICONS: Record<string, LucideIcon> = {
+    'add-10': Calculator,
+    'sub-10': Calculator,
+    'add-20': Calculator,
+    'sub-20': Calculator,
+    'word-1': BookOpen,
+    'add-100': Calculator,
+    'sub-100': Calculator,
+    'mul-basic': X,
+    'mul-table': Grip,
+    'word-2': BookOpen,
+    'series-easy': TrendingUp,
+    'add-1000': Calculator,
+    'sub-1000': Calculator,
+    'mul-100': Grip,
+    'div-basic': Percent,
+    'units-length': Ruler,
+    'word-3': BookOpen,
+    'series-medium': TrendingUp,
+    'add-10000': Calculator,
+    'sub-10000': Calculator,
+    'mul-1000': X,
+    'long-div': Scale,
+    'area-rect': Shapes,
+    'units-time': Clock,
+    'series-4': TrendingUp,
+    'add-large': Hash,
+    'mul-large': X,
+    'fractions': PieChart,
+    'decimals': Hash,
+    'units-adv': Ruler,
+    'triangle-area': Triangle,
+    'series-hard': TrendingUp,
+    'percentage': Percent,
+    'ratio': Scale,
+    'angles': Triangle,
+    'circle': Circle,
+    'word-adv': BookOpen,
+};
+
+// Topic href mapping - used to get the correct URL for a topic ID
+export const TOPIC_HREFS: Record<string, string> = {
+    'add-10': '/worksheet/math?op=add&range=10',
+    'sub-10': '/worksheet/math?op=sub&range=10',
+    'add-20': '/worksheet/math?op=add&range=20',
+    'sub-20': '/worksheet/math?op=sub&range=20',
+    'word-1': '/word-problems',
+    'add-100': '/worksheet/math?op=add&range=100',
+    'sub-100': '/worksheet/math?op=sub&range=100',
+    'mul-basic': '/worksheet/math?op=mul&range=20',
+    'mul-table': '/worksheet/math?op=mul&range=5',
+    'word-2': '/word-problems',
+    'series-easy': '/series',
+    'add-1000': '/worksheet/math?op=add&range=1000',
+    'sub-1000': '/worksheet/math?op=sub&range=1000',
+    'mul-100': '/worksheet/math?op=mul&range=10',
+    'div-basic': '/worksheet/math?op=div&range=100',
+    'units-length': '/units',
+    'word-3': '/word-problems',
+    'series-medium': '/series',
+    'add-10000': '/worksheet/math?op=add&range=10000',
+    'sub-10000': '/worksheet/math?op=sub&range=10000',
+    'mul-1000': '/worksheet/math?op=mul&range=1000',
+    'long-div': '/worksheet/math?op=div&range=1000',
+    'area-rect': '/geometry',
+    'units-time': '/units',
+    'series-4': '/series',
+    'add-large': '/worksheet/math?op=add&range=1000000',
+    'mul-large': '/worksheet/math?op=mul&range=10000',
+    'fractions': '/fractions',
+    'decimals': '/decimals',
+    'units-adv': '/units',
+    'triangle-area': '/geometry',
+    'series-hard': '/series',
+    'percentage': '/percentage',
+    'ratio': '/ratio',
+    'angles': '/geometry',
+    'circle': '/geometry',
+    'word-adv': '/word-problems',
+};
+
+// Grade topic order - defines which topics are in which grade
+export const GRADE_TOPICS: Record<string, string[]> = {
+    '1': ['add-10', 'sub-10', 'add-20', 'sub-20', 'word-1'],
+    '2': ['add-100', 'sub-100', 'mul-basic', 'mul-table', 'word-2', 'series-easy'],
+    '3': ['add-1000', 'sub-1000', 'mul-100', 'div-basic', 'units-length', 'word-3', 'series-medium'],
+    '4': ['add-10000', 'sub-10000', 'mul-1000', 'long-div', 'area-rect', 'units-time', 'series-4'],
+    '5': ['add-large', 'mul-large', 'fractions', 'decimals', 'units-adv', 'triangle-area', 'series-hard'],
+    '6': ['percentage', 'ratio', 'angles', 'circle', 'word-adv'],
+};
+
+// All grade IDs for static generation
+export const GRADE_IDS = ['1', '2', '3', '4', '5', '6'] as const;
+
+// Legacy CURRICULUM export for backwards compatibility
+// This uses Hebrew text directly - prefer using translations in new code
 export const CURRICULUM: Record<string, GradeConfig> = {
     '1': {
         id: '1',

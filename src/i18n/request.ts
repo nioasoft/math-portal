@@ -14,6 +14,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const common = (await import(`../../messages/${locale}/common.json`)).default;
   const home = (await import(`../../messages/${locale}/home.json`)).default;
   const math = (await import(`../../messages/${locale}/math.json`)).default;
+  const curriculum = (await import(`../../messages/${locale}/curriculum.json`)).default;
 
   return {
     locale,
@@ -21,6 +22,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       common,
       home,
       math,
+      curriculum,
     },
   };
 });

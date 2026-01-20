@@ -1,33 +1,29 @@
 import type { Metadata } from 'next';
-import { CURRICULUM } from '@/lib/curriculum';
+import { GRADE_TOPICS, GRADE_IDS, TOPIC_ICONS, TOPIC_HREFS } from '@/lib/curriculum';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { AdSlot } from '@/components/AdSlot';
 import Link from 'next/link';
 import { ArrowLeft, GraduationCap, Sparkles } from 'lucide-react';
 import { notFound } from 'next/navigation';
+import { getTranslations } from 'next-intl/server';
 
-const gradeNames: Record<string, string> = {
-  '1': "כיתה א'",
-  '2': "כיתה ב'",
-  '3': "כיתה ג'",
-  '4': "כיתה ד'",
-  '5': "כיתה ה'",
-  '6': "כיתה ו'",
-};
+export async function generateMetadata({ params }: { params: Promise<{ id: string; locale: string }> }): Promise<Metadata> {
+    const { id, locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'curriculum' });
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
-  const { id } = await params;
-  const grade = CURRICULUM[id];
-  if (!grade) return {};
+    const gradeData = GRADE_TOPICS[id];
+    if (!gradeData) return {};
 
-  const topicNames = grade.topics.slice(0, 3).map(t => t.title).join(', ');
+    const gradeTitle = t(`grades.${id}.title`);
+    const gradeDescription = t(`grades.${id}.description`);
+    const topicNames = gradeData.slice(0, 3).map(topicId => t(`grades.${id}.topics.${topicId}.title`)).join(', ');
 
-  return {
-    title: `דפי עבודה ל${gradeNames[id]} - תרגילי חשבון להדפסה`,
-    description: `${grade.description} דפי עבודה בחשבון מותאמים ל${gradeNames[id]} - ${grade.topics.length} נושאים לתרגול: ${topicNames} ועוד.`,
-    keywords: [`דפי עבודה ${gradeNames[id]}`, `חשבון ${gradeNames[id]}`, 'דפי עבודה להדפסה', 'תרגילי חשבון'],
-  };
+    return {
+        title: `דפי עבודה ל${gradeTitle} - תרגילי חשבון להדפסה`,
+        description: `${gradeDescription} דפי עבודה בחשבון מותאמים ל${gradeTitle} - ${gradeData.length} נושאים לתרגול: ${topicNames} ועוד.`,
+        keywords: [`דפי עבודה ${gradeTitle}`, `חשבון ${gradeTitle}`, 'דפי עבודה להדפסה', 'תרגילי חשבון'],
+    };
 }
 
 const gradeColors: Record<string, { gradient: string; bg: string; iconBg: string; shadow: string }> = {
@@ -40,18 +36,32 @@ const gradeColors: Record<string, { gradient: string; bg: string; iconBg: string
 };
 
 export function generateStaticParams() {
-    return Object.keys(CURRICULUM).map((id) => ({
+    return GRADE_IDS.map((id) => ({
         id: id,
     }));
 }
 
-export default async function GradePage({ params }: { params: Promise<{ id: string }> }) {
-    const { id } = await params;
-    const grade = CURRICULUM[id];
+export default async function GradePage({ params }: { params: Promise<{ id: string; locale: string }> }) {
+    const { id, locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'curriculum' });
 
-    if (!grade) {
+    const topicIds = GRADE_TOPICS[id];
+
+    if (!topicIds) {
         notFound();
     }
+
+    const gradeTitle = t(`grades.${id}.title`);
+    const gradeDescription = t(`grades.${id}.description`);
+
+    // Build topics with translated content
+    const topics = topicIds.map(topicId => ({
+        id: topicId,
+        title: t(`grades.${id}.topics.${topicId}.title`),
+        description: t(`grades.${id}.topics.${topicId}.description`),
+        icon: TOPIC_ICONS[topicId],
+        href: TOPIC_HREFS[topicId],
+    }));
 
     const colors = gradeColors[id] || gradeColors['1'];
 
@@ -68,7 +78,7 @@ export default async function GradePage({ params }: { params: Promise<{ id: stri
             {
                 "@type": "ListItem",
                 "position": 2,
-                "name": grade.title,
+                "name": gradeTitle,
                 "item": `https://www.tirgul.net/grade/${id}`
             }
         ]
@@ -99,7 +109,7 @@ export default async function GradePage({ params }: { params: Promise<{ id: stri
                         <div className="flex items-center gap-2 text-sm text-slate-500 mb-6">
                             <Link href="/" className="hover:text-orange-600 transition-colors">ראשי</Link>
                             <span>/</span>
-                            <span className="text-slate-800 font-medium">{grade.title}</span>
+                            <span className="text-slate-800 font-medium">{gradeTitle}</span>
                         </div>
 
                         <div className="flex items-start gap-5">
@@ -109,10 +119,10 @@ export default async function GradePage({ params }: { params: Promise<{ id: stri
                             <div>
                                 <div className="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-1.5 shadow-sm mb-3">
                                     <Sparkles size={14} className="text-orange-500" />
-                                    <span className="text-xs font-bold text-slate-600">{grade.topics.length} נושאים לתרגול</span>
+                                    <span className="text-xs font-bold text-slate-600">{topics.length} נושאים לתרגול</span>
                                 </div>
-                                <h1 className="text-3xl md:text-4xl font-black text-slate-800 mb-2">{grade.title}</h1>
-                                <p className="text-lg text-slate-600">{grade.description}</p>
+                                <h1 className="text-3xl md:text-4xl font-black text-slate-800 mb-2">{gradeTitle}</h1>
+                                <p className="text-lg text-slate-600">{gradeDescription}</p>
                             </div>
                         </div>
                     </div>
@@ -124,7 +134,7 @@ export default async function GradePage({ params }: { params: Promise<{ id: stri
                         <h2 className="text-2xl font-black text-slate-800 mb-8">נושאי לימוד</h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                            {grade.topics.map((topic, index) => (
+                            {topics.map((topic, index) => (
                                 <Link
                                     key={topic.id}
                                     href={topic.href}
@@ -155,13 +165,13 @@ export default async function GradePage({ params }: { params: Promise<{ id: stri
                     <div className="container-custom">
                         <h2 className="text-xl font-bold text-slate-800 mb-6 text-center">כיתות נוספות</h2>
                         <div className="flex flex-wrap justify-center gap-3">
-                            {Object.entries(CURRICULUM).filter(([key]) => key !== id).map(([key, gradeData]) => (
+                            {GRADE_IDS.filter((gradeId) => gradeId !== id).map((gradeId) => (
                                 <Link
-                                    key={key}
-                                    href={`/grade/${key}`}
+                                    key={gradeId}
+                                    href={`/grade/${gradeId}`}
                                     className="px-5 py-2.5 bg-slate-50 rounded-full border border-slate-100 text-slate-600 font-bold hover:bg-orange-50 hover:border-orange-200 hover:text-orange-700 transition-all"
                                 >
-                                    {gradeData.title}
+                                    {t(`grades.${gradeId}.title`)}
                                 </Link>
                             ))}
                         </div>

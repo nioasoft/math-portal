@@ -1,0 +1,77 @@
+{
+  "grades": {
+    "1": {
+      "title": "כיתה א'",
+      "description": "צעדים ראשונים בעולם המספרים.",
+      "topics": {
+        "add-10": { "title": "חיבור עד 10", "description": "תרגילי חיבור פשוטים" },
+        "sub-10": { "title": "חיסור עד 10", "description": "תרגילי חיסור פשוטים" },
+        "add-20": { "title": "חיבור עד 20", "description": "כולל גלישה לעשרת הבאה" },
+        "sub-20": { "title": "חיסור עד 20", "description": "תרגול חיסור מתקדם" },
+        "word-1": { "title": "בעיות מילוליות", "description": "חיבור וחיסור פשוט" }
+      }
+    },
+    "2": {
+      "title": "כיתה ב'",
+      "description": "מרחיבים את תחום המספרים למאה ולומדים כפל.",
+      "topics": {
+        "add-100": { "title": "חיבור עד 100", "description": "חיבור ללא המרה" },
+        "sub-100": { "title": "חיסור עד 100", "description": "חיסור ללא המרה" },
+        "mul-basic": { "title": "הכרת הכפל", "description": "תרגילי כפל ראשונים" },
+        "mul-table": { "title": "לוח הכפל (1-5)", "description": "כפולות 1 עד 5" },
+        "word-2": { "title": "בעיות מילוליות", "description": "כולל כפל" },
+        "series-easy": { "title": "סדרות קלות", "description": "זיהוי חוקיות פשוטה" }
+      }
+    },
+    "3": {
+      "title": "כיתה ג'",
+      "description": "מספרים עד 1000, כפל וחילוק.",
+      "topics": {
+        "add-1000": { "title": "חיבור עד 1,000", "description": "חיבור במאונך" },
+        "sub-1000": { "title": "חיסור עד 1,000", "description": "חיסור במאונך" },
+        "mul-100": { "title": "לוח הכפל המלא", "description": "כפל עד 100" },
+        "div-basic": { "title": "חילוק בלי שארית", "description": "הכרת פעולת החילוק" },
+        "units-length": { "title": "המרת מידות אורך", "description": "מטר, ס\"מ, מ\"מ" },
+        "word-3": { "title": "בעיות מילוליות", "description": "כולל חילוק" },
+        "series-medium": { "title": "סדרות חשבוניות", "description": "רמה בינונית" }
+      }
+    },
+    "4": {
+      "title": "כיתה ד'",
+      "description": "מספרים גדולים, שברים ופעולות חשבון מתקדמות.",
+      "topics": {
+        "add-10000": { "title": "חיבור עד 10,000", "description": "מספרים רב-ספרתיים" },
+        "sub-10000": { "title": "חיסור עד 10,000", "description": "חיסור רב-ספרתי" },
+        "mul-1000": { "title": "כפל עד 1,000", "description": "כפל מספרים גדולים" },
+        "long-div": { "title": "חילוק ארוך", "description": "תרגול חילוק ארוך" },
+        "area-rect": { "title": "שטח מלבן", "description": "חישוב שטח והיקף" },
+        "units-time": { "title": "המרת זמן", "description": "שעות, דקות, שניות" },
+        "series-4": { "title": "סדרות חשבוניות", "description": "חיבור וחיסור" }
+      }
+    },
+    "5": {
+      "title": "כיתה ה'",
+      "description": "שברים, מספרים עשרוניים והרחבת ההנדסה.",
+      "topics": {
+        "add-large": { "title": "חיבור מספרים גדולים", "description": "עד מיליון" },
+        "mul-large": { "title": "כפל וחילוק גדולים", "description": "מספרים רב-ספרתיים" },
+        "fractions": { "title": "חיבור שברים", "description": "מכנים שווים/זרים" },
+        "decimals": { "title": "מספרים עשרוניים", "description": "חיבור וחיסור" },
+        "units-adv": { "title": "המרת מידות", "description": "אורך, משקל וזמן" },
+        "triangle-area": { "title": "שטח משולש", "description": "בסיס כפול גובה חלקי 2" },
+        "series-hard": { "title": "סדרות מתקדמות", "description": "כולל כפל" }
+      }
+    },
+    "6": {
+      "title": "כיתה ו'",
+      "description": "הכנה לחטיבה: אחוזים, יחס ומשוואות.",
+      "topics": {
+        "percentage": { "title": "אחוזים", "description": "חישוב אחוז מכמות" },
+        "ratio": { "title": "יחס ופרופורציה", "description": "בעיות יחס" },
+        "angles": { "title": "זוויות", "description": "זיהוי סוגי זוויות" },
+        "circle": { "title": "מעגלים", "description": "שטח והיקף מעגל" },
+        "word-adv": { "title": "בעיות מילוליות", "description": "בעיות מורכבות" }
+      }
+    }
+  }
+}

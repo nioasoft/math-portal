@@ -1,0 +1,77 @@
+{
+  "grades": {
+    "1": {
+      "title": "الصف الأول",
+      "description": "الخطوات الأولى في عالم الأرقام.",
+      "topics": {
+        "add-10": { "title": "جمع حتى 10", "description": "تمارين جمع بسيطة" },
+        "sub-10": { "title": "طرح حتى 10", "description": "تمارين طرح بسيطة" },
+        "add-20": { "title": "جمع حتى 20", "description": "بما في ذلك الانتقال للعشرة التالية" },
+        "sub-20": { "title": "طرح حتى 20", "description": "تمارين طرح متقدمة" },
+        "word-1": { "title": "مسائل كلامية", "description": "جمع وطرح بسيط" }
+      }
+    },
+    "2": {
+      "title": "الصف الثاني",
+      "description": "توسيع نطاق الأعداد إلى المئة وتعلم الضرب.",
+      "topics": {
+        "add-100": { "title": "جمع حتى 100", "description": "جمع بدون إعادة تجميع" },
+        "sub-100": { "title": "طرح حتى 100", "description": "طرح بدون إعادة تجميع" },
+        "mul-basic": { "title": "مقدمة في الضرب", "description": "تمارين ضرب أولية" },
+        "mul-table": { "title": "جدول الضرب (1-5)", "description": "مضاعفات 1 إلى 5" },
+        "word-2": { "title": "مسائل كلامية", "description": "بما في ذلك الضرب" },
+        "series-easy": { "title": "متتاليات سهلة", "description": "التعرف على الأنماط البسيطة" }
+      }
+    },
+    "3": {
+      "title": "الصف الثالث",
+      "description": "أعداد حتى 1000، ضرب وقسمة.",
+      "topics": {
+        "add-1000": { "title": "جمع حتى 1,000", "description": "جمع عمودي" },
+        "sub-1000": { "title": "طرح حتى 1,000", "description": "طرح عمودي" },
+        "mul-100": { "title": "جدول الضرب الكامل", "description": "ضرب حتى 100" },
+        "div-basic": { "title": "قسمة بدون باقي", "description": "مقدمة في القسمة" },
+        "units-length": { "title": "تحويل الأطوال", "description": "متر، سم، مم" },
+        "word-3": { "title": "مسائل كلامية", "description": "بما في ذلك القسمة" },
+        "series-medium": { "title": "متتاليات حسابية", "description": "مستوى متوسط" }
+      }
+    },
+    "4": {
+      "title": "الصف الرابع",
+      "description": "أعداد كبيرة، كسور وعمليات حسابية متقدمة.",
+      "topics": {
+        "add-10000": { "title": "جمع حتى 10,000", "description": "أعداد متعددة الأرقام" },
+        "sub-10000": { "title": "طرح حتى 10,000", "description": "طرح متعدد الأرقام" },
+        "mul-1000": { "title": "ضرب حتى 1,000", "description": "ضرب أعداد كبيرة" },
+        "long-div": { "title": "القسمة المطولة", "description": "تمارين القسمة المطولة" },
+        "area-rect": { "title": "مساحة المستطيل", "description": "حساب المساحة والمحيط" },
+        "units-time": { "title": "تحويل الوقت", "description": "ساعات، دقائق، ثواني" },
+        "series-4": { "title": "متتاليات حسابية", "description": "جمع وطرح" }
+      }
+    },
+    "5": {
+      "title": "الصف الخامس",
+      "description": "كسور، أعداد عشرية وتوسيع الهندسة.",
+      "topics": {
+        "add-large": { "title": "جمع أعداد كبيرة", "description": "حتى مليون" },
+        "mul-large": { "title": "ضرب وقسمة كبيرة", "description": "أعداد متعددة الأرقام" },
+        "fractions": { "title": "جمع الكسور", "description": "مقامات متشابهة/مختلفة" },
+        "decimals": { "title": "الأعداد العشرية", "description": "جمع وطرح" },
+        "units-adv": { "title": "تحويل الوحدات", "description": "طول، وزن ووقت" },
+        "triangle-area": { "title": "مساحة المثلث", "description": "القاعدة ضرب الارتفاع مقسوم على 2" },
+        "series-hard": { "title": "متتاليات متقدمة", "description": "بما في ذلك الضرب" }
+      }
+    },
+    "6": {
+      "title": "الصف السادس",
+      "description": "التحضير للمرحلة الإعدادية: نسب مئوية، نسب ومعادلات.",
+      "topics": {
+        "percentage": { "title": "النسب المئوية", "description": "حساب نسبة من كمية" },
+        "ratio": { "title": "النسبة والتناسب", "description": "مسائل النسب" },
+        "angles": { "title": "الزوايا", "description": "تحديد أنواع الزوايا" },
+        "circle": { "title": "الدوائر", "description": "مساحة ومحيط الدائرة" },
+        "word-adv": { "title": "مسائل كلامية", "description": "مسائل معقدة" }
+      }
+    }
+  }
+}

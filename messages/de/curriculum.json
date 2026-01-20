@@ -1,0 +1,77 @@
+{
+  "grades": {
+    "1": {
+      "title": "Klasse 1",
+      "description": "Erste Schritte in der Welt der Zahlen.",
+      "topics": {
+        "add-10": { "title": "Addition bis 10", "description": "Einfache Additionsübungen" },
+        "sub-10": { "title": "Subtraktion bis 10", "description": "Einfache Subtraktionsübungen" },
+        "add-20": { "title": "Addition bis 20", "description": "Mit Zehnerübergang" },
+        "sub-20": { "title": "Subtraktion bis 20", "description": "Fortgeschrittene Subtraktionsübungen" },
+        "word-1": { "title": "Textaufgaben", "description": "Einfache Addition und Subtraktion" }
+      }
+    },
+    "2": {
+      "title": "Klasse 2",
+      "description": "Erweiterung des Zahlenraums auf hundert und Einführung der Multiplikation.",
+      "topics": {
+        "add-100": { "title": "Addition bis 100", "description": "Addition ohne Übertrag" },
+        "sub-100": { "title": "Subtraktion bis 100", "description": "Subtraktion ohne Übertrag" },
+        "mul-basic": { "title": "Einführung Multiplikation", "description": "Erste Multiplikationsübungen" },
+        "mul-table": { "title": "Einmaleins (1-5)", "description": "Vielfache von 1 bis 5" },
+        "word-2": { "title": "Textaufgaben", "description": "Mit Multiplikation" },
+        "series-easy": { "title": "Einfache Folgen", "description": "Einfache Mustererkennung" }
+      }
+    },
+    "3": {
+      "title": "Klasse 3",
+      "description": "Zahlen bis 1000, Multiplikation und Division.",
+      "topics": {
+        "add-1000": { "title": "Addition bis 1.000", "description": "Schriftliche Addition" },
+        "sub-1000": { "title": "Subtraktion bis 1.000", "description": "Schriftliche Subtraktion" },
+        "mul-100": { "title": "Großes Einmaleins", "description": "Multiplikation bis 100" },
+        "div-basic": { "title": "Division ohne Rest", "description": "Einführung in die Division" },
+        "units-length": { "title": "Längenumrechnung", "description": "Meter, cm, mm" },
+        "word-3": { "title": "Textaufgaben", "description": "Mit Division" },
+        "series-medium": { "title": "Arithmetische Folgen", "description": "Mittleres Niveau" }
+      }
+    },
+    "4": {
+      "title": "Klasse 4",
+      "description": "Große Zahlen, Brüche und fortgeschrittene Rechenoperationen.",
+      "topics": {
+        "add-10000": { "title": "Addition bis 10.000", "description": "Mehrstellige Zahlen" },
+        "sub-10000": { "title": "Subtraktion bis 10.000", "description": "Mehrstellige Subtraktion" },
+        "mul-1000": { "title": "Multiplikation bis 1.000", "description": "Große Zahlen multiplizieren" },
+        "long-div": { "title": "Schriftliche Division", "description": "Übungen zur schriftlichen Division" },
+        "area-rect": { "title": "Rechteckfläche", "description": "Flächen- und Umfangberechnung" },
+        "units-time": { "title": "Zeitumrechnung", "description": "Stunden, Minuten, Sekunden" },
+        "series-4": { "title": "Arithmetische Folgen", "description": "Addition und Subtraktion" }
+      }
+    },
+    "5": {
+      "title": "Klasse 5",
+      "description": "Brüche, Dezimalzahlen und erweiterte Geometrie.",
+      "topics": {
+        "add-large": { "title": "Große Zahlen addieren", "description": "Bis eine Million" },
+        "mul-large": { "title": "Große Multiplikation & Division", "description": "Mehrstellige Zahlen" },
+        "fractions": { "title": "Brüche addieren", "description": "Gleiche/verschiedene Nenner" },
+        "decimals": { "title": "Dezimalzahlen", "description": "Addition und Subtraktion" },
+        "units-adv": { "title": "Einheitenumrechnung", "description": "Länge, Gewicht und Zeit" },
+        "triangle-area": { "title": "Dreiecksfläche", "description": "Grundseite mal Höhe geteilt durch 2" },
+        "series-hard": { "title": "Fortgeschrittene Folgen", "description": "Mit Multiplikation" }
+      }
+    },
+    "6": {
+      "title": "Klasse 6",
+      "description": "Vorbereitung auf die Sekundarstufe: Prozente, Verhältnisse und Gleichungen.",
+      "topics": {
+        "percentage": { "title": "Prozentrechnung", "description": "Prozent einer Menge berechnen" },
+        "ratio": { "title": "Verhältnis und Proportion", "description": "Verhältnisaufgaben" },
+        "angles": { "title": "Winkel", "description": "Winkelarten erkennen" },
+        "circle": { "title": "Kreise", "description": "Kreisfläche und Umfang" },
+        "word-adv": { "title": "Textaufgaben", "description": "Komplexe Aufgaben" }
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { blogPosts } from '@/lib/blog-data';
+import { getBlogPost, getBlogSlugs } from '@/lib/content';
 import { HELP_TOPICS } from '@/lib/help-data';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
@@ -7,6 +7,8 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { AdSlot } from '@/components/AdSlot';
 import { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
+import { locales, type Locale } from '@/i18n/config';
 
 // Map blog posts to related help topics by keywords
 function getRelatedHelpTopics(tags: string[], content: string) {
@@ -45,14 +47,14 @@ function getRelatedHelpTopics(tags: string[], content: string) {
 }
 
 type Props = {
-    params: Promise<{ slug: string }>
+    params: Promise<{ locale: string; slug: string }>
 }
 
 export async function generateMetadata(
     { params }: Props
 ): Promise<Metadata> {
-    const { slug } = await params
-    const post = blogPosts.find((p) => p.slug === slug);
+    const { locale, slug } = await params;
+    const post = await getBlogPost(slug, locale as Locale);
     if (!post) return {};
     return {
         title: `${post.title} | בלוג דפי עבודה חכמים`,
@@ -61,30 +63,50 @@ export async function generateMetadata(
 }
 
 export async function generateStaticParams() {
-    return blogPosts.map((post) => ({
-        slug: post.slug,
-    }))
+    const slugs = await getBlogSlugs();
+    const params = [];
+
+    // Generate params for all locales
+    for (const locale of locales) {
+        for (const slug of slugs) {
+            params.push({ locale, slug });
+        }
+    }
+
+    return params;
 }
 
 export default async function BlogPostPage({ params }: Props) {
-    const { slug } = await params
-    const post = blogPosts.find((p) => p.slug === slug);
+    const { locale, slug } = await params;
+    setRequestLocale(locale);
+
+    const post = await getBlogPost(slug, locale as Locale);
 
     if (!post) {
         notFound();
     }
 
-    // Convert DD/MM/YYYY to ISO format for schema
-    const [day, month, year] = post.date.split('/');
-    const isoDate = `${year}-${month}-${day}`;
+    // Handle date format - support both DD/MM/YYYY and YYYY-MM-DD formats
+    let isoDate: string;
+    if (post.date.includes('/')) {
+        const [day, month, year] = post.date.split('/');
+        isoDate = `${year}-${month}-${day}`;
+    } else {
+        isoDate = post.date;
+    }
 
     // Convert lastModified to ISO format if available
-    const isoModifiedDate = post.lastModified
-        ? (() => {
+    let isoModifiedDate: string;
+    if (post.lastModified) {
+        if (post.lastModified.includes('/')) {
             const [modDay, modMonth, modYear] = post.lastModified.split('/');
-            return `${modYear}-${modMonth}-${modDay}`;
-        })()
-        : isoDate;
+            isoModifiedDate = `${modYear}-${modMonth}-${modDay}`;
+        } else {
+            isoModifiedDate = post.lastModified;
+        }
+    } else {
+        isoModifiedDate = isoDate;
+    }
 
     const articleSchema = {
         "@context": "https://schema.org",
@@ -115,7 +137,7 @@ export default async function BlogPostPage({ params }: Props) {
         },
         "keywords": post.tags.join(', '),
         "articleSection": post.categoryLabel,
-        "inLanguage": "he"
+        "inLanguage": locale
     };
 
     const breadcrumbSchema = {
@@ -142,6 +164,9 @@ export default async function BlogPostPage({ params }: Props) {
             }
         ]
     };
+
+    // Note: Content is trusted as it comes from our own JSON files in /content/blog/
+    // which are created and maintained by the development team
 
     return (
         <div className="min-h-screen flex flex-col bg-[#fffbf5]">

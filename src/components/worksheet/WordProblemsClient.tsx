@@ -3,9 +3,10 @@
 import { useState } from 'react';
 import { WordProblemEngine, Operation } from '@/lib/word-problem-engine';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
 import { trackPrintEvent } from '@/lib/analytics';
+import { useTranslations } from 'next-intl';
 
 interface QuestionState {
     id: string;
@@ -46,6 +47,7 @@ function createQuestions(selectedGrade: number): QuestionState[] {
 }
 
 export default function WordProblemsClient() {
+    const t = useTranslations('worksheet');
     const [grade, setGrade] = useState<number>(1);
     const [questions, setQuestions] = useState<QuestionState[]>(() => createQuestions(1));
     const [showAnswers, setShowAnswers] = useState(false);
@@ -73,21 +75,21 @@ export default function WordProblemsClient() {
                         <Link href="/" className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
                             <ArrowLeft size={20} />
                         </Link>
-                        <h1 className="text-xl font-bold text-slate-800">בעיות מילוליות</h1>
+                        <h1 className="text-xl font-bold text-slate-800">{t('wordProblems.title')}</h1>
                     </div>
 
                     <div className="flex items-center gap-4 flex-1 justify-center">
                         <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 p-1.5 rounded-lg">
-                            <span className="text-xs text-slate-400 mr-2" id="grade-label">כיתה:</span>
+                            <span className="text-xs text-slate-400 mr-2" id="grade-label">{t('wordProblems.gradeLabel')}</span>
                             <select
                                 className="bg-transparent text-sm font-medium px-2 py-1 outline-none cursor-pointer"
                                 value={grade}
                                 onChange={(e) => handleGradeChange(parseInt(e.target.value))}
                                 aria-labelledby="grade-label"
                             >
-                                <option value={1}>כיתה א&apos;</option>
-                                <option value={2}>כיתה ב&apos;</option>
-                                <option value={3}>כיתה ג&apos;</option>
+                                <option value={1}>{t('wordProblems.grades.grade1')}</option>
+                                <option value={2}>{t('wordProblems.grades.grade2')}</option>
+                                <option value={3}>{t('wordProblems.grades.grade3')}</option>
                             </select>
                         </div>
 
@@ -96,7 +98,7 @@ export default function WordProblemsClient() {
                             className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-blue-700 transition"
                         >
                             <RefreshCw size={16} />
-                            <span className="hidden sm:inline">רענן</span>
+                            <span className="hidden sm:inline">{t('controls.refresh')}</span>
                         </button>
 
                         <button
@@ -105,7 +107,7 @@ export default function WordProblemsClient() {
                             aria-pressed={showAnswers}
                         >
                             {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
-                            <span className="hidden sm:inline">{showAnswers ? 'הסתר תשובות' : 'הצג תשובות'}</span>
+                            <span className="hidden sm:inline">{showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}</span>
                         </button>
                     </div>
 
@@ -114,14 +116,14 @@ export default function WordProblemsClient() {
                         className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-emerald-200 transition shadow-sm"
                     >
                         <HelpCircle size={16} />
-                        <span className="hidden sm:inline">הסברים להורים</span>
+                        <span className="hidden sm:inline">{t('controls.helpForParents')}</span>
                     </Link>
                     <button
                         onClick={onPrint}
                         className="bg-slate-900 text-white px-6 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-slate-800 transition"
                     >
                         <Printer size={16} />
-                        <span>הדפס</span>
+                        <span>{t('controls.print')}</span>
                     </button>
                 </div>
             </div>
@@ -131,8 +133,8 @@ export default function WordProblemsClient() {
                 <div className="min-w-[210mm] max-w-[210mm] mx-auto mt-8 bg-white shadow-xl min-h-[297mm] p-[20mm] print:p-[10mm] print:shadow-none print:mt-0 print:mx-0 print:w-full print:min-h-0 print:h-auto print:overflow-visible">
 
                     <div className="text-center border-b-2 border-slate-100 pb-8 mb-12 print:mb-4 print:pb-2 print:border-b">
-                        <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">בעיות מילוליות בחשבון</h2>
-                        <p className="text-slate-500 print:hidden text-lg">קראו את השאלות בעיון וכתבו את התרגיל והתשובה</p>
+                        <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">{t('wordProblems.worksheetTitle')}</h2>
+                        <p className="text-slate-500 print:hidden text-lg">{t('wordProblems.instruction')}</p>
                     </div>
 
                     <div className="space-y-12" dir="rtl">
@@ -147,10 +149,10 @@ export default function WordProblemsClient() {
 
                                         {/* Answer Area */}
                                         <div className="flex items-center gap-4">
-                                            <span className="font-bold text-slate-400">תרגיל:</span>
+                                            <span className="font-bold text-slate-400">{t('wordProblems.exercise')}</span>
                                             <div className="border-b-2 border-slate-200 border-dashed w-48 h-8"></div>
 
-                                            <span className="font-bold text-slate-400 mr-8">תשובה:</span>
+                                            <span className="font-bold text-slate-400 mr-8">{t('wordProblems.answer')}</span>
                                             <div className="border-b-2 border-slate-200 border-dashed w-24 h-8 relative flex items-center justify-center">
                                                 {showAnswers && (
                                                     <span className="text-red-600 font-bold text-xl absolute -top-1">{q.answer}</span>
@@ -164,35 +166,26 @@ export default function WordProblemsClient() {
                     </div>
 
                     <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
-                        tirgul.net - דפי עבודה חכמים ©
+                        {t('print.copyright')}
                     </div>
                 </div>
             </div>
 
             <ContentSection
-                title="בעיות מילוליות בחשבון - לתרגל את החיים האמיתיים"
-                description="בעיות מילוליות הן הגשר בין המספרים לבין המציאות. הן עוזרות לילדים להבין למה אנחנו לומדים חשבון ואיך משתמשים בו בחיי היומיום."
-                features={[
-                    "מגוון שאלות מהחיים: קניות, חלוקת ממתקים, משחקים ועוד",
-                    "מותאם מגדרית: שמות של בנים ובנות, ניסוחים תקינים בעברית",
-                    "רמות קושי משתנות: מחיבור וחיסור פשוט ועד בעיות דו-שלביות (בקרוב)",
-                    "מקום לכתיבת התרגיל והתשובה בצורה מסודרת"
-                ]}
+                title={t('wordProblems.content.title')}
+                description={t('wordProblems.content.description')}
+                features={t.raw('wordProblems.content.features') as string[]}
                 benefits={[
                     {
-                        title: "פיתוח חשיבה מתמטית",
-                        text: "הילד לומד 'לתרגם' סיפור לשפת המספרים - מיומנות קריטית להצלחה במתמטיקה."
+                        title: t('wordProblems.content.benefits.mathThinking.title'),
+                        text: t('wordProblems.content.benefits.mathThinking.text')
                     },
                     {
-                        title: "הבנת הנקרא",
-                        text: "פתרון הבעיה דורש קריאה מעמיקה והבנה של הפרטים החשובים מול הטפלים."
+                        title: t('wordProblems.content.benefits.readingComprehension.title'),
+                        text: t('wordProblems.content.benefits.readingComprehension.text')
                     }
                 ]}
-                tips={[
-                    "בקשו מהילד לסמן את המספרים בסיפור ואת מילת המפתח (כמו 'נתן', 'קיבל', 'חילק').",
-                    "ציור עוזר! עודדו את הילד לצייר את הבעיה לפני שהוא כותב את התרגיל.",
-                    "שאלו בסוף: 'האם התשובה הגיונית?'. אם יצא שלדני יש מיליון תפוחים, כנראה שיש טעות."
-                ]}
+                tips={t.raw('wordProblems.content.tips') as string[]}
             />
         </div>
     );

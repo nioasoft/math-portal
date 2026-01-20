@@ -25,12 +25,18 @@ function getShuffledPosts(): BlogPost[] {
     return cachedShuffledPosts;
 }
 
+// Server snapshot must be cached to avoid infinite loops
+const serverSnapshot = blogPosts.slice(0, 3);
+function getServerPosts(): BlogPost[] {
+    return serverSnapshot;
+}
+
 // Use useSyncExternalStore to get client-only shuffled posts
 function useClientPosts(): BlogPost[] {
     return useSyncExternalStore(
         () => () => {}, // subscribe - no-op since data doesn't change
         getShuffledPosts, // client snapshot - shuffled
-        () => blogPosts.slice(0, 3) // server snapshot - deterministic
+        getServerPosts // server snapshot - deterministic and cached
     );
 }
 

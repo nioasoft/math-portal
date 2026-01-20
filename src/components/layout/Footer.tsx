@@ -43,10 +43,10 @@ export function Footer() {
                                 {t('siteName')}
                             </span>
                         </Link>
-                        <p className="text-sm leading-relaxed text-slate-400">
+                        <p className="text-sm leading-relaxed text-slate-300">
                             {t('footer.description')}
                         </p>
-                        <div className="mt-6 space-y-2 text-xs text-slate-500">
+                        <div className="mt-6 space-y-2 text-xs text-slate-400">
                             <div className="flex items-center gap-2">
                                 <span className="text-green-400">✓</span>
                                 <span>{t('footer.feature1')}</span>
@@ -142,14 +142,14 @@ export function Footer() {
                 {/* Trust Signals */}
                 <div className="border-t border-slate-800 pt-8 pb-8">
                     <div className="text-center max-w-2xl mx-auto">
-                        <p className="text-sm text-slate-400 leading-relaxed">
+                        <p className="text-sm text-slate-300 leading-relaxed">
                             <strong className="text-slate-300">{t('footer.aboutSite')}</strong> {t('footer.aboutDescription')}
                         </p>
                     </div>
                 </div>
 
                 {/* Bottom bar */}
-                <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+                <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-400">
                     <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
                     <div className="flex items-center gap-4">
                         <button
@@ -160,7 +160,7 @@ export function Footer() {
                             {t('footer.sendFeedback')}
                         </button>
                         <span className="text-slate-700">|</span>
-                        <p className="text-slate-600">{t('footer.madeWith')}</p>
+                        <p className="text-slate-400">{t('footer.madeWith')}</p>
                     </div>
                 </div>
             </div>

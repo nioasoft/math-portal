@@ -15,8 +15,6 @@ export const viewport: Viewport = {
   themeColor: "#f97316",
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
 };
 
 const assistant = Assistant({
@@ -49,92 +47,105 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-// Generate hreflang alternates for the root layout
-function generateRootAlternates(): Metadata['alternates'] {
+// Generate hreflang alternates for the root layout (locale-aware canonical)
+function generateAlternates(locale: Locale): Metadata['alternates'] {
   const languages: Record<string, string> = {};
 
-  for (const locale of locales) {
-    if (locale === defaultLocale) {
-      languages[locale] = BASE_URL;
+  for (const l of locales) {
+    if (l === defaultLocale) {
+      languages[l] = BASE_URL;
     } else {
-      languages[locale] = `${BASE_URL}/${locale}`;
+      languages[l] = `${BASE_URL}/${l}`;
     }
   }
   languages['x-default'] = BASE_URL;
 
   return {
-    canonical: BASE_URL,
+    canonical: locale === defaultLocale ? BASE_URL : `${BASE_URL}/${locale}`,
     languages,
   };
 }
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.tirgul.net"),
-  title: {
-    default: "תרגול | דפי עבודה חכמים ומשחקי חשבון",
-    template: "%s | תרגול",
-  },
-  description:
-    "דפי עבודה חכמים להדפסה ומשחקים אינטראקטיביים בחשבון לכיתות א׳-ו׳. חינם וללא הרשמה!",
-  keywords: [
-    "דפי עבודה בחשבון",
-    "משחקי חשבון",
-    "דפי עבודה להדפסה",
-    "תרגילי חשבון",
-    "משחקי מתמטיקה לילדים",
-    "חשבון לכיתה א",
-    "מחולל דפי עבודה",
-    "דפי עבודה בשברים",
-  ],
-  manifest: "/manifest.json",
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "default",
-    title: "תרגול",
-  },
-  formatDetection: {
-    telephone: false,
-  },
-  icons: {
-    icon: [
-      { url: "/icons/icon-48.png", sizes: "48x48", type: "image/png" },
-      { url: "/icons/icon-72.png", sizes: "72x72", type: "image/png" },
-      { url: "/icons/icon-96.png", sizes: "96x96", type: "image/png" },
-      { url: "/icons/icon-144.png", sizes: "144x144", type: "image/png" },
-      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icons/icon-384.png", sizes: "384x384", type: "image/png" },
-      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-  },
-  openGraph: {
-    title: "תרגול | דפי עבודה חכמים ומשחקי חשבון",
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  // Validate locale
+  if (!locales.includes(locale as Locale)) {
+    return {};
+  }
+
+  return {
+    metadataBase: new URL("https://www.tirgul.net"),
+    title: {
+      default: "תרגול | דפי עבודה חכמים ומשחקי חשבון",
+      template: "%s | תרגול",
+    },
     description:
       "דפי עבודה חכמים להדפסה ומשחקים אינטראקטיביים בחשבון לכיתות א׳-ו׳. חינם וללא הרשמה!",
-    url: "https://www.tirgul.net",
-    siteName: "תרגול",
-    locale: "he_IL",
-    type: "website",
-    images: [
-      {
-        url: "https://www.tirgul.net/opengraph-image.jpg",
-        width: 1424,
-        height: 752,
-        alt: "תרגול | דפי עבודה חכמים ומשחקי חשבון",
-      },
+    keywords: [
+      "דפי עבודה בחשבון",
+      "משחקי חשבון",
+      "דפי עבודה להדפסה",
+      "תרגילי חשבון",
+      "משחקי מתמטיקה לילדים",
+      "חשבון לכיתה א",
+      "מחולל דפי עבודה",
+      "דפי עבודה בשברים",
     ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: generateRootAlternates(),
-  other: {
-    "mobile-web-app-capable": "yes",
-  },
-};
+    manifest: "/manifest.json",
+    appleWebApp: {
+      capable: true,
+      statusBarStyle: "default",
+      title: "תרגול",
+    },
+    formatDetection: {
+      telephone: false,
+    },
+    icons: {
+      icon: [
+        { url: "/icons/icon-48.png", sizes: "48x48", type: "image/png" },
+        { url: "/icons/icon-72.png", sizes: "72x72", type: "image/png" },
+        { url: "/icons/icon-96.png", sizes: "96x96", type: "image/png" },
+        { url: "/icons/icon-144.png", sizes: "144x144", type: "image/png" },
+        { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+        { url: "/icons/icon-384.png", sizes: "384x384", type: "image/png" },
+        { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+      ],
+      apple: [
+        { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      ],
+    },
+    openGraph: {
+      title: "תרגול | דפי עבודה חכמים ומשחקי חשבון",
+      description:
+        "דפי עבודה חכמים להדפסה ומשחקים אינטראקטיביים בחשבון לכיתות א׳-ו׳. חינם וללא הרשמה!",
+      url: "https://www.tirgul.net",
+      siteName: "תרגול",
+      locale: "he_IL",
+      type: "website",
+      images: [
+        {
+          url: "https://www.tirgul.net/opengraph-image.jpg",
+          width: 1424,
+          height: 752,
+          alt: "תרגול | דפי עבודה חכמים ומשחקי חשבון",
+        },
+      ],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    alternates: generateAlternates(locale as Locale),
+    other: {
+      "mobile-web-app-capable": "yes",
+    },
+  };
+}
 
 export default async function LocaleLayout({
   children,

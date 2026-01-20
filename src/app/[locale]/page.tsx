@@ -298,7 +298,7 @@ export default async function Home() {
         <section className="py-12 border-y border-slate-100 bg-white">
           <div className="container-custom">
             <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
-              <span className="font-bold text-slate-400 text-sm">{t('grades.label')}</span>
+              <span className="font-bold text-slate-500 text-sm">{t('grades.label')}</span>
               {[1, 2, 3, 4, 5, 6].map((grade) => (
                 <Link
                   key={grade}

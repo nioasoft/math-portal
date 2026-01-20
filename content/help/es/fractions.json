@@ -1,0 +1,36 @@
+{
+  "slug": "fractions",
+  "title": "Fracciones",
+  "shortDescription": "Las fracciones representan partes de un todo. Los ninos aprenden a leer, comparar y realizar operaciones con fracciones.",
+  "importance": "Las fracciones son la base para entender porcentajes, razones y matematicas avanzadas. Tambien son utiles en la cocina, las mediciones y la vida diaria.",
+  "howToTeach": [
+    "Empieza con division fisica: la mitad de un pastel, un cuarto de pizza",
+    "Explica que el denominador (abajo) indica en cuantas partes dividimos, y el numerador (arriba) indica cuantas partes tomamos",
+    "Practica comparando fracciones con el mismo denominador",
+    "Solo despues de una comprension solida, pasa al denominador comun"
+  ],
+  "examples": [
+    {
+      "problem": "1/4 + 2/4 = ?",
+      "solution": "3/4",
+      "explanation": "Cuando los denominadores son iguales, solo suma los numeradores: 1+2=3. El denominador sigue siendo 4."
+    },
+    {
+      "problem": "1/2 + 1/4 = ?",
+      "solution": "3/4",
+      "explanation": "Encuentra un denominador comun: 1/2 = 2/4. Ahora 2/4 + 1/4 = 3/4."
+    }
+  ],
+  "commonMistakes": [
+    "Sumar denominadores junto con los numeradores (1/2+1/3 NO es 2/5!)",
+    "Olvidar simplificar la respuesta final",
+    "Errores al encontrar un denominador comun"
+  ],
+  "parentTips": [
+    "Usa pizza, pastel o chocolate como ejemplos",
+    "Dibuja circulos y dividelos en partes",
+    "Muestra fracciones equivalentes: 1/2 = 2/4 = 4/8"
+  ],
+  "relatedGeneratorHref": "/fractions",
+  "relatedGeneratorTitle": "Generador de Hojas de Fracciones"
+}

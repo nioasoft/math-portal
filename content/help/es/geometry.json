@@ -1,0 +1,36 @@
+{
+  "slug": "geometry",
+  "title": "Geometria",
+  "shortDescription": "La geometria trata sobre formas, tamanos y relaciones espaciales. Los ninos aprenden a identificar figuras y calcular area y perimetro.",
+  "importance": "La geometria desarrolla el pensamiento espacial necesario para arquitectura, diseno, navegacion y resolucion de problemas de ingenieria.",
+  "howToTeach": [
+    "Empieza identificando figuras en el entorno: ventanas cuadradas, relojes redondos",
+    "Explica la diferencia entre area (lo que esta dentro) y perimetro (la linea alrededor)",
+    "Ensena las formulas gradualmente: rectangulo, triangulo, circulo",
+    "Usa papel cuadriculado para contar antes de usar formulas"
+  ],
+  "examples": [
+    {
+      "problem": "Un rectangulo con largo 5 y ancho 3. Cual es el area y el perimetro?",
+      "solution": "Area: 15, Perimetro: 16",
+      "explanation": "Area = largo x ancho = 5x3 = 15. Perimetro = 2x(largo+ancho) = 2x(5+3) = 16."
+    },
+    {
+      "problem": "Un triangulo con base 8 y altura 6. Cual es el area?",
+      "solution": "24",
+      "explanation": "Area del triangulo = (base x altura) : 2 = (8x6):2 = 48:2 = 24."
+    }
+  ],
+  "commonMistakes": [
+    "Confusion entre area y perimetro",
+    "Olvidar dividir entre 2 para el area del triangulo",
+    "Usar el lado incorrecto como altura en los triangulos"
+  ],
+  "parentTips": [
+    "Midan juntos las habitaciones de la casa",
+    "Dibujen en papel cuadriculado y cuenten los cuadrados",
+    "Usen cajas y Lego para demostraciones"
+  ],
+  "relatedGeneratorHref": "/geometry",
+  "relatedGeneratorTitle": "Generador de Hojas de Geometria"
+}

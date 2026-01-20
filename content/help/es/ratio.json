@@ -1,0 +1,36 @@
+{
+  "slug": "ratio",
+  "title": "Razon y Proporcion",
+  "shortDescription": "La razon describe la relacion entre dos cantidades. La proporcion es una igualdad entre dos razones.",
+  "importance": "La razon es necesaria en recetas (duplicar cantidades), mapas (escala) y ciencias. Es preparacion para el algebra.",
+  "howToTeach": [
+    "Empieza con ejemplos concretos: 'Por cada 2 manzanas hay 3 platanos'",
+    "Explica que una razon igual se mantiene al multiplicar o dividir ambos lados",
+    "Practica encontrando el termino que falta en una proporcion",
+    "Muestra el metodo de productos cruzados"
+  ],
+  "examples": [
+    {
+      "problem": "2:3 = 6:?",
+      "solution": "9",
+      "explanation": "De 2 a 6 multiplicamos por 3. Entonces 3 tambien debe multiplicarse por 3: 3x3=9."
+    },
+    {
+      "problem": "4:5 = ?:15",
+      "solution": "12",
+      "explanation": "De 5 a 15 multiplicamos por 3. Entonces 4 tambien debe multiplicarse por 3: 4x3=12."
+    }
+  ],
+  "commonMistakes": [
+    "Sumar en lugar de multiplicar",
+    "Olvidar hacer la misma operacion en ambos lados",
+    "Errores al identificar que numero cambio"
+  ],
+  "parentTips": [
+    "Practica con recetas: 'Si necesitamos 2 huevos para 4 personas, cuantos para 8?'",
+    "Usa cartas u objetos para demostrar razones",
+    "Enfatiza que la razon se mantiene constante!"
+  ],
+  "relatedGeneratorHref": "/ratio",
+  "relatedGeneratorTitle": "Generador de Hojas de Razon"
+}

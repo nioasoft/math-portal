@@ -1,0 +1,36 @@
+{
+  "slug": "units",
+  "title": "Conversion de Unidades",
+  "shortDescription": "La conversion de unidades permite pasar entre diferentes unidades de longitud, peso y tiempo.",
+  "importance": "La conversion de unidades es necesaria en la cocina, construccion, deportes y viajes. Tambien ensena sobre el sistema decimal.",
+  "howToTeach": [
+    "Empieza con las unidades basicas y las relaciones entre ellas",
+    "Explica que la palabra 'kilo' = mil",
+    "Practica multiplicar y dividir por 10, 100, 1000",
+    "Para el tiempo, recuerda que 60 (no 10) es el numero importante"
+  ],
+  "examples": [
+    {
+      "problem": "3 metros = ? cm",
+      "solution": "300",
+      "explanation": "Un metro = 100 cm. 3 metros = 3 x 100 = 300 cm."
+    },
+    {
+      "problem": "2 horas = ? minutos",
+      "solution": "120",
+      "explanation": "Una hora = 60 minutos. 2 horas = 2 x 60 = 120 minutos."
+    }
+  ],
+  "commonMistakes": [
+    "Confusion entre unidades (metro/cm/mm)",
+    "Olvidar que el tiempo funciona en 60, no en 10",
+    "Multiplicar en lugar de dividir o viceversa"
+  ],
+  "parentTips": [
+    "Muestra una regla y una cinta metrica para ejemplos practicos",
+    "Practica con un reloj real",
+    "Crea una tabla de conversion en la pared"
+  ],
+  "relatedGeneratorHref": "/units",
+  "relatedGeneratorTitle": "Generador de Hojas de Conversion de Unidades"
+}

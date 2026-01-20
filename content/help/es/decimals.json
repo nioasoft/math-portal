@@ -1,0 +1,36 @@
+{
+  "slug": "decimals",
+  "title": "Decimales",
+  "shortDescription": "Los decimales son otra forma de representar fracciones, especialmente decimas y centesimas.",
+  "importance": "Los decimales estan en todas partes: dinero (euros y centimos), medidas (metros y centimetros) y calculos cientificos.",
+  "howToTeach": [
+    "Empieza con el dinero: euros y centimos son decimales!",
+    "Explica que la coma decimal separa los numeros enteros de las partes",
+    "Practica leyendo numeros: 3,45 = tres con cuarenta y cinco centesimas",
+    "En suma y resta, siempre alinea las comas decimales"
+  ],
+  "examples": [
+    {
+      "problem": "2,5 + 1,3 = ?",
+      "solution": "3,8",
+      "explanation": "Alinea las comas decimales: 2,5 + 1,3. Unidades: 5+3=8. Enteros: 2+1=3. Respuesta: 3,8"
+    },
+    {
+      "problem": "5,00 - 2,75 = ?",
+      "solution": "2,25",
+      "explanation": "Como calcular con dinero: 5 euros menos 2,75 = 2 euros y 25 centimos."
+    }
+  ],
+  "commonMistakes": [
+    "No alinear las comas decimales",
+    "Tratar 0,5 y 0,50 como numeros diferentes",
+    "Olvidar agregar ceros para alinear (0,5 = 0,50)"
+  ],
+  "parentTips": [
+    "Practica con dinero real en la tienda",
+    "Muestra una regla con centimetros y milimetros",
+    "Cuidado con la coma decimal! Es el error mas comun"
+  ],
+  "relatedGeneratorHref": "/decimals",
+  "relatedGeneratorTitle": "Generador de Hojas de Decimales"
+}

@@ -1,413 +1,413 @@
 {
   "generator": {
-    "title": "Worksheet Generator",
-    "defaultWorksheetTitle": "Math Worksheet",
-    "titleFormat": "{operation} in the range of {range}"
+    "title": "Generador de Hojas de Trabajo",
+    "defaultWorksheetTitle": "Hoja de Trabajo de Matemáticas",
+    "titleFormat": "{operation} en el rango de {range}"
   },
   "controls": {
-    "print": "Print",
-    "refresh": "Refresh",
-    "showAnswers": "Show Answers",
-    "hideAnswers": "Hide Answers",
-    "settings": "Settings",
-    "problemCount": "Number of problems",
-    "selectOperation": "Select operation",
-    "helpForParents": "Parent Guide"
+    "print": "Imprimir",
+    "refresh": "Actualizar",
+    "showAnswers": "Mostrar Respuestas",
+    "hideAnswers": "Ocultar Respuestas",
+    "settings": "Configuración",
+    "problemCount": "Número de ejercicios",
+    "selectOperation": "Seleccionar operación",
+    "helpForParents": "Guía para Padres"
   },
   "print": {
-    "title": "Practice Sheet",
-    "name": "Name:",
-    "date": "Date:",
-    "grade": "Grade:",
-    "answerKey": "Answer Key",
-    "hint": "Click the print button above or use CTRL+P",
-    "copyright": "tirgul.net - Smart Worksheets ©"
+    "title": "Hoja de Práctica",
+    "name": "Nombre:",
+    "date": "Fecha:",
+    "grade": "Grado:",
+    "answerKey": "Hoja de Respuestas",
+    "hint": "Haz clic en el botón de imprimir arriba o usa CTRL+P",
+    "copyright": "tirgul.net - Hojas de Trabajo Inteligentes ©"
   },
   "operations": {
-    "addition": "Addition",
-    "subtraction": "Subtraction",
-    "multiplication": "Multiplication",
-    "division": "Division",
-    "mixed": "Mixed",
-    "additionWithSymbol": "Addition (+)",
-    "subtractionWithSymbol": "Subtraction (-)",
-    "multiplicationWithSymbol": "Multiplication (×)",
-    "divisionWithSymbol": "Division (÷)"
+    "addition": "Suma",
+    "subtraction": "Resta",
+    "multiplication": "Multiplicación",
+    "division": "División",
+    "mixed": "Mixto",
+    "additionWithSymbol": "Suma (+)",
+    "subtractionWithSymbol": "Resta (-)",
+    "multiplicationWithSymbol": "Multiplicación (×)",
+    "divisionWithSymbol": "División (÷)"
   },
   "range": {
-    "label": "Range:",
-    "upTo": "Up to {value}",
-    "min": "Minimum",
-    "max": "Maximum"
+    "label": "Rango:",
+    "upTo": "Hasta {value}",
+    "min": "Mínimo",
+    "max": "Máximo"
   },
   "content": {
-    "title": "Printable Math Worksheets - Addition, Subtraction, Multiplication & Division",
-    "description": "Our smart generator lets you create custom math worksheets quickly and easily. Perfect for students in grades 1-6 and home practice.",
+    "title": "Hojas de Trabajo de Matemáticas Imprimibles - Suma, Resta, Multiplicación y División",
+    "description": "Nuestro generador inteligente te permite crear hojas de trabajo de matemáticas personalizadas de forma rápida y fácil. Perfecto para estudiantes de grados 1-6 y práctica en casa.",
     "features": [
-      "Practice all 4 operations: addition, subtraction, multiplication, and division",
-      "Customize difficulty level and number range (up to one million!)",
-      "Create unlimited worksheets - each click generates new problems",
-      "Clean, clear design optimized for economical printing (A4)",
-      "Suitable for teachers, parents, and students alike"
+      "Practica las 4 operaciones: suma, resta, multiplicación y división",
+      "Personaliza el nivel de dificultad y el rango de números (¡hasta un millón!)",
+      "Crea hojas de trabajo ilimitadas - cada clic genera nuevos ejercicios",
+      "Diseño limpio y claro optimizado para impresión económica (A4)",
+      "Adecuado para maestros, padres y estudiantes por igual"
     ],
     "benefits": {
       "saveMoney": {
-        "title": "Save Time and Money",
-        "text": "Instead of buying expensive workbooks that run out quickly, print exactly what your child needs, when they need it."
+        "title": "Ahorra Tiempo y Dinero",
+        "text": "En lugar de comprar cuadernos caros que se acaban rápido, imprime exactamente lo que tu hijo necesita, cuando lo necesita."
       },
       "focusedPractice": {
-        "title": "Focused and Effective Practice",
-        "text": "Struggling with multiplication? Create a sheet that's all multiplication. Need to strengthen addition with millions? No problem. The system adapts to your needs."
+        "title": "Práctica Enfocada y Efectiva",
+        "text": "¿Dificultades con la multiplicación? Crea una hoja solo de multiplicación. ¿Necesitas fortalecer la suma con millones? No hay problema. El sistema se adapta a tus necesidades."
       },
       "alwaysAvailable": {
-        "title": "Always Available",
-        "text": "The site is accessible from any computer or phone, 24/7. Run out of worksheets in class? Your home printer is ready to go."
+        "title": "Siempre Disponible",
+        "text": "El sitio es accesible desde cualquier computadora o teléfono, las 24 horas. ¿Se acabaron las hojas de trabajo en clase? Tu impresora de casa está lista."
       }
     },
     "tips": [
-      "Start at an easy level to build confidence, then gradually increase difficulty.",
-      "Aim for short, consistent practice (10 minutes daily) rather than long sessions once a week.",
-      "Make learning a game - time yourself and try to beat your personal best for completing a worksheet.",
-      "Check answers together and encourage self-correction of mistakes."
+      "Comienza en un nivel fácil para construir confianza, luego aumenta gradualmente la dificultad.",
+      "Apunta a prácticas cortas y consistentes (10 minutos diarios) en lugar de sesiones largas una vez por semana.",
+      "Convierte el aprendizaje en un juego - cronometra y trata de superar tu mejor tiempo al completar una hoja de trabajo.",
+      "Revisen las respuestas juntos y fomenta la autocorrección de errores."
     ]
   },
   "fractions": {
-    "title": "Fractions",
-    "generatorTitle": "Worksheet Generator - Fractions",
-    "sameDenominator": "Same denominator",
-    "differentDenominator": "Different denominators",
-    "mixedNumbers": "Mixed numbers",
-    "difficultyLabel": "Type:",
+    "title": "Fracciones",
+    "generatorTitle": "Generador de Hojas de Trabajo - Fracciones",
+    "sameDenominator": "Mismo denominador",
+    "differentDenominator": "Diferentes denominadores",
+    "mixedNumbers": "Números mixtos",
+    "difficultyLabel": "Tipo:",
     "levels": {
-      "level1": "Level 1: Same denominators (+/-)",
-      "level2": "Level 2: Easy different denominators (+/-)",
-      "level3": "Level 3: Mixed numbers",
-      "level4": "Level 4: Multiplying & dividing fractions",
-      "level5": "Level 5: Simplifying & expanding"
+      "level1": "Nivel 1: Mismos denominadores (+/-)",
+      "level2": "Nivel 2: Diferentes denominadores fáciles (+/-)",
+      "level3": "Nivel 3: Números mixtos",
+      "level4": "Nivel 4: Multiplicar y dividir fracciones",
+      "level5": "Nivel 5: Simplificar y ampliar"
     },
     "worksheetTitles": {
-      "level1": "Adding & Subtracting Fractions - Same Denominators",
-      "level2": "Adding & Subtracting Fractions - Different Denominators",
-      "level3": "Mixed Numbers",
-      "level4": "Multiplying & Dividing Fractions",
-      "level5": "Simplifying Fractions"
+      "level1": "Sumar y Restar Fracciones - Mismos Denominadores",
+      "level2": "Sumar y Restar Fracciones - Diferentes Denominadores",
+      "level3": "Números Mixtos",
+      "level4": "Multiplicar y Dividir Fracciones",
+      "level5": "Simplificar Fracciones"
     },
     "content": {
-      "title": "Fractions Worksheets - The Complete Guide",
-      "description": "Our advanced generator creates practice sheets covering all fraction topics: from understanding fractions, through arithmetic operations, to mixed numbers.",
+      "title": "Hojas de Trabajo de Fracciones - La Guía Completa",
+      "description": "Nuestro generador avanzado crea hojas de práctica que cubren todos los temas de fracciones: desde entender fracciones, pasando por operaciones aritméticas, hasta números mixtos.",
       "features": [
-        "Five built-in difficulty levels for gradual progression",
-        "Full support for mixed numbers and improper fractions",
-        "Focused practice on multiplying and dividing fractions",
-        "Special worksheets for practicing simplifying and expanding"
+        "Cinco niveles de dificultad integrados para progresión gradual",
+        "Soporte completo para números mixtos y fracciones impropias",
+        "Práctica enfocada en multiplicar y dividir fracciones",
+        "Hojas de trabajo especiales para practicar simplificar y ampliar"
       ],
       "benefits": {
         "deepUnderstanding": {
-          "title": "Deep Understanding of Fractions",
-          "text": "Our modular practice lets children isolate each difficulty separately (just common denominators, or just converting to mixed numbers) and master it."
+          "title": "Comprensión Profunda de Fracciones",
+          "text": "Nuestra práctica modular permite a los niños aislar cada dificultad por separado (solo denominadores comunes, o solo convertir a números mixtos) y dominarla."
         },
         "examPrep": {
-          "title": "Exam Preparation",
-          "text": "All types of problems from standardized tests for grades 4-6 are covered here."
+          "title": "Preparación para Exámenes",
+          "text": "Todos los tipos de problemas de exámenes estandarizados para grados 4-6 están cubiertos aquí."
         }
       },
       "tips": [
-        "When multiplying fractions: multiply numerator by numerator and denominator by denominator. Simple!",
-        "When dividing fractions: flip the second fraction (the divisor) and multiply.",
-        "Always try to simplify the final answer as much as possible."
+        "Al multiplicar fracciones: multiplica numerador por numerador y denominador por denominador. ¡Simple!",
+        "Al dividir fracciones: invierte la segunda fracción (el divisor) y multiplica.",
+        "Siempre intenta simplificar la respuesta final lo más posible."
       ]
     }
   },
   "wordProblems": {
-    "title": "Word Problems",
-    "worksheetTitle": "Math Word Problems",
-    "instruction": "Read the questions carefully and write the equation and answer",
-    "gradeLabel": "Grade:",
+    "title": "Problemas de Palabras",
+    "worksheetTitle": "Problemas de Palabras Matemáticos",
+    "instruction": "Lee las preguntas cuidadosamente y escribe la ecuación y la respuesta",
+    "gradeLabel": "Grado:",
     "grades": {
-      "grade1": "Grade 1",
-      "grade2": "Grade 2",
-      "grade3": "Grade 3"
+      "grade1": "Grado 1",
+      "grade2": "Grado 2",
+      "grade3": "Grado 3"
     },
-    "exercise": "Equation:",
-    "answer": "Answer:",
+    "exercise": "Ecuación:",
+    "answer": "Respuesta:",
     "content": {
-      "title": "Math Word Problems - Practicing Real Life",
-      "description": "Word problems bridge the gap between numbers and reality. They help children understand why we learn math and how to use it in everyday life.",
+      "title": "Problemas de Palabras Matemáticos - Practicando la Vida Real",
+      "description": "Los problemas de palabras conectan los números con la realidad. Ayudan a los niños a entender por qué aprendemos matemáticas y cómo usarlas en la vida cotidiana.",
       "features": [
-        "Variety of real-life questions: shopping, sharing candy, games, and more",
-        "Gender-balanced: names of boys and girls, proper phrasing",
-        "Varying difficulty levels: from simple addition and subtraction to multi-step problems (coming soon)",
-        "Space for writing the equation and answer neatly"
+        "Variedad de preguntas de la vida real: compras, repartir dulces, juegos y más",
+        "Equilibrio de género: nombres de niños y niñas, redacción apropiada",
+        "Niveles de dificultad variados: desde suma y resta simples hasta problemas de varios pasos (próximamente)",
+        "Espacio para escribir la ecuación y la respuesta de forma ordenada"
       ],
       "benefits": {
         "mathThinking": {
-          "title": "Developing Mathematical Thinking",
-          "text": "Children learn to 'translate' a story into math language - a critical skill for success in mathematics."
+          "title": "Desarrollando el Pensamiento Matemático",
+          "text": "Los niños aprenden a 'traducir' una historia al lenguaje matemático - una habilidad crítica para el éxito en matemáticas."
         },
         "readingComprehension": {
-          "title": "Reading Comprehension",
-          "text": "Solving word problems requires deep reading and understanding the important details versus the irrelevant ones."
+          "title": "Comprensión Lectora",
+          "text": "Resolver problemas de palabras requiere lectura profunda y entender los detalles importantes versus los irrelevantes."
         }
       },
       "tips": [
-        "Ask your child to highlight the numbers in the story and the key word (like 'gave', 'received', 'shared').",
-        "Drawing helps! Encourage your child to draw the problem before writing the equation.",
-        "Ask at the end: 'Does the answer make sense?'. If Danny ended up with a million apples, there's probably a mistake."
+        "Pide a tu hijo que resalte los números en la historia y la palabra clave (como 'dio', 'recibió', 'repartió').",
+        "¡Dibujar ayuda! Anima a tu hijo a dibujar el problema antes de escribir la ecuación.",
+        "Pregunta al final: '¿Tiene sentido la respuesta?'. Si Danny terminó con un millón de manzanas, probablemente hay un error."
       ]
     }
   },
   "series": {
-    "title": "Arithmetic Sequences",
-    "worksheetTitle": "Complete the Arithmetic Sequences",
-    "instruction": "Discover the pattern and complete the missing number",
-    "difficultyLabel": "Difficulty level",
+    "title": "Secuencias Aritméticas",
+    "worksheetTitle": "Completa las Secuencias Aritméticas",
+    "instruction": "Descubre el patrón y completa el número faltante",
+    "difficultyLabel": "Nivel de dificultad",
     "difficulties": {
-      "easy": "Easy",
-      "medium": "Medium",
-      "hard": "Hard"
+      "easy": "Fácil",
+      "medium": "Medio",
+      "hard": "Difícil"
     },
     "showHide": {
-      "show": "Show",
-      "hide": "Hide"
+      "show": "Mostrar",
+      "hide": "Ocultar"
     },
-    "help": "Explanations",
-    "rule": "Pattern:",
+    "help": "Explicaciones",
+    "rule": "Patrón:",
     "content": {
-      "title": "Printable Arithmetic Sequences Worksheets",
-      "description": "Arithmetic sequences are the foundation for understanding patterns and rules in mathematics. Our worksheets allow practice in identifying patterns and completing missing terms at various difficulty levels.",
+      "title": "Hojas de Trabajo de Secuencias Aritméticas Imprimibles",
+      "description": "Las secuencias aritméticas son la base para entender patrones y reglas en matemáticas. Nuestras hojas de trabajo permiten practicar identificar patrones y completar términos faltantes en varios niveles de dificultad.",
       "features": [
-        "Various difficulty levels: from simple addition to multiplication",
-        "Ascending and descending sequences",
-        "Developing logical and algebraic thinking",
-        "Suitable as preparation for gifted student tests and standardized assessments"
+        "Varios niveles de dificultad: desde suma simple hasta multiplicación",
+        "Secuencias ascendentes y descendentes",
+        "Desarrollo del pensamiento lógico y algebraico",
+        "Adecuado como preparación para exámenes de estudiantes talentosos y evaluaciones estandarizadas"
       ],
       "benefits": {
         "patterns": {
-          "title": "Pattern Recognition",
-          "text": "The ability to recognize repeating patterns is a critical skill not only in mathematics but also in programming and science."
+          "title": "Reconocimiento de Patrones",
+          "text": "La capacidad de reconocer patrones repetitivos es una habilidad crítica no solo en matemáticas sino también en programación y ciencia."
         },
         "flexibility": {
-          "title": "Mental Flexibility",
-          "text": "The need to discover the 'rule' behind the numbers encourages creative thinking and problem solving."
+          "title": "Flexibilidad Mental",
+          "text": "La necesidad de descubrir la 'regla' detrás de los números fomenta el pensamiento creativo y la resolución de problemas."
         },
         "arithmetic": {
-          "title": "Strengthening Arithmetic Operations",
-          "text": "Practicing sequences requires repeated calculations (e.g., +3, +3, +3), strengthening mastery of multiplication tables and addition."
+          "title": "Fortalecimiento de Operaciones Aritméticas",
+          "text": "Practicar secuencias requiere cálculos repetidos (por ejemplo, +3, +3, +3), fortaleciendo el dominio de las tablas de multiplicar y la suma."
         }
       },
       "tips": [
-        "Start by checking the difference between the first two adjacent numbers.",
-        "Check if the difference holds for subsequent pairs. If not, try multiplication or division.",
-        "In descending sequences, the pattern is usually subtraction or division."
+        "Comienza comprobando la diferencia entre los dos primeros números adyacentes.",
+        "Comprueba si la diferencia se mantiene para los pares siguientes. Si no, intenta multiplicación o división.",
+        "En secuencias descendentes, el patrón suele ser resta o división."
       ]
     }
   },
   "units": {
-    "title": "Unit Conversion Generator",
-    "instruction": "Complete the missing number",
-    "tabLabel": "Type of units",
+    "title": "Generador de Conversión de Unidades",
+    "instruction": "Completa el número faltante",
+    "tabLabel": "Tipo de unidades",
     "types": {
-      "length": "Length",
-      "weight": "Weight",
-      "time": "Time"
+      "length": "Longitud",
+      "weight": "Peso",
+      "time": "Tiempo"
     },
     "worksheetTitles": {
-      "length": "Length Unit Conversions",
-      "weight": "Weight Unit Conversions",
-      "time": "Time Unit Conversions"
+      "length": "Conversiones de Unidades de Longitud",
+      "weight": "Conversiones de Unidades de Peso",
+      "time": "Conversiones de Unidades de Tiempo"
     },
     "showHide": {
-      "show": "Show",
-      "hide": "Hide"
+      "show": "Mostrar",
+      "hide": "Ocultar"
     },
-    "help": "Explanations",
+    "help": "Explicaciones",
     "content": {
-      "title": "Printable Unit Conversion Worksheets (Length, Weight, and Time)",
-      "description": "Units of measurement are an integral part of our daily lives. Our generator creates worksheets for practicing conversions between different units.",
+      "title": "Hojas de Trabajo de Conversión de Unidades Imprimibles (Longitud, Peso y Tiempo)",
+      "description": "Las unidades de medida son parte integral de nuestra vida diaria. Nuestro generador crea hojas de trabajo para practicar conversiones entre diferentes unidades.",
       "features": [
-        "Length: conversions between kilometer, meter, centimeter, and millimeter",
-        "Weight: conversions between ton, kilogram, and gram",
-        "Time: conversions between days, hours, minutes, and seconds",
-        "Suitable for grades 3, 4, and 5"
+        "Longitud: conversiones entre kilómetro, metro, centímetro y milímetro",
+        "Peso: conversiones entre tonelada, kilogramo y gramo",
+        "Tiempo: conversiones entre días, horas, minutos y segundos",
+        "Adecuado para grados 3, 4 y 5"
       ],
       "benefits": {
         "magnitude": {
-          "title": "Understanding Orders of Magnitude",
-          "text": "Practice helps children understand the relationship between different units (1 km is 1000 meters)."
+          "title": "Entendiendo Órdenes de Magnitud",
+          "text": "La práctica ayuda a los niños a entender la relación entre diferentes unidades (1 km son 1000 metros)."
         },
         "multiplication": {
-          "title": "Practicing Multiplication & Division by 10, 100, 1000",
-          "text": "Unit conversion is an excellent way to practice multiplication and division by round numbers."
+          "title": "Practicando Multiplicación y División por 10, 100, 1000",
+          "text": "La conversión de unidades es una excelente manera de practicar multiplicación y división por números redondos."
         },
         "practical": {
-          "title": "Practical Life Knowledge",
-          "text": "Reading maps, cooking, and measuring time all require mastery of these conversions."
+          "title": "Conocimiento Práctico de la Vida",
+          "text": "Leer mapas, cocinar y medir el tiempo requieren dominio de estas conversiones."
         }
       },
       "tips": [
-        "Show your child a ruler: within 1 centimeter there are 10 small lines (millimeters).",
-        "Remember the prefixes: 'kilo' in Greek means thousand (km, kg).",
-        "In time, the multipliers are different: 60 seconds in a minute, 60 minutes in an hour, 24 hours in a day."
+        "Muestra a tu hijo una regla: dentro de 1 centímetro hay 10 líneas pequeñas (milímetros).",
+        "Recuerda los prefijos: 'kilo' en griego significa mil (km, kg).",
+        "En el tiempo, los multiplicadores son diferentes: 60 segundos en un minuto, 60 minutos en una hora, 24 horas en un día."
       ]
     }
   },
   "ratio": {
-    "title": "Ratio & Proportion Generator",
-    "worksheetTitle": "Ratio & Proportion",
-    "instruction": "Complete the missing number to maintain the proportion",
+    "title": "Generador de Razón y Proporción",
+    "worksheetTitle": "Razón y Proporción",
+    "instruction": "Completa el número faltante para mantener la proporción",
     "content": {
-      "title": "Printable Ratio & Proportion Worksheets",
-      "description": "Ratio and proportion are the pillars of algebraic thinking. Our worksheets help students identify multiplicative relationships between numbers and solve simple equations.",
+      "title": "Hojas de Trabajo de Razón y Proporción Imprimibles",
+      "description": "La razón y proporción son los pilares del pensamiento algebraico. Nuestras hojas de trabajo ayudan a los estudiantes a identificar relaciones multiplicativas entre números y resolver ecuaciones simples.",
       "features": [
-        "Completing the missing term in a ratio equation (1:2 = ?:8)",
-        "Practicing multiplication and division in the context of ratios",
-        "Identifying the connecting factor between ratio pairs",
-        "Preparation for standardized tests and science studies"
+        "Completar el término faltante en una ecuación de razón (1:2 = ?:8)",
+        "Practicar multiplicación y división en el contexto de razones",
+        "Identificar el factor de conexión entre pares de razones",
+        "Preparación para exámenes estandarizados y estudios de ciencias"
       ],
       "benefits": {
         "logicalThinking": {
-          "title": "Logical Thinking",
-          "text": "Solving ratio problems requires deeper understanding than just technical calculation - you need to find the pattern."
+          "title": "Pensamiento Lógico",
+          "text": "Resolver problemas de razón requiere una comprensión más profunda que solo el cálculo técnico - necesitas encontrar el patrón."
         },
         "practicalUse": {
-          "title": "Useful in Kitchen and Maps",
-          "text": "Scaling recipe quantities or reading map scales - it's all ratio and proportion."
+          "title": "Útil en la Cocina y Mapas",
+          "text": "Ajustar cantidades de recetas o leer escalas de mapas - todo es razón y proporción."
         },
         "algebraPrep": {
-          "title": "Easy Transition to Algebra",
-          "text": "Finding the unknown in a proportion is actually solving the child's first equation (X)."
+          "title": "Transición Fácil al Álgebra",
+          "text": "Encontrar lo desconocido en una proporción es en realidad resolver la primera ecuación del niño (X)."
         }
       },
       "tips": [
-        "Ask: 'How many times did the first number grow? The second number must grow by the same factor'.",
-        "Draw the ratios to illustrate (for example, red balls versus blue balls).",
-        "Don't rush to solve - let the child try to discover the pattern themselves."
+        "Pregunta: '¿Cuántas veces creció el primer número? El segundo número debe crecer por el mismo factor'.",
+        "Dibuja las razones para ilustrar (por ejemplo, bolas rojas versus bolas azules).",
+        "No te apresures a resolver - deja que el niño intente descubrir el patrón por sí mismo."
       ]
     }
   },
   "decimals": {
-    "title": "Worksheets - Decimals",
-    "worksheetTitle": "Adding & Subtracting Decimals",
+    "title": "Hojas de Trabajo - Decimales",
+    "worksheetTitle": "Suma y Resta de Decimales",
     "content": {
-      "title": "Printable Decimal Worksheets",
-      "description": "Practicing decimals is an important step that prepares students for more complex calculations in everyday life and middle school. Our worksheets focus on precision in performing operations.",
+      "title": "Hojas de Trabajo de Decimales Imprimibles",
+      "description": "Practicar decimales es un paso importante que prepara a los estudiantes para cálculos más complejos en la vida cotidiana y la secundaria. Nuestras hojas de trabajo se enfocan en la precisión al realizar operaciones.",
       "features": [
-        "Vertical addition and subtraction of decimals",
-        "Precision in writing: decimal point below decimal point",
-        "Problems with varying numbers of digits after the decimal point",
-        "Suitable for test preparation in grades 5 and 6"
+        "Suma y resta vertical de decimales",
+        "Precisión al escribir: punto decimal bajo punto decimal",
+        "Problemas con cantidades variables de dígitos después del punto decimal",
+        "Adecuado para preparación de exámenes en grados 5 y 6"
       ],
       "benefits": {
         "decimalPoint": {
-          "title": "Understanding the Decimal Point",
-          "text": "Decimal point placement is the main difficulty in this topic. Our worksheets require students to place numbers correctly in vertical format."
+          "title": "Entendiendo el Punto Decimal",
+          "text": "La colocación del punto decimal es la principal dificultad en este tema. Nuestras hojas de trabajo requieren que los estudiantes coloquen los números correctamente en formato vertical."
         },
         "realLife": {
-          "title": "Preparation for Real Life",
-          "text": "Calculations with money, measurements, and weights all require mastery of decimals."
+          "title": "Preparación para la Vida Real",
+          "text": "Los cálculos con dinero, medidas y pesos requieren dominio de los decimales."
         },
         "independence": {
-          "title": "Independent Practice",
-          "text": "The exercises are structured so students can solve them independently and develop a sense of capability."
+          "title": "Práctica Independiente",
+          "text": "Los ejercicios están estructurados para que los estudiantes puedan resolverlos independientemente y desarrollar un sentido de capacidad."
         }
       },
       "tips": [
-        "Always make sure the decimal points are in a straight line (one below the other).",
-        "You can add zeros at the end of a number to 'align' the lengths (e.g., 0.5 becomes 0.50).",
-        "In subtraction, if a digit is missing on top, you must add 0 to avoid mistakes in borrowing."
+        "Siempre asegúrate de que los puntos decimales estén en línea recta (uno debajo del otro).",
+        "Puedes agregar ceros al final de un número para 'alinear' las longitudes (por ejemplo, 0,5 se convierte en 0,50).",
+        "En la resta, si falta un dígito arriba, debes agregar 0 para evitar errores al pedir prestado."
       ]
     }
   },
   "percentage": {
-    "title": "Worksheets - Percentages",
-    "worksheetTitle": "Percentage Calculations",
-    "instruction": "Calculate the percentage value of the whole",
-    "of": "of",
+    "title": "Hojas de Trabajo - Porcentajes",
+    "worksheetTitle": "Cálculos de Porcentajes",
+    "instruction": "Calcula el valor del porcentaje del total",
+    "of": "de",
     "content": {
-      "title": "Printable Percentage Worksheets - Calculating Percentages of a Whole",
-      "description": "Our smart generator creates worksheets on percentages. This practice is essential for developing financial literacy and mathematical understanding before transitioning to middle school.",
+      "title": "Hojas de Trabajo de Porcentajes Imprimibles - Calculando Porcentajes de un Total",
+      "description": "Nuestro generador inteligente crea hojas de trabajo sobre porcentajes. Esta práctica es esencial para desarrollar la alfabetización financiera y la comprensión matemática antes de la transición a la secundaria.",
       "features": [
-        "Calculating the percentage value of a whole (e.g., what is 20% of 80?)",
-        "Combination of 'easy' percentages (10%, 25%, 50%) and general percentages",
-        "Space for showing the calculation method (fraction multiplication or the triangle method)",
-        "Especially suitable for grades 5 and 6 as a direct continuation of fractions"
+        "Calcular el valor del porcentaje de un total (por ejemplo, ¿cuánto es el 20% de 80?)",
+        "Combinación de porcentajes 'fáciles' (10%, 25%, 50%) y porcentajes generales",
+        "Espacio para mostrar el método de cálculo (multiplicación de fracciones o el método del triángulo)",
+        "Especialmente adecuado para grados 5 y 6 como continuación directa de fracciones"
       ],
       "benefits": {
         "realLife": {
-          "title": "Connection to Reality",
-          "text": "Percentages are perhaps the most useful topic in daily life: discounts in stores, bank interest, and statistics in the news. This practice prepares children for life."
+          "title": "Conexión con la Realidad",
+          "text": "Los porcentajes son quizás el tema más útil en la vida diaria: descuentos en tiendas, intereses bancarios y estadísticas en las noticias. Esta práctica prepara a los niños para la vida."
         },
         "fractionConnection": {
-          "title": "The Connection Between Fractions and Percentages",
-          "text": "Practice helps students see the direct connection: 50% is half, 25% is a quarter. This understanding strengthens mastery of both topics."
+          "title": "La Conexión entre Fracciones y Porcentajes",
+          "text": "La práctica ayuda a los estudiantes a ver la conexión directa: 50% es la mitad, 25% es un cuarto. Esta comprensión fortalece el dominio de ambos temas."
         },
         "quickThinking": {
-          "title": "Developing Quick Thinking",
-          "text": "Practicing basic percentages (like 10%) encourages mental math and develops quick numerical estimation."
+          "title": "Desarrollando el Pensamiento Rápido",
+          "text": "Practicar porcentajes básicos (como el 10%) fomenta el cálculo mental y desarrolla la estimación numérica rápida."
         }
       },
       "tips": [
-        "Explain that it's always easy to start by calculating 10% (divide by 10) and then multiply as needed.",
-        "Show the connection to simple fractions: 50% is like dividing by 2, 25% is like dividing by 4.",
-        "Use 'store discount' examples to make abstract questions concrete and interesting.",
-        "Encourage self-checking: if they asked for 200%, the result must be larger than the original number!"
+        "Explica que siempre es fácil comenzar calculando el 10% (dividir por 10) y luego multiplicar según sea necesario.",
+        "Muestra la conexión con fracciones simples: 50% es como dividir por 2, 25% es como dividir por 4.",
+        "Usa ejemplos de 'descuentos en tiendas' para hacer las preguntas abstractas concretas e interesantes.",
+        "Fomenta la auto-verificación: ¡si pidieron 200%, el resultado debe ser mayor que el número original!"
       ]
     }
   },
   "geometry": {
-    "title": "Geometry",
-    "perimeter": "Perimeter",
-    "area": "Area",
-    "topicLabel": "Topic:",
+    "title": "Geometría",
+    "perimeter": "Perímetro",
+    "area": "Área",
+    "topicLabel": "Tema:",
     "unit": "cm",
     "topics": {
-      "rect": "Rectangles (area and perimeter)",
-      "triangle": "Triangles (area)",
-      "angle": "Angles (identification)",
-      "circle": "Circles (area and circumference)"
+      "rect": "Rectángulos (área y perímetro)",
+      "triangle": "Triángulos (área)",
+      "angle": "Ángulos (identificación)",
+      "circle": "Círculos (área y circunferencia)"
     },
     "worksheetTitles": {
-      "rect": "Area and Perimeter of Rectangles",
-      "triangle": "Area of Triangles",
-      "angle": "Types of Angles",
-      "circle": "Circle - Area and Circumference"
+      "rect": "Área y Perímetro de Rectángulos",
+      "triangle": "Área de Triángulos",
+      "angle": "Tipos de Ángulos",
+      "circle": "Círculo - Área y Circunferencia"
     },
     "labels": {
       "base": "Base:",
-      "height": "Height:",
-      "angleType": "Angle type:",
-      "circumference": "Circumference (P):",
-      "circleArea": "Area (S):"
+      "height": "Altura:",
+      "angleType": "Tipo de ángulo:",
+      "circumference": "Circunferencia (P):",
+      "circleArea": "Área (S):"
     },
     "angleTypes": {
-      "acute": "Acute",
-      "right": "Right",
-      "obtuse": "Obtuse",
-      "straight": "Straight"
+      "acute": "Agudo",
+      "right": "Recto",
+      "obtuse": "Obtuso",
+      "straight": "Llano"
     },
     "content": {
-      "title": "Geometry for Grades 3-6 - Comprehensive Practice",
-      "description": "All geometry topics in one place: rectangles, triangles, angles, and circles.",
+      "title": "Geometría para Grados 3-6 - Práctica Completa",
+      "description": "Todos los temas de geometría en un solo lugar: rectángulos, triángulos, ángulos y círculos.",
       "features": [
-        "Rectangles: calculating areas and perimeters on a grid",
-        "Triangles: practicing the area formula (base times height divided by 2)",
-        "Angles: identifying angle types (acute, obtuse, right, straight)",
-        "Circles: introduction to pi (π) and calculating area and circumference"
+        "Rectángulos: calcular áreas y perímetros en una cuadrícula",
+        "Triángulos: practicar la fórmula del área (base por altura dividido por 2)",
+        "Ángulos: identificar tipos de ángulos (agudo, obtuso, recto, llano)",
+        "Círculos: introducción a pi (π) y cálculo de área y circunferencia"
       ],
       "benefits": {
         "visualization": {
-          "title": "Clear Visualization",
-          "text": "Each shape is displayed graphically in a clear and accurate way that helps students understand the given data."
+          "title": "Visualización Clara",
+          "text": "Cada forma se muestra gráficamente de manera clara y precisa que ayuda a los estudiantes a entender los datos dados."
         },
         "curriculum": {
-          "title": "Curriculum Alignment",
-          "text": "The topics cover elementary school geometry requirements."
+          "title": "Alineación con el Currículo",
+          "text": "Los temas cubren los requisitos de geometría de la escuela primaria."
         }
       },
       "tips": [
-        "For triangles: note that you always multiply the height by the side it drops to (the base).",
-        "For angles: use the corner of a sheet of paper to check if the angle is greater or less than 90 degrees.",
-        "For circles: remember that the diameter is exactly twice the radius."
+        "Para triángulos: nota que siempre multiplicas la altura por el lado al que cae (la base).",
+        "Para ángulos: usa la esquina de una hoja de papel para verificar si el ángulo es mayor o menor que 90 grados.",
+        "Para círculos: recuerda que el diámetro es exactamente el doble del radio."
       ]
     }
   }

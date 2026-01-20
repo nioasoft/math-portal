@@ -1,47 +1,47 @@
 {
   "shell": {
-    "backToGames": "Back to Games",
-    "home": "Home"
+    "backToGames": "Volver a Juegos",
+    "home": "Inicio"
   },
   "feedback": {
-    "correct": "Correct!",
-    "incorrect": "Incorrect",
-    "tryAgain": "Try again",
-    "theAnswer": "The answer:"
+    "correct": "¡Correcto!",
+    "incorrect": "Incorrecto",
+    "tryAgain": "Inténtalo de nuevo",
+    "theAnswer": "La respuesta:"
   },
   "summary": {
-    "title": "Game Over",
-    "score": "Score",
-    "maxStreak": "Best Streak",
-    "accuracy": "Accuracy",
-    "correctWrong": "Correct / Wrong",
-    "newRecord": "New Record!",
-    "brokeRecord": "You beat your previous record of {points} points",
-    "greatJob": "Great job practicing!",
-    "playAgain": "Play Again",
-    "backToMenu": "Back to Menu"
+    "title": "Fin del Juego",
+    "score": "Puntuación",
+    "maxStreak": "Mejor Racha",
+    "accuracy": "Precisión",
+    "correctWrong": "Correctas / Incorrectas",
+    "newRecord": "¡Nuevo Récord!",
+    "brokeRecord": "Superaste tu récord anterior de {points} puntos",
+    "greatJob": "¡Excelente práctica!",
+    "playAgain": "Jugar de Nuevo",
+    "backToMenu": "Volver al Menú"
   },
   "score": {
-    "score": "Score",
-    "streak": "Streak",
-    "correctWrong": "Correct/Wrong"
+    "score": "Puntuación",
+    "streak": "Racha",
+    "correctWrong": "Correctas/Incorrectas"
   },
   "problem": {
-    "of": "of"
+    "of": "de"
   },
   "modes": {
-    "practice": "Practice",
-    "quiz": "Quiz",
-    "timed": "Timed"
+    "practice": "Práctica",
+    "quiz": "Cuestionario",
+    "timed": "Cronometrado"
   },
   "timer": {
-    "timeLeft": "Time left",
-    "seconds": "seconds"
+    "timeLeft": "Tiempo restante",
+    "seconds": "segundos"
   },
   "ui": {
-    "start": "Start",
-    "pause": "Pause",
-    "resume": "Resume",
-    "quit": "Quit"
+    "start": "Comenzar",
+    "pause": "Pausar",
+    "resume": "Continuar",
+    "quit": "Salir"
   }
 }

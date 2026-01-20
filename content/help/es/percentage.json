@@ -1,0 +1,36 @@
+{
+  "slug": "percentage",
+  "title": "Porcentajes",
+  "shortDescription": "Los porcentajes son fracciones con denominador 100. Permiten comparar facilmente diferentes cantidades.",
+  "importance": "Los porcentajes estan en todas partes: descuentos en tiendas, calificaciones de examenes, intereses bancarios y estadisticas en las noticias.",
+  "howToTeach": [
+    "Explica que 'por ciento' significa 'de cada cien'",
+    "Empieza con porcentajes simples: 50% = la mitad, 25% = un cuarto",
+    "Muestra la conexion con las fracciones: 50% = 50/100 = 1/2",
+    "Practica calculando el 10% primero (divide entre 10) y luego multiplica segun sea necesario"
+  ],
+  "examples": [
+    {
+      "problem": "25% de 80 = ?",
+      "solution": "20",
+      "explanation": "25% es un cuarto. 80:4 = 20. O: 80 x 0,25 = 20."
+    },
+    {
+      "problem": "15% de 200 = ?",
+      "solution": "30",
+      "explanation": "10% de 200 = 20. 5% = 10. Total 15% = 30."
+    }
+  ],
+  "commonMistakes": [
+    "Dividir entre 100 en lugar de multiplicar por el porcentaje",
+    "Olvidar convertir el porcentaje a fraccion o decimal",
+    "Confusion al calcular descuentos (el precio nuevo, no el descuento)"
+  ],
+  "parentTips": [
+    "Practica mientras compran: 'Hay un 20% de descuento, cuanto ahorraremos?'",
+    "Muestra una tabla de conversion: 10%=0,1, 25%=0,25, 50%=0,5",
+    "Siempre calcula el 10% primero, es el mas facil!"
+  ],
+  "relatedGeneratorHref": "/percentage",
+  "relatedGeneratorTitle": "Generador de Hojas de Porcentajes"
+}

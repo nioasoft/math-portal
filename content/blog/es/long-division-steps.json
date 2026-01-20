@@ -1,0 +1,14 @@
+{
+  "slug": "long-division-steps",
+  "title": "Division Larga - Paso a Paso",
+  "excerpt": "El algoritmo mas temido de la primaria se vuelve simple cuando conoces el orden de las operaciones.",
+  "date": "2026-01-25",
+  "readTime": "7 min",
+  "category": "tips",
+  "categoryLabel": "Consejos y Metodos de Aprendizaje",
+  "image": "/blog/long-division-steps.webp",
+  "tags": ["division larga", "grado 4"],
+  "author": "Equipo de Hojas de Trabajo Inteligentes",
+  "lastModified": "2026-01-17",
+  "content": "<h2>DMRB - El Truco de Memoria Clasico</h2>\n<p>Recuerda los pasos: Dividir, Multiplicar, Restar, Bajar. Algunos usan \"Dicen Mis Ratones Blancos\" como mnemotecnico.</p>\n<p>Repite este mantra en cada paso del ejercicio.</p>"
+}

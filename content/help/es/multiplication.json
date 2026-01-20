@@ -1,0 +1,37 @@
+{
+  "slug": "multiplication",
+  "title": "Multiplicacion",
+  "shortDescription": "La multiplicacion es una suma repetida. Los ninos aprenden que multiplicar es un atajo para sumar el mismo numero muchas veces.",
+  "importance": "La multiplicacion es la base para las matematicas avanzadas, calculos de area y resolver problemas cotidianos como calcular el precio total de varios articulos.",
+  "howToTeach": [
+    "Empieza con la comprension del concepto: 3x4 es como 3+3+3+3 o 4+4+4",
+    "Ensena las tablas de multiplicar gradualmente, empieza con el 2, 5, 10",
+    "Usa patrones visuales (filas y columnas)",
+    "Repasa los datos hasta que sean automaticos"
+  ],
+  "examples": [
+    {
+      "problem": "4 x 7 = ?",
+      "solution": "28",
+      "explanation": "4 veces 7: 7+7+7+7 = 28. O usa la tabla de multiplicar."
+    },
+    {
+      "problem": "23 x 4 = ?",
+      "solution": "92",
+      "explanation": "Unidades: 3x4 = 12 (escribe 2, lleva 1). Decenas: 2x4 = 8, + 1 = 9. Respuesta: 92."
+    }
+  ],
+  "commonMistakes": [
+    "Confusion entre datos de multiplicacion similares (6x7 y 7x8)",
+    "Olvidar llevarse en la multiplicacion de dos digitos",
+    "Saltarse un paso al multiplicar numeros grandes"
+  ],
+  "parentTips": [
+    "Practica las tablas de multiplicar todos los dias, 5 minutos es suficiente",
+    "Conviertelo en una cancion o concurso familiar",
+    "Muestra patrones: todos los multiplos de 5 terminan en 0 o 5",
+    "No fuerces la memorizacion mecanica, la comprension viene primero"
+  ],
+  "relatedGeneratorHref": "/worksheet/math?op=mul",
+  "relatedGeneratorTitle": "Generador de Hojas de Multiplicacion"
+}

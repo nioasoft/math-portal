@@ -1,0 +1,38 @@
+{
+  "slug": "addition",
+  "title": "Suma",
+  "shortDescription": "La suma es la base de todas las matematicas. Los ninos aprenden a combinar cantidades y a entender el concepto de 'mas'.",
+  "importance": "La suma es la primera operacion que aprenden los ninos y es la base de todas las demas operaciones aritmeticas. Dominar la suma es necesario para las compras, el manejo del dinero, las mediciones y mucho mas.",
+  "howToTeach": [
+    "Empieza con objetos tangibles: bloques, lapices, caramelos",
+    "Explica que 'sumar' es como 'agregar' o 'juntar'",
+    "Practica primero con numeros pequenos (hasta 10)",
+    "Cuando el nino este listo, introduce el llevarse (reagrupacion) gradualmente",
+    "Usa una recta numerica como ayuda visual"
+  ],
+  "examples": [
+    {
+      "problem": "7 + 5 = ?",
+      "solution": "12",
+      "explanation": "Empieza desde el 7, cuenta 5 mas: 8, 9, 10, 11, 12. O: 7 + 3 = 10, mas 2 = 12."
+    },
+    {
+      "problem": "25 + 38 = ?",
+      "solution": "63",
+      "explanation": "Unidades: 5 + 8 = 13 (escribe 3, lleva 1). Decenas: 2 + 3 + 1 = 6. Respuesta: 63."
+    }
+  ],
+  "commonMistakes": [
+    "Olvidar llevarse cuando las unidades superan 10",
+    "Errores en el orden de los digitos al escribir verticalmente",
+    "Saltarse un numero al contar"
+  ],
+  "parentTips": [
+    "No te apresures, dale tiempo al nino para pensar",
+    "Anima a usar los dedos al principio, esta bien!",
+    "Convierte la practica en un juego: 'Tengo 3 manzanas, tu me das 4 mas, cuantas tenemos?'",
+    "Celebra los pequenos logros"
+  ],
+  "relatedGeneratorHref": "/worksheet/math?op=add",
+  "relatedGeneratorTitle": "Generador de Hojas de Suma"
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "division",
+  "title": "Division",
+  "shortDescription": "La division es la operacion inversa de la multiplicacion. Los ninos aprenden a dividir una cantidad en partes iguales.",
+  "importance": "La division es necesaria para repartir de forma justa, calcular promedios y entender fracciones y porcentajes mas adelante.",
+  "howToTeach": [
+    "Empieza con division fisica: 'Reparte 12 caramelos entre 3 ninos'",
+    "Muestra la conexion con la multiplicacion: si 3x4=12 entonces 12:3=4",
+    "Practica division sin residuo antes de pasar a division con residuo",
+    "Explica la division larga gradualmente con numeros simples"
+  ],
+  "examples": [
+    {
+      "problem": "24 : 6 = ?",
+      "solution": "4",
+      "explanation": "Cuantas veces cabe el 6 en el 24? 6x4=24, entonces 24:6=4."
+    },
+    {
+      "problem": "84 : 7 = ?",
+      "solution": "12",
+      "explanation": "Division larga: 7 cabe en 8 una vez (7), residuo 1. Baja el 4, obtienes 14. 7 cabe en 14 dos veces (14). Respuesta: 12."
+    }
+  ],
+  "commonMistakes": [
+    "Confusion entre dividendo y divisor",
+    "Olvidar verificar la respuesta multiplicando",
+    "Errores en la division larga por saltarse pasos"
+  ],
+  "parentTips": [
+    "Siempre verifica con multiplicacion: si 24:6=4, entonces 6x4 debe ser igual a 24",
+    "Practica repartiendo caramelos o juguetes",
+    "En la division larga, trabaja paso a paso, despacio"
+  ],
+  "relatedGeneratorHref": "/worksheet/math?op=div",
+  "relatedGeneratorTitle": "Generador de Hojas de Division"
+}

@@ -1,33 +1,33 @@
 {
   "site": {
-    "name": "Smart Worksheets",
-    "title": "Smart Worksheets | Math Practice & Games",
-    "description": "Printable smart worksheets and interactive math games for grades 1-6. Free and no registration required!"
+    "name": "Hojas de Trabajo Inteligentes",
+    "title": "Hojas de Trabajo Inteligentes | Práctica y Juegos de Matemáticas",
+    "description": "Hojas de trabajo inteligentes imprimibles y juegos de matemáticas interactivos para grados 1-6. ¡Gratis y sin registro!"
   },
   "pages": {
     "home": {
-      "title": "Smart Worksheets & Math Games",
-      "description": "Printable smart worksheets and interactive math games for grades 1-6. Free and no registration required!"
+      "title": "Hojas de Trabajo Inteligentes y Juegos de Matemáticas",
+      "description": "Hojas de trabajo inteligentes imprimibles y juegos de matemáticas interactivos para grados 1-6. ¡Gratis y sin registro!"
     },
     "fractions": {
-      "title": "Fractions Worksheets",
-      "description": "Printable fractions worksheets - adding, subtracting, multiplying, and dividing fractions. Aligned with curriculum standards."
+      "title": "Hojas de Trabajo de Fracciones",
+      "description": "Hojas de trabajo de fracciones imprimibles - sumar, restar, multiplicar y dividir fracciones. Alineado con los estándares del currículo."
     },
     "geometry": {
-      "title": "Geometry Worksheets",
-      "description": "Geometry worksheets - area and perimeter of geometric shapes. Suitable for grades 1-6."
+      "title": "Hojas de Trabajo de Geometría",
+      "description": "Hojas de trabajo de geometría - área y perímetro de figuras geométricas. Adecuado para grados 1-6."
     },
     "percentage": {
-      "title": "Percentage Worksheets",
-      "description": "Percentage worksheets - calculating percentages, converting between percentages and fractions. Aligned with curriculum standards."
+      "title": "Hojas de Trabajo de Porcentajes",
+      "description": "Hojas de trabajo de porcentajes - calcular porcentajes, convertir entre porcentajes y fracciones. Alineado con los estándares del currículo."
     },
     "decimals": {
-      "title": "Decimal Worksheets",
-      "description": "Decimal worksheets - addition, subtraction, and conversion. Aligned with curriculum standards."
+      "title": "Hojas de Trabajo de Decimales",
+      "description": "Hojas de trabajo de decimales - suma, resta y conversión. Alineado con los estándares del currículo."
     },
     "games": {
-      "title": "Math Games",
-      "description": "Interactive math games for practice - addition, subtraction, multiplication, and division."
+      "title": "Juegos de Matemáticas",
+      "description": "Juegos de matemáticas interactivos para practicar - suma, resta, multiplicación y división."
     }
   }
 }

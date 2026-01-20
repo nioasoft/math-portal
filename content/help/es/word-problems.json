@@ -1,0 +1,37 @@
+{
+  "slug": "word-problems",
+  "title": "Problemas de Palabras",
+  "shortDescription": "Los problemas de palabras son historias matematicas que necesitan traducirse a una ecuacion y resolverse.",
+  "importance": "Los problemas de palabras ensenan como aplicar las matematicas en la realidad. Desarrollan la comprension lectora y el pensamiento logico.",
+  "howToTeach": [
+    "Ensenales a leer el problema al menos dos veces",
+    "Pideles que marquen los numeros y las 'palabras clave'",
+    "Anima a dibujar o hacer un diagrama del problema",
+    "Al final, verifica si la respuesta tiene sentido"
+  ],
+  "examples": [
+    {
+      "problem": "Daniel tenia 15 canicas. Le dio 7 canicas a Jose. Cuantas canicas le quedan a Daniel?",
+      "solution": "8",
+      "explanation": "Dio = resta. 15 - 7 = 8 canicas."
+    },
+    {
+      "problem": "Cada fila tiene 6 sillas. Hay 4 filas. Cuantas sillas hay en total?",
+      "solution": "24",
+      "explanation": "Cada fila x numero de filas = multiplicacion. 6 x 4 = 24 sillas."
+    }
+  ],
+  "commonMistakes": [
+    "No leer toda la pregunta hasta el final",
+    "Confusion con palabras clave (dio = resta, recibio = suma)",
+    "No verificar si la respuesta tiene sentido"
+  ],
+  "parentTips": [
+    "Pide al nino que te cuente la historia con sus propias palabras",
+    "Anima a dibujar, ayuda a entender!",
+    "Pregunta: 'Que nos estan pidiendo?' antes de empezar a resolver",
+    "Despues de resolver, pregunta: 'Tiene sentido esto?'"
+  ],
+  "relatedGeneratorHref": "/word-problems",
+  "relatedGeneratorTitle": "Generador de Problemas de Palabras"
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "series",
+  "title": "Sucesiones Aritmeticas",
+  "shortDescription": "Las sucesiones son una serie de numeros con un patron constante. Los ninos aprenden a identificar patrones y continuar la sucesion.",
+  "importance": "El reconocimiento de patrones es una habilidad de pensamiento basica. Las sucesiones preparan a los estudiantes para el algebra y la resolucion de problemas complejos.",
+  "howToTeach": [
+    "Empieza con sucesiones simples: 2, 4, 6, 8...",
+    "Anima al nino a encontrar la 'regla' (que haces para pasar de un numero al siguiente)",
+    "Practica sucesiones ascendentes y descendentes",
+    "Introduce sucesiones de multiplicacion solo despues de dominar las de suma/resta"
+  ],
+  "examples": [
+    {
+      "problem": "3, 6, 9, 12, ?",
+      "solution": "15",
+      "explanation": "La regla es +3 cada vez. 12+3=15."
+    },
+    {
+      "problem": "2, 4, 8, 16, ?",
+      "solution": "32",
+      "explanation": "La regla es x2 cada vez. 16x2=32."
+    }
+  ],
+  "commonMistakes": [
+    "Buscar una regla demasiado complicada cuando es simple",
+    "Confusion entre sucesiones de suma y de multiplicacion",
+    "Errores de calculo despues de encontrar la regla"
+  ],
+  "parentTips": [
+    "Empieza con la pregunta: 'Cual es la diferencia entre los numeros?'",
+    "Anima al nino a explicar el patron con palabras",
+    "Crea tus propias sucesiones y deja que el nino encuentre la regla"
+  ],
+  "relatedGeneratorHref": "/series",
+  "relatedGeneratorTitle": "Generador de Hojas de Sucesiones"
+}

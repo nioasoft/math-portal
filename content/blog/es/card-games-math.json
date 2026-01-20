@@ -1,0 +1,14 @@
+{
+  "slug": "card-games-math",
+  "title": "3 Juegos de Cartas para Mejorar las Habilidades Matematicas",
+  "excerpt": "Una simple baraja de cartas puede reemplazar un cuaderno de ejercicios completo. Aqui estan las reglas.",
+  "date": "2026-02-15",
+  "readTime": "5 min",
+  "category": "games",
+  "categoryLabel": "Juegos y Actividades",
+  "image": "/blog/card-games-math.webp",
+  "tags": ["juegos", "cartas"],
+  "author": "Equipo de Hojas de Trabajo Inteligentes",
+  "lastModified": "2026-01-17",
+  "content": "<h2>Guerra - Version Multiplicacion</h2>\n<p>Cada jugador voltea dos cartas. El ganador es aquel cuyo producto sea mayor.</p>\n<h2>21 (Blackjack) para Ninos</h2>\n<p>Un excelente juego para practicar sumas rapidas y probabilidad.</p>"
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "subtraction",
+  "title": "Resta",
+  "shortDescription": "La resta ensena a los ninos a entender las diferencias y lo que falta. Es la operacion inversa de la suma.",
+  "importance": "La resta es necesaria en la vida diaria: calcular el cambio al comprar, entender cuanto falta para alcanzar una meta y encontrar diferencias entre cantidades.",
+  "howToTeach": [
+    "Empieza con una demostracion fisica: 'Habia 7 manzanas, comimos 3, cuantas quedan?'",
+    "Explica que 'restar' es como 'quitar' o 'sacar'",
+    "Muestra la conexion entre suma y resta (si 3+4=7 entonces 7-4=3)",
+    "Cuando llegues a la reagrupacion (tomar prestado), explicalo usando decenas y unidades"
+  ],
+  "examples": [
+    {
+      "problem": "12 - 5 = ?",
+      "solution": "7",
+      "explanation": "Empieza desde el 12, cuenta hacia atras 5: 11, 10, 9, 8, 7. O: 12 - 2 = 10, menos 3 mas = 7."
+    },
+    {
+      "problem": "53 - 27 = ?",
+      "solution": "26",
+      "explanation": "Unidades: 3 - 7 no es posible, toma prestado de las decenas. 13 - 7 = 6. Decenas: 4 - 2 = 2. Respuesta: 26."
+    }
+  ],
+  "commonMistakes": [
+    "Restar el menor del mayor en todos los casos (en lugar de reagrupar)",
+    "Olvidar reagrupar (tomar prestado) de la columna de las decenas",
+    "Confusion en el orden de los numeros: la resta no es conmutativa!"
+  ],
+  "parentTips": [
+    "Usa juegos: 'Tenias 10 puntos, perdiste 3, cuantos quedan?'",
+    "Practica con dinero: es tangible e interesante",
+    "Si el nino se confunde con la reagrupacion, vuelve a las decenas y unidades con bloques"
+  ],
+  "relatedGeneratorHref": "/worksheet/math?op=sub",
+  "relatedGeneratorTitle": "Generador de Hojas de Resta"
+}

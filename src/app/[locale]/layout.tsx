@@ -6,7 +6,8 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { PWAInstallBanner } from "@/components/PWAInstallBanner";
-import { locales, localeConfig, type Locale } from "@/i18n/config";
+import { locales, localeConfig, defaultLocale, type Locale } from "@/i18n/config";
+import { BASE_URL } from "@/lib/seo";
 
 export const viewport: Viewport = {
   themeColor: "#f97316",
@@ -44,6 +45,25 @@ const fontByLocale: Record<Locale, string> = {
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
+}
+
+// Generate hreflang alternates for the root layout
+function generateRootAlternates(): Metadata['alternates'] {
+  const languages: Record<string, string> = {};
+
+  for (const locale of locales) {
+    if (locale === defaultLocale) {
+      languages[locale] = BASE_URL;
+    } else {
+      languages[locale] = `${BASE_URL}/${locale}`;
+    }
+  }
+  languages['x-default'] = BASE_URL;
+
+  return {
+    canonical: BASE_URL,
+    languages,
+  };
 }
 
 export const metadata: Metadata = {
@@ -108,6 +128,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: generateRootAlternates(),
   other: {
     "mobile-web-app-capable": "yes",
   },

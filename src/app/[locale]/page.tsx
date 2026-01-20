@@ -1,6 +1,6 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import {
   Calculator, Brain, ArrowLeft, Percent, Divide,
   Shapes, Scale, Star, BookOpen, GraduationCap, Sparkles, Printer, Zap, Gamepad2
@@ -9,12 +9,13 @@ import { FeaturedPosts } from '@/components/FeaturedPosts';
 import { HELP_TOPICS } from '@/lib/help-data';
 import { AdSlot } from '@/components/AdSlot';
 import { blogPosts } from '@/lib/blog-data';
+import { getTranslations } from 'next-intl/server';
 
-const generators = [
+const getGenerators = (t: Awaited<ReturnType<typeof getTranslations<'home'>>>) => [
   {
     href: "/grade/1",
-    title: "חיבור וחיסור",
-    desc: "עד 20, 100 ומספרים גדולים",
+    title: t('generators.addSubtract.title'),
+    desc: t('generators.addSubtract.desc'),
     icon: Calculator,
     color: "from-sky-400 to-blue-500",
     bgColor: "bg-sky-50",
@@ -22,8 +23,8 @@ const generators = [
   },
   {
     href: "/grade/3",
-    title: "כפל וחילוק",
-    desc: "לוח הכפל, חילוק ארוך וחזקות",
+    title: t('generators.mulDiv.title'),
+    desc: t('generators.mulDiv.desc'),
     icon: Divide,
     color: "from-violet-400 to-purple-500",
     bgColor: "bg-violet-50",
@@ -31,8 +32,8 @@ const generators = [
   },
   {
     href: "/fractions",
-    title: "שברים",
-    desc: "מתחילים ומתקדמים, צמצום והרחבה",
+    title: t('generators.fractions.title'),
+    desc: t('generators.fractions.desc'),
     icon: ({ size }: { size?: number }) => <span style={{ fontSize: size ? size - 4 : 20 }} className="font-black">½</span>,
     color: "from-emerald-400 to-green-500",
     bgColor: "bg-emerald-50",
@@ -40,8 +41,8 @@ const generators = [
   },
   {
     href: "/geometry",
-    title: "הנדסה",
-    desc: "שטחים, היקפים ומצולעים",
+    title: t('generators.geometry.title'),
+    desc: t('generators.geometry.desc'),
     icon: Shapes,
     color: "from-rose-400 to-pink-500",
     bgColor: "bg-rose-50",
@@ -49,8 +50,8 @@ const generators = [
   },
   {
     href: "/percentage",
-    title: "אחוזים",
-    desc: "חישובי אחוזים, הנחות וריבית",
+    title: t('generators.percentage.title'),
+    desc: t('generators.percentage.desc'),
     icon: Percent,
     color: "from-amber-400 to-orange-500",
     bgColor: "bg-amber-50",
@@ -58,8 +59,8 @@ const generators = [
   },
   {
     href: "/units",
-    title: "המרת מידות",
-    desc: "אורך, משקל וזמן",
+    title: t('generators.units.title'),
+    desc: t('generators.units.desc'),
     icon: Scale,
     color: "from-cyan-400 to-teal-500",
     bgColor: "bg-cyan-50",
@@ -76,7 +77,11 @@ function MathSymbol({ symbol, className }: { symbol: string; className: string }
   );
 }
 
-export default function Home() {
+export default async function Home() {
+  const t = await getTranslations('home');
+  const tCommon = await getTranslations('common');
+  const generators = getGenerators(t);
+
   return (
     <div className="min-h-screen flex flex-col bg-[#fffbf5]">
       <Header />
@@ -112,20 +117,20 @@ export default function Home() {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-orange-200 rounded-full px-5 py-2.5 shadow-sm mb-8 animate-slide-up">
                 <Sparkles size={16} className="text-orange-500" />
-                <span className="text-sm font-bold text-slate-700">חדש: מחולל סדרות חשבוניות להדפסה</span>
+                <span className="text-sm font-bold text-slate-700">{t('hero.badge')}</span>
               </div>
 
               {/* Main headline */}
               <h1 className="text-5xl md:text-7xl font-black text-slate-800 mb-6 leading-tight text-display animate-slide-up delay-100">
-                לתרגל חשבון{' '}
-                <span className="text-gradient-warm">בכיף ובקלות</span>
+                {t('hero.title')}{' '}
+                <span className="text-gradient-warm">{t('hero.titleHighlight')}</span>
               </h1>
 
               {/* Subheadline */}
               <p className="text-xl md:text-2xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed animate-slide-up delay-200">
-                צרו דפי עבודה מותאמים אישית בכמה שניות.
+                {t('hero.description')}
                 <br className="hidden sm:block" />
-                בחרו נושא, לחצו &quot;הדפס&quot; וקבלו דף תרגול מושלם – <strong className="text-orange-600">בחינם</strong>.
+                {t('hero.descriptionLine2')} <strong className="text-orange-600">{t('hero.free')}</strong>.
               </p>
 
               {/* CTA Buttons */}
@@ -134,32 +139,32 @@ export default function Home() {
                   href="#generators"
                   className="w-full sm:w-auto bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-orange-200/50 hover:shadow-2xl hover:shadow-orange-300/50 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3"
                 >
-                  התחילו לתרגל
+                  {t('hero.cta')}
                   <ArrowLeft className="w-5 h-5" />
                 </a>
-                <a
+                <Link
                   href="/about"
                   className="w-full sm:w-auto bg-white text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-2xl font-bold text-lg hover:border-orange-300 hover:bg-orange-50 transition-all duration-300 flex items-center justify-center"
                 >
-                  איך זה עובד?
-                </a>
+                  {t('hero.ctaSecondary')}
+                </Link>
               </div>
 
               {/* Trust indicators */}
               <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500 animate-fade-in delay-500">
                 <div className="flex items-center gap-2">
                   <Printer size={18} className="text-slate-400" />
-                  <span>הדפסה ישירה</span>
+                  <span>{t('hero.trustPrint')}</span>
                 </div>
                 <div className="w-px h-4 bg-slate-200 hidden sm:block"></div>
                 <div className="flex items-center gap-2">
                   <Zap size={18} className="text-slate-400" />
-                  <span>ללא הרשמה</span>
+                  <span>{t('hero.trustNoSignup')}</span>
                 </div>
                 <div className="w-px h-4 bg-slate-200 hidden sm:block"></div>
                 <div className="flex items-center gap-2">
                   <Star size={18} className="text-amber-400 fill-amber-400" />
-                  <span>100% חינם</span>
+                  <span>{t('hero.trustFree')}</span>
                 </div>
               </div>
             </div>
@@ -173,10 +178,10 @@ export default function Home() {
           <div className="container-custom relative z-10">
             <div className="text-center mb-14">
               <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4 text-display">
-                מה רוצים לתרגל היום?
+                {t('generators.title')}
               </h2>
               <p className="text-lg text-slate-500">
-                בחרו נושא והתחילו ליצור דפי עבודה מותאמים אישית
+                {t('generators.subtitle')}
               </p>
             </div>
 
@@ -211,7 +216,7 @@ export default function Home() {
 
                     {/* CTA */}
                     <div className="flex items-center text-orange-600 font-bold text-sm group-hover:gap-2 transition-all">
-                      <span>צור דף עבודה</span>
+                      <span>{t('generators.cta')}</span>
                       <ArrowLeft size={16} className="mr-1 opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
                     </div>
                   </div>
@@ -235,8 +240,8 @@ export default function Home() {
                   <Gamepad2 size={28} className="text-white" />
                 </div>
                 <div className="text-right">
-                  <h2 className="text-2xl md:text-3xl font-black text-slate-800">משחקים ופעילויות</h2>
-                  <p className="text-sm text-slate-500">לומדים חשבון בכיף!</p>
+                  <h2 className="text-2xl md:text-3xl font-black text-slate-800">{t('games.title')}</h2>
+                  <p className="text-sm text-slate-500">{t('games.subtitle')}</p>
                 </div>
               </div>
             </div>
@@ -269,7 +274,7 @@ export default function Home() {
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-purple-200/50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
               >
                 <Gamepad2 size={22} />
-                לכל המשחקים והפעילויות
+                {t('games.cta')}
                 <ArrowLeft size={20} />
               </Link>
             </div>
@@ -285,14 +290,14 @@ export default function Home() {
         <section className="py-12 border-y border-slate-100 bg-white">
           <div className="container-custom">
             <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
-              <span className="font-bold text-slate-400 text-sm">לפי כיתה:</span>
+              <span className="font-bold text-slate-400 text-sm">{t('grades.label')}</span>
               {[1, 2, 3, 4, 5, 6].map((grade) => (
                 <Link
                   key={grade}
                   href={`/grade/${grade}`}
                   className="px-5 py-2.5 bg-slate-50 rounded-full border border-slate-100 text-slate-600 font-bold hover:bg-orange-50 hover:border-orange-200 hover:text-orange-700 transition-all duration-200"
                 >
-                  כיתה {String.fromCharCode(1488 + grade - 1)}&apos;
+                  {tCommon(`grades.grade${grade}`)}
                 </Link>
               ))}
             </div>
@@ -314,13 +319,13 @@ export default function Home() {
               <div>
                 <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-sm font-bold mb-4">
                   <GraduationCap size={16} />
-                  מדריך להורים
+                  {t('help.badge')}
                 </div>
-                <h2 className="text-3xl font-bold text-slate-800 mb-2">איך ללמד את הילד?</h2>
-                <p className="text-slate-500">הסברים פשוטים, דוגמאות מפורטות וטיפים מעשיים</p>
+                <h2 className="text-3xl font-bold text-slate-800 mb-2">{t('help.title')}</h2>
+                <p className="text-slate-500">{t('help.subtitle')}</p>
               </div>
               <Link href="/help" className="hidden sm:flex items-center gap-1 font-bold text-emerald-600 hover:gap-2 transition-all group">
-                לכל ההסברים
+                {t('help.cta')}
                 <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -345,7 +350,7 @@ export default function Home() {
 
             <div className="mt-8 text-center sm:hidden">
               <Link href="/help" className="inline-flex items-center gap-2 font-bold text-emerald-600">
-                לכל ההסברים <ArrowLeft size={16} />
+                {t('help.cta')} <ArrowLeft size={16} />
               </Link>
             </div>
           </div>
@@ -359,9 +364,9 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-8 text-display leading-tight">
-                  למה הורים ומורים בוחרים
+                  {t('whyUs.title')}
                   <br />
-                  <span className="text-gradient-warm">&quot;דפי עבודה חכמים&quot;?</span>
+                  <span className="text-gradient-warm">{t('whyUs.titleHighlight')}</span>
                 </h2>
 
                 <div className="space-y-6">
@@ -370,9 +375,9 @@ export default function Home() {
                       <Brain size={26} />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-slate-800 mb-2">מותאם אישית לילד</h3>
+                      <h3 className="text-xl font-bold text-slate-800 mb-2">{t('whyUs.feature1.title')}</h3>
                       <p className="text-slate-600 leading-relaxed">
-                        בניגוד לחוברות עבודה סטנדרטיות, כאן אתם שולטים ברמת הקושי. אפשר להתחיל קל ולהעלות את הרמה בהדרגה.
+                        {t('whyUs.feature1.desc')}
                       </p>
                     </div>
                   </div>
@@ -382,9 +387,9 @@ export default function Home() {
                       <Calculator size={26} />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-slate-800 mb-2">אינסוף תרגול</h3>
+                      <h3 className="text-xl font-bold text-slate-800 mb-2">{t('whyUs.feature2.title')}</h3>
                       <p className="text-slate-600 leading-relaxed">
-                        נגמרו הדפים בחוברת? הילד צריך עוד חיזוק בלוח הכפל? בלחיצת כפתור אחת מקבלים דף חדש.
+                        {t('whyUs.feature2.desc')}
                       </p>
                     </div>
                   </div>
@@ -394,9 +399,9 @@ export default function Home() {
                       <Printer size={26} />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-slate-800 mb-2">הדפסה מיידית</h3>
+                      <h3 className="text-xl font-bold text-slate-800 mb-2">{t('whyUs.feature3.title')}</h3>
                       <p className="text-slate-600 leading-relaxed">
-                        ללא הרשמה, ללא תשלום. פשוט בוחרים נושא, מגדירים את הרמה ומדפיסים ישירות מהדפדפן.
+                        {t('whyUs.feature3.desc')}
                       </p>
                     </div>
                   </div>
@@ -411,19 +416,19 @@ export default function Home() {
                     {/* Worksheet Header */}
                     <div className="flex items-center justify-between mb-4 pb-3 border-b border-dashed border-slate-200">
                       <div>
-                        <h4 className="font-black text-slate-800 text-sm">תרגול חיבור וחיסור</h4>
-                        <p className="text-[10px] text-slate-400">מספרים עד 100 | רמה: בינונית</p>
+                        <h4 className="font-black text-slate-800 text-sm">{t('preview.title')}</h4>
+                        <p className="text-[10px] text-slate-400">{t('preview.subtitle')}</p>
                       </div>
                       <div className="text-left">
-                        <p className="text-[10px] text-slate-500">שם: _____________</p>
-                        <p className="text-[10px] text-slate-500">כיתה: ____</p>
+                        <p className="text-[10px] text-slate-500">{t('preview.name')} _____________</p>
+                        <p className="text-[10px] text-slate-500">{t('preview.class')} ____</p>
                       </div>
                     </div>
 
                     {/* Tip Box */}
                     <div className="bg-amber-50 border border-amber-200 rounded-lg p-2 mb-4">
                       <p className="text-[10px] text-amber-700 font-medium">
-                        <span className="font-bold">טיפ:</span> בחיבור עם נשיאה, זכרו להוסיף 1 לטור השמאלי!
+                        <span className="font-bold">{t('preview.tipLabel')}</span> {t('preview.tip')}
                       </p>
                     </div>
 
@@ -451,9 +456,9 @@ export default function Home() {
                         <div className="w-3 h-3 bg-emerald-100 rounded-full flex items-center justify-center">
                           <span className="text-emerald-600 text-[8px]">✓</span>
                         </div>
-                        <span className="text-[9px] text-slate-400">דף תשובות בנפרד</span>
+                        <span className="text-[9px] text-slate-400">{t('preview.answerSheet')}</span>
                       </div>
-                      <span className="text-[9px] text-slate-400 font-medium">דפי עבודה חכמים</span>
+                      <span className="text-[9px] text-slate-400 font-medium">{tCommon('siteName')}</span>
                     </div>
                   </div>
                 </div>

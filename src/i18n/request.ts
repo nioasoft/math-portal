@@ -10,8 +10,15 @@ export default getRequestConfig(async ({ requestLocale }) => {
     locale = defaultLocale;
   }
 
+  // Load all message files and merge them
+  const common = (await import(`../../messages/${locale}/common.json`)).default;
+  const home = (await import(`../../messages/${locale}/home.json`)).default;
+
   return {
     locale,
-    messages: (await import(`../../messages/${locale}/common.json`)).default,
+    messages: {
+      common,
+      home,
+    },
   };
 });

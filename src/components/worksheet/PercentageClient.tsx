@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
 import { AdSlot } from '@/components/AdSlot';
 import { trackPrintEvent } from '@/lib/analytics';
+import { useTranslations } from 'next-intl';
 
 interface PercentProblem {
     id: string;
@@ -44,6 +45,7 @@ function createProblems(): PercentProblem[] {
 }
 
 export default function PercentageClient() {
+    const t = useTranslations('worksheet');
     const [problems, setProblems] = useState<PercentProblem[]>(() => createProblems());
     const [showAnswers, setShowAnswers] = useState<boolean>(false);
 
@@ -65,11 +67,11 @@ export default function PercentageClient() {
                         <Link href="/" className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
                             <ArrowLeft size={20} />
                         </Link>
-                        <h1 className="text-xl font-bold text-slate-800">דפי עבודה - אחוזים</h1>
+                        <h1 className="text-xl font-bold text-slate-800">{t('percentage.title')}</h1>
                     </div>
                     <div className="flex-1 flex justify-center">
                         <button onClick={regenerateProblems} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-2 font-bold">
-                            <RefreshCw size={16} aria-hidden="true" /> <span>רענן</span>
+                            <RefreshCw size={16} aria-hidden="true" /> <span>{t('controls.refresh')}</span>
                         </button>
 
                         <button
@@ -78,7 +80,7 @@ export default function PercentageClient() {
                             aria-pressed={showAnswers}
                         >
                             {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
-                            <span className="hidden sm:inline">{showAnswers ? 'הסתר תשובות' : 'הצג תשובות'}</span>
+                            <span className="hidden sm:inline">{showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}</span>
                         </button>
                     </div>
                     <Link
@@ -86,10 +88,10 @@ export default function PercentageClient() {
                         className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-emerald-200 transition shadow-sm"
                     >
                         <HelpCircle size={16} aria-hidden="true" />
-                        <span className="hidden sm:inline">הסברים להורים</span>
+                        <span className="hidden sm:inline">{t('controls.helpForParents')}</span>
                     </Link>
                     <button onClick={onPrint} className="bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-slate-800 flex items-center gap-2 font-bold">
-                        <Printer size={16} aria-hidden="true" /> <span>הדפס</span>
+                        <Printer size={16} aria-hidden="true" /> <span>{t('controls.print')}</span>
                     </button>
                 </div>
             </div>
@@ -97,8 +99,8 @@ export default function PercentageClient() {
             <div className="w-full overflow-x-auto pb-12 print:pb-0 print:overflow-visible custom-scrollbar">
                 <div className="min-w-[210mm] max-w-[210mm] mx-auto mt-8 bg-white shadow-xl min-h-[297mm] p-[20mm] print:p-[10mm] print:shadow-none print:mt-0 print:mx-0 print:w-full print:min-h-0 print:h-auto print:overflow-visible">
                     <div className="text-center border-b-2 border-slate-100 pb-8 mb-12 print:mb-4 print:pb-2 print:border-b">
-                        <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">חישובי אחוזים</h2>
-                        <p className="text-slate-500 print:hidden">חשבו את ערך האחוז מהשלם</p>
+                        <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">{t('percentage.worksheetTitle')}</h2>
+                        <p className="text-slate-500 print:hidden">{t('percentage.instruction')}</p>
                     </div>
 
                     <div className="grid grid-cols-2 gap-y-12 gap-x-20" dir="rtl">
@@ -107,7 +109,7 @@ export default function PercentageClient() {
                             return (
                                 <div key={prob.id} className="break-inside-avoid page-break-inside-avoid flex flex-col gap-8 border-b border-slate-100 pb-6">
                                     <div className="text-2xl font-bold text-slate-800 font-mono whitespace-nowrap">
-                                        {prob.percent}% <span className="text-slate-400 font-sans text-xl mx-2">מתוך</span> {prob.total} =
+                                        {prob.percent}% <span className="text-slate-400 font-sans text-xl mx-2">{t('percentage.of')}</span> {prob.total} =
                                         {showAnswers ? <span className="text-red-600 mr-2">{result}</span> : ''}
                                     </div>
                                     <div className="w-full h-px border-b border-slate-300 border-dashed"></div>
@@ -117,40 +119,30 @@ export default function PercentageClient() {
                     </div>
 
                     <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
-                        tirgul.net - דפי עבודה חכמים ©
+                        {t('print.copyright')}
                     </div>
                 </div>
             </div>
 
             <ContentSection
-                title="דפי עבודה באחוזים להדפסה - חישוב אחוזים משלם"
-                description="המחולל החכם מאפשר לכם ליצור דפי עבודה בנושא אחוזים. תרגול זה חיוני לפיתוח אוריינות פיננסית והבנה מתמטית לקראת המעבר לחטיבת הביניים."
-                features={[
-                    "חישוב ערך האחוז מתוך השלם (למשל: כמה הם 20% מ-80?)",
-                    "שילוב של אחוזים 'נוחים' (10%, 25%, 50%) ואחוזים כלליים",
-                    "מקום לביצוע דרך החישוב (כפל שברים או ערך המשולש)",
-                    "מתאים במיוחד לכיתות ה' ו-ו' כהמשך ישיר ללימוד השברים"
-                ]}
+                title={t('percentage.content.title')}
+                description={t('percentage.content.description')}
+                features={t.raw('percentage.content.features') as string[]}
                 benefits={[
                     {
-                        title: "חיבור למציאות",
-                        text: "אחוזים הם אולי הנושא השימושי ביותר ביומיום: הנחות בחנויות, ריבית בבנק וסטטיסטיקה בחדשות. תרגול זה מכין את הילד לחיים."
+                        title: t('percentage.content.benefits.realLife.title'),
+                        text: t('percentage.content.benefits.realLife.text')
                     },
                     {
-                        title: "הקשר בין שברים לאחוזים",
-                        text: "התרגול עוזר לתלמיד לראות את הקשר הישיר: 50% זה חצי, 25% זה רבע. הבנה זו מחזקת את השליטה בשני הנושאים."
+                        title: t('percentage.content.benefits.fractionConnection.title'),
+                        text: t('percentage.content.benefits.fractionConnection.text')
                     },
                     {
-                        title: "פיתוח חשיבה מהירה",
-                        text: "תרגול אחוזים בסיסיים (כמו 10%) מעודד חישוב בעל פה ומפתח אומדן מספרי מהיר."
+                        title: t('percentage.content.benefits.quickThinking.title'),
+                        text: t('percentage.content.benefits.quickThinking.text')
                     }
                 ]}
-                tips={[
-                    "הסבירו שתמיד קל להתחיל מחישוב 10% (מחלקים ב-10) ואז להכפיל לפי הצורך.",
-                    "הראו את הקשר לשבר פשוט: 50% זה כמו לחלק ב-2, 25% זה כמו לחלק ב-4.",
-                    "השתמשו בדוגמאות של 'הנחה בחנות' כדי להפוך את השאלה המופשטת למוחשית ומעניינת.",
-                    "עודדו בדיקה עצמית: אם ביקשו 200%, התוצאה חייבת להיות גדולה מהמספר המקורי!"
-                ]}
+                tips={t.raw('percentage.content.tips') as string[]}
             />
         </div>
     );

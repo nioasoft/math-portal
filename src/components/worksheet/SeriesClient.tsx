@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
 import { AdSlot } from '@/components/AdSlot';
 import { trackPrintEvent } from '@/lib/analytics';
+import { useTranslations } from 'next-intl';
 
 interface SeriesProblem {
     id: string;
@@ -88,6 +89,7 @@ function createProblems(difficulty: Difficulty): SeriesProblem[] {
 }
 
 export default function SeriesClient() {
+    const t = useTranslations('worksheet');
     const [difficulty, setDifficulty] = useState<Difficulty>('easy');
     const [problems, setProblems] = useState<SeriesProblem[]>(() => createProblems('easy'));
     const [showAnswers, setShowAnswers] = useState<boolean>(false);
@@ -115,43 +117,43 @@ export default function SeriesClient() {
                         <Link href="/" className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
                             <ArrowLeft size={20} />
                         </Link>
-                        <h1 className="text-xl font-bold text-slate-800">סדרות חשבוניות</h1>
+                        <h1 className="text-xl font-bold text-slate-800">{t('series.title')}</h1>
                     </div>
 
-                    <div className="flex bg-slate-100 p-1 rounded-lg" role="tablist" aria-label="רמת קושי">
+                    <div className="flex bg-slate-100 p-1 rounded-lg" role="tablist" aria-label={t('series.difficultyLabel')}>
                         <button onClick={() => handleDifficultyChange('easy')} role="tab" aria-selected={difficulty === 'easy'} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${difficulty === 'easy' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
-                            קל
+                            {t('series.difficulties.easy')}
                         </button>
                         <button onClick={() => handleDifficultyChange('medium')} role="tab" aria-selected={difficulty === 'medium'} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${difficulty === 'medium' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
-                            בינוני
+                            {t('series.difficulties.medium')}
                         </button>
                         <button onClick={() => handleDifficultyChange('hard')} role="tab" aria-selected={difficulty === 'hard'} className={`px-3 py-1 text-sm font-bold rounded-md flex items-center gap-2 transition ${difficulty === 'hard' ? 'bg-white shadow text-blue-600' : 'text-slate-500'}`}>
-                            קשה
+                            {t('series.difficulties.hard')}
                         </button>
                     </div>
 
                     <div className="flex items-center gap-4">
                         <button onClick={regenerateProblems} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-2 font-bold text-sm">
-                            <RefreshCw size={16} /> <span className="hidden sm:inline">רענן</span>
+                            <RefreshCw size={16} /> <span className="hidden sm:inline">{t('controls.refresh')}</span>
                         </button>
                         <button
                             onClick={() => setShowAnswers(!showAnswers)}
                             className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition shadow-sm ${showAnswers ? 'bg-amber-100 text-amber-700 border border-amber-200' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}
                             aria-pressed={showAnswers}
-                            aria-label={showAnswers ? 'הסתר תשובות' : 'הצג תשובות'}
+                            aria-label={showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}
                         >
                             {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
-                            <span className="hidden sm:inline">{showAnswers ? 'הסתר' : 'הצג'}</span>
+                            <span className="hidden sm:inline">{showAnswers ? t('series.showHide.hide') : t('series.showHide.show')}</span>
                         </button>
                         <Link
                             href="/help/series"
                             className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-emerald-200 transition shadow-sm"
                         >
                             <HelpCircle size={16} />
-                            <span className="hidden sm:inline">הסברים</span>
+                            <span className="hidden sm:inline">{t('series.help')}</span>
                         </Link>
                         <button onClick={onPrint} className="bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-slate-800 flex items-center gap-2 font-bold text-sm">
-                            <Printer size={16} /> <span>הדפס</span>
+                            <Printer size={16} /> <span>{t('controls.print')}</span>
                         </button>
                     </div>
                 </div>
@@ -161,9 +163,9 @@ export default function SeriesClient() {
                 <div className="min-w-[210mm] max-w-[210mm] mx-auto mt-8 bg-white shadow-xl min-h-[297mm] p-[20mm] print:p-[10mm] print:shadow-none print:mt-0 print:mx-0 print:w-full print:min-h-0 print:h-auto print:overflow-visible">
                     <div className="text-center border-b-2 border-slate-100 pb-8 mb-12 print:mb-4 print:pb-2 print:border-b">
                         <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">
-                            השלמת סדרות חשבוניות
+                            {t('series.worksheetTitle')}
                         </h2>
-                        <p className="text-slate-500 print:hidden">גלו את החוקיות והשלימו את המספר החסר</p>
+                        <p className="text-slate-500 print:hidden">{t('series.instruction')}</p>
                     </div>
 
                     <div className="grid grid-cols-2 gap-y-16 gap-x-20" dir="ltr">
@@ -189,45 +191,36 @@ export default function SeriesClient() {
                                         </div>
                                     ))}
                                 </div>
-                                {showAnswers && <div className="text-xs text-center mt-2 text-slate-400">חוקיות: {prob.rule}</div>}
+                                {showAnswers && <div className="text-xs text-center mt-2 text-slate-400">{t('series.rule')} {prob.rule}</div>}
                             </div>
                         ))}
                     </div>
 
                     <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
-                        tirgul.net - דפי עבודה חכמים ©
+                        {t('print.copyright')}
                     </div>
                 </div>
             </div>
 
             <ContentSection
-                title="דפי עבודה בסדרות חשבוניות להדפסה"
-                description="סדרות חשבוניות הן הבסיס להבנת דפוסים וחוקיות במתמטיקה. דפי העבודה שלנו מאפשרים לתרגל זיהוי חוקיות והשלמת איברים חסרים ברמות קושי שונות."
-                features={[
-                    "רמות קושי מגוונות: מחיבור פשוט ועד לכפל",
-                    "סדרות עולות ויורדות",
-                    "פיתוח חשיבה לוגית ואלגברית",
-                    "מתאים כהכנה למבחני איתור מחוננים ומבחני מיצ\"ב"
-                ]}
+                title={t('series.content.title')}
+                description={t('series.content.description')}
+                features={t.raw('series.content.features') as string[]}
                 benefits={[
                     {
-                        title: "זיהוי דפוסים",
-                        text: "היכולת לזהות תבנית חוזרת היא מיומנות קריטית לא רק במתמטיקה אלא גם בתכנות ובמדעים."
+                        title: t('series.content.benefits.patterns.title'),
+                        text: t('series.content.benefits.patterns.text')
                     },
                     {
-                        title: "גמישות מחשבתית",
-                        text: "הצורך לגלות את 'החוק' מאחורי המספרים מעודד חשיבה יצירתית ופתרון בעיות."
+                        title: t('series.content.benefits.flexibility.title'),
+                        text: t('series.content.benefits.flexibility.text')
                     },
                     {
-                        title: "חיזוק פעולות החשבון",
-                        text: "תרגול סדרות מחייב ביצוע חישובים חוזרים (למשל: +3, +3, +3) ובכך מחזק את השליטה בלוח הכפל והחיבור."
+                        title: t('series.content.benefits.arithmetic.title'),
+                        text: t('series.content.benefits.arithmetic.text')
                     }
                 ]}
-                tips={[
-                    "התחילו בבדיקת ההפרש בין שני המספרים הראשונים הסמוכים.",
-                    "בדקו אם ההפרש נשמר גם בין הזוגות הבאים. אם לא, נסו כפל או חילוק.",
-                    "בסדרות יורדות, החוקיות היא בדרך כלל חיסור או חילוק."
-                ]}
+                tips={t.raw('series.content.tips') as string[]}
             />
         </div>
     );

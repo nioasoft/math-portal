@@ -1,33 +1,47 @@
 {
+  "shell": {
+    "backToGames": "Back to Games",
+    "home": "Home"
+  },
   "feedback": {
-    "correct": "נכון!",
-    "incorrect": "לא נכון",
-    "tryAgain": "נסה שוב"
+    "correct": "Correct!",
+    "incorrect": "Incorrect",
+    "tryAgain": "Try again",
+    "theAnswer": "The answer:"
   },
   "summary": {
-    "title": "סיום משחק",
-    "score": "ניקוד",
-    "maxStreak": "סטריק מקסימלי",
-    "accuracy": "דיוק",
-    "correctWrong": "נכון / שגוי",
-    "newRecord": "שיא חדש!",
-    "greatJob": "כל הכבוד על התרגול!",
-    "playAgain": "שחק שוב",
-    "backToMenu": "חזרה לתפריט"
+    "title": "Game Over",
+    "score": "Score",
+    "maxStreak": "Best Streak",
+    "accuracy": "Accuracy",
+    "correctWrong": "Correct / Wrong",
+    "newRecord": "New Record!",
+    "brokeRecord": "You beat your previous record of {points} points",
+    "greatJob": "Great job practicing!",
+    "playAgain": "Play Again",
+    "backToMenu": "Back to Menu"
+  },
+  "score": {
+    "score": "Score",
+    "streak": "Streak",
+    "correctWrong": "Correct/Wrong"
+  },
+  "problem": {
+    "of": "of"
   },
   "modes": {
-    "practice": "תרגול",
-    "quiz": "מבחן",
-    "timed": "נגד הזמן"
+    "practice": "Practice",
+    "quiz": "Quiz",
+    "timed": "Timed"
   },
   "timer": {
-    "timeLeft": "זמן נותר",
-    "seconds": "שניות"
+    "timeLeft": "Time left",
+    "seconds": "seconds"
   },
   "ui": {
-    "start": "התחל",
-    "pause": "השהה",
-    "resume": "המשך",
-    "quit": "סיים"
+    "start": "Start",
+    "pause": "Pause",
+    "resume": "Resume",
+    "quit": "Quit"
   }
 }

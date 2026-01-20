@@ -1,28 +1,104 @@
 {
   "hero": {
-    "title": "דפי עבודה חכמים",
-    "subtitle": "תרגול חשבון לכיתות א׳-ו׳",
-    "description": "דפי עבודה להדפסה ומשחקים אינטראקטיביים בחשבון",
-    "cta": "התחל עכשיו"
+    "badge": "New: Arithmetic Sequences Worksheet Generator",
+    "title": "Practice Math",
+    "titleHighlight": "Fun & Easy",
+    "description": "Create custom worksheets in seconds.",
+    "descriptionLine2": "Pick a topic, click 'Print', and get a perfect practice sheet –",
+    "free": "Free",
+    "cta": "Start Practicing",
+    "ctaSecondary": "How does it work?",
+    "trustPrint": "Direct Print",
+    "trustNoSignup": "No Registration",
+    "trustFree": "100% Free"
+  },
+  "generators": {
+    "title": "What would you like to practice today?",
+    "subtitle": "Choose a topic and start creating custom worksheets",
+    "cta": "Create Worksheet",
+    "addSubtract": {
+      "title": "Addition & Subtraction",
+      "desc": "Up to 20, 100, and larger numbers"
+    },
+    "mulDiv": {
+      "title": "Multiplication & Division",
+      "desc": "Times tables, long division, and powers"
+    },
+    "fractions": {
+      "title": "Fractions",
+      "desc": "Beginners to advanced, simplifying and expanding"
+    },
+    "geometry": {
+      "title": "Geometry",
+      "desc": "Areas, perimeters, and polygons"
+    },
+    "percentage": {
+      "title": "Percentages",
+      "desc": "Percentage calculations, discounts, and interest"
+    },
+    "units": {
+      "title": "Unit Conversions",
+      "desc": "Length, weight, and time"
+    }
+  },
+  "games": {
+    "title": "Games & Activities",
+    "subtitle": "Learn math the fun way!",
+    "cta": "All Games & Activities"
+  },
+  "grades": {
+    "label": "By Grade:",
+    "grade": "Grade"
+  },
+  "help": {
+    "badge": "Parent Guide",
+    "title": "How to teach your child?",
+    "subtitle": "Simple explanations, detailed examples, and practical tips",
+    "cta": "View All Guides"
+  },
+  "whyUs": {
+    "title": "Why parents and teachers choose",
+    "titleHighlight": "Smart Worksheets?",
+    "feature1": {
+      "title": "Personalized for your child",
+      "desc": "Unlike standard workbooks, here you control the difficulty level. Start easy and gradually increase the challenge."
+    },
+    "feature2": {
+      "title": "Unlimited Practice",
+      "desc": "Run out of pages in the workbook? Need more multiplication table practice? One click generates a new worksheet."
+    },
+    "feature3": {
+      "title": "Instant Printing",
+      "desc": "No registration, no payment. Just choose a topic, set the level, and print directly from your browser."
+    }
+  },
+  "preview": {
+    "title": "Addition & Subtraction Practice",
+    "subtitle": "Numbers up to 100 | Level: Medium",
+    "name": "Name:",
+    "class": "Class:",
+    "tipLabel": "Tip:",
+    "tip": "When adding with carrying, remember to add 1 to the left column!",
+    "answerSheet": "Separate answer sheet"
   },
   "topics": {
-    "title": "נושאים",
-    "math": "חשבון",
-    "fractions": "שברים",
-    "geometry": "גיאומטריה",
-    "percentage": "אחוזים",
-    "decimals": "שברים עשרוניים",
-    "ratio": "יחסים",
-    "units": "יחידות מידה",
-    "series": "סדרות",
-    "wordProblems": "בעיות מילוליות"
+    "title": "Topics",
+    "math": "Math",
+    "fractions": "Fractions",
+    "geometry": "Geometry",
+    "percentage": "Percentages",
+    "decimals": "Decimals",
+    "ratio": "Ratios",
+    "units": "Units of Measurement",
+    "series": "Sequences",
+    "wordProblems": "Word Problems"
   },
   "features": {
-    "free": "חינם",
-    "freeDesc": "ללא עלות וללא הרשמה",
-    "print": "להדפסה",
-    "printDesc": "דפי עבודה מעוצבים להדפסה",
-    "interactive": "אינטראקטיבי",
-    "interactiveDesc": "משחקים ותרגילים מקוונים"
+    "free": "Free",
+    "freeDesc": "No cost and no registration",
+    "print": "Printable",
+    "printDesc": "Worksheets designed for printing",
+    "interactive": "Interactive",
+    "interactiveDesc": "Online games and exercises"
   }
 }

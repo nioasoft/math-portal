@@ -9,5 +9,27 @@
     "title": "هل أنت مستعد لبدء الممارسة؟",
     "description": "بعد قراءة الأدلة، انتقل إلى مولداتنا وأنشئ أوراق عمل مخصصة",
     "button": "جميع المولدات"
+  },
+  "topic": {
+    "notFound": "الموضوع غير موجود",
+    "metaTitle": "كيفية تدريس {title} - دليل الآباء",
+    "breadcrumb": {
+      "home": "الرئيسية",
+      "help": "دليل الآباء"
+    },
+    "backToAll": "العودة إلى جميع الأدلة",
+    "howToTeachTitle": "كيفية تدريس {title}",
+    "sections": {
+      "whyImportant": "لماذا هذا مهم؟",
+      "howToTeach": "كيف ندرّس؟",
+      "examples": "أمثلة مفصلة",
+      "commonMistakes": "الأخطاء الشائعة",
+      "parentTips": "نصائح للآباء"
+    },
+    "explanation": "الشرح:",
+    "readyToPractice": "هل أنت مستعد للتدرب؟",
+    "readyToPracticeDesc": "الآن بعد أن فهمت كيفية تدريس {title}، حان الوقت لإنشاء أوراق عمل مخصصة",
+    "otherTopics": "مواضيع أخرى",
+    "allTopics": "جميع المواضيع"
   }
 }

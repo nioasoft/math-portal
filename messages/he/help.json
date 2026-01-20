@@ -9,5 +9,27 @@
     "title": "מוכנים להתחיל לתרגל?",
     "description": "אחרי שקראתם את ההסברים, עברו למחוללים שלנו וצרו דפי עבודה מותאמים אישית",
     "button": "לכל המחוללים"
+  },
+  "topic": {
+    "notFound": "נושא לא נמצא",
+    "metaTitle": "איך ללמד {title} - הסברים להורים",
+    "breadcrumb": {
+      "home": "דף הבית",
+      "help": "הסברים להורים"
+    },
+    "backToAll": "חזרה לכל ההסברים",
+    "howToTeachTitle": "איך ללמד {title}",
+    "sections": {
+      "whyImportant": "למה זה חשוב?",
+      "howToTeach": "איך ללמד?",
+      "examples": "דוגמאות מפורטות",
+      "commonMistakes": "טעויות נפוצות",
+      "parentTips": "טיפים להורים"
+    },
+    "explanation": "הסבר:",
+    "readyToPractice": "מוכנים לתרגל?",
+    "readyToPracticeDesc": "עכשיו אחרי שהבנתם איך ללמד {title}, הגיע הזמן ליצור דפי עבודה מותאמים",
+    "otherTopics": "נושאים נוספים",
+    "allTopics": "כל הנושאים"
   }
 }

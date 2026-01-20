@@ -3,10 +3,11 @@ import { Footer } from '@/components/layout/Footer';
 import { getHelpTopic, getHelpTopics, getHelpSlugs } from '@/lib/content';
 import { Locale, locales } from '@/i18n/config';
 import { AdSlot } from '@/components/AdSlot';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowRight, BookOpen, AlertTriangle, Lightbulb, CheckCircle, ExternalLink, GraduationCap } from 'lucide-react';
 import { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
 interface PageProps {
     params: Promise<{ topic: string; locale: string }>;
@@ -29,15 +30,16 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { topic: topicSlug, locale } = await params;
     const topic = await getHelpTopic(topicSlug, locale as Locale);
+    const t = await getTranslations({ locale, namespace: 'help' });
 
     if (!topic) {
         return {
-            title: 'נושא לא נמצא',
+            title: t('topic.notFound'),
         };
     }
 
     return {
-        title: `איך ללמד ${topic.title} - הסברים להורים | דפי עבודה חכמים`,
+        title: t('topic.metaTitle', { title: topic.title }),
         description: topic.shortDescription,
     };
 }
@@ -45,6 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function HelpTopicPage({ params }: PageProps) {
     const { topic: topicSlug, locale } = await params;
     const topic = await getHelpTopic(topicSlug, locale as Locale);
+    const t = await getTranslations({ locale, namespace: 'help' });
 
     if (!topic) {
         notFound();
@@ -60,7 +63,7 @@ export default async function HelpTopicPage({ params }: PageProps) {
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "למה זה חשוב?",
+                "name": t('topic.sections.whyImportant'),
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": topic.importance
@@ -68,7 +71,7 @@ export default async function HelpTopicPage({ params }: PageProps) {
             },
             {
                 "@type": "Question",
-                "name": "איך ללמד?",
+                "name": t('topic.sections.howToTeach'),
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": topic.howToTeach.join(" ")
@@ -76,7 +79,7 @@ export default async function HelpTopicPage({ params }: PageProps) {
             },
             {
                 "@type": "Question",
-                "name": "מה הטעויות הנפוצות?",
+                "name": t('topic.sections.commonMistakes'),
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": topic.commonMistakes.join(" ")
@@ -84,7 +87,7 @@ export default async function HelpTopicPage({ params }: PageProps) {
             },
             {
                 "@type": "Question",
-                "name": "מה הטיפים להורים?",
+                "name": t('topic.sections.parentTips'),
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": topic.parentTips.join(" ")
@@ -116,9 +119,9 @@ export default async function HelpTopicPage({ params }: PageProps) {
                     <div className="container-custom max-w-4xl relative z-10">
                         {/* Breadcrumb */}
                         <div className="flex items-center gap-2 text-sm text-slate-500 mb-6">
-                            <Link href="/" className="hover:text-emerald-600 transition-colors">דף הבית</Link>
+                            <Link href="/" className="hover:text-emerald-600 transition-colors">{t('topic.breadcrumb.home')}</Link>
                             <span>/</span>
-                            <Link href="/help" className="hover:text-emerald-600 transition-colors">הסברים להורים</Link>
+                            <Link href="/help" className="hover:text-emerald-600 transition-colors">{t('topic.breadcrumb.help')}</Link>
                             <span>/</span>
                             <span className="text-slate-700 font-medium">{topic.title}</span>
                         </div>
@@ -128,7 +131,7 @@ export default async function HelpTopicPage({ params }: PageProps) {
                             className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-bold mb-6 transition-colors"
                         >
                             <ArrowRight size={18} />
-                            <span>חזרה לכל ההסברים</span>
+                            <span>{t('topic.backToAll')}</span>
                         </Link>
 
                         <div className="flex items-start gap-5">
@@ -137,7 +140,7 @@ export default async function HelpTopicPage({ params }: PageProps) {
                             </div>
                             <div>
                                 <h1 className="text-3xl md:text-4xl font-black text-slate-800 mb-3">
-                                    איך ללמד {topic.title}
+                                    {t('topic.howToTeachTitle', { title: topic.title })}
                                 </h1>
                                 <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
                                     {topic.shortDescription}
@@ -155,9 +158,9 @@ export default async function HelpTopicPage({ params }: PageProps) {
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-3">
                                     <span className="w-10 h-10 bg-gradient-to-br from-sky-400 to-sky-500 text-white rounded-xl flex items-center justify-center text-lg font-black shadow-md shadow-sky-200">1</span>
-                                    למה זה חשוב?
+                                    {t('topic.sections.whyImportant')}
                                 </h2>
-                                <p className="text-slate-600 text-lg leading-relaxed pr-13">
+                                <p className="text-slate-600 text-lg leading-relaxed ps-13">
                                     {topic.importance}
                                 </p>
                             </div>
@@ -166,9 +169,9 @@ export default async function HelpTopicPage({ params }: PageProps) {
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-3">
                                     <span className="w-10 h-10 bg-gradient-to-br from-violet-400 to-violet-500 text-white rounded-xl flex items-center justify-center text-lg font-black shadow-md shadow-violet-200">2</span>
-                                    איך ללמד?
+                                    {t('topic.sections.howToTeach')}
                                 </h2>
-                                <ul className="space-y-3 pr-13">
+                                <ul className="space-y-3 ps-13">
                                     {topic.howToTeach.map((step, index) => (
                                         <li key={index} className="flex items-start gap-3 text-slate-600 bg-violet-50/50 p-4 rounded-xl border border-violet-100">
                                             <CheckCircle size={20} className="text-emerald-500 mt-0.5 flex-shrink-0" />
@@ -182,9 +185,9 @@ export default async function HelpTopicPage({ params }: PageProps) {
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-3">
                                     <span className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-500 text-white rounded-xl flex items-center justify-center text-lg font-black shadow-md shadow-orange-200">3</span>
-                                    דוגמאות מפורטות
+                                    {t('topic.sections.examples')}
                                 </h2>
-                                <div className="space-y-6 pr-13">
+                                <div className="space-y-6 ps-13">
                                     {topic.examples.map((example, index) => (
                                         <div key={index} className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-6 border border-orange-100">
                                             <div className="flex items-center justify-between mb-4">
@@ -194,7 +197,7 @@ export default async function HelpTopicPage({ params }: PageProps) {
                                                 </span>
                                             </div>
                                             <p className="text-slate-600 bg-white p-4 rounded-xl border border-orange-100">
-                                                <strong className="text-slate-800">הסבר:</strong> {example.explanation}
+                                                <strong className="text-slate-800">{t('topic.explanation')}</strong> {example.explanation}
                                             </p>
                                         </div>
                                     ))}
@@ -205,9 +208,9 @@ export default async function HelpTopicPage({ params }: PageProps) {
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-3">
                                     <span className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-500 text-white rounded-xl flex items-center justify-center text-lg font-black shadow-md shadow-amber-200">4</span>
-                                    טעויות נפוצות
+                                    {t('topic.sections.commonMistakes')}
                                 </h2>
-                                <ul className="space-y-3 pr-13">
+                                <ul className="space-y-3 ps-13">
                                     {topic.commonMistakes.map((mistake, index) => (
                                         <li key={index} className="flex items-start gap-3 text-slate-600 bg-gradient-to-r from-amber-50 to-orange-50 p-4 rounded-xl border border-amber-200">
                                             <AlertTriangle size={20} className="text-amber-500 mt-0.5 flex-shrink-0" />
@@ -221,9 +224,9 @@ export default async function HelpTopicPage({ params }: PageProps) {
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-3">
                                     <span className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-emerald-500 text-white rounded-xl flex items-center justify-center text-lg font-black shadow-md shadow-emerald-200">5</span>
-                                    טיפים להורים
+                                    {t('topic.sections.parentTips')}
                                 </h2>
-                                <ul className="space-y-3 pr-13">
+                                <ul className="space-y-3 ps-13">
                                     {topic.parentTips.map((tip, index) => (
                                         <li key={index} className="flex items-start gap-3 text-slate-600 bg-gradient-to-r from-emerald-50 to-teal-50 p-4 rounded-xl border border-emerald-200">
                                             <Lightbulb size={20} className="text-emerald-500 mt-0.5 flex-shrink-0" />
@@ -235,9 +238,9 @@ export default async function HelpTopicPage({ params }: PageProps) {
 
                             {/* CTA */}
                             <div className="bg-gradient-to-br from-emerald-500 to-emerald-600 text-white p-8 rounded-2xl shadow-xl shadow-emerald-200">
-                                <h3 className="text-2xl font-black mb-3">מוכנים לתרגל?</h3>
+                                <h3 className="text-2xl font-black mb-3">{t('topic.readyToPractice')}</h3>
                                 <p className="text-emerald-100 mb-6 text-lg">
-                                    עכשיו אחרי שהבנתם איך ללמד {topic.title}, הגיע הזמן ליצור דפי עבודה מותאמים
+                                    {t('topic.readyToPracticeDesc', { title: topic.title })}
                                 </p>
                                 <Link
                                     href={topic.relatedGeneratorHref}
@@ -259,9 +262,9 @@ export default async function HelpTopicPage({ params }: PageProps) {
                 {/* Other topics */}
                 <section className="py-16 bg-white">
                     <div className="container-custom max-w-4xl">
-                        <h2 className="text-2xl font-black text-slate-800 mb-8 text-center">נושאים נוספים</h2>
+                        <h2 className="text-2xl font-black text-slate-800 mb-8 text-center">{t('topic.otherTopics')}</h2>
                         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-                            {allTopics.filter(t => t.slug !== topic.slug).slice(0, 6).map((otherTopic) => (
+                            {allTopics.filter(tp => tp.slug !== topic.slug).slice(0, 6).map((otherTopic) => (
                                 <Link
                                     key={otherTopic.slug}
                                     href={`/help/${otherTopic.slug}`}
@@ -283,7 +286,7 @@ export default async function HelpTopicPage({ params }: PageProps) {
                                 href="/help"
                                 className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-600 px-6 py-3 rounded-xl font-bold hover:bg-emerald-100 transition-colors"
                             >
-                                <span>כל הנושאים</span>
+                                <span>{t('topic.allTopics')}</span>
                                 <ArrowLeft size={18} />
                             </Link>
                         </div>

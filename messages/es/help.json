@@ -9,5 +9,27 @@
     "title": "¿Listo para empezar a practicar?",
     "description": "Después de leer las guías, ve a nuestros generadores y crea hojas de trabajo personalizadas",
     "button": "Todos los generadores"
+  },
+  "topic": {
+    "notFound": "Tema no encontrado",
+    "metaTitle": "Cómo enseñar {title} - Guía para padres",
+    "breadcrumb": {
+      "home": "Inicio",
+      "help": "Guía para padres"
+    },
+    "backToAll": "Volver a todas las guías",
+    "howToTeachTitle": "Cómo enseñar {title}",
+    "sections": {
+      "whyImportant": "¿Por qué es importante?",
+      "howToTeach": "¿Cómo enseñar?",
+      "examples": "Ejemplos detallados",
+      "commonMistakes": "Errores comunes",
+      "parentTips": "Consejos para padres"
+    },
+    "explanation": "Explicación:",
+    "readyToPractice": "¿Listo para practicar?",
+    "readyToPracticeDesc": "Ahora que entiendes cómo enseñar {title}, es hora de crear hojas de trabajo personalizadas",
+    "otherTopics": "Otros temas",
+    "allTopics": "Todos los temas"
   }
 }

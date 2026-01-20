@@ -9,5 +9,27 @@
     "title": "Ready to Start Practicing?",
     "description": "After reading the guides, go to our generators and create personalized worksheets",
     "button": "All Generators"
+  },
+  "topic": {
+    "notFound": "Topic not found",
+    "metaTitle": "How to Teach {title} - Parent Guide",
+    "breadcrumb": {
+      "home": "Home",
+      "help": "Parent Guide"
+    },
+    "backToAll": "Back to all guides",
+    "howToTeachTitle": "How to Teach {title}",
+    "sections": {
+      "whyImportant": "Why is it important?",
+      "howToTeach": "How to teach?",
+      "examples": "Detailed examples",
+      "commonMistakes": "Common mistakes",
+      "parentTips": "Tips for parents"
+    },
+    "explanation": "Explanation:",
+    "readyToPractice": "Ready to practice?",
+    "readyToPracticeDesc": "Now that you understand how to teach {title}, it's time to create custom worksheets",
+    "otherTopics": "Other topics",
+    "allTopics": "All topics"
   }
 }

@@ -9,5 +9,27 @@
     "title": "Bereit zum Üben?",
     "description": "Nachdem Sie die Leitfäden gelesen haben, gehen Sie zu unseren Generatoren und erstellen Sie personalisierte Arbeitsblätter",
     "button": "Alle Generatoren"
+  },
+  "topic": {
+    "notFound": "Thema nicht gefunden",
+    "metaTitle": "Wie man {title} unterrichtet - Elternleitfaden",
+    "breadcrumb": {
+      "home": "Startseite",
+      "help": "Elternleitfaden"
+    },
+    "backToAll": "Zurück zu allen Leitfäden",
+    "howToTeachTitle": "Wie man {title} unterrichtet",
+    "sections": {
+      "whyImportant": "Warum ist das wichtig?",
+      "howToTeach": "Wie unterrichtet man?",
+      "examples": "Detaillierte Beispiele",
+      "commonMistakes": "Häufige Fehler",
+      "parentTips": "Tipps für Eltern"
+    },
+    "explanation": "Erklärung:",
+    "readyToPractice": "Bereit zum Üben?",
+    "readyToPracticeDesc": "Jetzt, da Sie verstanden haben, wie man {title} unterrichtet, ist es Zeit, individuelle Arbeitsblätter zu erstellen",
+    "otherTopics": "Weitere Themen",
+    "allTopics": "Alle Themen"
   }
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { useSyncExternalStore, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { ArrowLeft, Calendar } from 'lucide-react';
@@ -29,30 +29,15 @@ function shuffleArray<T>(array: T[]): T[] {
     return shuffled;
 }
 
-// Cache for shuffled posts per session
-const shuffleCache = new Map<string, FeaturedPost[]>();
-
-function getShuffledPosts(posts: FeaturedPost[], cacheKey: string): FeaturedPost[] {
-    if (!shuffleCache.has(cacheKey)) {
-        shuffleCache.set(cacheKey, shuffleArray(posts).slice(0, 3));
-    }
-    return shuffleCache.get(cacheKey)!;
-}
-
-// Use useSyncExternalStore to get client-only shuffled posts
-function useClientPosts(posts: FeaturedPost[]): FeaturedPost[] {
-    const cacheKey = useMemo(() => posts.map(p => p.slug).join(','), [posts]);
-
-    return useSyncExternalStore(
-        () => () => {}, // subscribe - no-op since data doesn't change
-        () => getShuffledPosts(posts, cacheKey), // client snapshot - shuffled
-        () => posts.slice(0, 3) // server snapshot - deterministic
-    );
-}
-
 export function FeaturedPosts({ posts }: FeaturedPostsProps) {
-    const displayPosts = useClientPosts(posts);
+    // Initialize with first 3 posts (deterministic for SSR)
+    const [displayPosts, setDisplayPosts] = useState(() => posts.slice(0, 3));
     const t = useTranslations('common');
+
+    // Shuffle on client-side only (after hydration)
+    useEffect(() => {
+        setDisplayPosts(shuffleArray(posts).slice(0, 3));
+    }, [posts]);
 
     if (displayPosts.length === 0) return null;
 

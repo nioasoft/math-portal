@@ -4,12 +4,14 @@ import { useState, useEffect } from 'react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { MathEngine, MathOperation, MathProblem } from '@/lib/math-engine';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
 import { AdSlot } from '@/components/AdSlot';
 import { trackPrintEvent, trackGenerateEvent } from '@/lib/analytics';
+import { useTranslations } from 'next-intl';
 
 export default function WorksheetClient() {
+    const t = useTranslations('worksheet');
     const searchParams = useSearchParams();
     const router = useRouter();
     const pathname = usePathname();
@@ -19,7 +21,7 @@ export default function WorksheetClient() {
     const [operation, setOperation] = useState<MathOperation>('+');
     const [range, setRange] = useState<number>(10);
     const [count] = useState<number>(20); // Problems per page
-    const [title, setTitle] = useState<string>("דף עבודה בחשבון");
+    const [title, setTitle] = useState<string>(t('generator.defaultWorksheetTitle'));
     const [showAnswers, setShowAnswers] = useState<boolean>(false);
 
     const updateUrl = (newOp: MathOperation, newRange: number) => {
@@ -34,13 +36,19 @@ export default function WorksheetClient() {
         router.push(`${pathname}?${params.toString()}`);
     };
 
-    const updateTitle = (op: MathOperation, r: number) => {
-        let opText = "חיבור";
-        if (op === '-') opText = "חיסור";
-        if (op === '*') opText = "כפל";
-        if (op === ':') opText = "חילוק";
+    const getOperationText = (op: MathOperation): string => {
+        switch (op) {
+            case '+': return t('operations.addition');
+            case '-': return t('operations.subtraction');
+            case '*': return t('operations.multiplication');
+            case ':': return t('operations.division');
+            default: return t('operations.addition');
+        }
+    };
 
-        setTitle(`${opText} בתחום ה-${r.toLocaleString()}`);
+    const updateTitle = (op: MathOperation, r: number) => {
+        const opText = getOperationText(op);
+        setTitle(t('generator.titleFormat', { operation: opText, range: r.toLocaleString() }));
     };
 
     const handleGenerate = (op: MathOperation, r: number, c: number, trackEvent = false) => {
@@ -95,7 +103,7 @@ export default function WorksheetClient() {
                         <Link href="/" className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
                             <ArrowLeft size={20} />
                         </Link>
-                        <h1 className="text-xl font-bold text-slate-800 hidden sm:block">מחולל דפי עבודה</h1>
+                        <h1 className="text-xl font-bold text-slate-800 hidden sm:block">{t('generator.title')}</h1>
                     </div>
 
                     <div className="flex items-center gap-2 sm:gap-4 flex-1 justify-center">
@@ -109,17 +117,17 @@ export default function WorksheetClient() {
                                     setOperation(newOp);
                                     updateUrl(newOp, range);
                                 }}
-                                aria-label="בחר פעולה חשבונית"
+                                aria-label={t('controls.selectOperation')}
                             >
-                                <option value="+">חיבור (+)</option>
-                                <option value="-">חיסור (-)</option>
-                                <option value="*">כפל (×)</option>
-                                <option value=":">חילוק (:)</option>
+                                <option value="+">{t('operations.additionWithSymbol')}</option>
+                                <option value="-">{t('operations.subtractionWithSymbol')}</option>
+                                <option value="*">{t('operations.multiplicationWithSymbol')}</option>
+                                <option value=":">{t('operations.divisionWithSymbol')}</option>
                             </select>
                         </div>
 
                         <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 p-1.5 rounded-lg">
-                            <span className="text-xs text-slate-400 mr-2" id="range-label">תחום:</span>
+                            <span className="text-xs text-slate-400 mr-2" id="range-label">{t('range.label')}</span>
                             <select
                                 className="bg-transparent text-sm font-medium px-2 py-1 outline-none cursor-pointer"
                                 value={range}
@@ -130,13 +138,13 @@ export default function WorksheetClient() {
                                 }}
                                 aria-labelledby="range-label"
                             >
-                                <option value="10">עד 10</option>
-                                <option value="20">עד 20</option>
-                                <option value="100">עד 100</option>
-                                <option value="1000">עד 1,000</option>
-                                <option value="10000">עד 10,000</option>
-                                <option value="100000">עד 100,000</option>
-                                <option value="1000000">עד 1,000,000</option>
+                                <option value="10">{t('range.upTo', { value: '10' })}</option>
+                                <option value="20">{t('range.upTo', { value: '20' })}</option>
+                                <option value="100">{t('range.upTo', { value: '100' })}</option>
+                                <option value="1000">{t('range.upTo', { value: '1,000' })}</option>
+                                <option value="10000">{t('range.upTo', { value: '10,000' })}</option>
+                                <option value="100000">{t('range.upTo', { value: '100,000' })}</option>
+                                <option value="1000000">{t('range.upTo', { value: '1,000,000' })}</option>
                             </select>
                         </div>
 
@@ -145,7 +153,7 @@ export default function WorksheetClient() {
                             className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-blue-700 transition shadow-sm"
                         >
                             <RefreshCw size={16} />
-                            <span className="hidden sm:inline">רענן</span>
+                            <span className="hidden sm:inline">{t('controls.refresh')}</span>
                         </button>
 
                         <button
@@ -154,7 +162,7 @@ export default function WorksheetClient() {
                             aria-pressed={showAnswers}
                         >
                             {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
-                            <span className="hidden sm:inline">{showAnswers ? 'הסתר תשובות' : 'הצג תשובות'}</span>
+                            <span className="hidden sm:inline">{showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}</span>
                         </button>
                     </div>
 
@@ -163,14 +171,14 @@ export default function WorksheetClient() {
                         className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-emerald-200 transition shadow-sm"
                     >
                         <HelpCircle size={16} />
-                        <span className="hidden sm:inline">הסברים להורים</span>
+                        <span className="hidden sm:inline">{t('controls.helpForParents')}</span>
                     </Link>
                     <button
                         onClick={onPrint}
                         className="bg-slate-900 text-white px-6 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-slate-800 transition shadow-sm"
                     >
                         <Printer size={16} />
-                        <span>הדפס</span>
+                        <span>{t('controls.print')}</span>
                     </button>
                 </div>
             </div>
@@ -224,14 +232,14 @@ export default function WorksheetClient() {
 
                     {/* Footer / Copyright on Paper */}
                     <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
-                        tirgul.net - דפי עבודה חכמים ©
+                        {t('print.copyright')}
                     </div>
                 </div>
             </div>
 
             {/* Helper Text */}
             <div className="text-center mt-8 text-slate-500 text-sm print:hidden">
-                לחצו על כפתור ההדפסה למעלה או השתמשו ב-CTRL+P
+                {t('print.hint')}
             </div>
 
             {/* Ad Slot - After Worksheet */}
@@ -240,35 +248,24 @@ export default function WorksheetClient() {
             </div>
 
             <ContentSection
-                title="דפי עבודה בחשבון להדפסה - חיבור, חיסור, כפל וחילוק"
-                description="המחולל החכם מאפשר לכם ליצור דפי עבודה במתמטיקה מותאמים אישית בקלות ובמהירות. מתאים לתלמידי כיתות א' עד ו' ולתרגול ביתי."
-                features={[
-                    "תרגול 4 פעולות חשבון: חיבור, חיסור, כפל וחילוק",
-                    "התאמה אישית של רמת הקושי וטווח המספרים (עד מיליון!)",
-                    "יצירת דפים ללא הגבלה - כל לחיצה יוצרת תרגילים חדשים",
-                    "עיצוב נקי וברור המתאים להדפסה חסכונית (A4)",
-                    "מתאים למורים, הורים ותלמידים כאחד"
-                ]}
+                title={t('content.title')}
+                description={t('content.description')}
+                features={t.raw('content.features') as string[]}
                 benefits={[
                     {
-                        title: "חיסכון בזמן וכסף",
-                        text: "במקום לקנות חוברות יקרות שנגמרות מהר, הדפיסו בדיוק את מה שהילד צריך, מתי שהוא צריך."
+                        title: t('content.benefits.saveMoney.title'),
+                        text: t('content.benefits.saveMoney.text')
                     },
                     {
-                        title: "תרגול ממוקד ואפקטיבי",
-                        text: "הילד מתקשה בכפל? צרו דף שכולו כפל. רוצים לחזק חיבור במיליונים? אין בעיה. המערכת גמישה לצרכים שלכם."
+                        title: t('content.benefits.focusedPractice.title'),
+                        text: t('content.benefits.focusedPractice.text')
                     },
                     {
-                        title: "זמין תמיד",
-                        text: "האתר זמין מכל מחשב וטלפון, 24/7. נגמרו דפי העבודה בכיתה? המדפסת בבית מוכנה לפעולה."
+                        title: t('content.benefits.alwaysAvailable.title'),
+                        text: t('content.benefits.alwaysAvailable.text')
                     }
                 ]}
-                tips={[
-                    "התחילו ברמה קלה כדי לבנות ביטחון עצמי, ורק אז העלו את רומת הקושי.",
-                    "הקפידו על תרגול קצר ועקבי (10 דקות ביום) במקום שעות ארוכות פעם בשבוע.",
-                    "הפכו את הלימוד למשחק - מדדו זמן ונסו לשפר את השיא האישי בפתרון דף תרגילים.",
-                    "בדקו יחד את התשובות ועודדו תיקון עצמי של טעויות."
-                ]}
+                tips={t.raw('content.tips') as string[]}
             />
         </div>
     );

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Check, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
@@ -14,11 +14,19 @@ export default function Feedback({ correct, correctAnswer, onComplete }: Feedbac
     const t = useTranslations('games');
     const [show, setShow] = useState(false);
     const [animating, setAnimating] = useState(false);
+    const prevCorrectRef = useRef<boolean | null>(null);
 
     useEffect(() => {
-        if (correct !== null) {
-            setShow(true);
-            setAnimating(true);
+        const prevCorrect = prevCorrectRef.current;
+        prevCorrectRef.current = correct;
+
+        // Only trigger when correct changes from null to a value
+        if (prevCorrect === null && correct !== null) {
+            // Use requestAnimationFrame to batch state updates
+            requestAnimationFrame(() => {
+                setShow(true);
+                setAnimating(true);
+            });
 
             const timer = setTimeout(() => {
                 setShow(false);
@@ -27,6 +35,12 @@ export default function Feedback({ correct, correctAnswer, onComplete }: Feedbac
             }, 1200);
 
             return () => clearTimeout(timer);
+        } else if (correct === null && prevCorrect !== null) {
+            // Reset when correct goes back to null
+            requestAnimationFrame(() => {
+                setShow(false);
+                setAnimating(false);
+            });
         }
     }, [correct, onComplete]);
 

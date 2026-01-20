@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useSyncExternalStore } from 'react';
 import { BlogPost, blogPosts } from '@/lib/blog-data';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -16,14 +16,26 @@ function shuffleArray(array: BlogPost[]): BlogPost[] {
     return shuffled;
 }
 
-export function FeaturedPosts() {
-    // Start with first 3 posts for SSR (deterministic)
-    const [posts, setPosts] = useState<BlogPost[]>(() => blogPosts.slice(0, 3));
+// Get shuffled posts - memoized per client session
+let cachedShuffledPosts: BlogPost[] | null = null;
+function getShuffledPosts(): BlogPost[] {
+    if (cachedShuffledPosts === null) {
+        cachedShuffledPosts = shuffleArray(blogPosts).slice(0, 3);
+    }
+    return cachedShuffledPosts;
+}
 
-    // Shuffle on client only after hydration
-    useEffect(() => {
-        setPosts(shuffleArray(blogPosts).slice(0, 3));
-    }, []);
+// Use useSyncExternalStore to get client-only shuffled posts
+function useClientPosts(): BlogPost[] {
+    return useSyncExternalStore(
+        () => () => {}, // subscribe - no-op since data doesn't change
+        getShuffledPosts, // client snapshot - shuffled
+        () => blogPosts.slice(0, 3) // server snapshot - deterministic
+    );
+}
+
+export function FeaturedPosts() {
+    const posts = useClientPosts();
 
     if (posts.length === 0) return null;
 

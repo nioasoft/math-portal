@@ -16,6 +16,7 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
     const [denominator, setDenominator] = useState('');
     const [whole, setWhole] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
+    const prevDisabledRef = useRef(disabled);
 
     useEffect(() => {
         if (autoFocus && inputRef.current) {
@@ -23,16 +24,21 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
         }
     }, [autoFocus]);
 
-    // Reset when disabled changes (new problem)
+    // Reset when transitioning from disabled to enabled (new problem)
     useEffect(() => {
-        if (!disabled) {
-            setValue('');
-            setNumerator('');
-            setDenominator('');
-            setWhole('');
-            if (inputRef.current) {
-                inputRef.current.focus();
-            }
+        const wasDisabled = prevDisabledRef.current;
+        prevDisabledRef.current = disabled;
+
+        // Only reset when going from disabled -> enabled (new problem ready)
+        if (wasDisabled && !disabled) {
+            // Use requestAnimationFrame to avoid synchronous setState in effect
+            requestAnimationFrame(() => {
+                setValue('');
+                setNumerator('');
+                setDenominator('');
+                setWhole('');
+                inputRef.current?.focus();
+            });
         }
     }, [disabled]);
 

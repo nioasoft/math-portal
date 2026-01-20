@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useSyncExternalStore } from 'react';
 import { X, Download, Share, Plus } from 'lucide-react';
 
 interface BeforeInstallPromptEvent extends Event {
@@ -8,46 +8,67 @@ interface BeforeInstallPromptEvent extends Event {
     userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
 }
 
+// Detect iOS device - client-only detection using useSyncExternalStore
+function useIsIOS(): boolean {
+    return useSyncExternalStore(
+        () => () => {}, // subscribe - no-op
+        () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as Window & { MSStream?: unknown }).MSStream, // client
+        () => false // server - assume not iOS
+    );
+}
+
+// Detect if should show banner - client-only
+function useShouldShowBanner(): { shouldShow: boolean; isStandalone: boolean } {
+    return useSyncExternalStore(
+        () => () => {},
+        () => {
+            // Only show on mobile devices
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+                || (window.innerWidth <= 768 && 'ontouchstart' in window);
+
+            if (!isMobile) {
+                return { shouldShow: false, isStandalone: false };
+            }
+
+            // Check if already installed (standalone mode)
+            const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+                || (window.navigator as Navigator & { standalone?: boolean }).standalone === true;
+
+            if (isStandalone) {
+                return { shouldShow: false, isStandalone: true };
+            }
+
+            // Check if user dismissed the banner today
+            const dismissed = localStorage.getItem('pwa-banner-dismissed');
+            if (dismissed) {
+                const dismissedDate = new Date(dismissed);
+                const today = new Date();
+                if (dismissedDate.toDateString() === today.toDateString()) {
+                    return { shouldShow: false, isStandalone: false };
+                }
+            }
+
+            return { shouldShow: true, isStandalone: false };
+        },
+        () => ({ shouldShow: false, isStandalone: false }) // server
+    );
+}
+
 export function PWAInstallBanner() {
     const [showBanner, setShowBanner] = useState(false);
-    const [isIOS, setIsIOS] = useState(false);
     const [showIOSInstructions, setShowIOSInstructions] = useState(false);
     const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
 
+    const isIOS = useIsIOS();
+    const { shouldShow, isStandalone } = useShouldShowBanner();
+
     useEffect(() => {
-        // Only show on mobile devices
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-            || (window.innerWidth <= 768 && 'ontouchstart' in window);
-
-        if (!isMobile) {
-            return; // Don't show on desktop
+        if (!shouldShow || isStandalone) {
+            return;
         }
-
-        // Check if already installed (standalone mode)
-        const isStandalone = window.matchMedia('(display-mode: standalone)').matches
-            || (window.navigator as Navigator & { standalone?: boolean }).standalone === true;
-
-        if (isStandalone) {
-            return; // Already installed, don't show banner
-        }
-
-        // Check if user dismissed the banner today
-        const dismissed = localStorage.getItem('pwa-banner-dismissed');
-        if (dismissed) {
-            const dismissedDate = new Date(dismissed);
-            const today = new Date();
-            // Check if same day
-            if (dismissedDate.toDateString() === today.toDateString()) {
-                return; // Don't show again today
-            }
-        }
-
-        // Detect iOS
-        const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as Window & { MSStream?: unknown }).MSStream;
-        setIsIOS(isIOSDevice);
 
         // For iOS, show banner after a delay
-        if (isIOSDevice) {
+        if (isIOS) {
             const timer = setTimeout(() => setShowBanner(true), 3000);
             return () => clearTimeout(timer);
         }
@@ -64,9 +85,9 @@ export function PWAInstallBanner() {
         return () => {
             window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
         };
-    }, []);
+    }, [shouldShow, isStandalone, isIOS]);
 
-    const handleInstallClick = async () => {
+    const handleInstallClick = useCallback(async () => {
         if (isIOS) {
             setShowIOSInstructions(true);
             return;
@@ -80,13 +101,13 @@ export function PWAInstallBanner() {
             }
             setDeferredPrompt(null);
         }
-    };
+    }, [isIOS, deferredPrompt]);
 
-    const handleDismiss = () => {
+    const handleDismiss = useCallback(() => {
         setShowBanner(false);
         setShowIOSInstructions(false);
         localStorage.setItem('pwa-banner-dismissed', new Date().toISOString());
-    };
+    }, []);
 
     if (!showBanner) return null;
 

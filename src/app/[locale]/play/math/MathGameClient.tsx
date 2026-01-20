@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import { MathOperation } from '@/lib/math-engine';
 import { GameEngine, GameMode, GameState } from '@/lib/game/game-engine';
 import { getHighScore, updateHighScore } from '@/lib/game/storage';
@@ -21,7 +21,10 @@ export default function MathGameClient() {
     const [phase, setPhase] = useState<GamePhase>('setup');
     const [feedbackResult, setFeedbackResult] = useState<{ correct: boolean; answer: number } | null>(null);
     const [isNewHighScore, setIsNewHighScore] = useState(false);
-    const [previousHighScore, setPreviousHighScore] = useState(0);
+    const [previousHighScore, setPreviousHighScore] = useState(() => {
+        const highScore = getHighScore('math', 'practice');
+        return highScore?.score || 0;
+    });
 
     // Setup options
     const [selectedMode, setSelectedMode] = useState<GameMode>('practice');
@@ -29,15 +32,16 @@ export default function MathGameClient() {
     const [selectedRange, setSelectedRange] = useState(100);
     const [selectedDuration, setSelectedDuration] = useState(60);
 
-    // Load high score on mount
-    useEffect(() => {
-        const highScore = getHighScore('math', selectedMode);
+    // Update high score when mode changes
+    const handleModeChange = (mode: GameMode) => {
+        setSelectedMode(mode);
+        const highScore = getHighScore('math', mode);
         setPreviousHighScore(highScore?.score || 0);
-    }, [selectedMode]);
+    };
 
     const startGame = () => {
         const duration = selectedMode === 'quiz' ? selectedDuration : 0;
-        const state = gameEngine.startGame(selectedMode, 'math', duration);
+        gameEngine.startGame(selectedMode, 'math', duration);
 
         // Generate first problem with selected operation
         const op = selectedOperation === 'mixed'
@@ -61,6 +65,16 @@ export default function MathGameClient() {
         setPhase('feedback');
     };
 
+    const endGame = useCallback(() => {
+        const state = gameEngine.endGame();
+        setGameState(state);
+
+        // Check for high score
+        const isNew = updateHighScore('math', state.mode, state.score, state.bestStreak, state.correctCount);
+        setIsNewHighScore(isNew);
+        setPhase('summary');
+    }, [gameEngine]);
+
     const handleFeedbackComplete = useCallback(() => {
         setFeedbackResult(null);
 
@@ -79,7 +93,7 @@ export default function MathGameClient() {
         gameEngine.nextProblem(op, selectedRange);
         setGameState(gameEngine.getState());
         setPhase('playing');
-    }, [selectedOperation, selectedRange, gameEngine]);
+    }, [selectedOperation, selectedRange, gameEngine, endGame]);
 
     const handleTick = useCallback(() => {
         const state = gameEngine.tick();
@@ -88,17 +102,7 @@ export default function MathGameClient() {
         if (state.timeRemaining !== null && state.timeRemaining <= 0) {
             endGame();
         }
-    }, [gameEngine]);
-
-    const endGame = () => {
-        const state = gameEngine.endGame();
-        setGameState(state);
-
-        // Check for high score
-        const isNew = updateHighScore('math', state.mode, state.score, state.bestStreak, state.correctCount);
-        setIsNewHighScore(isNew);
-        setPhase('summary');
-    };
+    }, [gameEngine, endGame]);
 
     const handlePlayAgain = () => {
         setPhase('setup');
@@ -122,7 +126,7 @@ export default function MathGameClient() {
                             </h2>
                             <div className="grid grid-cols-2 gap-3">
                                 <button
-                                    onClick={() => setSelectedMode('practice')}
+                                    onClick={() => handleModeChange('practice')}
                                     className={`p-4 rounded-xl border-2 transition ${
                                         selectedMode === 'practice'
                                             ? 'border-green-500 bg-green-500/20'
@@ -134,7 +138,7 @@ export default function MathGameClient() {
                                     <p className="text-xs text-slate-400 mt-1">ללא הגבלת זמן</p>
                                 </button>
                                 <button
-                                    onClick={() => setSelectedMode('quiz')}
+                                    onClick={() => handleModeChange('quiz')}
                                     className={`p-4 rounded-xl border-2 transition ${
                                         selectedMode === 'quiz'
                                             ? 'border-orange-500 bg-orange-500/20'

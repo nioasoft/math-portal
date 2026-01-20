@@ -3,15 +3,15 @@
 import { GameProblem } from '@/lib/game/game-engine';
 import { useTranslations } from 'next-intl';
 
-interface ProblemDisplayProps {
-    problem: GameProblem;
+interface FractionDisplayProps {
+    n: number;
+    d: number;
+    whole?: number;
 }
 
-export default function ProblemDisplay({ problem }: ProblemDisplayProps) {
-    const t = useTranslations('games');
-
-    // Render fraction component
-    const FractionDisplay = ({ n, d, whole }: { n: number; d: number; whole?: number }) => (
+// Render fraction component - moved outside to avoid recreation on each render
+function FractionDisplay({ n, d, whole }: FractionDisplayProps) {
+    return (
         <span className="inline-flex items-center gap-0.5 md:gap-1 mx-0.5 md:mx-1">
             {whole && whole > 0 ? <span className="text-3xl md:text-4xl font-bold">{whole}</span> : null}
             <span className="inline-flex flex-col items-center text-xl md:text-2xl">
@@ -21,6 +21,14 @@ export default function ProblemDisplay({ problem }: ProblemDisplayProps) {
             </span>
         </span>
     );
+}
+
+interface ProblemDisplayProps {
+    problem: GameProblem;
+}
+
+export default function ProblemDisplay({ problem }: ProblemDisplayProps) {
+    const t = useTranslations('games');
 
     // Render based on problem type
     if (problem.type === 'math' && problem.mathProblem) {

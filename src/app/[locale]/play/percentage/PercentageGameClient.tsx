@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import { GameEngine, GameMode, GameState } from '@/lib/game/game-engine';
 import { getHighScore, updateHighScore } from '@/lib/game/storage';
 import GameShell from '@/components/game/GameShell';
@@ -20,21 +20,25 @@ export default function PercentageGameClient() {
     const [phase, setPhase] = useState<GamePhase>('setup');
     const [feedbackResult, setFeedbackResult] = useState<{ correct: boolean; answer: number } | null>(null);
     const [isNewHighScore, setIsNewHighScore] = useState(false);
-    const [previousHighScore, setPreviousHighScore] = useState(0);
+    const [previousHighScore, setPreviousHighScore] = useState(() => {
+        const highScore = getHighScore('percentage', 'practice');
+        return highScore?.score || 0;
+    });
 
     // Setup options
     const [selectedMode, setSelectedMode] = useState<GameMode>('practice');
     const [selectedDuration, setSelectedDuration] = useState(60);
 
-    // Load high score on mount
-    useEffect(() => {
-        const highScore = getHighScore('percentage', selectedMode);
+    // Update high score when mode changes
+    const handleModeChange = (mode: GameMode) => {
+        setSelectedMode(mode);
+        const highScore = getHighScore('percentage', mode);
         setPreviousHighScore(highScore?.score || 0);
-    }, [selectedMode]);
+    };
 
     const startGame = () => {
         const duration = selectedMode === 'quiz' ? selectedDuration : 0;
-        const state = gameEngine.startGame(selectedMode, 'percentage', duration);
+        gameEngine.startGame(selectedMode, 'percentage', duration);
         gameEngine.nextProblem();
         setGameState(gameEngine.getState());
         setPhase('playing');
@@ -52,6 +56,15 @@ export default function PercentageGameClient() {
         setPhase('feedback');
     };
 
+    const endGame = useCallback(() => {
+        const state = gameEngine.endGame();
+        setGameState(state);
+
+        const isNew = updateHighScore('percentage', state.mode, state.score, state.bestStreak, state.correctCount);
+        setIsNewHighScore(isNew);
+        setPhase('summary');
+    }, [gameEngine]);
+
     const handleFeedbackComplete = useCallback(() => {
         setFeedbackResult(null);
 
@@ -67,7 +80,7 @@ export default function PercentageGameClient() {
         gameEngine.nextProblem();
         setGameState(gameEngine.getState());
         setPhase('playing');
-    }, [gameEngine]);
+    }, [gameEngine, endGame]);
 
     const handleTick = useCallback(() => {
         const state = gameEngine.tick();
@@ -76,16 +89,7 @@ export default function PercentageGameClient() {
         if (state.timeRemaining !== null && state.timeRemaining <= 0) {
             endGame();
         }
-    }, [gameEngine]);
-
-    const endGame = () => {
-        const state = gameEngine.endGame();
-        setGameState(state);
-
-        const isNew = updateHighScore('percentage', state.mode, state.score, state.bestStreak, state.correctCount);
-        setIsNewHighScore(isNew);
-        setPhase('summary');
-    };
+    }, [gameEngine, endGame]);
 
     const handlePlayAgain = () => {
         setPhase('setup');
@@ -109,7 +113,7 @@ export default function PercentageGameClient() {
                             </h2>
                             <div className="grid grid-cols-2 gap-3">
                                 <button
-                                    onClick={() => setSelectedMode('practice')}
+                                    onClick={() => handleModeChange('practice')}
                                     className={`p-4 rounded-xl border-2 transition ${
                                         selectedMode === 'practice'
                                             ? 'border-green-500 bg-green-500/20'
@@ -121,7 +125,7 @@ export default function PercentageGameClient() {
                                     <p className="text-xs text-slate-400 mt-1">ללא הגבלת זמן</p>
                                 </button>
                                 <button
-                                    onClick={() => setSelectedMode('quiz')}
+                                    onClick={() => handleModeChange('quiz')}
                                     className={`p-4 rounded-xl border-2 transition ${
                                         selectedMode === 'quiz'
                                             ? 'border-orange-500 bg-orange-500/20'

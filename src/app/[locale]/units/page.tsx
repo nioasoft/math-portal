@@ -1,11 +1,16 @@
-
 import UnitsClient from '@/components/worksheet/UnitsClient';
 import { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
-export const metadata: Metadata = {
-    title: "דפי עבודה בהמרת מידות להדפסה - אורך, משקל וזמן",
-    description: "מחולל דפי עבודה לתרגול המרת מידות (אורך, משקל, זמן). מתאים לכיתות ג׳-ו׳.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'meta' });
+
+    return {
+        title: t('pages.units.title'),
+        description: t('pages.units.description'),
+    };
+}
 
 export default function UnitsPage() {
     return <UnitsClient />;

@@ -65,5 +65,57 @@
     "errorSubmit": "Error al enviar comentarios",
     "errorRetry": "Error al enviar, por favor intenta más tarde"
   },
-  "siteName": "Hojas de Trabajo Inteligentes"
+  "siteName": "Hojas de Trabajo Inteligentes",
+  "contentSection": {
+    "featuresTitle": "¿Qué puedes practicar?",
+    "benefitsTitle": "¿Por qué usar el generador de hojas de trabajo?",
+    "tipsTitle": "Consejos para practicar con éxito con los niños"
+  },
+  "featuredPosts": {
+    "title": "Revista para Padres",
+    "subtitle": "Consejos, artículos y métodos de enseñanza para el éxito de su hijo",
+    "allArticles": "Todos los artículos",
+    "readMore": "Leer más"
+  },
+  "pwa": {
+    "installOnIphone": "Instalar en iPhone",
+    "close": "Cerrar",
+    "step1Title": "Toca el botón Compartir",
+    "step1Desc": "En la parte inferior de Safari",
+    "step2Title": "Elige \"Añadir a pantalla de inicio\"",
+    "step2Desc": "Desplázate hacia abajo si es necesario",
+    "step3Title": "Toca \"Añadir\"",
+    "step3Desc": "La app aparecerá en tu pantalla de inicio",
+    "gotIt": "¡Entendido, gracias!",
+    "installApp": "Instala la aplicación",
+    "quickAccess": "Acceso rápido desde la pantalla de inicio",
+    "install": "Instalar"
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "¿Tienes una pregunta, sugerencia o comentario? ¡Nos encantaría saber de ti!",
+    "feedbackTitle": "Comentarios y Sugerencias",
+    "feedbackDesc": "Comparte tus ideas para mejorar el sitio o nuevos ejercicios",
+    "bugTitle": "Reportar un Error",
+    "bugDesc": "¿Encontraste un problema? Cuéntanos y lo solucionaremos rápidamente",
+    "thankYouTitle": "¡Gracias por contactarnos!",
+    "thankYouMessage": "Recibimos tu mensaje y te responderemos pronto.",
+    "feedbackIdLabel": "Número de referencia:",
+    "sendAnother": "Enviar otro mensaje",
+    "typeLabel": "Tipo de consulta",
+    "typePlaceholder": "Selecciona el tipo de consulta",
+    "typeGeneral": "Comentarios generales",
+    "typeBug": "Reportar un error",
+    "typeSuggestion": "Sugerencia de mejora",
+    "messageLabel": "Descripción",
+    "messagePlaceholder": "Cuéntanos cómo podemos ayudarte...",
+    "emailLabel": "Correo para respuesta",
+    "emailOptional": "Opcional",
+    "emailHint": "Deja tu correo si deseas que te respondamos",
+    "submitButton": "Enviar",
+    "submitting": "Enviando...",
+    "errorRequired": "Por favor complete todos los campos requeridos",
+    "errorSubmit": "Error al enviar comentarios",
+    "errorRetry": "Error al enviar, intente de nuevo más tarde"
+  }
 }

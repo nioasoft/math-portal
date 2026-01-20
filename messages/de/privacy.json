@@ -1,0 +1,68 @@
+{
+  "backHome": "Zurück zur Startseite",
+  "title": "Datenschutzerklärung",
+  "lastUpdated": "Zuletzt aktualisiert: Januar 2026",
+  "intro": {
+    "heading": "Einführung",
+    "text": "Die Website \"Smart Worksheets\" (im Folgenden: \"die Website\") verpflichtet sich, Ihre Privatsphäre zu schützen. Diese Datenschutzerklärung erklärt, wie wir Ihre Informationen sammeln, verwenden und schützen."
+  },
+  "collection": {
+    "heading": "Informationssammlung",
+    "intro": "Die Website sammelt die folgenden Arten von Informationen:",
+    "technical": "Technische Informationen:",
+    "technicalDesc": "IP-Adresse, Browsertyp, Betriebssystem, aufgerufene Seiten und Zugriffszeiten.",
+    "cookies": "Cookies:",
+    "cookiesDesc": "Kleine Dateien, die auf Ihrem Gerät gespeichert werden, um das Surferlebnis zu verbessern.",
+    "analytics": "Analyseinformationen:",
+    "analyticsDesc": "Anonyme Nutzungsdaten durch Analysetools wie Google Analytics."
+  },
+  "usage": {
+    "heading": "Verwendung von Informationen",
+    "intro": "Die gesammelten Informationen werden verwendet für:",
+    "improve": "Verbesserung der Benutzererfahrung auf der Website",
+    "analyze": "Analyse von Nutzungsmustern und Verbesserung der Inhalte",
+    "ads": "Anzeige relevanter Werbung",
+    "legal": "Einhaltung gesetzlicher Anforderungen"
+  },
+  "advertising": {
+    "heading": "Werbung",
+    "para1": "Die Website nutzt Werbedienste von Drittanbietern, einschließlich Google AdSense. Diese Anbieter können Cookies verwenden, um Anzeigen basierend auf Ihren früheren Besuchen dieser oder anderer Websites anzuzeigen.",
+    "para2": "Google verwendet Cookies, um Anzeigen basierend auf Ihren früheren Besuchen dieser Website und anderer anzuzeigen. Sie können personalisierte Werbung von Google deaktivieren, indem Sie",
+    "googleAdsSettings": "Google-Anzeigeneinstellungen"
+  },
+  "cookiesSection": {
+    "heading": "Cookies",
+    "intro": "Die Website verwendet die folgenden Arten von Cookies:",
+    "essential": "Wesentliche Cookies:",
+    "essentialDesc": "Erforderlich für den grundlegenden Betrieb der Website.",
+    "analytics": "Analyse-Cookies:",
+    "analyticsDesc": "Helfen uns zu verstehen, wie Besucher die Website nutzen.",
+    "advertising": "Werbe-Cookies:",
+    "advertisingDesc": "Werden verwendet, um relevante Werbung anzuzeigen.",
+    "manage": "Sie können Ihre Cookie-Einstellungen über Ihre Browsereinstellungen verwalten."
+  },
+  "sharing": {
+    "heading": "Informationsweitergabe",
+    "text": "Wir verkaufen, vermieten oder teilen keine persönlichen Informationen mit Dritten, außer wie erforderlich, um unsere Dienste bereitzustellen oder wie gesetzlich vorgeschrieben."
+  },
+  "security": {
+    "heading": "Informationssicherheit",
+    "text": "Wir ergreifen angemessene Sicherheitsmaßnahmen zum Schutz der gesammelten Informationen. Keine Übertragungsmethode über das Internet ist jedoch zu 100% sicher."
+  },
+  "userRights": {
+    "heading": "Nutzerrechte",
+    "intro": "Sie haben das Recht:",
+    "request": "Informationen über die von uns gesammelten Daten anzufordern",
+    "correction": "Korrektur oder Löschung von Informationen anzufordern",
+    "object": "Der Verarbeitung von Informationen zu Marketingzwecken zu widersprechen"
+  },
+  "changes": {
+    "heading": "Änderungen der Richtlinie",
+    "text": "Wir können diese Richtlinie von Zeit zu Zeit aktualisieren. Wir werden alle Änderungen auf dieser Seite mit dem letzten Aktualisierungsdatum veröffentlichen."
+  },
+  "contact": {
+    "heading": "Kontakt",
+    "text": "Für Fragen zu dieser Datenschutzerklärung können Sie uns über die Seite",
+    "contactLink": "Kontakt"
+  }
+}

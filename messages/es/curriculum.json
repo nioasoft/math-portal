@@ -1,4 +1,24 @@
 {
+  "grade": {
+    "meta": {
+      "titleTemplate": "Hojas de trabajo para {gradeTitle} - Ejercicios de matemáticas para imprimir",
+      "descriptionTemplate": "{gradeDescription} Hojas de trabajo de matemáticas adaptadas para {gradeTitle} - {count} temas para practicar: {topicNames} y más.",
+      "keywords": {
+        "worksheets": "hojas de trabajo {gradeTitle}",
+        "math": "matemáticas {gradeTitle}",
+        "printable": "hojas de trabajo para imprimir",
+        "exercises": "ejercicios de matemáticas"
+      }
+    },
+    "breadcrumb": {
+      "home": "Inicio"
+    },
+    "topics": {
+      "sectionTitle": "Temas de estudio",
+      "countTemplate": "{count} temas para practicar"
+    },
+    "otherGrades": "Otros grados"
+  },
   "grades": {
     "1": {
       "title": "Grado 1",

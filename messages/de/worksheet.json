@@ -216,6 +216,19 @@
       "weight": "Gewichtseinheiten umrechnen",
       "time": "Zeiteinheiten umrechnen"
     },
+    "unitNames": {
+      "cm": "cm",
+      "mm": "mm",
+      "m": "m",
+      "km": "km",
+      "kg": "kg",
+      "g": "g",
+      "ton": "t",
+      "minutes": "Min",
+      "seconds": "Sek",
+      "hours": "Std",
+      "days": "Tage"
+    },
     "showHide": {
       "show": "Anzeigen",
       "hide": "Verbergen"

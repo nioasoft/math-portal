@@ -43,5 +43,52 @@
     "pause": "השהה",
     "resume": "המשך",
     "quit": "סיים"
+  },
+  "input": {
+    "placeholder": "הקלידו תשובה",
+    "backspace": "מחק",
+    "clear": "נקה",
+    "check": "בדוק",
+    "checkAnswer": "בדוק תשובה",
+    "numerator": "מונה",
+    "denominator": "מכנה",
+    "whole": "שלם"
+  },
+  "play": {
+    "header": {
+      "title": "משחקי מתמטיקה",
+      "subtitle": "בחרו נושא והתחילו לשחק!",
+      "back": "← חזרה"
+    },
+    "topics": {
+      "title": "בחרו נושא",
+      "math": {
+        "title": "חשבון בסיסי",
+        "description": "חיבור, חיסור, כפל וחילוק"
+      },
+      "fractions": {
+        "title": "שברים",
+        "description": "פעולות עם שברים פשוטים ומעורבים"
+      },
+      "percentage": {
+        "title": "אחוזים",
+        "description": "חישוב אחוז מתוך שלם"
+      },
+      "startPlaying": "התחילו לשחק"
+    },
+    "gameModes": {
+      "practice": {
+        "title": "תרגול חופשי",
+        "description": "תרגלו ללא לחץ זמן. תרגילים אינסופיים, צברו סטריק של תשובות נכונות ושפרו את הניקוד שלכם."
+      },
+      "quiz": {
+        "title": "חידון עם טיימר",
+        "description": "התחרו נגד השעון! 60/90/120 שניות לענות על כמה שיותר תרגילים. שברו שיאים!"
+      }
+    },
+    "footer": {
+      "worksheetsPrompt": "רוצים להדפיס דפי עבודה?",
+      "backToHome": "חזרו לדף הראשי להדפסה"
+    }
   }
 }

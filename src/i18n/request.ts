@@ -18,6 +18,10 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const worksheet = (await import(`../../messages/${locale}/worksheet.json`)).default;
   const games = (await import(`../../messages/${locale}/games.json`)).default;
   const meta = (await import(`../../messages/${locale}/meta.json`)).default;
+  const about = (await import(`../../messages/${locale}/about.json`)).default;
+  const blog = (await import(`../../messages/${locale}/blog.json`)).default;
+  const help = (await import(`../../messages/${locale}/help.json`)).default;
+  const privacy = (await import(`../../messages/${locale}/privacy.json`)).default;
 
   return {
     locale,
@@ -29,6 +33,10 @@ export default getRequestConfig(async ({ requestLocale }) => {
       worksheet,
       games,
       meta,
+      about,
+      blog,
+      help,
+      privacy,
     },
   };
 });

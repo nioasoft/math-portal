@@ -1,11 +1,16 @@
 import type { Metadata } from 'next';
 import PercentageClient from '@/components/worksheet/PercentageClient';
+import { getTranslations } from 'next-intl/server';
 
-export const metadata: Metadata = {
-  title: 'דפי עבודה באחוזים - תרגילים להדפסה',
-  description: 'מחולל דפי עבודה באחוזים: חישוב אחוז מכמות, מציאת השלם, אחוזי שינוי. בעיות מילוליות ותרגילים מעשיים. מותאם לכיתה ו.',
-  keywords: ['דפי עבודה אחוזים', 'תרגילי אחוזים', 'אחוזים לכיתה ו', 'חישוב אחוזים'],
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'meta' });
+
+    return {
+        title: t('pages.percentage.title'),
+        description: t('pages.percentage.description'),
+    };
+}
 
 export default function PercentagePage() {
   return <PercentageClient />;

@@ -1,15 +1,22 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Shield, ArrowRight } from 'lucide-react';
-import { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-    title: 'מדיניות פרטיות | דפי עבודה חכמים',
-    description: 'מדיניות הפרטיות של אתר דפי עבודה חכמים - מחולל דפי עבודה בחשבון',
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'meta.pages.privacy' });
 
-export default function PrivacyPage() {
+    return {
+        title: t('title'),
+        description: t('description'),
+    };
+}
+
+export default async function PrivacyPage() {
+    const t = await getTranslations('privacy');
+
     return (
         <div className="min-h-screen flex flex-col bg-[#fffbf5]">
             <Header />
@@ -26,7 +33,7 @@ export default function PrivacyPage() {
                             className="inline-flex items-center gap-2 text-slate-500 hover:text-orange-600 font-medium mb-6 transition-colors"
                         >
                             <ArrowRight size={18} />
-                            <span>חזרה לדף הבית</span>
+                            <span>{t('backHome')}</span>
                         </Link>
 
                         <div className="flex items-start gap-4">
@@ -34,8 +41,8 @@ export default function PrivacyPage() {
                                 <Shield size={28} className="text-white" />
                             </div>
                             <div>
-                                <h1 className="text-3xl md:text-4xl font-black text-slate-800 mb-2">מדיניות פרטיות</h1>
-                                <p className="text-slate-500">עודכן לאחרונה: ינואר 2026</p>
+                                <h1 className="text-3xl md:text-4xl font-black text-slate-800 mb-2">{t('title')}</h1>
+                                <p className="text-slate-500">{t('lastUpdated')}</p>
                             </div>
                         </div>
                     </div>
@@ -46,80 +53,64 @@ export default function PrivacyPage() {
                     <div className="container-custom max-w-3xl">
                         <article className="bg-white rounded-3xl shadow-sm p-8 md:p-12 border border-slate-100">
                             <div className="prose prose-lg prose-slate max-w-none prose-headings:font-bold prose-headings:text-slate-800 prose-a:text-orange-600 prose-strong:text-slate-800">
-                                <h2>מבוא</h2>
-                                <p>
-                                    אתר &quot;דפי עבודה חכמים&quot; (להלן: &quot;האתר&quot;) מחויב לשמירה על פרטיותכם.
-                                    מדיניות פרטיות זו מסבירה כיצד אנו אוספים, משתמשים ומגינים על המידע שלכם.
-                                </p>
+                                <h2>{t('intro.heading')}</h2>
+                                <p>{t('intro.text')}</p>
 
-                                <h2>איסוף מידע</h2>
-                                <p>האתר אוסף את סוגי המידע הבאים:</p>
+                                <h2>{t('collection.heading')}</h2>
+                                <p>{t('collection.intro')}</p>
                                 <ul>
-                                    <li><strong>מידע טכני:</strong> כתובת IP, סוג דפדפן, מערכת הפעלה, עמודים שנצפו וזמני גישה.</li>
-                                    <li><strong>עוגיות (Cookies):</strong> קבצים קטנים הנשמרים במכשירכם לצורך שיפור חווית הגלישה.</li>
-                                    <li><strong>מידע אנליטי:</strong> נתוני שימוש אנונימיים באמצעות כלי ניתוח כמו Google Analytics.</li>
+                                    <li><strong>{t('collection.technical')}</strong> {t('collection.technicalDesc')}</li>
+                                    <li><strong>{t('collection.cookies')}</strong> {t('collection.cookiesDesc')}</li>
+                                    <li><strong>{t('collection.analytics')}</strong> {t('collection.analyticsDesc')}</li>
                                 </ul>
 
-                                <h2>שימוש במידע</h2>
-                                <p>המידע שנאסף משמש אותנו ל:</p>
+                                <h2>{t('usage.heading')}</h2>
+                                <p>{t('usage.intro')}</p>
                                 <ul>
-                                    <li>שיפור חווית המשתמש באתר</li>
-                                    <li>ניתוח דפוסי שימוש ושיפור התכנים</li>
-                                    <li>הצגת פרסומות רלוונטיות</li>
-                                    <li>עמידה בדרישות חוקיות</li>
+                                    <li>{t('usage.improve')}</li>
+                                    <li>{t('usage.analyze')}</li>
+                                    <li>{t('usage.ads')}</li>
+                                    <li>{t('usage.legal')}</li>
                                 </ul>
 
-                                <h2>פרסומות</h2>
+                                <h2>{t('advertising.heading')}</h2>
+                                <p>{t('advertising.para1')}</p>
                                 <p>
-                                    האתר משתמש בשירותי פרסום של צד שלישי, כולל Google AdSense.
-                                    ספקים אלו עשויים להשתמש בעוגיות להצגת פרסומות המבוססות על ביקורים קודמים שלכם באתר זה או באתרים אחרים.
-                                </p>
-                                <p>
-                                    Google משתמשת בעוגיות כדי להציג מודעות המבוססות על ביקוריכם הקודמים באתר זה ובאתרים אחרים.
-                                    תוכלו לבטל את השימוש בעוגיות של Google לפרסום מותאם אישית על ידי ביקור ב
-                                    <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">הגדרות המודעות של Google</a>.
+                                    {t('advertising.para2')}{' '}
+                                    <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">
+                                        {t('advertising.googleAdsSettings')}
+                                    </a>.
                                 </p>
 
-                                <h2>עוגיות</h2>
-                                <p>האתר משתמש בסוגי עוגיות הבאים:</p>
+                                <h2>{t('cookiesSection.heading')}</h2>
+                                <p>{t('cookiesSection.intro')}</p>
                                 <ul>
-                                    <li><strong>עוגיות חיוניות:</strong> נדרשות לתפעול בסיסי של האתר.</li>
-                                    <li><strong>עוגיות ניתוח:</strong> עוזרות לנו להבין כיצד מבקרים משתמשים באתר.</li>
-                                    <li><strong>עוגיות פרסום:</strong> משמשות להצגת פרסומות רלוונטיות.</li>
+                                    <li><strong>{t('cookiesSection.essential')}</strong> {t('cookiesSection.essentialDesc')}</li>
+                                    <li><strong>{t('cookiesSection.analytics')}</strong> {t('cookiesSection.analyticsDesc')}</li>
+                                    <li><strong>{t('cookiesSection.advertising')}</strong> {t('cookiesSection.advertisingDesc')}</li>
                                 </ul>
-                                <p>
-                                    תוכלו לנהל את העדפות העוגיות שלכם דרך הגדרות הדפדפן.
-                                </p>
+                                <p>{t('cookiesSection.manage')}</p>
 
-                                <h2>שיתוף מידע</h2>
-                                <p>
-                                    איננו מוכרים, משכירים או משתפים מידע אישי עם צדדים שלישיים,
-                                    למעט כפי שנדרש לספק את השירותים שלנו או כפי שנדרש על פי חוק.
-                                </p>
+                                <h2>{t('sharing.heading')}</h2>
+                                <p>{t('sharing.text')}</p>
 
-                                <h2>אבטחת מידע</h2>
-                                <p>
-                                    אנו נוקטים באמצעי אבטחה סבירים להגנה על המידע הנאסף.
-                                    עם זאת, אין שיטת העברה דרך האינטרנט שהיא בטוחה ב-100%.
-                                </p>
+                                <h2>{t('security.heading')}</h2>
+                                <p>{t('security.text')}</p>
 
-                                <h2>זכויות המשתמש</h2>
-                                <p>יש לכם את הזכות:</p>
+                                <h2>{t('userRights.heading')}</h2>
+                                <p>{t('userRights.intro')}</p>
                                 <ul>
-                                    <li>לבקש מידע על הנתונים שאספנו עליכם</li>
-                                    <li>לבקש תיקון או מחיקה של המידע</li>
-                                    <li>להתנגד לעיבוד מידע לצרכי שיווק</li>
+                                    <li>{t('userRights.request')}</li>
+                                    <li>{t('userRights.correction')}</li>
+                                    <li>{t('userRights.object')}</li>
                                 </ul>
 
-                                <h2>שינויים במדיניות</h2>
-                                <p>
-                                    אנו עשויים לעדכן מדיניות זו מעת לעת.
-                                    נפרסם כל שינוי בעמוד זה עם תאריך העדכון האחרון.
-                                </p>
+                                <h2>{t('changes.heading')}</h2>
+                                <p>{t('changes.text')}</p>
 
-                                <h2>יצירת קשר</h2>
+                                <h2>{t('contact.heading')}</h2>
                                 <p>
-                                    לשאלות בנוגע למדיניות פרטיות זו, ניתן לפנות אלינו דרך עמוד <Link href="/contact">יצירת קשר</Link>.
+                                    {t('contact.text')} <Link href="/contact">{t('contact.contactLink')}</Link>.
                                 </p>
                             </div>
                         </article>

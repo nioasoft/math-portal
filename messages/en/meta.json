@@ -28,6 +28,62 @@
     "games": {
       "title": "Math Games",
       "description": "Interactive math games for practice - addition, subtraction, multiplication, and division."
+    },
+    "series": {
+      "title": "Arithmetic Sequences Worksheets",
+      "description": "Worksheets for practicing arithmetic sequences, pattern recognition, and completing number patterns. Suitable for grades 1-6."
+    },
+    "ratio": {
+      "title": "Ratio & Proportion Worksheets",
+      "description": "Ratio and proportion worksheets - finding missing values and understanding multiplicative relationships. Aligned with curriculum standards."
+    },
+    "units": {
+      "title": "Unit Conversion Worksheets",
+      "description": "Unit conversion worksheets - length, weight, and time. Practice converting between different units."
+    },
+    "wordProblems": {
+      "title": "Word Problems Worksheets",
+      "description": "Word problems worksheets - real-life questions involving addition, subtraction, multiplication, and division."
+    },
+    "worksheet": {
+      "title": "Math Worksheet Generator",
+      "description": "Create customized math worksheets - addition, subtraction, multiplication, and division. Free to print."
+    },
+    "about": {
+      "title": "About Us",
+      "description": "About Smart Worksheets - the free math worksheet generator for printable practice sheets."
+    },
+    "blog": {
+      "title": "Blog - Articles & Tips",
+      "description": "Articles, tips, and guides for parents and teachers about teaching math to children."
+    },
+    "help": {
+      "title": "Parent Guide",
+      "description": "Guides and explanations for parents - how to teach children math effectively and enjoyably."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "Privacy policy for Smart Worksheets website."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Contact the Smart Worksheets team - feedback, suggestions, and bug reports."
+    },
+    "play": {
+      "title": "Interactive Math Games",
+      "description": "Interactive math games for practice - choose a topic and start playing!"
+    },
+    "playMath": {
+      "title": "Math Game - Addition, Subtraction, Multiplication & Division",
+      "description": "Interactive math game for practicing basic arithmetic operations."
+    },
+    "playFractions": {
+      "title": "Fractions Game",
+      "description": "Interactive game for practicing fractions - addition, subtraction, and more."
+    },
+    "playPercentage": {
+      "title": "Percentage Game",
+      "description": "Interactive game for practicing percentage calculations."
     }
   }
 }

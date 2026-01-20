@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { Send, Loader2, CheckCircle, MessageSquare, Mail, HelpCircle } from 'lucide-react';
 
 export default function ContactPage() {
+    const t = useTranslations('common');
     const [formData, setFormData] = useState({
         type: '',
         message: '',
@@ -19,7 +21,7 @@ export default function ContactPage() {
 
         if (!formData.type || !formData.message) {
             setSubmitStatus('error');
-            setErrorMessage('יש למלא את כל שדות החובה');
+            setErrorMessage(t('contact.errorRequired'));
             return;
         }
 
@@ -43,11 +45,11 @@ export default function ContactPage() {
             } else {
                 const data = await response.json();
                 setSubmitStatus('error');
-                setErrorMessage(data.error || 'שגיאה בשליחת המשוב');
+                setErrorMessage(data.error || t('contact.errorSubmit'));
             }
         } catch {
             setSubmitStatus('error');
-            setErrorMessage('שגיאה בשליחת המשוב, נסו שוב מאוחר יותר');
+            setErrorMessage(t('contact.errorRetry'));
         } finally {
             setIsSubmitting(false);
         }
@@ -67,9 +69,9 @@ export default function ContactPage() {
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-2xl mb-4">
                         <Mail className="w-8 h-8 text-orange-600" />
                     </div>
-                    <h1 className="text-3xl md:text-4xl font-black text-slate-800 mb-4">צור קשר</h1>
+                    <h1 className="text-3xl md:text-4xl font-black text-slate-800 mb-4">{t('contact.title')}</h1>
                     <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                        יש לכם שאלה, הצעה לשיפור או משוב? נשמח לשמוע מכם!
+                        {t('contact.subtitle')}
                     </p>
                 </div>
 
@@ -81,10 +83,10 @@ export default function ContactPage() {
                                 <div className="bg-blue-100 p-2 rounded-xl">
                                     <MessageSquare className="w-5 h-5 text-blue-600" />
                                 </div>
-                                <h3 className="font-bold text-slate-800">משוב והצעות</h3>
+                                <h3 className="font-bold text-slate-800">{t('contact.feedbackTitle')}</h3>
                             </div>
                             <p className="text-sm text-slate-600">
-                                שתפו אותנו ברעיונות לשיפור האתר או תרגילים חדשים
+                                {t('contact.feedbackDesc')}
                             </p>
                         </div>
                         <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
@@ -92,10 +94,10 @@ export default function ContactPage() {
                                 <div className="bg-red-100 p-2 rounded-xl">
                                     <HelpCircle className="w-5 h-5 text-red-600" />
                                 </div>
-                                <h3 className="font-bold text-slate-800">דיווח על תקלה</h3>
+                                <h3 className="font-bold text-slate-800">{t('contact.bugTitle')}</h3>
                             </div>
                             <p className="text-sm text-slate-600">
-                                נתקלתם בבעיה? ספרו לנו ונטפל בזה במהירות
+                                {t('contact.bugDesc')}
                             </p>
                         </div>
                     </div>
@@ -107,11 +109,11 @@ export default function ContactPage() {
                                 <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
                                     <CheckCircle className="w-8 h-8 text-green-600" />
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-800 mb-2">תודה על הפנייה!</h3>
-                                <p className="text-slate-600 mb-4">קיבלנו את ההודעה שלכם ונחזור אליכם בהקדם.</p>
+                                <h3 className="text-xl font-bold text-slate-800 mb-2">{t('contact.thankYouTitle')}</h3>
+                                <p className="text-slate-600 mb-4">{t('contact.thankYouMessage')}</p>
                                 {feedbackId && (
                                     <p className="text-sm bg-orange-50 text-orange-700 px-4 py-2 rounded-lg inline-block mb-6">
-                                        מספר פנייה: <span className="font-bold">{feedbackId}</span>
+                                        {t('contact.feedbackIdLabel')} <span className="font-bold">{feedbackId}</span>
                                     </p>
                                 )}
                                 <div>
@@ -119,7 +121,7 @@ export default function ContactPage() {
                                         onClick={resetForm}
                                         className="px-6 py-2 bg-slate-100 hover:bg-slate-200 rounded-lg font-medium transition-colors"
                                     >
-                                        שליחת פנייה נוספת
+                                        {t('contact.sendAnother')}
                                     </button>
                                 </div>
                             </div>
@@ -128,7 +130,7 @@ export default function ContactPage() {
                                 {/* Type */}
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-2">
-                                        סוג הפנייה <span className="text-red-500">*</span>
+                                        {t('contact.typeLabel')} <span className="text-red-500">*</span>
                                     </label>
                                     <select
                                         value={formData.type}
@@ -136,24 +138,24 @@ export default function ContactPage() {
                                         className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all bg-white text-slate-800"
                                         required
                                     >
-                                        <option value="">בחרו סוג פנייה</option>
-                                        <option value="general">משוב כללי</option>
-                                        <option value="bug">דיווח על תקלה</option>
-                                        <option value="suggestion">הצעה לשיפור</option>
+                                        <option value="">{t('contact.typePlaceholder')}</option>
+                                        <option value="general">{t('contact.typeGeneral')}</option>
+                                        <option value="bug">{t('contact.typeBug')}</option>
+                                        <option value="suggestion">{t('contact.typeSuggestion')}</option>
                                     </select>
                                 </div>
 
                                 {/* Message */}
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-2">
-                                        תיאור הפנייה <span className="text-red-500">*</span>
+                                        {t('contact.messageLabel')} <span className="text-red-500">*</span>
                                     </label>
                                     <textarea
                                         value={formData.message}
                                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                         rows={5}
                                         className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all resize-none text-slate-800"
-                                        placeholder="ספרו לנו במה נוכל לעזור..."
+                                        placeholder={t('contact.messagePlaceholder')}
                                         required
                                     />
                                 </div>
@@ -161,7 +163,7 @@ export default function ContactPage() {
                                 {/* Email */}
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-2">
-                                        אימייל לחזרה <span className="text-slate-400">(אופציונלי)</span>
+                                        {t('contact.emailLabel')} <span className="text-slate-400">({t('contact.emailOptional')})</span>
                                     </label>
                                     <input
                                         type="email"
@@ -171,7 +173,7 @@ export default function ContactPage() {
                                         placeholder="your@email.com"
                                     />
                                     <p className="text-xs text-slate-500 mt-1">
-                                        השאירו אימייל אם תרצו שנחזור אליכם עם תשובה
+                                        {t('contact.emailHint')}
                                     </p>
                                 </div>
 
@@ -191,12 +193,12 @@ export default function ContactPage() {
                                     {isSubmitting ? (
                                         <>
                                             <Loader2 className="w-5 h-5 animate-spin" />
-                                            שולח...
+                                            {t('contact.submitting')}
                                         </>
                                     ) : (
                                         <>
                                             <Send className="w-5 h-5" />
-                                            שליחת הפנייה
+                                            {t('contact.submitButton')}
                                         </>
                                     )}
                                 </button>

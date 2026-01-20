@@ -43,5 +43,52 @@
     "pause": "Pause",
     "resume": "Resume",
     "quit": "Quit"
+  },
+  "input": {
+    "placeholder": "Type your answer",
+    "backspace": "Backspace",
+    "clear": "Clear",
+    "check": "Check",
+    "checkAnswer": "Check Answer",
+    "numerator": "Num",
+    "denominator": "Den",
+    "whole": "Whole"
+  },
+  "play": {
+    "header": {
+      "title": "Math Games",
+      "subtitle": "Choose a topic and start playing!",
+      "back": "← Back"
+    },
+    "topics": {
+      "title": "Choose a Topic",
+      "math": {
+        "title": "Basic Arithmetic",
+        "description": "Addition, subtraction, multiplication, and division"
+      },
+      "fractions": {
+        "title": "Fractions",
+        "description": "Operations with simple and mixed fractions"
+      },
+      "percentage": {
+        "title": "Percentages",
+        "description": "Calculate percentage of a whole"
+      },
+      "startPlaying": "Start Playing"
+    },
+    "gameModes": {
+      "practice": {
+        "title": "Free Practice",
+        "description": "Practice without time pressure. Infinite exercises, build your correct answer streak and improve your score."
+      },
+      "quiz": {
+        "title": "Timed Quiz",
+        "description": "Race against the clock! 60/90/120 seconds to answer as many exercises as possible. Break records!"
+      }
+    },
+    "footer": {
+      "worksheetsPrompt": "Want to print worksheets?",
+      "backToHome": "Go back to the homepage to print"
+    }
   }
 }

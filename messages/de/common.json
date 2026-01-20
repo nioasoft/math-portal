@@ -65,5 +65,57 @@
     "errorSubmit": "Fehler beim Senden des Feedbacks",
     "errorRetry": "Fehler beim Senden, bitte versuchen Sie es später erneut"
   },
-  "siteName": "Clevere Arbeitsblätter"
+  "siteName": "Clevere Arbeitsblätter",
+  "contentSection": {
+    "featuresTitle": "Was kann man üben?",
+    "benefitsTitle": "Warum den Arbeitsblatt-Generator verwenden?",
+    "tipsTitle": "Tipps für erfolgreiches Üben mit Kindern"
+  },
+  "featuredPosts": {
+    "title": "Elternmagazin",
+    "subtitle": "Tipps, Artikel und Lernmethoden für den Erfolg Ihres Kindes",
+    "allArticles": "Alle Artikel",
+    "readMore": "Mehr lesen"
+  },
+  "pwa": {
+    "installOnIphone": "Auf iPhone installieren",
+    "close": "Schließen",
+    "step1Title": "Tippen Sie auf Teilen",
+    "step1Desc": "Unten in Safari",
+    "step2Title": "Wählen Sie \"Zum Home-Bildschirm\"",
+    "step2Desc": "Scrollen Sie nach unten falls nötig",
+    "step3Title": "Tippen Sie auf \"Hinzufügen\"",
+    "step3Desc": "Die App erscheint auf dem Home-Bildschirm",
+    "gotIt": "Verstanden, danke!",
+    "installApp": "App installieren",
+    "quickAccess": "Schnellzugriff vom Home-Bildschirm",
+    "install": "Installieren"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Haben Sie eine Frage, einen Vorschlag oder Feedback? Wir freuen uns von Ihnen zu hören!",
+    "feedbackTitle": "Feedback und Vorschläge",
+    "feedbackDesc": "Teilen Sie Ihre Ideen zur Verbesserung der Website oder neue Übungen",
+    "bugTitle": "Fehler melden",
+    "bugDesc": "Auf ein Problem gestoßen? Lassen Sie es uns wissen und wir beheben es schnell",
+    "thankYouTitle": "Vielen Dank für Ihre Nachricht!",
+    "thankYouMessage": "Wir haben Ihre Nachricht erhalten und werden uns bald bei Ihnen melden.",
+    "feedbackIdLabel": "Referenznummer:",
+    "sendAnother": "Weitere Nachricht senden",
+    "typeLabel": "Art der Anfrage",
+    "typePlaceholder": "Wählen Sie eine Anfrageart",
+    "typeGeneral": "Allgemeines Feedback",
+    "typeBug": "Fehler melden",
+    "typeSuggestion": "Verbesserungsvorschlag",
+    "messageLabel": "Beschreibung",
+    "messagePlaceholder": "Teilen Sie uns mit, wie wir helfen können...",
+    "emailLabel": "E-Mail für Antwort",
+    "emailOptional": "Optional",
+    "emailHint": "Hinterlassen Sie Ihre E-Mail, wenn Sie eine Antwort wünschen",
+    "submitButton": "Absenden",
+    "submitting": "Wird gesendet...",
+    "errorRequired": "Bitte füllen Sie alle Pflichtfelder aus",
+    "errorSubmit": "Fehler beim Senden des Feedbacks",
+    "errorRetry": "Fehler beim Senden, bitte versuchen Sie es später erneut"
+  }
 }

@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { BlogIndexClient } from './BlogIndexClient';
 import { getBlogPosts, blogCategories } from '@/lib/content';
 import { Header } from '@/components/layout/Header';
@@ -11,6 +11,16 @@ import { Locale } from '@/i18n/config';
 
 type Props = {
     params: Promise<{ locale: string }>
+}
+
+export async function generateMetadata({ params }: Props) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'meta' });
+
+    return {
+        title: t('pages.blog.title'),
+        description: t('pages.blog.description'),
+    };
 }
 
 function BlogContentFallback() {
@@ -55,6 +65,7 @@ export default async function BlogIndexPage({ params }: Props) {
 
     // Fetch blog posts for the current locale
     const posts = await getBlogPosts(locale as Locale);
+    const t = await getTranslations('blog');
 
     return (
         <div className="min-h-screen flex flex-col bg-[#fffbf5]">
@@ -73,7 +84,7 @@ export default async function BlogIndexPage({ params }: Props) {
                     <div className="container-custom relative z-10 text-center max-w-3xl mx-auto">
                         <div className="inline-flex items-center gap-2 bg-white border border-sky-200 rounded-full px-5 py-2.5 shadow-sm mb-6">
                             <Sparkles size={16} className="text-sky-500" />
-                            <span className="text-sm font-bold text-slate-700">מאמרים וטיפים</span>
+                            <span className="text-sm font-bold text-slate-700">{t('badge')}</span>
                         </div>
 
                         <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-sky-500 to-sky-600 rounded-3xl mb-6 shadow-lg shadow-sky-200">
@@ -81,10 +92,10 @@ export default async function BlogIndexPage({ params }: Props) {
                         </div>
 
                         <h1 className="text-4xl md:text-5xl font-black text-slate-800 mb-6">
-                            הבלוג שלנו
+                            {t('title')}
                         </h1>
                         <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-                            מאמרים, טיפים וכלים להורים ולמורים ללימוד חשבון חוויתי ומוצלח
+                            {t('subtitle')}
                         </p>
                     </div>
                 </section>
@@ -101,15 +112,15 @@ export default async function BlogIndexPage({ params }: Props) {
                 {/* CTA Section */}
                 <section className="py-16 bg-white">
                     <div className="container-custom text-center">
-                        <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">רוצים לתרגל?</h2>
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">{t('ctaTitle')}</h2>
                         <p className="text-slate-500 mb-8 max-w-xl mx-auto">
-                            אחרי שקראתם את המאמרים, עברו למחוללים שלנו וצרו דפי עבודה מותאמים אישית
+                            {t('ctaDescription')}
                         </p>
                         <Link
                             href="/"
                             className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-2xl font-bold hover:shadow-xl hover:shadow-orange-200 hover:-translate-y-0.5 transition-all"
                         >
-                            <span>לכל המחוללים</span>
+                            <span>{t('ctaButton')}</span>
                             <ArrowLeft size={20} />
                         </Link>
                     </div>

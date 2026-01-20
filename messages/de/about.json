@@ -1,0 +1,100 @@
+{
+  "badge": "Soziales Bildungsprojekt",
+  "hero": {
+    "title": "Mathematik lernen,",
+    "titleHighlight": "macht Spaß",
+    "description": "\"Intelligente Arbeitsblätter\" ist eine soziale Initiative, die Eltern und Lehrern ein einfaches, kostenloses und professionelles Werkzeug für personalisiertes Mathetraining bietet.",
+    "subdescription": "Das System deckt Mathematikthemen ab, die in den Klassen 1-6 unterrichtet werden, und ermöglicht gezieltes Üben auf jeder Stufe."
+  },
+  "howItWorks": {
+    "title": "Wie funktioniert es?",
+    "subtitle": "Drei einfache Schritte zum perfekten Arbeitsblatt",
+    "step1": {
+      "title": "Thema wählen",
+      "description": "Addition, Multiplikation, Brüche oder Prozente? Wählen Sie den Generator, der dem Niveau Ihres Kindes entspricht."
+    },
+    "step2": {
+      "title": "Anpassen",
+      "description": "Passen Sie den Zahlenbereich, die Anzahl der Übungen und den Schwierigkeitsgrad genau an Ihre Bedürfnisse an."
+    },
+    "step3": {
+      "title": "Drucken und Lösen",
+      "description": "Klicken Sie auf \"Blatt drucken\" und erhalten Sie ein sauberes, organisiertes Arbeitsblatt mit separatem Lösungsblatt."
+    }
+  },
+  "mission": {
+    "badge": "Unsere Mission",
+    "title": "Warum haben wir diese Website erstellt?",
+    "background": {
+      "label": "Hintergrund:",
+      "text": "Das System wurde aus dem Verständnis heraus entwickelt, dass nicht immer genügend auf jedes Kind zugeschnittene Übungsmaterialien vorhanden sind. Wir wollten ein einfaches, zugängliches Tool schaffen, mit dem Eltern und Lehrer problemlos Arbeitsblätter erstellen können."
+    },
+    "problem": "Wir haben gesehen, dass nicht immer genügend angemessen abgestuftes Training für jedes Kind vorhanden ist. Wir wollten eine Situation schaffen, in der Kinder mit neuen Blättern üben können, bis sie sich im Stoff sicher fühlen - unbegrenzt und kostenlos.",
+    "method": {
+      "label": "Die Methode:",
+      "text": "Die Übungen sind schrittweise vom Einfachen zum Komplexen aufgebaut und ermöglichen die Anpassung an das Niveau und den Fortschritt des Kindes in eigenem Tempo."
+    },
+    "infinite": "Die Website ermöglicht die Erstellung von",
+    "infiniteHighlight": "unendlich vielen verschiedenen Übungen",
+    "infiniteText": ". Jeder Klick auf \"Blatt aktualisieren\" erstellt neue Übungen, sodass Sie immer wieder üben können, bis Sie Erfolg haben.",
+    "features": {
+      "thinking": "Denken entwickeln",
+      "inkSaving": "Tintensparend",
+      "customization": "Volle Anpassung",
+      "cleanUI": "Saubere Oberfläche"
+    }
+  },
+  "free": {
+    "title": "Für immer kostenlos",
+    "description": "Wir glauben, dass grundlegende Bildung und Übung für jeden zugänglich sein sollten. Die Website steht Eltern, Lehrern und Schülern zur kostenlosen Nutzung offen.",
+    "cta": "Mit dem Üben beginnen"
+  },
+  "stats": {
+    "title": "In Zahlen",
+    "subtitle": "Daten über das System und seine Nutzung",
+    "generators": "verschiedene Generatoren",
+    "grades": "Klassen 1-6",
+    "exercises": "mögliche Übungen",
+    "cost": "Kosten für immer",
+    "coverage": {
+      "title": "Lehrplanabdeckung",
+      "description": "Die Generatoren decken Mathematikthemen ab, die in der Grundschule in den Klassen 1-6 unterrichtet werden, einschließlich Addition, Subtraktion, Multiplikation, Division, Brüche, Prozente und Geometrie."
+    }
+  },
+  "methodology": {
+    "title": "Unsere Methodik",
+    "subtitle": "Pädagogische Prinzipien, die dem System zugrunde liegen",
+    "personalized": {
+      "title": "Personalisiertes Üben",
+      "description": "Jeder Schüler macht in seinem eigenen Tempo Fortschritte. Das System ermöglicht die Anpassung von Schwierigkeitsgrad, Zahlenbereich und Übungstyp an die spezifische Situation jedes Kindes."
+    },
+    "repetition": {
+      "title": "Wiederholung und Verstärkung",
+      "description": "Forschungsergebnisse zeigen, dass wiederholtes Üben der Schlüssel zur Beherrschung mathematischer Fähigkeiten ist. Das Erstellen neuer Blätter ermöglicht es, immer wieder zu üben, ohne Angst vor dem Auswendiglernen von Antworten zu haben."
+    },
+    "progressive": {
+      "title": "Progressives Lernen",
+      "description": "Die Übungen sind schrittweise vom Einfachen zum Komplexen aufgebaut, sodass Kinder in ihrem eigenen Tempo Fortschritte machen und Selbstvertrauen aufbauen können."
+    },
+    "feedback": {
+      "title": "Sofortiges Feedback",
+      "description": "Jedes Blatt enthält ein separates Lösungsblatt, mit dem Kinder oder Eltern Antworten sofort überprüfen und wiederkehrende Fehler identifizieren können."
+    }
+  },
+  "cta": {
+    "title": "Bereit anzufangen?",
+    "description": "Erstellen Sie kostenlos personalisierte Arbeitsblätter - keine Registrierung erforderlich",
+    "button": "Zu unseren Generatoren"
+  },
+  "schema": {
+    "name": "Intelligente Arbeitsblätter",
+    "description": "Bildungsinitiative, die ein kostenloses Tool für Eltern und Lehrer zur Erstellung personalisierter Mathematikarbeitsblätter für die Klassen 1-6 bietet",
+    "areaServed": "Israel",
+    "knowsAbout": {
+      "math": "Mathematische Bildung",
+      "elementary": "Grundschule",
+      "worksheets": "Arbeitsblätter",
+      "mathematics": "Mathematik"
+    }
+  }
+}

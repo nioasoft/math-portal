@@ -1,0 +1,13 @@
+{
+  "hero": {
+    "badge": "Comprehensive Parent Guides",
+    "title": "Parent Guide",
+    "description": "Detailed guides to help you teach your child every math topic.",
+    "descriptionExtra": "Including examples, common mistakes, and practical tips."
+  },
+  "cta": {
+    "title": "Ready to Start Practicing?",
+    "description": "After reading the guides, go to our generators and create personalized worksheets",
+    "button": "All Generators"
+  }
+}

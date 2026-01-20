@@ -265,8 +265,8 @@ export default async function LocaleLayout({
       >
         <NextIntlClientProvider messages={messages}>
           {children}
+          <PWAInstallBanner />
         </NextIntlClientProvider>
-        <PWAInstallBanner />
       </body>
     </html>
   );

@@ -5,6 +5,7 @@ import { BlogPost, blogPosts } from '@/lib/blog-data';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, Calendar } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 // Fisher-Yates shuffle
 function shuffleArray(array: BlogPost[]): BlogPost[] {
@@ -42,6 +43,7 @@ function useClientPosts(): BlogPost[] {
 
 export function FeaturedPosts() {
     const posts = useClientPosts();
+    const t = useTranslations('common');
 
     if (posts.length === 0) return null;
 
@@ -50,11 +52,11 @@ export function FeaturedPosts() {
             <div className="container-custom">
                 <div className="flex justify-between items-end mb-12">
                     <div>
-                        <h2 className="text-3xl font-bold text-slate-900 mb-2">מגזין ההורים</h2>
-                        <p className="text-slate-600">טיפים, מאמרים ושיטות לימוד שיעזרו לילדכם להצליח</p>
+                        <h2 className="text-3xl font-bold text-slate-900 mb-2">{t('featuredPosts.title')}</h2>
+                        <p className="text-slate-600">{t('featuredPosts.subtitle')}</p>
                     </div>
                     <Link href="/blog" className="hidden sm:flex items-center gap-1 font-bold text-blue-600 hover:gap-2 transition-all">
-                        לכל הכתבות <ArrowLeft size={16} aria-hidden="true" />
+                        {t('featuredPosts.allArticles')} <ArrowLeft size={16} aria-hidden="true" />
                     </Link>
                 </div>
 
@@ -83,7 +85,7 @@ export function FeaturedPosts() {
                                 </p>
                                 <div className="mt-auto flex items-center text-xs text-slate-400 gap-4 pt-4 border-t border-slate-50">
                                     <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
-                                    <span className="text-blue-600 font-bold ms-auto">קרא עוד</span>
+                                    <span className="text-blue-600 font-bold ms-auto">{t('featuredPosts.readMore')}</span>
                                 </div>
                             </div>
                         </Link>
@@ -92,7 +94,7 @@ export function FeaturedPosts() {
 
                 <div className="mt-8 text-center sm:hidden">
                     <Link href="/blog" className="inline-flex items-center gap-2 font-bold text-blue-600">
-                        לכל הכתבות <ArrowLeft size={16} aria-hidden="true" />
+                        {t('featuredPosts.allArticles')} <ArrowLeft size={16} aria-hidden="true" />
                     </Link>
                 </div>
             </div>

@@ -1,0 +1,13 @@
+{
+  "hero": {
+    "badge": "Guías completas para padres",
+    "title": "Guía para padres",
+    "description": "Guías detalladas para ayudarte a enseñar a tu hijo cada tema de matemáticas.",
+    "descriptionExtra": "Incluyendo ejemplos, errores comunes y consejos prácticos."
+  },
+  "cta": {
+    "title": "¿Listo para empezar a practicar?",
+    "description": "Después de leer las guías, ve a nuestros generadores y crea hojas de trabajo personalizadas",
+    "button": "Todos los generadores"
+  }
+}

@@ -28,6 +28,62 @@
     "games": {
       "title": "Juegos de Matemáticas",
       "description": "Juegos de matemáticas interactivos para practicar - suma, resta, multiplicación y división."
+    },
+    "series": {
+      "title": "Hojas de Trabajo de Secuencias Aritméticas",
+      "description": "Hojas de trabajo para practicar secuencias aritméticas, reconocimiento de patrones y completar patrones numéricos. Adecuado para grados 1-6."
+    },
+    "ratio": {
+      "title": "Hojas de Trabajo de Razón y Proporción",
+      "description": "Hojas de trabajo de razón y proporción - encontrar valores faltantes y comprender relaciones multiplicativas. Alineado con los estándares del currículo."
+    },
+    "units": {
+      "title": "Hojas de Trabajo de Conversión de Unidades",
+      "description": "Hojas de trabajo de conversión de unidades - longitud, peso y tiempo. Práctica de conversión entre diferentes unidades."
+    },
+    "wordProblems": {
+      "title": "Hojas de Trabajo de Problemas de Palabras",
+      "description": "Hojas de trabajo de problemas de palabras - preguntas de la vida real con suma, resta, multiplicación y división."
+    },
+    "worksheet": {
+      "title": "Generador de Hojas de Trabajo de Matemáticas",
+      "description": "Crea hojas de trabajo de matemáticas personalizadas - suma, resta, multiplicación y división. Gratis para imprimir."
+    },
+    "about": {
+      "title": "Sobre Nosotros",
+      "description": "Sobre Hojas de Trabajo Inteligentes - el generador gratuito de hojas de trabajo de matemáticas para imprimir."
+    },
+    "blog": {
+      "title": "Blog - Artículos y Consejos",
+      "description": "Artículos, consejos y guías para padres y maestros sobre la enseñanza de matemáticas a niños."
+    },
+    "help": {
+      "title": "Guía para Padres",
+      "description": "Guías y explicaciones para padres - cómo enseñar matemáticas a los niños de manera efectiva y divertida."
+    },
+    "privacy": {
+      "title": "Política de Privacidad",
+      "description": "Política de privacidad del sitio web Hojas de Trabajo Inteligentes."
+    },
+    "contact": {
+      "title": "Contáctenos",
+      "description": "Contacta al equipo de Hojas de Trabajo Inteligentes - comentarios, sugerencias e informes de errores."
+    },
+    "play": {
+      "title": "Juegos de Matemáticas Interactivos",
+      "description": "Juegos de matemáticas interactivos para practicar - ¡elige un tema y comienza a jugar!"
+    },
+    "playMath": {
+      "title": "Juego de Matemáticas - Suma, Resta, Multiplicación y División",
+      "description": "Juego de matemáticas interactivo para practicar operaciones aritméticas básicas."
+    },
+    "playFractions": {
+      "title": "Juego de Fracciones",
+      "description": "Juego interactivo para practicar fracciones - suma, resta y más."
+    },
+    "playPercentage": {
+      "title": "Juego de Porcentajes",
+      "description": "Juego interactivo para practicar cálculos de porcentajes."
     }
   }
 }

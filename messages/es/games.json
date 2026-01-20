@@ -43,5 +43,52 @@
     "pause": "Pausar",
     "resume": "Continuar",
     "quit": "Salir"
+  },
+  "input": {
+    "placeholder": "Escribe tu respuesta",
+    "backspace": "Borrar",
+    "clear": "Limpiar",
+    "check": "Verificar",
+    "checkAnswer": "Verificar respuesta",
+    "numerator": "Num",
+    "denominator": "Den",
+    "whole": "Entero"
+  },
+  "play": {
+    "header": {
+      "title": "Juegos de Matemáticas",
+      "subtitle": "¡Elige un tema y empieza a jugar!",
+      "back": "← Volver"
+    },
+    "topics": {
+      "title": "Elige un tema",
+      "math": {
+        "title": "Aritmética Básica",
+        "description": "Suma, resta, multiplicación y división"
+      },
+      "fractions": {
+        "title": "Fracciones",
+        "description": "Operaciones con fracciones simples y mixtas"
+      },
+      "percentage": {
+        "title": "Porcentajes",
+        "description": "Cálculo de porcentaje de un total"
+      },
+      "startPlaying": "Comenzar a jugar"
+    },
+    "gameModes": {
+      "practice": {
+        "title": "Práctica libre",
+        "description": "Practica sin presión de tiempo. Ejercicios infinitos, acumula una racha de respuestas correctas y mejora tu puntuación."
+      },
+      "quiz": {
+        "title": "Quiz con temporizador",
+        "description": "¡Compite contra el reloj! 60/90/120 segundos para responder la mayor cantidad de ejercicios posible. ¡Rompe récords!"
+      }
+    },
+    "footer": {
+      "worksheetsPrompt": "¿Quieres imprimir hojas de trabajo?",
+      "backToHome": "Vuelve a la página principal para imprimir"
+    }
   }
 }

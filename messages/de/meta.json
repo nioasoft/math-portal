@@ -28,6 +28,62 @@
     "games": {
       "title": "Mathe-Spiele",
       "description": "Interaktive Mathe-Spiele zum Üben - Addition, Subtraktion, Multiplikation und Division."
+    },
+    "series": {
+      "title": "Arbeitsblätter Zahlenfolgen",
+      "description": "Arbeitsblätter zum Üben von Zahlenfolgen, Mustererkennung und Vervollständigen von Zahlenmustern. Geeignet für die Klassen 1-6."
+    },
+    "ratio": {
+      "title": "Verhältnis & Proportion Arbeitsblätter",
+      "description": "Arbeitsblätter zu Verhältnis und Proportion - fehlende Werte finden und multiplikative Beziehungen verstehen. Lehrplangerecht."
+    },
+    "units": {
+      "title": "Einheiten-Umrechnung Arbeitsblätter",
+      "description": "Arbeitsblätter zur Einheiten-Umrechnung - Länge, Gewicht und Zeit. Übung zur Umrechnung zwischen verschiedenen Einheiten."
+    },
+    "wordProblems": {
+      "title": "Textaufgaben Arbeitsblätter",
+      "description": "Textaufgaben Arbeitsblätter - Aufgaben aus dem echten Leben mit Addition, Subtraktion, Multiplikation und Division."
+    },
+    "worksheet": {
+      "title": "Mathe-Arbeitsblatt-Generator",
+      "description": "Erstellen Sie individuelle Mathe-Arbeitsblätter - Addition, Subtraktion, Multiplikation und Division. Kostenlos zum Drucken."
+    },
+    "about": {
+      "title": "Über uns",
+      "description": "Über Clevere Arbeitsblätter - der kostenlose Mathe-Arbeitsblatt-Generator zum Drucken."
+    },
+    "blog": {
+      "title": "Blog - Artikel & Tipps",
+      "description": "Artikel, Tipps und Anleitungen für Eltern und Lehrer zum Mathe-Unterricht für Kinder."
+    },
+    "help": {
+      "title": "Elternratgeber",
+      "description": "Anleitungen und Erklärungen für Eltern - wie man Kindern effektiv und mit Spaß Mathe beibringt."
+    },
+    "privacy": {
+      "title": "Datenschutzrichtlinie",
+      "description": "Datenschutzrichtlinie der Website Clevere Arbeitsblätter."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Kontaktieren Sie das Team von Clevere Arbeitsblätter - Feedback, Vorschläge und Fehlermeldungen."
+    },
+    "play": {
+      "title": "Interaktive Mathe-Spiele",
+      "description": "Interaktive Mathe-Spiele zum Üben - wählen Sie ein Thema und beginnen Sie zu spielen!"
+    },
+    "playMath": {
+      "title": "Mathe-Spiel - Addition, Subtraktion, Multiplikation & Division",
+      "description": "Interaktives Mathe-Spiel zum Üben grundlegender Rechenoperationen."
+    },
+    "playFractions": {
+      "title": "Bruch-Spiel",
+      "description": "Interaktives Spiel zum Üben von Brüchen - Addition, Subtraktion und mehr."
+    },
+    "playPercentage": {
+      "title": "Prozent-Spiel",
+      "description": "Interaktives Spiel zum Üben von Prozentberechnungen."
     }
   }
 }

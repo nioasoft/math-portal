@@ -1,4 +1,24 @@
 {
+  "grade": {
+    "meta": {
+      "titleTemplate": "Arbeitsblätter für {gradeTitle} - Mathe-Übungen zum Ausdrucken",
+      "descriptionTemplate": "{gradeDescription} Mathe-Arbeitsblätter angepasst für {gradeTitle} - {count} Themen zum Üben: {topicNames} und mehr.",
+      "keywords": {
+        "worksheets": "{gradeTitle} Arbeitsblätter",
+        "math": "{gradeTitle} Mathematik",
+        "printable": "druckbare Arbeitsblätter",
+        "exercises": "Mathe-Übungen"
+      }
+    },
+    "breadcrumb": {
+      "home": "Startseite"
+    },
+    "topics": {
+      "sectionTitle": "Lernthemen",
+      "countTemplate": "{count} Themen zum Üben"
+    },
+    "otherGrades": "Andere Klassen"
+  },
   "grades": {
     "1": {
       "title": "Klasse 1",

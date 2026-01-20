@@ -6,19 +6,26 @@ import Link from 'next/link';
 import { ArrowLeft, GraduationCap, Sparkles } from 'lucide-react';
 import { AdSlot } from '@/components/AdSlot';
 import { HelpIndexClient } from './HelpIndexClient';
-
-export const metadata = {
-    title: 'הסברים להורים - דפי עבודה חכמים',
-    description: 'מדריכים מפורטים להורים: איך ללמד חשבון, טיפים, דוגמאות ושיטות לימוד יעילות לכל נושא במתמטיקה.',
-};
+import { getTranslations } from 'next-intl/server';
 
 interface PageProps {
     params: Promise<{ locale: string }>;
 }
 
+export async function generateMetadata({ params }: PageProps) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'meta.pages.help' });
+
+    return {
+        title: t('title'),
+        description: t('description'),
+    };
+}
+
 export default async function HelpIndexPage({ params }: PageProps) {
     const { locale } = await params;
     const topics = await getHelpTopics(locale as Locale);
+    const t = await getTranslations({ locale, namespace: 'help' });
 
     return (
         <div className="min-h-screen flex flex-col bg-[#fffbf5]">
@@ -37,7 +44,7 @@ export default async function HelpIndexPage({ params }: PageProps) {
                     <div className="container-custom relative z-10 text-center max-w-3xl mx-auto">
                         <div className="inline-flex items-center gap-2 bg-white border border-emerald-200 rounded-full px-5 py-2.5 shadow-sm mb-6">
                             <Sparkles size={16} className="text-emerald-500" />
-                            <span className="text-sm font-bold text-slate-700">מדריכים מפורטים להורים</span>
+                            <span className="text-sm font-bold text-slate-700">{t('hero.badge')}</span>
                         </div>
 
                         <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-3xl mb-6 shadow-lg shadow-emerald-200">
@@ -45,12 +52,12 @@ export default async function HelpIndexPage({ params }: PageProps) {
                         </div>
 
                         <h1 className="text-4xl md:text-5xl font-black text-slate-800 mb-6">
-                            הסברים להורים
+                            {t('hero.title')}
                         </h1>
                         <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-                            מדריכים מפורטים שיעזרו לכם ללמד את הילד כל נושא במתמטיקה.
+                            {t('hero.description')}
                             <br className="hidden sm:block" />
-                            כולל דוגמאות, טעויות נפוצות וטיפים מעשיים.
+                            {t('hero.descriptionExtra')}
                         </p>
                     </div>
                 </section>
@@ -70,15 +77,15 @@ export default async function HelpIndexPage({ params }: PageProps) {
                 {/* CTA */}
                 <section className="py-16 bg-white">
                     <div className="container-custom text-center">
-                        <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">מוכנים להתחיל לתרגל?</h2>
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">{t('cta.title')}</h2>
                         <p className="text-slate-600 mb-8 max-w-xl mx-auto">
-                            אחרי שקראתם את ההסברים, עברו למחוללים שלנו וצרו דפי עבודה מותאמים אישית
+                            {t('cta.description')}
                         </p>
                         <Link
                             href="/"
                             className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-2xl font-bold hover:shadow-xl hover:shadow-orange-200 hover:-translate-y-0.5 transition-all"
                         >
-                            <span>לכל המחוללים</span>
+                            <span>{t('cta.button')}</span>
                             <ArrowLeft size={20} />
                         </Link>
                     </div>

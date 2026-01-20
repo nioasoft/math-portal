@@ -65,5 +65,57 @@
     "errorSubmit": "Error submitting feedback",
     "errorRetry": "Error submitting feedback, please try again later"
   },
-  "siteName": "Smart Worksheets"
+  "siteName": "Smart Worksheets",
+  "contentSection": {
+    "featuresTitle": "What can you practice?",
+    "benefitsTitle": "Why use the worksheet generator?",
+    "tipsTitle": "Tips for successful practice with children"
+  },
+  "featuredPosts": {
+    "title": "Parents' Magazine",
+    "subtitle": "Tips, articles and teaching methods to help your child succeed",
+    "allArticles": "All articles",
+    "readMore": "Read more"
+  },
+  "pwa": {
+    "installOnIphone": "Install on iPhone",
+    "close": "Close",
+    "step1Title": "Tap the Share button",
+    "step1Desc": "At the bottom of Safari",
+    "step2Title": "Choose \"Add to Home Screen\"",
+    "step2Desc": "Scroll down if needed",
+    "step3Title": "Tap \"Add\"",
+    "step3Desc": "The app will appear on your home screen",
+    "gotIt": "Got it, thanks!",
+    "installApp": "Install the app",
+    "quickAccess": "Quick access from home screen",
+    "install": "Install"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have a question, suggestion or feedback? We'd love to hear from you!",
+    "feedbackTitle": "Feedback and Suggestions",
+    "feedbackDesc": "Share your ideas for improving the site or new exercises",
+    "bugTitle": "Report a Bug",
+    "bugDesc": "Encountered a problem? Let us know and we'll fix it quickly",
+    "thankYouTitle": "Thank you for contacting us!",
+    "thankYouMessage": "We received your message and will get back to you soon.",
+    "feedbackIdLabel": "Reference number:",
+    "sendAnother": "Send another message",
+    "typeLabel": "Type of inquiry",
+    "typePlaceholder": "Select inquiry type",
+    "typeGeneral": "General feedback",
+    "typeBug": "Report a bug",
+    "typeSuggestion": "Suggestion for improvement",
+    "messageLabel": "Description",
+    "messagePlaceholder": "Tell us how we can help...",
+    "emailLabel": "Email for response",
+    "emailOptional": "Optional",
+    "emailHint": "Leave your email if you'd like us to respond",
+    "submitButton": "Submit",
+    "submitting": "Sending...",
+    "errorRequired": "Please fill in all required fields",
+    "errorSubmit": "Error submitting feedback",
+    "errorRetry": "Error submitting feedback, please try again later"
+  }
 }

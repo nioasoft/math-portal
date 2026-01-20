@@ -1,0 +1,68 @@
+{
+  "backHome": "Back to Home",
+  "title": "Privacy Policy",
+  "lastUpdated": "Last updated: January 2026",
+  "intro": {
+    "heading": "Introduction",
+    "text": "The \"Smart Worksheets\" website (hereinafter: \"the Website\") is committed to protecting your privacy. This privacy policy explains how we collect, use, and protect your information."
+  },
+  "collection": {
+    "heading": "Information Collection",
+    "intro": "The Website collects the following types of information:",
+    "technical": "Technical Information:",
+    "technicalDesc": "IP address, browser type, operating system, pages viewed, and access times.",
+    "cookies": "Cookies:",
+    "cookiesDesc": "Small files stored on your device to improve browsing experience.",
+    "analytics": "Analytics Information:",
+    "analyticsDesc": "Anonymous usage data through analytics tools like Google Analytics."
+  },
+  "usage": {
+    "heading": "Use of Information",
+    "intro": "The information collected is used to:",
+    "improve": "Improve user experience on the Website",
+    "analyze": "Analyze usage patterns and improve content",
+    "ads": "Display relevant advertisements",
+    "legal": "Comply with legal requirements"
+  },
+  "advertising": {
+    "heading": "Advertising",
+    "para1": "The Website uses third-party advertising services, including Google AdSense. These providers may use cookies to display ads based on your previous visits to this or other websites.",
+    "para2": "Google uses cookies to display ads based on your previous visits to this website and others. You can opt out of personalized advertising from Google by visiting",
+    "googleAdsSettings": "Google Ads Settings"
+  },
+  "cookiesSection": {
+    "heading": "Cookies",
+    "intro": "The Website uses the following types of cookies:",
+    "essential": "Essential Cookies:",
+    "essentialDesc": "Required for basic website operation.",
+    "analytics": "Analytics Cookies:",
+    "analyticsDesc": "Help us understand how visitors use the Website.",
+    "advertising": "Advertising Cookies:",
+    "advertisingDesc": "Used to display relevant advertisements.",
+    "manage": "You can manage your cookie preferences through your browser settings."
+  },
+  "sharing": {
+    "heading": "Information Sharing",
+    "text": "We do not sell, rent, or share personal information with third parties, except as required to provide our services or as required by law."
+  },
+  "security": {
+    "heading": "Information Security",
+    "text": "We take reasonable security measures to protect the collected information. However, no method of transmission over the Internet is 100% secure."
+  },
+  "userRights": {
+    "heading": "User Rights",
+    "intro": "You have the right to:",
+    "request": "Request information about the data we have collected about you",
+    "correction": "Request correction or deletion of information",
+    "object": "Object to processing of information for marketing purposes"
+  },
+  "changes": {
+    "heading": "Policy Changes",
+    "text": "We may update this policy from time to time. We will post any changes on this page with the last update date."
+  },
+  "contact": {
+    "heading": "Contact",
+    "text": "For questions regarding this privacy policy, you can contact us through the",
+    "contactLink": "Contact"
+  }
+}

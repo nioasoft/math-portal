@@ -1,4 +1,24 @@
 {
+  "grade": {
+    "meta": {
+      "titleTemplate": "דפי עבודה ל{gradeTitle} - תרגילי חשבון להדפסה",
+      "descriptionTemplate": "{gradeDescription} דפי עבודה בחשבון מותאמים ל{gradeTitle} - {count} נושאים לתרגול: {topicNames} ועוד.",
+      "keywords": {
+        "worksheets": "דפי עבודה {gradeTitle}",
+        "math": "חשבון {gradeTitle}",
+        "printable": "דפי עבודה להדפסה",
+        "exercises": "תרגילי חשבון"
+      }
+    },
+    "breadcrumb": {
+      "home": "ראשי"
+    },
+    "topics": {
+      "sectionTitle": "נושאי לימוד",
+      "countTemplate": "{count} נושאים לתרגול"
+    },
+    "otherGrades": "כיתות נוספות"
+  },
   "grades": {
     "1": {
       "title": "כיתה א'",

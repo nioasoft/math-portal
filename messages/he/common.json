@@ -65,5 +65,57 @@
     "errorSubmit": "שגיאה בשליחת המשוב",
     "errorRetry": "שגיאה בשליחת המשוב, נסו שוב מאוחר יותר"
   },
-  "siteName": "דפי עבודה חכמים"
+  "siteName": "דפי עבודה חכמים",
+  "contentSection": {
+    "featuresTitle": "מה אפשר לתרגל?",
+    "benefitsTitle": "למה להשתמש במחולל דפי העבודה?",
+    "tipsTitle": "טיפים לתרגול מוצלח עם הילדים"
+  },
+  "featuredPosts": {
+    "title": "מגזין ההורים",
+    "subtitle": "טיפים, מאמרים ושיטות לימוד שיעזרו לילדכם להצליח",
+    "allArticles": "לכל הכתבות",
+    "readMore": "קרא עוד"
+  },
+  "pwa": {
+    "installOnIphone": "התקנה באייפון",
+    "close": "סגור",
+    "step1Title": "לחצו על כפתור השיתוף",
+    "step1Desc": "בתחתית המסך בספארי",
+    "step2Title": "בחרו \"הוסף למסך הבית\"",
+    "step2Desc": "גללו למטה אם צריך",
+    "step3Title": "לחצו \"הוסף\"",
+    "step3Desc": "האפליקציה תופיע במסך הבית",
+    "gotIt": "הבנתי, תודה!",
+    "installApp": "התקינו את האפליקציה",
+    "quickAccess": "גישה מהירה מהמסך הבית",
+    "install": "התקן"
+  },
+  "contact": {
+    "title": "צור קשר",
+    "subtitle": "יש לכם שאלה, הצעה לשיפור או משוב? נשמח לשמוע מכם!",
+    "feedbackTitle": "משוב והצעות",
+    "feedbackDesc": "שתפו אותנו ברעיונות לשיפור האתר או תרגילים חדשים",
+    "bugTitle": "דיווח על תקלה",
+    "bugDesc": "נתקלתם בבעיה? ספרו לנו ונטפל בזה במהירות",
+    "thankYouTitle": "תודה על הפנייה!",
+    "thankYouMessage": "קיבלנו את ההודעה שלכם ונחזור אליכם בהקדם.",
+    "feedbackIdLabel": "מספר פנייה:",
+    "sendAnother": "שליחת פנייה נוספת",
+    "typeLabel": "סוג הפנייה",
+    "typePlaceholder": "בחרו סוג פנייה",
+    "typeGeneral": "משוב כללי",
+    "typeBug": "דיווח על תקלה",
+    "typeSuggestion": "הצעה לשיפור",
+    "messageLabel": "תיאור הפנייה",
+    "messagePlaceholder": "ספרו לנו במה נוכל לעזור...",
+    "emailLabel": "אימייל לחזרה",
+    "emailOptional": "אופציונלי",
+    "emailHint": "השאירו אימייל אם תרצו שנחזור אליכם עם תשובה",
+    "submitButton": "שליחת הפנייה",
+    "submitting": "שולח...",
+    "errorRequired": "יש למלא את כל שדות החובה",
+    "errorSubmit": "שגיאה בשליחת המשוב",
+    "errorRetry": "שגיאה בשליחת המשוב, נסו שוב מאוחר יותר"
+  }
 }

@@ -1,4 +1,24 @@
 {
+  "grade": {
+    "meta": {
+      "titleTemplate": "أوراق عمل ل{gradeTitle} - تمارين رياضيات للطباعة",
+      "descriptionTemplate": "{gradeDescription} أوراق عمل رياضيات مخصصة ل{gradeTitle} - {count} مواضيع للتدريب: {topicNames} والمزيد.",
+      "keywords": {
+        "worksheets": "أوراق عمل {gradeTitle}",
+        "math": "رياضيات {gradeTitle}",
+        "printable": "أوراق عمل للطباعة",
+        "exercises": "تمارين رياضيات"
+      }
+    },
+    "breadcrumb": {
+      "home": "الرئيسية"
+    },
+    "topics": {
+      "sectionTitle": "مواضيع الدراسة",
+      "countTemplate": "{count} مواضيع للتدريب"
+    },
+    "otherGrades": "صفوف أخرى"
+  },
   "grades": {
     "1": {
       "title": "الصف الأول",

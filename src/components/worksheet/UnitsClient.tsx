@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, Ruler, Scale, Clock, HelpCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
@@ -10,8 +10,8 @@ import { useTranslations } from 'next-intl';
 interface UnitProblem {
     id: string;
     val: number;
-    from: string;
-    to: string;
+    fromKey: string;
+    toKey: string;
     answer: number;
 }
 
@@ -33,22 +33,22 @@ function createProblems(unitType: UnitType): UnitProblem[] {
 
             if (t === 'cm_mm') {
                 const cm = Math.floor(Math.random() * 50) + 1;
-                p = { id: '', val: cm, from: 'ס"מ', to: 'מ"מ', answer: cm * 10 };
+                p = { id: '', val: cm, fromKey: 'cm', toKey: 'mm', answer: cm * 10 };
             } else if (t === 'm_cm') {
                 const m = Math.floor(Math.random() * 20) + 1;
-                p = { id: '', val: m, from: 'מטר', to: 'ס"מ', answer: m * 100 };
+                p = { id: '', val: m, fromKey: 'm', toKey: 'cm', answer: m * 100 };
             } else {
                 const km = Math.floor(Math.random() * 10) + 1;
-                p = { id: '', val: km, from: 'ק"מ', to: 'מטר', answer: km * 1000 };
+                p = { id: '', val: km, fromKey: 'km', toKey: 'm', answer: km * 1000 };
             }
         } else if (unitType === 'weight') {
             const t = Math.random() > 0.5 ? 'kg_g' : 'ton_kg';
             if (t === 'kg_g') {
                 const kg = Math.floor(Math.random() * 20) + 1;
-                p = { id: '', val: kg, from: 'ק"ג', to: 'גרם', answer: kg * 1000 };
+                p = { id: '', val: kg, fromKey: 'kg', toKey: 'g', answer: kg * 1000 };
             } else {
                 const ton = Math.floor(Math.random() * 10) + 1;
-                p = { id: '', val: ton, from: 'טון', to: 'ק"ג', answer: ton * 1000 };
+                p = { id: '', val: ton, fromKey: 'ton', toKey: 'kg', answer: ton * 1000 };
             }
         } else {
             const types = ['min_sec', 'hour_min', 'day_hour'];
@@ -56,18 +56,18 @@ function createProblems(unitType: UnitType): UnitProblem[] {
 
             if (t === 'min_sec') {
                 const min = Math.floor(Math.random() * 10) + 1;
-                p = { id: '', val: min, from: 'דקות', to: 'שניות', answer: min * 60 };
+                p = { id: '', val: min, fromKey: 'minutes', toKey: 'seconds', answer: min * 60 };
             } else if (t === 'hour_min') {
                 const hr = Math.floor(Math.random() * 10) + 1;
-                p = { id: '', val: hr, from: 'שעות', to: 'דקות', answer: hr * 60 };
+                p = { id: '', val: hr, fromKey: 'hours', toKey: 'minutes', answer: hr * 60 };
             } else {
                 const day = Math.floor(Math.random() * 5) + 1;
-                p = { id: '', val: day, from: 'ימים', to: 'שעות', answer: day * 24 };
+                p = { id: '', val: day, fromKey: 'days', toKey: 'hours', answer: day * 24 };
             }
         }
 
         if (p) {
-            const key = `${p.val}-${p.from}-${p.to}`;
+            const key = `${p.val}-${p.fromKey}-${p.toKey}`;
             if (!generated.has(key)) {
                 generated.add(key);
                 p.id = Math.random().toString(36).substr(2, 9);
@@ -164,7 +164,7 @@ export default function UnitsClient() {
 
                                 <div className="flex items-center gap-2 min-w-[120px]">
                                     <span className="font-mono">{prob.val}</span>
-                                    <span className="text-base font-normal text-slate-600">{prob.from}</span>
+                                    <span className="text-base font-normal text-slate-600">{t(`units.unitNames.${prob.fromKey}`)}</span>
                                 </div>
 
                                 <span className="text-slate-400">=</span>
@@ -175,7 +175,7 @@ export default function UnitsClient() {
                                     ) : (
                                         <div className="w-24 h-8 border-b-2 border-slate-300 border-dashed"></div>
                                     )}
-                                    <span className="text-base font-normal text-slate-600">{prob.to}</span>
+                                    <span className="text-base font-normal text-slate-600">{t(`units.unitNames.${prob.toKey}`)}</span>
                                 </div>
                             </div>
                         ))}

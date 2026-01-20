@@ -1,0 +1,68 @@
+{
+  "backHome": "Volver al inicio",
+  "title": "Política de privacidad",
+  "lastUpdated": "Última actualización: enero de 2026",
+  "intro": {
+    "heading": "Introducción",
+    "text": "El sitio web \"Hojas de trabajo inteligentes\" (en adelante: \"el Sitio\") está comprometido con la protección de su privacidad. Esta política de privacidad explica cómo recopilamos, usamos y protegemos su información."
+  },
+  "collection": {
+    "heading": "Recopilación de información",
+    "intro": "El Sitio recopila los siguientes tipos de información:",
+    "technical": "Información técnica:",
+    "technicalDesc": "Dirección IP, tipo de navegador, sistema operativo, páginas vistas y horarios de acceso.",
+    "cookies": "Cookies:",
+    "cookiesDesc": "Archivos pequeños almacenados en su dispositivo para mejorar la experiencia de navegación.",
+    "analytics": "Información analítica:",
+    "analyticsDesc": "Datos de uso anónimos a través de herramientas de análisis como Google Analytics."
+  },
+  "usage": {
+    "heading": "Uso de la información",
+    "intro": "La información recopilada se utiliza para:",
+    "improve": "Mejorar la experiencia del usuario en el Sitio",
+    "analyze": "Analizar patrones de uso y mejorar el contenido",
+    "ads": "Mostrar anuncios relevantes",
+    "legal": "Cumplir con requisitos legales"
+  },
+  "advertising": {
+    "heading": "Publicidad",
+    "para1": "El Sitio utiliza servicios de publicidad de terceros, incluido Google AdSense. Estos proveedores pueden usar cookies para mostrar anuncios basados en sus visitas anteriores a este u otros sitios web.",
+    "para2": "Google utiliza cookies para mostrar anuncios basados en sus visitas anteriores a este sitio web y otros. Puede optar por no recibir publicidad personalizada de Google visitando",
+    "googleAdsSettings": "Configuración de anuncios de Google"
+  },
+  "cookiesSection": {
+    "heading": "Cookies",
+    "intro": "El Sitio utiliza los siguientes tipos de cookies:",
+    "essential": "Cookies esenciales:",
+    "essentialDesc": "Requeridas para el funcionamiento básico del sitio web.",
+    "analytics": "Cookies de análisis:",
+    "analyticsDesc": "Nos ayudan a comprender cómo los visitantes usan el Sitio.",
+    "advertising": "Cookies de publicidad:",
+    "advertisingDesc": "Se utilizan para mostrar anuncios relevantes.",
+    "manage": "Puede administrar sus preferencias de cookies a través de la configuración de su navegador."
+  },
+  "sharing": {
+    "heading": "Compartir información",
+    "text": "No vendemos, alquilamos ni compartimos información personal con terceros, excepto según sea necesario para proporcionar nuestros servicios o según lo exija la ley."
+  },
+  "security": {
+    "heading": "Seguridad de la información",
+    "text": "Tomamos medidas de seguridad razonables para proteger la información recopilada. Sin embargo, ningún método de transmisión por Internet es 100% seguro."
+  },
+  "userRights": {
+    "heading": "Derechos del usuario",
+    "intro": "Usted tiene derecho a:",
+    "request": "Solicitar información sobre los datos que hemos recopilado sobre usted",
+    "correction": "Solicitar la corrección o eliminación de información",
+    "object": "Oponerse al procesamiento de información con fines de marketing"
+  },
+  "changes": {
+    "heading": "Cambios en la política",
+    "text": "Podemos actualizar esta política de vez en cuando. Publicaremos cualquier cambio en esta página con la fecha de la última actualización."
+  },
+  "contact": {
+    "heading": "Contacto",
+    "text": "Para preguntas sobre esta política de privacidad, puede contactarnos a través de la página de",
+    "contactLink": "Contacto"
+  }
+}

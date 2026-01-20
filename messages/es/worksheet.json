@@ -216,6 +216,19 @@
       "weight": "Conversiones de Unidades de Peso",
       "time": "Conversiones de Unidades de Tiempo"
     },
+    "unitNames": {
+      "cm": "cm",
+      "mm": "mm",
+      "m": "m",
+      "km": "km",
+      "kg": "kg",
+      "g": "g",
+      "ton": "ton",
+      "minutes": "min",
+      "seconds": "seg",
+      "hours": "h",
+      "days": "días"
+    },
     "showHide": {
       "show": "Mostrar",
       "hide": "Ocultar"

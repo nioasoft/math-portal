@@ -20,9 +20,19 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     const topicNames = gradeData.slice(0, 3).map(topicId => t(`grades.${id}.topics.${topicId}.title`)).join(', ');
 
     return {
-        title: `דפי עבודה ל${gradeTitle} - תרגילי חשבון להדפסה`,
-        description: `${gradeDescription} דפי עבודה בחשבון מותאמים ל${gradeTitle} - ${gradeData.length} נושאים לתרגול: ${topicNames} ועוד.`,
-        keywords: [`דפי עבודה ${gradeTitle}`, `חשבון ${gradeTitle}`, 'דפי עבודה להדפסה', 'תרגילי חשבון'],
+        title: t('grade.meta.titleTemplate', { gradeTitle }),
+        description: t('grade.meta.descriptionTemplate', {
+            gradeDescription,
+            gradeTitle,
+            count: gradeData.length,
+            topicNames
+        }),
+        keywords: [
+            t('grade.meta.keywords.worksheets', { gradeTitle }),
+            t('grade.meta.keywords.math', { gradeTitle }),
+            t('grade.meta.keywords.printable'),
+            t('grade.meta.keywords.exercises')
+        ],
     };
 }
 
@@ -72,7 +82,7 @@ export default async function GradePage({ params }: { params: Promise<{ id: stri
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": "ראשי",
+                "name": t('grade.breadcrumb.home'),
                 "item": "https://www.tirgul.net"
             },
             {
@@ -107,7 +117,9 @@ export default async function GradePage({ params }: { params: Promise<{ id: stri
                     <div className="container-custom relative z-10">
                         {/* Breadcrumb */}
                         <div className="flex items-center gap-2 text-sm text-slate-500 mb-6">
-                            <Link href="/" className="hover:text-orange-600 transition-colors">ראשי</Link>
+                            <Link href="/" className="hover:text-orange-600 transition-colors">
+                                {t('grade.breadcrumb.home')}
+                            </Link>
                             <span>/</span>
                             <span className="text-slate-800 font-medium">{gradeTitle}</span>
                         </div>
@@ -119,7 +131,9 @@ export default async function GradePage({ params }: { params: Promise<{ id: stri
                             <div>
                                 <div className="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-1.5 shadow-sm mb-3">
                                     <Sparkles size={14} className="text-orange-500" />
-                                    <span className="text-xs font-bold text-slate-600">{topics.length} נושאים לתרגול</span>
+                                    <span className="text-xs font-bold text-slate-600">
+                                        {t('grade.topics.countTemplate', { count: topics.length })}
+                                    </span>
                                 </div>
                                 <h1 className="text-3xl md:text-4xl font-black text-slate-800 mb-2">{gradeTitle}</h1>
                                 <p className="text-lg text-slate-600">{gradeDescription}</p>
@@ -131,7 +145,9 @@ export default async function GradePage({ params }: { params: Promise<{ id: stri
                 {/* Topics Grid */}
                 <section className="py-12">
                     <div className="container-custom">
-                        <h2 className="text-2xl font-black text-slate-800 mb-8">נושאי לימוד</h2>
+                        <h2 className="text-2xl font-black text-slate-800 mb-8">
+                            {t('grade.topics.sectionTitle')}
+                        </h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                             {topics.map((topic, index) => (
@@ -163,7 +179,9 @@ export default async function GradePage({ params }: { params: Promise<{ id: stri
                 {/* Other Grades */}
                 <section className="py-12 bg-white">
                     <div className="container-custom">
-                        <h2 className="text-xl font-bold text-slate-800 mb-6 text-center">כיתות נוספות</h2>
+                        <h2 className="text-xl font-bold text-slate-800 mb-6 text-center">
+                            {t('grade.otherGrades')}
+                        </h2>
                         <div className="flex flex-wrap justify-center gap-3">
                             {GRADE_IDS.filter((gradeId) => gradeId !== id).map((gradeId) => (
                                 <Link

@@ -43,5 +43,52 @@
     "pause": "Pause",
     "resume": "Fortsetzen",
     "quit": "Beenden"
+  },
+  "input": {
+    "placeholder": "Antwort eingeben",
+    "backspace": "Löschen",
+    "clear": "Leeren",
+    "check": "Prüfen",
+    "checkAnswer": "Antwort prüfen",
+    "numerator": "Zähler",
+    "denominator": "Nenner",
+    "whole": "Ganz"
+  },
+  "play": {
+    "header": {
+      "title": "Mathespiele",
+      "subtitle": "Wählen Sie ein Thema und beginnen Sie zu spielen!",
+      "back": "← Zurück"
+    },
+    "topics": {
+      "title": "Wählen Sie ein Thema",
+      "math": {
+        "title": "Grundrechenarten",
+        "description": "Addition, Subtraktion, Multiplikation und Division"
+      },
+      "fractions": {
+        "title": "Brüche",
+        "description": "Operationen mit einfachen und gemischten Brüchen"
+      },
+      "percentage": {
+        "title": "Prozentrechnung",
+        "description": "Berechnung des Prozentsatzes eines Ganzen"
+      },
+      "startPlaying": "Jetzt spielen"
+    },
+    "gameModes": {
+      "practice": {
+        "title": "Freies Üben",
+        "description": "Üben Sie ohne Zeitdruck. Unendliche Übungen, bauen Sie eine Serie korrekter Antworten auf und verbessern Sie Ihre Punktzahl."
+      },
+      "quiz": {
+        "title": "Quiz mit Timer",
+        "description": "Wettlauf gegen die Zeit! 60/90/120 Sekunden, um so viele Aufgaben wie möglich zu lösen. Brechen Sie Rekorde!"
+      }
+    },
+    "footer": {
+      "worksheetsPrompt": "Möchten Sie Arbeitsblätter drucken?",
+      "backToHome": "Zurück zur Startseite zum Drucken"
+    }
   }
 }

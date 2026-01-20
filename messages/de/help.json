@@ -1,0 +1,13 @@
+{
+  "hero": {
+    "badge": "Umfassende Elternleitfäden",
+    "title": "Elternleitfaden",
+    "description": "Detaillierte Leitfäden, die Ihnen helfen, Ihrem Kind jedes Mathe-Thema beizubringen.",
+    "descriptionExtra": "Einschließlich Beispiele, häufige Fehler und praktische Tipps."
+  },
+  "cta": {
+    "title": "Bereit zum Üben?",
+    "description": "Nachdem Sie die Leitfäden gelesen haben, gehen Sie zu unseren Generatoren und erstellen Sie personalisierte Arbeitsblätter",
+    "button": "Alle Generatoren"
+  }
+}

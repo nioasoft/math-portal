@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, KeyboardEvent } from 'react';
 import { Delete, CornerDownLeft } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface AnswerInputProps {
     onSubmit: (answer: number) => void;
@@ -11,6 +12,7 @@ interface AnswerInputProps {
 }
 
 export default function AnswerInput({ onSubmit, disabled = false, autoFocus = true, showFractionInput = false }: AnswerInputProps) {
+    const t = useTranslations('games');
     const [value, setValue] = useState('');
     const [numerator, setNumerator] = useState('');
     const [denominator, setDenominator] = useState('');
@@ -100,7 +102,7 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                         onChange={(e) => setValue(e.target.value)}
                         onKeyDown={handleKeyDown}
                         disabled={disabled}
-                        placeholder="הקלידו תשובה"
+                        placeholder={t('input.placeholder')}
                         className="w-full text-center text-4xl font-bold py-4 px-6 bg-slate-700/50 border-2 border-slate-600 rounded-xl focus:border-yellow-400 focus:outline-none transition disabled:opacity-50 placeholder:text-slate-500"
                         dir="ltr"
                     />
@@ -123,7 +125,7 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                         onClick={handleBackspace}
                         disabled={disabled}
                         className="p-4 bg-slate-700/50 rounded-xl hover:bg-slate-600 active:bg-slate-500 transition disabled:opacity-50 flex items-center justify-center"
-                        aria-label="מחק"
+                        aria-label={t('input.backspace')}
                     >
                         <Delete className="w-6 h-6" aria-hidden="true" />
                     </button>
@@ -143,7 +145,7 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                         onClick={handleClear}
                         disabled={disabled}
                         className="p-4 text-xl font-bold bg-slate-700/50 rounded-xl hover:bg-slate-600 active:bg-slate-500 transition disabled:opacity-50"
-                        aria-label="נקה"
+                        aria-label={t('input.clear')}
                     >
                         C
                     </button>
@@ -180,7 +182,7 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                         disabled={disabled || !value}
                         className="col-span-2 p-4 text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl hover:from-green-600 hover:to-emerald-700 active:from-green-700 active:to-emerald-800 transition disabled:opacity-50 flex items-center justify-center gap-2"
                     >
-                        <span>בדוק</span>
+                        <span>{t('input.check')}</span>
                         <CornerDownLeft className="w-5 h-5" />
                     </button>
                 </div>
@@ -202,7 +204,7 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                         onChange={(e) => setNumerator(e.target.value)}
                         onKeyDown={handleKeyDown}
                         disabled={disabled}
-                        placeholder="מונה"
+                        placeholder={t('input.numerator')}
                         className="w-16 md:w-20 text-center text-xl md:text-2xl font-bold py-1.5 md:py-2 px-2 bg-slate-700/50 border-2 border-slate-600 rounded-lg focus:border-yellow-400 focus:outline-none transition disabled:opacity-50"
                         dir="ltr"
                     />
@@ -214,7 +216,7 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                         onChange={(e) => setDenominator(e.target.value)}
                         onKeyDown={handleKeyDown}
                         disabled={disabled}
-                        placeholder="מכנה"
+                        placeholder={t('input.denominator')}
                         className="w-16 md:w-20 text-center text-xl md:text-2xl font-bold py-1.5 md:py-2 px-2 bg-slate-700/50 border-2 border-slate-600 rounded-lg focus:border-yellow-400 focus:outline-none transition disabled:opacity-50"
                         dir="ltr"
                     />
@@ -228,7 +230,7 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                     onChange={(e) => setWhole(e.target.value)}
                     onKeyDown={handleKeyDown}
                     disabled={disabled}
-                    placeholder="שלם"
+                    placeholder={t('input.whole')}
                     className="w-16 md:w-20 text-center text-2xl md:text-3xl font-bold py-2 md:py-3 px-2 bg-slate-700/50 border-2 border-slate-600 rounded-xl focus:border-yellow-400 focus:outline-none transition disabled:opacity-50"
                     dir="ltr"
                 />
@@ -239,7 +241,7 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                 disabled={disabled || (!numerator && !whole)}
                 className="w-full p-3 md:p-4 text-lg md:text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl hover:from-green-600 hover:to-emerald-700 active:from-green-700 active:to-emerald-800 transition disabled:opacity-50 flex items-center justify-center gap-2"
             >
-                <span>בדוק תשובה</span>
+                <span>{t('input.checkAnswer')}</span>
                 <CornerDownLeft className="w-5 h-5" />
             </button>
         </div>

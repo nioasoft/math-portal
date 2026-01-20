@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useSyncExternalStore } from 'react';
 import { X, Download, Share, Plus } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface BeforeInstallPromptEvent extends Event {
     prompt: () => Promise<void>;
@@ -80,6 +81,7 @@ export function PWAInstallBanner() {
     const [showBanner, setShowBanner] = useState(false);
     const [showIOSInstructions, setShowIOSInstructions] = useState(false);
     const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
+    const t = useTranslations('common');
 
     const isIOS = useIsIOS();
     const { shouldShow, isStandalone } = useShouldShowBanner();
@@ -139,11 +141,11 @@ export function PWAInstallBanner() {
             <div className="fixed inset-0 z-[100] flex items-end justify-center p-4 bg-black/50 backdrop-blur-sm">
                 <div className="w-full max-w-md bg-white rounded-t-3xl rounded-b-xl p-6 shadow-2xl animate-slide-up">
                     <div className="flex items-center justify-between mb-6">
-                        <h3 className="text-xl font-bold text-slate-800">התקנה באייפון</h3>
+                        <h3 className="text-xl font-bold text-slate-800">{t('pwa.installOnIphone')}</h3>
                         <button
                             onClick={handleDismiss}
                             className="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-full transition-colors"
-                            aria-label="סגור"
+                            aria-label={t('pwa.close')}
                         >
                             <X size={24} />
                         </button>
@@ -155,10 +157,10 @@ export function PWAInstallBanner() {
                                 <span className="text-sky-600 font-bold">1</span>
                             </div>
                             <div>
-                                <p className="font-semibold text-slate-800 mb-1">לחצו על כפתור השיתוף</p>
+                                <p className="font-semibold text-slate-800 mb-1">{t('pwa.step1Title')}</p>
                                 <div className="flex items-center gap-2 text-slate-500 text-sm">
                                     <Share size={18} className="text-sky-500" />
-                                    <span>בתחתית המסך בספארי</span>
+                                    <span>{t('pwa.step1Desc')}</span>
                                 </div>
                             </div>
                         </div>
@@ -168,10 +170,10 @@ export function PWAInstallBanner() {
                                 <span className="text-sky-600 font-bold">2</span>
                             </div>
                             <div>
-                                <p className="font-semibold text-slate-800 mb-1">בחרו &quot;הוסף למסך הבית&quot;</p>
+                                <p className="font-semibold text-slate-800 mb-1">{t('pwa.step2Title')}</p>
                                 <div className="flex items-center gap-2 text-slate-500 text-sm">
                                     <Plus size={18} className="text-sky-500" />
-                                    <span>גללו למטה אם צריך</span>
+                                    <span>{t('pwa.step2Desc')}</span>
                                 </div>
                             </div>
                         </div>
@@ -181,8 +183,8 @@ export function PWAInstallBanner() {
                                 <span className="text-sky-600 font-bold">3</span>
                             </div>
                             <div>
-                                <p className="font-semibold text-slate-800 mb-1">לחצו &quot;הוסף&quot;</p>
-                                <p className="text-slate-500 text-sm">האפליקציה תופיע במסך הבית</p>
+                                <p className="font-semibold text-slate-800 mb-1">{t('pwa.step3Title')}</p>
+                                <p className="text-slate-500 text-sm">{t('pwa.step3Desc')}</p>
                             </div>
                         </div>
                     </div>
@@ -191,7 +193,7 @@ export function PWAInstallBanner() {
                         onClick={handleDismiss}
                         className="w-full mt-6 py-3 bg-slate-100 text-slate-600 font-bold rounded-xl hover:bg-slate-200 transition-colors"
                     >
-                        הבנתי, תודה!
+                        {t('pwa.gotIt')}
                     </button>
                 </div>
             </div>
@@ -206,20 +208,20 @@ export function PWAInstallBanner() {
                     <Download size={24} className="text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
-                    <p className="font-bold text-white text-sm">התקינו את האפליקציה</p>
-                    <p className="text-white/80 text-xs">גישה מהירה מהמסך הבית</p>
+                    <p className="font-bold text-white text-sm">{t('pwa.installApp')}</p>
+                    <p className="text-white/80 text-xs">{t('pwa.quickAccess')}</p>
                 </div>
                 <div className="flex items-center gap-2">
                     <button
                         onClick={handleInstallClick}
                         className="px-4 py-2 bg-white text-orange-600 font-bold text-sm rounded-xl hover:bg-orange-50 transition-colors"
                     >
-                        התקן
+                        {t('pwa.install')}
                     </button>
                     <button
                         onClick={handleDismiss}
                         className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"
-                        aria-label="סגור"
+                        aria-label={t('pwa.close')}
                     >
                         <X size={20} />
                     </button>

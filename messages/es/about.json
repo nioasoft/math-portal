@@ -1,0 +1,100 @@
+{
+  "badge": "Proyecto Social para la Educación",
+  "hero": {
+    "title": "Aprender matemáticas,",
+    "titleHighlight": "de forma divertida",
+    "description": "\"Hojas de Trabajo Inteligentes\" es una iniciativa social diseñada para proporcionar a padres y maestros una herramienta simple, gratuita y profesional para la práctica de matemáticas personalizada.",
+    "subdescription": "El sistema cubre temas de matemáticas enseñados en los grados 1-6, permitiendo práctica enfocada en cada nivel."
+  },
+  "howItWorks": {
+    "title": "¿Cómo funciona?",
+    "subtitle": "Tres pasos simples para una hoja de trabajo perfecta",
+    "step1": {
+      "title": "Elige un tema",
+      "description": "¿Suma, multiplicación, fracciones o porcentajes? Selecciona el generador que coincida con el nivel de tu hijo."
+    },
+    "step2": {
+      "title": "Personaliza",
+      "description": "Ajusta el rango de números, la cantidad de ejercicios y el nivel de dificultad para adaptarse exactamente a tus necesidades."
+    },
+    "step3": {
+      "title": "Imprime y resuelve",
+      "description": "Haz clic en \"Imprimir hoja\" y recibe una hoja de trabajo limpia y organizada, incluyendo una clave de respuestas separada."
+    }
+  },
+  "mission": {
+    "badge": "Nuestra misión",
+    "title": "¿Por qué creamos este sitio?",
+    "background": {
+      "label": "Antecedentes:",
+      "text": "El sistema se construyó a partir de la comprensión de que no siempre hay suficientes materiales de práctica adaptados a cada niño. Queríamos crear una herramienta simple y accesible que permita a padres y maestros generar hojas de trabajo fácilmente."
+    },
+    "problem": "Vimos que no siempre hay suficiente práctica nivelada apropiadamente para cada niño. Queríamos crear una situación donde los niños puedan practicar con hojas nuevas hasta que se sientan seguros en el material - ilimitado y gratuito.",
+    "method": {
+      "label": "El método:",
+      "text": "Los ejercicios se construyen gradualmente de simple a complejo, permitiendo adaptación al nivel del niño y progreso a su propio ritmo."
+    },
+    "infinite": "El sitio permite la creación de",
+    "infiniteHighlight": "infinitos ejercicios diferentes",
+    "infiniteText": ". Cada clic en \"Actualizar hoja\" crea nuevos ejercicios, para que puedas practicar una y otra vez hasta el éxito.",
+    "features": {
+      "thinking": "Desarrollar pensamiento",
+      "inkSaving": "Eficiente en tinta",
+      "customization": "Personalización completa",
+      "cleanUI": "Interfaz limpia"
+    }
+  },
+  "free": {
+    "title": "Gratis para siempre",
+    "description": "Creemos que la educación básica y la práctica deben ser accesibles para todos. El sitio está abierto para uso gratuito por padres, maestros y estudiantes.",
+    "cta": "Comenzar a practicar"
+  },
+  "stats": {
+    "title": "En números",
+    "subtitle": "Datos sobre el sistema y su uso",
+    "generators": "generadores diferentes",
+    "grades": "Grados 1-6",
+    "exercises": "ejercicios posibles",
+    "cost": "costo para siempre",
+    "coverage": {
+      "title": "Cobertura curricular",
+      "description": "Los generadores cubren temas de matemáticas enseñados en la escuela primaria en los grados 1-6, incluyendo suma, resta, multiplicación, división, fracciones, porcentajes y geometría."
+    }
+  },
+  "methodology": {
+    "title": "Nuestra metodología",
+    "subtitle": "Principios pedagógicos que sustentan el sistema",
+    "personalized": {
+      "title": "Práctica personalizada",
+      "description": "Cada estudiante progresa a su propio ritmo. El sistema permite ajustar el nivel de dificultad, el rango de números y el tipo de ejercicio a la situación específica de cada niño."
+    },
+    "repetition": {
+      "title": "Repetición y refuerzo",
+      "description": "Las investigaciones muestran que la práctica repetida es clave para dominar las habilidades matemáticas. Crear hojas nuevas permite practicar una y otra vez sin miedo a memorizar respuestas."
+    },
+    "progressive": {
+      "title": "Aprendizaje progresivo",
+      "description": "Los ejercicios se construyen gradualmente de simple a complejo, para que los niños puedan progresar a su propio ritmo y desarrollar confianza en sí mismos."
+    },
+    "feedback": {
+      "title": "Retroalimentación inmediata",
+      "description": "Cada hoja incluye una clave de respuestas separada, permitiendo a niños o padres verificar respuestas inmediatamente e identificar errores recurrentes."
+    }
+  },
+  "cta": {
+    "title": "¿Listo para comenzar?",
+    "description": "Crea hojas de trabajo personalizadas gratis - no se requiere registro",
+    "button": "Ir a nuestros generadores"
+  },
+  "schema": {
+    "name": "Hojas de Trabajo Inteligentes",
+    "description": "Iniciativa educativa que proporciona una herramienta gratuita para padres y maestros para crear hojas de trabajo de matemáticas personalizadas para los grados 1-6",
+    "areaServed": "Israel",
+    "knowsAbout": {
+      "math": "Educación matemática",
+      "elementary": "Escuela primaria",
+      "worksheets": "Hojas de trabajo",
+      "mathematics": "Matemáticas"
+    }
+  }
+}

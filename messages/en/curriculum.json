@@ -1,4 +1,24 @@
 {
+  "grade": {
+    "meta": {
+      "titleTemplate": "Worksheets for {gradeTitle} - Math Exercises to Print",
+      "descriptionTemplate": "{gradeDescription} Math worksheets adapted for {gradeTitle} - {count} topics to practice: {topicNames} and more.",
+      "keywords": {
+        "worksheets": "{gradeTitle} worksheets",
+        "math": "{gradeTitle} math",
+        "printable": "printable worksheets",
+        "exercises": "math exercises"
+      }
+    },
+    "breadcrumb": {
+      "home": "Home"
+    },
+    "topics": {
+      "sectionTitle": "Study Topics",
+      "countTemplate": "{count} topics to practice"
+    },
+    "otherGrades": "Other Grades"
+  },
   "grades": {
     "1": {
       "title": "Grade 1",

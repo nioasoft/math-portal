@@ -1,0 +1,100 @@
+{
+  "badge": "Social Project for Education",
+  "hero": {
+    "title": "Learning Math,",
+    "titleHighlight": "Made Fun",
+    "description": "\"Smart Worksheets\" is a social initiative designed to provide parents and teachers with a simple, free, and professional tool for personalized math practice.",
+    "subdescription": "The system covers math topics taught in grades 1-6, enabling focused practice at every level."
+  },
+  "howItWorks": {
+    "title": "How Does It Work?",
+    "subtitle": "Three simple steps to a perfect worksheet",
+    "step1": {
+      "title": "Choose a Topic",
+      "description": "Addition, multiplication, fractions, or percentages? Select the generator that matches your child's level."
+    },
+    "step2": {
+      "title": "Customize",
+      "description": "Adjust the number range, quantity of exercises, and difficulty level to fit your exact needs."
+    },
+    "step3": {
+      "title": "Print and Solve",
+      "description": "Click \"Print Sheet\" and receive a clean, organized worksheet, including a separate answer key."
+    }
+  },
+  "mission": {
+    "badge": "Our Mission",
+    "title": "Why Did We Create This Site?",
+    "background": {
+      "label": "Background:",
+      "text": "The system was built from the understanding that there aren't always enough practice materials tailored to every child. We wanted to create a simple, accessible tool that allows parents and teachers to easily generate worksheets."
+    },
+    "problem": "We saw that there isn't always enough appropriately leveled practice for every child. We wanted to create a situation where children can practice with new sheets until they feel confident in the material - unlimited and free.",
+    "method": {
+      "label": "The Method:",
+      "text": "The exercises are built gradually from simple to complex, allowing adaptation to the child's level and progress at their own pace."
+    },
+    "infinite": "The site enables creation of",
+    "infiniteHighlight": "infinite different exercises",
+    "infiniteText": ". Each click of \"Refresh Sheet\" creates new exercises, so you can practice over and over until success.",
+    "features": {
+      "thinking": "Develop Thinking",
+      "inkSaving": "Ink Efficient",
+      "customization": "Full Customization",
+      "cleanUI": "Clean Interface"
+    }
+  },
+  "free": {
+    "title": "Free Forever",
+    "description": "We believe that basic education and practice should be accessible to everyone. The site is open for free use by parents, teachers, and students.",
+    "cta": "Start Practicing"
+  },
+  "stats": {
+    "title": "By the Numbers",
+    "subtitle": "Data about the system and its usage",
+    "generators": "different generators",
+    "grades": "Grades 1-6",
+    "exercises": "possible exercises",
+    "cost": "cost forever",
+    "coverage": {
+      "title": "Curriculum Coverage",
+      "description": "The generators cover math topics taught in elementary school grades 1-6, including addition, subtraction, multiplication, division, fractions, percentages, and geometry."
+    }
+  },
+  "methodology": {
+    "title": "Our Methodology",
+    "subtitle": "Pedagogical principles underlying the system",
+    "personalized": {
+      "title": "Personalized Practice",
+      "description": "Each student progresses at their own pace. The system allows adjusting difficulty level, number range, and exercise type to each child's specific situation."
+    },
+    "repetition": {
+      "title": "Repetition and Reinforcement",
+      "description": "Research shows that repeated practice is key to mastering mathematical skills. Creating new sheets allows practicing over and over without fear of memorizing answers."
+    },
+    "progressive": {
+      "title": "Progressive Learning",
+      "description": "Exercises are built gradually from simple to complex, so children can progress at their own pace and build self-confidence."
+    },
+    "feedback": {
+      "title": "Immediate Feedback",
+      "description": "Each sheet includes a separate answer key, allowing children or parents to check answers immediately and identify recurring mistakes."
+    }
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "description": "Create personalized worksheets for free - no registration required",
+    "button": "Go to Our Generators"
+  },
+  "schema": {
+    "name": "Smart Worksheets",
+    "description": "Educational initiative providing a free tool for parents and teachers to create personalized math worksheets for grades 1-6",
+    "areaServed": "Israel",
+    "knowsAbout": {
+      "math": "Mathematical Education",
+      "elementary": "Elementary School",
+      "worksheets": "Worksheets",
+      "mathematics": "Mathematics"
+    }
+  }
+}

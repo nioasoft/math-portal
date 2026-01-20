@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 interface ContentSectionProps {
     title: string;
@@ -14,13 +17,19 @@ interface ContentSectionProps {
 export default function ContentSection({
     title,
     description,
-    featuresTitle = "מה אפשר לתרגל?",
+    featuresTitle,
     features,
-    benefitsTitle = "למה להשתמש במחולל דפי העבודה?",
+    benefitsTitle,
     benefits,
-    tipsTitle = "טיפים לתרגול מוצלח עם הילדים",
+    tipsTitle,
     tips
 }: ContentSectionProps) {
+    const t = useTranslations('common');
+
+    // Use provided props or fall back to translations
+    const resolvedFeaturesTitle = featuresTitle ?? t('contentSection.featuresTitle');
+    const resolvedBenefitsTitle = benefitsTitle ?? t('contentSection.benefitsTitle');
+    const resolvedTipsTitle = tipsTitle ?? t('contentSection.tipsTitle');
     // Generate HowTo Schema for worksheet generation instructions
     const howToSchema = {
         "@context": "https://schema.org",
@@ -56,7 +65,7 @@ export default function ContentSection({
                 {features && features.length > 0 && (
                     <section className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
                         <h3 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
-                            <span className="text-blue-500 text-2xl">•</span> {featuresTitle}
+                            <span className="text-blue-500 text-2xl">•</span> {resolvedFeaturesTitle}
                         </h3>
                         <ul className="space-y-3">
                             {features.map((feature, idx) => (
@@ -72,7 +81,7 @@ export default function ContentSection({
                 {/* Benefits / FAQ */}
                 {benefits && benefits.length > 0 && (
                     <section className="space-y-6">
-                        <h3 className="text-xl font-bold text-slate-800 mb-4">{benefitsTitle}</h3>
+                        <h3 className="text-xl font-bold text-slate-800 mb-4">{resolvedBenefitsTitle}</h3>
                         <div className="space-y-6">
                             {benefits.map((item, idx) => (
                                 <div key={idx}>
@@ -88,7 +97,7 @@ export default function ContentSection({
             {/* Educational Tips */}
             {tips && tips.length > 0 && (
                 <section className="bg-blue-50 p-8 rounded-2xl border border-blue-100">
-                    <h3 className="text-xl font-bold text-blue-900 mb-6 text-center">{tipsTitle}</h3>
+                    <h3 className="text-xl font-bold text-blue-900 mb-6 text-center">{resolvedTipsTitle}</h3>
                     <div className="grid sm:grid-cols-2 gap-6">
                         {tips.map((tip, idx) => (
                             <div key={idx} className="bg-white p-4 rounded-xl shadow-sm border border-blue-100/50">

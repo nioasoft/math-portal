@@ -4,30 +4,39 @@ import { Brain, Printer, Settings, Sparkles, Heart, ArrowLeft, Calculator, Users
 import Link from 'next/link';
 import { AdSlot } from '@/components/AdSlot';
 import Script from 'next/script';
+import { getTranslations } from 'next-intl/server';
+import type { Metadata } from 'next';
 
-export const metadata = {
-    title: 'אודות - דפי עבודה חכמים | מיזם חינוכי מבוסס תוכנית לימודים',
-    description: 'מיזם חינוכי ליצירת דפי עבודה בחשבון לכיתות א\'-ו\'. כלי חינמי ונגיש להורים, מורים ותלמידים.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'meta' });
 
-export default function AboutPage() {
+    return {
+        title: t('pages.about.title'),
+        description: t('pages.about.description'),
+    };
+}
+
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'about' });
     const organizationSchema = {
         "@context": "https://schema.org",
         "@type": "EducationalOrganization",
-        "name": "דפי עבודה חכמים",
+        "name": t('schema.name'),
         "alternateName": "Tirgul",
         "url": "https://www.tirgul.net",
-        "description": "מיזם חינוכי המספק כלי חינמי להורים ומורים ליצירת דפי עבודה מותאמים אישית בחשבון לכיתות א'-ו'",
+        "description": t('schema.description'),
         "foundingDate": "2024",
         "areaServed": {
             "@type": "Country",
-            "name": "ישראל"
+            "name": t('schema.areaServed')
         },
         "knowsAbout": [
-            "חינוך מתמטי",
-            "בית ספר יסודי",
-            "דפי עבודה",
-            "מתמטיקה"
+            t('schema.knowsAbout.math'),
+            t('schema.knowsAbout.elementary'),
+            t('schema.knowsAbout.worksheets'),
+            t('schema.knowsAbout.mathematics')
         ]
     };
 
@@ -53,7 +62,7 @@ export default function AboutPage() {
                     <div className="container-custom relative z-10 text-center max-w-3xl mx-auto">
                         <div className="inline-flex items-center gap-2 bg-white border border-orange-200 rounded-full px-5 py-2.5 shadow-sm mb-6">
                             <Heart size={16} className="text-rose-500" />
-                            <span className="text-sm font-bold text-slate-700">מיזם חברתי לחינוך</span>
+                            <span className="text-sm font-bold text-slate-700">{t('badge')}</span>
                         </div>
 
                         <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-3xl mb-6 shadow-lg shadow-orange-200">
@@ -61,13 +70,13 @@ export default function AboutPage() {
                         </div>
 
                         <h1 className="text-4xl md:text-5xl font-black text-slate-800 mb-6">
-                            לומדים חשבון, <span className="text-gradient-warm">אבל בכיף</span>
+                            {t('hero.title')} <span className="text-gradient-warm">{t('hero.titleHighlight')}</span>
                         </h1>
                         <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-4">
-                            &quot;דפי עבודה חכמים&quot; הוא מיזם חברתי שנועד לתת להורים ולמורים כלי פשוט, חינמי ומקצועי לתרגול חשבון מותאם אישית.
+                            {t('hero.description')}
                         </p>
                         <p className="text-base text-slate-500 leading-relaxed max-w-2xl mx-auto">
-                            המערכת מכסה את נושאי החשבון הנלמדים בכיתות א&apos;-ו&apos;, ומאפשרת תרגול ממוקד בכל רמה.
+                            {t('hero.subdescription')}
                         </p>
                     </div>
                 </section>
@@ -76,33 +85,33 @@ export default function AboutPage() {
                 <section className="py-20">
                     <div className="container-custom">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4">איך זה עובד?</h2>
-                            <p className="text-lg text-slate-500">שלושה צעדים פשוטים לדף מושלם</p>
+                            <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4">{t('howItWorks.title')}</h2>
+                            <p className="text-lg text-slate-500">{t('howItWorks.subtitle')}</p>
                         </div>
 
                         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                             <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 text-center relative overflow-hidden group hover:shadow-xl hover:-translate-y-1 transition-all">
                                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-sky-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                 <div className="w-16 h-16 bg-gradient-to-br from-sky-400 to-sky-500 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-black shadow-lg shadow-sky-200 relative z-10">1</div>
-                                <h3 className="text-xl font-bold mb-3 relative z-10">בוחרים נושא</h3>
+                                <h3 className="text-xl font-bold mb-3 relative z-10">{t('howItWorks.step1.title')}</h3>
                                 <p className="text-slate-500 relative z-10">
-                                    חיבור, כפל, שברים או אחוזים? בחרו את המחולל המתאים לרמה של הילד.
+                                    {t('howItWorks.step1.description')}
                                 </p>
                             </div>
                             <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 text-center relative overflow-hidden group hover:shadow-xl hover:-translate-y-1 transition-all">
                                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-violet-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                 <div className="w-16 h-16 bg-gradient-to-br from-violet-400 to-violet-500 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-black shadow-lg shadow-violet-200 relative z-10">2</div>
-                                <h3 className="text-xl font-bold mb-3 relative z-10">מתאימים אישית</h3>
+                                <h3 className="text-xl font-bold mb-3 relative z-10">{t('howItWorks.step2.title')}</h3>
                                 <p className="text-slate-500 relative z-10">
-                                    משנים את טווח המספרים, כמות התרגילים ורמת הקושי בדיוק לצרכים שלכם.
+                                    {t('howItWorks.step2.description')}
                                 </p>
                             </div>
                             <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 text-center relative overflow-hidden group hover:shadow-xl hover:-translate-y-1 transition-all">
                                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-500 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-black shadow-lg shadow-emerald-200 relative z-10">3</div>
-                                <h3 className="text-xl font-bold mb-3 relative z-10">מדפיסים ופותרים</h3>
+                                <h3 className="text-xl font-bold mb-3 relative z-10">{t('howItWorks.step3.title')}</h3>
                                 <p className="text-slate-500 relative z-10">
-                                    לוחצים על &quot;הדפס דף&quot; ומקבלים דף עבודה נקי ומסודר, כולל דף תשובות בנפרד.
+                                    {t('howItWorks.step3.description')}
                                 </p>
                             </div>
                         </div>
@@ -121,41 +130,41 @@ export default function AboutPage() {
                             <div>
                                 <div className="inline-flex items-center gap-2 bg-orange-50 text-orange-700 px-4 py-2 rounded-full text-sm font-bold mb-6">
                                     <Target size={16} />
-                                    המטרה שלנו
+                                    {t('mission.badge')}
                                 </div>
                                 <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-6 leading-tight">
-                                    למה הקמנו את האתר?
+                                    {t('mission.title')}
                                 </h2>
                                 <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                                     <p>
-                                        <strong className="text-slate-800">הרקע:</strong> המערכת נבנתה מתוך הבנה שלא תמיד יש מספיק חומרי תרגול מותאמים לכל ילד. רצינו ליצור כלי פשוט ונגיש שיאפשר להורים ומורים לייצר דפי עבודה בקלות.
+                                        <strong className="text-slate-800">{t('mission.background.label')}</strong> {t('mission.background.text')}
                                     </p>
                                     <p>
-                                        ראינו שלא תמיד יש מספיק תרגול מותאם ברמה הנכונה לכל ילד. רצינו לייצר מצב שבו הילד יכול לתרגל עם דפים חדשים עד שהוא מרגיש בטוח בחומר - ללא הגבלה ובחינם.
+                                        {t('mission.problem')}
                                     </p>
                                     <p>
-                                        <strong className="text-slate-800">השיטה:</strong> התרגילים בנויים בהדרגה מהקל למורכב, ומאפשרים התאמה לרמת הילד והתקדמות בקצב אישי.
+                                        <strong className="text-slate-800">{t('mission.method.label')}</strong> {t('mission.method.text')}
                                     </p>
                                     <p>
-                                        האתר מאפשר יצירה של <strong className="text-slate-800">אינסוף תרגילים שונים</strong>. כל לחיצה על &quot;רענן דף&quot; יוצרת תרגילים חדשים, כך שאפשר לתרגל שוב ושוב עד להצלחה.
+                                        {t('mission.infinite')} <strong className="text-slate-800">{t('mission.infiniteHighlight')}</strong>{t('mission.infiniteText')}
                                     </p>
                                 </div>
                                 <div className="mt-8 grid grid-cols-2 gap-4">
                                     <div className="flex items-center gap-3 bg-emerald-50 p-4 rounded-xl">
                                         <Brain size={22} className="text-emerald-600" />
-                                        <span className="font-bold text-slate-700">פיתוח חשיבה</span>
+                                        <span className="font-bold text-slate-700">{t('mission.features.thinking')}</span>
                                     </div>
                                     <div className="flex items-center gap-3 bg-sky-50 p-4 rounded-xl">
                                         <Printer size={22} className="text-sky-600" />
-                                        <span className="font-bold text-slate-700">חסכוני בדיו</span>
+                                        <span className="font-bold text-slate-700">{t('mission.features.inkSaving')}</span>
                                     </div>
                                     <div className="flex items-center gap-3 bg-violet-50 p-4 rounded-xl">
                                         <Settings size={22} className="text-violet-600" />
-                                        <span className="font-bold text-slate-700">התאמה מלאה</span>
+                                        <span className="font-bold text-slate-700">{t('mission.features.customization')}</span>
                                     </div>
                                     <div className="flex items-center gap-3 bg-amber-50 p-4 rounded-xl">
                                         <Sparkles size={22} className="text-amber-600" />
-                                        <span className="font-bold text-slate-700">ממשק נקי</span>
+                                        <span className="font-bold text-slate-700">{t('mission.features.cleanUI')}</span>
                                     </div>
                                 </div>
                             </div>
@@ -165,16 +174,15 @@ export default function AboutPage() {
                                     <div className="absolute -right-10 -top-10 text-white/10">
                                         <Heart size={200} fill="currentColor" />
                                     </div>
-                                    <h3 className="text-2xl font-black text-white mb-4 relative z-10">חינם לתמיד</h3>
+                                    <h3 className="text-2xl font-black text-white mb-4 relative z-10">{t('free.title')}</h3>
                                     <p className="text-orange-100 relative z-10 mb-6 text-lg leading-relaxed">
-                                        אנחנו מאמינים שחינוך בסיסי ותרגול צריכים להיות נגישים לכולם.
-                                        האתר פתוח לשימוש חופשי להורים, מורים ותלמידים.
+                                        {t('free.description')}
                                     </p>
                                     <Link
-                                        href="/"
+                                        href={`/${locale}`}
                                         className="inline-flex items-center gap-2 bg-white text-orange-600 px-6 py-3 rounded-xl font-bold hover:shadow-lg hover:-translate-y-0.5 transition-all relative z-10"
                                     >
-                                        <span>להתחלת התרגול</span>
+                                        <span>{t('free.cta')}</span>
                                         <ArrowLeft size={18} />
                                     </Link>
                                 </div>
@@ -187,32 +195,31 @@ export default function AboutPage() {
                 <section className="py-16 bg-slate-50">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-2xl md:text-3xl font-black text-slate-800 mb-3">במספרים</h2>
-                            <p className="text-slate-500">נתונים על המערכת והשימוש בה</p>
+                            <h2 className="text-2xl md:text-3xl font-black text-slate-800 mb-3">{t('stats.title')}</h2>
+                            <p className="text-slate-500">{t('stats.subtitle')}</p>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
                             <div className="bg-white p-6 rounded-2xl text-center shadow-sm border border-slate-100">
                                 <div className="text-4xl font-black text-orange-500 mb-2">12+</div>
-                                <div className="text-slate-500 font-medium">מחוללים שונים</div>
+                                <div className="text-slate-500 font-medium">{t('stats.generators')}</div>
                             </div>
                             <div className="bg-white p-6 rounded-2xl text-center shadow-sm border border-slate-100">
                                 <div className="text-4xl font-black text-sky-500 mb-2">6</div>
-                                <div className="text-slate-500 font-medium">כיתות א&apos;-ו&apos;</div>
+                                <div className="text-slate-500 font-medium">{t('stats.grades')}</div>
                             </div>
                             <div className="bg-white p-6 rounded-2xl text-center shadow-sm border border-slate-100">
                                 <div className="text-4xl font-black text-emerald-500 mb-2">∞</div>
-                                <div className="text-slate-500 font-medium">תרגילים אפשריים</div>
+                                <div className="text-slate-500 font-medium">{t('stats.exercises')}</div>
                             </div>
                             <div className="bg-white p-6 rounded-2xl text-center shadow-sm border border-slate-100">
                                 <div className="text-4xl font-black text-rose-500 mb-2">0₪</div>
-                                <div className="text-slate-500 font-medium">עלות לנצח</div>
+                                <div className="text-slate-500 font-medium">{t('stats.cost')}</div>
                             </div>
                         </div>
                         <div className="max-w-2xl mx-auto mt-12 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                            <h3 className="text-lg font-bold text-slate-800 mb-3 text-center">כיסוי נושאי הלימוד</h3>
+                            <h3 className="text-lg font-bold text-slate-800 mb-3 text-center">{t('stats.coverage.title')}</h3>
                             <p className="text-slate-600 text-center">
-                                המחוללים מכסים את נושאי החשבון הנלמדים בבית הספר היסודי בכיתות א&apos; עד ו&apos;,
-                                כולל חיבור, חיסור, כפל, חילוק, שברים, אחוזים והנדסה.
+                                {t('stats.coverage.description')}
                             </p>
                         </div>
                     </div>
@@ -222,44 +229,44 @@ export default function AboutPage() {
                 <section className="py-20 bg-slate-50">
                     <div className="container-custom max-w-4xl">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4">המתודולוגיה שלנו</h2>
-                            <p className="text-lg text-slate-500">עקרונות פדגוגיים שעומדים בבסיס המערכת</p>
+                            <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4">{t('methodology.title')}</h2>
+                            <p className="text-lg text-slate-500">{t('methodology.subtitle')}</p>
                         </div>
                         <div className="grid md:grid-cols-2 gap-8">
                             <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
                                 <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-500 rounded-xl flex items-center justify-center mb-4">
                                     <Target size={24} className="text-white" />
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-800 mb-3">תרגול מותאם אישית</h3>
+                                <h3 className="text-xl font-bold text-slate-800 mb-3">{t('methodology.personalized.title')}</h3>
                                 <p className="text-slate-600">
-                                    כל תלמיד מתקדם בקצב שלו. המערכת מאפשרת להתאים את רמת הקושי, טווח המספרים וסוג התרגילים למצב הספציפי של כל ילד.
+                                    {t('methodology.personalized.description')}
                                 </p>
                             </div>
                             <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
                                 <div className="w-12 h-12 bg-gradient-to-br from-sky-400 to-sky-500 rounded-xl flex items-center justify-center mb-4">
                                     <Brain size={24} className="text-white" />
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-800 mb-3">חזרה וחיזוק</h3>
+                                <h3 className="text-xl font-bold text-slate-800 mb-3">{t('methodology.repetition.title')}</h3>
                                 <p className="text-slate-600">
-                                    מחקרים מראים שתרגול חוזר הוא המפתח להטמעת כישורים מתמטיים. יצירת דפים חדשים מאפשרת לתרגל שוב ושוב ללא חשש מזכירת התשובות.
+                                    {t('methodology.repetition.description')}
                                 </p>
                             </div>
                             <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
                                 <div className="w-12 h-12 bg-gradient-to-br from-violet-400 to-violet-500 rounded-xl flex items-center justify-center mb-4">
                                     <Settings size={24} className="text-white" />
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-800 mb-3">למידה בונה</h3>
+                                <h3 className="text-xl font-bold text-slate-800 mb-3">{t('methodology.progressive.title')}</h3>
                                 <p className="text-slate-600">
-                                    התרגילים בנויים בהדרגה מהפשוט למורכב, כך שהילד יכול להתקדם בקצב שלו ולבנות ביטחון עצמי.
+                                    {t('methodology.progressive.description')}
                                 </p>
                             </div>
                             <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
                                 <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-emerald-500 rounded-xl flex items-center justify-center mb-4">
                                     <Sparkles size={24} className="text-white" />
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-800 mb-3">משוב מיידי</h3>
+                                <h3 className="text-xl font-bold text-slate-800 mb-3">{t('methodology.feedback.title')}</h3>
                                 <p className="text-slate-600">
-                                    כל דף כולל דף תשובות נפרד, המאפשר לילד או להורה לבדוק את התשובות באופן מיידי ולזהות טעויות חוזרות.
+                                    {t('methodology.feedback.description')}
                                 </p>
                             </div>
                         </div>
@@ -273,15 +280,15 @@ export default function AboutPage() {
                         <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-500 rounded-2xl mb-6 shadow-lg">
                             <Users size={32} className="text-white" />
                         </div>
-                        <h2 className="text-3xl md:text-4xl font-black text-white mb-4">מוכנים להתחיל?</h2>
+                        <h2 className="text-3xl md:text-4xl font-black text-white mb-4">{t('cta.title')}</h2>
                         <p className="text-xl text-slate-400 mb-8 max-w-xl mx-auto">
-                            צרו דפי עבודה מותאמים אישית בחינם - בלי הרשמה
+                            {t('cta.description')}
                         </p>
                         <Link
-                            href="/"
+                            href={`/${locale}`}
                             className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-xl hover:shadow-orange-500/20 hover:-translate-y-0.5 transition-all"
                         >
-                            <span>למחוללים שלנו</span>
+                            <span>{t('cta.button')}</span>
                             <ArrowLeft size={20} />
                         </Link>
                     </div>

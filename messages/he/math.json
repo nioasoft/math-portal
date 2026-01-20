@@ -6,9 +6,9 @@
     "division": "חילוק"
   },
   "notation": {
-    "divisionSymbol": ":",
-    "decimalSeparator": ".",
-    "thousandsSeparator": ","
+    "division": ":",
+    "decimal": ".",
+    "thousands": ","
   },
   "labels": {
     "exercise": "תרגיל",

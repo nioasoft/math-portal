@@ -1,41 +1,64 @@
 {
+  "operations": {
+    "addition": "جمع",
+    "subtraction": "طرح",
+    "multiplication": "ضرب",
+    "division": "قسمة"
+  },
   "notation": {
-    "division": ":",
+    "division": "÷",
     "decimal": ".",
     "thousands": ","
   },
+  "labels": {
+    "exercise": "تمرين",
+    "answer": "إجابة",
+    "answers": "إجابات",
+    "range": "النطاق",
+    "from": "من",
+    "to": "إلى",
+    "difficulty": "الصعوبة",
+    "easy": "سهل",
+    "medium": "متوسط",
+    "hard": "صعب",
+    "count": "عدد التمارين",
+    "generate": "إنشاء تمارين",
+    "print": "طباعة",
+    "showAnswers": "إظهار الإجابات",
+    "hideAnswers": "إخفاء الإجابات"
+  },
   "terms": {
-    "numerator": "מונה",
-    "denominator": "מכנה",
-    "fraction": "שבר",
-    "mixedNumber": "מספר מעורב",
-    "improperFraction": "שבר לא תקין",
-    "percent": "אחוז",
-    "ratio": "יחס",
-    "decimal": "שבר עשרוני"
+    "numerator": "البسط",
+    "denominator": "المقام",
+    "fraction": "كسر",
+    "mixedNumber": "عدد كسري",
+    "improperFraction": "كسر غير حقيقي",
+    "percent": "نسبة مئوية",
+    "ratio": "نسبة",
+    "decimal": "عدد عشري"
   },
   "shapes": {
-    "square": "ריבוע",
-    "rectangle": "מלבן",
-    "triangle": "משולש",
-    "circle": "עיגול",
-    "parallelogram": "מקבילית",
-    "trapezoid": "טרפז"
+    "square": "مربع",
+    "rectangle": "مستطيل",
+    "triangle": "مثلث",
+    "circle": "دائرة",
+    "parallelogram": "متوازي أضلاع",
+    "trapezoid": "شبه منحرف"
   },
   "units": {
     "length": {
-      "meter": "מטר",
-      "centimeter": "סנטימטר",
-      "kilometer": "קילומטר"
+      "meter": "متر",
+      "centimeter": "سنتيمتر",
+      "kilometer": "كيلومتر"
     },
     "weight": {
-      "kilogram": "קילוגרם",
-      "gram": "גרם"
+      "kilogram": "كيلوغرام",
+      "gram": "غرام"
     },
     "time": {
-      "hour": "שעה",
-      "minute": "דקה",
-      "second": "שנייה"
+      "hour": "ساعة",
+      "minute": "دقيقة",
+      "second": "ثانية"
     }
   }
 }

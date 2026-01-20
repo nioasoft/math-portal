@@ -1,41 +1,64 @@
 {
+  "operations": {
+    "addition": "Addition",
+    "subtraction": "Subtraktion",
+    "multiplication": "Multiplikation",
+    "division": "Division"
+  },
   "notation": {
     "division": ":",
-    "decimal": ".",
-    "thousands": ","
+    "decimal": ",",
+    "thousands": "."
+  },
+  "labels": {
+    "exercise": "Übung",
+    "answer": "Antwort",
+    "answers": "Antworten",
+    "range": "Bereich",
+    "from": "Von",
+    "to": "Bis",
+    "difficulty": "Schwierigkeit",
+    "easy": "Leicht",
+    "medium": "Mittel",
+    "hard": "Schwer",
+    "count": "Anzahl der Übungen",
+    "generate": "Übungen erstellen",
+    "print": "Drucken",
+    "showAnswers": "Antworten anzeigen",
+    "hideAnswers": "Antworten verbergen"
   },
   "terms": {
-    "numerator": "מונה",
-    "denominator": "מכנה",
-    "fraction": "שבר",
-    "mixedNumber": "מספר מעורב",
-    "improperFraction": "שבר לא תקין",
-    "percent": "אחוז",
-    "ratio": "יחס",
-    "decimal": "שבר עשרוני"
+    "numerator": "Zähler",
+    "denominator": "Nenner",
+    "fraction": "Bruch",
+    "mixedNumber": "Gemischte Zahl",
+    "improperFraction": "Unechter Bruch",
+    "percent": "Prozent",
+    "ratio": "Verhältnis",
+    "decimal": "Dezimalzahl"
   },
   "shapes": {
-    "square": "ריבוע",
-    "rectangle": "מלבן",
-    "triangle": "משולש",
-    "circle": "עיגול",
-    "parallelogram": "מקבילית",
-    "trapezoid": "טרפז"
+    "square": "Quadrat",
+    "rectangle": "Rechteck",
+    "triangle": "Dreieck",
+    "circle": "Kreis",
+    "parallelogram": "Parallelogramm",
+    "trapezoid": "Trapez"
   },
   "units": {
     "length": {
-      "meter": "מטר",
-      "centimeter": "סנטימטר",
-      "kilometer": "קילומטר"
+      "meter": "Meter",
+      "centimeter": "Zentimeter",
+      "kilometer": "Kilometer"
     },
     "weight": {
-      "kilogram": "קילוגרם",
-      "gram": "גרם"
+      "kilogram": "Kilogramm",
+      "gram": "Gramm"
     },
     "time": {
-      "hour": "שעה",
-      "minute": "דקה",
-      "second": "שנייה"
+      "hour": "Stunde",
+      "minute": "Minute",
+      "second": "Sekunde"
     }
   }
 }

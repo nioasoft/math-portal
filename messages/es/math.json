@@ -1,41 +1,64 @@
 {
+  "operations": {
+    "addition": "Suma",
+    "subtraction": "Resta",
+    "multiplication": "Multiplicación",
+    "division": "División"
+  },
   "notation": {
-    "division": ":",
-    "decimal": ".",
-    "thousands": ","
+    "division": "÷",
+    "decimal": ",",
+    "thousands": "."
+  },
+  "labels": {
+    "exercise": "Ejercicio",
+    "answer": "Respuesta",
+    "answers": "Respuestas",
+    "range": "Rango",
+    "from": "De",
+    "to": "A",
+    "difficulty": "Dificultad",
+    "easy": "Fácil",
+    "medium": "Medio",
+    "hard": "Difícil",
+    "count": "Número de ejercicios",
+    "generate": "Generar ejercicios",
+    "print": "Imprimir",
+    "showAnswers": "Mostrar respuestas",
+    "hideAnswers": "Ocultar respuestas"
   },
   "terms": {
-    "numerator": "מונה",
-    "denominator": "מכנה",
-    "fraction": "שבר",
-    "mixedNumber": "מספר מעורב",
-    "improperFraction": "שבר לא תקין",
-    "percent": "אחוז",
-    "ratio": "יחס",
-    "decimal": "שבר עשרוני"
+    "numerator": "Numerador",
+    "denominator": "Denominador",
+    "fraction": "Fracción",
+    "mixedNumber": "Número mixto",
+    "improperFraction": "Fracción impropia",
+    "percent": "Porcentaje",
+    "ratio": "Razón",
+    "decimal": "Decimal"
   },
   "shapes": {
-    "square": "ריבוע",
-    "rectangle": "מלבן",
-    "triangle": "משולש",
-    "circle": "עיגול",
-    "parallelogram": "מקבילית",
-    "trapezoid": "טרפז"
+    "square": "Cuadrado",
+    "rectangle": "Rectángulo",
+    "triangle": "Triángulo",
+    "circle": "Círculo",
+    "parallelogram": "Paralelogramo",
+    "trapezoid": "Trapecio"
   },
   "units": {
     "length": {
-      "meter": "מטר",
-      "centimeter": "סנטימטר",
-      "kilometer": "קילומטר"
+      "meter": "Metro",
+      "centimeter": "Centímetro",
+      "kilometer": "Kilómetro"
     },
     "weight": {
-      "kilogram": "קילוגרם",
-      "gram": "גרם"
+      "kilogram": "Kilogramo",
+      "gram": "Gramo"
     },
     "time": {
-      "hour": "שעה",
-      "minute": "דקה",
-      "second": "שנייה"
+      "hour": "Hora",
+      "minute": "Minuto",
+      "second": "Segundo"
     }
   }
 }

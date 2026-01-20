@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
 import { AdSlot } from '@/components/AdSlot';
 import { trackPrintEvent } from '@/lib/analytics';
+import { useTranslations } from 'next-intl';
 
 type Difficulty = 'level1' | 'level2' | 'level3' | 'level4' | 'level5';
 type Operation = '+' | '-' | '*' | ':';
@@ -116,6 +117,7 @@ function createProblems(difficulty: Difficulty, count: number): FractionProblem[
 }
 
 export default function FractionsClient() {
+    const t = useTranslations('worksheet');
     const [showAnswers, setShowAnswers] = useState<boolean>(false);
     const [difficulty, setDifficulty] = useState<Difficulty>('level1');
     const [count] = useState<number>(12); // Problems per page
@@ -205,23 +207,23 @@ export default function FractionsClient() {
                         <Link href="/" className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
                             <ArrowLeft size={20} />
                         </Link>
-                        <h1 className="text-xl font-bold text-slate-800">מחולל דפי עבודה - שברים</h1>
+                        <h1 className="text-xl font-bold text-slate-800">{t('fractions.generatorTitle')}</h1>
                     </div>
 
                     <div className="flex items-center gap-4 flex-1 justify-center">
                         <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 p-1.5 rounded-lg">
-                            <span className="text-xs text-slate-400 mr-2" id="difficulty-label">סוג:</span>
+                            <span className="text-xs text-slate-400 mr-2" id="difficulty-label">{t('fractions.difficultyLabel')}</span>
                             <select
                                 className="bg-transparent text-sm font-medium px-2 py-1 outline-none cursor-pointer"
                                 value={difficulty}
                                 onChange={(e) => handleDifficultyChange(e.target.value as Difficulty)}
                                 aria-labelledby="difficulty-label"
                             >
-                                <option value="level1">רמה 1: מכנים זהים (+/-)</option>
-                                <option value="level2">רמה 2: מכנים שונים קלים (+/-)</option>
-                                <option value="level3">רמה 3: מספרים מעורבים</option>
-                                <option value="level4">רמה 4: כפל וחילוק שברים</option>
-                                <option value="level5">רמה 5: צמצום והרחבה</option>
+                                <option value="level1">{t('fractions.levels.level1')}</option>
+                                <option value="level2">{t('fractions.levels.level2')}</option>
+                                <option value="level3">{t('fractions.levels.level3')}</option>
+                                <option value="level4">{t('fractions.levels.level4')}</option>
+                                <option value="level5">{t('fractions.levels.level5')}</option>
                             </select>
                         </div>
 
@@ -230,7 +232,7 @@ export default function FractionsClient() {
                             className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-blue-700 transition"
                         >
                             <RefreshCw size={16} />
-                            <span className="hidden sm:inline">רענן</span>
+                            <span className="hidden sm:inline">{t('controls.refresh')}</span>
                         </button>
 
                         <button
@@ -239,7 +241,7 @@ export default function FractionsClient() {
                             aria-pressed={showAnswers}
                         >
                             {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
-                            <span className="hidden sm:inline">{showAnswers ? 'הסתר תשובות' : 'הצג תשובות'}</span>
+                            <span className="hidden sm:inline">{showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}</span>
                         </button>
                     </div>
 
@@ -248,14 +250,14 @@ export default function FractionsClient() {
                         className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-emerald-200 transition shadow-sm"
                     >
                         <HelpCircle size={16} />
-                        <span className="hidden sm:inline">הסברים להורים</span>
+                        <span className="hidden sm:inline">{t('controls.helpForParents')}</span>
                     </Link>
                     <button
                         onClick={onPrint}
                         className="bg-slate-900 text-white px-6 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-slate-800 transition"
                     >
                         <Printer size={16} />
-                        <span>הדפס</span>
+                        <span>{t('controls.print')}</span>
                     </button>
                 </div>
             </div>
@@ -265,11 +267,7 @@ export default function FractionsClient() {
                 <div className="min-w-[210mm] max-w-[210mm] mx-auto mt-8 bg-white shadow-xl min-h-[297mm] p-[20mm] print:p-[10mm] print:shadow-none print:mt-0 print:mx-0 print:w-full print:min-h-0 print:h-auto print:overflow-visible">
                     <div className="text-center border-b-2 border-slate-100 pb-8 mb-12 print:mb-4 print:pb-2 print:border-b">
                         <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">
-                            {difficulty === 'level1' && 'חיבור וחיסור שברים - מכנים זהים'}
-                            {difficulty === 'level2' && 'חיבור וחיסור שברים - מכנים שונים'}
-                            {difficulty === 'level3' && 'מספרים מעורבים'}
-                            {difficulty === 'level4' && 'כפל וחילוק שברים'}
-                            {difficulty === 'level5' && 'צמצום שברים'}
+                            {t(`fractions.worksheetTitles.${difficulty}`)}
                         </h2>
                     </div>
 
@@ -307,7 +305,7 @@ export default function FractionsClient() {
                     </div>
 
                     <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
-                        tirgul.net - דפי עבודה חכמים ©
+                        {t('print.copyright')}
                     </div>
                 </div>
             </div>
@@ -318,29 +316,20 @@ export default function FractionsClient() {
             </div>
 
             <ContentSection
-                title="דפי עבודה בשברים - המדריך המלא"
-                description="המחולל המתקדם מאפשר ליצור דפי תרגול בכל נושאי השברים: החל מהכרת השבר, דרך פעולות חשבון ועד שברים מעורבים."
-                features={[
-                    "חמש רמות קושי מובנות להתקדמות הדרגתית",
-                    "תמיכה מלאה במספרים מעורבים ושברים מדומים",
-                    "תרגול ממוקד של כפל וחילוק שברים",
-                    "דפי עבודה מיוחדים לתרגול צמצום והרחבה"
-                ]}
+                title={t('fractions.content.title')}
+                description={t('fractions.content.description')}
+                features={t.raw('fractions.content.features') as string[]}
                 benefits={[
                     {
-                        title: "הבנה עמוקה של השבר",
-                        text: "התרגול המודולרי מאפשר לילד לבודד כל קושי בנפרד (רק מכנה משותף, או רק המרה למעורב) ולשלוט בו."
+                        title: t('fractions.content.benefits.deepUnderstanding.title'),
+                        text: t('fractions.content.benefits.deepUnderstanding.text')
                     },
                     {
-                        title: "הכנה למבחן",
-                        text: "כל סוגי התרגילים שמופיעים במבחני משרד החינוך לכיתות ד'-ו' נמצאים כאן."
+                        title: t('fractions.content.benefits.examPrep.title'),
+                        text: t('fractions.content.benefits.examPrep.text')
                     }
                 ]}
-                tips={[
-                    "בכפל שברים: כופלים מונה במונה ומכנה במכנה. פשוט וקל!",
-                    "בחילוק שברים: הופכים את השבר השני (המחלק) וכופלים.",
-                    "תמיד נסו לצמצם את התשובה הסופית ככל האפשר."
-                ]}
+                tips={t.raw('fractions.content.tips') as string[]}
             />
         </div>
     );

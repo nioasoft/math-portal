@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Calculator, Percent, PieChart, Gamepad2, Trophy, Zap } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { generateAlternates } from '@/lib/seo';
@@ -16,34 +16,33 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     };
 }
 
-const getTopics = (locale: string) => [
+const topics = [
     {
         id: 'math',
         icon: Calculator,
         color: 'from-blue-500 to-blue-600',
         bgColor: 'bg-blue-50',
-        href: `/${locale}/play/math`
+        href: '/play/math'
     },
     {
         id: 'fractions',
         icon: PieChart,
         color: 'from-purple-500 to-purple-600',
         bgColor: 'bg-purple-50',
-        href: `/${locale}/play/fractions`
+        href: '/play/fractions'
     },
     {
         id: 'percentage',
         icon: Percent,
         color: 'from-emerald-500 to-emerald-600',
         bgColor: 'bg-emerald-50',
-        href: `/${locale}/play/percentage`
+        href: '/play/percentage'
     }
 ];
 
 export default async function PlayPage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'games.play' });
-    const topics = getTopics(locale);
     return (
         <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
             {/* Header - Compact on mobile */}
@@ -60,7 +59,7 @@ export default async function PlayPage({ params }: { params: Promise<{ locale: s
                             </div>
                         </div>
                         <Link
-                            href={`/${locale}`}
+                            href="/"
                             className="text-slate-500 hover:text-slate-700 transition text-sm"
                         >
                             {t('header.back')}
@@ -131,7 +130,7 @@ export default async function PlayPage({ params }: { params: Promise<{ locale: s
                 <div className="mt-6 md:mt-8 text-center">
                     <p className="text-slate-500 text-sm mb-2">{t('footer.worksheetsPrompt')}</p>
                     <Link
-                        href={`/${locale}`}
+                        href="/"
                         className="text-indigo-600 hover:text-indigo-700 font-medium text-sm"
                     >
                         {t('footer.backToHome')}

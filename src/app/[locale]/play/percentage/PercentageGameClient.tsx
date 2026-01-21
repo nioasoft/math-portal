@@ -218,7 +218,7 @@ export default function PercentageGameClient() {
                         />
                     ) : undefined
                 }
-                onExit={endGame}
+                onExit={handlePlayAgain}
             >
                 <div className="flex-1 flex flex-col">
                     {/* Score Display */}

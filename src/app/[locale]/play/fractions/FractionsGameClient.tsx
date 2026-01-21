@@ -246,7 +246,7 @@ export default function FractionsGameClient() {
                         />
                     ) : undefined
                 }
-                onExit={endGame}
+                onExit={handlePlayAgain}
             >
                 <div className="flex-1 flex flex-col">
                     {/* Score Display */}

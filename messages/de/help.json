@@ -12,7 +12,8 @@
   },
   "topic": {
     "notFound": "Thema nicht gefunden",
-    "metaTitle": "Elternleitfaden: {title} Kindern erklären - Häufige Fehler & Tipps",
+    "metaTitle": "{title} Kindern erklären - Praktischer Elternleitfaden mit Beispielen",
+    "metaDescription": "Umfassender Elternleitfaden: Warum {title} wichtig ist, wie man es zu Hause unterrichtet, häufige Kinderfehler und praktische Tipps. Inklusive gelöster Beispiele.",
     "breadcrumb": {
       "home": "Startseite",
       "help": "Elternleitfaden"

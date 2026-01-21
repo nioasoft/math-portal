@@ -10,56 +10,56 @@
       "description": "Hojas de trabajo inteligentes imprimibles y juegos de matemáticas interactivos para grados 1-6. ¡Gratis y sin registro!"
     },
     "fractions": {
-      "title": "Generador de Fracciones - Crear e Imprimir Ahora",
-      "description": "Crea ejercicios de fracciones personalizados: sumar, restar, multiplicar y dividir. Elige dificultad, define rango e imprime gratis."
+      "title": "Crear Hoja de Trabajo de Fracciones para Imprimir - Generador Gratis",
+      "description": "Genera hojas de trabajo de fracciones para imprimir. Define operación (sumar/restar/multiplicar/dividir), dificultad y cantidad. Grados 3-6."
     },
     "geometry": {
-      "title": "Generador de Geometría - Crear Hojas de Trabajo",
-      "description": "Crea ejercicios de geometría personalizados: área, perímetro y triángulos. Elige figuras, define complejidad e imprime."
+      "title": "Crear Hoja de Trabajo de Geometría para Imprimir - Generador Gratis",
+      "description": "Genera hojas de trabajo de geometría para imprimir. Área y perímetro de rectángulos, triángulos y círculos. Imprime ahora."
     },
     "percentage": {
-      "title": "Generador de Porcentajes - Crear e Imprimir",
-      "description": "Crea ejercicios de porcentajes personalizados: calcular porcentaje de cantidad, encontrar el total y descuentos. Elige tipo e imprime gratis."
+      "title": "Crear Hoja de Trabajo de Porcentajes para Imprimir - Generador Gratis",
+      "description": "Genera hojas de trabajo de porcentajes para imprimir. Calcular porcentaje, encontrar el total, problemas de descuento. Grado 6+."
     },
     "decimals": {
-      "title": "Generador de Decimales - Crear Hojas de Trabajo",
-      "description": "Crea ejercicios de decimales personalizados: suma, resta y conversión. Define lugares decimales e imprime hojas de trabajo."
+      "title": "Crear Hoja de Trabajo de Decimales para Imprimir - Generador Gratis",
+      "description": "Genera hojas de trabajo de decimales para imprimir. Suma, resta y conversión de fracciones. Define precisión e imprime."
     },
     "games": {
       "title": "Juegos de Matemáticas Interactivos",
       "description": "Juegos de matemáticas interactivos para practicar operaciones - suma, resta, multiplicación y división."
     },
     "series": {
-      "title": "Generador de Secuencias Numéricas",
-      "description": "Crea ejercicios de secuencias personalizados: reconocimiento de patrones y patrones numéricos. Define dificultad e imprime gratis."
+      "title": "Crear Hoja de Trabajo de Secuencias para Imprimir - Generador Gratis",
+      "description": "Genera hojas de trabajo de secuencias para imprimir. Reconocimiento de patrones y completar series. Define dificultad e imprime."
     },
     "ratio": {
-      "title": "Generador de Razón y Proporción",
-      "description": "Crea ejercicios de razón personalizados: encontrar valores faltantes y relaciones multiplicativas. Elige tipos e imprime."
+      "title": "Crear Hoja de Trabajo de Razón y Proporción para Imprimir - Generador Gratis",
+      "description": "Genera hojas de trabajo de razón y proporción para imprimir. Encontrar valores faltantes, relaciones multiplicativas. Grado 6."
     },
     "units": {
-      "title": "Generador de Conversión de Unidades",
-      "description": "Crea ejercicios de conversión personalizados: longitud, peso y tiempo. Elige unidades e imprime hojas de trabajo gratis."
+      "title": "Crear Hoja de Trabajo de Conversión de Unidades para Imprimir - Generador Gratis",
+      "description": "Genera hojas de trabajo de conversión para imprimir. Longitud (m/cm), peso (kg/g) y tiempo. Selecciona e imprime."
     },
     "wordProblems": {
-      "title": "Generador de Problemas de Palabras",
-      "description": "Crea problemas de palabras personalizados: compras, distancias y vida diaria. Elige temas e imprime gratis."
+      "title": "Crear Hoja de Trabajo de Problemas para Imprimir - Generador Gratis",
+      "description": "Genera hojas de trabajo de problemas de palabras para imprimir. Compras, distancias, vida real. Elige tema y nivel."
     },
     "worksheet": {
-      "title": "Generador de Matemáticas - Suma, Resta, Multiplicación y División",
-      "description": "Crea hojas de trabajo de matemáticas personalizadas: define operación, rango de números y dificultad. Imprime gratis al instante."
+      "title": "Crear Hoja de Trabajo de Matemáticas para Imprimir - Sumar Restar Multiplicar Dividir",
+      "description": "Genera hojas de trabajo de matemáticas para imprimir. Define operación (sumar/restar/multiplicar/dividir), rango y cantidad. ¡Gratis!"
     },
     "about": {
       "title": "Sobre Nosotros",
       "description": "Sobre Hojas de Trabajo Inteligentes - el generador gratuito de hojas de trabajo de matemáticas para imprimir."
     },
     "blog": {
-      "title": "Blog - Artículos y Consejos",
-      "description": "Artículos, consejos y guías para padres y maestros sobre la enseñanza de matemáticas a niños."
+      "title": "Blog - Consejos para Padres",
+      "description": "Consejos prácticos para padres: ayudar a los niños con tareas de matemáticas, manejar dificultades, construir confianza y motivación."
     },
     "help": {
-      "title": "Guía para Padres",
-      "description": "Guías y explicaciones para padres - cómo enseñar matemáticas a los niños de manera efectiva y divertida."
+      "title": "Guía para Padres - Cómo Enseñar Matemáticas en Casa",
+      "description": "Guías prácticas para padres: explicaciones simples de conceptos matemáticos, errores comunes de niños y consejos para aprendizaje efectivo en casa."
     },
     "privacy": {
       "title": "Política de Privacidad",

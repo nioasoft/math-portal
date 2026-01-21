@@ -9,7 +9,7 @@ import { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { locales, type Locale } from '@/i18n/config';
 
-// Map blog posts to related help topics by keywords
+// Map blog post tags to related help topics
 function getRelatedHelpTopics(tags: string[], content: string) {
     const tagMap: Record<string, string[]> = {
         'לוח הכפל': ['multiplication', 'division'],
@@ -25,13 +25,25 @@ function getRelatedHelpTopics(tags: string[], content: string) {
         'סדרות': ['series'],
         'חיבור': ['addition'],
         'חיסור': ['subtraction'],
+        // English tags
+        'multiplication': ['multiplication'],
+        'division': ['division'],
+        'fractions': ['fractions'],
+        'percentage': ['percentage'],
+        'geometry': ['geometry'],
+        'units': ['units'],
+        'word-problems': ['word-problems'],
+        'series': ['series'],
+        'addition': ['addition'],
+        'subtraction': ['subtraction'],
     };
 
     const relatedSlugs = new Set<string>();
 
     // Match by tags
     tags.forEach(tag => {
-        const matches = tagMap[tag];
+        const tagLower = tag.toLowerCase();
+        const matches = tagMap[tag] || tagMap[tagLower];
         if (matches) matches.forEach(slug => relatedSlugs.add(slug));
     });
 
@@ -43,6 +55,46 @@ function getRelatedHelpTopics(tags: string[], content: string) {
     });
 
     return HELP_TOPICS.filter(topic => relatedSlugs.has(topic.slug)).slice(0, 3);
+}
+
+// Map blog post tags to related generator paths for SEO hints
+function getRelatedGeneratorPath(tags: string[]): string | null {
+    const tagToGenerator: Record<string, string> = {
+        'fractions': '/fractions',
+        'שברים': '/fractions',
+        'percentage': '/percentage',
+        'אחוזים': '/percentage',
+        'geometry': '/geometry',
+        'גיאומטריה': '/geometry',
+        'הנדסה': '/geometry',
+        'decimals': '/decimals',
+        'עשרוניים': '/decimals',
+        'units': '/units',
+        'מדידות': '/units',
+        'המרות': '/units',
+        'series': '/series',
+        'סדרות': '/series',
+        'ratio': '/ratio',
+        'יחס': '/ratio',
+        'word-problems': '/word-problems',
+        'בעיות מילוליות': '/word-problems',
+        'multiplication': '/worksheet/math?op=mul',
+        'כפל': '/worksheet/math?op=mul',
+        'לוח הכפל': '/worksheet/math?op=mul',
+        'division': '/worksheet/math?op=div',
+        'חילוק': '/worksheet/math?op=div',
+        'addition': '/worksheet/math?op=add',
+        'חיבור': '/worksheet/math?op=add',
+        'subtraction': '/worksheet/math?op=sub',
+        'חיסור': '/worksheet/math?op=sub',
+    };
+
+    for (const tag of tags) {
+        const tagLower = tag.toLowerCase();
+        if (tagToGenerator[tag]) return tagToGenerator[tag];
+        if (tagToGenerator[tagLower]) return tagToGenerator[tagLower];
+    }
+    return null;
 }
 
 type Props = {
@@ -57,15 +109,33 @@ export async function generateMetadata(
     if (!post) return {};
 
     const baseUrl = 'https://www.tirgul.net';
-    const canonicalPath = `${baseUrl}${locale !== 'he' ? `/${locale}` : ''}/blog/${slug}`;
+    const localePath = locale !== 'he' ? `/${locale}` : '';
+    const canonicalPath = `${baseUrl}${localePath}/blog/${slug}`;
 
-    return {
-        title: `${post.title} | בלוג דפי עבודה חכמים`,
+    // Find related generator for SEO hint to avoid cannibalization
+    // Blog posts target informational/long-tail intent
+    // while generators target transactional intent
+    const relatedGenerator = getRelatedGeneratorPath(post.tags);
+
+    // Build the metadata object
+    const metadata: Metadata = {
+        title: locale === 'he'
+            ? `${post.title} | בלוג דפי עבודה חכמים`
+            : `${post.title} | Smart Worksheets Blog`,
         description: post.excerpt,
         alternates: {
             canonical: canonicalPath,
         },
     };
+
+    // Add related generator hint if found
+    if (relatedGenerator) {
+        metadata.other = {
+            'x-related-generator': `${baseUrl}${localePath}${relatedGenerator}`,
+        };
+    }
+
+    return metadata;
 }
 
 export async function generateStaticParams() {

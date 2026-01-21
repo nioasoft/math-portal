@@ -10,56 +10,56 @@
       "description": "Druckbare clevere Arbeitsblätter und interaktive Mathe-Spiele für die Klassen 1-6. Kostenlos und ohne Registrierung!"
     },
     "fractions": {
-      "title": "Bruch-Generator - Erstellen & Jetzt Drucken",
-      "description": "Individuelle Bruch-Übungen erstellen: Addieren, Subtrahieren, Multiplizieren und Dividieren. Schwierigkeit wählen, Bereich festlegen und kostenlos drucken."
+      "title": "Bruch-Arbeitsblatt zum Drucken erstellen - Kostenloser Generator",
+      "description": "Bruch-Arbeitsblätter zum Drucken generieren. Operationstyp (addieren/subtrahieren/multiplizieren/dividieren), Schwierigkeit und Aufgabenzahl festlegen. Klassen 3-6."
     },
     "geometry": {
-      "title": "Geometrie-Generator - Übungsblätter Erstellen",
-      "description": "Individuelle Geometrie-Übungen erstellen: Fläche, Umfang und Dreiecke. Formen wählen, Komplexität festlegen und sofort drucken."
+      "title": "Geometrie-Arbeitsblatt zum Drucken erstellen - Kostenloser Generator",
+      "description": "Geometrie-Arbeitsblätter zum sofortigen Drucken generieren. Fläche und Umfang für Rechtecke, Dreiecke und Kreise. Jetzt drucken."
     },
     "percentage": {
-      "title": "Prozent-Generator - Erstellen & Drucken",
-      "description": "Individuelle Prozent-Übungen erstellen: Prozente berechnen, Grundwerte finden und Rabatte. Aufgabentyp wählen und kostenlos drucken."
+      "title": "Prozent-Arbeitsblatt zum Drucken erstellen - Kostenloser Generator",
+      "description": "Prozent-Arbeitsblätter zum Drucken generieren. Prozent von einer Zahl berechnen, Grundwert finden, Rabattaufgaben. Klasse 6+."
     },
     "decimals": {
-      "title": "Dezimalzahl-Generator - Übungsblätter Erstellen",
-      "description": "Individuelle Dezimalzahl-Übungen erstellen: Addition, Subtraktion und Umrechnung. Nachkommastellen festlegen und passende Arbeitsblätter drucken."
+      "title": "Dezimalzahl-Arbeitsblatt zum Drucken erstellen - Kostenloser Generator",
+      "description": "Dezimalzahl-Arbeitsblätter zum Drucken generieren. Addition, Subtraktion und Bruchumrechnung. Präzision festlegen und drucken."
     },
     "games": {
       "title": "Interaktive Mathe-Spiele",
       "description": "Interaktive Mathe-Spiele zum Üben von Rechenoperationen - Addition, Subtraktion, Multiplikation und Division."
     },
     "series": {
-      "title": "Zahlenfolgen-Generator",
-      "description": "Individuelle Zahlenfolgen-Übungen erstellen: Mustererkennung und Zahlenmuster. Schwierigkeit festlegen und kostenlos drucken."
+      "title": "Zahlenfolgen-Arbeitsblatt zum Drucken erstellen - Kostenloser Generator",
+      "description": "Zahlenfolgen-Arbeitsblätter zum Drucken generieren. Mustererkennung und Folgenergänzung. Schwierigkeit festlegen und drucken."
     },
     "ratio": {
-      "title": "Verhältnis & Proportion Generator",
-      "description": "Individuelle Verhältnis-Übungen erstellen: Fehlende Werte finden und multiplikative Beziehungen. Aufgabentypen wählen und drucken."
+      "title": "Verhältnis-Arbeitsblatt zum Drucken erstellen - Kostenloser Generator",
+      "description": "Verhältnis und Proportion-Arbeitsblätter zum Drucken generieren. Fehlende Werte finden, multiplikative Beziehungen. Klasse 6."
     },
     "units": {
-      "title": "Einheiten-Umrechnung Generator",
-      "description": "Individuelle Umrechnungs-Übungen erstellen: Länge, Gewicht und Zeit. Einheiten wählen und kostenlos Arbeitsblätter drucken."
+      "title": "Einheiten-Arbeitsblatt zum Drucken erstellen - Kostenloser Generator",
+      "description": "Einheiten-Umrechnung-Arbeitsblätter zum Drucken generieren. Länge (m/cm), Gewicht (kg/g) und Zeit. Auswählen und drucken."
     },
     "wordProblems": {
-      "title": "Textaufgaben-Generator",
-      "description": "Individuelle Textaufgaben erstellen: Einkaufen, Entfernungen und Alltagssituationen. Themen wählen und kostenlos drucken."
+      "title": "Textaufgaben-Arbeitsblatt zum Drucken erstellen - Kostenloser Generator",
+      "description": "Textaufgaben-Arbeitsblätter zum Drucken generieren. Einkaufen, Entfernungen, Alltagssituationen. Thema und Niveau wählen."
     },
     "worksheet": {
-      "title": "Mathe-Generator - Addition, Subtraktion, Multiplikation, Division",
-      "description": "Individuelle Mathe-Arbeitsblätter erstellen: Operation festlegen, Zahlenbereich und Schwierigkeit wählen. Sofort kostenlos drucken."
+      "title": "Mathe-Arbeitsblatt zum Drucken erstellen - Addieren Subtrahieren Multiplizieren Dividieren",
+      "description": "Mathe-Arbeitsblätter zum sofortigen Drucken generieren. Operation (addieren/subtrahieren/multiplizieren/dividieren), Zahlenbereich und Menge festlegen. Kostenlos!"
     },
     "about": {
       "title": "Über uns",
       "description": "Über Clevere Arbeitsblätter - der kostenlose Mathe-Arbeitsblatt-Generator zum Drucken."
     },
     "blog": {
-      "title": "Blog - Artikel & Tipps",
-      "description": "Artikel, Tipps und Anleitungen für Eltern und Lehrer zum Mathe-Unterricht für Kinder."
+      "title": "Blog - Tipps für Eltern",
+      "description": "Praktische Tipps für Eltern: Kindern bei Mathe-Hausaufgaben helfen, mit Schwierigkeiten umgehen, Mathe-Vertrauen und Motivation aufbauen."
     },
     "help": {
-      "title": "Elternratgeber",
-      "description": "Anleitungen und Erklärungen für Eltern - wie man Kindern effektiv und mit Spaß Mathe beibringt."
+      "title": "Elternratgeber - Mathe zu Hause unterrichten",
+      "description": "Praktische Ratgeber für Eltern: einfache Erklärungen von Mathe-Konzepten, häufige Kinderfehler und Tipps für effektives Lernen zu Hause."
     },
     "privacy": {
       "title": "Datenschutzrichtlinie",

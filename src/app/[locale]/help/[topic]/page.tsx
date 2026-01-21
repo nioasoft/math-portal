@@ -40,16 +40,23 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     // Build the canonical URL for the related generator
     const baseUrl = 'https://www.tirgul.net';
     const generatorPath = topic.relatedGeneratorHref;
+    const localePath = locale !== 'he' ? `/${locale}` : '';
+
+    // Use translated meta description for better SEO differentiation
+    // Help pages target informational intent ("how to explain/teach")
+    // while generators target transactional intent ("create/print worksheets")
+    const metaDescription = t('topic.metaDescription', { title: topic.title });
 
     return {
         title: t('topic.metaTitle', { title: topic.title }),
-        description: topic.shortDescription,
+        description: metaDescription,
         alternates: {
-            canonical: `${baseUrl}${locale !== 'he' ? `/${locale}` : ''}/help/${topicSlug}`,
+            canonical: `${baseUrl}${localePath}/help/${topicSlug}`,
         },
         other: {
             // Hint to search engines about the primary transactional page
-            'x-related-generator': `${baseUrl}${locale !== 'he' ? `/${locale}` : ''}${generatorPath}`,
+            // This helps avoid cannibalization by signaling relationship
+            'x-related-generator': `${baseUrl}${localePath}${generatorPath}`,
         },
     };
 }

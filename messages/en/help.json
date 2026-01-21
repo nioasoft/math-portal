@@ -12,7 +12,8 @@
   },
   "topic": {
     "notFound": "Topic not found",
-    "metaTitle": "Parent Guide: How to Explain {title} to Kids - Common Mistakes & Tips",
+    "metaTitle": "How to Explain {title} to Kids - Practical Parent Guide with Examples",
+    "metaDescription": "Comprehensive parent guide: why {title} matters, how to teach it at home, common mistakes to avoid, and practical tips. Includes solved examples.",
     "breadcrumb": {
       "home": "Home",
       "help": "Parent Guide"

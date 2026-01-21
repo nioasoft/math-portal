@@ -1,0 +1,45 @@
+{
+  "title": "Redaktionelle Richtlinien",
+  "subtitle": "Wie wir qualitativ hochwertige, zuverlässige Inhalte erstellen",
+  "backHome": "Zurück zur Startseite",
+  "lastUpdated": "Zuletzt aktualisiert: Januar 2025",
+  "contentCreation": {
+    "heading": "Inhaltserstellungsprozess",
+    "intro": "Alle Übungen und Arbeitsblätter auf dieser Seite werden sorgfältig von einem Team erstellt, das sich der Bildungsqualität verschrieben hat:",
+    "item1": "Übungen sind auf die Lehrplanstandards der Grundschulmathematik abgestimmt",
+    "item2": "Schwierigkeitsgrade sind alters- und lernstufengerecht gestuft",
+    "item3": "Jeder Übungstyp wird auf Klarheit und mathematische Genauigkeit geprüft",
+    "item4": "Wir bleiben über neue Lehrmethoden informiert und integrieren sie in unsere Inhalte"
+  },
+  "sources": {
+    "heading": "Quellen & Überprüfung",
+    "intro": "Unsere Inhalte basieren auf:",
+    "item1": "Offiziellen Lehrplanrichtlinien für die Klassen 1-6",
+    "item2": "Zugelassenen Schulbüchern",
+    "item3": "Aktueller pädagogischer Forschung in der Mathematikdidaktik",
+    "item4": "Rückmeldungen von Lehrern und Eltern, die die Seite nutzen"
+  },
+  "corrections": {
+    "heading": "Korrekturrichtlinien",
+    "intro": "Wir sind zu Genauigkeit und Transparenz verpflichtet:",
+    "item1": "Fehler werden sofort nach Entdeckung korrigiert",
+    "item2": "Wir ermutigen Nutzer, Fehler über unser Kontaktformular zu melden",
+    "item3": "Wesentliche Updates werden dokumentiert und veröffentlicht",
+    "item4": "Wir überprüfen bestehende Inhalte regelmäßig auf Genauigkeit und Relevanz"
+  },
+  "curriculum": {
+    "heading": "Lehrplananpassung",
+    "intro": "Unsere Übungen decken die Kernthemen des Lehrplans ab:",
+    "item1": "Addition und Subtraktion - Zahlen bis 1.000.000",
+    "item2": "Multiplikation und Division - Einmaleins und komplexe Berechnungen",
+    "item3": "Brüche - Addieren, Subtrahieren, Multiplizieren und Dividieren von Brüchen",
+    "item4": "Prozentrechnung - Prozentberechnung und Anwendungsaufgaben",
+    "item5": "Geometrie - Fläche, Umfang und Winkel",
+    "item6": "Maßeinheiten - Umrechnungen und Textaufgaben"
+  },
+  "contact": {
+    "heading": "Fragen & Feedback",
+    "text": "Haben Sie eine Frage zu unseren Inhalten oder einen Verbesserungsvorschlag? Wir freuen uns von Ihnen zu hören!",
+    "link": "Kontaktieren Sie uns"
+  }
+}

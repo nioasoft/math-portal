@@ -84,6 +84,10 @@
     "playPercentage": {
       "title": "Juego de Porcentajes",
       "description": "Juego interactivo para practicar cálculos de porcentajes."
+    },
+    "editorial": {
+      "title": "Directrices Editoriales",
+      "description": "Cómo creamos contenido de calidad y preciso - nuestro proceso de creación, fuentes y alineación curricular."
     }
   }
 }

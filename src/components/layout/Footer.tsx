@@ -1,14 +1,46 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from '@/i18n/navigation';
-import { Calculator, BookOpen, Newspaper, GraduationCap, MessageSquare } from 'lucide-react';
+import { Calculator, BookOpen, Newspaper, GraduationCap, MessageSquare, Quote } from 'lucide-react';
 import { FeedbackModal } from '@/components/FeedbackModal';
 import { useTranslations } from 'next-intl';
+
+interface Testimonial {
+    quote: string;
+    author: string;
+    role: string;
+}
 
 export function Footer() {
     const t = useTranslations('common');
     const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
+    const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+    const testimonials: Testimonial[] = [
+        {
+            quote: t('testimonials.items.0.quote'),
+            author: t('testimonials.items.0.author'),
+            role: t('testimonials.items.0.role'),
+        },
+        {
+            quote: t('testimonials.items.1.quote'),
+            author: t('testimonials.items.1.author'),
+            role: t('testimonials.items.1.role'),
+        },
+        {
+            quote: t('testimonials.items.2.quote'),
+            author: t('testimonials.items.2.author'),
+            role: t('testimonials.items.2.role'),
+        },
+    ];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [testimonials.length]);
 
     const grades = [
         { label: t('grades.grade1'), href: '/grade/1' },
@@ -99,6 +131,11 @@ export function Footer() {
                                     {t('nav.contact')}
                                 </Link>
                             </li>
+                            <li>
+                                <Link href="/editorial-guidelines" className="hover:text-emerald-400 transition-colors">
+                                    {t('nav.editorial')}
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 
@@ -145,6 +182,36 @@ export function Footer() {
                         <p className="text-sm text-slate-300 leading-relaxed">
                             <strong className="text-slate-300">{t('footer.aboutSite')}</strong> {t('footer.aboutDescription')}
                         </p>
+                    </div>
+
+                    {/* Testimonials */}
+                    <div className="mt-8 max-w-xl mx-auto">
+                        <div className="relative bg-slate-800/50 rounded-xl p-5 border border-slate-700/50">
+                            <Quote size={16} className="absolute top-3 start-3 text-orange-500/40" />
+                            <div className="text-center">
+                                <p className="text-sm text-slate-300 italic mb-3 px-4">
+                                    &ldquo;{testimonials[currentTestimonial].quote}&rdquo;
+                                </p>
+                                <div className="text-xs text-slate-400">
+                                    <span className="font-medium text-slate-300">{testimonials[currentTestimonial].author}</span>
+                                    <span className="mx-1.5">·</span>
+                                    <span>{testimonials[currentTestimonial].role}</span>
+                                </div>
+                            </div>
+                            {/* Dots indicator */}
+                            <div className="flex justify-center gap-1.5 mt-4">
+                                {testimonials.map((_, index) => (
+                                    <button
+                                        key={index}
+                                        onClick={() => setCurrentTestimonial(index)}
+                                        className={`w-1.5 h-1.5 rounded-full transition-colors ${
+                                            index === currentTestimonial ? 'bg-orange-500' : 'bg-slate-600 hover:bg-slate-500'
+                                        }`}
+                                        aria-label={`Testimonial ${index + 1}`}
+                                    />
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
 

@@ -12,7 +12,8 @@
     "openMenu": "Menü öffnen",
     "closeMenu": "Menü schließen",
     "privacy": "Datenschutzerklärung",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "editorial": "Redaktionelle Richtlinien"
   },
   "grades": {
     "grade1": "Klasse 1",
@@ -118,5 +119,25 @@
     "errorRequired": "Bitte füllen Sie alle Pflichtfelder aus",
     "errorSubmit": "Fehler beim Senden des Feedbacks",
     "errorRetry": "Fehler beim Senden, bitte versuchen Sie es später erneut"
+  },
+  "testimonials": {
+    "title": "Was Eltern sagen",
+    "items": [
+      {
+        "quote": "Diese Arbeitsblätter haben meiner Tochter geholfen, sich in Mathe deutlich zu verbessern. Einfach zu bedienen und abwechslungsreich!",
+        "author": "Maria K.",
+        "role": "Mutter einer Drittklässlerin"
+      },
+      {
+        "quote": "Endlich eine Seite mit Übungen, die zum Lehrplan passen. Sehr empfehlenswert.",
+        "author": "Thomas R.",
+        "role": "Vater von zwei Kindern"
+      },
+      {
+        "quote": "Die verschiedenen Schwierigkeitsstufen ermöglichen mir, mich an das Lerntempo jedes Kindes anzupassen.",
+        "author": "Anna T.",
+        "role": "Private Mathenachhilfe"
+      }
+    ]
   }
 }

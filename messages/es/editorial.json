@@ -1,0 +1,45 @@
+{
+  "title": "Directrices Editoriales",
+  "subtitle": "Cómo creamos contenido de calidad y confiable",
+  "backHome": "Volver al Inicio",
+  "lastUpdated": "Última actualización: Enero 2025",
+  "contentCreation": {
+    "heading": "Proceso de Creación de Contenido",
+    "intro": "Todos los ejercicios y hojas de trabajo en este sitio son cuidadosamente creados por un equipo comprometido con la calidad educativa:",
+    "item1": "Los ejercicios están alineados con los estándares del currículo de matemáticas de primaria",
+    "item2": "Los niveles de dificultad están graduados apropiadamente por edad y etapa de aprendizaje",
+    "item3": "Cada tipo de ejercicio es revisado para claridad y precisión matemática",
+    "item4": "Nos mantenemos actualizados sobre nuevos métodos de enseñanza e los incorporamos en nuestro contenido"
+  },
+  "sources": {
+    "heading": "Fuentes y Verificación",
+    "intro": "Nuestro contenido está basado en:",
+    "item1": "Directrices oficiales del currículo para grados 1-6",
+    "item2": "Libros de texto aprobados usados en escuelas",
+    "item3": "Investigación pedagógica actual en educación matemática",
+    "item4": "Retroalimentación de maestros y padres que usan el sitio"
+  },
+  "corrections": {
+    "heading": "Política de Correcciones",
+    "intro": "Estamos comprometidos con la precisión y la transparencia:",
+    "item1": "Los errores se corrigen inmediatamente al ser descubiertos",
+    "item2": "Animamos a los usuarios a reportar errores a través de nuestro formulario de contacto",
+    "item3": "Las actualizaciones significativas son documentadas y publicadas",
+    "item4": "Revisamos regularmente el contenido existente para precisión y relevancia"
+  },
+  "curriculum": {
+    "heading": "Alineación Curricular",
+    "intro": "Nuestros ejercicios cubren los temas centrales del currículo:",
+    "item1": "Suma y Resta - números hasta 1,000,000",
+    "item2": "Multiplicación y División - tablas de multiplicar y cálculos complejos",
+    "item3": "Fracciones - sumar, restar, multiplicar y dividir fracciones",
+    "item4": "Porcentajes - calcular porcentajes y problemas aplicados",
+    "item5": "Geometría - área, perímetro y ángulos",
+    "item6": "Unidades de medida - conversiones y problemas de palabras"
+  },
+  "contact": {
+    "heading": "Preguntas y Comentarios",
+    "text": "¿Tienes una pregunta sobre nuestro contenido o una sugerencia de mejora? ¡Nos encantaría saber de ti!",
+    "link": "Contáctanos"
+  }
+}

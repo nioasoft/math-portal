@@ -1,0 +1,45 @@
+{
+  "title": "Editorial Guidelines",
+  "subtitle": "How we create quality, reliable content",
+  "backHome": "Back to Home",
+  "lastUpdated": "Last updated: January 2025",
+  "contentCreation": {
+    "heading": "Content Creation Process",
+    "intro": "All exercises and worksheets on this site are carefully created by a team committed to educational quality:",
+    "item1": "Exercises are aligned with elementary school math curriculum standards",
+    "item2": "Difficulty levels are appropriately graded by age and learning stage",
+    "item3": "Each exercise type is reviewed for clarity and mathematical accuracy",
+    "item4": "We stay updated on new teaching methods and incorporate them into our content"
+  },
+  "sources": {
+    "heading": "Sources & Verification",
+    "intro": "Our content is based on:",
+    "item1": "Official curriculum guidelines for grades 1-6",
+    "item2": "Approved textbooks used in schools",
+    "item3": "Current pedagogical research in math education",
+    "item4": "Feedback from teachers and parents using the site"
+  },
+  "corrections": {
+    "heading": "Corrections Policy",
+    "intro": "We are committed to accuracy and transparency:",
+    "item1": "Errors are corrected immediately upon discovery",
+    "item2": "We encourage users to report mistakes through our contact form",
+    "item3": "Significant updates are documented and published",
+    "item4": "We regularly review existing content for accuracy and relevance"
+  },
+  "curriculum": {
+    "heading": "Curriculum Alignment",
+    "intro": "Our exercises cover core curriculum topics:",
+    "item1": "Addition and Subtraction - numbers up to 1,000,000",
+    "item2": "Multiplication and Division - times tables and complex calculations",
+    "item3": "Fractions - adding, subtracting, multiplying, and dividing fractions",
+    "item4": "Percentages - calculating percentages and applied problems",
+    "item5": "Geometry - area, perimeter, and angles",
+    "item6": "Measurement units - conversions and word problems"
+  },
+  "contact": {
+    "heading": "Questions & Feedback",
+    "text": "Have a question about our content or a suggestion for improvement? We'd love to hear from you!",
+    "link": "Contact Us"
+  }
+}

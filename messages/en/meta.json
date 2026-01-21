@@ -84,6 +84,10 @@
     "playPercentage": {
       "title": "Percentage Game",
       "description": "Interactive game for practicing percentage calculations."
+    },
+    "editorial": {
+      "title": "Editorial Guidelines",
+      "description": "How we create quality, accurate content - our content creation process, sources, and curriculum alignment."
     }
   }
 }

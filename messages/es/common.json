@@ -12,7 +12,8 @@
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
     "privacy": "Política de Privacidad",
-    "contact": "Contáctenos"
+    "contact": "Contáctenos",
+    "editorial": "Directrices Editoriales"
   },
   "grades": {
     "grade1": "Grado 1",
@@ -118,5 +119,25 @@
     "errorRequired": "Por favor complete todos los campos requeridos",
     "errorSubmit": "Error al enviar comentarios",
     "errorRetry": "Error al enviar, intente de nuevo más tarde"
+  },
+  "testimonials": {
+    "title": "Lo que dicen los padres",
+    "items": [
+      {
+        "quote": "Estas hojas de trabajo ayudaron a mi hija a mejorar significativamente en matemáticas. ¡Fáciles de usar y variadas!",
+        "author": "María G.",
+        "role": "Mamá de una estudiante de 3er grado"
+      },
+      {
+        "quote": "Por fin un sitio con ejercicios que coinciden con el currículo. Lo recomiendo mucho.",
+        "author": "Carlos R.",
+        "role": "Papá de dos niños"
+      },
+      {
+        "quote": "Los diferentes niveles de dificultad me permiten adaptarme al ritmo de aprendizaje de cada niño.",
+        "author": "Ana T.",
+        "role": "Tutora privada de matemáticas"
+      }
+    ]
   }
 }

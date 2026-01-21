@@ -12,7 +12,8 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "privacy": "Privacy Policy",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "editorial": "Editorial Guidelines"
   },
   "grades": {
     "grade1": "Grade 1",
@@ -118,5 +119,25 @@
     "errorRequired": "Please fill in all required fields",
     "errorSubmit": "Error submitting feedback",
     "errorRetry": "Error submitting feedback, please try again later"
+  },
+  "testimonials": {
+    "title": "What Parents Say",
+    "items": [
+      {
+        "quote": "These worksheets helped my daughter improve significantly in math. Easy to use and varied!",
+        "author": "Sarah M.",
+        "role": "Mom of a 3rd grader"
+      },
+      {
+        "quote": "Finally a site with exercises that match the curriculum. Highly recommend.",
+        "author": "David R.",
+        "role": "Dad of two kids"
+      },
+      {
+        "quote": "The different difficulty levels let me adapt to each child's learning pace.",
+        "author": "Lisa T.",
+        "role": "Private math tutor"
+      }
+    ]
   }
 }

@@ -3,6 +3,8 @@ import { Footer } from '@/components/layout/Footer';
 import { Shield, ArrowRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
+import { generateAlternates } from '@/lib/seo';
+import type { Locale } from '@/i18n/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
@@ -11,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     return {
         title: t('title'),
         description: t('description'),
+        alternates: generateAlternates('/privacy', locale as Locale),
     };
 }
 

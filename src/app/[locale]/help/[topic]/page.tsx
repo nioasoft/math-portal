@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowRight, BookOpen, AlertTriangle, Lightbulb, CheckCircle, ExternalLink, GraduationCap } from 'lucide-react';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
+import { generateAlternates } from '@/lib/seo';
 
 interface PageProps {
     params: Promise<{ topic: string; locale: string }>;
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         };
     }
 
-    // Build the canonical URL for the related generator
+    // Build the URL for the related generator hint
     const baseUrl = 'https://www.tirgul.net';
     const generatorPath = topic.relatedGeneratorHref;
     const localePath = locale !== 'he' ? `/${locale}` : '';
@@ -50,9 +51,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
         title: t('topic.metaTitle', { title: topic.title }),
         description: metaDescription,
-        alternates: {
-            canonical: `${baseUrl}${localePath}/help/${topicSlug}`,
-        },
+        alternates: generateAlternates(`/help/${topicSlug}`, locale as Locale),
         other: {
             // Hint to search engines about the primary transactional page
             // This helps avoid cannibalization by signaling relationship

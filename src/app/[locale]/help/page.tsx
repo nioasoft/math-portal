@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ArrowLeft, GraduationCap, Sparkles } from 'lucide-react';
 import { HelpIndexClient } from './HelpIndexClient';
 import { getTranslations } from 'next-intl/server';
+import { generateAlternates } from '@/lib/seo';
 
 interface PageProps {
     params: Promise<{ locale: string }>;
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: PageProps) {
     return {
         title: t('title'),
         description: t('description'),
+        alternates: generateAlternates('/help', locale as Locale),
     };
 }
 

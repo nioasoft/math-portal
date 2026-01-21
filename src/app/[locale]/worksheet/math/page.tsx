@@ -2,20 +2,17 @@ import { Suspense } from 'react';
 import WorksheetClient from '@/components/worksheet/WorksheetClient';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
+import { generateAlternates } from '@/lib/seo';
+import type { Locale } from '@/i18n/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'meta' });
 
-    const baseUrl = 'https://www.tirgul.net';
-    const canonicalPath = `${baseUrl}${locale !== 'he' ? `/${locale}` : ''}/worksheet/math`;
-
     return {
         title: t('pages.worksheet.title'),
         description: t('pages.worksheet.description'),
-        alternates: {
-            canonical: canonicalPath,
-        },
+        alternates: generateAlternates('/worksheet/math', locale as Locale),
     };
 }
 

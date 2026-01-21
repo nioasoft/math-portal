@@ -7,6 +7,7 @@ import { Footer } from '@/components/layout/Footer';
 import { Newspaper, Sparkles, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Locale } from '@/i18n/config';
+import { generateAlternates } from '@/lib/seo';
 
 type Props = {
     params: Promise<{ locale: string }>
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: Props) {
     return {
         title: t('pages.blog.title'),
         description: t('pages.blog.description'),
+        alternates: generateAlternates('/blog', locale as Locale),
     };
 }
 

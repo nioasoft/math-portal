@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Calculator, Percent, PieChart, Gamepad2, Trophy, Zap } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import { generateAlternates } from '@/lib/seo';
+import type { Locale } from '@/i18n/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
@@ -10,6 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     return {
         title: t('title'),
         description: t('description'),
+        alternates: generateAlternates('/play', locale as Locale),
     };
 }
 

@@ -8,6 +8,7 @@ import { Footer } from '@/components/layout/Footer';
 import { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { locales, type Locale } from '@/i18n/config';
+import { generateAlternates } from '@/lib/seo';
 
 // Map blog post tags to related help topics
 function getRelatedHelpTopics(tags: string[], content: string) {
@@ -110,7 +111,6 @@ export async function generateMetadata(
 
     const baseUrl = 'https://www.tirgul.net';
     const localePath = locale !== 'he' ? `/${locale}` : '';
-    const canonicalPath = `${baseUrl}${localePath}/blog/${slug}`;
 
     // Find related generator for SEO hint to avoid cannibalization
     // Blog posts target informational/long-tail intent
@@ -123,9 +123,7 @@ export async function generateMetadata(
             ? `${post.title} | בלוג דפי עבודה חכמים`
             : `${post.title} | Smart Worksheets Blog`,
         description: post.excerpt,
-        alternates: {
-            canonical: canonicalPath,
-        },
+        alternates: generateAlternates(`/blog/${slug}`, locale as Locale),
     };
 
     // Add related generator hint if found

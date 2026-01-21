@@ -163,6 +163,17 @@ export default async function Home() {
                 </Link>
               </div>
 
+              {/* Games CTA */}
+              <div className="mt-6 animate-slide-up delay-400">
+                <Link
+                  href="/play"
+                  className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-purple-200/50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 animate-pulse-soft"
+                >
+                  <Gamepad2 className="w-5 h-5" />
+                  {t('hero.ctaGames')}
+                </Link>
+              </div>
+
               {/* Trust indicators */}
               <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500 animate-fade-in delay-500">
                 <div className="flex items-center gap-2">

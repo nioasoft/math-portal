@@ -22,6 +22,27 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'about' });
+    const metaT = await getTranslations({ locale, namespace: 'meta' });
+
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": locale === 'he' ? "ראשי" : "Home",
+                "item": "https://www.tirgul.net"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": metaT('pages.about.title'),
+                "item": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/about`
+            }
+        ]
+    };
+
     const organizationSchema = {
         "@context": "https://schema.org",
         "@type": "EducationalOrganization",
@@ -80,6 +101,11 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 id="howto-schema"
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+            />
+            <Script
+                id="breadcrumb-schema"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             <Header />
 

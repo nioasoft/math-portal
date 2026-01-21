@@ -27,9 +27,35 @@ export default async function HelpIndexPage({ params }: PageProps) {
     const { locale } = await params;
     const topics = await getHelpTopics(locale as Locale);
     const t = await getTranslations({ locale, namespace: 'help' });
+    const metaT = await getTranslations({ locale, namespace: 'meta' });
+
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": locale === 'he' ? "ראשי" : "Home",
+                "item": "https://www.tirgul.net"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": metaT('pages.help.title'),
+                "item": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/help`
+            }
+        ]
+    };
 
     return (
         <div className="min-h-screen flex flex-col bg-[#fffbf5]">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(breadcrumbSchema)
+                }}
+            />
             <Header />
 
             <main className="flex-1">

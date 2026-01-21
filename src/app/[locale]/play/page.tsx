@@ -43,7 +43,35 @@ const topics = [
 export default async function PlayPage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'games.play' });
+    const metaT = await getTranslations({ locale, namespace: 'meta' });
+
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": locale === 'he' ? "ראשי" : "Home",
+                "item": "https://www.tirgul.net"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": metaT('pages.play.title'),
+                "item": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/play`
+            }
+        ]
+    };
+
     return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(breadcrumbSchema)
+                }}
+            />
         <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
             {/* Header - Compact on mobile */}
             <div className="bg-white border-b border-slate-200 shadow-sm">
@@ -138,5 +166,6 @@ export default async function PlayPage({ params }: { params: Promise<{ locale: s
                 </div>
             </div>
         </div>
+        </>
     );
 }

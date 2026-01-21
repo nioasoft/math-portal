@@ -67,9 +67,35 @@ export default async function BlogIndexPage({ params }: Props) {
     // Fetch blog posts for the current locale
     const posts = await getBlogPosts(locale as Locale);
     const t = await getTranslations('blog');
+    const metaT = await getTranslations({ locale, namespace: 'meta' });
+
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": locale === 'he' ? "ראשי" : "Home",
+                "item": "https://www.tirgul.net"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": metaT('pages.blog.title'),
+                "item": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/blog`
+            }
+        ]
+    };
 
     return (
         <div className="min-h-screen flex flex-col bg-[#fffbf5]">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(breadcrumbSchema)
+                }}
+            />
             <Header />
 
             <main className="flex-1">

@@ -17,11 +17,38 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     };
 }
 
-export default async function PrivacyPage() {
+export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
     const t = await getTranslations('privacy');
+    const metaT = await getTranslations({ locale, namespace: 'meta' });
+
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": locale === 'he' ? "ראשי" : "Home",
+                "item": "https://www.tirgul.net"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": metaT('pages.privacy.title'),
+                "item": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/privacy`
+            }
+        ]
+    };
 
     return (
         <div className="min-h-screen flex flex-col bg-[#fffbf5]">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(breadcrumbSchema)
+                }}
+            />
             <Header />
 
             <main className="flex-1">

@@ -139,6 +139,15 @@ export async function generateMetadata({
     robots: {
       index: true,
       follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'תרגול | דפי עבודה חכמים ומשחקי חשבון',
+      description: 'דפי עבודה חכמים להדפסה ומשחקים אינטראקטיביים בחשבון לכיתות א׳-ו׳. חינם וללא הרשמה!',
+      images: ['https://www.tirgul.net/opengraph-image.jpg'],
     },
     alternates: generateAlternates(locale as Locale),
     other: {

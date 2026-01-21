@@ -122,13 +122,11 @@ export default function DecimalsClient() {
                                         <div className="text-2xl pt-1 pr-3 border-b-2 border-slate-900 pb-2">{prob.op}</div>
                                         <div className="text-right border-b-2 border-slate-900 pb-2">{prob.num2.toFixed(2)}</div>
 
-                                        {/* Result Row - Answer Key */}
-                                        {showAnswers && (
-                                            <>
-                                                <div></div>
-                                                <div className="text-right pt-2 text-red-600 font-bold">{result.toFixed(2)}</div>
-                                            </>
-                                        )}
+                                        {/* Result Row - Answer Key - always rendered to prevent CLS */}
+                                        <div></div>
+                                        <div className={`text-right pt-2 text-red-600 font-bold min-h-[1.5em] ${showAnswers ? 'visible' : 'invisible'}`}>
+                                            {result.toFixed(2)}
+                                        </div>
                                     </div>
                                 </div>
                             )

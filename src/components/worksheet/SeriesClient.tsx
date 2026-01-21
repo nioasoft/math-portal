@@ -190,7 +190,7 @@ export default function SeriesClient() {
                                         </div>
                                     ))}
                                 </div>
-                                {showAnswers && <div className="text-xs text-center mt-2 text-slate-400">{t('series.rule')} {prob.rule}</div>}
+                                <div className={`text-xs text-center mt-2 text-slate-400 min-h-[1.25em] ${showAnswers ? 'visible' : 'invisible'}`}>{t('series.rule')} {prob.rule}</div>
                             </div>
                         ))}
                     </div>

@@ -117,6 +117,11 @@ export async function generateMetadata(
     // while generators target transactional intent
     const relatedGenerator = getRelatedGeneratorPath(post.tags);
 
+    // Construct absolute image URL
+    const imageUrl = post.image.startsWith('http')
+        ? post.image
+        : `${baseUrl}${post.image.startsWith('/') ? '' : '/'}${post.image}`;
+
     // Build the metadata object
     const metadata: Metadata = {
         title: locale === 'he'
@@ -124,6 +129,31 @@ export async function generateMetadata(
             : `${post.title} | Smart Worksheets Blog`,
         description: post.excerpt,
         alternates: generateAlternates(`/blog/${slug}`, locale as Locale),
+        openGraph: {
+            title: post.title,
+            description: post.excerpt,
+            url: `${baseUrl}${localePath}/blog/${slug}`,
+            siteName: locale === 'he' ? 'תרגול' : 'Tirgul',
+            locale: locale === 'he' ? 'he_IL' : locale,
+            type: 'article',
+            publishedTime: post.date.includes('/')
+                ? post.date.split('/').reverse().join('-')
+                : post.date,
+            images: [
+                {
+                    url: imageUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: post.title,
+                },
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: post.title,
+            description: post.excerpt,
+            images: [imageUrl],
+        },
     };
 
     // Add related generator hint if found
@@ -182,11 +212,17 @@ export default async function BlogPostPage({ params }: Props) {
         isoModifiedDate = isoDate;
     }
 
+    // Construct absolute image URL for schema
+    const schemaImageUrl = post.image.startsWith('http')
+        ? post.image
+        : `https://www.tirgul.net${post.image.startsWith('/') ? '' : '/'}${post.image}`;
+
     const articleSchema = {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": post.title,
         "description": post.excerpt,
+        "image": schemaImageUrl,
         "datePublished": isoDate,
         "dateModified": isoModifiedDate,
         "author": post.author ? {

@@ -42,12 +42,44 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         ]
     };
 
+    const howToSchema = {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": t('howItWorks.title'),
+        "description": t('howItWorks.subtitle'),
+        "step": [
+            {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": t('howItWorks.step1.title'),
+                "text": t('howItWorks.step1.description')
+            },
+            {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": t('howItWorks.step2.title'),
+                "text": t('howItWorks.step2.description')
+            },
+            {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": t('howItWorks.step3.title'),
+                "text": t('howItWorks.step3.description')
+            }
+        ]
+    };
+
     return (
         <div className="min-h-screen flex flex-col bg-[#fffbf5]">
             <Script
                 id="organization-schema"
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+            />
+            <Script
+                id="howto-schema"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
             />
             <Header />
 

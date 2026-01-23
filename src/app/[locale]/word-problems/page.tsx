@@ -1,17 +1,22 @@
 import WordProblemsClient from '@/components/worksheet/WordProblemsClient';
 import { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'meta' });
 
+    const title = t('pages.wordProblems.title');
+    const description = t('pages.wordProblems.description');
+
     return {
-        title: t('pages.wordProblems.title'),
-        description: t('pages.wordProblems.description'),
+        title,
+        description,
         alternates: generateAlternates('/word-problems', locale as Locale),
+        openGraph: generateOpenGraphMeta(locale as Locale, title, description, '/word-problems'),
+        twitter: generateTwitterMeta(title, description),
     };
 }
 
@@ -19,6 +24,8 @@ export default async function WordProblemsPage({ params }: { params: Promise<{ l
     const { locale } = await params;
     setRequestLocale(locale);
     const t = await getTranslations({ locale, namespace: 'meta' });
+    const eduLevels = getEducationalLevels(locale as Locale);
+    const orgName = getOrganizationName(locale as Locale);
 
     const breadcrumbSchema = {
         "@context": "https://schema.org",
@@ -27,7 +34,7 @@ export default async function WordProblemsPage({ params }: { params: Promise<{ l
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": locale === 'he' ? "ראשי" : "Home",
+                "name": t('breadcrumb.home'),
                 "item": "https://www.tirgul.net"
             },
             {
@@ -47,13 +54,13 @@ export default async function WordProblemsPage({ params }: { params: Promise<{ l
         "url": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/word-problems`,
         "inLanguage": locale,
         "learningResourceType": "Worksheet",
-        "educationalLevel": ["כיתה א", "כיתה ב", "כיתה ג", "כיתה ד", "כיתה ה", "כיתה ו"],
+        "educationalLevel": eduLevels, // All grades 1-6
         "educationalUse": "Practice",
         "interactivityType": "active",
         "isAccessibleForFree": true,
         "provider": {
             "@type": "Organization",
-            "name": "דפי עבודה חכמים",
+            "name": orgName,
             "url": "https://www.tirgul.net"
         }
     };

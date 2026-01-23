@@ -1,17 +1,22 @@
 import type { Metadata } from 'next';
 import DecimalsClient from '@/components/worksheet/DecimalsClient';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'meta' });
 
+    const title = t('pages.decimals.title');
+    const description = t('pages.decimals.description');
+
     return {
-        title: t('pages.decimals.title'),
-        description: t('pages.decimals.description'),
+        title,
+        description,
         alternates: generateAlternates('/decimals', locale as Locale),
+        openGraph: generateOpenGraphMeta(locale as Locale, title, description, '/decimals'),
+        twitter: generateTwitterMeta(title, description),
     };
 }
 
@@ -20,6 +25,9 @@ export default async function DecimalsPage({ params }: { params: Promise<{ local
     setRequestLocale(locale);
     const t = await getTranslations({ locale, namespace: 'meta' });
 
+    const eduLevels = getEducationalLevels(locale as Locale);
+    const orgName = getOrganizationName(locale as Locale);
+
     const breadcrumbSchema = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -27,7 +35,7 @@ export default async function DecimalsPage({ params }: { params: Promise<{ local
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": locale === 'he' ? "ראשי" : "Home",
+                "name": t('breadcrumb.home'),
                 "item": "https://www.tirgul.net"
             },
             {
@@ -47,13 +55,13 @@ export default async function DecimalsPage({ params }: { params: Promise<{ local
         "url": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/decimals`,
         "inLanguage": locale,
         "learningResourceType": "Worksheet",
-        "educationalLevel": ["כיתה ד", "כיתה ה", "כיתה ו"],
+        "educationalLevel": eduLevels.slice(3), // Grades 4-6
         "educationalUse": "Practice",
         "interactivityType": "active",
         "isAccessibleForFree": true,
         "provider": {
             "@type": "Organization",
-            "name": "דפי עבודה חכמים",
+            "name": orgName,
             "url": "https://www.tirgul.net"
         }
     };

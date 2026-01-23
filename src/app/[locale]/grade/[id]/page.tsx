@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { ArrowLeft, GraduationCap, Sparkles } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string; locale: string }> }): Promise<Metadata> {
@@ -20,14 +20,17 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     const gradeDescription = t(`grades.${id}.description`);
     const topicNames = gradeData.slice(0, 3).map(topicId => t(`grades.${id}.topics.${topicId}.title`)).join(', ');
 
+    const title = t('grade.meta.titleTemplate', { gradeTitle });
+    const description = t('grade.meta.descriptionTemplate', {
+        gradeDescription,
+        gradeTitle,
+        count: gradeData.length,
+        topicNames
+    });
+
     return {
-        title: t('grade.meta.titleTemplate', { gradeTitle }),
-        description: t('grade.meta.descriptionTemplate', {
-            gradeDescription,
-            gradeTitle,
-            count: gradeData.length,
-            topicNames
-        }),
+        title,
+        description,
         keywords: [
             t('grade.meta.keywords.worksheets', { gradeTitle }),
             t('grade.meta.keywords.math', { gradeTitle }),
@@ -35,6 +38,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
             t('grade.meta.keywords.exercises')
         ],
         alternates: generateAlternates(`/grade/${id}`, locale as Locale),
+        openGraph: generateOpenGraphMeta(locale as Locale, title, description, `/grade/${id}`),
+        twitter: generateTwitterMeta(title, description),
     };
 }
 
@@ -91,7 +96,7 @@ export default async function GradePage({ params }: { params: Promise<{ id: stri
                 "@type": "ListItem",
                 "position": 2,
                 "name": gradeTitle,
-                "item": `https://www.tirgul.net/grade/${id}`
+                "item": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/grade/${id}`
             }
         ]
     };

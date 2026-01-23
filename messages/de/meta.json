@@ -2,7 +2,12 @@
   "site": {
     "name": "Clevere Arbeitsblätter",
     "title": "Clevere Arbeitsblätter | Mathe-Übungen & Spiele",
-    "description": "Druckbare clevere Arbeitsblätter und interaktive Mathe-Spiele für die Klassen 1-6. Kostenlos und ohne Registrierung!"
+    "description": "Druckbare clevere Arbeitsblätter und interaktive Mathe-Spiele für die Klassen 1-6. Kostenlos und ohne Registrierung!",
+    "keywords": "Mathe Arbeitsblätter, Mathe Spiele, druckbare Arbeitsblätter, Mathe Übungen, Mathe Spiele für Kinder, Mathe erste Klasse, Arbeitsblatt Generator, Brüche Arbeitsblätter"
+  },
+  "breadcrumb": {
+    "home": "Startseite",
+    "blog": "Blog"
   },
   "pages": {
     "home": {

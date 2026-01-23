@@ -3,17 +3,22 @@ import { Footer } from '@/components/layout/Footer';
 import { Shield, ArrowRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'meta.pages.privacy' });
 
+    const title = t('title');
+    const description = t('description');
+
     return {
-        title: t('title'),
-        description: t('description'),
+        title,
+        description,
         alternates: generateAlternates('/privacy', locale as Locale),
+        openGraph: generateOpenGraphMeta(locale as Locale, title, description, '/privacy'),
+        twitter: generateTwitterMeta(title, description),
     };
 }
 
@@ -29,7 +34,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": locale === 'he' ? "ראשי" : "Home",
+                "name": metaT('breadcrumb.home'),
                 "item": "https://www.tirgul.net"
             },
             {

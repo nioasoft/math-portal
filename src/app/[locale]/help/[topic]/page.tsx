@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowRight, BookOpen, AlertTriangle, Lightbulb, CheckCircle, ExternalLink, GraduationCap } from 'lucide-react';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
 
 interface PageProps {
     params: Promise<{ topic: string; locale: string }>;
@@ -47,11 +47,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     // Help pages target informational intent ("how to explain/teach")
     // while generators target transactional intent ("create/print worksheets")
     const metaDescription = t('topic.metaDescription', { title: topic.title });
+    const title = t('topic.metaTitle', { title: topic.title });
 
     return {
-        title: t('topic.metaTitle', { title: topic.title }),
+        title,
         description: metaDescription,
         alternates: generateAlternates(`/help/${topicSlug}`, locale as Locale),
+        openGraph: generateOpenGraphMeta(locale as Locale, title, metaDescription, `/help/${topicSlug}`),
+        twitter: generateTwitterMeta(title, metaDescription),
         other: {
             // Hint to search engines about the primary transactional page
             // This helps avoid cannibalization by signaling relationship
@@ -112,6 +115,8 @@ export default async function HelpTopicPage({ params }: PageProps) {
         ]
     };
 
+    const metaT = await getTranslations({ locale, namespace: 'meta' });
+
     const breadcrumbSchema = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -119,7 +124,7 @@ export default async function HelpTopicPage({ params }: PageProps) {
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": locale === 'he' ? "ראשי" : "Home",
+                "name": metaT('breadcrumb.home'),
                 "item": "https://www.tirgul.net"
             },
             {

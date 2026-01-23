@@ -2,17 +2,22 @@ import { Metadata } from 'next';
 import { Link } from '@/i18n/navigation';
 import { Calculator, Percent, PieChart, Gamepad2, Trophy, Zap } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'meta.pages.play' });
 
+    const title = t('title');
+    const description = t('description');
+
     return {
-        title: t('title'),
-        description: t('description'),
+        title,
+        description,
         alternates: generateAlternates('/play', locale as Locale),
+        openGraph: generateOpenGraphMeta(locale as Locale, title, description, '/play'),
+        twitter: generateTwitterMeta(title, description),
     };
 }
 
@@ -52,7 +57,7 @@ export default async function PlayPage({ params }: { params: Promise<{ locale: s
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": locale === 'he' ? "ראשי" : "Home",
+                "name": metaT('breadcrumb.home'),
                 "item": "https://www.tirgul.net"
             },
             {

@@ -6,9 +6,9 @@ import { ArrowRight, Calendar, Clock, BookOpen, GraduationCap, ArrowLeft } from 
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Metadata } from 'next';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { locales, type Locale } from '@/i18n/config';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, getOrganizationName } from '@/lib/seo';
 
 // Map blog post tags to related help topics
 function getRelatedHelpTopics(tags: string[], content: string) {
@@ -185,10 +185,13 @@ export default async function BlogPostPage({ params }: Props) {
     setRequestLocale(locale);
 
     const post = await getBlogPost(slug, locale as Locale);
+    const t = await getTranslations({ locale, namespace: 'meta' });
 
     if (!post) {
         notFound();
     }
+
+    const organizationName = getOrganizationName(locale as Locale);
 
     // Handle date format - support both DD/MM/YYYY and YYYY-MM-DD formats
     let isoDate: string;
@@ -230,12 +233,12 @@ export default async function BlogPostPage({ params }: Props) {
             "name": post.author
         } : {
             "@type": "Organization",
-            "name": "דפי עבודה חכמים",
+            "name": organizationName,
             "url": "https://www.tirgul.net"
         },
         "publisher": {
             "@type": "Organization",
-            "name": "דפי עבודה חכמים",
+            "name": organizationName,
             "logo": {
                 "@type": "ImageObject",
                 "url": "https://www.tirgul.net/logo.png"
@@ -243,7 +246,7 @@ export default async function BlogPostPage({ params }: Props) {
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://www.tirgul.net/blog/${slug}`
+            "@id": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/blog/${slug}`
         },
         "keywords": post.tags.join(', '),
         "articleSection": post.categoryLabel,
@@ -257,20 +260,20 @@ export default async function BlogPostPage({ params }: Props) {
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": "ראשי",
+                "name": t('breadcrumb.home'),
                 "item": "https://www.tirgul.net"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "בלוג",
-                "item": "https://www.tirgul.net/blog"
+                "name": t('breadcrumb.blog'),
+                "item": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/blog`
             },
             {
                 "@type": "ListItem",
                 "position": 3,
                 "name": post.title,
-                "item": `https://www.tirgul.net/blog/${slug}`
+                "item": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/blog/${slug}`
             }
         ]
     };

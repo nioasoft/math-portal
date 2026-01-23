@@ -1,4 +1,5 @@
-import { locales, defaultLocale, type Locale } from '@/i18n/config';
+import { locales, defaultLocale, localeConfig, type Locale } from '@/i18n/config';
+import type { Metadata } from 'next';
 
 const BASE_URL = 'https://www.tirgul.net';
 
@@ -72,6 +73,111 @@ export function getLocalizedUrl(path: string, locale: Locale): string {
   }
 
   return `${BASE_URL}/${locale}${cleanPath === '/' ? '' : cleanPath}`;
+}
+
+/**
+ * Generates OpenGraph metadata for a page
+ * @param locale - The current locale
+ * @param title - The page title
+ * @param description - The page description
+ * @param path - The page path (without locale prefix)
+ * @returns OpenGraph metadata object
+ */
+export function generateOpenGraphMeta(
+  locale: Locale,
+  title: string,
+  description: string,
+  path: string
+): Metadata['openGraph'] {
+  const url = getLocalizedUrl(path, locale);
+  const ogLocale = localeConfig[locale].locale; // e.g., 'he_IL', 'en_US'
+
+  return {
+    title,
+    description,
+    url,
+    siteName: localeConfig[locale].name === 'עברית' ? 'תרגול' :
+              localeConfig[locale].name === 'English' ? 'Smart Worksheets' :
+              localeConfig[locale].name === 'العربية' ? 'أوراق عمل ذكية' :
+              localeConfig[locale].name === 'Deutsch' ? 'Clevere Arbeitsblätter' :
+              'Hojas de Trabajo Inteligentes',
+    locale: ogLocale,
+    type: 'website',
+    images: [
+      {
+        url: `${BASE_URL}/opengraph-image.jpg`,
+        width: 1424,
+        height: 752,
+        alt: title,
+      },
+    ],
+  };
+}
+
+/**
+ * Generates Twitter card metadata for a page
+ * @param title - The page title
+ * @param description - The page description
+ * @returns Twitter metadata object
+ */
+export function generateTwitterMeta(
+  title: string,
+  description: string
+): Metadata['twitter'] {
+  return {
+    card: 'summary_large_image',
+    title,
+    description,
+    images: [`${BASE_URL}/opengraph-image.jpg`],
+  };
+}
+
+/**
+ * Gets the localized site name for a given locale
+ * @param locale - The locale
+ * @returns The localized site name
+ */
+export function getSiteName(locale: Locale): string {
+  const siteNames: Record<Locale, string> = {
+    he: 'תרגול',
+    en: 'Smart Worksheets',
+    ar: 'أوراق عمل ذكية',
+    de: 'Clevere Arbeitsblätter',
+    es: 'Hojas de Trabajo Inteligentes',
+  };
+  return siteNames[locale];
+}
+
+/**
+ * Gets the localized organization name for a given locale
+ * @param locale - The locale
+ * @returns The localized organization name
+ */
+export function getOrganizationName(locale: Locale): string {
+  const orgNames: Record<Locale, string> = {
+    he: 'דפי עבודה חכמים',
+    en: 'Smart Worksheets',
+    ar: 'أوراق عمل ذكية',
+    de: 'Clevere Arbeitsblätter',
+    es: 'Hojas de Trabajo Inteligentes',
+  };
+  return orgNames[locale];
+}
+
+/**
+ * Gets localized educational levels for a given locale
+ * @param locale - The locale
+ * @returns Array of localized grade level names
+ */
+export function getEducationalLevels(locale: Locale): string[] {
+  const levels: Record<Locale, string[]> = {
+    he: ['כיתה א', 'כיתה ב', 'כיתה ג', 'כיתה ד', 'כיתה ה', 'כיתה ו'],
+    en: ['Grade 1', 'Grade 2', 'Grade 3', 'Grade 4', 'Grade 5', 'Grade 6'],
+    ar: ['الصف الأول', 'الصف الثاني', 'الصف الثالث', 'الصف الرابع', 'الصف الخامس', 'الصف السادس'],
+    de: ['Klasse 1', 'Klasse 2', 'Klasse 3', 'Klasse 4', 'Klasse 5', 'Klasse 6'],
+    es: ['Grado 1', 'Grado 2', 'Grado 3', 'Grado 4', 'Grado 5', 'Grado 6'],
+  };
+  return levels[locale];
 }
 
 export { BASE_URL };

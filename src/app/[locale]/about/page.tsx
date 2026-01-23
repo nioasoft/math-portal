@@ -5,17 +5,22 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'meta' });
 
+    const title = t('pages.about.title');
+    const description = t('pages.about.description');
+
     return {
-        title: t('pages.about.title'),
-        description: t('pages.about.description'),
+        title,
+        description,
         alternates: generateAlternates('/about', locale as Locale),
+        openGraph: generateOpenGraphMeta(locale as Locale, title, description, '/about'),
+        twitter: generateTwitterMeta(title, description),
     };
 }
 
@@ -31,7 +36,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": locale === 'he' ? "ראשי" : "Home",
+                "name": metaT('breadcrumb.home'),
                 "item": "https://www.tirgul.net"
             },
             {

@@ -2,7 +2,12 @@
   "site": {
     "name": "Smart Worksheets",
     "title": "Smart Worksheets | Math Practice & Games",
-    "description": "Printable smart worksheets and interactive math games for grades 1-6. Free and no registration required!"
+    "description": "Printable smart worksheets and interactive math games for grades 1-6. Free and no registration required!",
+    "keywords": "math worksheets, math games, printable worksheets, math exercises, math games for kids, first grade math, worksheet generator, fractions worksheets"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "blog": "Blog"
   },
   "pages": {
     "home": {

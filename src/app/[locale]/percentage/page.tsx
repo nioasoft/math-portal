@@ -1,17 +1,22 @@
 import type { Metadata } from 'next';
 import PercentageClient from '@/components/worksheet/PercentageClient';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'meta' });
 
+    const title = t('pages.percentage.title');
+    const description = t('pages.percentage.description');
+
     return {
-        title: t('pages.percentage.title'),
-        description: t('pages.percentage.description'),
+        title,
+        description,
         alternates: generateAlternates('/percentage', locale as Locale),
+        openGraph: generateOpenGraphMeta(locale as Locale, title, description, '/percentage'),
+        twitter: generateTwitterMeta(title, description),
     };
 }
 
@@ -20,6 +25,9 @@ export default async function PercentagePage({ params }: { params: Promise<{ loc
     setRequestLocale(locale);
     const t = await getTranslations({ locale, namespace: 'meta' });
 
+    const eduLevels = getEducationalLevels(locale as Locale);
+    const orgName = getOrganizationName(locale as Locale);
+
     const breadcrumbSchema = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -27,7 +35,7 @@ export default async function PercentagePage({ params }: { params: Promise<{ loc
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": locale === 'he' ? "ראשי" : "Home",
+                "name": t('breadcrumb.home'),
                 "item": "https://www.tirgul.net"
             },
             {
@@ -47,13 +55,13 @@ export default async function PercentagePage({ params }: { params: Promise<{ loc
         "url": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/percentage`,
         "inLanguage": locale,
         "learningResourceType": "Worksheet",
-        "educationalLevel": ["כיתה ה", "כיתה ו"],
+        "educationalLevel": eduLevels.slice(4), // Grades 5-6
         "educationalUse": "Practice",
         "interactivityType": "active",
         "isAccessibleForFree": true,
         "provider": {
             "@type": "Organization",
-            "name": "דפי עבודה חכמים",
+            "name": orgName,
             "url": "https://www.tirgul.net"
         }
     };

@@ -1,17 +1,22 @@
 import type { Metadata } from 'next';
 import RatioClient from '@/components/worksheet/RatioClient';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'meta' });
 
+    const title = t('pages.ratio.title');
+    const description = t('pages.ratio.description');
+
     return {
-        title: t('pages.ratio.title'),
-        description: t('pages.ratio.description'),
+        title,
+        description,
         alternates: generateAlternates('/ratio', locale as Locale),
+        openGraph: generateOpenGraphMeta(locale as Locale, title, description, '/ratio'),
+        twitter: generateTwitterMeta(title, description),
     };
 }
 
@@ -19,6 +24,8 @@ export default async function RatioPage({ params }: { params: Promise<{ locale: 
     const { locale } = await params;
     setRequestLocale(locale);
     const t = await getTranslations({ locale, namespace: 'meta' });
+    const eduLevels = getEducationalLevels(locale as Locale);
+    const orgName = getOrganizationName(locale as Locale);
 
     const breadcrumbSchema = {
         "@context": "https://schema.org",
@@ -27,7 +34,7 @@ export default async function RatioPage({ params }: { params: Promise<{ locale: 
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": locale === 'he' ? "ראשי" : "Home",
+                "name": t('breadcrumb.home'),
                 "item": "https://www.tirgul.net"
             },
             {
@@ -47,13 +54,13 @@ export default async function RatioPage({ params }: { params: Promise<{ locale: 
         "url": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/ratio`,
         "inLanguage": locale,
         "learningResourceType": "Worksheet",
-        "educationalLevel": ["כיתה ה", "כיתה ו"],
+        "educationalLevel": eduLevels.slice(4), // Grades 5-6
         "educationalUse": "Practice",
         "interactivityType": "active",
         "isAccessibleForFree": true,
         "provider": {
             "@type": "Organization",
-            "name": "דפי עבודה חכמים",
+            "name": orgName,
             "url": "https://www.tirgul.net"
         }
     };

@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Assistant, Noto_Sans_Arabic, Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { getMessages, setRequestLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { PWAInstallBanner } from "@/components/PWAInstallBanner";
@@ -9,7 +9,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { GoogleAdsense } from "@/components/GoogleAdsense";
 import { locales, localeConfig, defaultLocale, type Locale } from "@/i18n/config";
-import { BASE_URL } from "@/lib/seo";
+import { BASE_URL, getSiteName, getOrganizationName, getEducationalLevels } from "@/lib/seo";
 
 export const viewport: Viewport = {
   themeColor: "#f97316",
@@ -78,29 +78,24 @@ export async function generateMetadata({
     return {};
   }
 
+  const t = await getTranslations({ locale, namespace: 'meta' });
+  const siteName = getSiteName(locale as Locale);
+  const ogLocale = localeConfig[locale as Locale].locale;
+  const canonicalUrl = locale === defaultLocale ? BASE_URL : `${BASE_URL}/${locale}`;
+
   return {
     metadataBase: new URL("https://www.tirgul.net"),
     title: {
-      default: "תרגול | דפי עבודה חכמים ומשחקי חשבון",
-      template: "%s | תרגול",
+      default: t('site.title'),
+      template: `%s | ${siteName}`,
     },
-    description:
-      "דפי עבודה חכמים להדפסה ומשחקים אינטראקטיביים בחשבון לכיתות א׳-ו׳. חינם וללא הרשמה!",
-    keywords: [
-      "דפי עבודה בחשבון",
-      "משחקי חשבון",
-      "דפי עבודה להדפסה",
-      "תרגילי חשבון",
-      "משחקי מתמטיקה לילדים",
-      "חשבון לכיתה א",
-      "מחולל דפי עבודה",
-      "דפי עבודה בשברים",
-    ],
+    description: t('site.description'),
+    keywords: t('site.keywords'),
     manifest: "/manifest.json",
     appleWebApp: {
       capable: true,
       statusBarStyle: "default",
-      title: "תרגול",
+      title: siteName,
     },
     formatDetection: {
       telephone: false,
@@ -120,19 +115,18 @@ export async function generateMetadata({
       ],
     },
     openGraph: {
-      title: "תרגול | דפי עבודה חכמים ומשחקי חשבון",
-      description:
-        "דפי עבודה חכמים להדפסה ומשחקים אינטראקטיביים בחשבון לכיתות א׳-ו׳. חינם וללא הרשמה!",
-      url: "https://www.tirgul.net",
-      siteName: "תרגול",
-      locale: "he_IL",
+      title: t('site.title'),
+      description: t('site.description'),
+      url: canonicalUrl,
+      siteName: siteName,
+      locale: ogLocale,
       type: "website",
       images: [
         {
           url: "https://www.tirgul.net/opengraph-image.jpg",
           width: 1424,
           height: 752,
-          alt: "תרגול | דפי עבודה חכמים ומשחקי חשבון",
+          alt: t('site.title'),
         },
       ],
     },
@@ -145,8 +139,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'תרגול | דפי עבודה חכמים ומשחקי חשבון',
-      description: 'דפי עבודה חכמים להדפסה ומשחקים אינטראקטיביים בחשבון לכיתות א׳-ו׳. חינם וללא הרשמה!',
+      title: t('site.title'),
+      description: t('site.description'),
       images: ['https://www.tirgul.net/opengraph-image.jpg'],
     },
     alternates: generateAlternates(locale as Locale),
@@ -175,18 +169,24 @@ export default async function LocaleLayout({
 
   // Providing all messages to the client side
   const messages = await getMessages();
+  // Type assertion for accessing nested message properties
+  const metaMessages = messages.meta as { site?: { description?: string } } | undefined;
+  const siteDescription = metaMessages?.site?.description || "Educational math worksheets portal for grades 1-6";
 
   const { dir } = localeConfig[locale as Locale];
   const fontVar = fontByLocale[locale as Locale];
 
+  const orgName = getOrganizationName(locale as Locale);
+  const eduLevels = getEducationalLevels(locale as Locale);
+
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "דפי עבודה חכמים",
+    name: orgName,
     alternateName: "Tirgul",
     url: "https://www.tirgul.net",
     logo: "https://www.tirgul.net/logo.png",
-    description: "פורטל דפי עבודה חינוכיים בחשבון לכיתות א-ו",
+    description: siteDescription,
     sameAs: [],
     areaServed: {
       "@type": "Country",
@@ -203,7 +203,7 @@ export default async function LocaleLayout({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "דפי עבודה חכמים",
+    name: orgName,
     url: "https://www.tirgul.net",
     inLanguage: locale,
     potentialAction: {
@@ -219,26 +219,17 @@ export default async function LocaleLayout({
   const educationalOrganizationSchema = {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
-    name: "דפי עבודה חכמים",
+    name: orgName,
     url: "https://www.tirgul.net",
-    description:
-      "פלטפורמה חינוכית לייצור דפי עבודה בחשבון מותאמים אישית לכיתות א-ו",
+    description: siteDescription,
     offers: {
       "@type": "Offer",
       priceCurrency: "ILS",
       price: "0",
       availability: "https://schema.org/InStock",
-      description:
-        "דפי עבודה בחשבון, שברים, אחוזים, גאומטריה, יחסים, סדרות חשבוניות ובעיות מילוליות - חינם וללא הרשמה",
+      description: siteDescription,
     },
-    educationalLevel: [
-      "כיתה א",
-      "כיתה ב",
-      "כיתה ג",
-      "כיתה ד",
-      "כיתה ה",
-      "כיתה ו",
-    ],
+    educationalLevel: eduLevels,
     areaServed: {
       "@type": "Country",
       name: "Israel",

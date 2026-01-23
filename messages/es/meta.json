@@ -2,7 +2,12 @@
   "site": {
     "name": "Hojas de Trabajo Inteligentes",
     "title": "Hojas de Trabajo Inteligentes | Práctica y Juegos de Matemáticas",
-    "description": "Hojas de trabajo inteligentes imprimibles y juegos de matemáticas interactivos para grados 1-6. ¡Gratis y sin registro!"
+    "description": "Hojas de trabajo inteligentes imprimibles y juegos de matemáticas interactivos para grados 1-6. ¡Gratis y sin registro!",
+    "keywords": "hojas de trabajo matemáticas, juegos de matemáticas, hojas de trabajo para imprimir, ejercicios de matemáticas, juegos de matemáticas para niños, matemáticas primer grado, generador de hojas de trabajo, hojas de trabajo de fracciones"
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "blog": "Blog"
   },
   "pages": {
     "home": {

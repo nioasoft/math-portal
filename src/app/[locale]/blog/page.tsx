@@ -7,7 +7,7 @@ import { Footer } from '@/components/layout/Footer';
 import { Newspaper, Sparkles, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Locale } from '@/i18n/config';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
 
 type Props = {
     params: Promise<{ locale: string }>
@@ -17,10 +17,15 @@ export async function generateMetadata({ params }: Props) {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'meta' });
 
+    const title = t('pages.blog.title');
+    const description = t('pages.blog.description');
+
     return {
-        title: t('pages.blog.title'),
-        description: t('pages.blog.description'),
+        title,
+        description,
         alternates: generateAlternates('/blog', locale as Locale),
+        openGraph: generateOpenGraphMeta(locale as Locale, title, description, '/blog'),
+        twitter: generateTwitterMeta(title, description),
     };
 }
 
@@ -76,7 +81,7 @@ export default async function BlogIndexPage({ params }: Props) {
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": locale === 'he' ? "ראשי" : "Home",
+                "name": metaT('breadcrumb.home'),
                 "item": "https://www.tirgul.net"
             },
             {

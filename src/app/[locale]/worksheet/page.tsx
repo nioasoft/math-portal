@@ -2,17 +2,22 @@ import { Suspense } from 'react';
 import WorksheetClient from '@/components/worksheet/WorksheetClient';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'meta' });
 
+    const title = t('pages.worksheet.title');
+    const description = t('pages.worksheet.description');
+
     return {
-        title: t('pages.worksheet.title'),
-        description: t('pages.worksheet.description'),
+        title,
+        description,
         alternates: generateAlternates('/worksheet', locale as Locale),
+        openGraph: generateOpenGraphMeta(locale as Locale, title, description, '/worksheet'),
+        twitter: generateTwitterMeta(title, description),
     };
 }
 
@@ -27,7 +32,7 @@ export default async function WorksheetPage({ params }: { params: Promise<{ loca
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": locale === 'he' ? "ראשי" : "Home",
+                "name": t('breadcrumb.home'),
                 "item": "https://www.tirgul.net"
             },
             {

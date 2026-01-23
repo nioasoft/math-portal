@@ -1,17 +1,22 @@
 import type { Metadata } from 'next';
 import FractionsClient from '@/components/worksheet/FractionsClient';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'meta' });
 
+    const title = t('pages.fractions.title');
+    const description = t('pages.fractions.description');
+
     return {
-        title: t('pages.fractions.title'),
-        description: t('pages.fractions.description'),
+        title,
+        description,
         alternates: generateAlternates('/fractions', locale as Locale),
+        openGraph: generateOpenGraphMeta(locale as Locale, title, description, '/fractions'),
+        twitter: generateTwitterMeta(title, description),
     };
 }
 
@@ -20,6 +25,9 @@ export default async function FractionsPage({ params }: { params: Promise<{ loca
     setRequestLocale(locale);
     const t = await getTranslations({ locale, namespace: 'meta' });
 
+    const eduLevels = getEducationalLevels(locale as Locale);
+    const orgName = getOrganizationName(locale as Locale);
+
     const breadcrumbSchema = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -27,7 +35,7 @@ export default async function FractionsPage({ params }: { params: Promise<{ loca
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": locale === 'he' ? "ראשי" : "Home",
+                "name": t('breadcrumb.home'),
                 "item": "https://www.tirgul.net"
             },
             {
@@ -47,13 +55,13 @@ export default async function FractionsPage({ params }: { params: Promise<{ loca
         "url": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/fractions`,
         "inLanguage": locale,
         "learningResourceType": "Worksheet",
-        "educationalLevel": ["כיתה ג", "כיתה ד", "כיתה ה", "כיתה ו"],
+        "educationalLevel": eduLevels.slice(2), // Grades 3-6
         "educationalUse": "Practice",
         "interactivityType": "active",
         "isAccessibleForFree": true,
         "provider": {
             "@type": "Organization",
-            "name": "דפי עבודה חכמים",
+            "name": orgName,
             "url": "https://www.tirgul.net"
         }
     };

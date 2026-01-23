@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Link } from '@/i18n/navigation';
@@ -9,6 +10,23 @@ import { FeaturedPosts } from '@/components/FeaturedPosts';
 import { getBlogPosts, getHelpTopics } from '@/lib/content';
 import { getTranslations, getLocale } from 'next-intl/server';
 import { Locale } from '@/i18n/config';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'meta' });
+
+  const title = t('pages.home.title');
+  const description = t('pages.home.description');
+
+  return {
+    title,
+    description,
+    alternates: generateAlternates('/', locale as Locale),
+    openGraph: generateOpenGraphMeta(locale as Locale, title, description, '/'),
+    twitter: generateTwitterMeta(title, description),
+  };
+}
 
 const getGenerators = (t: Awaited<ReturnType<typeof getTranslations<'home'>>>) => [
   {

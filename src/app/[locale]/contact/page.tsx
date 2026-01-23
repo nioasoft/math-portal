@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
 import ContactFormClient from '@/components/contact/ContactFormClient';
 
@@ -8,10 +8,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'meta' });
 
+    const title = t('pages.contact.title');
+    const description = t('pages.contact.description');
+
     return {
-        title: t('pages.contact.title'),
-        description: t('pages.contact.description'),
+        title,
+        description,
         alternates: generateAlternates('/contact', locale as Locale),
+        openGraph: generateOpenGraphMeta(locale as Locale, title, description, '/contact'),
+        twitter: generateTwitterMeta(title, description),
     };
 }
 
@@ -26,7 +31,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": locale === 'he' ? "ראשי" : "Home",
+                "name": t('breadcrumb.home'),
                 "item": "https://www.tirgul.net"
             },
             {

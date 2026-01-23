@@ -11,7 +11,27 @@
     "ctaGames": "🎮 Math Games",
     "trustPrint": "Direct Print",
     "trustNoSignup": "No Registration",
-    "trustFree": "100% Free"
+    "trustFree": "100% Free",
+    "worksheetCard": {
+      "title": "Printable Worksheets",
+      "desc": "Create custom worksheets and print them",
+      "cta": "Start Creating"
+    },
+    "gamesCard": {
+      "title": "Interactive Games",
+      "desc": "Play math games and learn while having fun!",
+      "cta": "Let's Play!"
+    }
+  },
+  "quickGames": {
+    "title": "Let's Play!",
+    "subtitle": "Interactive Math Games",
+    "math": "Math",
+    "mathDesc": "Addition & Subtraction",
+    "fractions": "Fractions",
+    "fractionsDesc": "Simple Fractions",
+    "percentage": "Percentages",
+    "percentageDesc": "Calculate Percentages"
   },
   "generators": {
     "title": "What would you like to practice today?",

@@ -4,7 +4,7 @@ import { Footer } from '@/components/layout/Footer';
 import { Link } from '@/i18n/navigation';
 import {
   Calculator, Brain, ArrowLeft, Percent, Divide,
-  Shapes, Scale, Star, BookOpen, GraduationCap, Sparkles, Printer, Zap, Gamepad2
+  Shapes, Scale, Star, BookOpen, GraduationCap, Printer, Zap, Gamepad2, PieChart
 } from 'lucide-react';
 import { FeaturedPosts } from '@/components/FeaturedPosts';
 import { getBlogPosts, getHelpTopics } from '@/lib/content';
@@ -120,7 +120,7 @@ export default async function Home() {
       <main className="flex-1">
 
         {/* Hero Section - Warm & Inviting */}
-        <section className="relative overflow-hidden pt-20 pb-32 md:pt-32 md:pb-44 min-h-[85vh] flex items-center">
+        <section className="relative overflow-hidden pt-6 pb-10 md:pt-12 md:pb-16 min-h-0 flex items-center">
           {/* Background layers */}
           <div className="absolute inset-0 bg-gradient-to-b from-orange-50/80 via-[#fffbf5] to-[#fffbf5]"></div>
           <div className="absolute inset-0 grid-pattern"></div>
@@ -144,68 +144,107 @@ export default async function Home() {
           <MathSymbol symbol="Σ" className="top-16 left-[35%] text-purple-300 animate-float-fast opacity-40" />
 
           <div className="container-custom relative z-10">
-            <div className="max-w-4xl mx-auto text-center">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-orange-200 rounded-full px-5 py-2.5 shadow-sm mb-8 animate-slide-up">
-                <Sparkles size={16} className="text-orange-500" />
-                <span className="text-sm font-bold text-slate-700">{t('hero.badge')}</span>
-              </div>
-
+            <div className="max-w-5xl mx-auto text-center">
               {/* Main headline */}
-              <h1 className="text-5xl md:text-7xl font-black text-slate-800 mb-6 leading-tight text-display animate-slide-up delay-100">
-                {t('hero.title')}{' '}
+              <h1 className="text-4xl md:text-7xl font-black text-slate-800 mb-3 leading-tight text-display animate-slide-up">
+                {t('hero.title')}
+                <br className="sm:hidden" />
+                <span className="hidden sm:inline">{' '}</span>
                 <span className="text-gradient-warm">{t('hero.titleHighlight')}</span>
               </h1>
 
               {/* Subheadline */}
-              <p className="text-xl md:text-2xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed animate-slide-up delay-200">
+              <p className="text-lg md:text-2xl text-slate-600 mb-6 max-w-3xl md:max-w-4xl mx-auto leading-relaxed animate-slide-up delay-100">
                 {t('hero.description')}
                 <br className="hidden sm:block" />
                 {t('hero.descriptionLine2')} <strong className="text-orange-600">{t('hero.free')}</strong>.
               </p>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up delay-300">
+              {/* Dual CTA Cards */}
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-5 max-w-3xl md:max-w-4xl mx-auto animate-slide-up delay-200">
+                {/* Worksheets Card */}
                 <a
                   href="#generators"
-                  className="w-full sm:w-auto bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-orange-200/50 hover:shadow-2xl hover:shadow-orange-300/50 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3"
+                  className="flex-1 bg-white border-2 border-orange-200 rounded-xl p-5 md:p-6 hover:border-orange-400 hover:shadow-lg transition-all group text-right"
                 >
-                  {t('hero.cta')}
-                  <ArrowLeft className="w-5 h-5" />
+                  <div className="flex items-center gap-2 mb-2">
+                    <Printer className="w-7 h-7 md:w-8 md:h-8 text-orange-500" />
+                    <h3 className="text-xl md:text-2xl font-bold text-slate-800">{t('hero.worksheetCard.title')}</h3>
+                  </div>
+                  <p className="text-base md:text-lg text-slate-600 mb-3">{t('hero.worksheetCard.desc')}</p>
+                  <span className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-bold text-base md:text-lg group-hover:-translate-y-0.5 transition-transform">
+                    {t('hero.worksheetCard.cta')}
+                    <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
+                  </span>
                 </a>
+
+                {/* Games Card */}
                 <Link
-                  href="/about"
-                  className="w-full sm:w-auto bg-white text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-2xl font-bold text-lg hover:border-orange-300 hover:bg-orange-50 transition-all duration-300 flex items-center justify-center"
+                  href="/play"
+                  className="flex-1 bg-white border-2 border-purple-200 rounded-xl p-5 md:p-6 hover:border-purple-400 hover:shadow-lg transition-all group text-right"
                 >
-                  {t('hero.ctaSecondary')}
+                  <div className="flex items-center gap-2 mb-2">
+                    <Gamepad2 className="w-7 h-7 md:w-8 md:h-8 text-purple-500" />
+                    <h3 className="text-xl md:text-2xl font-bold text-slate-800">{t('hero.gamesCard.title')}</h3>
+                  </div>
+                  <p className="text-base md:text-lg text-slate-600 mb-3">{t('hero.gamesCard.desc')}</p>
+                  <span className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-bold text-base md:text-lg group-hover:-translate-y-0.5 transition-transform">
+                    {t('hero.gamesCard.cta')}
+                    <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
+                  </span>
                 </Link>
               </div>
 
-              {/* Games CTA */}
-              <div className="mt-6 animate-slide-up delay-400">
-                <Link
-                  href="/play"
-                  className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-purple-200/50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 animate-pulse-soft"
-                >
-                  <Gamepad2 className="w-5 h-5" />
-                  {t('hero.ctaGames')}
-                </Link>
+              {/* Quick Games Strip */}
+              <div className="mt-4 text-center animate-slide-up delay-300">
+                <div className="flex items-center justify-center gap-1.5 mb-2">
+                  <Gamepad2 className="w-4 h-4 text-purple-500" />
+                  <span className="text-sm font-bold text-slate-700">{t('quickGames.title')}</span>
+                  <span className="text-xs text-slate-400">-</span>
+                  <span className="text-xs text-slate-500">{t('quickGames.subtitle')}</span>
+                </div>
+
+                <div className="flex justify-center gap-2">
+                  <Link
+                    href="/play/math"
+                    className="flex flex-col items-center gap-1 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-lg px-3 py-2 transition-all hover:-translate-y-0.5"
+                  >
+                    <Calculator className="w-5 h-5 text-blue-600" />
+                    <span className="font-bold text-xs text-blue-700">{t('quickGames.math')}</span>
+                  </Link>
+
+                  <Link
+                    href="/play/fractions"
+                    className="flex flex-col items-center gap-1 bg-purple-50 hover:bg-purple-100 border border-purple-200 rounded-lg px-3 py-2 transition-all hover:-translate-y-0.5"
+                  >
+                    <PieChart className="w-5 h-5 text-purple-600" />
+                    <span className="font-bold text-xs text-purple-700">{t('quickGames.fractions')}</span>
+                  </Link>
+
+                  <Link
+                    href="/play/percentage"
+                    className="flex flex-col items-center gap-1 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-lg px-3 py-2 transition-all hover:-translate-y-0.5"
+                  >
+                    <Percent className="w-5 h-5 text-emerald-600" />
+                    <span className="font-bold text-xs text-emerald-700">{t('quickGames.percentage')}</span>
+                  </Link>
+                </div>
               </div>
 
               {/* Trust indicators */}
-              <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500 animate-fade-in delay-500">
-                <div className="flex items-center gap-2">
-                  <Printer size={18} className="text-slate-400" />
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-500 animate-fade-in delay-400">
+                <div className="flex items-center gap-1.5">
+                  <Printer size={14} className="text-slate-400" />
                   <span>{t('hero.trustPrint')}</span>
                 </div>
-                <div className="w-px h-4 bg-slate-200 hidden sm:block"></div>
-                <div className="flex items-center gap-2">
-                  <Zap size={18} className="text-slate-400" />
+                <div className="w-px h-3 bg-slate-200 hidden sm:block"></div>
+                <div className="flex items-center gap-1.5">
+                  <Zap size={14} className="text-slate-400" />
                   <span>{t('hero.trustNoSignup')}</span>
                 </div>
-                <div className="w-px h-4 bg-slate-200 hidden sm:block"></div>
-                <div className="flex items-center gap-2">
-                  <Star size={18} className="text-amber-400 fill-amber-400" />
+                <div className="w-px h-3 bg-slate-200 hidden sm:block"></div>
+                <div className="flex items-center gap-1.5">
+                  <Star size={14} className="text-amber-400 fill-amber-400" />
                   <span>{t('hero.trustFree')}</span>
                 </div>
               </div>

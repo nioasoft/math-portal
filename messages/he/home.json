@@ -11,7 +11,27 @@
     "ctaGames": "🎮 משחקי מתמטיקה",
     "trustPrint": "הדפסה ישירה",
     "trustNoSignup": "ללא הרשמה",
-    "trustFree": "100% חינם"
+    "trustFree": "100% חינם",
+    "worksheetCard": {
+      "title": "דפי עבודה להדפסה",
+      "desc": "צרו דפי עבודה מותאמים אישית והדפיסו",
+      "cta": "התחילו ליצור"
+    },
+    "gamesCard": {
+      "title": "משחקים אינטראקטיביים",
+      "desc": "שחקו משחקי חשבון ולמדו בכיף!",
+      "cta": "בואו לשחק!"
+    }
+  },
+  "quickGames": {
+    "title": "בואו לשחק!",
+    "subtitle": "משחקי חשבון אינטראקטיביים",
+    "math": "חשבון",
+    "mathDesc": "חיבור וחיסור",
+    "fractions": "שברים",
+    "fractionsDesc": "שברים פשוטים",
+    "percentage": "אחוזים",
+    "percentageDesc": "חישוב אחוזים"
   },
   "generators": {
     "title": "מה רוצים לתרגל היום?",

@@ -141,10 +141,10 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                     />
                 </div>
 
-                {/* Number Pad (for mobile) - Standard calculator layout */}
+                {/* Number Pad (for mobile) - Phone-style layout */}
                 <div className="grid grid-cols-4 gap-2 mb-4" dir="ltr">
-                    {/* Row 1: 7 8 9 ⌫ */}
-                    {['7', '8', '9'].map((num) => (
+                    {/* Row 1: 1 2 3 ⌫ */}
+                    {['1', '2', '3'].map((num) => (
                         <button
                             key={num}
                             onClick={() => handleNumberClick(num)}
@@ -183,8 +183,8 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                         C
                     </button>
 
-                    {/* Row 3: 1 2 3 . */}
-                    {['1', '2', '3', '.'].map((num) => (
+                    {/* Row 3: 7 8 9 . */}
+                    {['7', '8', '9', '.'].map((num) => (
                         <button
                             key={num}
                             onClick={() => handleNumberClick(num)}
@@ -274,10 +274,10 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                 />
             </div>
 
-            {/* Number Pad (for mobile) - Standard calculator layout */}
+            {/* Number Pad (for mobile) - Phone-style layout */}
             <div className="grid grid-cols-4 gap-2 mb-4" dir="ltr">
-                {/* Row 1: 7 8 9 ⌫ */}
-                {['7', '8', '9'].map((num) => (
+                {/* Row 1: 1 2 3 ⌫ */}
+                {['1', '2', '3'].map((num) => (
                     <button
                         key={num}
                         onClick={() => handleFractionNumberClick(num)}
@@ -316,8 +316,8 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                     C
                 </button>
 
-                {/* Row 3: 1 2 3 (empty) */}
-                {['1', '2', '3'].map((num) => (
+                {/* Row 3: 7 8 9 (empty) */}
+                {['7', '8', '9'].map((num) => (
                     <button
                         key={num}
                         onClick={() => handleFractionNumberClick(num)}

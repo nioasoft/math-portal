@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, Ruler, Scale, Clock, HelpCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { trackPrintEvent } from '@/lib/analytics';
 import { useTranslations } from 'next-intl';
 
@@ -80,6 +81,7 @@ function createProblems(unitType: UnitType): UnitProblem[] {
 
 export default function UnitsClient() {
     const t = useTranslations('worksheet');
+    const metaT = useTranslations('meta');
     const [unitType, setUnitType] = useState<UnitType>('length');
     const [problems, setProblems] = useState<UnitProblem[]>(() => createProblems('length'));
     const [showAnswers, setShowAnswers] = useState<boolean>(false);
@@ -147,6 +149,17 @@ export default function UnitsClient() {
                         </button>
                     </div>
                 </div>
+            </div>
+
+            {/* Breadcrumbs */}
+            <div className="container-custom py-3 print:hidden">
+                <Breadcrumb
+                    items={[
+                        { label: metaT('breadcrumb.home'), href: '/' },
+                        { label: metaT('breadcrumb.worksheets'), href: '/worksheet' },
+                        { label: metaT('breadcrumb.units') },
+                    ]}
+                />
             </div>
 
             <div className="w-full overflow-x-auto pb-12 print:pb-0 print:overflow-visible custom-scrollbar">

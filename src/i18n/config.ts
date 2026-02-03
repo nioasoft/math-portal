@@ -1,4 +1,4 @@
-export const locales = ['he', 'en', 'ar', 'de', 'es'] as const;
+export const locales = ['he', 'en', 'ar', 'de', 'es', 'ru'] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = 'he';
 export const rtlLocales: Locale[] = ['he', 'ar'];
@@ -9,6 +9,7 @@ export const localeConfig = {
   ar: { dir: 'rtl' as const, name: 'العربية', locale: 'ar_SA' },
   de: { dir: 'ltr' as const, name: 'Deutsch', locale: 'de_DE' },
   es: { dir: 'ltr' as const, name: 'Español', locale: 'es_ES' },
+  ru: { dir: 'ltr' as const, name: 'Русский', locale: 'ru_RU' },
 } as const;
 
 export function isRtlLocale(locale: Locale): boolean {

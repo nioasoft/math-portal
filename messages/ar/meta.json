@@ -7,7 +7,23 @@
   },
   "breadcrumb": {
     "home": "الرئيسية",
-    "blog": "المدونة"
+    "worksheets": "أوراق العمل",
+    "blog": "المدونة",
+    "help": "دليل الآباء",
+    "play": "ألعاب",
+    "about": "حول",
+    "contact": "اتصل بنا",
+    "privacy": "سياسة الخصوصية",
+    "editorial": "إرشادات التحرير",
+    "math": "رياضيات",
+    "fractions": "كسور",
+    "geometry": "هندسة",
+    "percentage": "نسبة مئوية",
+    "decimals": "أعداد عشرية",
+    "ratio": "نسبة وتناسب",
+    "units": "وحدات القياس",
+    "series": "متسلسلات",
+    "wordProblems": "مسائل كلامية"
   },
   "pages": {
     "home": {

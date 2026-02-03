@@ -7,7 +7,23 @@
   },
   "breadcrumb": {
     "home": "Startseite",
-    "blog": "Blog"
+    "worksheets": "Arbeitsblätter",
+    "blog": "Blog",
+    "help": "Elternratgeber",
+    "play": "Spiele",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "privacy": "Datenschutz",
+    "editorial": "Redaktionelle Richtlinien",
+    "math": "Mathematik",
+    "fractions": "Brüche",
+    "geometry": "Geometrie",
+    "percentage": "Prozent",
+    "decimals": "Dezimalzahlen",
+    "ratio": "Verhältnis & Proportion",
+    "units": "Maßeinheiten",
+    "series": "Zahlenreihen",
+    "wordProblems": "Textaufgaben"
   },
   "pages": {
     "home": {

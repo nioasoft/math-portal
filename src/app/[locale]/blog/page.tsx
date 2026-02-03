@@ -4,6 +4,7 @@ import { BlogIndexClient } from './BlogIndexClient';
 import { getBlogPosts, blogCategories } from '@/lib/content';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { Newspaper, Sparkles, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Locale } from '@/i18n/config';
@@ -104,6 +105,16 @@ export default async function BlogIndexPage({ params }: Props) {
             <Header />
 
             <main className="flex-1">
+                {/* Breadcrumbs */}
+                <div className="container-custom py-4">
+                    <Breadcrumb
+                        items={[
+                            { label: metaT('breadcrumb.home'), href: '/' },
+                            { label: metaT('breadcrumb.blog') },
+                        ]}
+                    />
+                </div>
+
                 {/* Hero Section */}
                 <section className="relative py-20 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-b from-sky-50 to-[#fffbf5]"></div>

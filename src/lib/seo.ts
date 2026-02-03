@@ -11,7 +11,7 @@ const BASE_URL = 'https://www.tirgul.net';
  */
 export function generateAlternates(path: string, currentLocale: Locale) {
   // Remove any leading locale prefix to get the clean path
-  const cleanPath = path.replace(/^\/(en|ar|de|es)/, '') || '/';
+  const cleanPath = path.replace(/^\/(en|ar|de|es|ru)/, '') || '/';
 
   const languages: Record<string, string> = {};
 
@@ -100,6 +100,7 @@ export function generateOpenGraphMeta(
               localeConfig[locale].name === 'English' ? 'Smart Worksheets' :
               localeConfig[locale].name === 'العربية' ? 'أوراق عمل ذكية' :
               localeConfig[locale].name === 'Deutsch' ? 'Clevere Arbeitsblätter' :
+              localeConfig[locale].name === 'Русский' ? 'Умные задания' :
               'Hojas de Trabajo Inteligentes',
     locale: ogLocale,
     type: 'website',
@@ -144,6 +145,7 @@ export function getSiteName(locale: Locale): string {
     ar: 'أوراق عمل ذكية',
     de: 'Clevere Arbeitsblätter',
     es: 'Hojas de Trabajo Inteligentes',
+    ru: 'Умные задания',
   };
   return siteNames[locale];
 }
@@ -160,6 +162,7 @@ export function getOrganizationName(locale: Locale): string {
     ar: 'أوراق عمل ذكية',
     de: 'Clevere Arbeitsblätter',
     es: 'Hojas de Trabajo Inteligentes',
+    ru: 'Умные задания',
   };
   return orgNames[locale];
 }
@@ -176,6 +179,7 @@ export function getEducationalLevels(locale: Locale): string[] {
     ar: ['الصف الأول', 'الصف الثاني', 'الصف الثالث', 'الصف الرابع', 'الصف الخامس', 'الصف السادس'],
     de: ['Klasse 1', 'Klasse 2', 'Klasse 3', 'Klasse 4', 'Klasse 5', 'Klasse 6'],
     es: ['Grado 1', 'Grado 2', 'Grado 3', 'Grado 4', 'Grado 5', 'Grado 6'],
+    ru: ['1 класс', '2 класс', '3 класс', '4 класс', '5 класс', '6 класс'],
   };
   return levels[locale];
 }

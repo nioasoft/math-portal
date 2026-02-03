@@ -1,0 +1,64 @@
+{
+  "operations": {
+    "addition": "Сложение",
+    "subtraction": "Вычитание",
+    "multiplication": "Умножение",
+    "division": "Деление"
+  },
+  "notation": {
+    "division": "÷",
+    "decimal": ",",
+    "thousands": " "
+  },
+  "labels": {
+    "exercise": "Упражнение",
+    "answer": "Ответ",
+    "answers": "Ответы",
+    "range": "Диапазон",
+    "from": "От",
+    "to": "До",
+    "difficulty": "Сложность",
+    "easy": "Лёгкий",
+    "medium": "Средний",
+    "hard": "Сложный",
+    "count": "Количество упражнений",
+    "generate": "Создать упражнения",
+    "print": "Печать",
+    "showAnswers": "Показать ответы",
+    "hideAnswers": "Скрыть ответы"
+  },
+  "terms": {
+    "numerator": "Числитель",
+    "denominator": "Знаменатель",
+    "fraction": "Дробь",
+    "mixedNumber": "Смешанное число",
+    "improperFraction": "Неправильная дробь",
+    "percent": "Процент",
+    "ratio": "Отношение",
+    "decimal": "Десятичная дробь"
+  },
+  "shapes": {
+    "square": "Квадрат",
+    "rectangle": "Прямоугольник",
+    "triangle": "Треугольник",
+    "circle": "Круг",
+    "parallelogram": "Параллелограмм",
+    "trapezoid": "Трапеция"
+  },
+  "units": {
+    "length": {
+      "meter": "Метр",
+      "centimeter": "Сантиметр",
+      "kilometer": "Километр"
+    },
+    "weight": {
+      "kilogram": "Килограмм",
+      "gram": "Грамм"
+    },
+    "time": {
+      "hour": "Час",
+      "minute": "Минута",
+      "second": "Секунда"
+    }
+  }
+}

@@ -7,7 +7,23 @@
   },
   "breadcrumb": {
     "home": "Inicio",
-    "blog": "Blog"
+    "worksheets": "Hojas de Trabajo",
+    "blog": "Blog",
+    "help": "Guía para Padres",
+    "play": "Juegos",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "privacy": "Política de Privacidad",
+    "editorial": "Pautas Editoriales",
+    "math": "Matemáticas",
+    "fractions": "Fracciones",
+    "geometry": "Geometría",
+    "percentage": "Porcentaje",
+    "decimals": "Decimales",
+    "ratio": "Razón y Proporción",
+    "units": "Unidades de Medida",
+    "series": "Series",
+    "wordProblems": "Problemas de Palabras"
   },
   "pages": {
     "home": {

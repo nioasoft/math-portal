@@ -6,11 +6,13 @@ import { MathEngine, MathOperation, MathProblem } from '@/lib/math-engine';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { trackPrintEvent, trackGenerateEvent } from '@/lib/analytics';
 import { useTranslations } from 'next-intl';
 
 export default function WorksheetClient() {
     const t = useTranslations('worksheet');
+    const metaT = useTranslations('meta');
     const searchParams = useSearchParams();
     const router = useRouter();
     const pathname = usePathname();
@@ -180,6 +182,23 @@ export default function WorksheetClient() {
                         <span>{t('controls.print')}</span>
                     </button>
                 </div>
+            </div>
+
+            {/* Breadcrumbs */}
+            <div className="container-custom py-3 print:hidden">
+                <Breadcrumb
+                    items={pathname.includes('/worksheet/math')
+                        ? [
+                            { label: metaT('breadcrumb.home'), href: '/' },
+                            { label: metaT('breadcrumb.worksheets'), href: '/worksheet' },
+                            { label: metaT('breadcrumb.math') },
+                        ]
+                        : [
+                            { label: metaT('breadcrumb.home'), href: '/' },
+                            { label: metaT('breadcrumb.worksheets') },
+                        ]
+                    }
+                />
             </div>
 
             {/* A4 Paper Preview Wrapper */}

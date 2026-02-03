@@ -17,7 +17,14 @@ type GamePhase = 'setup' | 'playing' | 'feedback' | 'summary';
 
 export default function PercentageGameClient() {
     const t = useTranslations('games');
+    const metaT = useTranslations('meta');
     const [gameEngine] = useState(() => new GameEngine());
+
+    const breadcrumbItems = [
+        { label: metaT('breadcrumb.home'), href: '/' },
+        { label: metaT('breadcrumb.play'), href: '/play' },
+        { label: metaT('breadcrumb.percentage') },
+    ];
     const [gameState, setGameState] = useState<GameState | null>(null);
     const [phase, setPhase] = useState<GamePhase>('setup');
     const [feedbackResult, setFeedbackResult] = useState<{ correct: boolean; answer: number } | null>(null);
@@ -112,7 +119,7 @@ export default function PercentageGameClient() {
     // Setup screen
     if (phase === 'setup') {
         return (
-            <GameShell title={t('gameTitle.percentage')}>
+            <GameShell title={t('gameTitle.percentage')} breadcrumbItems={breadcrumbItems}>
                 <div className="flex-1 flex items-center justify-center p-4">
                     <div className="w-full max-w-md">
                         {/* Mode Selection */}
@@ -209,6 +216,7 @@ export default function PercentageGameClient() {
         return (
             <GameShell
                 title={t('gameTitle.percentage')}
+                breadcrumbItems={breadcrumbItems}
                 topBar={
                     gameState.mode === 'quiz' && gameState.timeRemaining !== null ? (
                         <Timer
@@ -270,7 +278,7 @@ export default function PercentageGameClient() {
     // Summary screen
     if (phase === 'summary' && gameState) {
         return (
-            <GameShell title={t('gameTitle.percentage')}>
+            <GameShell title={t('gameTitle.percentage')} breadcrumbItems={breadcrumbItems}>
                 <GameSummary
                     score={gameState.score}
                     correctCount={gameState.correctCount}

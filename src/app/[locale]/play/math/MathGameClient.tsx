@@ -18,7 +18,14 @@ type GamePhase = 'setup' | 'playing' | 'feedback' | 'summary';
 
 export default function MathGameClient() {
     const t = useTranslations('games');
+    const metaT = useTranslations('meta');
     const [gameEngine] = useState(() => new GameEngine());
+
+    const breadcrumbItems = [
+        { label: metaT('breadcrumb.home'), href: '/' },
+        { label: metaT('breadcrumb.play'), href: '/play' },
+        { label: metaT('breadcrumb.math') },
+    ];
     const [gameState, setGameState] = useState<GameState | null>(null);
     const [phase, setPhase] = useState<GamePhase>('setup');
     const [feedbackResult, setFeedbackResult] = useState<{ correct: boolean; answer: number } | null>(null);
@@ -125,7 +132,7 @@ export default function MathGameClient() {
     // Setup screen
     if (phase === 'setup') {
         return (
-            <GameShell title={t('gameTitle.math')}>
+            <GameShell title={t('gameTitle.math')} breadcrumbItems={breadcrumbItems}>
                 <div className="flex-1 flex items-center justify-center p-4">
                     <div className="w-full max-w-md">
                         {/* Mode Selection */}
@@ -257,6 +264,7 @@ export default function MathGameClient() {
         return (
             <GameShell
                 title={t('gameTitle.math')}
+                breadcrumbItems={breadcrumbItems}
                 topBar={
                     gameState.mode === 'quiz' && gameState.timeRemaining !== null ? (
                         <Timer
@@ -318,7 +326,7 @@ export default function MathGameClient() {
     // Summary screen
     if (phase === 'summary' && gameState) {
         return (
-            <GameShell title={t('gameTitle.math')}>
+            <GameShell title={t('gameTitle.math')} breadcrumbItems={breadcrumbItems}>
                 <GameSummary
                     score={gameState.score}
                     correctCount={gameState.correctCount}

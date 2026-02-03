@@ -41,6 +41,7 @@ const fontByLocale: Record<Locale, string> = {
   en: inter.variable,
   de: inter.variable,
   es: inter.variable,
+  ru: inter.variable,
 };
 
 export function generateStaticParams() {
@@ -192,7 +193,7 @@ export default async function LocaleLayout({
       "@type": "Country",
       name: "Israel",
     },
-    knowsLanguage: ["he", "en", "ar", "de", "es"],
+    knowsLanguage: ["he", "en", "ar", "de", "es", "ru"],
     availableLanguage: locales.map((l) => ({
       "@type": "Language",
       name: localeConfig[l].name,

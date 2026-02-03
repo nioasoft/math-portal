@@ -4,19 +4,28 @@ import { ReactNode } from 'react';
 import { Link } from '@/i18n/navigation';
 import { ArrowRight, Home } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { Breadcrumb, BreadcrumbItem } from '@/components/ui/Breadcrumb';
 
 interface GameShellProps {
     title: string;
     children: ReactNode;
     topBar?: ReactNode;
     onExit?: () => void;
+    breadcrumbItems?: BreadcrumbItem[];
 }
 
-export default function GameShell({ title, children, topBar, onExit }: GameShellProps) {
+export default function GameShell({ title, children, topBar, onExit, breadcrumbItems }: GameShellProps) {
     const t = useTranslations('games');
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white flex flex-col">
+            {/* Breadcrumbs */}
+            {breadcrumbItems && (
+                <div className="container-custom py-3 bg-slate-800/30">
+                    <Breadcrumb items={breadcrumbItems} className="text-slate-400 [&_a]:hover:text-white [&_span:last-child]:text-slate-200" />
+                </div>
+            )}
+
             {/* Header */}
             <header className="bg-slate-800/50 backdrop-blur-sm border-b border-slate-700 sticky top-0 z-50">
                 <div className="container-custom py-2 md:py-4 flex items-center justify-between">

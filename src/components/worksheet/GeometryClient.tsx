@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { trackPrintEvent } from '@/lib/analytics';
 import { useTranslations } from 'next-intl';
 
@@ -94,6 +95,7 @@ function createProblems(topic: GeomTopic): GeomProblem[] {
 
 export default function GeometryClient() {
     const t = useTranslations('worksheet');
+    const metaT = useTranslations('meta');
     const [topic, setTopic] = useState<GeomTopic>('rect');
     const [problems, setProblems] = useState<GeomProblem[]>(() => createProblems('rect'));
     const [showAnswers, setShowAnswers] = useState<boolean>(false);
@@ -307,6 +309,17 @@ export default function GeometryClient() {
                         <span>{t('controls.print')}</span>
                     </button>
                 </div>
+            </div>
+
+            {/* Breadcrumbs */}
+            <div className="container-custom py-3 print:hidden">
+                <Breadcrumb
+                    items={[
+                        { label: metaT('breadcrumb.home'), href: '/' },
+                        { label: metaT('breadcrumb.worksheets'), href: '/worksheet' },
+                        { label: metaT('breadcrumb.geometry') },
+                    ]}
+                />
             </div>
 
             {/* A4 Paper Wrapper */}

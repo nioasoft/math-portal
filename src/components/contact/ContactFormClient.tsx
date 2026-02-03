@@ -3,9 +3,16 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Send, Loader2, CheckCircle, MessageSquare, Mail, HelpCircle } from 'lucide-react';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 
 export default function ContactFormClient() {
     const t = useTranslations('common');
+    const metaT = useTranslations('meta');
+
+    const breadcrumbItems = [
+        { label: metaT('breadcrumb.home'), href: '/' },
+        { label: metaT('breadcrumb.contact') },
+    ];
     const [formData, setFormData] = useState({
         type: '',
         message: '',
@@ -64,6 +71,11 @@ export default function ContactFormClient() {
     return (
         <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white py-12">
             <div className="container-custom">
+                {/* Breadcrumbs */}
+                <div className="mb-8">
+                    <Breadcrumb items={breadcrumbItems} />
+                </div>
+
                 {/* Header */}
                 <div className="text-center mb-12">
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-2xl mb-4">

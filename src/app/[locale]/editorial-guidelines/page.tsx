@@ -1,6 +1,7 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { FileText, ArrowRight } from 'lucide-react';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { FileText } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
@@ -56,6 +57,18 @@ export default async function EditorialGuidelinesPage({ params }: { params: Prom
             />
             <Header />
 
+            {/* Visual Breadcrumbs */}
+            <div className="bg-white border-b border-slate-100">
+                <div className="container-custom py-3">
+                    <Breadcrumb
+                        items={[
+                            { label: metaT('breadcrumb.home'), href: '/' },
+                            { label: metaT('breadcrumb.editorial') },
+                        ]}
+                    />
+                </div>
+            </div>
+
             <main className="flex-1">
                 {/* Hero Section */}
                 <section className="relative py-16 overflow-hidden">
@@ -63,14 +76,6 @@ export default async function EditorialGuidelinesPage({ params }: { params: Prom
                     <div className="absolute inset-0 dot-pattern opacity-30"></div>
 
                     <div className="container-custom max-w-3xl relative z-10">
-                        <Link
-                            href="/"
-                            className="inline-flex items-center gap-2 text-slate-500 hover:text-orange-600 font-medium mb-6 transition-colors"
-                        >
-                            <ArrowRight size={18} />
-                            <span>{t('backHome')}</span>
-                        </Link>
-
                         <div className="flex items-start gap-4">
                             <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-200 flex-shrink-0">
                                 <FileText size={28} className="text-white" />

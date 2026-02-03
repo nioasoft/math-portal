@@ -7,7 +7,23 @@
   },
   "breadcrumb": {
     "home": "ראשי",
-    "blog": "בלוג"
+    "worksheets": "דפי עבודה",
+    "blog": "בלוג",
+    "help": "מדריכים להורים",
+    "play": "משחקים",
+    "about": "אודות",
+    "contact": "צור קשר",
+    "privacy": "מדיניות פרטיות",
+    "editorial": "עקרונות עריכה",
+    "math": "חשבון",
+    "fractions": "שברים",
+    "geometry": "גיאומטריה",
+    "percentage": "אחוזים",
+    "decimals": "עשרוניים",
+    "ratio": "יחס ופרופורציה",
+    "units": "יחידות מידה",
+    "series": "סדרות",
+    "wordProblems": "בעיות מילוליות"
   },
   "pages": {
     "home": {

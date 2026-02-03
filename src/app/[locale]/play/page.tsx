@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { Link } from '@/i18n/navigation';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { Calculator, Percent, PieChart, Gamepad2, Trophy, Zap } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
@@ -80,6 +81,15 @@ export default async function PlayPage({ params }: { params: Promise<{ locale: s
         <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
             {/* Header - Compact on mobile */}
             <div className="bg-white border-b border-slate-200 shadow-sm">
+                {/* Breadcrumbs */}
+                <div className="container-custom pt-3">
+                    <Breadcrumb
+                        items={[
+                            { label: metaT('breadcrumb.home'), href: '/' },
+                            { label: metaT('breadcrumb.play') },
+                        ]}
+                    />
+                </div>
                 <div className="container-custom py-3 md:py-6">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2 md:gap-3">

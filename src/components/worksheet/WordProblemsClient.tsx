@@ -5,6 +5,7 @@ import { WordProblemEngine, Operation } from '@/lib/word-problem-engine';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { trackPrintEvent } from '@/lib/analytics';
 import { useTranslations } from 'next-intl';
 
@@ -48,6 +49,7 @@ function createQuestions(selectedGrade: number): QuestionState[] {
 
 export default function WordProblemsClient() {
     const t = useTranslations('worksheet');
+    const metaT = useTranslations('meta');
     const [grade, setGrade] = useState<number>(1);
     const [questions, setQuestions] = useState<QuestionState[]>(() => createQuestions(1));
     const [showAnswers, setShowAnswers] = useState(false);
@@ -126,6 +128,17 @@ export default function WordProblemsClient() {
                         <span>{t('controls.print')}</span>
                     </button>
                 </div>
+            </div>
+
+            {/* Breadcrumbs */}
+            <div className="container-custom py-3 print:hidden">
+                <Breadcrumb
+                    items={[
+                        { label: metaT('breadcrumb.home'), href: '/' },
+                        { label: metaT('breadcrumb.worksheets'), href: '/worksheet' },
+                        { label: metaT('breadcrumb.wordProblems') },
+                    ]}
+                />
             </div>
 
             {/* A4 Paper Wrapper */}

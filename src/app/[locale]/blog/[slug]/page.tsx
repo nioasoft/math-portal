@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ArrowRight, Calendar, Clock, BookOpen, GraduationCap, ArrowLeft } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { locales, type Locale } from '@/i18n/config';
@@ -298,6 +299,17 @@ export default async function BlogPostPage({ params }: Props) {
             <Header />
 
             <main className="flex-1">
+                {/* Breadcrumbs */}
+                <div className="container-custom py-4">
+                    <Breadcrumb
+                        items={[
+                            { label: t('breadcrumb.home'), href: '/' },
+                            { label: t('breadcrumb.blog'), href: '/blog' },
+                            { label: post.title },
+                        ]}
+                    />
+                </div>
+
                 {/* Hero Section */}
                 <section className="relative py-12 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-b from-sky-50 to-[#fffbf5]"></div>

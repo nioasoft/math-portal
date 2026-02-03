@@ -1,5 +1,6 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { Brain, Printer, Settings, Sparkles, Heart, ArrowLeft, Calculator, Users, Target } from 'lucide-react';
 import Link from 'next/link';
 import Script from 'next/script';
@@ -113,6 +114,18 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             <Header />
+
+            {/* Visual Breadcrumbs */}
+            <div className="bg-white border-b border-slate-100">
+                <div className="container-custom py-3">
+                    <Breadcrumb
+                        items={[
+                            { label: metaT('breadcrumb.home'), href: '/' },
+                            { label: metaT('breadcrumb.about') },
+                        ]}
+                    />
+                </div>
+            </div>
 
             <main className="flex-1">
                 {/* Hero Section */}

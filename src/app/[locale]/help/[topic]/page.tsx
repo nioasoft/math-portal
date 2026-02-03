@@ -1,5 +1,6 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { getHelpTopic, getHelpTopics, getHelpSlugs } from '@/lib/content';
 import { Locale, locales } from '@/i18n/config';
 import { Link } from '@/i18n/navigation';
@@ -159,6 +160,17 @@ export default async function HelpTopicPage({ params }: PageProps) {
             <Header />
 
             <main className="flex-1">
+                {/* Breadcrumbs */}
+                <div className="container-custom py-4">
+                    <Breadcrumb
+                        items={[
+                            { label: metaT('breadcrumb.home'), href: '/' },
+                            { label: metaT('breadcrumb.help'), href: '/help' },
+                            { label: topic.title },
+                        ]}
+                    />
+                </div>
+
                 {/* Hero Section */}
                 <section className="relative py-16 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-b from-emerald-50 to-[#fffbf5]"></div>
@@ -169,15 +181,6 @@ export default async function HelpTopicPage({ params }: PageProps) {
                     <div className="absolute bottom-0 left-[10%] w-32 h-32 bg-orange-200/20 rounded-full blur-2xl"></div>
 
                     <div className="container-custom max-w-4xl relative z-10">
-                        {/* Breadcrumb */}
-                        <div className="flex items-center gap-2 text-sm text-slate-500 mb-6">
-                            <Link href="/" className="hover:text-emerald-600 transition-colors">{t('topic.breadcrumb.home')}</Link>
-                            <span>/</span>
-                            <Link href="/help" className="hover:text-emerald-600 transition-colors">{t('topic.breadcrumb.help')}</Link>
-                            <span>/</span>
-                            <span className="text-slate-700 font-medium">{topic.title}</span>
-                        </div>
-
                         <Link
                             href="/help"
                             className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-bold mb-6 transition-colors"

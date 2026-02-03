@@ -23,6 +23,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const help = (await import(`../../messages/${locale}/help.json`)).default;
   const privacy = (await import(`../../messages/${locale}/privacy.json`)).default;
   const cookies = (await import(`../../messages/${locale}/cookies.json`)).default;
+  const editorial = (await import(`../../messages/${locale}/editorial.json`)).default;
 
   return {
     locale,
@@ -39,6 +40,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       help,
       privacy,
       cookies,
+      editorial,
     },
   };
 });

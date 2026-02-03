@@ -7,7 +7,23 @@
   },
   "breadcrumb": {
     "home": "Home",
-    "blog": "Blog"
+    "worksheets": "Worksheets",
+    "blog": "Blog",
+    "help": "Parent Guides",
+    "play": "Games",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "editorial": "Editorial Guidelines",
+    "math": "Math",
+    "fractions": "Fractions",
+    "geometry": "Geometry",
+    "percentage": "Percentage",
+    "decimals": "Decimals",
+    "ratio": "Ratio & Proportion",
+    "units": "Units",
+    "series": "Series",
+    "wordProblems": "Word Problems"
   },
   "pages": {
     "home": {

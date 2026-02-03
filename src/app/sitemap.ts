@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { path: '/about', priority: 0.6, changeFrequency: 'monthly' as const },
         { path: '/contact', priority: 0.5, changeFrequency: 'monthly' as const },
         { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
+        { path: '/editorial-guidelines', priority: 0.3, changeFrequency: 'yearly' as const },
     ]
 
     // Grade pages

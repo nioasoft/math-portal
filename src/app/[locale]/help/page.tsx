@@ -1,5 +1,6 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { getHelpTopics } from '@/lib/content';
 import { Locale } from '@/i18n/config';
 import Link from 'next/link';
@@ -64,6 +65,16 @@ export default async function HelpIndexPage({ params }: PageProps) {
             <Header />
 
             <main className="flex-1">
+                {/* Breadcrumbs */}
+                <div className="container-custom py-4">
+                    <Breadcrumb
+                        items={[
+                            { label: metaT('breadcrumb.home'), href: '/' },
+                            { label: metaT('breadcrumb.help') },
+                        ]}
+                    />
+                </div>
+
                 {/* Hero Section */}
                 <section className="relative py-20 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-b from-emerald-50 to-[#fffbf5]"></div>

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { trackPrintEvent } from '@/lib/analytics';
 import { useTranslations } from 'next-intl';
 
@@ -45,6 +46,7 @@ function createProblems(): PercentProblem[] {
 
 export default function PercentageClient() {
     const t = useTranslations('worksheet');
+    const metaT = useTranslations('meta');
     const [problems, setProblems] = useState<PercentProblem[]>(() => createProblems());
     const [showAnswers, setShowAnswers] = useState<boolean>(false);
 
@@ -93,6 +95,17 @@ export default function PercentageClient() {
                         <Printer size={16} aria-hidden="true" /> <span>{t('controls.print')}</span>
                     </button>
                 </div>
+            </div>
+
+            {/* Breadcrumbs */}
+            <div className="container-custom py-3 print:hidden">
+                <Breadcrumb
+                    items={[
+                        { label: metaT('breadcrumb.home'), href: '/' },
+                        { label: metaT('breadcrumb.worksheets'), href: '/worksheet' },
+                        { label: metaT('breadcrumb.percentage') },
+                    ]}
+                />
             </div>
 
             <div className="w-full overflow-x-auto pb-12 print:pb-0 print:overflow-visible custom-scrollbar">

@@ -8,8 +8,9 @@ import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
-import { locales, type Locale } from '@/i18n/config';
+import { defaultLocale, type Locale } from '@/i18n/config';
 import { generateAlternates, getOrganizationName } from '@/lib/seo';
+import { getBlogContentLocales, hasLocalizedBlogContent } from '@/lib/content';
 
 // Map blog post tags to related help topics
 function getRelatedHelpTopics(tags: string[], content: string) {
@@ -107,11 +108,15 @@ export async function generateMetadata(
     { params }: Props
 ): Promise<Metadata> {
     const { locale, slug } = await params;
-    const post = await getBlogPost(slug, locale as Locale);
+    const localeKey = locale as Locale;
+    const post = await getBlogPost(slug, localeKey);
     if (!post) return {};
+    const blogLocales = getBlogContentLocales();
+    const hasLocalizedContent = hasLocalizedBlogContent(localeKey);
+    const resolvedLocale = hasLocalizedContent ? localeKey : defaultLocale;
 
     const baseUrl = 'https://www.tirgul.net';
-    const localePath = locale !== 'he' ? `/${locale}` : '';
+    const localePath = resolvedLocale !== defaultLocale ? `/${resolvedLocale}` : '';
 
     // Find related generator for SEO hint to avoid cannibalization
     // Blog posts target informational/long-tail intent
@@ -129,13 +134,13 @@ export async function generateMetadata(
             ? `${post.title} | בלוג דפי עבודה חכמים`
             : `${post.title} | Smart Worksheets Blog`,
         description: post.excerpt,
-        alternates: generateAlternates(`/blog/${slug}`, locale as Locale),
+        alternates: generateAlternates(`/blog/${slug}`, localeKey, blogLocales),
         openGraph: {
             title: post.title,
             description: post.excerpt,
             url: `${baseUrl}${localePath}/blog/${slug}`,
-            siteName: locale === 'he' ? 'תרגול' : 'Tirgul',
-            locale: locale === 'he' ? 'he_IL' : locale,
+            siteName: resolvedLocale === defaultLocale ? 'תרגול' : 'Tirgul',
+            locale: resolvedLocale === defaultLocale ? 'he_IL' : resolvedLocale,
             type: 'article',
             publishedTime: post.date.includes('/')
                 ? post.date.split('/').reverse().join('-')
@@ -155,6 +160,10 @@ export async function generateMetadata(
             description: post.excerpt,
             images: [imageUrl],
         },
+        robots: hasLocalizedContent ? undefined : {
+            index: false,
+            follow: true,
+        },
     };
 
     // Add related generator hint if found
@@ -169,6 +178,7 @@ export async function generateMetadata(
 
 export async function generateStaticParams() {
     const slugs = await getBlogSlugs();
+    const locales = getBlogContentLocales();
     const params = [];
 
     // Generate params for all locales

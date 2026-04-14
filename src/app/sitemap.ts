@@ -1,7 +1,12 @@
 import { MetadataRoute } from 'next'
-import { blogPosts } from '@/lib/blog-data'
-import { HELP_TOPICS } from '@/lib/help-data'
 import { locales, defaultLocale, type Locale } from '@/i18n/config'
+import {
+    getBlogContentLocales,
+    getBlogPosts,
+    getHelpContentLocales,
+    getHelpTopics,
+    parseContentDate,
+} from '@/lib/content'
 
 const BASE_URL = 'https://www.tirgul.net'
 
@@ -14,19 +19,31 @@ function getUrl(path: string, locale: Locale): string {
 }
 
 // Helper to generate language alternates for a path
-function getLanguageAlternates(path: string): Record<string, string> {
+function getLanguageAlternates(path: string, availableLocales: readonly Locale[]): Record<string, string> {
     const alternates: Record<string, string> = {}
-    for (const locale of locales) {
+    for (const locale of availableLocales) {
         alternates[locale] = getUrl(path, locale)
     }
     return alternates
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+type SitemapRoute = {
+    path: string
+    priority: number
+    changeFrequency: NonNullable<MetadataRoute.Sitemap[number]['changeFrequency']>
+    availableLocales?: readonly Locale[]
+    lastModified?: Date
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const entries: MetadataRoute.Sitemap = []
+    const blogLocales = getBlogContentLocales()
+    const helpLocales = getHelpContentLocales()
+    const blogPosts = await getBlogPosts(defaultLocale)
+    const helpTopics = await getHelpTopics(defaultLocale)
 
     // Main pages
-    const mainRoutes = [
+    const mainRoutes: SitemapRoute[] = [
         { path: '/', priority: 1, changeFrequency: 'daily' as const },
         { path: '/about', priority: 0.6, changeFrequency: 'monthly' as const },
         { path: '/contact', priority: 0.5, changeFrequency: 'monthly' as const },
@@ -35,14 +52,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ]
 
     // Grade pages
-    const gradeRoutes = [1, 2, 3, 4, 5, 6].map(grade => ({
+    const gradeRoutes: SitemapRoute[] = [1, 2, 3, 4, 5, 6].map(grade => ({
         path: `/grade/${grade}`,
         priority: 0.9,
         changeFrequency: 'weekly' as const,
     }))
 
     // Worksheet pages
-    const worksheetRoutes = [
+    const worksheetRoutes: SitemapRoute[] = [
         { path: '/worksheet', priority: 0.8, changeFrequency: 'weekly' as const },
         { path: '/worksheet/math', priority: 0.9, changeFrequency: 'weekly' as const },
         { path: '/geometry', priority: 0.8, changeFrequency: 'weekly' as const },
@@ -56,7 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ]
 
     // Play/Games pages
-    const playRoutes = [
+    const playRoutes: SitemapRoute[] = [
         { path: '/play', priority: 0.7, changeFrequency: 'weekly' as const },
         { path: '/play/math', priority: 0.7, changeFrequency: 'weekly' as const },
         { path: '/play/fractions', priority: 0.7, changeFrequency: 'weekly' as const },
@@ -64,22 +81,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ]
 
     // Blog pages
-    const blogRoutes = [
-        { path: '/blog', priority: 0.7, changeFrequency: 'daily' as const },
+    const blogRoutes: SitemapRoute[] = [
+        { path: '/blog', priority: 0.7, changeFrequency: 'daily' as const, availableLocales: blogLocales },
         ...blogPosts.map(post => ({
             path: `/blog/${post.slug}`,
             priority: 0.6,
             changeFrequency: 'monthly' as const,
+            availableLocales: blogLocales,
+            lastModified: parseContentDate(post.lastModified ?? post.date),
         })),
     ]
 
     // Help pages
-    const helpRoutes = [
-        { path: '/help', priority: 0.7, changeFrequency: 'weekly' as const },
-        ...HELP_TOPICS.map(topic => ({
+    const helpRoutes: SitemapRoute[] = [
+        { path: '/help', priority: 0.7, changeFrequency: 'weekly' as const, availableLocales: helpLocales },
+        ...helpTopics.map(topic => ({
             path: `/help/${topic.slug}`,
             priority: 0.6,
             changeFrequency: 'monthly' as const,
+            availableLocales: helpLocales,
         })),
     ]
 
@@ -94,17 +114,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ]
 
     // Generate sitemap entries for each route in each locale
-    for (const { path, priority, changeFrequency } of allRoutes) {
-        for (const locale of locales) {
-            entries.push({
+    for (const { path, priority, changeFrequency, availableLocales = locales, lastModified } of allRoutes) {
+        for (const locale of availableLocales) {
+            const entry: MetadataRoute.Sitemap[number] = {
                 url: getUrl(path, locale),
-                lastModified: new Date(),
                 changeFrequency,
                 priority,
                 alternates: {
-                    languages: getLanguageAlternates(path),
+                    languages: getLanguageAlternates(path, availableLocales),
                 },
-            })
+            }
+
+            if (lastModified) {
+                entry.lastModified = lastModified
+            }
+
+            entries.push(entry)
         }
     }
 

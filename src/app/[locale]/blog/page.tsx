@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { BlogIndexClient } from './BlogIndexClient';
-import { getBlogPosts, blogCategories } from '@/lib/content';
+import { getBlogPosts, blogCategories, getBlogContentLocales, hasLocalizedBlogContent } from '@/lib/content';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
@@ -16,7 +16,10 @@ type Props = {
 
 export async function generateMetadata({ params }: Props) {
     const { locale } = await params;
+    const localeKey = locale as Locale;
     const t = await getTranslations({ locale, namespace: 'meta' });
+    const blogLocales = getBlogContentLocales();
+    const isIndexableLocale = hasLocalizedBlogContent(localeKey);
 
     const title = t('pages.blog.title');
     const description = t('pages.blog.description');
@@ -24,9 +27,13 @@ export async function generateMetadata({ params }: Props) {
     return {
         title,
         description,
-        alternates: generateAlternates('/blog', locale as Locale),
-        openGraph: generateOpenGraphMeta(locale as Locale, title, description, '/blog'),
+        alternates: generateAlternates('/blog', localeKey, blogLocales),
+        openGraph: generateOpenGraphMeta(isIndexableLocale ? localeKey : 'he', title, description, '/blog'),
         twitter: generateTwitterMeta(title, description),
+        robots: isIndexableLocale ? undefined : {
+            index: false,
+            follow: true,
+        },
     };
 }
 

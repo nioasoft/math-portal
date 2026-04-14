@@ -1,7 +1,7 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { getHelpTopics } from '@/lib/content';
+import { getHelpContentLocales, getHelpTopics, hasLocalizedHelpContent } from '@/lib/content';
 import { Locale } from '@/i18n/config';
 import Link from 'next/link';
 import { ArrowLeft, GraduationCap, Sparkles } from 'lucide-react';
@@ -15,7 +15,10 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps) {
     const { locale } = await params;
+    const localeKey = locale as Locale;
     const t = await getTranslations({ locale, namespace: 'meta.pages.help' });
+    const helpLocales = getHelpContentLocales();
+    const isIndexableLocale = hasLocalizedHelpContent(localeKey);
 
     const title = t('title');
     const description = t('description');
@@ -23,9 +26,13 @@ export async function generateMetadata({ params }: PageProps) {
     return {
         title,
         description,
-        alternates: generateAlternates('/help', locale as Locale),
-        openGraph: generateOpenGraphMeta(locale as Locale, title, description, '/help'),
+        alternates: generateAlternates('/help', localeKey, helpLocales),
+        openGraph: generateOpenGraphMeta(isIndexableLocale ? localeKey : 'he', title, description, '/help'),
         twitter: generateTwitterMeta(title, description),
+        robots: isIndexableLocale ? undefined : {
+            index: false,
+            follow: true,
+        },
     };
 }
 

@@ -1,8 +1,8 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { getHelpTopic, getHelpTopics, getHelpSlugs } from '@/lib/content';
-import { Locale, locales } from '@/i18n/config';
+import { getHelpContentLocales, getHelpTopic, getHelpTopics, getHelpSlugs, hasLocalizedHelpContent } from '@/lib/content';
+import { defaultLocale, Locale } from '@/i18n/config';
 import { Link } from '@/i18n/navigation';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowRight, BookOpen, AlertTriangle, Lightbulb, CheckCircle, ExternalLink, GraduationCap } from 'lucide-react';
@@ -16,6 +16,7 @@ interface PageProps {
 
 export async function generateStaticParams() {
     const slugs = await getHelpSlugs();
+    const locales = getHelpContentLocales();
 
     // Generate params for all locales and all topics
     const params: { locale: string; topic: string }[] = [];
@@ -30,8 +31,12 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { topic: topicSlug, locale } = await params;
-    const topic = await getHelpTopic(topicSlug, locale as Locale);
+    const localeKey = locale as Locale;
+    const topic = await getHelpTopic(topicSlug, localeKey);
     const t = await getTranslations({ locale, namespace: 'help' });
+    const helpLocales = getHelpContentLocales();
+    const hasLocalizedContent = hasLocalizedHelpContent(localeKey);
+    const resolvedLocale = hasLocalizedContent ? localeKey : defaultLocale;
 
     if (!topic) {
         return {
@@ -42,7 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     // Build the URL for the related generator hint
     const baseUrl = 'https://www.tirgul.net';
     const generatorPath = topic.relatedGeneratorHref;
-    const localePath = locale !== 'he' ? `/${locale}` : '';
+    const localePath = resolvedLocale !== defaultLocale ? `/${resolvedLocale}` : '';
 
     // Use translated meta description for better SEO differentiation
     // Help pages target informational intent ("how to explain/teach")
@@ -53,9 +58,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
         title,
         description: metaDescription,
-        alternates: generateAlternates(`/help/${topicSlug}`, locale as Locale),
-        openGraph: generateOpenGraphMeta(locale as Locale, title, metaDescription, `/help/${topicSlug}`),
+        alternates: generateAlternates(`/help/${topicSlug}`, localeKey, helpLocales),
+        openGraph: generateOpenGraphMeta(resolvedLocale, title, metaDescription, `/help/${topicSlug}`),
         twitter: generateTwitterMeta(title, metaDescription),
+        robots: hasLocalizedContent ? undefined : {
+            index: false,
+            follow: true,
+        },
         other: {
             // Hint to search engines about the primary transactional page
             // This helps avoid cannibalization by signaling relationship

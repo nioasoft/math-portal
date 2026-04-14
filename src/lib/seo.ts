@@ -9,13 +9,23 @@ const BASE_URL = 'https://www.tirgul.net';
  * @param currentLocale - The current locale
  * @returns Object containing canonical URL and language alternates
  */
-export function generateAlternates(path: string, currentLocale: Locale) {
+export function generateAlternates(
+  path: string,
+  currentLocale: Locale,
+  availableLocales: readonly Locale[] = locales
+) {
   // Remove any leading locale prefix to get the clean path
   const cleanPath = path.replace(/^\/(en|ar|de|es|ru)/, '') || '/';
+  const eligibleLocales = availableLocales.length > 0 ? [...availableLocales] : [defaultLocale];
+  const canonicalLocale = eligibleLocales.includes(currentLocale)
+    ? currentLocale
+    : eligibleLocales.includes(defaultLocale)
+      ? defaultLocale
+      : eligibleLocales[0];
 
   const languages: Record<string, string> = {};
 
-  for (const locale of locales) {
+  for (const locale of eligibleLocales) {
     if (locale === defaultLocale) {
       // Hebrew stays at root (no prefix)
       languages[locale] = `${BASE_URL}${cleanPath}`;
@@ -26,12 +36,15 @@ export function generateAlternates(path: string, currentLocale: Locale) {
   }
 
   // x-default points to the default language (Hebrew)
-  languages['x-default'] = `${BASE_URL}${cleanPath}`;
+  languages['x-default'] = getLocalizedUrl(
+    cleanPath,
+    eligibleLocales.includes(defaultLocale) ? defaultLocale : canonicalLocale
+  );
 
   // Calculate canonical URL for current locale
-  const canonical = currentLocale === defaultLocale
+  const canonical = canonicalLocale === defaultLocale
     ? `${BASE_URL}${cleanPath}`
-    : `${BASE_URL}/${currentLocale}${cleanPath === '/' ? '' : cleanPath}`;
+    : `${BASE_URL}/${canonicalLocale}${cleanPath === '/' ? '' : cleanPath}`;
 
   return {
     canonical,

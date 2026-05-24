@@ -10,7 +10,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "perf:games3d": "tsx scripts/games3d-perf.ts"
   },
   "dependencies": {
     "lucide-react": "^0.562.0",
@@ -23,6 +24,8 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "puppeteer": "^23.0.0",
+    "tsx": "^4.19.0",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.0",

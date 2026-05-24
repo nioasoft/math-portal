@@ -45,14 +45,20 @@ export function Canvas3D({
         : false;
 
     const factory = engineFactory ?? createSceneEngine;
-    const engine = factory({
-      canvas,
-      locale,
-      isRTL,
-      prefersReducedMotion,
-      onComplete,
-      onLoadProgress,
-    });
+    let engine: SceneEngineInstance;
+    try {
+      engine = factory({
+        canvas,
+        locale,
+        isRTL,
+        prefersReducedMotion,
+        onComplete,
+        onLoadProgress,
+      });
+    } catch (err) {
+      onError?.(err);
+      return;
+    }
     engineRef.current = engine;
 
     const unsubScore = onScore ? engine.subscribeScore(onScore) : () => {};

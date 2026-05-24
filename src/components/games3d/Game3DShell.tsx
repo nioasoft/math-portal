@@ -1,0 +1,104 @@
+'use client';
+
+import { useCallback, useEffect, useState } from 'react';
+import { useLocale } from 'next-intl';
+import GameShell from '@/components/game/GameShell';
+import type { BreadcrumbItem } from '@/components/ui/Breadcrumb';
+import { Canvas3D } from './Canvas3D';
+import { OverlayHUD } from './OverlayHUD';
+import { MuteButton } from './MuteButton';
+import { WebGLFallback } from './WebGLFallback';
+import { LoadingScene } from './LoadingScene';
+import { GameLoadError } from './GameLoadError';
+import type { CompleteSummary, FeedbackEvent, Game3D } from '@/lib/games3d/types';
+import { getMutePreference, setMutePreference } from '@/lib/game/storage';
+
+interface Props {
+  game: Game3D;
+  title: string;
+  webGLAvailable: boolean;
+  breadcrumbItems?: BreadcrumbItem[];
+  onComplete?: (summary: CompleteSummary) => void;
+  onExit?: () => void;
+}
+
+const RTL_LOCALES = new Set(['he', 'ar']);
+
+export function Game3DShell({
+  game, title, webGLAvailable, breadcrumbItems, onComplete, onExit,
+}: Props): React.ReactElement {
+  const locale = useLocale();
+  const isRTL = RTL_LOCALES.has(locale);
+
+  const [muted, setMuted] = useState<boolean>(() => getMutePreference());
+  const [score, setScore] = useState<number>(0);
+  const [feedback, setFeedback] = useState<FeedbackEvent | null>(null);
+  const [progress, setProgress] = useState<number>(0);
+  const [loaded, setLoaded] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+  const [reloadKey, setReloadKey] = useState<number>(0);
+
+  useEffect(() => {
+    if (!feedback) return;
+    const id = setTimeout(() => setFeedback(null), 1400);
+    return () => clearTimeout(id);
+  }, [feedback]);
+
+  const toggleMute = useCallback(() => {
+    setMuted((m) => {
+      const next = !m;
+      setMutePreference(next);
+      return next;
+    });
+  }, []);
+
+  const handleLoadProgress = useCallback((f: number) => {
+    setProgress(f);
+    if (f >= 1) setLoaded(true);
+  }, []);
+
+  const handleError = useCallback(() => {
+    setError(true);
+  }, []);
+
+  const handleRetry = useCallback(() => {
+    setError(false);
+    setLoaded(false);
+    setProgress(0);
+    setReloadKey((k) => k + 1);
+  }, []);
+
+  const topBar = webGLAvailable ? (
+    <MuteButton muted={muted} onToggle={toggleMute} />
+  ) : undefined;
+
+  return (
+    <GameShell title={title} breadcrumbItems={breadcrumbItems} onExit={onExit} topBar={topBar}>
+      {!webGLAvailable ? (
+        <WebGLFallback />
+      ) : error ? (
+        <GameLoadError onRetry={handleRetry} />
+      ) : (
+        <div className="relative flex-1 min-h-[60vh]">
+          {!loaded && (
+            <div className="absolute inset-0 flex items-center justify-center bg-slate-900 z-10">
+              <LoadingScene progress={progress} />
+            </div>
+          )}
+          <Canvas3D
+            key={reloadKey}
+            game={game}
+            locale={locale}
+            isRTL={isRTL}
+            onScore={setScore}
+            onFeedback={setFeedback}
+            onComplete={onComplete}
+            onLoadProgress={handleLoadProgress}
+            onError={handleError}
+          />
+          <OverlayHUD score={score} feedback={feedback} />
+        </div>
+      )}
+    </GameShell>
+  );
+}

@@ -89,6 +89,30 @@ export function createInputAdapter(
       lastY: ev.clientY,
       isDragging: false,
     });
+    // When the second finger arrives, seed the baseline distance/angle so the
+    // very first pointermove can emit a delta immediately.
+    if (active.size === 2) {
+      const arr = Array.from(active.values());
+      lastPinchDistance = Math.hypot(arr[0].lastX - arr[1].lastX, arr[0].lastY - arr[1].lastY);
+      lastPinchAngle = Math.atan2(arr[1].lastY - arr[0].lastY, arr[1].lastX - arr[0].lastX);
+    }
+  }
+
+  let lastPinchDistance: number | null = null;
+  let lastPinchAngle: number | null = null;
+
+  function activePair(): [ActivePointer, ActivePointer] | null {
+    if (active.size !== 2) return null;
+    const arr = Array.from(active.values());
+    return [arr[0], arr[1]];
+  }
+
+  function pairDistance(p1: ActivePointer, p2: ActivePointer): number {
+    return Math.hypot(p1.lastX - p2.lastX, p1.lastY - p2.lastY);
+  }
+
+  function pairAngle(p1: ActivePointer, p2: ActivePointer): number {
+    return Math.atan2(p2.lastY - p1.lastY, p2.lastX - p1.lastX);
   }
 
   function onPointerMove(ev: PointerEvent): void {
@@ -96,10 +120,33 @@ export function createInputAdapter(
     if (!ptr) return;
     ptr.lastX = ev.clientX;
     ptr.lastY = ev.clientY;
+
+    const pair = activePair();
+    if (pair) {
+      const [a, b] = pair;
+      const dist = pairDistance(a, b);
+      const ang = pairAngle(a, b);
+      if (lastPinchDistance !== null) {
+        const dDelta = dist - lastPinchDistance;
+        if (Math.abs(dDelta) > 0.5) listeners.pinch.forEach((h) => h(dDelta));
+      }
+      if (lastPinchAngle !== null) {
+        let aDelta = ang - lastPinchAngle;
+        if (aDelta > Math.PI) aDelta -= 2 * Math.PI;
+        if (aDelta < -Math.PI) aDelta += 2 * Math.PI;
+        if (Math.abs(aDelta) > 0.005) listeners.rotate.forEach((h) => h(aDelta));
+      }
+      lastPinchDistance = dist;
+      lastPinchAngle = ang;
+      return;
+    }
+
+    // Single-pointer drag logic (preserved from Task 9)
+    lastPinchDistance = null;
+    lastPinchAngle = null;
     const dx = ev.clientX - ptr.startX;
     const dy = ev.clientY - ptr.startY;
     const distSq = dx * dx + dy * dy;
-
     if (!ptr.isDragging && distSq > TAP_MAX_MOVE_PX * TAP_MAX_MOVE_PX) {
       ptr.isDragging = true;
       const info = buildPointerInfo(ptr.startX, ptr.startY);
@@ -112,6 +159,7 @@ export function createInputAdapter(
   }
 
   function onPointerUp(ev: PointerEvent): void {
+    if (active.size <= 2) { lastPinchDistance = null; lastPinchAngle = null; }
     const ptr = active.get(ev.pointerId);
     if (!ptr) return;
     active.delete(ev.pointerId);
@@ -134,6 +182,7 @@ export function createInputAdapter(
   }
 
   function onPointerCancel(ev: PointerEvent): void {
+    if (active.size <= 2) { lastPinchDistance = null; lastPinchAngle = null; }
     const ptr = active.get(ev.pointerId);
     if (ptr?.isDragging) {
       const info = buildPointerInfo(ptr.lastX, ptr.lastY);

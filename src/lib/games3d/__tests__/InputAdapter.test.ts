@@ -111,3 +111,47 @@ describe('InputAdapter — taps and drags', () => {
     document.body.removeChild(canvas);
   });
 });
+
+describe('InputAdapter — multi-touch', () => {
+  function makeCanvas(): HTMLCanvasElement {
+    const c = document.createElement('canvas');
+    c.width = 800; c.height = 600;
+    Object.defineProperty(c, 'getBoundingClientRect', {
+      value: () => ({ left: 0, top: 0, width: 800, height: 600, right: 800, bottom: 600 }),
+    });
+    return c;
+  }
+  function pe(type: string, props: any): PointerEvent {
+    return new PointerEvent(type, { bubbles: true, ...props });
+  }
+
+  it('fires pinch with positive delta when fingers move apart', () => {
+    const canvas = makeCanvas();
+    document.body.appendChild(canvas);
+    const adapter = createInputAdapter(canvas, new THREE.PerspectiveCamera(), new THREE.Scene());
+    const onPinch = vi.fn();
+    adapter.on('pinch', onPinch);
+
+    canvas.dispatchEvent(pe('pointerdown', { pointerId: 1, clientX: 100, clientY: 200 }));
+    canvas.dispatchEvent(pe('pointerdown', { pointerId: 2, clientX: 200, clientY: 200 }));
+    canvas.dispatchEvent(pe('pointermove', { pointerId: 2, clientX: 300, clientY: 200 }));
+    expect(onPinch).toHaveBeenCalled();
+    const delta = onPinch.mock.calls[0][0] as number;
+    expect(delta).toBeGreaterThan(0);
+    document.body.removeChild(canvas);
+  });
+
+  it('fires rotate when fingers rotate around centroid', () => {
+    const canvas = makeCanvas();
+    document.body.appendChild(canvas);
+    const adapter = createInputAdapter(canvas, new THREE.PerspectiveCamera(), new THREE.Scene());
+    const onRotate = vi.fn();
+    adapter.on('rotate', onRotate);
+
+    canvas.dispatchEvent(pe('pointerdown', { pointerId: 1, clientX: 100, clientY: 200 }));
+    canvas.dispatchEvent(pe('pointerdown', { pointerId: 2, clientX: 200, clientY: 200 }));
+    canvas.dispatchEvent(pe('pointermove', { pointerId: 2, clientX: 187, clientY: 250 }));
+    expect(onRotate).toHaveBeenCalled();
+    document.body.removeChild(canvas);
+  });
+});

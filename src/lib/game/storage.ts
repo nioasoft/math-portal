@@ -100,3 +100,46 @@ export function clearStats(): void {
     if (typeof window === 'undefined') return;
     localStorage.removeItem(STORAGE_KEY);
 }
+
+// ============ 3D Games extensions ============
+
+const KEY_3D_BEST_PREFIX = 'tirgul.games3d.best.';
+const KEY_MUTE = 'tirgul.games3d.muted';
+
+function safeRead(key: string): string | null {
+    try {
+        if (typeof localStorage === 'undefined') return null;
+        return localStorage.getItem(key);
+    } catch {
+        return null;
+    }
+}
+
+function safeWrite(key: string, value: string): void {
+    try {
+        if (typeof localStorage === 'undefined') return;
+        localStorage.setItem(key, value);
+    } catch {
+        // Silently ignore quota/permission errors — UX should not break
+    }
+}
+
+export function getGame3DBestScore(gameId: string): number {
+    const raw = safeRead(KEY_3D_BEST_PREFIX + gameId);
+    if (!raw) return 0;
+    const n = Number(raw);
+    return Number.isFinite(n) && n >= 0 ? n : 0;
+}
+
+export function setGame3DBestScore(gameId: string, score: number): void {
+    if (!Number.isFinite(score) || score < 0) return;
+    safeWrite(KEY_3D_BEST_PREFIX + gameId, String(Math.floor(score)));
+}
+
+export function getMutePreference(): boolean {
+    return safeRead(KEY_MUTE) === '1';
+}
+
+export function setMutePreference(muted: boolean): void {
+    safeWrite(KEY_MUTE, muted ? '1' : '0');
+}

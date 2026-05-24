@@ -1,0 +1,14 @@
+{
+  "loading": "Cargando juego…",
+  "loadProgress": "{percent}%",
+  "mute": "Silenciar sonido",
+  "unmute": "Activar sonido",
+  "gameLoadError": "Error al cargar el juego.",
+  "retry": "Intentar de nuevo",
+  "webglNotSupported": "Tu navegador no admite gráficos 3D. Prueba un navegador o dispositivo más moderno.",
+  "frameRateLowNotice": "Reduciendo la calidad para un juego más fluido",
+  "canary": {
+    "title": "Toca el cubo",
+    "description": "Juego de prueba para desarrolladores"
+  }
+}

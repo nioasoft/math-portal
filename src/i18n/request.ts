@@ -17,6 +17,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const curriculum = (await import(`../../messages/${locale}/curriculum.json`)).default;
   const worksheet = (await import(`../../messages/${locale}/worksheet.json`)).default;
   const games = (await import(`../../messages/${locale}/games.json`)).default;
+  const games3d = (await import(`../../messages/${locale}/games3d.json`)).default;
   const meta = (await import(`../../messages/${locale}/meta.json`)).default;
   const about = (await import(`../../messages/${locale}/about.json`)).default;
   const blog = (await import(`../../messages/${locale}/blog.json`)).default;
@@ -34,6 +35,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       curriculum,
       worksheet,
       games,
+      games3d,
       meta,
       about,
       blog,

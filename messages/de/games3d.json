@@ -1,0 +1,14 @@
+{
+  "loading": "Spiel wird geladen…",
+  "loadProgress": "{percent}%",
+  "mute": "Ton stummschalten",
+  "unmute": "Ton einschalten",
+  "gameLoadError": "Das Spiel konnte nicht geladen werden.",
+  "retry": "Erneut versuchen",
+  "webglNotSupported": "Dein Browser unterstützt keine 3D-Grafik. Probier einen moderneren Browser oder ein neueres Gerät.",
+  "frameRateLowNotice": "Qualität wird reduziert für flüssigeres Spielen",
+  "canary": {
+    "title": "Tippe auf den Würfel",
+    "description": "Test-Spiel für Entwickler"
+  }
+}

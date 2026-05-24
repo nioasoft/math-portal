@@ -1,0 +1,14 @@
+{
+  "loading": "טוען משחק…",
+  "loadProgress": "{percent}%",
+  "mute": "השתק קול",
+  "unmute": "הפעל קול",
+  "gameLoadError": "טעינת המשחק נכשלה.",
+  "retry": "נסה שוב",
+  "webglNotSupported": "הדפדפן שלך אינו תומך בגרפיקה תלת-ממדית. נסה דפדפן או מכשיר חדישים יותר.",
+  "frameRateLowNotice": "מוריד את האיכות לחוויה חלקה יותר",
+  "canary": {
+    "title": "לחץ על הקובייה",
+    "description": "משחק בדיקה למפתחים"
+  }
+}

@@ -132,7 +132,8 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
       const manifest = g.meta.assets;
       const total =
         (manifest.textures ? Object.keys(manifest.textures).length : 0) +
-        (manifest.models ? Object.keys(manifest.models).length : 0);
+        (manifest.models ? Object.keys(manifest.models).length : 0) +
+        (manifest.audio ? Object.keys(manifest.audio).length : 0);
       let done = 0;
       const reportProgress = () => {
         done++;
@@ -146,7 +147,10 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
       }
       if (manifest.audio) {
         await Promise.all(
-          Object.entries(manifest.audio).map(([k, url]) => audio.preload(k, url))
+          Object.entries(manifest.audio).map(async ([k, url]) => {
+            await audio.preload(k, url);
+            reportProgress();
+          })
         );
       }
     }

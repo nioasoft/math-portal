@@ -11,6 +11,12 @@ interface InternalManager extends AudioManager {
   _debugContext(): AudioContext | null;
 }
 
+type AudioContextCtor = typeof AudioContext;
+interface WindowWithAudio extends Window {
+  AudioContext?: AudioContextCtor;
+  webkitAudioContext?: AudioContextCtor;
+}
+
 export function createAudioManager(): InternalManager {
   let context: AudioContext | null = null;
   const buffers = new Map<string, AudioBuffer>();
@@ -19,8 +25,8 @@ export function createAudioManager(): InternalManager {
 
   function ensureContext(): AudioContext | null {
     if (typeof window === 'undefined') return null;
-    const Ctor: typeof AudioContext | undefined =
-      (window as any).AudioContext ?? (window as any).webkitAudioContext;
+    const w = window as WindowWithAudio;
+    const Ctor = w.AudioContext ?? w.webkitAudioContext;
     if (!Ctor) return null;
     if (!context) context = new Ctor();
     return context;

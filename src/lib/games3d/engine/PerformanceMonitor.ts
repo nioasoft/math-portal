@@ -5,7 +5,6 @@ export interface PerformanceMonitorOptions {
   lowThresholdFps?: number;
   lowConsecutiveSamples?: number;
   onLowFps?: () => void;
-  getNow?: () => number;
 }
 
 export interface PerformanceMonitorInstance {
@@ -17,14 +16,15 @@ export interface PerformanceMonitorInstance {
 export function createPerformanceMonitor(
   opts: PerformanceMonitorOptions = {}
 ): PerformanceMonitorInstance {
-  const windowMs = opts.windowMs ?? 1000;
   const threshold = opts.lowThresholdFps ?? 30;
   const consecutiveNeeded = opts.lowConsecutiveSamples ?? 3;
   const onLow = opts.onLowFps;
-  const getNow = opts.getNow ?? (() => performance.now());
+  // windowMs is accepted for API compatibility; sample() reports based on
+  // actual elapsed time so the engine controls cadence.
+  void opts.windowMs;
 
   let frameCount = 0;
-  let windowStart = getNow();
+  let windowStart = performance.now();
   let consecutiveLow = 0;
   let lowFired = false;
 
@@ -33,7 +33,7 @@ export function createPerformanceMonitor(
   }
 
   function sample(): PerformanceSample {
-    const now = getNow();
+    const now = performance.now();
     const elapsed = now - windowStart;
     const fps = elapsed > 0 ? (frameCount / elapsed) * 1000 : 0;
     frameCount = 0;
@@ -53,7 +53,7 @@ export function createPerformanceMonitor(
 
   function reset(): void {
     frameCount = 0;
-    windowStart = getNow();
+    windowStart = performance.now();
     consecutiveLow = 0;
     lowFired = false;
   }

@@ -1,14 +1,15 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { createPerformanceMonitor } from '../engine/PerformanceMonitor';
+
+beforeEach(() => vi.useFakeTimers());
+afterEach(() => vi.useRealTimers());
 
 describe('PerformanceMonitor', () => {
   it('reports average fps after sampling window', () => {
     let now = 0;
-    const m = createPerformanceMonitor({
-      windowMs: 1000,
-      lowThresholdFps: 30,
-      getNow: () => now,
-    });
+    vi.spyOn(performance, 'now').mockImplementation(() => now);
+
+    const m = createPerformanceMonitor({ windowMs: 1000, lowThresholdFps: 30 });
 
     for (let i = 0; i < 60; i++) {
       now += 1000 / 60;
@@ -21,13 +22,14 @@ describe('PerformanceMonitor', () => {
 
   it('triggers onLowFps after 3 consecutive low samples', () => {
     let now = 0;
+    vi.spyOn(performance, 'now').mockImplementation(() => now);
+
     const onLow = vi.fn();
     const m = createPerformanceMonitor({
       windowMs: 1000,
       lowThresholdFps: 30,
       lowConsecutiveSamples: 3,
       onLowFps: onLow,
-      getNow: () => now,
     });
 
     for (let w = 0; w < 3; w++) {
@@ -42,12 +44,13 @@ describe('PerformanceMonitor', () => {
 
   it('does not trigger onLowFps when fps is healthy', () => {
     let now = 0;
+    vi.spyOn(performance, 'now').mockImplementation(() => now);
+
     const onLow = vi.fn();
     const m = createPerformanceMonitor({
       windowMs: 1000,
       lowThresholdFps: 30,
       onLowFps: onLow,
-      getNow: () => now,
     });
 
     for (let w = 0; w < 5; w++) {

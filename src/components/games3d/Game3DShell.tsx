@@ -62,11 +62,14 @@ export function Game3DShell({
     if (mode === null || game) return;
     let cancelled = false;
     const loader = gameLoader ?? gameLoaders[gameId];
-    if (!loader) {
-      setError(true);
-      return;
-    }
-    loader()
+    // Resolve the loader (or reject for a missing one) inside the promise chain so
+    // error state is only ever set from an async callback, never synchronously in
+    // the effect body (avoids React cascading-render lint rule).
+    Promise.resolve()
+      .then(() => {
+        if (!loader) throw new Error(`No loader registered for game "${gameId}"`);
+        return loader();
+      })
       .then((m) => {
         if (!cancelled) setGame(m.default);
       })

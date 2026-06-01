@@ -178,6 +178,10 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
     isPaused = false;
     startTime = performance.now();
     startLoop();
+    // Signal "fully loaded" once the scene is initialized. Games without an asset
+    // manifest never trigger per-asset progress, so report completion here to clear
+    // the loading overlay.
+    opts.onLoadProgress?.(1);
   }
 
   function pause(): void {

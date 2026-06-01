@@ -12,14 +12,23 @@ import { LoadingScene } from './LoadingScene';
 import { GameLoadError } from './GameLoadError';
 import { ModePicker } from './ModePicker';
 import { recordBestScore } from './completion';
-import type { CompleteSummary, FeedbackEvent, Game3D, GameMode3D } from '@/lib/games3d/types';
+import type { CompleteSummary, FeedbackEvent, Game3D, GameMeta, GameMode3D } from '@/lib/games3d/types';
+import { gameLoaders } from '@/lib/games3d/games';
 import { getMutePreference, setMutePreference } from '@/lib/game/storage';
 
 interface Props {
-  game: Game3D;
+  /** Game id — resolved to the actual Game3D module on the client (the game object
+   * holds functions and cannot cross the server→client boundary). */
+  gameId: string;
+  /** Serializable metadata needed before the game module loads (modes, etc.). */
+  meta: GameMeta;
   title: string;
   webGLAvailable: boolean;
   breadcrumbItems?: BreadcrumbItem[];
+  /** Pre-select a mode (e.g. from a `?mode=` deep link) and skip the picker. */
+  initialMode?: GameMode3D;
+  /** Override the registry lookup with an explicit client-side loader (e.g. the dev canary). */
+  gameLoader?: () => Promise<{ default: Game3D }>;
   onComplete?: (summary: CompleteSummary) => void;
   onExit?: () => void;
 }
@@ -27,15 +36,16 @@ interface Props {
 const RTL_LOCALES = new Set(['he', 'ar']);
 
 export function Game3DShell({
-  game, title, webGLAvailable, breadcrumbItems, onComplete, onExit,
+  gameId, meta, title, webGLAvailable, breadcrumbItems, initialMode, gameLoader, onComplete, onExit,
 }: Props): React.ReactElement {
   const locale = useLocale();
   const isRTL = RTL_LOCALES.has(locale);
 
+  const [game, setGame] = useState<Game3D | null>(null);
   const [muted, setMuted] = useState<boolean>(() => getMutePreference());
-  const supportedModes = game.meta.supportedModes;
+  const supportedModes = meta.supportedModes;
   const [mode, setMode] = useState<GameMode3D | null>(
-    supportedModes.length === 1 ? supportedModes[0] : null
+    initialMode ?? (supportedModes.length === 1 ? supportedModes[0] : null)
   );
   const [summary, setSummary] = useState<CompleteSummary | null>(null);
   const [score, setScore] = useState<number>(0);
@@ -44,6 +54,28 @@ export function Game3DShell({
   const [loaded, setLoaded] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [reloadKey, setReloadKey] = useState<number>(0);
+
+  // Load the game module on the client (it carries functions, so it can't be
+  // passed from the server component). Only needed once a mode is chosen.
+  useEffect(() => {
+    if (mode === null || game) return;
+    let cancelled = false;
+    const loader = gameLoader ?? gameLoaders[gameId];
+    if (!loader) {
+      setError(true);
+      return;
+    }
+    loader()
+      .then((m) => {
+        if (!cancelled) setGame(m.default);
+      })
+      .catch(() => {
+        if (!cancelled) setError(true);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [gameId, mode, game, gameLoader]);
 
   useEffect(() => {
     if (!feedback) return;
@@ -76,17 +108,17 @@ export function Game3DShell({
   }, []);
 
   const handleComplete = useCallback((s: CompleteSummary) => {
-    recordBestScore(game.meta.id, s.totalPoints);
+    recordBestScore(gameId, s.totalPoints);
     setSummary(s);
     onComplete?.(s);
-  }, [game.meta.id, onComplete]);
+  }, [gameId, onComplete]);
 
   const playAgain = useCallback(() => {
     setSummary(null);
     setScore(0);
-    setMode(supportedModes.length === 1 ? supportedModes[0] : null);
+    setMode(initialMode ?? (supportedModes.length === 1 ? supportedModes[0] : null));
     setReloadKey((k) => k + 1);
-  }, [supportedModes]);
+  }, [supportedModes, initialMode]);
 
   const topBar = webGLAvailable ? (
     <MuteButton muted={muted} onToggle={toggleMute} />
@@ -104,23 +136,25 @@ export function Game3DShell({
             <ModePicker supportedModes={supportedModes} onPick={setMode} />
           ) : (
             <>
-              {!loaded && (
+              {(!game || !loaded) && (
                 <div className="absolute inset-0 flex items-center justify-center bg-slate-900 z-10">
-                  <LoadingScene progress={progress} />
+                  <LoadingScene progress={game ? progress : 0} />
                 </div>
               )}
-              <Canvas3D
-                key={`${reloadKey}-${mode}`}
-                game={game}
-                mode={mode}
-                locale={locale}
-                isRTL={isRTL}
-                onScore={setScore}
-                onFeedback={setFeedback}
-                onComplete={handleComplete}
-                onLoadProgress={handleLoadProgress}
-                onError={handleError}
-              />
+              {game && (
+                <Canvas3D
+                  key={`${reloadKey}-${mode}`}
+                  game={game}
+                  mode={mode}
+                  locale={locale}
+                  isRTL={isRTL}
+                  onScore={setScore}
+                  onFeedback={setFeedback}
+                  onComplete={handleComplete}
+                  onLoadProgress={handleLoadProgress}
+                  onError={handleError}
+                />
+              )}
               <OverlayHUD score={score} feedback={feedback} />
               {summary && (
                 <div className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-4 bg-slate-900/95 text-white">

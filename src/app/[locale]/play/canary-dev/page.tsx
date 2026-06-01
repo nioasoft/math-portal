@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
-import { Game3DShell } from '@/components/games3d/Game3DShell';
-import { canaryGame } from './CanaryGame';
+import { CanaryShell } from './CanaryShell';
 import { getTranslations } from 'next-intl/server';
 
 export const dynamic = 'force-dynamic';
@@ -13,10 +12,8 @@ export default async function CanaryPage({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'games3d.canary' });
   return (
-    <Game3DShell
-      game={canaryGame}
+    <CanaryShell
       title={t('title')}
-      webGLAvailable={true}
       breadcrumbItems={[
         { label: 'Home', href: '/' },
         { label: 'Games', href: '/play' },

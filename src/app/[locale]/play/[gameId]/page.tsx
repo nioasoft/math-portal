@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Game3DShell } from '@/components/games3d/Game3DShell';
 import { getRegisteredGames, gameLoaders, GAME_IDS } from '@/lib/games3d/games';
 import type { Locale } from '@/i18n/config';
+import type { GameMode3D } from '@/lib/games3d/types';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
 
 export function generateStaticParams(): Array<{ gameId: string }> {
@@ -34,20 +35,33 @@ export async function generateMetadata({
 
 export default async function GamePage({
   params,
-}: { params: Promise<{ locale: string; gameId: string }> }) {
+  searchParams,
+}: {
+  params: Promise<{ locale: string; gameId: string }>;
+  searchParams?: Promise<{ mode?: string }>;
+}) {
   const { locale, gameId } = await params;
   const meta = findMeta(gameId);
   if (!meta || !gameLoaders[gameId]) notFound();
 
-  const loaded = await gameLoaders[gameId]();
-  const game = loaded.default;
   const t = await getTranslations({ locale, namespace: meta.i18nKey });
+
+  // Optional `?mode=` deep link: pre-select a mode and skip the picker, but only
+  // if it's a valid mode this game actually supports.
+  const { mode: rawMode } = (await searchParams) ?? {};
+  const initialMode: GameMode3D | undefined =
+    (rawMode === 'practice' || rawMode === 'quiz') &&
+    meta.supportedModes.includes(rawMode)
+      ? rawMode
+      : undefined;
 
   return (
     <Game3DShell
-      game={game}
+      gameId={gameId}
+      meta={meta}
       title={t('title')}
       webGLAvailable={true}
+      initialMode={initialMode}
       breadcrumbItems={[
         { label: 'Home', href: '/' },
         { label: 'Games', href: '/play' },

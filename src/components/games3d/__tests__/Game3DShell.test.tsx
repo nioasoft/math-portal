@@ -31,12 +31,12 @@ const game: Game3D = {
 
 describe('Game3DShell', () => {
   it('renders WebGL fallback when WebGL unavailable', () => {
-    render(wrap(<Game3DShell game={game} title="Test" webGLAvailable={false} />));
+    render(wrap(<Game3DShell gameId={game.meta.id} meta={game.meta} title="Test" webGLAvailable={false} />));
     expect(screen.getByText(/Not supported/i)).toBeInTheDocument();
   });
 
   it('renders mute button when WebGL available', () => {
-    render(wrap(<Game3DShell game={game} title="Test" webGLAvailable={true} />));
+    render(wrap(<Game3DShell gameId={game.meta.id} meta={game.meta} title="Test" webGLAvailable={true} />));
     expect(screen.getByLabelText(/Mute|Unmute/)).toBeInTheDocument();
   });
 });

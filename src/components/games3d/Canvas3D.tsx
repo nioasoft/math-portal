@@ -12,6 +12,7 @@ interface Props {
   game: Game3D;
   locale: string;
   isRTL: boolean;
+  mode: import('@/lib/games3d/types').GameMode3D;
   onComplete?: (summary: CompleteSummary) => void;
   onScore?: (score: number) => void;
   onFeedback?: (event: FeedbackEvent) => void;
@@ -25,6 +26,7 @@ export function Canvas3D({
   game,
   locale,
   isRTL,
+  mode,
   onComplete,
   onScore,
   onFeedback,
@@ -51,6 +53,7 @@ export function Canvas3D({
         canvas,
         locale,
         isRTL,
+        mode,
         prefersReducedMotion,
         onComplete,
         onLoadProgress,

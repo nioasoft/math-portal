@@ -22,7 +22,7 @@ describe('Canvas3D', () => {
       subscribeFeedback: vi.fn(() => () => {}),
       _debug: () => ({} as any),
     }));
-    render(<Canvas3D game={game} locale="en" isRTL={false} engineFactory={factory} />);
+    render(<Canvas3D game={game} locale="en" isRTL={false} mode="practice" engineFactory={factory} />);
     await waitFor(() => expect(start).toHaveBeenCalledWith(game));
   });
 
@@ -36,7 +36,7 @@ describe('Canvas3D', () => {
       subscribeFeedback: vi.fn(() => () => {}),
       _debug: () => ({} as any),
     }));
-    const { unmount } = render(<Canvas3D game={game} locale="en" isRTL={false} engineFactory={factory} />);
+    const { unmount } = render(<Canvas3D game={game} locale="en" isRTL={false} mode="practice" engineFactory={factory} />);
     await waitFor(() => expect(factory).toHaveBeenCalled());
     unmount();
     expect(dispose).toHaveBeenCalledOnce();

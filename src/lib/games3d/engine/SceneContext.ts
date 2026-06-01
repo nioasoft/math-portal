@@ -83,6 +83,7 @@ export interface CreateContextArgs {
   assets: AssetCache;
   locale: string;
   isRTL: boolean;
+  mode: import('../types').GameMode3D;
   prefersReducedMotion: boolean;
   score: ObservableScore;
   feedback: ObservableFeedback;
@@ -102,6 +103,7 @@ export function createSceneContext(args: CreateContextArgs): SceneContext {
     assets: args.assets,
     locale: args.locale,
     isRTL: args.isRTL,
+    mode: args.mode,
     prefersReducedMotion: args.prefersReducedMotion,
     score: args.score,
     feedback: args.feedback,

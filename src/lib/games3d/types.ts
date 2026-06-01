@@ -60,6 +60,7 @@ export interface SceneContext {
   assets: AssetCache;
   locale: string;
   isRTL: boolean;
+  mode: GameMode3D;
   prefersReducedMotion: boolean;
   score: ScoreController;
   feedback: FeedbackController;

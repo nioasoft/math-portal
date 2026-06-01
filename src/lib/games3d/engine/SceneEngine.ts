@@ -20,6 +20,7 @@ export interface SceneEngineOptions {
   renderer?: THREE.WebGLRenderer;
   locale: string;
   isRTL: boolean;
+  mode?: import('../types').GameMode3D;
   prefersReducedMotion?: boolean;
   onComplete?: (summary: CompleteSummary) => void;
   onLoadProgress?: (fraction: number) => void;
@@ -162,6 +163,7 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
       assets: assetLoader.cache,
       locale: opts.locale,
       isRTL: opts.isRTL,
+      mode: opts.mode ?? 'practice',
       prefersReducedMotion: opts.prefersReducedMotion ?? false,
       score, feedback,
       onComplete: (summary) => {

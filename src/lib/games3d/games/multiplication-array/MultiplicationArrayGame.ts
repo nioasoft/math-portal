@@ -88,6 +88,7 @@ export const multiplicationArrayGame: Game3D = {
         if (ok) ctx.feedback.correct('+10');
         else ctx.feedback.wrong();
         quiz.submit(answer);
+        ctx.score.set(quiz.state().score);
         if (quiz.state().finished) {
           ctx.complete(quiz.summary());
           return;

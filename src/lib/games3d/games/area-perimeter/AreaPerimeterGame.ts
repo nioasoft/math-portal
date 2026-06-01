@@ -6,6 +6,29 @@ import { createAreaPerimeterGenerator, type AreaPerimeterProblem } from './probl
 const TILE = 1;
 const MAX = 10;
 
+/**
+ * Pick a start rectangle whose area AND perimeter both differ from the target,
+ * so the problem never opens already-solved (the old fixed 2×2 = area 4 /
+ * perimeter 8 coincided with ~3% of generated targets). Tries a few small
+ * shapes and falls back to a guaranteed-mismatch.
+ */
+function pickStart(target: number): { width: number; height: number } {
+  const candidates: Array<[number, number]> = [
+    [1, 1],
+    [1, 2],
+    [2, 1],
+    [1, 3],
+  ];
+  for (const [w, h] of candidates) {
+    if (w * h !== target && 2 * (w + h) !== target) return { width: w, height: h };
+  }
+  // Fallback: a 1×k strip with area and perimeter both clear of target.
+  for (let k = 1; k <= MAX; k++) {
+    if (k !== target && 2 * (1 + k) !== target) return { width: 1, height: k };
+  }
+  return { width: 1, height: 1 };
+}
+
 export const areaPerimeterGame: Game3D = {
   meta: {
     id: 'area-perimeter',
@@ -31,8 +54,9 @@ export const areaPerimeterGame: Game3D = {
     ctx.scene.add(group);
     const tileGeo = new THREE.BoxGeometry(TILE * 0.95, 0.3, TILE * 0.95);
     const tileMat = new THREE.MeshStandardMaterial({ color: 0x66bb6a });
-    let width = 2;
-    let height = 2;
+    const start0 = pickStart(problem.target);
+    let width = start0.width;
+    let height = start0.height;
 
     function metric(): number {
       return problem.kind === 'area' ? width * height : 2 * (width + height);
@@ -52,13 +76,14 @@ export const areaPerimeterGame: Game3D = {
       showPrompt();
     }
     function advance(): void {
-      width = 2; height = 2;
       if (quiz) {
         if (quiz.state().finished) { ctx.complete(quiz.summary()); return; }
         problem = quiz.state().current;
       } else {
         problem = generator.next();
       }
+      const s = pickStart(problem.target);
+      width = s.width; height = s.height;
       rebuild();
     }
 
@@ -72,7 +97,7 @@ export const areaPerimeterGame: Game3D = {
       const ok = generator.check(problem, { width, height });
       if (ok) { ctx.audio.play('success'); ctx.feedback.correct('+10'); if (!quiz) ctx.score.add(10); }
       else { ctx.audio.play('fail'); ctx.feedback.wrong(); }
-      if (quiz) { quiz.submit({ width, height }); advance(); }
+      if (quiz) { quiz.submit({ width, height }); ctx.score.set(quiz.state().score); advance(); }
       else if (ok) { advance(); }
     });
 

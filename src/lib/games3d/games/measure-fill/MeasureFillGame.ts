@@ -71,6 +71,7 @@ export const measureFillGame: Game3D = {
       else { ctx.audio.play('fail'); ctx.feedback.wrong(); }
       if (quiz) {
         quiz.submit(fillMl);
+        ctx.score.set(quiz.state().score);
         nextOrComplete();
       } else if (ok) {
         nextOrComplete();

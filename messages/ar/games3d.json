@@ -7,6 +7,10 @@
   "retry": "حاول مرة أخرى",
   "webglNotSupported": "متصفحك لا يدعم الرسومات ثلاثية الأبعاد. جرب متصفحًا أو جهازًا أحدث.",
   "frameRateLowNotice": "تقليل الجودة لتجربة لعب أكثر سلاسة",
+  "sectionTitle": "ألعاب ثلاثية الأبعاد",
+  "grades": "الصفوف {from}–{to}",
+  "modes": { "choose": "اختر الوضع", "practice": "تدريب", "quiz": "اختبار" },
+  "topics": { "arithmetic": "الحساب", "fractions": "الكسور", "geometry": "الهندسة", "units": "وحدات القياس" },
   "canary": {
     "title": "اضغط على المكعب",
     "description": "لعبة اختبار للمطورين"

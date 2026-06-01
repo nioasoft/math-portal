@@ -7,6 +7,10 @@
   "retry": "Intentar de nuevo",
   "webglNotSupported": "Tu navegador no admite gráficos 3D. Prueba un navegador o dispositivo más moderno.",
   "frameRateLowNotice": "Reduciendo la calidad para un juego más fluido",
+  "sectionTitle": "Juegos 3D",
+  "grades": "Grados {from}–{to}",
+  "modes": { "choose": "Elige un modo", "practice": "Práctica", "quiz": "Cuestionario" },
+  "topics": { "arithmetic": "Aritmética", "fractions": "Fracciones", "geometry": "Geometría", "units": "Medidas" },
   "canary": {
     "title": "Toca el cubo",
     "description": "Juego de prueba para desarrolladores"

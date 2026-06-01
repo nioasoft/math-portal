@@ -7,6 +7,10 @@
   "retry": "Try again",
   "webglNotSupported": "Your browser does not support 3D graphics. Try a more modern browser or device.",
   "frameRateLowNotice": "Reducing quality for smoother gameplay",
+  "sectionTitle": "3D Games",
+  "grades": "Grades {from}–{to}",
+  "modes": { "choose": "Choose a mode", "practice": "Practice", "quiz": "Quiz" },
+  "topics": { "arithmetic": "Arithmetic", "fractions": "Fractions", "geometry": "Geometry", "units": "Measurement" },
   "canary": {
     "title": "Tap the Cube",
     "description": "Developer test game"

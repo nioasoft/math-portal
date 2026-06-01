@@ -7,6 +7,10 @@
   "retry": "Erneut versuchen",
   "webglNotSupported": "Dein Browser unterstützt keine 3D-Grafik. Probier einen moderneren Browser oder ein neueres Gerät.",
   "frameRateLowNotice": "Qualität wird reduziert für flüssigeres Spielen",
+  "sectionTitle": "3D-Spiele",
+  "grades": "Klassen {from}–{to}",
+  "modes": { "choose": "Modus wählen", "practice": "Üben", "quiz": "Quiz" },
+  "topics": { "arithmetic": "Arithmetik", "fractions": "Brüche", "geometry": "Geometrie", "units": "Maßeinheiten" },
   "canary": {
     "title": "Tippe auf den Würfel",
     "description": "Test-Spiel für Entwickler"

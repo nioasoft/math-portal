@@ -35,6 +35,11 @@
     "description": "Rellena partes del círculo para que coincidan con la fracción",
     "instructions": "Toca las porciones para rellenarlas hasta que coincidan con la fracción objetivo"
   },
+  "areaPerimeter": {
+    "title": "Área y perímetro",
+    "description": "Construye un rectángulo con un área o perímetro dado",
+    "instructions": "Arrastra para cambiar el tamaño del rectángulo hasta que el área o el perímetro coincida"
+  },
   "canary": {
     "title": "Toca el cubo",
     "description": "Juego de prueba para desarrolladores"

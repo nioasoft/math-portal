@@ -3,6 +3,7 @@ import { registerGame, listGames } from '../registry';
 import { multiplicationArrayGame } from './multiplication-array/MultiplicationArrayGame';
 import { measureFillGame } from './measure-fill/MeasureFillGame';
 import { fractionBuildGame } from './fraction-build/FractionBuildGame';
+import { areaPerimeterGame } from './area-perimeter/AreaPerimeterGame';
 
 /**
  * The single source of truth for which 3D games exist.
@@ -16,6 +17,7 @@ const games: Game3D[] = [
   multiplicationArrayGame,
   measureFillGame,
   fractionBuildGame,
+  areaPerimeterGame,
 ];
 
 // Lazy loaders so each game's Three.js code is its own code-split chunk.
@@ -26,6 +28,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./measure-fill/MeasureFillGame').then((m) => ({ default: m.measureFillGame })),
   'fraction-build': () =>
     import('./fraction-build/FractionBuildGame').then((m) => ({ default: m.fractionBuildGame })),
+  'area-perimeter': () =>
+    import('./area-perimeter/AreaPerimeterGame').then((m) => ({ default: m.areaPerimeterGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

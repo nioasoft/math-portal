@@ -35,6 +35,11 @@
     "description": "Fill parts of the pie to match the fraction",
     "instructions": "Tap slices to fill them until they match the target fraction"
   },
+  "areaPerimeter": {
+    "title": "Area & Perimeter",
+    "description": "Build a rectangle with a given area or perimeter",
+    "instructions": "Drag to resize the rectangle until the area/perimeter matches"
+  },
   "canary": {
     "title": "Tap the Cube",
     "description": "Developer test game"

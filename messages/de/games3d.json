@@ -35,6 +35,11 @@
     "description": "Fülle Teile des Kreises, um den Bruch zu treffen",
     "instructions": "Tippe auf Segmente, um sie zu füllen, bis sie zum Zielbruch passen"
   },
+  "areaPerimeter": {
+    "title": "Fläche & Umfang",
+    "description": "Baue ein Rechteck mit vorgegebener Fläche oder vorgegebenem Umfang",
+    "instructions": "Ziehe, um die Größe des Rechtecks anzupassen, bis Fläche/Umfang passen"
+  },
   "canary": {
     "title": "Tippe auf den Würfel",
     "description": "Test-Spiel für Entwickler"

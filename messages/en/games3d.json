@@ -16,6 +16,11 @@
     "description": "Build a cube array to solve a multiplication fact",
     "instructions": "Tap to add cubes until the array matches the problem"
   },
+  "measureFill": {
+    "title": "Fill the Container",
+    "description": "Fill the container to the target volume",
+    "instructions": "Drag to pour liquid to the target mark"
+  },
   "canary": {
     "title": "Tap the Cube",
     "description": "Developer test game"

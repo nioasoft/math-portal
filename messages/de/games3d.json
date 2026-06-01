@@ -16,6 +16,11 @@
     "description": "Baue ein Würfelfeld, um eine Multiplikation zu lösen",
     "instructions": "Tippe, um Würfel hinzuzufügen, bis das Feld zur Aufgabe passt"
   },
+  "measureFill": {
+    "title": "Behälter füllen",
+    "description": "Fülle den Behälter bis zum Zielvolumen",
+    "instructions": "Ziehe, um Flüssigkeit bis zur Zielmarke einzugießen"
+  },
   "canary": {
     "title": "Tippe auf den Würfel",
     "description": "Test-Spiel für Entwickler"

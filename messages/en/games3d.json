@@ -5,6 +5,7 @@
   "unmute": "Unmute sound",
   "gameLoadError": "The game failed to load.",
   "retry": "Try again",
+  "playAgain": "Play again",
   "webglNotSupported": "Your browser does not support 3D graphics. Try a more modern browser or device.",
   "frameRateLowNotice": "Reducing quality for smoother gameplay",
   "sectionTitle": "3D Games",

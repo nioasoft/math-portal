@@ -5,6 +5,7 @@
   "unmute": "Activar sonido",
   "gameLoadError": "Error al cargar el juego.",
   "retry": "Intentar de nuevo",
+  "playAgain": "Jugar de nuevo",
   "webglNotSupported": "Tu navegador no admite gráficos 3D. Prueba un navegador o dispositivo más moderno.",
   "frameRateLowNotice": "Reduciendo la calidad para un juego más fluido",
   "sectionTitle": "Juegos 3D",

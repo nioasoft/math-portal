@@ -10,7 +10,8 @@ import { MuteButton } from './MuteButton';
 import { WebGLFallback } from './WebGLFallback';
 import { LoadingScene } from './LoadingScene';
 import { GameLoadError } from './GameLoadError';
-import type { CompleteSummary, FeedbackEvent, Game3D } from '@/lib/games3d/types';
+import { ModePicker } from './ModePicker';
+import type { CompleteSummary, FeedbackEvent, Game3D, GameMode3D } from '@/lib/games3d/types';
 import { getMutePreference, setMutePreference } from '@/lib/game/storage';
 
 interface Props {
@@ -31,6 +32,10 @@ export function Game3DShell({
   const isRTL = RTL_LOCALES.has(locale);
 
   const [muted, setMuted] = useState<boolean>(() => getMutePreference());
+  const supportedModes = game.meta.supportedModes;
+  const [mode, setMode] = useState<GameMode3D | null>(
+    supportedModes.length === 1 ? supportedModes[0] : null
+  );
   const [score, setScore] = useState<number>(0);
   const [feedback, setFeedback] = useState<FeedbackEvent | null>(null);
   const [progress, setProgress] = useState<number>(0);
@@ -80,23 +85,30 @@ export function Game3DShell({
         <GameLoadError onRetry={handleRetry} />
       ) : (
         <div className="relative flex-1 min-h-[60vh]">
-          {!loaded && (
-            <div className="absolute inset-0 flex items-center justify-center bg-slate-900 z-10">
-              <LoadingScene progress={progress} />
-            </div>
+          {mode === null ? (
+            <ModePicker supportedModes={supportedModes} onPick={setMode} />
+          ) : (
+            <>
+              {!loaded && (
+                <div className="absolute inset-0 flex items-center justify-center bg-slate-900 z-10">
+                  <LoadingScene progress={progress} />
+                </div>
+              )}
+              <Canvas3D
+                key={`${reloadKey}-${mode}`}
+                game={game}
+                mode={mode}
+                locale={locale}
+                isRTL={isRTL}
+                onScore={setScore}
+                onFeedback={setFeedback}
+                onComplete={onComplete}
+                onLoadProgress={handleLoadProgress}
+                onError={handleError}
+              />
+              <OverlayHUD score={score} feedback={feedback} />
+            </>
           )}
-          <Canvas3D
-            key={reloadKey}
-            game={game}
-            locale={locale}
-            isRTL={isRTL}
-            onScore={setScore}
-            onFeedback={setFeedback}
-            onComplete={onComplete}
-            onLoadProgress={handleLoadProgress}
-            onError={handleError}
-          />
-          <OverlayHUD score={score} feedback={feedback} />
         </div>
       )}
     </GameShell>

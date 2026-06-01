@@ -6,33 +6,20 @@ import { fractionBuildGame } from './fraction-build/FractionBuildGame';
 import { areaPerimeterGame } from './area-perimeter/AreaPerimeterGame';
 
 /**
- * The single source of truth for which 3D games exist.
- * Adding a game = add one entry to BOTH maps below (id -> static game meta module
- * for the catalog, and id -> lazy loader for the dynamic route). No route files,
- * no listing edits.
+ * Server/registry-side catalog: the static `games` array + registration helpers.
+ * This statically imports every game module (and therefore three), so it must
+ * NOT be imported from the client bundle. The client uses `./loaders` (lazy
+ * `() => import(...)` only) instead. Adding a game = add an entry here AND in
+ * `./loaders.ts`.
  */
 
-// Statically-imported game definitions (small — meta + init fn). Registered for the catalog.
+// Statically-imported game definitions (meta + init fn). Registered for the catalog.
 const games: Game3D[] = [
   multiplicationArrayGame,
   measureFillGame,
   fractionBuildGame,
   areaPerimeterGame,
 ];
-
-// Lazy loaders so each game's Three.js code is its own code-split chunk.
-export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
-  'multiplication-array': () =>
-    import('./multiplication-array/MultiplicationArrayGame').then((m) => ({ default: m.multiplicationArrayGame })),
-  'measure-fill': () =>
-    import('./measure-fill/MeasureFillGame').then((m) => ({ default: m.measureFillGame })),
-  'fraction-build': () =>
-    import('./fraction-build/FractionBuildGame').then((m) => ({ default: m.fractionBuildGame })),
-  'area-perimeter': () =>
-    import('./area-perimeter/AreaPerimeterGame').then((m) => ({ default: m.areaPerimeterGame })),
-};
-
-export const GAME_IDS = Object.keys(gameLoaders);
 
 let registered = false;
 export function ensureRegistered(): void {

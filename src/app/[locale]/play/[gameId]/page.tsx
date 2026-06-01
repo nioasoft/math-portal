@@ -2,7 +2,8 @@ import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { Game3DShell } from '@/components/games3d/Game3DShell';
-import { getRegisteredGames, gameLoaders, GAME_IDS } from '@/lib/games3d/games';
+import { getRegisteredGames } from '@/lib/games3d/games';
+import { gameLoaders, GAME_IDS } from '@/lib/games3d/games/loaders';
 import type { Locale } from '@/i18n/config';
 import type { GameMode3D } from '@/lib/games3d/types';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
@@ -45,6 +46,7 @@ export default async function GamePage({
   if (!meta || !gameLoaders[gameId]) notFound();
 
   const t = await getTranslations({ locale, namespace: meta.i18nKey });
+  const metaT = await getTranslations({ locale, namespace: 'meta' });
 
   // Optional `?mode=` deep link: pre-select a mode and skip the picker, but only
   // if it's a valid mode this game actually supports.
@@ -60,11 +62,12 @@ export default async function GamePage({
       gameId={gameId}
       meta={meta}
       title={t('title')}
+      instructions={t('instructions')}
       webGLAvailable={true}
       initialMode={initialMode}
       breadcrumbItems={[
-        { label: 'Home', href: '/' },
-        { label: 'Games', href: '/play' },
+        { label: metaT('breadcrumb.home'), href: '/' },
+        { label: metaT('pages.play.title'), href: '/play' },
         { label: t('title') },
       ]}
     />

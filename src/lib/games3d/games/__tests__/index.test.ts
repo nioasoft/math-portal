@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { GAME_IDS, gameLoaders, getRegisteredGames } from '../index';
+import { GAME_IDS, gameLoaders } from '../loaders';
+import { getRegisteredGames } from '../index';
 
 describe('games index', () => {
   it('exposes a loader for every registered game id', () => {

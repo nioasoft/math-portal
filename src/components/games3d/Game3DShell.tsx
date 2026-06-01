@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import GameShell from '@/components/game/GameShell';
 import type { BreadcrumbItem } from '@/components/ui/Breadcrumb';
 import { Canvas3D } from './Canvas3D';
@@ -13,7 +13,7 @@ import { GameLoadError } from './GameLoadError';
 import { ModePicker } from './ModePicker';
 import { recordBestScore } from './completion';
 import type { CompleteSummary, FeedbackEvent, Game3D, GameMeta, GameMode3D } from '@/lib/games3d/types';
-import { gameLoaders } from '@/lib/games3d/games';
+import { gameLoaders } from '@/lib/games3d/games/loaders';
 import { getMutePreference, setMutePreference } from '@/lib/game/storage';
 
 interface Props {
@@ -25,6 +25,8 @@ interface Props {
   title: string;
   webGLAvailable: boolean;
   breadcrumbItems?: BreadcrumbItem[];
+  /** Short how-to-play text shown on the mode-picker screen (first-time UX). */
+  instructions?: string;
   /** Pre-select a mode (e.g. from a `?mode=` deep link) and skip the picker. */
   initialMode?: GameMode3D;
   /** Override the registry lookup with an explicit client-side loader (e.g. the dev canary). */
@@ -36,10 +38,11 @@ interface Props {
 const RTL_LOCALES = new Set(['he', 'ar']);
 
 export function Game3DShell({
-  gameId, meta, title, webGLAvailable, breadcrumbItems, initialMode, gameLoader, onComplete, onExit,
+  gameId, meta, title, webGLAvailable, breadcrumbItems, instructions, initialMode, gameLoader, onComplete, onExit,
 }: Props): React.ReactElement {
   const locale = useLocale();
   const isRTL = RTL_LOCALES.has(locale);
+  const t = useTranslations('games3d');
 
   const [game, setGame] = useState<Game3D | null>(null);
   const [muted, setMuted] = useState<boolean>(() => getMutePreference());
@@ -120,6 +123,8 @@ export function Game3DShell({
   const playAgain = useCallback(() => {
     setSummary(null);
     setScore(0);
+    setLoaded(false);
+    setProgress(0);
     setMode(initialMode ?? (supportedModes.length === 1 ? supportedModes[0] : null));
     setReloadKey((k) => k + 1);
   }, [supportedModes, initialMode]);
@@ -137,7 +142,7 @@ export function Game3DShell({
       ) : (
         <div className="relative flex-1 min-h-[60vh]">
           {mode === null ? (
-            <ModePicker supportedModes={supportedModes} onPick={setMode} />
+            <ModePicker supportedModes={supportedModes} onPick={setMode} instructions={instructions} />
           ) : (
             <>
               {(!game || !loaded) && (
@@ -170,6 +175,7 @@ export function Game3DShell({
                   <button
                     type="button"
                     onClick={playAgain}
+                    aria-label={t('playAgain')}
                     className="rounded-2xl bg-indigo-600 px-8 py-3 font-bold shadow-lg hover:bg-indigo-500 active:scale-95"
                   >
                     ↻

@@ -11,6 +11,11 @@
   "grades": "Grades {from}–{to}",
   "modes": { "choose": "Choose a mode", "practice": "Practice", "quiz": "Quiz" },
   "topics": { "arithmetic": "Arithmetic", "fractions": "Fractions", "geometry": "Geometry", "units": "Measurement" },
+  "multiplicationArray": {
+    "title": "Multiplication Arrays",
+    "description": "Build a cube array to solve a multiplication fact",
+    "instructions": "Tap to add cubes until the array matches the problem"
+  },
   "canary": {
     "title": "Tap the Cube",
     "description": "Developer test game"

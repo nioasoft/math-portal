@@ -11,6 +11,11 @@
   "grades": "الصفوف {from}–{to}",
   "modes": { "choose": "اختر الوضع", "practice": "تدريب", "quiz": "اختبار" },
   "topics": { "arithmetic": "الحساب", "fractions": "الكسور", "geometry": "الهندسة", "units": "وحدات القياس" },
+  "multiplicationArray": {
+    "title": "مصفوفات الضرب",
+    "description": "ابنِ مصفوفة مكعبات لحل مسألة ضرب",
+    "instructions": "انقر لإضافة مكعبات حتى تطابق المصفوفة المسألة"
+  },
   "canary": {
     "title": "اضغط على المكعب",
     "description": "لعبة اختبار للمطورين"

@@ -11,6 +11,11 @@
   "grades": "Klassen {from}–{to}",
   "modes": { "choose": "Modus wählen", "practice": "Üben", "quiz": "Quiz" },
   "topics": { "arithmetic": "Arithmetik", "fractions": "Brüche", "geometry": "Geometrie", "units": "Maßeinheiten" },
+  "multiplicationArray": {
+    "title": "Multiplikations-Felder",
+    "description": "Baue ein Würfelfeld, um eine Multiplikation zu lösen",
+    "instructions": "Tippe, um Würfel hinzuzufügen, bis das Feld zur Aufgabe passt"
+  },
   "canary": {
     "title": "Tippe auf den Würfel",
     "description": "Test-Spiel für Entwickler"

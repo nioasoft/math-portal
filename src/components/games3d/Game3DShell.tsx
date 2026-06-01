@@ -11,6 +11,7 @@ import { WebGLFallback } from './WebGLFallback';
 import { LoadingScene } from './LoadingScene';
 import { GameLoadError } from './GameLoadError';
 import { ModePicker } from './ModePicker';
+import { recordBestScore } from './completion';
 import type { CompleteSummary, FeedbackEvent, Game3D, GameMode3D } from '@/lib/games3d/types';
 import { getMutePreference, setMutePreference } from '@/lib/game/storage';
 
@@ -36,6 +37,7 @@ export function Game3DShell({
   const [mode, setMode] = useState<GameMode3D | null>(
     supportedModes.length === 1 ? supportedModes[0] : null
   );
+  const [summary, setSummary] = useState<CompleteSummary | null>(null);
   const [score, setScore] = useState<number>(0);
   const [feedback, setFeedback] = useState<FeedbackEvent | null>(null);
   const [progress, setProgress] = useState<number>(0);
@@ -73,6 +75,19 @@ export function Game3DShell({
     setReloadKey((k) => k + 1);
   }, []);
 
+  const handleComplete = useCallback((s: CompleteSummary) => {
+    recordBestScore(game.meta.id, s.totalPoints);
+    setSummary(s);
+    onComplete?.(s);
+  }, [game.meta.id, onComplete]);
+
+  const playAgain = useCallback(() => {
+    setSummary(null);
+    setScore(0);
+    setMode(supportedModes.length === 1 ? supportedModes[0] : null);
+    setReloadKey((k) => k + 1);
+  }, [supportedModes]);
+
   const topBar = webGLAvailable ? (
     <MuteButton muted={muted} onToggle={toggleMute} />
   ) : undefined;
@@ -102,11 +117,26 @@ export function Game3DShell({
                 isRTL={isRTL}
                 onScore={setScore}
                 onFeedback={setFeedback}
-                onComplete={onComplete}
+                onComplete={handleComplete}
                 onLoadProgress={handleLoadProgress}
                 onError={handleError}
               />
               <OverlayHUD score={score} feedback={feedback} />
+              {summary && (
+                <div className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-4 bg-slate-900/95 text-white">
+                  <div className="text-3xl font-bold">{summary.totalPoints}</div>
+                  <div className="text-sm opacity-80">
+                    {Math.round(summary.accuracy * 100)}% · {Math.round(summary.durationSec)}s
+                  </div>
+                  <button
+                    type="button"
+                    onClick={playAgain}
+                    className="rounded-2xl bg-indigo-600 px-8 py-3 font-bold shadow-lg hover:bg-indigo-500 active:scale-95"
+                  >
+                    ↻
+                  </button>
+                </div>
+              )}
             </>
           )}
         </div>

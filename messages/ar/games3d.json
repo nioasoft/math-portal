@@ -9,8 +9,17 @@
   "frameRateLowNotice": "تقليل الجودة لتجربة لعب أكثر سلاسة",
   "sectionTitle": "ألعاب ثلاثية الأبعاد",
   "grades": "الصفوف {from}–{to}",
-  "modes": { "choose": "اختر الوضع", "practice": "تدريب", "quiz": "اختبار" },
-  "topics": { "arithmetic": "الحساب", "fractions": "الكسور", "geometry": "الهندسة", "units": "وحدات القياس" },
+  "modes": {
+    "choose": "اختر الوضع",
+    "practice": "تدريب",
+    "quiz": "اختبار"
+  },
+  "topics": {
+    "arithmetic": "الحساب",
+    "fractions": "الكسور",
+    "geometry": "الهندسة",
+    "units": "وحدات القياس"
+  },
   "multiplicationArray": {
     "title": "مصفوفات الضرب",
     "description": "ابنِ مصفوفة مكعبات لحل مسألة ضرب",
@@ -20,6 +29,11 @@
     "title": "ملء الوعاء",
     "description": "املأ الوعاء حتى الحجم المطلوب",
     "instructions": "اسحب لصب السائل حتى العلامة المطلوبة"
+  },
+  "fractionBuild": {
+    "title": "بناء الكسور",
+    "description": "املأ أجزاء من الفطيرة لمطابقة الكسر",
+    "instructions": "انقر على الشرائح لملئها حتى تطابق الكسر المطلوب"
   },
   "canary": {
     "title": "اضغط على المكعب",

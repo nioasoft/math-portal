@@ -9,8 +9,17 @@
   "frameRateLowNotice": "Reduciendo la calidad para un juego más fluido",
   "sectionTitle": "Juegos 3D",
   "grades": "Grados {from}–{to}",
-  "modes": { "choose": "Elige un modo", "practice": "Práctica", "quiz": "Cuestionario" },
-  "topics": { "arithmetic": "Aritmética", "fractions": "Fracciones", "geometry": "Geometría", "units": "Medidas" },
+  "modes": {
+    "choose": "Elige un modo",
+    "practice": "Práctica",
+    "quiz": "Cuestionario"
+  },
+  "topics": {
+    "arithmetic": "Aritmética",
+    "fractions": "Fracciones",
+    "geometry": "Geometría",
+    "units": "Medidas"
+  },
   "multiplicationArray": {
     "title": "Arreglos de multiplicación",
     "description": "Construye un arreglo de cubos para resolver una multiplicación",
@@ -20,6 +29,11 @@
     "title": "Llena el recipiente",
     "description": "Llena el recipiente hasta el volumen objetivo",
     "instructions": "Arrastra para verter líquido hasta la marca objetivo"
+  },
+  "fractionBuild": {
+    "title": "Constructor de fracciones",
+    "description": "Rellena partes del círculo para que coincidan con la fracción",
+    "instructions": "Toca las porciones para rellenarlas hasta que coincidan con la fracción objetivo"
   },
   "canary": {
     "title": "Toca el cubo",

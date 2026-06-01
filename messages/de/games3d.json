@@ -9,8 +9,17 @@
   "frameRateLowNotice": "Qualität wird reduziert für flüssigeres Spielen",
   "sectionTitle": "3D-Spiele",
   "grades": "Klassen {from}–{to}",
-  "modes": { "choose": "Modus wählen", "practice": "Üben", "quiz": "Quiz" },
-  "topics": { "arithmetic": "Arithmetik", "fractions": "Brüche", "geometry": "Geometrie", "units": "Maßeinheiten" },
+  "modes": {
+    "choose": "Modus wählen",
+    "practice": "Üben",
+    "quiz": "Quiz"
+  },
+  "topics": {
+    "arithmetic": "Arithmetik",
+    "fractions": "Brüche",
+    "geometry": "Geometrie",
+    "units": "Maßeinheiten"
+  },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
     "description": "Baue ein Würfelfeld, um eine Multiplikation zu lösen",
@@ -20,6 +29,11 @@
     "title": "Behälter füllen",
     "description": "Fülle den Behälter bis zum Zielvolumen",
     "instructions": "Ziehe, um Flüssigkeit bis zur Zielmarke einzugießen"
+  },
+  "fractionBuild": {
+    "title": "Bruch-Baumeister",
+    "description": "Fülle Teile des Kreises, um den Bruch zu treffen",
+    "instructions": "Tippe auf Segmente, um sie zu füllen, bis sie zum Zielbruch passen"
   },
   "canary": {
     "title": "Tippe auf den Würfel",

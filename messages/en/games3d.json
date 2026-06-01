@@ -9,8 +9,17 @@
   "frameRateLowNotice": "Reducing quality for smoother gameplay",
   "sectionTitle": "3D Games",
   "grades": "Grades {from}–{to}",
-  "modes": { "choose": "Choose a mode", "practice": "Practice", "quiz": "Quiz" },
-  "topics": { "arithmetic": "Arithmetic", "fractions": "Fractions", "geometry": "Geometry", "units": "Measurement" },
+  "modes": {
+    "choose": "Choose a mode",
+    "practice": "Practice",
+    "quiz": "Quiz"
+  },
+  "topics": {
+    "arithmetic": "Arithmetic",
+    "fractions": "Fractions",
+    "geometry": "Geometry",
+    "units": "Measurement"
+  },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
     "description": "Build a cube array to solve a multiplication fact",
@@ -20,6 +29,11 @@
     "title": "Fill the Container",
     "description": "Fill the container to the target volume",
     "instructions": "Drag to pour liquid to the target mark"
+  },
+  "fractionBuild": {
+    "title": "Fraction Builder",
+    "description": "Fill parts of the pie to match the fraction",
+    "instructions": "Tap slices to fill them until they match the target fraction"
   },
   "canary": {
     "title": "Tap the Cube",

@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { createQuizController } from '../controller';
 import type { ProblemGenerator } from '../types';
 

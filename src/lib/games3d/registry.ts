@@ -3,11 +3,9 @@ import type { Game3D } from './types';
 export const gameRegistry = new Map<string, Game3D>();
 
 export function registerGame(game: Game3D): void {
-  if (gameRegistry.has(game.meta.id)) {
-    throw new Error(
-      `Game with id "${game.meta.id}" is already registered`
-    );
-  }
+  // Idempotent: re-registering the same id overwrites the entry rather than
+  // throwing. The Map survives dev HMR while the module-level `registered`
+  // flag in the catalog resets, so a throw here would break hot reloads.
   gameRegistry.set(game.meta.id, game);
 }
 

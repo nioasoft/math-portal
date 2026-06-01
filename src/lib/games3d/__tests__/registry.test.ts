@@ -1,6 +1,6 @@
 import { describe, it, expect, afterEach } from 'vitest';
 import { gameRegistry, registerGame, getGame, listGames } from '../registry';
-import type { Game3D } from '../types';
+import type { Game3D, GameMeta } from '../types';
 
 describe('gameRegistry', () => {
   afterEach(() => {
@@ -29,20 +29,22 @@ describe('gameRegistry', () => {
     expect(listGames()).toContain(g);
   });
 
-  it('throws when registering duplicate id', () => {
-    const g: Game3D = {
-      meta: {
-        id: 'dup',
-        i18nKey: 'x',
-        topic: 'misc',
-        difficulty: 1,
-        gradeRange: [1, 6],
-        estimatedSeconds: 10,
-        supportedModes: ['practice'],
-      },
-      init: () => ({ dispose: () => {} }),
+  it('is idempotent: re-registering the same id overwrites without throwing', () => {
+    const meta: GameMeta = {
+      id: 'dup',
+      i18nKey: 'x',
+      topic: 'misc',
+      difficulty: 1,
+      gradeRange: [1, 6],
+      estimatedSeconds: 10,
+      supportedModes: ['practice'],
     };
-    registerGame(g);
-    expect(() => registerGame(g)).toThrow(/already registered/);
+    const g1: Game3D = { meta, init: () => ({ dispose: () => {} }) };
+    const g2: Game3D = { meta, init: () => ({ dispose: () => {} }) };
+    registerGame(g1);
+    expect(() => registerGame(g2)).not.toThrow();
+    // Last registration wins; still only one entry for the id.
+    expect(getGame('dup')).toBe(g2);
+    expect(listGames().filter((g) => g.meta.id === 'dup')).toHaveLength(1);
   });
 });

@@ -5,6 +5,7 @@ import { Calculator, Percent, PieChart, Gamepad2, Trophy, Zap } from 'lucide-rea
 import { getTranslations } from 'next-intl/server';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
+import { getRegisteredGames } from '@/lib/games3d/games';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
@@ -50,6 +51,9 @@ export default async function PlayPage({ params }: { params: Promise<{ locale: s
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'games.play' });
     const metaT = await getTranslations({ locale, namespace: 'meta' });
+
+    const games3d = getRegisteredGames();
+    const tGames3d = await getTranslations({ locale, namespace: 'games3d' });
 
     const breadcrumbSchema = {
         "@context": "https://schema.org",
@@ -141,6 +145,36 @@ export default async function PlayPage({ params }: { params: Promise<{ locale: s
                         );
                     })}
                 </div>
+
+                {games3d.length > 0 && (
+                  <section className="mt-12">
+                    <h2 className="mb-6 text-2xl font-bold">{tGames3d('sectionTitle')}</h2>
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                      {games3d.map((g) => {
+                        const gt = tGames3d.raw(g.meta.i18nKey.replace('games3d.', '')) as {
+                          title: string;
+                          description: string;
+                        };
+                        return (
+                          <Link
+                            key={g.meta.id}
+                            href={`/play/${g.meta.id}`}
+                            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md"
+                          >
+                            <span className="mb-2 inline-block rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">
+                              3D · {tGames3d(`topics.${g.meta.topic}`)}
+                            </span>
+                            <h3 className="text-lg font-bold">{gt.title}</h3>
+                            <p className="mt-1 text-sm text-slate-600">{gt.description}</p>
+                            <p className="mt-2 text-xs text-slate-400">
+                              {tGames3d('grades', { from: g.meta.gradeRange[0], to: g.meta.gradeRange[1] })}
+                            </p>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </section>
+                )}
 
                 {/* Game Mode Explanation - Hidden on mobile */}
                 <div className="hidden md:grid md:grid-cols-2 gap-6 mb-12">

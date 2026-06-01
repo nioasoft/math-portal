@@ -1,0 +1,34 @@
+import type { Game3D } from '../types';
+import { registerGame, listGames } from '../registry';
+
+/**
+ * The single source of truth for which 3D games exist.
+ * Adding a game = add one entry to BOTH maps below (id -> static game meta module
+ * for the catalog, and id -> lazy loader for the dynamic route). No route files,
+ * no listing edits.
+ */
+
+// Statically-imported game definitions (small — meta + init fn). Registered for the catalog.
+const games: Game3D[] = [
+  // GAMES GO HERE as each task lands, e.g.:
+  // multiplicationArrayGame,
+];
+
+// Lazy loaders so each game's Three.js code is its own code-split chunk.
+export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
+  // 'multiplication-array': () => import('./multiplication-array/MultiplicationArrayGame').then(m => ({ default: m.multiplicationArrayGame })),
+};
+
+export const GAME_IDS = Object.keys(gameLoaders);
+
+let registered = false;
+export function ensureRegistered(): void {
+  if (registered) return;
+  registered = true;
+  for (const g of games) registerGame(g);
+}
+
+export function getRegisteredGames(): Game3D[] {
+  ensureRegistered();
+  return listGames();
+}

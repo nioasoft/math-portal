@@ -9,8 +9,10 @@ import {
   createSceneContext,
   createScoreController,
   createFeedbackController,
+  createPromptController,
   ObservableScore,
   ObservableFeedback,
+  ObservablePrompt,
 } from './SceneContext';
 import { createPerformanceMonitor } from './PerformanceMonitor';
 
@@ -34,6 +36,7 @@ export interface SceneEngineInstance {
   getScoreController(): ScoreController;
   subscribeScore(observer: (newValue: number) => void): () => void;
   subscribeFeedback: ObservableFeedback['subscribe'];
+  subscribePrompt: ObservablePrompt['subscribe'];
   _debug(): {
     renderer: THREE.WebGLRenderer;
     scene: THREE.Scene;
@@ -60,6 +63,7 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
   const lightingPresets = createLightingPresets();
   const score: ObservableScore = createScoreController();
   const feedback: ObservableFeedback = createFeedbackController();
+  const prompt: ObservablePrompt = createPromptController();
 
   let game: Game3D | null = null;
   let instance: GameInstance | null = null;
@@ -165,7 +169,7 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
       isRTL: opts.isRTL,
       mode: opts.mode ?? 'practice',
       prefersReducedMotion: opts.prefersReducedMotion ?? false,
-      score, feedback,
+      score, feedback, prompt,
       onComplete: (summary) => {
         pause();
         opts.onComplete?.(summary);
@@ -220,6 +224,7 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
     getScoreController: () => score,
     subscribeScore: (o) => score.subscribe(o),
     subscribeFeedback: (o) => feedback.subscribe(o),
+    subscribePrompt: (o) => prompt.subscribe(o),
     _debug: () => ({ renderer, scene, camera }),
   };
 }

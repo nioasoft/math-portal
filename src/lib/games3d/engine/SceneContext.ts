@@ -4,6 +4,7 @@ import type {
   ScoreController,
   FeedbackController,
   FeedbackEvent,
+  PromptController,
   CompleteSummary,
   AudioManager,
   InputAdapter,
@@ -72,6 +73,36 @@ export function createFeedbackController(): ObservableFeedback {
   };
 }
 
+// =========== PromptController ============
+
+export interface ObservablePrompt extends PromptController {
+  get(): string;
+  subscribe(observer: (text: string) => void): () => void;
+}
+
+export function createPromptController(): ObservablePrompt {
+  let text = '';
+  const observers = new Set<(t: string) => void>();
+  const notify = () => observers.forEach((o) => o(text));
+  return {
+    set(t) {
+      text = t;
+      notify();
+    },
+    clear() {
+      text = '';
+      notify();
+    },
+    get() {
+      return text;
+    },
+    subscribe(o) {
+      observers.add(o);
+      return () => observers.delete(o);
+    },
+  };
+}
+
 // =========== SceneContext factory ============
 
 export interface CreateContextArgs {
@@ -87,6 +118,7 @@ export interface CreateContextArgs {
   prefersReducedMotion: boolean;
   score: ObservableScore;
   feedback: ObservableFeedback;
+  prompt: ObservablePrompt;
   onComplete: (summary: CompleteSummary) => void;
   cameraPresets: CameraPresetsAPI;
   lightingPresets: LightingPresetsAPI;
@@ -107,6 +139,7 @@ export function createSceneContext(args: CreateContextArgs): SceneContext {
     prefersReducedMotion: args.prefersReducedMotion,
     score: args.score,
     feedback: args.feedback,
+    prompt: args.prompt,
     complete: args.onComplete,
     presets: { camera: args.cameraPresets, lighting: args.lightingPresets },
     debug: args.debug ?? null,

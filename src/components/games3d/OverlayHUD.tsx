@@ -7,6 +7,8 @@ import type { FeedbackEvent } from '@/lib/games3d/types';
 interface Props {
   score: number;
   feedback: FeedbackEvent | null;
+  /** Persistent question prompt — stays visible until replaced (distinct from the transient feedback toast). */
+  prompt?: string;
 }
 
 const FEEDBACK_STYLES = {
@@ -15,7 +17,7 @@ const FEEDBACK_STYLES = {
   hint:    { Icon: Lightbulb, bg: 'bg-amber-400/90', text: 'text-slate-900' },
 } as const;
 
-export function OverlayHUD({ score, feedback }: Props): React.ReactElement {
+export function OverlayHUD({ score, feedback, prompt }: Props): React.ReactElement {
   const t = useTranslations('games');
   return (
     <div className="pointer-events-none absolute inset-0 flex flex-col items-stretch p-4">
@@ -26,6 +28,18 @@ export function OverlayHUD({ score, feedback }: Props): React.ReactElement {
           <span className="font-semibold tabular-nums">{score}</span>
         </div>
       </div>
+
+      {prompt && (
+        <div
+          data-testid="prompt-banner"
+          className="mx-auto mt-2 px-5 py-2 rounded-xl bg-slate-900/80 backdrop-blur text-white text-lg font-bold tabular-nums shadow-lg text-center"
+          dir="auto"
+          role="status"
+          aria-live="polite"
+        >
+          {prompt}
+        </div>
+      )}
 
       {feedback && (
         <div

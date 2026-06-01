@@ -29,4 +29,14 @@ describe('OverlayHUD', () => {
     const { container } = render(wrap(<OverlayHUD score={0} feedback={null} />));
     expect(container.querySelector('[data-testid="feedback-toast"]')).toBeNull();
   });
+
+  it('renders the persistent prompt banner when prompt is set', () => {
+    render(wrap(<OverlayHUD score={0} feedback={null} prompt="3 × 4 = ?" />));
+    expect(screen.getByTestId('prompt-banner')).toHaveTextContent('3 × 4 = ?');
+  });
+
+  it('does not render the prompt banner when prompt is empty/undefined', () => {
+    const { container } = render(wrap(<OverlayHUD score={0} feedback={null} />));
+    expect(container.querySelector('[data-testid="prompt-banner"]')).toBeNull();
+  });
 });

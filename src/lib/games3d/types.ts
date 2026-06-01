@@ -64,6 +64,8 @@ export interface SceneContext {
   prefersReducedMotion: boolean;
   score: ScoreController;
   feedback: FeedbackController;
+  /** Persistent question prompt — stays on screen until replaced/cleared. */
+  prompt: PromptController;
   complete(summary: CompleteSummary): void;
   presets: {
     camera: CameraPresetsAPI;
@@ -100,6 +102,15 @@ export interface FeedbackController {
   correct(message?: string): void;
   wrong(message?: string): void;
   hint(message: string): void;
+}
+
+/**
+ * Persistent prompt channel — unlike {@link FeedbackController}, the text set
+ * here stays on screen until replaced or cleared (not auto-dismissed).
+ */
+export interface PromptController {
+  set(text: string): void;
+  clear(): void;
 }
 
 // =========== Input ============

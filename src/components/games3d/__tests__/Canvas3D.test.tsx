@@ -20,6 +20,7 @@ describe('Canvas3D', () => {
       getScoreController: () => ({ add: vi.fn(), set: vi.fn(), reset: vi.fn(), get: () => 0 }),
       subscribeScore: vi.fn(() => () => {}),
       subscribeFeedback: vi.fn(() => () => {}),
+      subscribePrompt: vi.fn(() => () => {}),
       _debug: () => ({} as any),
     }));
     render(<Canvas3D game={game} locale="en" isRTL={false} mode="practice" engineFactory={factory} />);
@@ -34,6 +35,7 @@ describe('Canvas3D', () => {
       getScoreController: () => ({ add: vi.fn(), set: vi.fn(), reset: vi.fn(), get: () => 0 }),
       subscribeScore: vi.fn(() => () => {}),
       subscribeFeedback: vi.fn(() => () => {}),
+      subscribePrompt: vi.fn(() => () => {}),
       _debug: () => ({} as any),
     }));
     const { unmount } = render(<Canvas3D game={game} locale="en" isRTL={false} mode="practice" engineFactory={factory} />);

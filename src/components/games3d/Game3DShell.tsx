@@ -50,6 +50,7 @@ export function Game3DShell({
   const [summary, setSummary] = useState<CompleteSummary | null>(null);
   const [score, setScore] = useState<number>(0);
   const [feedback, setFeedback] = useState<FeedbackEvent | null>(null);
+  const [prompt, setPrompt] = useState<string>('');
   const [progress, setProgress] = useState<number>(0);
   const [loaded, setLoaded] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
@@ -150,12 +151,13 @@ export function Game3DShell({
                   isRTL={isRTL}
                   onScore={setScore}
                   onFeedback={setFeedback}
+                  onPrompt={setPrompt}
                   onComplete={handleComplete}
                   onLoadProgress={handleLoadProgress}
                   onError={handleError}
                 />
               )}
-              <OverlayHUD score={score} feedback={feedback} />
+              <OverlayHUD score={score} feedback={feedback} prompt={prompt} />
               {summary && (
                 <div className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-4 bg-slate-900/95 text-white">
                   <div className="text-3xl font-bold">{summary.totalPoints}</div>

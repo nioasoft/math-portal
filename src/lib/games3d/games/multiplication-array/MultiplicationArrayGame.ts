@@ -48,8 +48,8 @@ export const multiplicationArrayGame: Game3D = {
     let builtCols = 1;
 
     function showPrompt(): void {
-      ctx.feedback.hint(
-        `${problem.rows} × ${problem.cols} = ?  (${builtRows}×${builtCols} = ${builtRows * builtCols})`
+      ctx.prompt.set(
+        `${problem.rows} × ${problem.cols} = ?   (${builtRows}×${builtCols} = ${builtRows * builtCols})`
       );
     }
 

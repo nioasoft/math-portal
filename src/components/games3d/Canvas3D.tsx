@@ -16,6 +16,7 @@ interface Props {
   onComplete?: (summary: CompleteSummary) => void;
   onScore?: (score: number) => void;
   onFeedback?: (event: FeedbackEvent) => void;
+  onPrompt?: (text: string) => void;
   onLoadProgress?: (fraction: number) => void;
   onError?: (err: unknown) => void;
   /** For testing: inject a fake engine factory. */
@@ -30,6 +31,7 @@ export function Canvas3D({
   onComplete,
   onScore,
   onFeedback,
+  onPrompt,
   onLoadProgress,
   onError,
   engineFactory,
@@ -66,12 +68,14 @@ export function Canvas3D({
 
     const unsubScore = onScore ? engine.subscribeScore(onScore) : () => {};
     const unsubFeedback = onFeedback ? engine.subscribeFeedback(onFeedback) : () => {};
+    const unsubPrompt = onPrompt ? engine.subscribePrompt(onPrompt) : () => {};
 
     engine.start(game).catch((err) => onError?.(err));
 
     return () => {
       unsubScore();
       unsubFeedback();
+      unsubPrompt();
       engine.dispose();
       engineRef.current = null;
     };

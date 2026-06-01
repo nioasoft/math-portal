@@ -12,6 +12,10 @@ async function run(): Promise<void> {
   await page.goto(URL, { waitUntil: 'networkidle2' });
 
   await page.evaluate(() => {
+    // tsx/esbuild injects a `__name` helper around named inner functions for
+    // keepNames; that helper is undefined once the function is serialized into
+    // the browser context, so shim it before any transpiled code references it.
+    (globalThis as unknown as { __name?: <T>(fn: T) => T }).__name ??= (fn) => fn;
     (window as unknown as { __frameTimes: number[] }).__frameTimes = [];
     let last = performance.now();
     const tick = () => {

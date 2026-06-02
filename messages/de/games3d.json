@@ -16,6 +16,7 @@
     "quiz": "Quiz"
   },
   "topics": {
+    "decimals": "Dezimalzahlen",
     "arithmetic": "Arithmetik",
     "fractions": "Brüche",
     "geometry": "Geometrie",
@@ -33,6 +34,8 @@
     "hundreds": "Hunderter",
     "tens": "Zehner",
     "ones": "Einer",
+    "tenths": "Zehntel",
+    "hundredths": "Hundertstel",
     "hour": "Stunde",
     "minute": "Minute",
     "numerator": "Zähler",
@@ -149,5 +152,13 @@
     "prompt": "Miss die Länge des Objekts",
     "correct": "Super! Das Objekt ist {length} cm lang",
     "wrong": "Fast! Richte jede Fahne am passenden Ende des Objekts aus und korrigiere"
+  },
+  "decimalBuilder": {
+    "title": "Dezimalzahl-Baumeister",
+    "description": "Baue eine Dezimalzahl, indem du Sandgläser im Labor füllst",
+    "instructions": "Fülle die Gläser für Einer, Zehntel und Hundertstel mit den − / + Tasten (der Sandstand jedes Glases zeigt diese Stelle), dann auf Prüfen drücken",
+    "prompt": "Baue die Zahl {target}",
+    "correct": "Super! Du hast {target} gebaut",
+    "wrong": "Fast! Prüfe Einer, Zehntel und Hundertstel und korrigiere die Zahl"
   }
 }

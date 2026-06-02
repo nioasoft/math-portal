@@ -16,6 +16,7 @@
     "quiz": "Quiz"
   },
   "topics": {
+    "decimals": "Decimals",
     "arithmetic": "Arithmetic",
     "fractions": "Fractions",
     "geometry": "Geometry",
@@ -33,6 +34,8 @@
     "hundreds": "Hundreds",
     "tens": "Tens",
     "ones": "Ones",
+    "tenths": "Tenths",
+    "hundredths": "Hundredths",
     "hour": "Hour",
     "minute": "Minute",
     "numerator": "Numerator",
@@ -149,5 +152,13 @@
     "prompt": "Measure the object's length",
     "correct": "Great! The object is {length} cm long",
     "wrong": "Almost! Line each flag up with the matching end of the object and fix it"
+  },
+  "decimalBuilder": {
+    "title": "Decimal Builder",
+    "description": "Build a decimal number by filling sand jars in a lab",
+    "instructions": "Fill the ones, tenths and hundredths jars with the − / + buttons (each jar's sand level shows that digit), then press Check",
+    "prompt": "Build the number {target}",
+    "correct": "Great! You built {target}",
+    "wrong": "Almost! Check the ones, tenths and hundredths and fix the number"
   }
 }

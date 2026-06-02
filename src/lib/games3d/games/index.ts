@@ -13,6 +13,7 @@ import { moneyShopGame } from './money-shop/MoneyShopGame';
 import { additionMineGame } from './addition-mine/AdditionMineGame';
 import { volumeCubeFillGame } from './volume-cube-fill/VolumeCubeFillGame';
 import { rulerMeasureGame } from './ruler-measure/RulerMeasureGame';
+import { decimalPlaceValueGame } from './decimal-place-value/DecimalPlaceValueGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -37,6 +38,7 @@ const games: Game3D[] = [
   additionMineGame,
   volumeCubeFillGame,
   rulerMeasureGame,
+  decimalPlaceValueGame,
 ];
 
 let registered = false;

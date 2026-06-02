@@ -16,6 +16,7 @@
     "quiz": "Cuestionario"
   },
   "topics": {
+    "decimals": "Decimales",
     "arithmetic": "Aritmética",
     "fractions": "Fracciones",
     "geometry": "Geometría",
@@ -33,6 +34,8 @@
     "hundreds": "Centenas",
     "tens": "Decenas",
     "ones": "Unidades",
+    "tenths": "Décimas",
+    "hundredths": "Centésimas",
     "hour": "Hora",
     "minute": "Minuto",
     "numerator": "numerador",
@@ -149,5 +152,13 @@
     "prompt": "Mide la longitud del objeto",
     "correct": "¡Genial! El objeto mide {length} cm",
     "wrong": "¡Casi! Alinea cada bandera con el extremo correspondiente del objeto y corrige"
+  },
+  "decimalBuilder": {
+    "title": "Constructor de decimales",
+    "description": "Construye un número decimal llenando frascos de arena en un laboratorio",
+    "instructions": "Llena los frascos de unidades, décimas y centésimas con los botones − / + (el nivel de arena de cada frasco muestra esa cifra), luego pulsa Comprobar",
+    "prompt": "Construye el número {target}",
+    "correct": "¡Genial! Construiste {target}",
+    "wrong": "¡Casi! Revisa las unidades, décimas y centésimas y corrige el número"
   }
 }

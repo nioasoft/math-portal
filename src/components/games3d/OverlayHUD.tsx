@@ -34,7 +34,10 @@ const FEEDBACK_STYLES = {
 const CONTROL_VARIANT_STYLES = {
   default: 'bg-indigo-600 text-white hover:bg-indigo-500 active:scale-95',
   confirm: 'bg-emerald-600 text-white hover:bg-emerald-500 active:scale-95',
-  reset:   'bg-transparent text-slate-200 border border-slate-400/70 hover:bg-slate-700/60 active:scale-95',
+  // Solid muted fill (not transparent) so it stays clearly visible on both the
+  // light clay-look backgrounds and dark scenes — a transparent/outline button
+  // disappeared against the pastel backgrounds.
+  reset:   'bg-slate-600 text-white border border-white/25 hover:bg-slate-500 active:scale-95',
 } as const;
 
 export function OverlayHUD({ score, feedback, prompt, controls, status }: Props): React.ReactElement {

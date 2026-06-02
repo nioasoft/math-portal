@@ -20,6 +20,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./place-value-builder/PlaceValueBuilderGame').then((m) => ({ default: m.placeValueBuilderGame })),
   'clock-builder': () =>
     import('./clock-builder/ClockBuilderGame').then((m) => ({ default: m.clockBuilderGame })),
+  'fraction-number-line': () =>
+    import('./fraction-number-line/FractionNumberLineGame').then((m) => ({ default: m.fractionNumberLineGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

@@ -34,7 +34,9 @@
     "tens": "Decenas",
     "ones": "Unidades",
     "hour": "Hora",
-    "minute": "Minuto"
+    "minute": "Minuto",
+    "numerator": "numerador",
+    "denominator": "denominador"
   },
   "multiplicationArray": {
     "title": "Arreglos de multiplicación",
@@ -96,5 +98,13 @@
   "canary": {
     "title": "Toca el cubo",
     "description": "Juego de prueba para desarrolladores"
+  },
+  "fractionNumberLine": {
+    "title": "Fracciones en la recta numérica",
+    "description": "Coloca una fracción en la recta numérica entre 0 y 1",
+    "instructions": "Arrastra la cuenta por la cinta hasta la fracción objetivo (se ajusta a la marca más cercana) o usa los botones numerador ±1 y denominador ±1. El denominador subdivide la recta en vivo. Luego pulsa Comprobar",
+    "prompt": "Coloca {num}/{den} en la recta",
+    "correct": "¡Genial! Colocaste {num}/{den} correctamente",
+    "wrong": "¡Casi! Arrastra la cuenta al lugar correcto y corrige"
   }
 }

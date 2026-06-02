@@ -34,7 +34,9 @@
     "tens": "Zehner",
     "ones": "Einer",
     "hour": "Stunde",
-    "minute": "Minute"
+    "minute": "Minute",
+    "numerator": "Zähler",
+    "denominator": "Nenner"
   },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
@@ -96,5 +98,13 @@
   "canary": {
     "title": "Tippe auf den Würfel",
     "description": "Test-Spiel für Entwickler"
+  },
+  "fractionNumberLine": {
+    "title": "Brüche am Zahlenstrahl",
+    "description": "Platziere einen Bruch auf dem Zahlenstrahl zwischen 0 und 1",
+    "instructions": "Ziehe die Perle auf dem Band zum Zielbruch (sie rastet an der nächsten Markierung ein) oder nutze die Tasten Zähler ±1 und Nenner ±1. Der Nenner teilt den Strahl live. Dann auf Prüfen drücken",
+    "prompt": "Platziere {num}/{den} auf dem Strahl",
+    "correct": "Super! Du hast {num}/{den} richtig platziert",
+    "wrong": "Fast! Zieh die Perle an die richtige Stelle und korrigiere"
   }
 }

@@ -34,7 +34,9 @@
     "tens": "Tens",
     "ones": "Ones",
     "hour": "Hour",
-    "minute": "Minute"
+    "minute": "Minute",
+    "numerator": "Numerator",
+    "denominator": "Denominator"
   },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
@@ -96,5 +98,13 @@
   "canary": {
     "title": "Tap the Cube",
     "description": "Developer test game"
+  },
+  "fractionNumberLine": {
+    "title": "Fraction Number Line",
+    "description": "Place a fraction on the number line between 0 and 1",
+    "instructions": "Drag the bead along the tape to the target fraction (it snaps to the nearest tick), or use the numerator ±1 and denominator ±1 buttons. The denominator subdivides the line live. Then press Check",
+    "prompt": "Place {num}/{den} on the line",
+    "correct": "Great! You placed {num}/{den} correctly",
+    "wrong": "Almost! Drag the bead to the right spot and fix it"
   }
 }

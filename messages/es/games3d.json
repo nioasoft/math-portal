@@ -29,7 +29,10 @@
     "total": "Total",
     "check": "Comprobar",
     "reset": "Reiniciar",
-    "marbles": "Canicas"
+    "marbles": "Canicas",
+    "hundreds": "Centenas",
+    "tens": "Decenas",
+    "ones": "Unidades"
   },
   "multiplicationArray": {
     "title": "Arreglos de multiplicación",
@@ -71,6 +74,14 @@
     "prompt": "Coloca {target} canicas",
     "correct": "¡Genial! Colocaste {target} canicas",
     "wrong": "¡Casi! Cuenta las canicas otra vez y corrige"
+  },
+  "placeValue": {
+    "title": "Constructor de valor posicional",
+    "description": "Construye el número con bloques de base diez en el almacén",
+    "instructions": "Añade cajas a cada posición con los botones − / + (centenas, decenas, unidades), o arrastra hacia arriba sobre una columna para añadir. Cuando una columna llega a 10, diez cajas pequeñas se agrupan en una más grande. Pulsa Comprobar para evaluar",
+    "prompt": "Construye el número {target}",
+    "correct": "¡Genial! Construiste {target}",
+    "wrong": "¡Casi! Revisa los dígitos y corrige el número"
   },
   "canary": {
     "title": "Toca el cubo",

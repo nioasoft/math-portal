@@ -29,7 +29,10 @@
     "total": "Total",
     "check": "Check",
     "reset": "Reset",
-    "marbles": "Marbles"
+    "marbles": "Marbles",
+    "hundreds": "Hundreds",
+    "tens": "Tens",
+    "ones": "Ones"
   },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
@@ -71,6 +74,14 @@
     "prompt": "Place {target} marbles",
     "correct": "Great! You placed {target} marbles",
     "wrong": "Almost! Count the marbles again and fix it"
+  },
+  "placeValue": {
+    "title": "Place Value Builder",
+    "description": "Build the number from base-ten blocks in the warehouse",
+    "instructions": "Add boxes to each place with the − / + buttons (hundreds, tens, ones), or drag upward over a column to add. When a column reaches 10, ten small boxes bundle into one bigger box. Press Check to grade",
+    "prompt": "Build the number {target}",
+    "correct": "Great! You built {target}",
+    "wrong": "Almost! Check the digits and fix the number"
   },
   "canary": {
     "title": "Tap the Cube",

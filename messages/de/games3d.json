@@ -29,7 +29,10 @@
     "total": "Gesamt",
     "check": "Prüfen",
     "reset": "Zurücksetzen",
-    "marbles": "Murmeln"
+    "marbles": "Murmeln",
+    "hundreds": "Hunderter",
+    "tens": "Zehner",
+    "ones": "Einer"
   },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
@@ -71,6 +74,14 @@
     "prompt": "Lege {target} Murmeln",
     "correct": "Super! Du hast {target} Murmeln gelegt",
     "wrong": "Fast! Zähle die Murmeln noch einmal und korrigiere"
+  },
+  "placeValue": {
+    "title": "Stellenwert-Baumeister",
+    "description": "Baue die Zahl aus Zehnerblöcken im Lager",
+    "instructions": "Füge mit den − / + Tasten Kisten zu jeder Stelle hinzu (Hunderter, Zehner, Einer) oder ziehe über einer Spalte nach oben, um hinzuzufügen. Erreicht eine Spalte 10, werden zehn kleine Kisten zu einer größeren gebündelt. Drücke Prüfen zum Bewerten",
+    "prompt": "Baue die Zahl {target}",
+    "correct": "Super! Du hast {target} gebaut",
+    "wrong": "Fast! Prüfe die Ziffern und korrigiere die Zahl"
   },
   "canary": {
     "title": "Tippe auf den Würfel",

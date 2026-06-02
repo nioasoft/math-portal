@@ -5,6 +5,7 @@ import { measureFillGame } from './measure-fill/MeasureFillGame';
 import { fractionBuildGame } from './fraction-build/FractionBuildGame';
 import { areaPerimeterGame } from './area-perimeter/AreaPerimeterGame';
 import { tenFrameFillGame } from './ten-frame-fill/TenFrameFillGame';
+import { placeValueBuilderGame } from './place-value-builder/PlaceValueBuilderGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -21,6 +22,7 @@ const games: Game3D[] = [
   fractionBuildGame,
   areaPerimeterGame,
   tenFrameFillGame,
+  placeValueBuilderGame,
 ];
 
 let registered = false;

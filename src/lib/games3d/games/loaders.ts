@@ -16,6 +16,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./area-perimeter/AreaPerimeterGame').then((m) => ({ default: m.areaPerimeterGame })),
   'ten-frame-fill': () =>
     import('./ten-frame-fill/TenFrameFillGame').then((m) => ({ default: m.tenFrameFillGame })),
+  'place-value-builder': () =>
+    import('./place-value-builder/PlaceValueBuilderGame').then((m) => ({ default: m.placeValueBuilderGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

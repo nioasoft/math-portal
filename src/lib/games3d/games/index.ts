@@ -38,6 +38,7 @@ import { symmetryMirrorGame } from './symmetry-mirror/SymmetryMirrorGame';
 import { hundredChartColourGame } from './hundred-chart-colour/HundredChartColourGame';
 import { geoboardShapesGame } from './geoboard-shapes/GeoboardShapesGame';
 import { shapeSort3DGame } from './shape-sort-3d/ShapeSort3DGame';
+import { coordinatePlotGame } from './coordinate-plot/CoordinatePlotGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -87,6 +88,7 @@ const games: Game3D[] = [
   hundredChartColourGame,
   geoboardShapesGame,
   shapeSort3DGame,
+  coordinatePlotGame,
 ];
 
 let registered = false;

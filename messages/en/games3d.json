@@ -59,7 +59,9 @@
     "showAgain": "Show again",
     "slice": "Slice",
     "fold": "Fold",
-    "area": "Area"
+    "area": "Area",
+    "coordX": "X",
+    "coordY": "Y"
   },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
@@ -371,5 +373,13 @@
     "wrong": "Not yet. Check which solids roll and which don't, then try again.",
     "binRoll": "Rolls",
     "binFlat": "Doesn't roll"
+  },
+  "coordinatePlot": {
+    "title": "Plot the Point",
+    "description": "Place the point at the right spot on the coordinate plane.",
+    "instructions": "Move the pin with the X and Y buttons, or drag it across the paper, until it reaches the asked coordinates, then press Check.",
+    "prompt": "Plot the point at ({x}, {y})",
+    "correct": "Nice! The point is at ({x}, {y}).",
+    "wrong": "Not yet. Check the X and Y values and try again."
   }
 }

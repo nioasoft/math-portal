@@ -59,7 +59,9 @@
     "showAgain": "Nochmal zeigen",
     "slice": "Schneiden",
     "fold": "Falten",
-    "area": "Fläche"
+    "area": "Fläche",
+    "coordX": "X-Achse",
+    "coordY": "Y-Achse"
   },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
@@ -371,5 +373,13 @@
     "wrong": "Noch nicht. Prüfe, welche Körper rollen und welche nicht, und versuche es erneut.",
     "binRoll": "Rollt",
     "binFlat": "Rollt nicht"
+  },
+  "coordinatePlot": {
+    "title": "Punkt einzeichnen",
+    "description": "Setze den Punkt an die richtige Stelle im Koordinatensystem.",
+    "instructions": "Bewege die Nadel mit den X- und Y-Tasten oder ziehe sie über das Papier, bis sie die gesuchten Koordinaten erreicht, und drücke dann Prüfen.",
+    "prompt": "Zeichne den Punkt bei ({x}, {y}) ein",
+    "correct": "Super! Der Punkt liegt bei ({x}, {y}).",
+    "wrong": "Noch nicht. Prüfe die X- und Y-Werte und versuche es erneut."
   }
 }

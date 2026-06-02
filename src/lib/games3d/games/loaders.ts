@@ -86,6 +86,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./geoboard-shapes/GeoboardShapesGame').then((m) => ({ default: m.geoboardShapesGame })),
   'shape-sort-3d': () =>
     import('./shape-sort-3d/ShapeSort3DGame').then((m) => ({ default: m.shapeSort3DGame })),
+  'coordinate-plot': () =>
+    import('./coordinate-plot/CoordinatePlotGame').then((m) => ({ default: m.coordinatePlotGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

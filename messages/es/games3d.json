@@ -59,7 +59,9 @@
     "showAgain": "Mostrar otra vez",
     "slice": "Cortar",
     "fold": "Plegar",
-    "area": "Área"
+    "area": "Área",
+    "coordX": "Eje X",
+    "coordY": "Eje Y"
   },
   "multiplicationArray": {
     "title": "Arreglos de multiplicación",
@@ -371,5 +373,13 @@
     "wrong": "Todavía no. Mira qué cuerpos ruedan y cuáles no, e inténtalo otra vez.",
     "binRoll": "Rueda",
     "binFlat": "No rueda"
+  },
+  "coordinatePlot": {
+    "title": "Ubica el punto",
+    "description": "Coloca el punto en el lugar correcto del plano de coordenadas.",
+    "instructions": "Mueve el alfiler con los botones X e Y, o arrástralo por el papel, hasta llegar a las coordenadas pedidas, y luego pulsa Comprobar.",
+    "prompt": "Ubica el punto en ({x}, {y})",
+    "correct": "¡Bien! El punto está en ({x}, {y}).",
+    "wrong": "Todavía no. Revisa los valores de X e Y e inténtalo otra vez."
   }
 }

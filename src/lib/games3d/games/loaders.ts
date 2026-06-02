@@ -62,6 +62,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./fraction-strip-compare/FractionStripCompareGame').then((m) => ({
       default: m.fractionStripCompareGame,
     })),
+  'angle-builder': () =>
+    import('./angle-builder/AngleBuilderGame').then((m) => ({ default: m.angleBuilderGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

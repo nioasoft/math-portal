@@ -52,7 +52,8 @@
     "percent": "Prozent",
     "juiceA": "Saft A",
     "juiceB": "Saft B",
-    "value": "Wert"
+    "value": "Wert",
+    "angle": "Winkel"
   },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
@@ -266,5 +267,13 @@
     "prompt": "Baue einen Bruch, der gleich {num}/{den} ist",
     "correct": "Toll! {rnum}/{rden} ist gleich {num}/{den}",
     "wrong": "Fast! Baue einen Streifen gleicher Größe, aber mit anderem Nenner — die Waage pendelt sich ein"
+  },
+  "angleBuilder": {
+    "title": "Winkel-Baumeister",
+    "description": "Drehe den Laserstrahl der Raumstation, um den gesuchten Winkel in Grad zu bauen. Lerne, Winkel mit dem Geodreieck zu erkennen und zu messen.",
+    "instructions": "Drehe den beweglichen Laser mit den −/+ Tasten (je 15°) oder durch Ziehen, bis der leuchtende Bogen den gesuchten Winkel zeigt, und drücke dann Prüfen.",
+    "prompt": "Baue einen Winkel von {angle}°",
+    "correct": "Super! Du hast einen {angle}°-Winkel gebaut.",
+    "wrong": "Noch nicht. Drehe den Strahl zum gesuchten Winkel und versuche es erneut."
   }
 }

@@ -52,7 +52,8 @@
     "percent": "Percent",
     "juiceA": "Juice A",
     "juiceB": "Juice B",
-    "value": "Value"
+    "value": "Value",
+    "angle": "Angle"
   },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
@@ -266,5 +267,13 @@
     "prompt": "Build a fraction equal to {num}/{den}",
     "correct": "Great! {rnum}/{rden} equals {num}/{den}",
     "wrong": "Almost! Build a strip the same size but with a different denominator — the balance will level"
+  },
+  "angleBuilder": {
+    "title": "Angle Builder",
+    "description": "Rotate the space station's laser beam to build the target angle in degrees. Learn to classify and measure angles with the protractor.",
+    "instructions": "Rotate the movable laser with the −/+ buttons (15° each) or by dragging it, until the glowing arc shows the target angle, then press Check.",
+    "prompt": "Build a {angle}° angle",
+    "correct": "Nice! You built a {angle}° angle.",
+    "wrong": "Not yet. Rotate the beam to the target angle and try again."
   }
 }

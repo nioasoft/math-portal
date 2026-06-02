@@ -52,7 +52,8 @@
     "percent": "Porcentaje",
     "juiceA": "Zumo A",
     "juiceB": "Zumo B",
-    "value": "Valor"
+    "value": "Valor",
+    "angle": "Ángulo"
   },
   "multiplicationArray": {
     "title": "Arreglos de multiplicación",
@@ -266,5 +267,13 @@
     "prompt": "Construye una fracción igual a {num}/{den}",
     "correct": "¡Genial! {rnum}/{rden} es igual a {num}/{den}",
     "wrong": "¡Casi! Construye una tira del mismo tamaño pero con un denominador diferente — la balanza se nivelará"
+  },
+  "angleBuilder": {
+    "title": "Constructor de Ángulos",
+    "description": "Gira el rayo láser de la estación espacial para construir el ángulo objetivo en grados. Aprende a clasificar y medir ángulos con el transportador.",
+    "instructions": "Gira el láser móvil con los botones −/+ (15° cada uno) o arrastrándolo, hasta que el arco brillante muestre el ángulo objetivo, y luego pulsa Comprobar.",
+    "prompt": "Construye un ángulo de {angle}°",
+    "correct": "¡Muy bien! Construiste un ángulo de {angle}°.",
+    "wrong": "Todavía no. Gira el rayo hasta el ángulo objetivo e inténtalo de nuevo."
   }
 }

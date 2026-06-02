@@ -361,5 +361,15 @@
     "prompt": "Crea una figura con área de {area} unidades cuadradas",
     "correct": "¡Genial! Creaste una figura con área {area}.",
     "wrong": "Tu figura tiene área {area}, pero el objetivo es {target}. Prueba otra figura."
+  },
+  "shapeSort": {
+    "title": "Clasifica cuerpos",
+    "description": "Clasifica cuerpos 3D en dos grupos: los que ruedan y los que no.",
+    "instructions": "Toca un cuerpo para cogerlo y luego toca una de las cajas para soltarlo dentro. Rueda = tiene una superficie curva; No rueda = solo caras planas. Toca un cuerpo ya clasificado para moverlo otra vez. Cuando termines, pulsa Comprobar. Reiniciar devuelve todos los cuerpos a su sitio.",
+    "prompt": "Clasifica cada cuerpo: ¿rueda o no?",
+    "correct": "¡Muy bien! Clasificaste todos los cuerpos correctamente.",
+    "wrong": "Todavía no. Mira qué cuerpos ruedan y cuáles no, e inténtalo otra vez.",
+    "binRoll": "Rueda",
+    "binFlat": "No rueda"
   }
 }

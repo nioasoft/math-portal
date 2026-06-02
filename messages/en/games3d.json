@@ -361,5 +361,15 @@
     "prompt": "Make a shape with area {area} square units",
     "correct": "Great! You made a shape with area {area}.",
     "wrong": "Your shape has area {area}, but the target is {target}. Try another shape."
+  },
+  "shapeSort": {
+    "title": "Solid Sorter",
+    "description": "Sort 3D solids into two groups: the ones that roll and the ones that don't.",
+    "instructions": "Tap a solid to pick it up, then tap one of the bins to drop it in. Rolls = it has a curved surface; Doesn't roll = only flat faces. Tap a solid that's already sorted to move it again. When you're done, press Check. Reset returns every solid to the start.",
+    "prompt": "Sort each solid: does it roll or not?",
+    "correct": "Well done! You sorted every solid correctly.",
+    "wrong": "Not yet. Check which solids roll and which don't, then try again.",
+    "binRoll": "Rolls",
+    "binFlat": "Doesn't roll"
   }
 }

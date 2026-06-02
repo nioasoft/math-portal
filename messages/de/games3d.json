@@ -361,5 +361,15 @@
     "prompt": "Bilde eine Form mit der Fläche {area} Quadrateinheiten",
     "correct": "Toll! Du hast eine Form mit der Fläche {area} gebaut.",
     "wrong": "Deine Form hat die Fläche {area}, das Ziel ist {target}. Probiere eine andere Form."
+  },
+  "shapeSort": {
+    "title": "Körper sortieren",
+    "description": "Sortiere 3D-Körper in zwei Gruppen: die, die rollen, und die, die nicht rollen.",
+    "instructions": "Tippe einen Körper an, um ihn aufzunehmen, und tippe dann auf eine der Kisten, um ihn hineinzulegen. Rollt = er hat eine gekrümmte Fläche; Rollt nicht = nur ebene Flächen. Tippe einen schon sortierten Körper an, um ihn erneut zu bewegen. Drücke zum Schluss auf Prüfen. Zurücksetzen bringt alle Körper zurück.",
+    "prompt": "Sortiere jeden Körper: Rollt er oder nicht?",
+    "correct": "Gut gemacht! Du hast alle Körper richtig sortiert.",
+    "wrong": "Noch nicht. Prüfe, welche Körper rollen und welche nicht, und versuche es erneut.",
+    "binRoll": "Rollt",
+    "binFlat": "Rollt nicht"
   }
 }

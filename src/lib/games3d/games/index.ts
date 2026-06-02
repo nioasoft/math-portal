@@ -37,6 +37,7 @@ import { netFoldGame } from './net-fold/NetFoldGame';
 import { symmetryMirrorGame } from './symmetry-mirror/SymmetryMirrorGame';
 import { hundredChartColourGame } from './hundred-chart-colour/HundredChartColourGame';
 import { geoboardShapesGame } from './geoboard-shapes/GeoboardShapesGame';
+import { shapeSort3DGame } from './shape-sort-3d/ShapeSort3DGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -85,6 +86,7 @@ const games: Game3D[] = [
   symmetryMirrorGame,
   hundredChartColourGame,
   geoboardShapesGame,
+  shapeSort3DGame,
 ];
 
 let registered = false;

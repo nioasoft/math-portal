@@ -24,7 +24,8 @@
     "percentage": "Percentages",
     "ratio": "Ratio",
     "series": "Sequences",
-    "misc": "Other"
+    "misc": "Other",
+    "wordProblems": "Word Problems"
   },
   "controls": {
     "rows": "Rows",
@@ -381,5 +382,26 @@
     "prompt": "Plot the point at ({x}, {y})",
     "correct": "Nice! The point is at ({x}, {y}).",
     "wrong": "Not yet. Check the X and Y values and try again."
+  },
+  "wordProblemBar": {
+    "title": "Bar Model",
+    "description": "Model a word problem with a bar diagram and find the answer",
+    "instructions": "Use the value −/+ buttons or drag right to grow your bar to the correct length, then press Check",
+    "promptAdd": "{name} had {a} {item}, then got {b} more — how many now?",
+    "promptSub": "{name} had {whole} {item}, gave away {a} — how many left?",
+    "correct": "Great! The answer is {answer}",
+    "wrong": "Almost! Check the model and fix the bar length",
+    "name0": "Dana",
+    "name1": "Joe",
+    "name2": "Maya",
+    "name3": "Omar",
+    "name4": "Noa",
+    "name5": "Ethan",
+    "item0": "apples",
+    "item1": "balloons",
+    "item2": "pencils",
+    "item3": "flowers",
+    "item4": "stickers",
+    "item5": "cookies"
   }
 }

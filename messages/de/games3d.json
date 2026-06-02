@@ -24,7 +24,8 @@
     "percentage": "Prozente",
     "ratio": "Verhältnis",
     "series": "Folgen",
-    "misc": "Sonstiges"
+    "misc": "Sonstiges",
+    "wordProblems": "Textaufgaben"
   },
   "controls": {
     "rows": "Reihen",
@@ -381,5 +382,26 @@
     "prompt": "Zeichne den Punkt bei ({x}, {y}) ein",
     "correct": "Super! Der Punkt liegt bei ({x}, {y}).",
     "wrong": "Noch nicht. Prüfe die X- und Y-Werte und versuche es erneut."
+  },
+  "wordProblemBar": {
+    "title": "Balkenmodell",
+    "description": "Stelle eine Textaufgabe mit einem Balkenmodell dar und finde die Antwort",
+    "instructions": "Nutze die Wert −/+ Tasten oder ziehe nach rechts, um deinen Balken auf die richtige Länge zu bringen, dann drücke Prüfen",
+    "promptAdd": "{name} hatte {a} {item}, bekam dann {b} dazu — wie viele jetzt?",
+    "promptSub": "{name} hatte {whole} {item}, gab {a} ab — wie viele bleiben?",
+    "correct": "Super! Die Antwort ist {answer}",
+    "wrong": "Fast! Prüfe das Modell und korrigiere die Balkenlänge",
+    "name0": "Dana",
+    "name1": "Jan",
+    "name2": "Mia",
+    "name3": "Omar",
+    "name4": "Nora",
+    "name5": "Tim",
+    "item0": "Äpfel",
+    "item1": "Luftballons",
+    "item2": "Stifte",
+    "item3": "Blumen",
+    "item4": "Sticker",
+    "item5": "Kekse"
   }
 }

@@ -24,7 +24,8 @@
     "percentage": "Porcentajes",
     "ratio": "Razón",
     "series": "Secuencias",
-    "misc": "Otros"
+    "misc": "Otros",
+    "wordProblems": "Problemas verbales"
   },
   "controls": {
     "rows": "Filas",
@@ -381,5 +382,26 @@
     "prompt": "Ubica el punto en ({x}, {y})",
     "correct": "¡Bien! El punto está en ({x}, {y}).",
     "wrong": "Todavía no. Revisa los valores de X e Y e inténtalo otra vez."
+  },
+  "wordProblemBar": {
+    "title": "Modelo de barras",
+    "description": "Modela un problema verbal con un diagrama de barras y halla la respuesta",
+    "instructions": "Usa los botones de valor −/+ o arrastra hacia la derecha para alargar tu barra a la longitud correcta, luego pulsa Comprobar",
+    "promptAdd": "{name} tenía {a} {item}, luego obtuvo {b} más — ¿cuántos hay ahora?",
+    "promptSub": "{name} tenía {whole} {item}, regaló {a} — ¿cuántos quedan?",
+    "correct": "¡Genial! La respuesta es {answer}",
+    "wrong": "¡Casi! Revisa el modelo y corrige la longitud de la barra",
+    "name0": "Dana",
+    "name1": "José",
+    "name2": "Maya",
+    "name3": "Omar",
+    "name4": "Noa",
+    "name5": "Iván",
+    "item0": "manzanas",
+    "item1": "globos",
+    "item2": "lápices",
+    "item3": "flores",
+    "item4": "pegatinas",
+    "item5": "galletas"
   }
 }

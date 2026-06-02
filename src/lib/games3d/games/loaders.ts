@@ -88,6 +88,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./shape-sort-3d/ShapeSort3DGame').then((m) => ({ default: m.shapeSort3DGame })),
   'coordinate-plot': () =>
     import('./coordinate-plot/CoordinatePlotGame').then((m) => ({ default: m.coordinatePlotGame })),
+  'word-problem-bar': () =>
+    import('./word-problem-bar/WordProblemBarGame').then((m) => ({ default: m.wordProblemBarGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

@@ -179,5 +179,13 @@
     "prompt": "Hop to {target}",
     "correct": "Great! You landed exactly on {target}",
     "wrong": "Almost! Hop forward or back until you land exactly on the flag"
+  },
+  "explodingDots": {
+    "title": "Exploding Dots",
+    "description": "Add neon dots to the ones box; when a box reaches ten dots they explode into one dot in the box to the left",
+    "instructions": "Add dots to each box with the − / + buttons (hundreds, tens, ones), or drag up over a box to add. When a box reaches ten dots they explode into one dot in the box to its left. Build the number, then press Check.",
+    "prompt": "Build the number {target}",
+    "correct": "Great! You built {target}",
+    "wrong": "Almost! Check the boxes and fix the number"
   }
 }

@@ -38,6 +38,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./number-bond-split/NumberBondSplitGame').then((m) => ({ default: m.numberBondSplitGame })),
   'number-line-jump': () =>
     import('./number-line-jump/NumberLineJumpGame').then((m) => ({ default: m.numberLineJumpGame })),
+  'exploding-dots': () =>
+    import('./exploding-dots/ExplodingDotsGame').then((m) => ({ default: m.explodingDotsGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

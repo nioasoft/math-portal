@@ -16,6 +16,7 @@ import { rulerMeasureGame } from './ruler-measure/RulerMeasureGame';
 import { decimalPlaceValueGame } from './decimal-place-value/DecimalPlaceValueGame';
 import { numberBondSplitGame } from './number-bond-split/NumberBondSplitGame';
 import { numberLineJumpGame } from './number-line-jump/NumberLineJumpGame';
+import { explodingDotsGame } from './exploding-dots/ExplodingDotsGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -43,6 +44,7 @@ const games: Game3D[] = [
   decimalPlaceValueGame,
   numberBondSplitGame,
   numberLineJumpGame,
+  explodingDotsGame,
 ];
 
 let registered = false;

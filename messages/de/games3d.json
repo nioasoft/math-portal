@@ -179,5 +179,13 @@
     "prompt": "Springe zu {target}",
     "correct": "Super! Du bist genau auf {target} gelandet",
     "wrong": "Fast! Hüpfe vor oder zurück, bis du genau auf der Flagge landest"
+  },
+  "explodingDots": {
+    "title": "Explodierende Punkte",
+    "description": "Füge Neon-Punkte in die Einer-Box ein; erreicht eine Box zehn Punkte, explodieren sie zu einem Punkt in der Box links daneben",
+    "instructions": "Füge mit den − / + Tasten Punkte in jede Box ein (Hunderter, Zehner, Einer) oder ziehe über einer Box nach oben. Erreicht eine Box zehn Punkte, explodieren sie zu einem Punkt in der Box links daneben. Baue die Zahl und drücke Prüfen.",
+    "prompt": "Baue die Zahl {target}",
+    "correct": "Super! Du hast {target} gebaut",
+    "wrong": "Fast! Prüfe die Boxen und korrigiere die Zahl"
   }
 }

@@ -179,5 +179,13 @@
     "prompt": "Salta hasta {target}",
     "correct": "¡Genial! Caíste justo en {target}",
     "wrong": "¡Casi! Salta adelante o atrás hasta caer justo en la bandera"
+  },
+  "explodingDots": {
+    "title": "Puntos que explotan",
+    "description": "Añade puntos de neón a la caja de las unidades; cuando una caja llega a diez puntos, explotan en un punto en la caja de la izquierda",
+    "instructions": "Añade puntos a cada caja con los botones − / + (centenas, decenas, unidades), o arrastra hacia arriba sobre una caja para añadir. Cuando una caja llega a diez puntos, explotan en un punto en la caja de su izquierda. Construye el número y pulsa Comprobar.",
+    "prompt": "Construye el número {target}",
+    "correct": "¡Genial! Construiste {target}",
+    "wrong": "¡Casi! Revisa las cajas y corrige el número"
   }
 }

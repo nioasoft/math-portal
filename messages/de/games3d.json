@@ -23,7 +23,8 @@
     "units": "Maßeinheiten",
     "percentage": "Prozente",
     "ratio": "Verhältnis",
-    "series": "Folgen"
+    "series": "Folgen",
+    "misc": "Sonstiges"
   },
   "controls": {
     "rows": "Reihen",
@@ -284,5 +285,13 @@
     "prompt": "Teile {total} Münzen gleichmäßig auf {k} Truhen",
     "correct": "Gut gemacht! {perChest} in jeder Truhe, und {remainder} bleiben im Beutel",
     "wrong": "Du kannst mehr gleichmäßig verteilen — versuch es noch einmal"
+  },
+  "barGraph": {
+    "title": "Balkendiagramm-Baumeister",
+    "description": "Lies die Balkenhöhen an der Skala ab und gib an, wie viel mehr eine Kategorie als eine andere hat",
+    "instructions": "Lies die Höhe jedes Balkens an der Skala an der Seite ab, gib dann mit den Tasten − / + (oder durch Ziehen nach oben) ein, wie viel mehr die erste Kategorie als die zweite hat, und drücke Prüfen",
+    "prompt": "Wie viel mehr {a} als {b}?",
+    "correct": "Richtig! Der Unterschied ist {diff}",
+    "wrong": "Fast! Lies die Höhe jedes Balkens noch einmal und versuche es erneut"
   }
 }

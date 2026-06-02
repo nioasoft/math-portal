@@ -23,7 +23,8 @@
     "units": "Medidas",
     "percentage": "Porcentajes",
     "ratio": "Razón",
-    "series": "Secuencias"
+    "series": "Secuencias",
+    "misc": "Otros"
   },
   "controls": {
     "rows": "Filas",
@@ -284,5 +285,13 @@
     "prompt": "Reparte {total} monedas por igual entre {k} cofres",
     "correct": "¡Bien hecho! {perChest} en cada cofre, y {remainder} quedan en la bolsa",
     "wrong": "Puedes repartir más por igual — inténtalo de nuevo"
+  },
+  "barGraph": {
+    "title": "Constructor de gráfico de barras",
+    "description": "Lee la altura de las barras en la escala y responde cuántas más tiene una categoría que otra",
+    "instructions": "Lee la altura de cada barra en la escala del lado, luego usa los botones − / + (o arrastra hacia arriba) para introducir cuántas más tiene la primera categoría que la segunda, y pulsa Comprobar",
+    "prompt": "¿Cuántas {a} más que {b}?",
+    "correct": "¡Correcto! La diferencia es {diff}",
+    "wrong": "¡Casi! Lee de nuevo la altura de cada barra e inténtalo otra vez"
   }
 }

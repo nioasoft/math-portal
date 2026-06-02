@@ -23,7 +23,8 @@
     "units": "Measurement",
     "percentage": "Percentages",
     "ratio": "Ratio",
-    "series": "Sequences"
+    "series": "Sequences",
+    "misc": "Other"
   },
   "controls": {
     "rows": "Rows",
@@ -284,5 +285,13 @@
     "prompt": "Share {total} coins equally among {k} chests",
     "correct": "Well done! {perChest} in each chest, with {remainder} left in the pouch",
     "wrong": "You can share more equally — try again"
+  },
+  "barGraph": {
+    "title": "Bar Graph Builder",
+    "description": "Read the bar heights off the scale and answer how many more one category has than another",
+    "instructions": "Read the height of each bar off the scale on the side, then use the − / + buttons (or drag up) to enter how many more the first category has than the second, and press Check",
+    "prompt": "How many more {a} than {b}?",
+    "correct": "Correct! The difference is {diff}",
+    "wrong": "Almost! Read each bar's height again and try again"
   }
 }

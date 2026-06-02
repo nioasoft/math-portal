@@ -28,6 +28,7 @@ import { numberSequenceGame } from './number-sequence/NumberSequenceGame';
 import { fractionStripCompareGame } from './fraction-strip-compare/FractionStripCompareGame';
 import { angleBuilderGame } from './angle-builder/AngleBuilderGame';
 import { divisionShareGame } from './division-share/DivisionShareGame';
+import { barGraphBuilderGame } from './bar-graph-builder/BarGraphBuilderGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -67,6 +68,7 @@ const games: Game3D[] = [
   fractionStripCompareGame,
   angleBuilderGame,
   divisionShareGame,
+  barGraphBuilderGame,
 ];
 
 let registered = false;

@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { Trophy, Check, X, Lightbulb } from 'lucide-react';
-import type { ControlButton, FeedbackEvent } from '@/lib/games3d/types';
+import type { ControlButton, FeedbackEvent, GameStatus } from '@/lib/games3d/types';
 
 interface Props {
   score: number;
@@ -11,6 +11,18 @@ interface Props {
   prompt?: string;
   /** On-screen HTML control buttons (−/+, Check, Reset, …). */
   controls?: ControlButton[];
+  /** Reward/progress snapshot (stars, streak, progress) shown in the top status bar. */
+  status?: GameStatus;
+}
+
+/** True when the status object carries anything worth rendering. */
+function hasStatus(s?: GameStatus): s is GameStatus {
+  if (!s) return false;
+  return (
+    (typeof s.maxStars === 'number' && s.maxStars > 0) ||
+    (typeof s.streak === 'number' && s.streak > 1) ||
+    s.progress != null
+  );
 }
 
 const FEEDBACK_STYLES = {
@@ -25,11 +37,46 @@ const CONTROL_VARIANT_STYLES = {
   reset:   'bg-transparent text-slate-200 border border-slate-400/70 hover:bg-slate-700/60 active:scale-95',
 } as const;
 
-export function OverlayHUD({ score, feedback, prompt, controls }: Props): React.ReactElement {
+export function OverlayHUD({ score, feedback, prompt, controls, status }: Props): React.ReactElement {
   const t = useTranslations('games');
+  const showStatus = hasStatus(status);
+  const stars = status?.stars ?? 0;
+  const maxStars = status?.maxStars ?? 0;
   return (
     <div className="pointer-events-none absolute inset-0 flex flex-col items-stretch p-4">
-      <div className="flex items-center justify-end gap-2">
+      <div className="flex items-center justify-between gap-2">
+        {showStatus ? (
+          <div
+            data-testid="status-bar"
+            className="flex items-center gap-3 bg-slate-800/70 backdrop-blur px-3 py-1.5 rounded-lg text-white text-sm"
+            dir="auto"
+          >
+            {maxStars > 0 && (
+              <span className="flex items-center gap-0.5" aria-label={`${stars}/${maxStars}`}>
+                {Array.from({ length: maxStars }, (_, i) => (
+                  <span key={i} className={i < stars ? 'text-amber-300' : 'text-slate-500'} aria-hidden="true">
+                    {i < stars ? '★' : '☆'}
+                  </span>
+                ))}
+              </span>
+            )}
+            {typeof status?.streak === 'number' && status.streak > 1 && (
+              <span data-testid="status-streak" className="font-semibold tabular-nums">
+                🔥 ×{status.streak}
+              </span>
+            )}
+            {status?.progress && (
+              <span
+                data-testid="status-progress"
+                className="rounded-full bg-slate-700/80 px-2 py-0.5 font-semibold tabular-nums"
+              >
+                {status.progress.current}/{status.progress.total}
+              </span>
+            )}
+          </div>
+        ) : (
+          <span />
+        )}
         <div className="flex items-center gap-2 bg-slate-800/70 backdrop-blur px-3 py-1.5 rounded-lg text-white text-sm">
           <Trophy className="w-4 h-4" aria-hidden="true" />
           <span className="sr-only">{t('score.score')}: </span>

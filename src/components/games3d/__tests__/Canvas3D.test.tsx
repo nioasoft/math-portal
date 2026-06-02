@@ -22,6 +22,7 @@ describe('Canvas3D', () => {
       subscribeFeedback: vi.fn(() => () => {}),
       subscribePrompt: vi.fn(() => () => {}),
       subscribeControls: vi.fn(() => () => {}),
+      subscribeStatus: vi.fn(() => () => {}),
       _debug: () => ({} as any),
     }));
     render(<Canvas3D game={game} locale="en" isRTL={false} mode="practice" t={(k) => k} engineFactory={factory} />);
@@ -38,6 +39,7 @@ describe('Canvas3D', () => {
       subscribeFeedback: vi.fn(() => () => {}),
       subscribePrompt: vi.fn(() => () => {}),
       subscribeControls: vi.fn(() => () => {}),
+      subscribeStatus: vi.fn(() => () => {}),
       _debug: () => ({} as any),
     }));
     const { unmount } = render(<Canvas3D game={game} locale="en" isRTL={false} mode="practice" t={(k) => k} engineFactory={factory} />);

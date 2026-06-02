@@ -6,7 +6,7 @@ import {
   SceneEngineInstance,
   SceneEngineOptions,
 } from '@/lib/games3d/engine/SceneEngine';
-import type { Game3D, CompleteSummary, FeedbackEvent, ControlButton } from '@/lib/games3d/types';
+import type { Game3D, CompleteSummary, FeedbackEvent, ControlButton, GameStatus } from '@/lib/games3d/types';
 
 interface Props {
   game: Game3D;
@@ -20,6 +20,7 @@ interface Props {
   onFeedback?: (event: FeedbackEvent) => void;
   onPrompt?: (text: string) => void;
   onControls?: (buttons: ControlButton[]) => void;
+  onStatus?: (status: GameStatus) => void;
   onLoadProgress?: (fraction: number) => void;
   onError?: (err: unknown) => void;
   /** For testing: inject a fake engine factory. */
@@ -37,6 +38,7 @@ export function Canvas3D({
   onFeedback,
   onPrompt,
   onControls,
+  onStatus,
   onLoadProgress,
   onError,
   engineFactory,
@@ -76,6 +78,7 @@ export function Canvas3D({
     const unsubFeedback = onFeedback ? engine.subscribeFeedback(onFeedback) : () => {};
     const unsubPrompt = onPrompt ? engine.subscribePrompt(onPrompt) : () => {};
     const unsubControls = onControls ? engine.subscribeControls(onControls) : () => {};
+    const unsubStatus = onStatus ? engine.subscribeStatus(onStatus) : () => {};
 
     engine.start(game).catch((err) => onError?.(err));
 
@@ -84,6 +87,7 @@ export function Canvas3D({
       unsubFeedback();
       unsubPrompt();
       unsubControls();
+      unsubStatus();
       engine.dispose();
       engineRef.current = null;
     };

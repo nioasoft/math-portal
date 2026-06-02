@@ -3,6 +3,7 @@ import {
   createScoreController,
   createFeedbackController,
   createControlsController,
+  createStatusController,
 } from '../engine/SceneContext';
 import type { ControlButton } from '../types';
 
@@ -108,6 +109,54 @@ describe('ControlsController', () => {
     const unsub = c.subscribe(obs);
     unsub();
     c.set(sample);
+    expect(obs).not.toHaveBeenCalled();
+  });
+});
+
+describe('StatusController', () => {
+  it('starts empty', () => {
+    const s = createStatusController();
+    expect(s.get()).toEqual({});
+  });
+
+  it('set() stores the status and get() returns it', () => {
+    const s = createStatusController();
+    s.set({ stars: 2, maxStars: 3, streak: 4, progress: { current: 1, total: 5 } });
+    expect(s.get()).toEqual({ stars: 2, maxStars: 3, streak: 4, progress: { current: 1, total: 5 } });
+  });
+
+  it('set() copies the input (immutability — later mutation of the arg does not leak)', () => {
+    const s = createStatusController();
+    const input = { stars: 1, maxStars: 3 };
+    s.set(input);
+    input.stars = 99;
+    expect(s.get().stars).toBe(1);
+  });
+
+  it('clear() resets to empty', () => {
+    const s = createStatusController();
+    s.set({ stars: 3, maxStars: 3 });
+    s.clear();
+    expect(s.get()).toEqual({});
+  });
+
+  it('notifies subscribers on set and clear', () => {
+    const s = createStatusController();
+    const obs = vi.fn();
+    s.subscribe(obs);
+    s.set({ stars: 1, maxStars: 3 });
+    expect(obs).toHaveBeenCalledWith(expect.objectContaining({ stars: 1, maxStars: 3 }));
+    s.clear();
+    expect(obs).toHaveBeenLastCalledWith({});
+    expect(obs).toHaveBeenCalledTimes(2);
+  });
+
+  it('unsubscribe stops further notifications', () => {
+    const s = createStatusController();
+    const obs = vi.fn();
+    const unsub = s.subscribe(obs);
+    unsub();
+    s.set({ stars: 1 });
     expect(obs).not.toHaveBeenCalled();
   });
 });

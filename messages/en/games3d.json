@@ -211,5 +211,13 @@
     "prompt": "Arrange {area} blocks to fill the shelf",
     "correct": "Great! {slotW} wide × {height} tall = {area}",
     "wrong": "Almost! Change the width until the blocks exactly fill the glowing shelf"
+  },
+  "skipCount": {
+    "title": "Skip Count Race",
+    "description": "Mark every skip along the safari track, then watch the animal dash across them",
+    "instructions": "Tap the tiles the animal lands on at each skip. Mark them all the way to the end, then press Check — the animal will hop across the stones. Tap a tile again to unmark it, or Reset to start over.",
+    "prompt": "Mark every {step}-skip up to {target}",
+    "correct": "Great! You skip-counted by {step} up to {target}",
+    "wrong": "Almost! Mark exactly every skip — none missing and none extra"
   }
 }

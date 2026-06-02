@@ -211,5 +211,13 @@
     "prompt": "Ordne {area} Blöcke an, um das Regal zu füllen",
     "correct": "Super! {slotW} breit × {height} hoch = {area}",
     "wrong": "Fast! Ändere die Breite, bis die Blöcke das leuchtende Regal genau ausfüllen"
+  },
+  "skipCount": {
+    "title": "Skip-Count-Rennen",
+    "description": "Markiere jeden Sprung auf der Safari-Strecke und sieh zu, wie das Tier hinüberhüpft",
+    "instructions": "Tippe auf die Felder, auf denen das Tier bei jedem Sprung landet. Markiere alle bis zum Ende und drücke dann Prüfen — das Tier hüpft über die Steine. Tippe ein Feld erneut an, um die Markierung zu entfernen, oder Zurücksetzen für einen Neustart.",
+    "prompt": "Markiere jeden {step}er-Sprung bis {target}",
+    "correct": "Super! Du hast in {step}er-Schritten bis {target} gezählt",
+    "wrong": "Fast! Markiere genau jeden Sprung — keinen weglassen und keinen zu viel"
   }
 }

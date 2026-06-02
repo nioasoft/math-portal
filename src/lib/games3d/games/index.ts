@@ -20,6 +20,7 @@ import { explodingDotsGame } from './exploding-dots/ExplodingDotsGame';
 import { balanceScaleEquationsGame } from './balance-scale-equations/BalanceScaleEquationsGame';
 import { factrisBlocksGame } from './factris-blocks/FactrisBlocksGame';
 import { subtractionBridgeGame } from './subtraction-bridge/SubtractionBridgeGame';
+import { skipCountTrackGame } from './skip-count-track/SkipCountTrackGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -51,6 +52,7 @@ const games: Game3D[] = [
   balanceScaleEquationsGame,
   factrisBlocksGame,
   subtractionBridgeGame,
+  skipCountTrackGame,
 ];
 
 let registered = false;

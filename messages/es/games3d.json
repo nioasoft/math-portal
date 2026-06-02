@@ -211,5 +211,13 @@
     "prompt": "Organiza {area} bloques para llenar el estante",
     "correct": "¡Genial! {slotW} de ancho × {height} de alto = {area}",
     "wrong": "¡Casi! Cambia el ancho hasta que los bloques llenen exactamente el estante luminoso"
+  },
+  "skipCount": {
+    "title": "Carrera de conteo salteado",
+    "description": "Marca cada salto en la pista de safari y mira al animal correr por ellos",
+    "instructions": "Toca las casillas en las que cae el animal en cada salto. Márcalas todas hasta el final y luego pulsa Comprobar — el animal saltará por las piedras. Toca una casilla otra vez para desmarcarla, o Reiniciar para empezar de nuevo.",
+    "prompt": "Marca cada salto de {step} hasta {target}",
+    "correct": "¡Genial! Contaste de {step} en {step} hasta {target}",
+    "wrong": "¡Casi! Marca exactamente cada salto — sin que falte ni sobre ninguno"
   }
 }

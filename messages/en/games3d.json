@@ -49,7 +49,9 @@
   "fractionBuild": {
     "title": "Fraction Builder",
     "description": "Fill parts of the pie to match the fraction",
-    "instructions": "Tap slices to fill them until they match the target fraction"
+    "instructions": "Tap slices to fill them until they match the target fraction",
+    "prompt": "Fill {num}/{den}   |   you filled: {filled}/{den}",
+    "correct": "Great! You filled {num}/{den}"
   },
   "areaPerimeter": {
     "title": "Area & Perimeter",

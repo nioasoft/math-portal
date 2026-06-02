@@ -49,7 +49,9 @@
   "fractionBuild": {
     "title": "בונה שברים",
     "description": "מלא חלקים מהעוגה כדי להתאים לשבר",
-    "instructions": "הקש על פלחים כדי למלא אותם עד שמתאים לשבר המבוקש"
+    "instructions": "הקש על פלחים כדי למלא אותם עד שמתאים לשבר המבוקש",
+    "prompt": "מלא {num}/{den}   |   מילאת: {filled}/{den}",
+    "correct": "מצוין! מילאת {num}/{den}"
   },
   "areaPerimeter": {
     "title": "שטח והיקף",

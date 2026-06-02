@@ -49,7 +49,9 @@
   "fractionBuild": {
     "title": "Bruch-Baumeister",
     "description": "Fülle Teile des Kreises, um den Bruch zu treffen",
-    "instructions": "Tippe auf Segmente, um sie zu füllen, bis sie zum Zielbruch passen"
+    "instructions": "Tippe auf Segmente, um sie zu füllen, bis sie zum Zielbruch passen",
+    "prompt": "Fülle {num}/{den}   |   du hast gefüllt: {filled}/{den}",
+    "correct": "Super! Du hast {num}/{den} gefüllt"
   },
   "areaPerimeter": {
     "title": "Fläche & Umfang",

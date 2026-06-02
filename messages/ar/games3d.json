@@ -49,7 +49,9 @@
   "fractionBuild": {
     "title": "بناء الكسور",
     "description": "املأ أجزاء من الفطيرة لمطابقة الكسر",
-    "instructions": "انقر على الشرائح لملئها حتى تطابق الكسر المطلوب"
+    "instructions": "انقر على الشرائح لملئها حتى تطابق الكسر المطلوب",
+    "prompt": "املأ {num}/{den}   |   ملأت: {filled}/{den}",
+    "correct": "رائع! ملأت {num}/{den}"
   },
   "areaPerimeter": {
     "title": "المساحة والمحيط",

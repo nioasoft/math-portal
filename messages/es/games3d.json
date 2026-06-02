@@ -49,7 +49,9 @@
   "fractionBuild": {
     "title": "Constructor de fracciones",
     "description": "Rellena partes del círculo para que coincidan con la fracción",
-    "instructions": "Toca las porciones para rellenarlas hasta que coincidan con la fracción objetivo"
+    "instructions": "Toca las porciones para rellenarlas hasta que coincidan con la fracción objetivo",
+    "prompt": "Rellena {num}/{den}   |   rellenaste: {filled}/{den}",
+    "correct": "¡Genial! Rellenaste {num}/{den}"
   },
   "areaPerimeter": {
     "title": "Área y perímetro",

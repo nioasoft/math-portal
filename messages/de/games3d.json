@@ -116,5 +116,13 @@
     "prompt": "Löse: ? + {b} = {c}",
     "correct": "Super! ? = {x}",
     "wrong": "Fast! Entferne von beiden Seiten gleich viele, bis das ? allein steht und die Waage im Gleichgewicht ist"
+  },
+  "moneyShop": {
+    "title": "Geldladen",
+    "description": "Zahle den genauen Betrag in Schekel am Marktstand",
+    "instructions": "Ziehe über dem Tablett nach oben, um eine ₪1-Münze hinzuzufügen, oder nutze die − / + Tasten jeder Münze und jedes Scheins (₪1, ₪2, ₪5, ₪10, ₪20, ₪50). Lege Münzen und Scheine, bis der Betrag erreicht ist, und drücke dann Prüfen",
+    "prompt": "Zahle ₪{amount}",
+    "correct": "Toll! Du hast genau ₪{amount} bezahlt",
+    "wrong": "Fast! Prüfe den Betrag auf dem Tablett und korrigiere ihn"
   }
 }

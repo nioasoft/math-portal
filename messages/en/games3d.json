@@ -116,5 +116,13 @@
     "prompt": "Solve: ? + {b} = {c}",
     "correct": "Great! ? = {x}",
     "wrong": "Almost! Remove an equal number from both sides until the ? stands alone and the scale is balanced"
+  },
+  "moneyShop": {
+    "title": "Money Shop",
+    "description": "Pay the exact amount in shekels at a market stall",
+    "instructions": "Drag up over the tray to add a ₪1 coin, or use each coin and bill's − / + buttons (₪1, ₪2, ₪5, ₪10, ₪20, ₪50). Add coins and bills until the tray reaches the amount, then press Check",
+    "prompt": "Pay ₪{amount}",
+    "correct": "Great! You paid exactly ₪{amount}",
+    "wrong": "Almost! Check the amount on the tray and fix it"
   }
 }

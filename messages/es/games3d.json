@@ -116,5 +116,13 @@
     "prompt": "Resuelve: ? + {b} = {c}",
     "correct": "¡Genial! ? = {x}",
     "wrong": "¡Casi! Quita el mismo número de ambos lados hasta que la ? quede sola y la balanza esté equilibrada"
+  },
+  "moneyShop": {
+    "title": "Tienda de Monedas",
+    "description": "Paga la cantidad exacta en séqueles en un puesto del mercado",
+    "instructions": "Arrastra hacia arriba sobre la bandeja para añadir una moneda de ₪1, o usa los botones − / + de cada moneda y billete (₪1, ₪2, ₪5, ₪10, ₪20, ₪50). Añade monedas y billetes hasta alcanzar la cantidad y luego pulsa Comprobar",
+    "prompt": "Paga ₪{amount}",
+    "correct": "¡Genial! Pagaste exactamente ₪{amount}",
+    "wrong": "¡Casi! Revisa la cantidad en la bandeja y corrígela"
   }
 }

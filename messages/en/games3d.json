@@ -429,5 +429,13 @@
     "prompt": "Share {n} blocks equally into {d} towers — how many in each?",
     "correct": "Well done! {perTower} in each tower, with {remainder} left in the pool",
     "wrong": "The towers aren't as equal and tall as they can be yet — try again"
+  },
+  "tangram": {
+    "title": "Tangram",
+    "description": "Build the figure: fit each coloured piece into the matching outline until the whole shape is assembled.",
+    "instructions": "Tap a piece to pick it up, then tap the outline of the same shape to place it. Match each piece to the outline with the same shape. Tap a placed piece to move it again. When you're done, press Check. Reset returns every piece to the tray.",
+    "prompt": "Build the figure — each piece in its place",
+    "correct": "Excellent! You assembled the whole figure correctly.",
+    "wrong": "Not yet. Some pieces are missing or in the wrong place — match each piece to its outline and try again."
   }
 }

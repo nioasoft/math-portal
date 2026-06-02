@@ -429,5 +429,13 @@
     "prompt": "Verteile {n} Bausteine gleichmäßig auf {d} Türme — wie viele in jeden?",
     "correct": "Gut gemacht! {perTower} in jedem Turm, und {remainder} bleiben im Vorrat",
     "wrong": "Die Türme sind noch nicht so gleich und hoch wie möglich — versuch es noch einmal"
+  },
+  "tangram": {
+    "title": "Tangram",
+    "description": "Baue die Figur: Setze jedes farbige Teil in den passenden Umriss, bis die ganze Form fertig ist.",
+    "instructions": "Tippe auf ein Teil, um es aufzuheben, und tippe dann auf den Umriss mit der gleichen Form, um es abzulegen. Ordne jedes Teil dem Umriss mit der gleichen Form zu. Tippe auf ein gelegtes Teil, um es wieder zu bewegen. Wenn du fertig bist, drücke auf Prüfen. Zurücksetzen legt alle Teile wieder ins Tablett.",
+    "prompt": "Baue die Figur — jedes Teil an seinen Platz",
+    "correct": "Ausgezeichnet! Du hast die ganze Figur richtig zusammengesetzt.",
+    "wrong": "Noch nicht. Einige Teile fehlen oder liegen falsch — ordne jedes Teil seinem Umriss zu und versuche es erneut."
   }
 }

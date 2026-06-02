@@ -43,6 +43,7 @@ import { wordProblemBarGame } from './word-problem-bar/WordProblemBarGame';
 import { estimationLandGame } from './estimation-land/EstimationLandGame';
 import { multiplicationFactorTreeGame } from './multiplication-factor-tree/MultiplicationFactorTreeGame';
 import { longDivisionTowerGame } from './long-division-tower/LongDivisionTowerGame';
+import { tangramBuildGame } from './tangram-build/TangramBuildGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -97,6 +98,7 @@ const games: Game3D[] = [
   estimationLandGame,
   multiplicationFactorTreeGame,
   longDivisionTowerGame,
+  tangramBuildGame,
 ];
 
 let registered = false;

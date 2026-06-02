@@ -98,6 +98,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     })),
   'long-division-tower': () =>
     import('./long-division-tower/LongDivisionTowerGame').then((m) => ({ default: m.longDivisionTowerGame })),
+  'tangram-build': () =>
+    import('./tangram-build/TangramBuildGame').then((m) => ({ default: m.tangramBuildGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

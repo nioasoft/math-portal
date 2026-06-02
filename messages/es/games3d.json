@@ -429,5 +429,13 @@
     "prompt": "Reparte {n} bloques por igual entre {d} torres — ¿cuántos en cada una?",
     "correct": "¡Bien hecho! {perTower} en cada torre, y {remainder} quedan en el montón",
     "wrong": "Las torres aún no están tan iguales y altas como pueden — inténtalo de nuevo"
+  },
+  "tangram": {
+    "title": "Tangram",
+    "description": "Arma la figura: coloca cada pieza de color en el contorno correspondiente hasta completar toda la forma.",
+    "instructions": "Toca una pieza para levantarla y luego toca el contorno de la misma forma para colocarla. Empareja cada pieza con el contorno de la misma forma. Toca una pieza ya colocada para moverla de nuevo. Cuando termines, pulsa Comprobar. Reiniciar devuelve todas las piezas a la bandeja.",
+    "prompt": "Arma la figura — cada pieza en su lugar",
+    "correct": "¡Excelente! Armaste toda la figura correctamente.",
+    "wrong": "Todavía no. Faltan piezas o están en el lugar equivocado — empareja cada pieza con su contorno e inténtalo de nuevo."
   }
 }

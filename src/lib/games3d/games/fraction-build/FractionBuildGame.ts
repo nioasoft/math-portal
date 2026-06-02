@@ -10,10 +10,9 @@ import { createFractionGenerator, type FractionProblem } from './problems';
 // EMPTY wedge  → pale baked DOUGH. A thin gap is carved between wedges (each
 //   wedge's thetaLength is reduced) so the N-way split is always visible — the
 //   child sees the pizza is cut into N equal slices even before topping it.
-// FILLED wedge → a TOPPED slice: the wedge surface turns melted-cheese gold
-//   (with a thin tomato-sauce rim tint underneath) and 2–3 pepperoni discs plus
-//   a couple of herb specks "land" on it (popIn). Toggling off removes the
-//   toppings and returns the wedge to dough.
+// FILLED wedge → a TOPPED slice: the wedge surface turns melted-cheese gold and
+//   1–2 pepperoni discs "land" on it (popIn), placed on the slice's bisector.
+//   Toggling off removes the pepperoni and returns the wedge to dough.
 //
 // A golden-brown crust torus frames the whole pie. Tapping a wedge toggles its
 // topping; the overlay בדוק / נקה controls confirm / clear.
@@ -29,52 +28,39 @@ const POINTS_PER_CORRECT = 10;
 // thin dark "cut" shows between neighbouring slices, making the division visible.
 const SLICE_GAP = 0.04; // radians trimmed off each wedge's thetaLength
 
-// Topping layout (relative to RADIUS) — kept inside the wedge, off the crust.
-const SAUCE_RADIUS = RADIUS - RIM_TUBE * 0.5; // sauce tint reaches under the crust
-const PEPPERONI_RADIUS = 0.34;
-const PEPPERONI_HEIGHT = 0.06;
-const SPECK_RADIUS = 0.08;
-const SPECK_HEIGHT = 0.04;
-const TOPPING_LIFT = 0.06; // toppings sit just above the cheese surface
+// Topping layout (relative to RADIUS) — kept well inside the wedge, off the crust.
+const PEPPERONI_RADIUS = 0.26;
+const PEPPERONI_HEIGHT = 0.07;
+const TOPPING_LIFT = 0.06; // pepperoni sit just above the cheese surface
 
 // Pizza palette.
 const DOUGH_COLOR = 0xf3e0b8; // pale baked dough (empty slice)
 const CHEESE_COLOR = 0xe8b84b; // melted golden cheese (filled slice surface)
-const SAUCE_COLOR = 0xc0392b; // tomato sauce rim tint under the cheese
 const PEPPERONI_COLOR = 0xb22222; // deep-red pepperoni
-const HERB_COLOR = 0x4f7a3a; // basil/oregano specks
 const CRUST_COLOR = 0xd9a35a; // golden-brown crust rim
 
 /**
- * Deterministic pepperoni + speck placements for a wedge, in the wedge's own
- * angular span. Returns local XZ offsets (pizza lies in the XZ plane). Varying by
- * slice index means toppings never line up identically across slices.
+ * Deterministic pepperoni placements for a wedge, in the wedge's own angular span.
+ * Returns local XZ offsets. Three's CylinderGeometry maps an angle θ to
+ * (x, z) = (sin θ, cos θ), so pepperoni MUST use the same convention to land on
+ * their own slice. Placed near the slice bisector at 1–2 radii, nudged safely
+ * within the slice's span.
  */
 interface ToppingSpot {
   x: number;
   z: number;
 }
-function pepperoniSpots(idx: number, midAngle: number): ToppingSpot[] {
-  // 2 or 3 pepperoni, nudged along + across the wedge by a slice-dependent seed.
-  const count = 2 + (idx % 2); // alternate 2 / 3
-  const seed = (idx * 0.37) % 1; // stable per slice
+function pepperoniSpots(mid: number, span: number): ToppingSpot[] {
+  // Thin slices (many-denominator pies) get 1 pepperoni; wider slices get 2.
+  const count = span > 0.5 ? 2 : 1;
+  const spread = span * 0.26; // angular nudge kept safely inside the slice
   const spots: ToppingSpot[] = [];
   for (let k = 0; k < count; k++) {
-    // Spread along the radius (inner → outer) and jitter the angle deterministically.
-    const radial = RADIUS * (0.34 + 0.24 * k + 0.12 * seed);
-    const angle = midAngle + (k - (count - 1) / 2) * 0.22 + (seed - 0.5) * 0.18;
-    spots.push({ x: Math.cos(angle) * radial, z: Math.sin(angle) * radial });
+    const radial = RADIUS * (count === 1 ? 0.55 : 0.46 + 0.22 * k);
+    const angle = mid + (count === 1 ? 0 : k === 0 ? -spread : spread);
+    spots.push({ x: Math.sin(angle) * radial, z: Math.cos(angle) * radial });
   }
   return spots;
-}
-function speckSpots(idx: number, midAngle: number): ToppingSpot[] {
-  // 2 tiny herb specks at a different radius so they read as separate from pepperoni.
-  const seed = (idx * 0.61) % 1;
-  return [0, 1].map((k) => {
-    const radial = RADIUS * (0.5 + 0.22 * k + 0.1 * seed);
-    const angle = midAngle + (k === 0 ? 0.34 : -0.3) + (seed - 0.5) * 0.2;
-    return { x: Math.cos(angle) * radial, z: Math.sin(angle) * radial };
-  });
 }
 
 export const fractionBuildGame: Game3D = {
@@ -124,18 +110,15 @@ export const fractionBuildGame: Game3D = {
     // ---- Shared materials (one of each — cheap + leak-free) ----
     const doughMat = new THREE.MeshStandardMaterial({ color: DOUGH_COLOR, roughness: 0.85, metalness: 0.02 });
     const cheeseMat = new THREE.MeshStandardMaterial({ color: CHEESE_COLOR, roughness: 0.5, metalness: 0.04 });
-    const sauceMat = new THREE.MeshStandardMaterial({ color: SAUCE_COLOR, roughness: 0.7, metalness: 0.02 });
     const pepperoniMat = new THREE.MeshStandardMaterial({ color: PEPPERONI_COLOR, roughness: 0.55, metalness: 0.03 });
-    const herbMat = new THREE.MeshStandardMaterial({ color: HERB_COLOR, roughness: 0.8, metalness: 0.0 });
 
-    // ---- Shared topping geometries (instanced once, reused across slices) ----
+    // ---- Shared pepperoni geometry (instanced once, reused across slices) ----
     const pepperoniGeo = new THREE.CylinderGeometry(
       PEPPERONI_RADIUS,
       PEPPERONI_RADIUS,
       PEPPERONI_HEIGHT,
       16
     );
-    const speckGeo = new THREE.CylinderGeometry(SPECK_RADIUS, SPECK_RADIUS, SPECK_HEIGHT, 8);
 
     // Crust rim: a torus framing the pie's outer edge.
     const rimGeo = new THREE.TorusGeometry(RADIUS, RIM_TUBE, 16, RADIAL_SEGMENTS);
@@ -148,7 +131,6 @@ export const fractionBuildGame: Game3D = {
 
     // ---- Per-problem geometry/mesh tracking (disposed on every rebuild) ----
     const wedgeGeos: THREE.CylinderGeometry[] = []; // one cylinder sector per slice
-    const sauceGeos: THREE.CircleGeometry[] = []; // one sauce sector disc per slice
     let wedges: THREE.Mesh[] = [];
     let toppingGroups: THREE.Group[] = []; // per-slice container for sauce + pepperoni + specks
     const filled = new Set<number>();
@@ -181,10 +163,8 @@ export const fractionBuildGame: Game3D = {
     }
 
     /**
-     * Build the toppings (tomato-sauce sector + pepperoni discs + herb specks) for
-     * one slice and add them to its topping group. Geometry that depends on the
-     * slice angle (the sauce sector) is created here and tracked for disposal;
-     * pepperoni/speck reuse the shared instanced geometries.
+     * Build the pepperoni for one slice and add them to its topping group. Pepperoni
+     * reuse the shared instanced geometry, so nothing per-slice needs disposal.
      */
     function buildToppings(idx: number): void {
       const tg = toppingGroups[idx];
@@ -193,45 +173,17 @@ export const fractionBuildGame: Game3D = {
       const start = idx * theta + SLICE_GAP / 2;
       const span = theta - SLICE_GAP;
       const mid = start + span / 2;
-
-      // Tomato-sauce sector tint, sitting just above the cheese surface so a warm
-      // reddish ring peeks at the slice edges. CircleGeometry sits in the XY plane;
-      // rotate it flat into XZ.
-      const sauceGeo = new THREE.CircleGeometry(SAUCE_RADIUS, RADIAL_SEGMENTS, start, span);
-      sauceGeos.push(sauceGeo);
-      const sauce = new THREE.Mesh(sauceGeo, sauceMat);
-      sauce.rotation.x = -Math.PI / 2;
-      sauce.position.y = HEIGHT / 2 + 0.01;
-      sauce.receiveShadow = true;
-      tg.add(sauce);
-
-      // Pepperoni discs.
-      for (const spot of pepperoniSpots(idx, mid)) {
+      for (const spot of pepperoniSpots(mid, span)) {
         const pep = new THREE.Mesh(pepperoniGeo, pepperoniMat);
         pep.position.set(spot.x, HEIGHT / 2 + TOPPING_LIFT, spot.z);
         pep.castShadow = true;
         tg.add(pep);
       }
-
-      // Herb specks for life.
-      for (const spot of speckSpots(idx, mid)) {
-        const speck = new THREE.Mesh(speckGeo, herbMat);
-        speck.position.set(spot.x, HEIGHT / 2 + TOPPING_LIFT, spot.z);
-        tg.add(speck);
-      }
     }
 
-    /** Remove + dispose only the per-slice (angle-dependent) sauce geometry of a topping group, then clear it. */
+    /** Clear a slice's pepperoni. They reuse the shared geometry, so only the meshes are removed. */
     function clearToppings(idx: number): void {
-      const tg = toppingGroups[idx];
-      tg.children.forEach((child) => {
-        if (child instanceof THREE.Mesh && child.geometry instanceof THREE.CircleGeometry) {
-          const gi = sauceGeos.indexOf(child.geometry);
-          if (gi !== -1) sauceGeos.splice(gi, 1);
-          child.geometry.dispose(); // sauce sector is per-slice; pepperoni/speck geo are shared (do NOT dispose)
-        }
-      });
-      tg.clear();
+      toppingGroups[idx].clear();
     }
 
     /** Sync a wedge to its filled/empty state: cheese vs dough material, raise, toppings. */
@@ -254,8 +206,6 @@ export const fractionBuildGame: Game3D = {
     function disposePieGeometry(): void {
       wedgeGeos.forEach((g) => g.dispose());
       wedgeGeos.length = 0;
-      sauceGeos.forEach((g) => g.dispose());
-      sauceGeos.length = 0;
     }
 
     /** Build the wedge meshes for the current problem's denominator. */
@@ -455,12 +405,9 @@ export const fractionBuildGame: Game3D = {
 
         // Shared topping geometry + every shared material + the crust.
         pepperoniGeo.dispose();
-        speckGeo.dispose();
         doughMat.dispose();
         cheeseMat.dispose();
-        sauceMat.dispose();
         pepperoniMat.dispose();
-        herbMat.dispose();
         rimGeo.dispose();
         rimMat.dispose();
       },

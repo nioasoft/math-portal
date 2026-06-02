@@ -38,7 +38,8 @@
     "numerator": "Zähler",
     "denominator": "Nenner",
     "left": "Links",
-    "right": "Rechts"
+    "right": "Rechts",
+    "length": "Länge"
   },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
@@ -132,5 +133,13 @@
     "prompt": "Addiere: {a} + {b}",
     "correct": "Toll! Die richtige Summe ist {total}",
     "wrong": "Fast! Prüfe die Ziffern und korrigiere die Summe"
+  },
+  "volumeBuilder": {
+    "title": "Volumen-Baumeister",
+    "description": "Baue eine Kiste aus Einheitswürfeln mit dem vorgegebenen Volumen",
+    "instructions": "Stelle Länge, Breite und Höhe mit den Tasten − / + ein (oder ziehe: nach oben = länger, rechts = breiter; die Höhe stellst du mit den Tasten ein). Die Würfel füllen das Aquarium Schicht für Schicht. Drücke zum Schluss Prüfen",
+    "prompt": "Baue eine Kiste mit dem Volumen {volume}",
+    "correct": "Super! Das Volumen der Kiste ist {volume}",
+    "wrong": "Fast! Ändere Länge, Breite oder Höhe und versuche es erneut"
   }
 }

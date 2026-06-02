@@ -11,6 +11,7 @@ import { fractionNumberLineGame } from './fraction-number-line/FractionNumberLin
 import { algebraBalanceGame } from './algebra-balance/AlgebraBalanceGame';
 import { moneyShopGame } from './money-shop/MoneyShopGame';
 import { additionMineGame } from './addition-mine/AdditionMineGame';
+import { volumeCubeFillGame } from './volume-cube-fill/VolumeCubeFillGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -33,6 +34,7 @@ const games: Game3D[] = [
   algebraBalanceGame,
   moneyShopGame,
   additionMineGame,
+  volumeCubeFillGame,
 ];
 
 let registered = false;

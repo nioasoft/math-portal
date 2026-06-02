@@ -38,7 +38,8 @@
     "numerator": "Numerator",
     "denominator": "Denominator",
     "left": "Left",
-    "right": "Right"
+    "right": "Right",
+    "length": "Length"
   },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
@@ -132,5 +133,13 @@
     "prompt": "Add: {a} + {b}",
     "correct": "Great! The correct sum is {total}",
     "wrong": "Almost! Check the digits and fix the sum"
+  },
+  "volumeBuilder": {
+    "title": "Volume Builder",
+    "description": "Build a box of unit cubes that has the given volume",
+    "instructions": "Set the length, width and height with the − / + buttons (or drag: up = longer, right = wider; height uses the buttons). The cubes fill the tank layer by layer. When you are done, press Check",
+    "prompt": "Build a box with volume {volume}",
+    "correct": "Great! The box volume is {volume}",
+    "wrong": "Almost! Change the length, width or height and try again"
   }
 }

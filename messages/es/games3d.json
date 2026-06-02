@@ -38,7 +38,8 @@
     "numerator": "numerador",
     "denominator": "denominador",
     "left": "Izquierda",
-    "right": "Derecha"
+    "right": "Derecha",
+    "length": "Largo"
   },
   "multiplicationArray": {
     "title": "Arreglos de multiplicación",
@@ -132,5 +133,13 @@
     "prompt": "Suma: {a} + {b}",
     "correct": "¡Genial! La suma correcta es {total}",
     "wrong": "¡Casi! Revisa las cifras y corrige la suma"
+  },
+  "volumeBuilder": {
+    "title": "Constructor de volumen",
+    "description": "Construye una caja de cubos unitarios con el volumen dado",
+    "instructions": "Ajusta el largo, el ancho y la altura con los botones − / + (o arrastra: arriba = más largo, derecha = más ancho; la altura se ajusta con los botones). Los cubos llenan el acuario capa por capa. Cuando termines, pulsa Comprobar",
+    "prompt": "Construye una caja con volumen {volume}",
+    "correct": "¡Genial! El volumen de la caja es {volume}",
+    "wrong": "¡Casi! Cambia el largo, el ancho o la altura e inténtalo de nuevo"
   }
 }

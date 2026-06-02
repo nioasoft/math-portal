@@ -28,7 +28,8 @@
     "height": "Höhe",
     "total": "Gesamt",
     "check": "Prüfen",
-    "reset": "Zurücksetzen"
+    "reset": "Zurücksetzen",
+    "marbles": "Murmeln"
   },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
@@ -62,6 +63,14 @@
     "wrong": "Fast! Ändere die Größe des Beets und versuche es erneut",
     "kindArea": "Fläche",
     "kindPerimeter": "Umfang"
+  },
+  "tenFrame": {
+    "title": "Zehnerfeld füllen",
+    "description": "Fülle das Zehnerfeld mit Murmeln bis zur Zielzahl",
+    "instructions": "Ziehe über die Löcher, um Murmeln zu füllen, oder nutze die − / + Tasten, dann drücke Prüfen",
+    "prompt": "Lege {target} Murmeln",
+    "correct": "Super! Du hast {target} Murmeln gelegt",
+    "wrong": "Fast! Zähle die Murmeln noch einmal und korrigiere"
   },
   "canary": {
     "title": "Tippe auf den Würfel",

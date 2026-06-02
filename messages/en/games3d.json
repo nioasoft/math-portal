@@ -28,7 +28,8 @@
     "height": "Height",
     "total": "Total",
     "check": "Check",
-    "reset": "Reset"
+    "reset": "Reset",
+    "marbles": "Marbles"
   },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
@@ -62,6 +63,14 @@
     "wrong": "Almost! Resize the garden and try again",
     "kindArea": "Area",
     "kindPerimeter": "Perimeter"
+  },
+  "tenFrame": {
+    "title": "Ten Frame Fill",
+    "description": "Fill the ten-frame with marbles up to the target number",
+    "instructions": "Drag across the holes to fill marbles, or use the − / + buttons, then press Check",
+    "prompt": "Place {target} marbles",
+    "correct": "Great! You placed {target} marbles",
+    "wrong": "Almost! Count the marbles again and fix it"
   },
   "canary": {
     "title": "Tap the Cube",

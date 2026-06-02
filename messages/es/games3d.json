@@ -28,7 +28,8 @@
     "height": "Alto",
     "total": "Total",
     "check": "Comprobar",
-    "reset": "Reiniciar"
+    "reset": "Reiniciar",
+    "marbles": "Canicas"
   },
   "multiplicationArray": {
     "title": "Arreglos de multiplicación",
@@ -62,6 +63,14 @@
     "wrong": "¡Casi! Cambia el tamaño del huerto e inténtalo de nuevo",
     "kindArea": "Área",
     "kindPerimeter": "Perímetro"
+  },
+  "tenFrame": {
+    "title": "Marco de diez",
+    "description": "Llena el marco de diez con canicas hasta el número objetivo",
+    "instructions": "Arrastra por los huecos para llenar canicas, o usa los botones − / +, luego pulsa Comprobar",
+    "prompt": "Coloca {target} canicas",
+    "correct": "¡Genial! Colocaste {target} canicas",
+    "wrong": "¡Casi! Cuenta las canicas otra vez y corrige"
   },
   "canary": {
     "title": "Toca el cubo",

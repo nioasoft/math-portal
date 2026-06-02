@@ -24,6 +24,7 @@ import { skipCountTrackGame } from './skip-count-track/SkipCountTrackGame';
 import { weightBalanceGame } from './weight-balance/WeightBalanceGame';
 import { percentBarGame } from './percent-bar/PercentBarGame';
 import { ratioMixerGame } from './ratio-mixer/RatioMixerGame';
+import { numberSequenceGame } from './number-sequence/NumberSequenceGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -59,6 +60,7 @@ const games: Game3D[] = [
   weightBalanceGame,
   percentBarGame,
   ratioMixerGame,
+  numberSequenceGame,
 ];
 
 let registered = false;

@@ -22,7 +22,8 @@
     "geometry": "Geometrie",
     "units": "Maßeinheiten",
     "percentage": "Prozente",
-    "ratio": "Verhältnis"
+    "ratio": "Verhältnis",
+    "series": "Folgen"
   },
   "controls": {
     "rows": "Reihen",
@@ -50,7 +51,8 @@
     "back": "Zurück",
     "percent": "Prozent",
     "juiceA": "Saft A",
-    "juiceB": "Saft B"
+    "juiceB": "Saft B",
+    "value": "Wert"
   },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
@@ -248,5 +250,13 @@
     "prompt": "Mische im Verhältnis {a}:{b}",
     "correct": "Super! Gleichwertig zu {a}:{b}",
     "wrong": "Noch nicht das richtige Verhältnis – ändere die Mengen und versuche es erneut"
+  },
+  "numberSequence": {
+    "title": "Zahlenfolge",
+    "description": "Finde die Regel und ergänze den fehlenden Stein in der Folge",
+    "instructions": "Finde die Regel der Folge (addieren oder multiplizieren), stelle den fehlenden Stein mit den Tasten − / + ein (oder ziehe nach oben zum Erhöhen) und drücke dann Prüfen",
+    "prompt": "Vervollständige die Folge",
+    "correct": "Richtig! Die fehlende Zahl ist {value}",
+    "wrong": "Fast! Finde die Regel und versuch es noch einmal"
   }
 }

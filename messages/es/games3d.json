@@ -22,7 +22,8 @@
     "geometry": "Geometría",
     "units": "Medidas",
     "percentage": "Porcentajes",
-    "ratio": "Razón"
+    "ratio": "Razón",
+    "series": "Secuencias"
   },
   "controls": {
     "rows": "Filas",
@@ -50,7 +51,8 @@
     "back": "Atrás",
     "percent": "Porcentaje",
     "juiceA": "Zumo A",
-    "juiceB": "Zumo B"
+    "juiceB": "Zumo B",
+    "value": "Valor"
   },
   "multiplicationArray": {
     "title": "Arreglos de multiplicación",
@@ -248,5 +250,13 @@
     "prompt": "Mezcla en la razón {a}:{b}",
     "correct": "¡Bien! Equivalente a {a}:{b}",
     "wrong": "Aún no es la razón correcta — ajusta las cantidades e inténtalo de nuevo"
+  },
+  "numberSequence": {
+    "title": "Secuencia numérica",
+    "description": "Descubre la regla y completa la piedra que falta en la secuencia",
+    "instructions": "Descubre la regla de la secuencia (sumar o multiplicar), ajusta la piedra que falta con los botones − / + (o arrastra hacia arriba para aumentarla) y luego pulsa Comprobar",
+    "prompt": "Completa la secuencia",
+    "correct": "¡Correcto! El número que falta es {value}",
+    "wrong": "¡Casi! Descubre la regla e inténtalo de nuevo"
   }
 }

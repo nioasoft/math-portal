@@ -22,7 +22,8 @@
     "geometry": "Geometry",
     "units": "Measurement",
     "percentage": "Percentages",
-    "ratio": "Ratio"
+    "ratio": "Ratio",
+    "series": "Sequences"
   },
   "controls": {
     "rows": "Rows",
@@ -50,7 +51,8 @@
     "back": "Back",
     "percent": "Percent",
     "juiceA": "Juice A",
-    "juiceB": "Juice B"
+    "juiceB": "Juice B",
+    "value": "Value"
   },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
@@ -248,5 +250,13 @@
     "prompt": "Mix in the ratio {a}:{b}",
     "correct": "Nice! Equivalent to {a}:{b}",
     "wrong": "Not the right ratio yet — adjust the amounts and try again"
+  },
+  "numberSequence": {
+    "title": "Number Sequence",
+    "description": "Find the rule and fill in the missing stone in the sequence",
+    "instructions": "Find the rule of the sequence (add or multiply), set the missing stone with the − / + buttons (or drag up to raise it), then press Check",
+    "prompt": "Complete the sequence",
+    "correct": "Correct! The missing number is {value}",
+    "wrong": "Almost! Find the rule and try again"
   }
 }

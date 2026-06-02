@@ -403,5 +403,15 @@
     "item3": "Blumen",
     "item4": "Sticker",
     "item5": "Kekse"
+  },
+  "estimationLand": {
+    "title": "Schätzland",
+    "description": "Sieh dir das Feld voller Gegenstände an und schätze ungefähr, wie viele es sind — nimm die Zehnergruppe als Hilfe",
+    "instructions": "Nutze die Zehnergruppe an der Seite als Maßstab; stelle deine Schätzung mit − / + oder durch Ziehen ein (oben/rechts = mehr); eine ausreichend nahe Schätzung zählt, dann auf Prüfen drücken",
+    "prompt": "Wie viele Gegenstände sind es ungefähr?",
+    "correct": "Super! Es waren {n} Gegenstände — deine Schätzung ist nah dran",
+    "wrong": "Noch nicht nah genug, versuch es noch einmal",
+    "tooHigh": "Zu hoch",
+    "tooLow": "Zu niedrig"
   }
 }

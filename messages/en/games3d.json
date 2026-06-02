@@ -403,5 +403,15 @@
     "item3": "flowers",
     "item4": "stickers",
     "item5": "cookies"
+  },
+  "estimationLand": {
+    "title": "Estimation Land",
+    "description": "Look at the field full of items and estimate roughly how many there are, using the group of 10 as a guide",
+    "instructions": "Use the group of 10 on the side as a guide; dial your estimate with − / + or by dragging (up/right = more); a close-enough estimate counts, then press Check",
+    "prompt": "About how many items are there?",
+    "correct": "Great! There were {n} items — your estimate is close",
+    "wrong": "Not close enough, try again",
+    "tooHigh": "Too high",
+    "tooLow": "Too low"
   }
 }

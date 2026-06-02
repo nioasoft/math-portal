@@ -403,5 +403,15 @@
     "item3": "flores",
     "item4": "pegatinas",
     "item5": "galletas"
+  },
+  "estimationLand": {
+    "title": "Tierra de la Estimación",
+    "description": "Mira el campo lleno de objetos y estima aproximadamente cuántos hay, usando el grupo de 10 como guía",
+    "instructions": "Usa el grupo de 10 del lado como guía; ajusta tu estimación con − / + o arrastrando (arriba/derecha = más); una estimación lo bastante cercana cuenta, luego pulsa Comprobar",
+    "prompt": "¿Cuántos objetos hay aproximadamente?",
+    "correct": "¡Genial! Había {n} objetos — tu estimación es cercana",
+    "wrong": "No es lo bastante cercano, inténtalo de nuevo",
+    "tooHigh": "Demasiado alto",
+    "tooLow": "Demasiado bajo"
   }
 }

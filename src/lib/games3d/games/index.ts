@@ -40,6 +40,7 @@ import { geoboardShapesGame } from './geoboard-shapes/GeoboardShapesGame';
 import { shapeSort3DGame } from './shape-sort-3d/ShapeSort3DGame';
 import { coordinatePlotGame } from './coordinate-plot/CoordinatePlotGame';
 import { wordProblemBarGame } from './word-problem-bar/WordProblemBarGame';
+import { estimationLandGame } from './estimation-land/EstimationLandGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -91,6 +92,7 @@ const games: Game3D[] = [
   shapeSort3DGame,
   coordinatePlotGame,
   wordProblemBarGame,
+  estimationLandGame,
 ];
 
 let registered = false;

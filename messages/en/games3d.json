@@ -20,7 +20,8 @@
     "arithmetic": "Arithmetic",
     "fractions": "Fractions",
     "geometry": "Geometry",
-    "units": "Measurement"
+    "units": "Measurement",
+    "percentage": "Percentages"
   },
   "controls": {
     "rows": "Rows",
@@ -45,7 +46,8 @@
     "length": "Length",
     "jump": "Jump",
     "forward": "Forward",
-    "back": "Back"
+    "back": "Back",
+    "percent": "Percent"
   },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
@@ -227,5 +229,13 @@
     "prompt": "Balance the fruit — {weight} g",
     "correct": "Great! You balanced exactly {weight} g",
     "wrong": "Almost! The beam is still tilted — check the total weight and fix it"
+  },
+  "percentBar": {
+    "title": "Percent Bar",
+    "description": "Fill the stadium stand to the right percent out of 100%",
+    "instructions": "Use the percent ±5% buttons, or drag up to add fans, to fill the stand to the right percent, then press Check",
+    "prompt": "Fill {percent}% of the stand",
+    "correct": "Great! You filled {percent}% of the stand",
+    "wrong": "Almost! Check the percent and fix the fill"
   }
 }

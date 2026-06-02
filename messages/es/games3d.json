@@ -20,7 +20,8 @@
     "arithmetic": "Aritmética",
     "fractions": "Fracciones",
     "geometry": "Geometría",
-    "units": "Medidas"
+    "units": "Medidas",
+    "percentage": "Porcentajes"
   },
   "controls": {
     "rows": "Filas",
@@ -45,7 +46,8 @@
     "length": "Largo",
     "jump": "Salto",
     "forward": "Adelante",
-    "back": "Atrás"
+    "back": "Atrás",
+    "percent": "Porcentaje"
   },
   "multiplicationArray": {
     "title": "Arreglos de multiplicación",
@@ -227,5 +229,13 @@
     "prompt": "Equilibra la fruta — {weight} g",
     "correct": "¡Genial! Equilibraste exactamente {weight} g",
     "wrong": "¡Casi! El brazo sigue inclinado: revisa el peso total y corrígelo"
+  },
+  "percentBar": {
+    "title": "Barra de porcentaje",
+    "description": "Llena la grada del estadio al porcentaje correcto de 100%",
+    "instructions": "Usa los botones de porcentaje ±5%, o arrastra hacia arriba para agregar aficionados, para llenar la grada al porcentaje correcto y luego pulsa Comprobar",
+    "prompt": "Llena el {percent}% de la grada",
+    "correct": "¡Genial! Llenaste el {percent}% de la grada",
+    "wrong": "¡Casi! Revisa el porcentaje y corrige el llenado"
   }
 }

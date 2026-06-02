@@ -20,7 +20,8 @@
     "arithmetic": "Arithmetik",
     "fractions": "Brüche",
     "geometry": "Geometrie",
-    "units": "Maßeinheiten"
+    "units": "Maßeinheiten",
+    "percentage": "Prozente"
   },
   "controls": {
     "rows": "Reihen",
@@ -45,7 +46,8 @@
     "length": "Länge",
     "jump": "Sprung",
     "forward": "Vorwärts",
-    "back": "Zurück"
+    "back": "Zurück",
+    "percent": "Prozent"
   },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
@@ -227,5 +229,13 @@
     "prompt": "Wiege die Frucht aus — {weight} g",
     "correct": "Super! Du hast genau {weight} g ausgewogen",
     "wrong": "Fast! Der Balken ist noch geneigt – prüfe das Gesamtgewicht und korrigiere es"
+  },
+  "percentBar": {
+    "title": "Prozentbalken",
+    "description": "Fülle die Stadiontribüne auf den richtigen Prozentsatz von 100%",
+    "instructions": "Nutze die Prozent-Tasten ±5% oder ziehe nach oben, um Fans hinzuzufügen, fülle die Tribüne auf den richtigen Prozentsatz und drücke dann Prüfen",
+    "prompt": "Fülle {percent}% der Tribüne",
+    "correct": "Super! Du hast {percent}% der Tribüne gefüllt",
+    "wrong": "Fast! Prüfe den Prozentsatz und korrigiere die Füllung"
   }
 }

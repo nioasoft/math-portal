@@ -22,6 +22,7 @@ import { factrisBlocksGame } from './factris-blocks/FactrisBlocksGame';
 import { subtractionBridgeGame } from './subtraction-bridge/SubtractionBridgeGame';
 import { skipCountTrackGame } from './skip-count-track/SkipCountTrackGame';
 import { weightBalanceGame } from './weight-balance/WeightBalanceGame';
+import { percentBarGame } from './percent-bar/PercentBarGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -55,6 +56,7 @@ const games: Game3D[] = [
   subtractionBridgeGame,
   skipCountTrackGame,
   weightBalanceGame,
+  percentBarGame,
 ];
 
 let registered = false;

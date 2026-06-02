@@ -344,5 +344,13 @@
     "prompt": "Vervollständige das Spiegelbild",
     "correct": "Toll! Das Spiegelbild ist vollständig.",
     "wrong": "Noch kein genaues Spiegelbild. Prüfe, welche Felder fehlen oder zu viel sind."
+  },
+  "hundredChart": {
+    "title": "Vielfachentafel",
+    "description": "Färbe alle Vielfachen einer vorgegebenen Zahl auf der Tafel von 1 bis 30 ein.",
+    "instructions": "Tippe ein Feld an, um es zu färben oder zu leeren, oder ziehe über die Felder, um mehrere hintereinander zu färben. Drücke zum Schluss auf Prüfen. Zurücksetzen leert die Tafel.",
+    "prompt": "Färbe alle Vielfachen von {n}",
+    "correct": "Gut gemacht! Du hast alle Vielfachen von {n} gefärbt.",
+    "wrong": "Noch nicht. Prüfe, welche Felder fehlen oder zu viel sind, und versuche es erneut."
   }
 }

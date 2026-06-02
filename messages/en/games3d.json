@@ -344,5 +344,13 @@
     "prompt": "Complete the mirror image",
     "correct": "Great! The mirror image is complete.",
     "wrong": "Not a perfect mirror yet. Check which cells are missing or extra."
+  },
+  "hundredChart": {
+    "title": "Multiples Chart",
+    "description": "Colour all the multiples of a given number on the chart of 1 to 30.",
+    "instructions": "Tap a tile to colour or clear it, or drag across the tiles to colour several in a row. When you're done, press Check. Reset clears the chart.",
+    "prompt": "Colour all the multiples of {n}",
+    "correct": "Well done! You coloured every multiple of {n}.",
+    "wrong": "Not yet. Check which tiles are missing or extra and try again."
   }
 }

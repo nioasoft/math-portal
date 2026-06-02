@@ -35,6 +35,7 @@ import { fractionSliceGame } from './fraction-slice/FractionSliceGame';
 import { patternCompleteGame } from './pattern-complete/PatternCompleteGame';
 import { netFoldGame } from './net-fold/NetFoldGame';
 import { symmetryMirrorGame } from './symmetry-mirror/SymmetryMirrorGame';
+import { hundredChartColourGame } from './hundred-chart-colour/HundredChartColourGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -81,6 +82,7 @@ const games: Game3D[] = [
   patternCompleteGame,
   netFoldGame,
   symmetryMirrorGame,
+  hundredChartColourGame,
 ];
 
 let registered = false;

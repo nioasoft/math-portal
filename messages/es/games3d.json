@@ -344,5 +344,13 @@
     "prompt": "Completa la imagen espejo",
     "correct": "¡Genial! La imagen espejo está completa.",
     "wrong": "Aún no es un espejo exacto. Revisa qué casillas faltan o sobran."
+  },
+  "hundredChart": {
+    "title": "Tabla de múltiplos",
+    "description": "Colorea todos los múltiplos de un número dado en la tabla del 1 al 30.",
+    "instructions": "Toca una casilla para colorearla o borrarla, o arrastra sobre las casillas para colorear varias seguidas. Cuando termines, pulsa Comprobar. Reiniciar borra la tabla.",
+    "prompt": "Colorea todos los múltiplos de {n}",
+    "correct": "¡Muy bien! Coloreaste todos los múltiplos de {n}.",
+    "wrong": "Todavía no. Mira qué casillas faltan o sobran e inténtalo otra vez."
   }
 }

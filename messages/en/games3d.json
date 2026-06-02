@@ -53,7 +53,8 @@
     "juiceA": "Juice A",
     "juiceB": "Juice B",
     "value": "Value",
-    "angle": "Angle"
+    "angle": "Angle",
+    "perChest": "Per chest"
   },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
@@ -275,5 +276,13 @@
     "prompt": "Build a {angle}° angle",
     "correct": "Nice! You built a {angle}° angle.",
     "wrong": "Not yet. Rotate the beam to the target angle and try again."
+  },
+  "divisionShare": {
+    "title": "Fair Share",
+    "description": "Share the coins equally among the chests; whatever is left goes in the pouch",
+    "instructions": "Use the − / + buttons to put the same number of coins in every chest (or drag up). Share as many as you can equally; leftovers go in the pouch. Then press Check",
+    "prompt": "Share {total} coins equally among {k} chests",
+    "correct": "Well done! {perChest} in each chest, with {remainder} left in the pouch",
+    "wrong": "You can share more equally — try again"
   }
 }

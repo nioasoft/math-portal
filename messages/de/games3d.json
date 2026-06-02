@@ -53,7 +53,8 @@
     "juiceA": "Saft A",
     "juiceB": "Saft B",
     "value": "Wert",
-    "angle": "Winkel"
+    "angle": "Winkel",
+    "perChest": "Pro Truhe"
   },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
@@ -275,5 +276,13 @@
     "prompt": "Baue einen Winkel von {angle}°",
     "correct": "Super! Du hast einen {angle}°-Winkel gebaut.",
     "wrong": "Noch nicht. Drehe den Strahl zum gesuchten Winkel und versuche es erneut."
+  },
+  "divisionShare": {
+    "title": "Gerecht teilen",
+    "description": "Verteile die Münzen gleichmäßig auf die Truhen; der Rest kommt in den Beutel",
+    "instructions": "Lege mit den − / + Tasten dieselbe Anzahl Münzen in jede Truhe (oder ziehe nach oben). Teile so viel wie möglich gleichmäßig auf; der Rest kommt in den Beutel. Dann auf Prüfen tippen",
+    "prompt": "Teile {total} Münzen gleichmäßig auf {k} Truhen",
+    "correct": "Gut gemacht! {perChest} in jeder Truhe, und {remainder} bleiben im Beutel",
+    "wrong": "Du kannst mehr gleichmäßig verteilen — versuch es noch einmal"
   }
 }

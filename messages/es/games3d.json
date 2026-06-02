@@ -53,7 +53,8 @@
     "juiceA": "Zumo A",
     "juiceB": "Zumo B",
     "value": "Valor",
-    "angle": "Ángulo"
+    "angle": "Ángulo",
+    "perChest": "Por cofre"
   },
   "multiplicationArray": {
     "title": "Arreglos de multiplicación",
@@ -275,5 +276,13 @@
     "prompt": "Construye un ángulo de {angle}°",
     "correct": "¡Muy bien! Construiste un ángulo de {angle}°.",
     "wrong": "Todavía no. Gira el rayo hasta el ángulo objetivo e inténtalo de nuevo."
+  },
+  "divisionShare": {
+    "title": "Reparto justo",
+    "description": "Reparte las monedas por igual entre los cofres; lo que sobra va a la bolsa",
+    "instructions": "Usa los botones − / + para poner la misma cantidad de monedas en cada cofre (o arrastra hacia arriba). Reparte todo lo que puedas por igual; lo que sobra va a la bolsa. Luego pulsa Comprobar",
+    "prompt": "Reparte {total} monedas por igual entre {k} cofres",
+    "correct": "¡Bien hecho! {perChest} en cada cofre, y {remainder} quedan en la bolsa",
+    "wrong": "Puedes repartir más por igual — inténtalo de nuevo"
   }
 }

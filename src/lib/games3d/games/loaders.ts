@@ -64,6 +64,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     })),
   'angle-builder': () =>
     import('./angle-builder/AngleBuilderGame').then((m) => ({ default: m.angleBuilderGame })),
+  'division-share': () =>
+    import('./division-share/DivisionShareGame').then((m) => ({ default: m.divisionShareGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

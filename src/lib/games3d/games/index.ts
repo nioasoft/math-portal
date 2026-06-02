@@ -27,6 +27,7 @@ import { ratioMixerGame } from './ratio-mixer/RatioMixerGame';
 import { numberSequenceGame } from './number-sequence/NumberSequenceGame';
 import { fractionStripCompareGame } from './fraction-strip-compare/FractionStripCompareGame';
 import { angleBuilderGame } from './angle-builder/AngleBuilderGame';
+import { divisionShareGame } from './division-share/DivisionShareGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -65,6 +66,7 @@ const games: Game3D[] = [
   numberSequenceGame,
   fractionStripCompareGame,
   angleBuilderGame,
+  divisionShareGame,
 ];
 
 let registered = false;

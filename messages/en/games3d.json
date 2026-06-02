@@ -124,5 +124,13 @@
     "prompt": "Pay ₪{amount}",
     "correct": "Great! You paid exactly ₪{amount}",
     "wrong": "Almost! Check the amount on the tray and fix it"
+  },
+  "additionMine": {
+    "title": "Addition Mine",
+    "description": "Build the sum of the addition from ore crystals in an underground mine",
+    "instructions": "Build the sum using each digit's − / + buttons (hundreds, tens, ones), or drag up over a column to add a crystal. When a column fills past 9, an ore cart rides the rail to carry the group to the next place. Press Check to check",
+    "prompt": "Add: {a} + {b}",
+    "correct": "Great! The correct sum is {total}",
+    "wrong": "Almost! Check the digits and fix the sum"
   }
 }

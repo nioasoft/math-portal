@@ -124,5 +124,13 @@
     "prompt": "Paga ₪{amount}",
     "correct": "¡Genial! Pagaste exactamente ₪{amount}",
     "wrong": "¡Casi! Revisa la cantidad en la bandeja y corrígela"
+  },
+  "additionMine": {
+    "title": "Mina de Sumas",
+    "description": "Construye la suma a partir de cristales de mineral en una mina subterránea",
+    "instructions": "Construye la suma usando los botones − / + de cada cifra (centenas, decenas, unidades), o arrastra hacia arriba sobre una columna para añadir un cristal. Cuando una columna se llena más allá de 9, una vagoneta de mineral recorre el riel para llevar el grupo a la siguiente posición. Pulsa Comprobar para comprobar",
+    "prompt": "Suma: {a} + {b}",
+    "correct": "¡Genial! La suma correcta es {total}",
+    "wrong": "¡Casi! Revisa las cifras y corrige la suma"
   }
 }

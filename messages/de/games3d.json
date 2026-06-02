@@ -124,5 +124,13 @@
     "prompt": "Zahle ₪{amount}",
     "correct": "Toll! Du hast genau ₪{amount} bezahlt",
     "wrong": "Fast! Prüfe den Betrag auf dem Tablett und korrigiere ihn"
+  },
+  "additionMine": {
+    "title": "Additions-Mine",
+    "description": "Baue die Summe der Addition aus Erzkristallen in einer unterirdischen Mine",
+    "instructions": "Baue die Summe mit den − / + Tasten jeder Stelle (Hunderter, Zehner, Einer) oder ziehe über einer Spalte nach oben, um einen Kristall hinzuzufügen. Wenn eine Spalte über 9 voll wird, fährt ein Erzwagen auf der Schiene und bringt das Bündel zur nächsten Stelle. Drücke Prüfen zum Prüfen",
+    "prompt": "Addiere: {a} + {b}",
+    "correct": "Toll! Die richtige Summe ist {total}",
+    "wrong": "Fast! Prüfe die Ziffern und korrigiere die Summe"
   }
 }

@@ -10,6 +10,7 @@ import { clockBuilderGame } from './clock-builder/ClockBuilderGame';
 import { fractionNumberLineGame } from './fraction-number-line/FractionNumberLineGame';
 import { algebraBalanceGame } from './algebra-balance/AlgebraBalanceGame';
 import { moneyShopGame } from './money-shop/MoneyShopGame';
+import { additionMineGame } from './addition-mine/AdditionMineGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -31,6 +32,7 @@ const games: Game3D[] = [
   fractionNumberLineGame,
   algebraBalanceGame,
   moneyShopGame,
+  additionMineGame,
 ];
 
 let registered = false;

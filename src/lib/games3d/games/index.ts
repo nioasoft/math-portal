@@ -6,6 +6,7 @@ import { fractionBuildGame } from './fraction-build/FractionBuildGame';
 import { areaPerimeterGame } from './area-perimeter/AreaPerimeterGame';
 import { tenFrameFillGame } from './ten-frame-fill/TenFrameFillGame';
 import { placeValueBuilderGame } from './place-value-builder/PlaceValueBuilderGame';
+import { clockBuilderGame } from './clock-builder/ClockBuilderGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -23,6 +24,7 @@ const games: Game3D[] = [
   areaPerimeterGame,
   tenFrameFillGame,
   placeValueBuilderGame,
+  clockBuilderGame,
 ];
 
 let registered = false;

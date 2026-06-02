@@ -32,7 +32,9 @@
     "marbles": "Murmeln",
     "hundreds": "Hunderter",
     "tens": "Zehner",
-    "ones": "Einer"
+    "ones": "Einer",
+    "hour": "Stunde",
+    "minute": "Minute"
   },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
@@ -82,6 +84,14 @@
     "prompt": "Baue die Zahl {target}",
     "correct": "Super! Du hast {target} gebaut",
     "wrong": "Fast! Prüfe die Ziffern und korrigiere die Zahl"
+  },
+  "clockBuilder": {
+    "title": "Uhrzeit-Baumeister",
+    "description": "Stelle die Zeiger der Uhr passend zur digitalen Uhrzeit",
+    "instructions": "Ziehe den Minutenzeiger um die Uhr (der Stundenzeiger folgt proportional) oder nutze die Tasten Stunde ±1 und Minute ±5, dann drücke Prüfen",
+    "prompt": "Stelle die Uhr auf {time}",
+    "correct": "Super! Du hast die Uhr auf {time} gestellt",
+    "wrong": "Fast! Prüfe die Stunde und die Minuten und korrigiere"
   },
   "canary": {
     "title": "Tippe auf den Würfel",

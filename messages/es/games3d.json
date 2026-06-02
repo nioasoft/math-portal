@@ -32,7 +32,9 @@
     "marbles": "Canicas",
     "hundreds": "Centenas",
     "tens": "Decenas",
-    "ones": "Unidades"
+    "ones": "Unidades",
+    "hour": "Hora",
+    "minute": "Minuto"
   },
   "multiplicationArray": {
     "title": "Arreglos de multiplicación",
@@ -82,6 +84,14 @@
     "prompt": "Construye el número {target}",
     "correct": "¡Genial! Construiste {target}",
     "wrong": "¡Casi! Revisa los dígitos y corrige el número"
+  },
+  "clockBuilder": {
+    "title": "Constructor de la hora",
+    "description": "Coloca las manecillas del reloj para que coincidan con la hora digital",
+    "instructions": "Arrastra el minutero alrededor del reloj (la manecilla de la hora lo sigue proporcionalmente), o usa los botones hora ±1 y minuto ±5, luego pulsa Comprobar",
+    "prompt": "Pon el reloj en {time}",
+    "correct": "¡Genial! Pusiste el reloj en {time}",
+    "wrong": "¡Casi! Revisa la hora y los minutos y corrige"
   },
   "canary": {
     "title": "Toca el cubo",

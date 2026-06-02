@@ -32,7 +32,9 @@
     "marbles": "Marbles",
     "hundreds": "Hundreds",
     "tens": "Tens",
-    "ones": "Ones"
+    "ones": "Ones",
+    "hour": "Hour",
+    "minute": "Minute"
   },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
@@ -82,6 +84,14 @@
     "prompt": "Build the number {target}",
     "correct": "Great! You built {target}",
     "wrong": "Almost! Check the digits and fix the number"
+  },
+  "clockBuilder": {
+    "title": "Clock Time Builder",
+    "description": "Set the clock hands to match a digital time",
+    "instructions": "Drag the minute hand around the clock (the hour hand follows proportionally), or use the hour ±1 and minute ±5 buttons, then press Check",
+    "prompt": "Set the clock to {time}",
+    "correct": "Great! You set the clock to {time}",
+    "wrong": "Almost! Check the hour and the minutes and fix it"
   },
   "canary": {
     "title": "Tap the Cube",

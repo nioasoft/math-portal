@@ -219,5 +219,13 @@
     "prompt": "Markiere jeden {step}er-Sprung bis {target}",
     "correct": "Super! Du hast in {step}er-Schritten bis {target} gezählt",
     "wrong": "Fast! Markiere genau jeden Sprung — keinen weglassen und keinen zu viel"
+  },
+  "weightBalance": {
+    "title": "Waage",
+    "description": "Bringe die Frucht mit Grammgewichten an einem Marktstand ins Gleichgewicht",
+    "instructions": "Lege mit den − / + Tasten Grammgewichte auf die rechte Schale (1 g, 10 g, 100 g) oder ziehe nach oben, um ein 10-g-Gewicht hinzuzufügen, bis der Balken waagerecht ist. Drücke dann Prüfen",
+    "prompt": "Wiege die Frucht aus — {weight} g",
+    "correct": "Super! Du hast genau {weight} g ausgewogen",
+    "wrong": "Fast! Der Balken ist noch geneigt – prüfe das Gesamtgewicht und korrigiere es"
   }
 }

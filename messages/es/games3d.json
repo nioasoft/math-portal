@@ -219,5 +219,13 @@
     "prompt": "Marca cada salto de {step} hasta {target}",
     "correct": "¡Genial! Contaste de {step} en {step} hasta {target}",
     "wrong": "¡Casi! Marca exactamente cada salto — sin que falte ni sobre ninguno"
+  },
+  "weightBalance": {
+    "title": "Balanza",
+    "description": "Equilibra la fruta usando pesas de gramos en un puesto del mercado",
+    "instructions": "Añade pesas de gramos al platillo derecho con los botones − / + (1 g, 10 g, 100 g), o arrastra hacia arriba para añadir una pesa de 10 g, hasta que el brazo quede nivelado. Luego pulsa Comprobar",
+    "prompt": "Equilibra la fruta — {weight} g",
+    "correct": "¡Genial! Equilibraste exactamente {weight} g",
+    "wrong": "¡Casi! El brazo sigue inclinado: revisa el peso total y corrígelo"
   }
 }

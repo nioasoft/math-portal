@@ -50,6 +50,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./subtraction-bridge/SubtractionBridgeGame').then((m) => ({ default: m.subtractionBridgeGame })),
   'skip-count-track': () =>
     import('./skip-count-track/SkipCountTrackGame').then((m) => ({ default: m.skipCountTrackGame })),
+  'weight-balance': () =>
+    import('./weight-balance/WeightBalanceGame').then((m) => ({ default: m.weightBalanceGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

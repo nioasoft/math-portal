@@ -21,6 +21,7 @@ import { balanceScaleEquationsGame } from './balance-scale-equations/BalanceScal
 import { factrisBlocksGame } from './factris-blocks/FactrisBlocksGame';
 import { subtractionBridgeGame } from './subtraction-bridge/SubtractionBridgeGame';
 import { skipCountTrackGame } from './skip-count-track/SkipCountTrackGame';
+import { weightBalanceGame } from './weight-balance/WeightBalanceGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -53,6 +54,7 @@ const games: Game3D[] = [
   factrisBlocksGame,
   subtractionBridgeGame,
   skipCountTrackGame,
+  weightBalanceGame,
 ];
 
 let registered = false;

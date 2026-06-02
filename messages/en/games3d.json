@@ -219,5 +219,13 @@
     "prompt": "Mark every {step}-skip up to {target}",
     "correct": "Great! You skip-counted by {step} up to {target}",
     "wrong": "Almost! Mark exactly every skip — none missing and none extra"
+  },
+  "weightBalance": {
+    "title": "Weighing Scale",
+    "description": "Balance the fruit using gram weights at a market stall",
+    "instructions": "Add gram weights to the right pan with the − / + buttons (1 g, 10 g, 100 g), or drag up to add a 10 g weight, until the beam is level. Then press Check",
+    "prompt": "Balance the fruit — {weight} g",
+    "correct": "Great! You balanced exactly {weight} g",
+    "wrong": "Almost! The beam is still tilted — check the total weight and fix it"
   }
 }

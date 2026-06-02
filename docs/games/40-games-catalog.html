@@ -1,0 +1,356 @@
+<!doctype html>
+<html dir="rtl" lang="he">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>תרגול · קטלוג 40 משחקי לימוד תלת-ממד</title>
+<style>
+  :root{
+    --bg:#fbf3e4; --bg2:#f6e6c9; --ink:#3b2f23; --muted:#8a7a64;
+    --card:#fffdf8; --line:#e7d8bd; --shadow:0 6px 18px rgba(120,90,40,.10);
+    --coral:#e2563f; --sun:#e8a838; --mint:#5e9b54; --sky:#3f7fd6; --grape:#8a5bc0;
+    --high:#2e8b57; --med:#c08a2e; --low:#9a8f7d;
+    --chip:#fff;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:linear-gradient(180deg,#cfe8ff 0%, var(--bg) 22%, var(--bg) 100%);
+    color:var(--ink);
+    font-family:"Assistant","Heebo",-apple-system,"Segoe UI",system-ui,sans-serif;
+    line-height:1.55; padding-bottom:4rem;
+  }
+  .wrap{max-width:1160px;margin:0 auto;padding:0 1.1rem}
+  header.hero{padding:2.4rem 0 1.4rem;text-align:center}
+  .kick{display:inline-block;font-weight:700;font-size:.8rem;letter-spacing:.04em;color:#fff;background:var(--coral);padding:.25rem .8rem;border-radius:999px}
+  h1{font-size:2.3rem;margin:.5rem 0 .3rem;font-weight:800;letter-spacing:-.01em}
+  .sub{color:var(--muted);max-width:720px;margin:.2rem auto;font-size:1.05rem}
+  .stats{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin:1.3rem 0 .4rem}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.55rem 1rem;box-shadow:var(--shadow)}
+  .stat b{display:block;font-size:1.5rem;font-weight:800;line-height:1}
+  .stat span{font-size:.78rem;color:var(--muted)}
+
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.2rem 1.3rem;box-shadow:var(--shadow);margin:1.3rem 0}
+  .panel h2{margin:.1rem 0 .7rem;font-size:1.25rem}
+  .panel p{margin:.3rem 0;color:#524534}
+  .arch{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.7rem;margin-top:.6rem}
+  .arch div{background:var(--bg);border:1px dashed var(--line);border-radius:12px;padding:.7rem .85rem;font-size:.92rem}
+  .arch b{color:var(--coral)}
+  code{background:#f0e7d4;border-radius:6px;padding:.05rem .35rem;font-size:.85em;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;direction:ltr;display:inline-block}
+
+  h2.section{font-size:1.45rem;margin:2rem 0 .3rem}
+  .lead{color:var(--muted);margin:.1rem 0 1rem}
+
+  /* done strip */
+  .done-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.7rem}
+  .done{background:#eef7ee;border:1px solid #cfe6cf;border-radius:14px;padding:.8rem .9rem}
+  .done .he{font-weight:800}
+  .done .en{color:var(--muted);font-size:.82rem}
+  .done .tag{display:inline-block;margin-top:.4rem;font-size:.72rem;background:#2e8b57;color:#fff;padding:.12rem .5rem;border-radius:999px}
+
+  /* next-5 */
+  .next-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:.8rem;counter-reset:n}
+  .next{position:relative;background:linear-gradient(180deg,#fff8ec,#fff);border:1px solid var(--line);border-radius:16px;padding:1rem .95rem .9rem;box-shadow:var(--shadow)}
+  .next::before{counter-increment:n;content:counter(n);position:absolute;inset-inline-start:-.5rem;top:-.6rem;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--coral);color:#fff;font-weight:800;display:grid;place-items:center;box-shadow:var(--shadow)}
+  .next .he{font-weight:800;font-size:1.05rem}
+  .next .en{color:var(--muted);font-size:.8rem;margin-bottom:.35rem}
+  .next .why{font-size:.9rem;color:#524534}
+
+  /* filters */
+  .filters{position:sticky;top:0;z-index:5;background:rgba(251,243,228,.92);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:16px;padding:.7rem .8rem;margin:1rem 0 1.2rem;box-shadow:var(--shadow)}
+  .filters .row{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
+  .filters .row + .row{margin-top:.5rem}
+  .flabel{font-size:.78rem;color:var(--muted);font-weight:700;margin-inline-end:.3rem}
+  .chip{cursor:pointer;border:1px solid var(--line);background:var(--chip);border-radius:999px;padding:.28rem .7rem;font-size:.82rem;color:#524534;user-select:none}
+  .chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .chip.p-high.active{background:var(--high);border-color:var(--high)}
+  .chip.p-med.active{background:var(--med);border-color:var(--med)}
+  .chip.p-low.active{background:var(--low);border-color:var(--low)}
+  #search{flex:1;min-width:160px;border:1px solid var(--line);border-radius:999px;padding:.34rem .9rem;font:inherit;background:#fff}
+  .count{font-size:.8rem;color:var(--muted)}
+
+  /* cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:.9rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1rem;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.45rem}
+  .card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem}
+  .card .he{font-weight:800;font-size:1.12rem;line-height:1.15}
+  .card .en{color:var(--muted);font-size:.8rem;direction:ltr;text-align:right}
+  .card .pri{flex-shrink:0;font-size:.68rem;font-weight:800;color:#fff;padding:.12rem .5rem;border-radius:999px}
+  .pri.high{background:var(--high)} .pri.med{background:var(--med)} .pri.low{background:var(--low)}
+  .meta{display:flex;flex-wrap:wrap;gap:.35rem}
+  .badge{font-size:.72rem;border-radius:999px;padding:.12rem .55rem;border:1px solid var(--line);background:var(--bg)}
+  .badge.topic{background:#efe7fb;border-color:#e0d2f6;color:#6a44a8}
+  .badge.grade{background:#e7f1fc;border-color:#d3e4f7;color:#2f6bbf}
+  .row2{font-size:.9rem}
+  .row2 b{color:#6a5a45}
+  .card .ins{margin-top:.2rem;font-size:.78rem}
+  .card .ins a{color:var(--sky);text-decoration:none}
+  .card .ins a:hover{text-decoration:underline}
+  .id{direction:ltr;font-family:ui-monospace,Menlo,monospace;font-size:.72rem;color:#b3a punkt}
+
+  table.cover{width:100%;border-collapse:collapse;font-size:.9rem}
+  table.cover td{border-bottom:1px solid var(--line);padding:.45rem .3rem;vertical-align:top}
+  table.cover td:first-child{font-weight:700;white-space:nowrap;color:#6a5a45;width:1%}
+  table.cover code{font-size:.78em}
+
+  details.refs{margin:1.4rem 0}
+  details.refs summary{cursor:pointer;font-weight:700;font-size:1.05rem}
+  details.refs ol{columns:2;column-gap:2rem;font-size:.82rem;color:#524534;margin-top:.7rem}
+  details.refs a{color:var(--sky)}
+  @media(max-width:640px){details.refs ol{columns:1}}
+  footer{text-align:center;color:var(--muted);font-size:.82rem;margin-top:2rem}
+  .note{font-size:.85rem;color:var(--muted);margin-top:.4rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <span class="kick">תוכנית · גרסה 1</span>
+    <h1>קטלוג 40 משחקי לימוד תלת-ממד</h1>
+    <p class="sub">הרחבה של מערך המשחקים ב-tirgul.net לכיתות א'–ו', בנויה על אותה תשתית (GameKit + registry) — כל משחק חדש = מודול + i18n + שורת רישום, פרוצדורלי, 60fps במובייל, מתורגם ל-6 שפות.</p>
+    <div class="stats">
+      <div class="stat"><b>40</b><span>קונספטים חדשים</span></div>
+      <div class="stat"><b>4</b><span>כבר נבנו</span></div>
+      <div class="stat"><b>א'–ו'</b><span>טווח כיתות</span></div>
+      <div class="stat"><b>18</b><span>נושאי לימוד</span></div>
+      <div class="stat"><b>43</b><span>מקורות מחקר</span></div>
+    </div>
+  </header>
+
+  <section class="panel">
+    <h2>איך זה נבנה — ולמה זה ניתן להרחבה</h2>
+    <p>הקטלוג מבוסס מחקר של מניפולטיבים ומשחקי לימוד מוכחים (Mathigon Polypad, DragonBox, Slice Fractions, Motion Math, Math Learning Center, NCTM Illuminations, Toy Theater ועוד). כל קונספט נבחר כך ש<b>התלת-ממד/המניפולציה באמת תורמים</b> להבנה, וכך שאפשר לממש אותו על ה-GameKit הקיים.</p>
+    <div class="arch">
+      <div><b>מכניקה אחידה</b> — גרירה + כפתורי −/+ + "בדוק"/"נקה", פרומפט קבוע + הסבר קצר.</div>
+      <div><b>ויזואל אחיד</b> — מראה חימר, צללים רכים, תמה אמיתית לכל משחק (מאזניים, שעון, מטבעות…).</div>
+      <div><b>תגמול אחיד</b> — כוכבים, רצף, התקדמות, קונפטי בהצלחה.</div>
+      <div><b>הוספה זולה</b> — משחק חדש: תיקיה + 2 שורות ב-<code>loaders.ts</code>/<code>catalog.ts</code> + i18n. אפס routes חדשים.</div>
+    </div>
+    <p class="note">הסימון <span style="color:var(--high);font-weight:700">●</span> עדיפות גבוהה · <span style="color:var(--med);font-weight:700">●</span> בינונית · <span style="color:var(--low);font-weight:700">●</span> נמוכה — לתיעדוף הבאטצ'ים הבאים.</p>
+  </section>
+
+  <h2 class="section">כבר נבנה (4)</h2>
+  <p class="lead">הבסיס שעליו נשען הקטלוג — כיתות ג'–ד', practice + quiz, מעוצבים ומאומתים.</p>
+  <div class="done-grid">
+    <div class="done"><div class="he">מערכי כפל 🍫</div><div class="en">multiplication-array</div><div>בניית מערך קוביות שוקולד</div><span class="tag">הושלם</span></div>
+    <div class="done"><div class="he">מילוי מיכל 🧃</div><div class="en">measure-fill</div><div>מילוי כוס מיץ לנפח מבוקש</div><span class="tag">הושלם</span></div>
+    <div class="done"><div class="he">בונה שברים 🍕</div><div class="en">fraction-build</div><div>מילוי פרוסות פיצה לשבר</div><span class="tag">הושלם</span></div>
+    <div class="done"><div class="he">שטח והיקף 🌱</div><div class="en">area-perimeter</div><div>בניית ערוגה לשטח/היקף</div><span class="tag">הושלם</span></div>
+  </div>
+
+  <h2 class="section">הבאטצ' הבא המומלץ (5)</h2>
+  <p class="lead">סדר בנייה מומלץ — מכסה את הכיתות שעוד לא מטופלות (א'–ב', ה'–ו') ונושאים בלי חפיפה לקיים.</p>
+  <div class="next-grid">
+    <div class="next"><div class="he">בונה ערך מיקום</div><div class="en">place-value-builder · ג'–ד'</div><div class="why">עמוד השדרה של החשבון; פותח גם את "מכרה החיבור" ו"גשר החיסור". מכניקת DragonBox מוכחת.</div></div>
+    <div class="next"><div class="he">מסגרת העשר</div><div class="en">ten-frame-fill · א'–ב'</div><div class="why">מכסה את כיתה א' שעוד לא נתמכת. מהמניפולטיבים המבוססים בעולם, פשוט למימוש (~150 שורות).</div></div>
+    <div class="next"><div class="he">בונה שעון</div><div class="en">clock-builder · ב'–ג'</div><div class="why">נושא עצמאי (זמן), אפס חפיפה. שעון אנלוגי תלת-ממדי = ראווה ש-2D לא נותן.</div></div>
+    <div class="next"><div class="he">שברים על ציר</div><div class="en">fraction-number-line · ג'–ד'</div><div class="why">דרישת תכנית-לימודים שה"בונה שברים" (עוגה) לא מכסה; ייצוג שני לשברים.</div></div>
+    <div class="next"><div class="he">מאזני אלגברה</div><div class="en">algebra-balance · ה'–ו'</div><div class="why">מטרה לכיתה ו' (אין משחק קיים). רגע 3D מרהיב, גשר מחשבון לאלגברה.</div></div>
+  </div>
+
+  <h2 class="section">כל 40 המשחקים</h2>
+  <div class="filters">
+    <div class="row">
+      <span class="flabel">נושא</span>
+      <span id="topicChips"></span>
+    </div>
+    <div class="row">
+      <span class="flabel">כיתה</span>
+      <span id="gradeChips"></span>
+      <span class="flabel" style="margin-inline-start:.6rem">עדיפות</span>
+      <span class="chip p-high" data-pri="high">גבוהה</span>
+      <span class="chip p-med" data-pri="med">בינונית</span>
+      <span class="chip p-low" data-pri="low">נמוכה</span>
+    </div>
+    <div class="row">
+      <input id="search" type="search" placeholder="חיפוש לפי שם / מכניקה / נושא…" />
+      <span class="count" id="count"></span>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+
+  <h2 class="section">כיסוי נושאים</h2>
+  <div class="panel" style="margin-top:.4rem">
+    <table class="cover" id="coverTable"></table>
+  </div>
+
+  <details class="refs">
+    <summary>מקורות מחקר (43)</summary>
+    <ol id="refs"></ol>
+  </details>
+
+  <footer>
+    תוכנית מבוססת-מחקר · נבנית על תשתית ה-GameKit/registry של tirgul.net · מסמך זה הוא נקודת פתיחה לדיון ותיעדוף.
+  </footer>
+</div>
+
+<script>
+const GAMES = [
+ {id:"ten-frame-fill",he:"מסגרת העשר",en:"Ten Frame Fill",topic:"תחושת מספר",g:[1,2],pri:"high",mech:"מוסיפים/מורידים כדורים למסגרת 5×2 עם +/− עד למספר המבוקש",theme:"לוח יתדות עם גולות",teaches:"תפיסת כמות, קיבוץ ב-5 וב-10 עד 20",ins:"Math Learning Center · Number Frames",url:"https://www.mathlearningcenter.org/apps/number-frames"},
+ {id:"number-bond-split",he:"פירוק למספרים",en:"Number Bond Splitter",topic:"חיבור וחיסור",g:[1,2],pri:"high",mech:"מפרקים מספר-מטרה לשני חלקים עם +/−; גשר נדלק כשהסכום נכון",theme:"אבני אבן מרחפות עם גשרי קריסטל",teaches:"פירוק והרכבה של מספרים, יחס חלק-שלם",ins:"Khan Academy Kids",url:"https://www.khanacademy.org/kids/math"},
+ {id:"place-value-builder",he:"בונה ערך מיקום",en:"Place Value Builder",topic:"ערך מיקום",g:[2,4],pri:"high",mech:"בונים מספר עם +/− לכל ספרה מקוביות בסיס-עשר; אנימציית נשיאה",theme:"מחסן עם ארגזים בשלושה גדלים",teaches:"קריאת/כתיבת מספרים רב-ספרתיים, המרה, ערך מיקום",ins:"DragonBox Big Numbers · Exploding Dots",url:"https://dragonbox.com/products/big-numbers"},
+ {id:"number-line-jump",he:"קפיצות על ציר המספרים",en:"Number Line Jump",topic:"חיבור וחיסור",g:[1,4],pri:"high",mech:"קופצים קדימה/אחורה על ציר; קובעים גודל קפיצה ב-+/− ובודקים על היעד",theme:"מסלול מרוץ עם קילומטראז'",teaches:"אסטרטגיות ציר-פתוח, חיבור/חיסור בקפיצות, גודל מספר",ins:"Motion Math Zoom · Toy Theater",url:"https://toytheater.com/bug-catcher/"},
+ {id:"exploding-dots",he:"נקודות מתפוצצות",en:"Exploding Dots",topic:"ערך מיקום",g:[2,3],pri:"high",mech:"מוסיפים נקודות לתיבת האחדות; 10 נקודות 'מתפוצצות' לתיבה הבאה",theme:"נקודות ניאון בתיבות זוהרות, מעבדה",teaches:"ערך מיקום, נשיאה, איך עובדת שיטת הספירה",ins:"Exploding Dots · James Tanton",url:"https://www.explodingdots.org/"},
+ {id:"balance-scale-equations",he:"מאזניים",en:"Balance Scale",topic:"חיבור וחיסור",g:[2,5],pri:"high",mech:"מאזנים קורת-שיווי; מוסיפים/מורידים קוביות ממוספרות עד איזון",theme:"מאזני פליז בחנות שיקויים",teaches:"שוויון, מציאת נעלם, מושג השקילות",ins:"NCTM Illuminations · Balance Scales",url:"https://illuminations.nctm.org/"},
+ {id:"skip-count-track",he:"ריצת ספירת דילוגים",en:"Skip Count Race",topic:"כפל וחילוק",g:[2,3],pri:"med",mech:"בוחרים צעד (2/5/10) ולוחצים על האריחים בסדר הנכון לקדם חיה",theme:"מסלול ספארי, חיות חימר",teaches:"ספירת דילוגים ב-2/5/10, בסיס לכפל",ins:"SplashLearn",url:"https://www.splashlearn.com/math/skip-counting-games"},
+ {id:"factris-blocks",he:"פקטריס",en:"Factris",topic:"כפל וחילוק",g:[3,5],pri:"high",mech:"מלבנים נופלים; משנים ממדים (שטח קבוע) עם +/− כדי לארוז שורות",theme:"מחסן קוביות צבעוני",teaches:"זוגות גורמים, התחלקות, שטח כ-כפל",ins:"Mathigon Factris",url:"https://mathigon.org/factris"},
+ {id:"array-multiply-slice",he:"פורס המערכים",en:"Array Slicer",topic:"כפל וחילוק",g:[3,4],pri:"med",mech:"גוררים מישור-חיתוך לחתוך מערך נקודות לתת-מלבן בגודל מכפלה מבוקשת",theme:"קרטון ביצים / חטיף שוקולד",teaches:"כפל כקבוצות שוות/מערכים, חילוק הפוך",ins:"ST Math",url:"https://2024.stmath.com"},
+ {id:"fraction-number-line",he:"שברים על ציר",en:"Fraction Number Line",topic:"שברים",g:[3,4],pri:"high",mech:"גוררים מחווני מונה/מכנה; הציר מתחלק חי; בודקים על שבר-המטרה",theme:"סרט/מטר-בד מרחף",teaches:"שברים כמספרים, סדר שברים, שברים שווים על ציר",ins:"Motion Math Fractions!",url:"https://www.commonsensemedia.org/app-reviews/motion-math-fractions"},
+ {id:"fraction-strip-compare",he:"סרגלי שברים",en:"Fraction Strips",topic:"שברים",g:[3,4],pri:"med",mech:"לכל סרגל קובעים מכנה (מחלק) ומונה (צובע); מד נטייה מראה מי גדול",theme:"מנסרה / מסור עץ",teaches:"השוואת וסידור שברים, שברים שווים",ins:"Mathigon Polypad",url:"https://mathigon.org/polypad"},
+ {id:"fraction-slice",he:"חיתוך שברים",en:"Fraction Slice",topic:"שברים",g:[2,4],pri:"med",mech:"ממקמים קו-חיתוך וחותכים בלוק; החתיכה צריכה להתאים לשבר",theme:"מערת קרח, ממותה",teaches:"חלק-שלם, מונה/מכנה, חלקים שווים",ins:"Slice Fractions",url:"https://playmath.org/games/mm-slice-fractions"},
+ {id:"volume-cube-fill",he:"בונה נפח",en:"Volume Builder",topic:"גאומטריה ונפח",g:[4,6],pri:"high",mech:"ממלאים מנסרה בקוביות יחידה שכבה-שכבה; יעדי L×W×H",theme:"אקווריום זכוכית עם קוביות זוהרות",teaches:"נפח = אורך×רוחב×גובה, ספירת קוביות, חשיבה מרחבית",ins:"Polypad 3D · SplashLearn Volume",url:"https://www.splashlearn.com/s/math-games/introduction-to-volume"},
+ {id:"net-fold",he:"קיפול גוף גאומטרי",en:"Net Folder",topic:"גאומטריה ונפח",g:[4,5],pri:"med",mech:"מקפלים פריסה שטוחה; הפאות מסתובבות ב-3D ומתחברות לגוף",theme:"שולחן יצירה מקרטון",teaches:"פריסות 2D→גופים 3D, פאות/מקצועות/קודקודים",ins:"Polypad · Unfolding Solids",url:"https://polypad.amplify.com/"},
+ {id:"angle-builder",he:"בונה זוויות",en:"Angle Builder",topic:"גאומטריה",g:[4,5],pri:"med",mech:"גוררים קרן שנייה לזווית-מטרה; קשת זוהרת מראה את הערך חי",theme:"קרני לייזר מתחנת חלל",teaches:"סיווג זוויות, מדידה במעלות, מד-זווית",ins:"Math Playground · Alien Angles",url:"https://www.mathplayground.com/measuringangles.html"},
+ {id:"symmetry-mirror",he:"מראת הסימטריה",en:"Symmetry Mirror",topic:"גאומטריה",g:[3,5],pri:"med",mech:"חצי צורה בנויה; לוחצים להניח אריחים בצד-המראה להשלים בסימטריה",theme:"גן פרפרים",teaches:"צירי סימטריה, שיקוף, חפיפה",ins:"Topmarks · Symmetry Matching",url:"https://www.topmarks.co.uk/symmetry/symmetry-matching"},
+ {id:"geoboard-shapes",he:"לוח גאוגרף",en:"Geoboard",topic:"גאומטריה",g:[2,5],pri:"med",mech:"מותחים גומיות בין יתדות ליצירת מצולעים; צלעות/היקף/זוויות חי",theme:"לוח יתדות מעץ, גומיות זוהרות",teaches:"תכונות מצולעים, היקף, סוגי זוויות, שמות צורות",ins:"Math Learning Center · Geoboard",url:"https://www.mathlearningcenter.org/apps/geoboard"},
+ {id:"clock-builder",he:"בונה שעון",en:"Clock Time Builder",topic:"מדידה וזמן",g:[2,3],pri:"high",mech:"גוררים את מחוג הדקות (השעה נגררת יחסית) להתאים לשעה דיגיטלית",theme:"שעון קיר ענק במאפייה",teaches:"קריאת שעון אנלוגי, שעות, דקות, זמן שחלף",ins:"Toy Theater · Visnos Clock",url:"https://toytheater.com/clock/"},
+ {id:"ruler-measure",he:"סרגל מדידה",en:"Ruler Measure",topic:"מדידה",g:[2,4],pri:"high",mech:"גוררים סמני-קצה ליישר עם קצות העצם ובודקים; ס\"מ/מ\"מ",theme:"סרגל על שולחן בית-ספר",teaches:"קריאת סרגל, ס\"מ/מ\"מ, מדידה ליחידה הקרובה",ins:"Math Learning Center",url:"https://www.mathlearningcenter.org/apps"},
+ {id:"weight-balance",he:"מאזני שקילה",en:"Weighing Scale",topic:"מדידה",g:[2,3],pri:"med",mech:"מוסיפים/מורידים משקולות גרם (1/10/100) עם +/− עד איזון",theme:"דוכן שוק עם פירות ומשקולות",teaches:"מדידת מסה, קריאת מאזניים, יחידות משקל",ins:"Toy Theater · Scale",url:"https://toytheater.com/scale/"},
+ {id:"money-shop",he:"חנות המטבעות",en:"Money Shop",topic:"כסף",g:[2,4],pri:"high",mech:"גוררים מטבעות ושטרות למגש-תשלום עד לסכום המדויק; עודף מתקזז",theme:"דוכן שוק ישראלי, מטבעות שקל",teaches:"זיהוי מטבעות/שטרות, ספירת כסף, מתן עודף",ins:"U.S. Mint · SplashLearn Money",url:"https://kids.usmint.gov/games"},
+ {id:"decimal-place-value",he:"בונה עשרוניים",en:"Decimal Builder",topic:"עשרוניים",g:[4,5],pri:"high",mech:"כמו בונה-ערך-מיקום + טורי עשיריות/מאיות; בונים עשרוני עם +/−",theme:"צנצנות חול צבעוני במעבדה",teaches:"כתיב עשרוני, עשיריות/מאיות, ערך מיקום עשרוני",ins:"SplashLearn · Decimal Place Value",url:"https://www.splashlearn.com/math/decimal-place-value-games"},
+ {id:"percent-bar",he:"סרגל אחוזים",en:"Percent Bar",topic:"אחוזים",g:[5,6],pri:"med",mech:"גוררים מחיצה לצבוע את החלק הנכון מתוך 100%; מצב זיהוי אחוז",theme:"יציעי אצטדיון שמתמלאים",teaches:"אחוז כחלק מ-100, שקילות שבר–אחוז",ins:"Motion Math Zoom",url:"https://www.commonsense.org/education/reviews/motion-math"},
+ {id:"ratio-mixer",he:"מערבל יחסים",en:"Ratio Mixer",topic:"יחס",g:[5,6],pri:"med",mech:"שני מיכלי-מרכיבים מוזגים לקערה; +/− לכמויות; תצוגת יחס חיה",theme:"בר שייקים, אנימציית ערבול",teaches:"יחס כהשוואה, יחסים שקולים, הגדלה/הקטנה",ins:"Math Playground · Thinking Blocks Ratios",url:"https://www.mathplayground.com/tb_ratios/index.html"},
+ {id:"bar-graph-builder",he:"בנאי גרף עמודות",en:"Bar Graph Builder",topic:"נתונים",g:[2,5],pri:"med",mech:"גוררים כרטיסי-סקר לעמודות; העמודות גדלות; שאלת קריאה",theme:"גרף עמודות 3D על קיר כיתה",teaches:"איסוף וארגון נתונים, קריאת גרף עמודות",ins:"Topmarks · Data Handling",url:"https://www.topmarks.co.uk/maths-games/5-7-years/data-handling"},
+ {id:"pattern-complete",he:"מפעל הדפוסים",en:"Pattern Factory",topic:"דפוסים",g:[1,3],pri:"med",mech:"מסוע נושא רצף; בוחרים מהמדף את האובייקט החסר ומניחים",theme:"פס-ייצור במפעל צעצועים",teaches:"זיהוי והרחבת דפוסים, כללי AB/ABC",ins:"Education.com · SplashLearn",url:"https://www.education.com/resources/games/math/patterns/shape-patterns/"},
+ {id:"number-sequence",he:"סדרת מספרים",en:"Number Sequence",topic:"דפוסים",g:[3,5],pri:"med",mech:"ממלאים אבנים חסרות בסדרה (חשבונית/הנדסית) עם +/−; קשת מראה את הכלל",theme:"מקדש עתיק עם אבני-מספר",teaches:"סדרות חשבוניות, זיהוי כללים (הוסף n, הכפל ב-n)",ins:"Toy Theater · Number Pattern",url:"https://toytheater.com/number-pattern/"},
+ {id:"division-share",he:"חלוקה שווה",en:"Fair Share",topic:"כפל וחילוק",g:[3,4],pri:"med",mech:"גוררים פריטים אחד-אחד ל-N תיבות שוות; שארית בכוס נפרדת",theme:"אוצר פיראטים מתחלק לצוות",teaches:"חילוק כחלוקה שווה, מנה ושארית",ins:"DragonBox Numbers",url:"https://dragonbox.com/products"},
+ {id:"long-division-tower",he:"מגדל החלוקה",en:"Division Tower",topic:"כפל וחילוק",g:[4,5],pri:"low",mech:"גוררים ספרת-מנה, שכבות יורדות (מכפלה חלקית), שארית נופלת",theme:"מגדל לבנים שנבנה מחדש קומה-קומה",teaches:"אלגוריתם חילוק ארוך, מנות חלקיות, שארית",ins:"Math Mammoth",url:"https://www.mathmammoth.com/practice/long-division"},
+ {id:"hundred-chart-colour",he:"לוח המאה",en:"Hundred Chart",topic:"תחושת מספר",g:[1,3],pri:"med",mech:"בוחרים מספר התחלה וצעד; אריחים תואמים נדלקים; מצב 'אריח חסר'",theme:"אריחי רצפה מוארים בסטודיו ריקוד",teaches:"ספירת דילוגים, כפולות, ניווט בלוח מאה",ins:"SplashLearn · Hundreds Chart",url:"https://www.splashlearn.com/math/skip-counting-games"},
+ {id:"estimation-land",he:"ארץ האומדן",en:"Estimation Land",topic:"תחושת מספר",g:[2,4],pri:"low",mech:"מכווננים מנוף-קטפולטה (=ערך מוערך) ב-+/− לנחות קרוב ליעד על הציר",theme:"קטפולטה בחצר טירה",teaches:"אומדן כמויות, עיגול, גודל מספר",ins:"Motion Math Zoom",url:"https://mrelementarymath.com/interactive-number-lines-number-sense_21/"},
+ {id:"algebra-balance",he:"מאזני אלגברה",en:"Algebra Balance",topic:"אלגברה",g:[5,6],pri:"high",mech:"מסירים אובייקטים שווים משני צדי המאזניים עד שנשאר ? בודד",theme:"מאזני קריסטל במעבדה עתידנית",teaches:"פתרון משוואה חד-שלבית, שמירת שוויון, מושג המשתנה",ins:"NCTM · DragonBox Algebra 5+",url:"https://dragonbox.com/products/algebra-5"},
+ {id:"tangram-build",he:"טנגרם",en:"Tangram Build",topic:"גאומטריה",g:[3,5],pri:"low",mech:"גוררים/מסובבים/הופכים 7 חלקי טנגרם למילוי צללית-מטרה; הצמדה לרשת",theme:"חלקי טנגרם חימר על שולחן פאזל",teaches:"הרכבת/פירוק צורות, חשיבה מרחבית, זוויות סיבוב",ins:"Mathigon · Tangram Builder",url:"https://mathigon.org/tangrams"},
+ {id:"coordinate-plot",he:"סייר הקואורדינטות",en:"Coordinate Explorer",topic:"גאומטריה",g:[5,6],pri:"low",mech:"מנווטים רחפן ליעד עם לוחות x/y; שלבים: שרטוט צורות מנקודות",theme:"רשת עיר ממבט-על, רחפן משלוחים",teaches:"קריאת/שרטוט זוגות סדורים, צירים, רבעים",ins:"MathNook · Coordinate Grid",url:"https://www.mathnook.com/math/skill/coordinategridgames.php"},
+ {id:"word-problem-bar",he:"בונה מודל בר",en:"Bar Model Workshop",topic:"בעיות מילוליות",g:[3,6],pri:"low",mech:"בונים מודל-בר: גוררים מקטעים ומכווננים גודל ב-+/− לייצג כמויות",theme:"שולחן עבודה עם קרשים ומטר",teaches:"ייצוג בעיה, מודלי חלק-שלם והשוואה, חשיבה אלגברית",ins:"Singapore Math · Thinking Blocks",url:"https://www.mathplayground.com/tb_ratios/index.html"},
+ {id:"subitize-dots",he:"הבזק נקודות",en:"Dot Flash",topic:"תחושת מספר",g:[1,2],pri:"med",mech:"מגש מבזיק נקודות לרגע ונהפך; מזינים כמה ראיתם ב-+/− ובודקים",theme:"שולחן קוסם בבד לבד, זרקורים",teaches:"סוביטיזציה, זיהוי כמות מיידי בלי ספירה",ins:"Boddle · dice patterns",url:"https://www.boddlelearning.com/"},
+ {id:"addition-mine",he:"מכרה החיבור",en:"Addition Mine",topic:"חיבור וחיסור",g:[2,4],pri:"high",mech:"מחברים טור-טור עם +/−; כשהסכום≥10 'קרון נשיאה' קופץ לטור הבא",theme:"מכרה תת-קרקעי עם קרונות על מסילה",teaches:"חיבור בטורים, נשיאה/המרה, ערך מיקום",ins:"Toy Theater · DragonBox",url:"https://toytheater.com/"},
+ {id:"subtraction-bridge",he:"גשר החיסור",en:"Subtraction Bridge",topic:"חיבור וחיסור",g:[2,4],pri:"high",mech:"מחסרים טור-טור; כשהספרה קטנה, אנימציית 'פריטה' מפרקת עשרת ל-10 אחדות",theme:"גשר אבן שמתפרק אבן-אבן",teaches:"חיסור בטורים, פריטה/המרה, ערך מיקום",ins:"DragonBox Big Numbers",url:"https://dragonbox.com/products/big-numbers"},
+ {id:"shape-sort-3d",he:"ממיין גופים",en:"3D Shape Sorter",topic:"גאומטריה ונפח",g:[2,4],pri:"med",mech:"מסוע מביא גופים; מכוונים כל גוף לתא הנכון לפי שם/תכונה",theme:"מסוע מיון במפעל צעצועים",teaches:"זיהוי גופים 3D, תכונות (פאות/מקצועות/קודקודים)",ins:"SplashLearn 3D · Workybooks",url:"https://www.workybooks.com/resources/virtual-manipulatives/3d-shapes"},
+ {id:"multiplication-factor-tree",he:"עץ הגורמים",en:"Factor Tree",topic:"כפל וחילוק",g:[4,6],pri:"low",mech:"לוחצים לפצל מספר לשני ענפי-גורמים; ראשוניים זוהרים ועוצרים",theme:"מערת קריסטל, רסיסים מתפצלים",teaches:"גורמים, ראשוני מול פריק, עצי גורמים, התחלקות",ins:"Mathigon Factris · Factor Trees",url:"https://mathigon.org/factris"}
+];
+
+const REFS = [
+ ["Polypad – Virtual Manipulatives","https://polypad.amplify.com/"],
+ ["Mathigon Activities","https://mathigon.org/activities"],
+ ["Mathigon Factris","https://mathigon.org/factris"],
+ ["DragonBox Products","https://dragonbox.com/products"],
+ ["DragonBox Big Numbers","https://dragonbox.com/products/big-numbers"],
+ ["DragonBox Algebra 5+","https://dragonbox.com/products/algebra-5"],
+ ["Exploding Dots – Global Math Project","https://www.explodingdots.org/"],
+ ["ST Math – Visual Games","https://2024.mindresearch.org/blog/addition-subtraction-visual-games"],
+ ["Math Learning Center – Apps","https://www.mathlearningcenter.org/apps"],
+ ["Math Learning Center – Geoboard","https://www.mathlearningcenter.org/apps/geoboard"],
+ ["Math Learning Center – Number Frames","https://www.mathlearningcenter.org/apps/number-frames"],
+ ["Slice Fractions (PlayMath)","https://playmath.org/games/mm-slice-fractions"],
+ ["Motion Math: Fractions – review","https://www.commonsensemedia.org/app-reviews/motion-math-fractions"],
+ ["NCTM Illuminations","https://illuminations.nctm.org/"],
+ ["Boddle Learning","https://www.boddlelearning.com/"],
+ ["Khan Academy Kids – Math","https://www.khanacademy.org/kids/math"],
+ ["Toy Theater – Math Games","https://toytheater.com/category/math-games/"],
+ ["Toy Theater – Clock","https://toytheater.com/clock/"],
+ ["Toy Theater – Scale","https://toytheater.com/scale/"],
+ ["Toy Theater – Number Pattern","https://toytheater.com/number-pattern/"],
+ ["Math Playground – Thinking Blocks","https://www.mathplayground.com/tb_ratios/index.html"],
+ ["Math Playground – Measuring Angles","https://www.mathplayground.com/measuringangles.html"],
+ ["MathNook – Coordinate Grid","https://www.mathnook.com/math/skill/coordinategridgames.php"],
+ ["SplashLearn – Decimal Place Value","https://www.splashlearn.com/math/decimal-place-value-games"],
+ ["SplashLearn – Volume","https://www.splashlearn.com/s/math-games/introduction-to-volume"],
+ ["SplashLearn – Skip Counting","https://www.splashlearn.com/math/skip-counting-games"],
+ ["SplashLearn – Counting Money","https://www.splashlearn.com/math/counting-money-games"],
+ ["Topmarks – Data Handling","https://www.topmarks.co.uk/maths-games/5-7-years/data-handling"],
+ ["Topmarks – Symmetry Matching","https://www.topmarks.co.uk/symmetry/symmetry-matching"],
+ ["Workybooks – 3D Shapes","https://www.workybooks.com/resources/virtual-manipulatives/3d-shapes"],
+ ["Brainingcamp – Manipulatives","https://www.brainingcamp.com/manipulatives"],
+ ["U.S. Mint – Coin Classroom","https://kids.usmint.gov/games"],
+ ["Math Mammoth – Long Division","https://www.mathmammoth.com/practice/long-division"],
+ ["Visnos – Teaching Clock","https://www.visnos.com/demos/clock"],
+ ["Mr Elementary Math – Number Lines","https://mrelementarymath.com/interactive-number-lines-number-sense_21/"],
+ ["Number Pieces – MLC","https://www.mathlearningcenter.org/apps/number-pieces"],
+ ["Mathigon Polypad","https://mathigon.org/polypad"],
+ ["Mathigon Tangrams","https://mathigon.org/tangrams"],
+ ["Slice Fractions – review","https://www.commonsensemedia.org/app-reviews/slice-fractions"],
+ ["Education.com – Shape Patterns","https://www.education.com/resources/games/math/patterns/shape-patterns/"],
+ ["Room Recess – Pan Balance","https://www.roomrecess.com/mobile/BaseTenBlocks/play.html"],
+ ["ST Math – Early Learning","https://2024.stmath.com/earlylearning"],
+ ["DragonBox – Wikipedia","https://en.wikipedia.org/wiki/DragonBox"]
+];
+
+const PRI_LABEL = {high:"גבוהה",med:"בינונית",low:"נמוכה"};
+const state = {topic:null, grade:null, pri:null, q:""};
+
+// Build topic + grade chip rows
+const topics = [...new Set(GAMES.map(g=>g.topic))];
+const topicChips = document.getElementById("topicChips");
+topics.forEach(t=>{
+  const c=document.createElement("span"); c.className="chip"; c.textContent=t; c.dataset.topic=t;
+  c.onclick=()=>{state.topic = state.topic===t?null:t; sync()}; topicChips.appendChild(c);
+});
+const grades=[1,2,3,4,5,6];
+const gradeChips=document.getElementById("gradeChips");
+grades.forEach(n=>{
+  const c=document.createElement("span"); c.className="chip"; c.textContent="כיתה "+["א","ב","ג","ד","ה","ו"][n-1]; c.dataset.grade=n;
+  c.onclick=()=>{state.grade = state.grade===n?null:n; sync()}; gradeChips.appendChild(c);
+});
+document.querySelectorAll(".chip[data-pri]").forEach(c=>{
+  c.onclick=()=>{state.pri = state.pri===c.dataset.pri?null:c.dataset.pri; sync()};
+});
+document.getElementById("search").addEventListener("input",e=>{state.q=e.target.value.trim(); render()});
+
+function passes(g){
+  if(state.topic && g.topic!==state.topic) return false;
+  if(state.grade && !(g.g[0]<=state.grade && state.grade<=g.g[1])) return false;
+  if(state.pri && g.pri!==state.pri) return false;
+  if(state.q){
+    const hay=(g.he+" "+g.en+" "+g.topic+" "+g.mech+" "+g.teaches+" "+g.id).toLowerCase();
+    if(!hay.includes(state.q.toLowerCase())) return false;
+  }
+  return true;
+}
+function gradeStr(g){const L=["א","ב","ג","ד","ה","ו"];return g[0]===g[1]?("כיתה "+L[g[0]-1]):("כיתות "+L[g[0]-1]+"–"+L[g[1]-1])}
+
+function render(){
+  const grid=document.getElementById("grid"); grid.innerHTML="";
+  const list=GAMES.filter(passes);
+  document.getElementById("count").textContent = list.length+" מתוך "+GAMES.length+" משחקים";
+  list.forEach(g=>{
+    const el=document.createElement("div"); el.className="card";
+    el.innerHTML=`
+      <div class="top">
+        <div><div class="he">${g.he}</div><div class="en">${g.en}</div></div>
+        <span class="pri ${g.pri}">${PRI_LABEL[g.pri]}</span>
+      </div>
+      <div class="meta">
+        <span class="badge topic">${g.topic}</span>
+        <span class="badge grade">${gradeStr(g.g)}</span>
+      </div>
+      <div class="row2"><b>מה עושים:</b> ${g.mech}</div>
+      <div class="row2"><b>תמה:</b> ${g.theme}</div>
+      <div class="row2"><b>מלמד:</b> ${g.teaches}</div>
+      <div class="ins">השראה: <a href="${g.url}" target="_blank" rel="noopener">${g.ins} ↗</a></div>`;
+    grid.appendChild(el);
+  });
+}
+function sync(){
+  document.querySelectorAll("#topicChips .chip").forEach(c=>c.classList.toggle("active",c.dataset.topic===state.topic));
+  document.querySelectorAll("#gradeChips .chip").forEach(c=>c.classList.toggle("active",+c.dataset.grade===state.grade));
+  document.querySelectorAll(".chip[data-pri]").forEach(c=>c.classList.toggle("active",c.dataset.pri===state.pri));
+  render();
+}
+
+// coverage table
+const cover={};
+GAMES.forEach(g=>{(cover[g.topic]=cover[g.topic]||[]).push(g)});
+const ct=document.getElementById("coverTable");
+Object.entries(cover).sort((a,b)=>b[1].length-a[1].length).forEach(([t,gs])=>{
+  const tr=document.createElement("tr");
+  tr.innerHTML=`<td>${t} (${gs.length})</td><td>${gs.map(g=>`<code>${g.id}</code>`).join(" · ")}</td>`;
+  ct.appendChild(tr);
+});
+
+// refs
+const ol=document.getElementById("refs");
+REFS.forEach(([t,u])=>{const li=document.createElement("li");li.innerHTML=`<a href="${u}" target="_blank" rel="noopener">${t}</a>`;ol.appendChild(li)});
+
+render();
+</script>
+</body>
+</html>

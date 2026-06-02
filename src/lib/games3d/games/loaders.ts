@@ -34,6 +34,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./ruler-measure/RulerMeasureGame').then((m) => ({ default: m.rulerMeasureGame })),
   'decimal-place-value': () =>
     import('./decimal-place-value/DecimalPlaceValueGame').then((m) => ({ default: m.decimalPlaceValueGame })),
+  'number-bond-split': () =>
+    import('./number-bond-split/NumberBondSplitGame').then((m) => ({ default: m.numberBondSplitGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

@@ -14,6 +14,7 @@ import { additionMineGame } from './addition-mine/AdditionMineGame';
 import { volumeCubeFillGame } from './volume-cube-fill/VolumeCubeFillGame';
 import { rulerMeasureGame } from './ruler-measure/RulerMeasureGame';
 import { decimalPlaceValueGame } from './decimal-place-value/DecimalPlaceValueGame';
+import { numberBondSplitGame } from './number-bond-split/NumberBondSplitGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -39,6 +40,7 @@ const games: Game3D[] = [
   volumeCubeFillGame,
   rulerMeasureGame,
   decimalPlaceValueGame,
+  numberBondSplitGame,
 ];
 
 let registered = false;

@@ -160,5 +160,13 @@
     "prompt": "Baue die Zahl {target}",
     "correct": "Super! Du hast {target} gebaut",
     "wrong": "Fast! Prüfe Einer, Zehntel und Hundertstel und korrigiere die Zahl"
+  },
+  "numberBond": {
+    "title": "Zahlen zerlegen",
+    "description": "Zerlege eine ganze Zahl in zwei Teile, die sie ergeben — eine Kristallbrücke überspannt die Schlucht",
+    "instructions": "Zwei Steinplattformen schweben über einer Schlucht. Baue die Brücke: Mit links −/+ stellst du den linken Teil ein und mit rechts −/+ den rechten Teil (du kannst auch auf jeder Seite ziehen). Die Brücke verbindet sich, wenn beide Teile zusammen genau die Lücke überspannen. Dann drücke Prüfen",
+    "prompt": "Zerlege {target} in zwei Teile",
+    "correct": "Super! Die beiden Teile ergeben zusammen {target}",
+    "wrong": "Fast! Lass die beiden Teile zusammen genau die Lücke überspannen, dann drücke Prüfen"
   }
 }

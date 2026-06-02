@@ -160,5 +160,13 @@
     "prompt": "Build the number {target}",
     "correct": "Great! You built {target}",
     "wrong": "Almost! Check the ones, tenths and hundredths and fix the number"
+  },
+  "numberBond": {
+    "title": "Number Bond Splitter",
+    "description": "Split a whole number into two parts that compose it, and a crystal bridge spans the chasm",
+    "instructions": "Two stone platforms float over a chasm. Build the bridge: use left −/+ to set the left part and right −/+ to set the right part (you can also drag on each side). The bridge connects when the two parts add up to exactly span the gap. Then press Check",
+    "prompt": "Split {target} into two parts",
+    "correct": "Great! The two parts together make {target}",
+    "wrong": "Almost! Make the two parts add up to span the gap exactly, then press Check"
   }
 }

@@ -160,5 +160,13 @@
     "prompt": "Construye el número {target}",
     "correct": "¡Genial! Construiste {target}",
     "wrong": "¡Casi! Revisa las unidades, décimas y centésimas y corrige el número"
+  },
+  "numberBond": {
+    "title": "Descomponer el número",
+    "description": "Divide un número entero en dos partes que lo componen, y un puente de cristal cruza el abismo",
+    "instructions": "Dos plataformas de piedra flotan sobre un abismo. Construye el puente: usa izquierda −/+ para fijar la parte izquierda y derecha −/+ para la parte derecha (también puedes arrastrar en cada lado). El puente se conecta cuando las dos partes suman exactamente el ancho del hueco. Luego pulsa Comprobar",
+    "prompt": "Descompón {target} en dos partes",
+    "correct": "¡Genial! Las dos partes juntas suman {target}",
+    "wrong": "¡Casi! Haz que las dos partes sumen exactamente el ancho del hueco, luego pulsa Comprobar"
   }
 }

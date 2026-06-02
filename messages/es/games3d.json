@@ -336,5 +336,13 @@
     "prompt": "¿Cuántas caras tiene el sólido?",
     "correct": "¡Genial! El sólido tiene {count} caras",
     "wrong": "¡Casi! Pliega y gira el sólido y vuelve a contar sus caras"
+  },
+  "symmetryMirror": {
+    "title": "Imagen espejo",
+    "description": "Completa el ala simétrica de la mariposa reflejándola a través de la línea del espejo.",
+    "instructions": "El lado izquierdo está dado. Toca o arrastra sobre las casillas del lado derecho para rellenar las casillas que lo reflejan a través de la línea, y luego pulsa Comprobar. Toca de nuevo una casilla llena para vaciarla.",
+    "prompt": "Completa la imagen espejo",
+    "correct": "¡Genial! La imagen espejo está completa.",
+    "wrong": "Aún no es un espejo exacto. Revisa qué casillas faltan o sobran."
   }
 }

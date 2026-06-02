@@ -336,5 +336,13 @@
     "prompt": "How many faces does the solid have?",
     "correct": "Great! The solid has {count} faces",
     "wrong": "Almost! Fold and rotate the solid, then count its faces again"
+  },
+  "symmetryMirror": {
+    "title": "Mirror Image",
+    "description": "Complete the butterfly's symmetric wing by reflecting it across the mirror line.",
+    "instructions": "The left side is given. Tap or drag on the cells on the right side to fill the cells that mirror it across the line, then press Check. Tap a filled cell again to clear it.",
+    "prompt": "Complete the mirror image",
+    "correct": "Great! The mirror image is complete.",
+    "wrong": "Not a perfect mirror yet. Check which cells are missing or extra."
   }
 }

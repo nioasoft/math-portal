@@ -336,5 +336,13 @@
     "prompt": "Wie viele Flächen hat der Körper?",
     "correct": "Super! Der Körper hat {count} Flächen",
     "wrong": "Fast! Falte und drehe den Körper und zähle die Flächen noch einmal"
+  },
+  "symmetryMirror": {
+    "title": "Spiegelbild",
+    "description": "Vervollständige den symmetrischen Flügel des Schmetterlings durch Spiegelung an der Spiegellinie.",
+    "instructions": "Die linke Seite ist vorgegeben. Tippe oder ziehe auf den Feldern der rechten Seite, um die Felder zu füllen, die sie an der Linie spiegeln, und drücke dann Prüfen. Tippe ein gefülltes Feld erneut an, um es zu leeren.",
+    "prompt": "Vervollständige das Spiegelbild",
+    "correct": "Toll! Das Spiegelbild ist vollständig.",
+    "wrong": "Noch kein genaues Spiegelbild. Prüfe, welche Felder fehlen oder zu viel sind."
   }
 }

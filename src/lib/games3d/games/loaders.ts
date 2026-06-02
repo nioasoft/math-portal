@@ -78,6 +78,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./pattern-complete/PatternCompleteGame').then((m) => ({ default: m.patternCompleteGame })),
   'net-fold': () =>
     import('./net-fold/NetFoldGame').then((m) => ({ default: m.netFoldGame })),
+  'symmetry-mirror': () =>
+    import('./symmetry-mirror/SymmetryMirrorGame').then((m) => ({ default: m.symmetryMirrorGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

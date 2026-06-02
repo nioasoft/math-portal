@@ -104,7 +104,7 @@ export function OverlayHUD({ score, feedback, prompt, instructions, controls, st
       {prompt && instructions && (
         <p
           data-testid="prompt-instructions"
-          className="mx-auto mt-1 max-w-md px-4 text-center text-sm text-white/70"
+          className="mx-auto mt-1 max-w-md rounded-lg bg-slate-900/70 px-3 py-1 text-center text-sm text-white/90 backdrop-blur shadow"
           dir="auto"
         >
           {instructions}

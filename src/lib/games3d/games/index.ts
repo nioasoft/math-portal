@@ -42,6 +42,7 @@ import { coordinatePlotGame } from './coordinate-plot/CoordinatePlotGame';
 import { wordProblemBarGame } from './word-problem-bar/WordProblemBarGame';
 import { estimationLandGame } from './estimation-land/EstimationLandGame';
 import { multiplicationFactorTreeGame } from './multiplication-factor-tree/MultiplicationFactorTreeGame';
+import { longDivisionTowerGame } from './long-division-tower/LongDivisionTowerGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -95,6 +96,7 @@ const games: Game3D[] = [
   wordProblemBarGame,
   estimationLandGame,
   multiplicationFactorTreeGame,
+  longDivisionTowerGame,
 ];
 
 let registered = false;

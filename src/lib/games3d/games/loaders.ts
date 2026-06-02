@@ -96,6 +96,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./multiplication-factor-tree/MultiplicationFactorTreeGame').then((m) => ({
       default: m.multiplicationFactorTreeGame,
     })),
+  'long-division-tower': () =>
+    import('./long-division-tower/LongDivisionTowerGame').then((m) => ({ default: m.longDivisionTowerGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

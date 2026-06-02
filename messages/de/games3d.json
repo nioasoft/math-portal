@@ -421,5 +421,13 @@
     "prompt": "Zerlege {n} in ein Produkt zweier Faktoren",
     "correct": "Super! {a} × {b} = {n}",
     "wrong": "Fast! Wähle einen Faktor, der {n} genau teilt (größer als 1 und kleiner als die Zahl), dann drücke Prüfen"
+  },
+  "longDivision": {
+    "title": "Teilertürme",
+    "description": "Verteile alle Bausteine gleichmäßig auf die Türme; der Rest bleibt im Vorrat",
+    "instructions": "Baue mit den − / + Tasten in jeden Turm dieselbe Anzahl Bausteine (oder ziehe nach oben). Baue die Türme so hoch wie möglich gleichmäßig; der Rest bleibt im Vorrat. Nimmst du mehr Bausteine als vorhanden, werden die Türme rot. Dann auf Prüfen tippen",
+    "prompt": "Verteile {n} Bausteine gleichmäßig auf {d} Türme — wie viele in jeden?",
+    "correct": "Gut gemacht! {perTower} in jedem Turm, und {remainder} bleiben im Vorrat",
+    "wrong": "Die Türme sind noch nicht so gleich und hoch wie möglich — versuch es noch einmal"
   }
 }

@@ -421,5 +421,13 @@
     "prompt": "Descompón {n} en un producto de dos factores",
     "correct": "¡Genial! {a} × {b} = {n}",
     "wrong": "¡Casi! Elige un factor que divida {n} de forma exacta (mayor que 1 y menor que el número), luego pulsa Comprobar"
+  },
+  "longDivision": {
+    "title": "Torres de división",
+    "description": "Reparte todos los bloques por igual entre las torres; lo que sobra se queda en el montón",
+    "instructions": "Usa los botones − / + para construir la misma cantidad de bloques en cada torre (o arrastra hacia arriba). Construye las torres lo más altas que puedan ir por igual; lo que sobra se queda en el montón. Si tomas más bloques de los que hay, las torres se ponen rojas. Luego pulsa Comprobar",
+    "prompt": "Reparte {n} bloques por igual entre {d} torres — ¿cuántos en cada una?",
+    "correct": "¡Bien hecho! {perTower} en cada torre, y {remainder} quedan en el montón",
+    "wrong": "Las torres aún no están tan iguales y altas como pueden — inténtalo de nuevo"
   }
 }

@@ -421,5 +421,13 @@
     "prompt": "Split {n} into a product of two factors",
     "correct": "Great! {a} × {b} = {n}",
     "wrong": "Almost! Pick a factor that divides {n} evenly (greater than 1 and smaller than the number), then press Check"
+  },
+  "longDivision": {
+    "title": "Division Towers",
+    "description": "Share all the blocks equally into the towers; whatever is left stays in the pool",
+    "instructions": "Use the − / + buttons to build the same number of blocks in every tower (or drag up). Build the towers as tall as they can go equally; leftovers stay in the pool. If you take more blocks than there are, the towers turn red. Then press Check",
+    "prompt": "Share {n} blocks equally into {d} towers — how many in each?",
+    "correct": "Well done! {perTower} in each tower, with {remainder} left in the pool",
+    "wrong": "The towers aren't as equal and tall as they can be yet — try again"
   }
 }

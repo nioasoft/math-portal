@@ -40,7 +40,11 @@
   "measureFill": {
     "title": "Llena el recipiente",
     "description": "Llena el recipiente hasta el volumen objetivo",
-    "instructions": "Arrastra para verter líquido hasta la marca objetivo"
+    "instructions": "Arrastra para verter líquido hasta la marca objetivo",
+    "prompt": "Llena hasta {target} ml   |   ahora: {current} ml",
+    "correct": "¡Genial! Llenado hasta {target} ml",
+    "wrong": "¡Casi! Acércate más a la marca objetivo",
+    "unit": "ml"
   },
   "fractionBuild": {
     "title": "Constructor de fracciones",

@@ -40,7 +40,11 @@
   "measureFill": {
     "title": "Behälter füllen",
     "description": "Fülle den Behälter bis zum Zielvolumen",
-    "instructions": "Ziehe, um Flüssigkeit bis zur Zielmarke einzugießen"
+    "instructions": "Ziehe, um Flüssigkeit bis zur Zielmarke einzugießen",
+    "prompt": "Fülle bis {target} ml   |   jetzt: {current} ml",
+    "correct": "Super! Bis {target} ml gefüllt",
+    "wrong": "Fast! Komm näher an die Zielmarke",
+    "unit": "ml"
   },
   "fractionBuild": {
     "title": "Bruch-Baumeister",

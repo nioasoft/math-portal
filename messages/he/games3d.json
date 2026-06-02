@@ -40,7 +40,11 @@
   "measureFill": {
     "title": "מילוי מיכל",
     "description": "מלא את המיכל עד הנפח המבוקש",
-    "instructions": "גרור כדי לצקת נוזל עד הסימון המבוקש"
+    "instructions": "גרור כדי לצקת נוזל עד הסימון המבוקש",
+    "prompt": "מלא עד {target} מ\"ל   |   עכשיו: {current} מ\"ל",
+    "correct": "מצוין! מילאת עד {target} מ\"ל",
+    "wrong": "כמעט! התקרב יותר לסימון המבוקש",
+    "unit": "מ\"ל"
   },
   "fractionBuild": {
     "title": "בונה שברים",

@@ -40,7 +40,11 @@
   "measureFill": {
     "title": "Fill the Container",
     "description": "Fill the container to the target volume",
-    "instructions": "Drag to pour liquid to the target mark"
+    "instructions": "Drag to pour liquid to the target mark",
+    "prompt": "Fill to {target} ml   |   now: {current} ml",
+    "correct": "Great! Filled to {target} ml",
+    "wrong": "Almost! Get closer to the target mark",
+    "unit": "ml"
   },
   "fractionBuild": {
     "title": "Fraction Builder",

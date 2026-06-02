@@ -34,14 +34,14 @@
     "title": "Multiplication Arrays",
     "description": "Build a cube array to solve a multiplication fact",
     "instructions": "Drag to build, or use the − / + buttons to add rows and columns, then press Check",
-    "prompt": "Build {rows} rows × {cols} columns   |   you built: {br}×{bc} = {total}",
+    "prompt": "Build an array of {rows} rows × {cols} columns",
     "correct": "{rows} × {cols} = {product}!"
   },
   "measureFill": {
     "title": "Fill the Container",
     "description": "Fill the container to the target volume",
     "instructions": "Drag to pour liquid to the target mark",
-    "prompt": "Fill to {target} ml   |   now: {current} ml",
+    "prompt": "Fill to {target} ml",
     "correct": "Great! Filled to {target} ml",
     "wrong": "Almost! Get closer to the target mark",
     "unit": "ml"
@@ -49,15 +49,15 @@
   "fractionBuild": {
     "title": "Fraction Builder",
     "description": "Fill parts of the pie to match the fraction",
-    "instructions": "Tap slices to fill them until they match the target fraction",
-    "prompt": "Fill {num}/{den}   |   you filled: {filled}/{den}",
+    "instructions": "Tap slices to fill them, then press Check",
+    "prompt": "Fill {num}/{den} of the pizza",
     "correct": "Great! You filled {num}/{den}"
   },
   "areaPerimeter": {
     "title": "Area & Perimeter",
     "description": "Build a rectangle with a given area or perimeter",
     "instructions": "Drag to resize the garden, or use the width/height − / + buttons, then press Check",
-    "prompt": "{kindLabel}: {target}   |   {w}×{h} → {value}",
+    "prompt": "Build a rectangle whose {kindLabel} is {target}",
     "correct": "Great! {kindLabel} = {target}",
     "wrong": "Almost! Resize the garden and try again",
     "kindArea": "Area",

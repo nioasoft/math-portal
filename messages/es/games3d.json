@@ -34,14 +34,14 @@
     "title": "Arreglos de multiplicación",
     "description": "Construye un arreglo de cubos para resolver una multiplicación",
     "instructions": "Arrastra para construir, o usa los botones − / + para añadir filas y columnas, luego pulsa Comprobar",
-    "prompt": "Construye {rows} filas × {cols} columnas   |   construiste: {br}×{bc} = {total}",
+    "prompt": "Construye una matriz de {rows} filas × {cols} columnas",
     "correct": "{rows} × {cols} = {product}!"
   },
   "measureFill": {
     "title": "Llena el recipiente",
     "description": "Llena el recipiente hasta el volumen objetivo",
     "instructions": "Arrastra para verter líquido hasta la marca objetivo",
-    "prompt": "Llena hasta {target} ml   |   ahora: {current} ml",
+    "prompt": "Llena hasta {target} ml",
     "correct": "¡Genial! Llenado hasta {target} ml",
     "wrong": "¡Casi! Acércate más a la marca objetivo",
     "unit": "ml"
@@ -49,15 +49,15 @@
   "fractionBuild": {
     "title": "Constructor de fracciones",
     "description": "Rellena partes del círculo para que coincidan con la fracción",
-    "instructions": "Toca las porciones para rellenarlas hasta que coincidan con la fracción objetivo",
-    "prompt": "Rellena {num}/{den}   |   rellenaste: {filled}/{den}",
+    "instructions": "Toca las porciones para rellenarlas, luego pulsa Comprobar",
+    "prompt": "Rellena {num}/{den} de la pizza",
     "correct": "¡Genial! Rellenaste {num}/{den}"
   },
   "areaPerimeter": {
     "title": "Área y perímetro",
     "description": "Construye un rectángulo con un área o perímetro dado",
     "instructions": "Arrastra para cambiar el tamaño del huerto, o usa los botones ancho/alto − / +, luego pulsa Comprobar",
-    "prompt": "{kindLabel}: {target}   |   {w}×{h} → {value}",
+    "prompt": "Construye un rectángulo cuyo {kindLabel} sea {target}",
     "correct": "¡Genial! {kindLabel} = {target}",
     "wrong": "¡Casi! Cambia el tamaño del huerto e inténtalo de nuevo",
     "kindArea": "Área",

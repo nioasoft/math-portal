@@ -191,7 +191,6 @@ export const measureFillGame: Game3D = {
       ctx.prompt.set(
         ctx.t('measureFill.prompt', {
           target: state.problem.targetMl,
-          current: Math.round(state.fillMl),
         })
       );
     }

@@ -9,6 +9,8 @@ interface Props {
   feedback: FeedbackEvent | null;
   /** Persistent question prompt — stays visible until replaced (distinct from the transient feedback toast). */
   prompt?: string;
+  /** Short, persistent "how to play" subtitle rendered under the prompt banner. */
+  instructions?: string;
   /** On-screen HTML control buttons (−/+, Check, Reset, …). */
   controls?: ControlButton[];
   /** Reward/progress snapshot (stars, streak, progress) shown in the top status bar. */
@@ -40,7 +42,7 @@ const CONTROL_VARIANT_STYLES = {
   reset:   'bg-slate-600 text-white border border-white/25 hover:bg-slate-500 active:scale-95',
 } as const;
 
-export function OverlayHUD({ score, feedback, prompt, controls, status }: Props): React.ReactElement {
+export function OverlayHUD({ score, feedback, prompt, instructions, controls, status }: Props): React.ReactElement {
   const t = useTranslations('games');
   const showStatus = hasStatus(status);
   const stars = status?.stars ?? 0;
@@ -97,6 +99,16 @@ export function OverlayHUD({ score, feedback, prompt, controls, status }: Props)
         >
           {prompt}
         </div>
+      )}
+
+      {prompt && instructions && (
+        <p
+          data-testid="prompt-instructions"
+          className="mx-auto mt-1 max-w-md px-4 text-center text-sm text-white/70"
+          dir="auto"
+        >
+          {instructions}
+        </p>
       )}
 
       {feedback && (

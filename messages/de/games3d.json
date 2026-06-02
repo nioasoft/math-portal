@@ -34,14 +34,14 @@
     "title": "Multiplikations-Felder",
     "description": "Baue ein Würfelfeld, um eine Multiplikation zu lösen",
     "instructions": "Ziehe zum Bauen oder nutze die − / + Tasten für Reihen und Spalten, dann drücke Prüfen",
-    "prompt": "Baue {rows} Reihen × {cols} Spalten   |   du hast gebaut: {br}×{bc} = {total}",
+    "prompt": "Baue ein Feld aus {rows} Reihen × {cols} Spalten",
     "correct": "{rows} × {cols} = {product}!"
   },
   "measureFill": {
     "title": "Behälter füllen",
     "description": "Fülle den Behälter bis zum Zielvolumen",
     "instructions": "Ziehe, um Flüssigkeit bis zur Zielmarke einzugießen",
-    "prompt": "Fülle bis {target} ml   |   jetzt: {current} ml",
+    "prompt": "Fülle bis {target} ml",
     "correct": "Super! Bis {target} ml gefüllt",
     "wrong": "Fast! Komm näher an die Zielmarke",
     "unit": "ml"
@@ -49,15 +49,15 @@
   "fractionBuild": {
     "title": "Bruch-Baumeister",
     "description": "Fülle Teile des Kreises, um den Bruch zu treffen",
-    "instructions": "Tippe auf Segmente, um sie zu füllen, bis sie zum Zielbruch passen",
-    "prompt": "Fülle {num}/{den}   |   du hast gefüllt: {filled}/{den}",
+    "instructions": "Tippe auf Segmente, um sie zu füllen, dann drücke Prüfen",
+    "prompt": "Fülle {num}/{den} der Pizza",
     "correct": "Super! Du hast {num}/{den} gefüllt"
   },
   "areaPerimeter": {
     "title": "Fläche & Umfang",
     "description": "Baue ein Rechteck mit vorgegebener Fläche oder vorgegebenem Umfang",
     "instructions": "Ziehe, um die Größe des Beets zu ändern, oder nutze die Breite/Höhe − / + Tasten, dann drücke Prüfen",
-    "prompt": "{kindLabel}: {target}   |   {w}×{h} → {value}",
+    "prompt": "Baue ein Rechteck, dessen {kindLabel} {target} ist",
     "correct": "Super! {kindLabel} = {target}",
     "wrong": "Fast! Ändere die Größe des Beets und versuche es erneut",
     "kindArea": "Fläche",

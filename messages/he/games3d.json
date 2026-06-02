@@ -34,14 +34,14 @@
     "title": "מערכי כפל",
     "description": "בנה מערך קוביות כדי לפתור תרגיל כפל",
     "instructions": "גרור כדי לבנות, או השתמש בכפתורי − / + להוספת שורות ועמודות, ואז לחץ בדוק",
-    "prompt": "בנה {rows} שורות × {cols} עמודות   |   בנית: {br}×{bc} = {total}",
+    "prompt": "בנו מערך של {rows} שורות × {cols} עמודות",
     "correct": "{rows} × {cols} = {product}!"
   },
   "measureFill": {
     "title": "מילוי מיכל",
     "description": "מלא את המיכל עד הנפח המבוקש",
     "instructions": "גרור כדי לצקת נוזל עד הסימון המבוקש",
-    "prompt": "מלא עד {target} מ\"ל   |   עכשיו: {current} מ\"ל",
+    "prompt": "מלאו עד {target} מ\"ל",
     "correct": "מצוין! מילאת עד {target} מ\"ל",
     "wrong": "כמעט! התקרב יותר לסימון המבוקש",
     "unit": "מ\"ל"
@@ -49,15 +49,15 @@
   "fractionBuild": {
     "title": "בונה שברים",
     "description": "מלא חלקים מהעוגה כדי להתאים לשבר",
-    "instructions": "הקש על פלחים כדי למלא אותם עד שמתאים לשבר המבוקש",
-    "prompt": "מלא {num}/{den}   |   מילאת: {filled}/{den}",
+    "instructions": "הקישו על פלחים כדי למלא אותם, ואז לחצו בדוק",
+    "prompt": "מלאו {num}/{den} מהפיצה",
     "correct": "מצוין! מילאת {num}/{den}"
   },
   "areaPerimeter": {
     "title": "שטח והיקף",
     "description": "בנה מלבן עם שטח או היקף נתון",
     "instructions": "גרור כדי לשנות את גודל הגינה, או השתמש בכפתורי רוחב/גובה − / +, ואז לחץ בדוק",
-    "prompt": "{kindLabel}: {target}   |   {w}×{h} ← {value}",
+    "prompt": "בנו מלבן ש{kindLabel} שלו {target}",
     "correct": "מצוין! {kindLabel} = {target}",
     "wrong": "כמעט! שנה את גודל הגינה ונסה שוב",
     "kindArea": "שטח",

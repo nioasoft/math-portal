@@ -105,7 +105,6 @@ export const fractionBuildGame: Game3D = {
         ctx.t('fractionBuild.prompt', {
           num: state.problem.numerator,
           den: state.problem.denominator,
-          filled: filled.size,
         })
       );
     }

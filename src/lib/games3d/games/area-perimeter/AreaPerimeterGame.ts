@@ -115,19 +115,11 @@ export const areaPerimeterGame: Game3D = {
         ? ctx.t('areaPerimeter.kindArea')
         : ctx.t('areaPerimeter.kindPerimeter');
     }
-    function metric(): number {
-      return state.problem.kind === 'area'
-        ? state.width * state.height
-        : 2 * (state.width + state.height);
-    }
     function showPrompt(): void {
       ctx.prompt.set(
         ctx.t('areaPerimeter.prompt', {
           kindLabel: kindLabel(),
           target: state.problem.target,
-          w: state.width,
-          h: state.height,
-          value: metric(),
         })
       );
     }

@@ -34,14 +34,14 @@
     "title": "مصفوفات الضرب",
     "description": "ابنِ مصفوفة مكعبات لحل مسألة ضرب",
     "instructions": "اسحب للبناء، أو استخدم أزرار − / + لإضافة الصفوف والأعمدة، ثم اضغط تحقق",
-    "prompt": "ابنِ {rows} صفوف × {cols} أعمدة   |   بنيت: {br}×{bc} = {total}",
+    "prompt": "ابنِ مصفوفة من {rows} صفوف × {cols} أعمدة",
     "correct": "{rows} × {cols} = {product}!"
   },
   "measureFill": {
     "title": "ملء الوعاء",
     "description": "املأ الوعاء حتى الحجم المطلوب",
     "instructions": "اسحب لصب السائل حتى العلامة المطلوبة",
-    "prompt": "املأ حتى {target} مل   |   الآن: {current} مل",
+    "prompt": "املأ حتى {target} مل",
     "correct": "رائع! تم الملء حتى {target} مل",
     "wrong": "اقتربت! حاول الوصول إلى العلامة المطلوبة",
     "unit": "مل"
@@ -49,15 +49,15 @@
   "fractionBuild": {
     "title": "بناء الكسور",
     "description": "املأ أجزاء من الفطيرة لمطابقة الكسر",
-    "instructions": "انقر على الشرائح لملئها حتى تطابق الكسر المطلوب",
-    "prompt": "املأ {num}/{den}   |   ملأت: {filled}/{den}",
+    "instructions": "انقر على الشرائح لملئها، ثم اضغط تحقق",
+    "prompt": "املأ {num}/{den} من البيتزا",
     "correct": "رائع! ملأت {num}/{den}"
   },
   "areaPerimeter": {
     "title": "المساحة والمحيط",
     "description": "ابنِ مستطيلاً بمساحة أو محيط معطى",
     "instructions": "اسحب لتغيير حجم الحديقة، أو استخدم أزرار العرض/الارتفاع − / +، ثم اضغط تحقق",
-    "prompt": "{kindLabel}: {target}   |   {w}×{h} ← {value}",
+    "prompt": "ابنِ مستطيلاً {kindLabel} له {target}",
     "correct": "رائع! {kindLabel} = {target}",
     "wrong": "اقتربت! غيّر حجم الحديقة وحاول مرة أخرى",
     "kindArea": "المساحة",

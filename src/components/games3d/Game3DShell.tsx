@@ -172,7 +172,7 @@ export function Game3DShell({
                   onError={handleError}
                 />
               )}
-              <OverlayHUD score={score} feedback={feedback} prompt={prompt} controls={controls} status={status} />
+              <OverlayHUD score={score} feedback={feedback} prompt={prompt} instructions={instructions} controls={controls} status={status} />
               {summary && (
                 <div className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-4 bg-slate-900/95 text-white">
                   <div className="text-3xl font-bold">{summary.totalPoints}</div>

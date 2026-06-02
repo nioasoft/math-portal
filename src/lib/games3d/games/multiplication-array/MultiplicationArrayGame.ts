@@ -119,9 +119,6 @@ export const multiplicationArrayGame: Game3D = {
         ctx.t('multiplicationArray.prompt', {
           rows: state.problem.rows,
           cols: state.problem.cols,
-          br: state.builtRows,
-          bc: state.builtCols,
-          total: state.builtRows * state.builtCols,
         })
       );
     }

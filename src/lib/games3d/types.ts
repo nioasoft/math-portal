@@ -66,6 +66,14 @@ export interface SceneContext {
   feedback: FeedbackController;
   /** Persistent question prompt — stays on screen until replaced/cleared. */
   prompt: PromptController;
+  /** On-screen HTML control buttons (−/+, Check, Reset, …) rendered by the React overlay. */
+  controls: ControlsController;
+  /**
+   * In-game translator, scoped to the `games3d` i18n namespace. Games are vanilla
+   * TS and cannot use the React `useTranslations` hook directly, so the localized
+   * function is threaded through from the shell.
+   */
+  t: (key: string, params?: Record<string, string | number>) => string;
   complete(summary: CompleteSummary): void;
   presets: {
     camera: CameraPresetsAPI;
@@ -110,6 +118,25 @@ export interface FeedbackController {
  */
 export interface PromptController {
   set(text: string): void;
+  clear(): void;
+}
+
+// =========== Controls (HTML overlay buttons) ============
+
+/**
+ * A single on-screen control button. Games declare these via {@link ControlsController};
+ * the React overlay renders them as real, accessible, touch-friendly HTML buttons.
+ */
+export interface ControlButton {
+  id: string;
+  /** Already-translated text or a short symbol like '+' / '−'. */
+  label: string;
+  onPress: () => void;
+  variant?: 'default' | 'confirm' | 'reset';
+}
+
+export interface ControlsController {
+  set(buttons: ControlButton[]): void;
   clear(): void;
 }
 

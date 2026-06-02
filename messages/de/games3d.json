@@ -21,10 +21,21 @@
     "geometry": "Geometrie",
     "units": "Maßeinheiten"
   },
+  "controls": {
+    "rows": "Reihen",
+    "columns": "Spalten",
+    "width": "Breite",
+    "height": "Höhe",
+    "total": "Gesamt",
+    "check": "Prüfen",
+    "reset": "Zurücksetzen"
+  },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
     "description": "Baue ein Würfelfeld, um eine Multiplikation zu lösen",
-    "instructions": "Tippe, um Würfel hinzuzufügen, bis das Feld zur Aufgabe passt"
+    "instructions": "Ziehe zum Bauen oder nutze die − / + Tasten für Reihen und Spalten, dann drücke Prüfen",
+    "prompt": "Baue {rows} Reihen × {cols} Spalten   |   du hast gebaut: {br}×{bc} = {total}",
+    "correct": "{rows} × {cols} = {product}!"
   },
   "measureFill": {
     "title": "Behälter füllen",

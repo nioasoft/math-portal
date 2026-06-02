@@ -5,6 +5,8 @@ import type {
   FeedbackController,
   FeedbackEvent,
   PromptController,
+  ControlsController,
+  ControlButton,
   CompleteSummary,
   AudioManager,
   InputAdapter,
@@ -103,6 +105,36 @@ export function createPromptController(): ObservablePrompt {
   };
 }
 
+// =========== ControlsController ============
+
+export interface ObservableControls extends ControlsController {
+  get(): ControlButton[];
+  subscribe(observer: (buttons: ControlButton[]) => void): () => void;
+}
+
+export function createControlsController(): ObservableControls {
+  let buttons: ControlButton[] = [];
+  const observers = new Set<(b: ControlButton[]) => void>();
+  const notify = () => observers.forEach((o) => o(buttons));
+  return {
+    set(b) {
+      buttons = b;
+      notify();
+    },
+    clear() {
+      buttons = [];
+      notify();
+    },
+    get() {
+      return buttons;
+    },
+    subscribe(o) {
+      observers.add(o);
+      return () => observers.delete(o);
+    },
+  };
+}
+
 // =========== SceneContext factory ============
 
 export interface CreateContextArgs {
@@ -119,6 +151,8 @@ export interface CreateContextArgs {
   score: ObservableScore;
   feedback: ObservableFeedback;
   prompt: ObservablePrompt;
+  controls: ObservableControls;
+  t: (key: string, params?: Record<string, string | number>) => string;
   onComplete: (summary: CompleteSummary) => void;
   cameraPresets: CameraPresetsAPI;
   lightingPresets: LightingPresetsAPI;
@@ -140,6 +174,8 @@ export function createSceneContext(args: CreateContextArgs): SceneContext {
     score: args.score,
     feedback: args.feedback,
     prompt: args.prompt,
+    controls: args.controls,
+    t: args.t,
     complete: args.onComplete,
     presets: { camera: args.cameraPresets, lighting: args.lightingPresets },
     debug: args.debug ?? null,

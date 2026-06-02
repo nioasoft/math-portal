@@ -2,13 +2,15 @@
 
 import { useTranslations } from 'next-intl';
 import { Trophy, Check, X, Lightbulb } from 'lucide-react';
-import type { FeedbackEvent } from '@/lib/games3d/types';
+import type { ControlButton, FeedbackEvent } from '@/lib/games3d/types';
 
 interface Props {
   score: number;
   feedback: FeedbackEvent | null;
   /** Persistent question prompt — stays visible until replaced (distinct from the transient feedback toast). */
   prompt?: string;
+  /** On-screen HTML control buttons (−/+, Check, Reset, …). */
+  controls?: ControlButton[];
 }
 
 const FEEDBACK_STYLES = {
@@ -17,7 +19,13 @@ const FEEDBACK_STYLES = {
   hint:    { Icon: Lightbulb, bg: 'bg-amber-400/90', text: 'text-slate-900' },
 } as const;
 
-export function OverlayHUD({ score, feedback, prompt }: Props): React.ReactElement {
+const CONTROL_VARIANT_STYLES = {
+  default: 'bg-indigo-600 text-white hover:bg-indigo-500 active:scale-95',
+  confirm: 'bg-emerald-600 text-white hover:bg-emerald-500 active:scale-95',
+  reset:   'bg-transparent text-slate-200 border border-slate-400/70 hover:bg-slate-700/60 active:scale-95',
+} as const;
+
+export function OverlayHUD({ score, feedback, prompt, controls }: Props): React.ReactElement {
   const t = useTranslations('games');
   return (
     <div className="pointer-events-none absolute inset-0 flex flex-col items-stretch p-4">
@@ -44,7 +52,7 @@ export function OverlayHUD({ score, feedback, prompt }: Props): React.ReactEleme
       {feedback && (
         <div
           data-testid="feedback-toast"
-          className={`mt-auto self-center mb-4 px-4 py-2 rounded-full flex items-center gap-2 shadow-lg ${FEEDBACK_STYLES[feedback.kind].bg} ${FEEDBACK_STYLES[feedback.kind].text}`}
+          className={`self-center mb-4 px-4 py-2 rounded-full flex items-center gap-2 shadow-lg ${FEEDBACK_STYLES[feedback.kind].bg} ${FEEDBACK_STYLES[feedback.kind].text} ${controls && controls.length > 0 ? 'mt-2' : 'mt-auto'}`}
           role="status"
         >
           {(() => {
@@ -52,6 +60,24 @@ export function OverlayHUD({ score, feedback, prompt }: Props): React.ReactEleme
             return <Icon className="w-5 h-5" aria-hidden="true" />;
           })()}
           {feedback.message && <span>{feedback.message}</span>}
+        </div>
+      )}
+
+      {controls && controls.length > 0 && (
+        <div
+          data-testid="controls-bar"
+          className="pointer-events-auto mt-auto flex flex-wrap items-center justify-center gap-2 pt-3"
+        >
+          {controls.map((btn) => (
+            <button
+              key={btn.id}
+              type="button"
+              onClick={btn.onPress}
+              className={`min-h-[44px] min-w-[44px] rounded-xl px-4 py-2.5 text-base font-bold shadow-lg backdrop-blur transition-transform ${CONTROL_VARIANT_STYLES[btn.variant ?? 'default']}`}
+            >
+              {btn.label}
+            </button>
+          ))}
         </div>
       )}
     </div>

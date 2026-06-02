@@ -21,10 +21,21 @@
     "geometry": "Geometría",
     "units": "Medidas"
   },
+  "controls": {
+    "rows": "Filas",
+    "columns": "Columnas",
+    "width": "Ancho",
+    "height": "Alto",
+    "total": "Total",
+    "check": "Comprobar",
+    "reset": "Reiniciar"
+  },
   "multiplicationArray": {
     "title": "Arreglos de multiplicación",
     "description": "Construye un arreglo de cubos para resolver una multiplicación",
-    "instructions": "Toca para añadir cubos hasta que el arreglo coincida con el problema"
+    "instructions": "Arrastra para construir, o usa los botones − / + para añadir filas y columnas, luego pulsa Comprobar",
+    "prompt": "Construye {rows} filas × {cols} columnas   |   construiste: {br}×{bc} = {total}",
+    "correct": "{rows} × {cols} = {product}!"
   },
   "measureFill": {
     "title": "Llena el recipiente",

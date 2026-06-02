@@ -21,9 +21,10 @@ describe('Canvas3D', () => {
       subscribeScore: vi.fn(() => () => {}),
       subscribeFeedback: vi.fn(() => () => {}),
       subscribePrompt: vi.fn(() => () => {}),
+      subscribeControls: vi.fn(() => () => {}),
       _debug: () => ({} as any),
     }));
-    render(<Canvas3D game={game} locale="en" isRTL={false} mode="practice" engineFactory={factory} />);
+    render(<Canvas3D game={game} locale="en" isRTL={false} mode="practice" t={(k) => k} engineFactory={factory} />);
     await waitFor(() => expect(start).toHaveBeenCalledWith(game));
   });
 
@@ -36,9 +37,10 @@ describe('Canvas3D', () => {
       subscribeScore: vi.fn(() => () => {}),
       subscribeFeedback: vi.fn(() => () => {}),
       subscribePrompt: vi.fn(() => () => {}),
+      subscribeControls: vi.fn(() => () => {}),
       _debug: () => ({} as any),
     }));
-    const { unmount } = render(<Canvas3D game={game} locale="en" isRTL={false} mode="practice" engineFactory={factory} />);
+    const { unmount } = render(<Canvas3D game={game} locale="en" isRTL={false} mode="practice" t={(k) => k} engineFactory={factory} />);
     await waitFor(() => expect(factory).toHaveBeenCalled());
     unmount();
     expect(dispose).toHaveBeenCalledOnce();

@@ -21,10 +21,21 @@
     "geometry": "Geometry",
     "units": "Measurement"
   },
+  "controls": {
+    "rows": "Rows",
+    "columns": "Columns",
+    "width": "Width",
+    "height": "Height",
+    "total": "Total",
+    "check": "Check",
+    "reset": "Reset"
+  },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
     "description": "Build a cube array to solve a multiplication fact",
-    "instructions": "Tap to add cubes until the array matches the problem"
+    "instructions": "Drag to build, or use the − / + buttons to add rows and columns, then press Check",
+    "prompt": "Build {rows} rows × {cols} columns   |   you built: {br}×{bc} = {total}",
+    "correct": "{rows} × {cols} = {product}!"
   },
   "measureFill": {
     "title": "Fill the Container",

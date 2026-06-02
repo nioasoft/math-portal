@@ -12,7 +12,7 @@ import { LoadingScene } from './LoadingScene';
 import { GameLoadError } from './GameLoadError';
 import { ModePicker } from './ModePicker';
 import { recordBestScore } from './completion';
-import type { CompleteSummary, FeedbackEvent, Game3D, GameMeta, GameMode3D } from '@/lib/games3d/types';
+import type { CompleteSummary, ControlButton, FeedbackEvent, Game3D, GameMeta, GameMode3D } from '@/lib/games3d/types';
 import { gameLoaders } from '@/lib/games3d/games/loaders';
 import { getMutePreference, setMutePreference } from '@/lib/game/storage';
 
@@ -54,6 +54,7 @@ export function Game3DShell({
   const [score, setScore] = useState<number>(0);
   const [feedback, setFeedback] = useState<FeedbackEvent | null>(null);
   const [prompt, setPrompt] = useState<string>('');
+  const [controls, setControls] = useState<ControlButton[]>([]);
   const [progress, setProgress] = useState<number>(0);
   const [loaded, setLoaded] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
@@ -123,6 +124,7 @@ export function Game3DShell({
   const playAgain = useCallback(() => {
     setSummary(null);
     setScore(0);
+    setControls([]);
     setLoaded(false);
     setProgress(0);
     setMode(initialMode ?? (supportedModes.length === 1 ? supportedModes[0] : null));
@@ -157,15 +159,17 @@ export function Game3DShell({
                   mode={mode}
                   locale={locale}
                   isRTL={isRTL}
+                  t={t}
                   onScore={setScore}
                   onFeedback={setFeedback}
                   onPrompt={setPrompt}
+                  onControls={setControls}
                   onComplete={handleComplete}
                   onLoadProgress={handleLoadProgress}
                   onError={handleError}
                 />
               )}
-              <OverlayHUD score={score} feedback={feedback} prompt={prompt} />
+              <OverlayHUD score={score} feedback={feedback} prompt={prompt} controls={controls} />
               {summary && (
                 <div className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-4 bg-slate-900/95 text-white">
                   <div className="text-3xl font-bold">{summary.totalPoints}</div>

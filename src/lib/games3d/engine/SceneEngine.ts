@@ -10,9 +10,11 @@ import {
   createScoreController,
   createFeedbackController,
   createPromptController,
+  createControlsController,
   ObservableScore,
   ObservableFeedback,
   ObservablePrompt,
+  ObservableControls,
 } from './SceneContext';
 import { createPerformanceMonitor } from './PerformanceMonitor';
 
@@ -24,6 +26,8 @@ export interface SceneEngineOptions {
   isRTL: boolean;
   mode?: import('../types').GameMode3D;
   prefersReducedMotion?: boolean;
+  /** In-game translator (scoped to the `games3d` namespace) threaded from the React shell. */
+  t: (key: string, params?: Record<string, string | number>) => string;
   onComplete?: (summary: CompleteSummary) => void;
   onLoadProgress?: (fraction: number) => void;
 }
@@ -37,6 +41,7 @@ export interface SceneEngineInstance {
   subscribeScore(observer: (newValue: number) => void): () => void;
   subscribeFeedback: ObservableFeedback['subscribe'];
   subscribePrompt: ObservablePrompt['subscribe'];
+  subscribeControls: ObservableControls['subscribe'];
   _debug(): {
     renderer: THREE.WebGLRenderer;
     scene: THREE.Scene;
@@ -64,6 +69,7 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
   const score: ObservableScore = createScoreController();
   const feedback: ObservableFeedback = createFeedbackController();
   const prompt: ObservablePrompt = createPromptController();
+  const controls: ObservableControls = createControlsController();
 
   let game: Game3D | null = null;
   let instance: GameInstance | null = null;
@@ -169,7 +175,8 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
       isRTL: opts.isRTL,
       mode: opts.mode ?? 'practice',
       prefersReducedMotion: opts.prefersReducedMotion ?? false,
-      score, feedback, prompt,
+      score, feedback, prompt, controls,
+      t: opts.t,
       onComplete: (summary) => {
         pause();
         opts.onComplete?.(summary);
@@ -225,6 +232,7 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
     subscribeScore: (o) => score.subscribe(o),
     subscribeFeedback: (o) => feedback.subscribe(o),
     subscribePrompt: (o) => prompt.subscribe(o),
+    subscribeControls: (o) => controls.subscribe(o),
     _debug: () => ({ renderer, scene, camera }),
   };
 }

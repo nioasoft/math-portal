@@ -21,10 +21,21 @@
     "geometry": "גאומטריה",
     "units": "יחידות מידה"
   },
+  "controls": {
+    "rows": "שורות",
+    "columns": "עמודות",
+    "width": "רוחב",
+    "height": "גובה",
+    "total": "סה״כ",
+    "check": "בדוק",
+    "reset": "נקה"
+  },
   "multiplicationArray": {
     "title": "מערכי כפל",
     "description": "בנה מערך קוביות כדי לפתור תרגיל כפל",
-    "instructions": "הקש כדי להוסיף קוביות עד שהמערך מתאים לתרגיל"
+    "instructions": "גרור כדי לבנות, או השתמש בכפתורי − / + להוספת שורות ועמודות, ואז לחץ בדוק",
+    "prompt": "בנה {rows} שורות × {cols} עמודות   |   בנית: {br}×{bc} = {total}",
+    "correct": "{rows} × {cols} = {product}!"
   },
   "measureFill": {
     "title": "מילוי מיכל",

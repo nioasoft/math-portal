@@ -6,17 +6,20 @@ import {
   SceneEngineInstance,
   SceneEngineOptions,
 } from '@/lib/games3d/engine/SceneEngine';
-import type { Game3D, CompleteSummary, FeedbackEvent } from '@/lib/games3d/types';
+import type { Game3D, CompleteSummary, FeedbackEvent, ControlButton } from '@/lib/games3d/types';
 
 interface Props {
   game: Game3D;
   locale: string;
   isRTL: boolean;
   mode: import('@/lib/games3d/types').GameMode3D;
+  /** In-game translator (scoped to the `games3d` namespace). */
+  t: (key: string, params?: Record<string, string | number>) => string;
   onComplete?: (summary: CompleteSummary) => void;
   onScore?: (score: number) => void;
   onFeedback?: (event: FeedbackEvent) => void;
   onPrompt?: (text: string) => void;
+  onControls?: (buttons: ControlButton[]) => void;
   onLoadProgress?: (fraction: number) => void;
   onError?: (err: unknown) => void;
   /** For testing: inject a fake engine factory. */
@@ -28,10 +31,12 @@ export function Canvas3D({
   locale,
   isRTL,
   mode,
+  t,
   onComplete,
   onScore,
   onFeedback,
   onPrompt,
+  onControls,
   onLoadProgress,
   onError,
   engineFactory,
@@ -56,6 +61,7 @@ export function Canvas3D({
         locale,
         isRTL,
         mode,
+        t,
         prefersReducedMotion,
         onComplete,
         onLoadProgress,
@@ -69,6 +75,7 @@ export function Canvas3D({
     const unsubScore = onScore ? engine.subscribeScore(onScore) : () => {};
     const unsubFeedback = onFeedback ? engine.subscribeFeedback(onFeedback) : () => {};
     const unsubPrompt = onPrompt ? engine.subscribePrompt(onPrompt) : () => {};
+    const unsubControls = onControls ? engine.subscribeControls(onControls) : () => {};
 
     engine.start(game).catch((err) => onError?.(err));
 
@@ -76,6 +83,7 @@ export function Canvas3D({
       unsubScore();
       unsubFeedback();
       unsubPrompt();
+      unsubControls();
       engine.dispose();
       engineRef.current = null;
     };

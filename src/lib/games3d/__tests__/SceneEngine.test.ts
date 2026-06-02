@@ -66,8 +66,7 @@ describe('SceneEngine', () => {
     const engine = createSceneEngine({
       canvas: document.createElement('canvas'),
       renderer: new FakeRenderer() as unknown as THREE.WebGLRenderer,
-      locale: 'en',
-      isRTL: false,
+      locale: 'en', isRTL: false, t: (k) => k,
     });
     await engine.start(game);
     expect(initSpy).toHaveBeenCalledOnce();
@@ -85,7 +84,7 @@ describe('SceneEngine', () => {
     const engine = createSceneEngine({
       canvas: document.createElement('canvas'),
       renderer: new FakeRenderer() as unknown as THREE.WebGLRenderer,
-      locale: 'en', isRTL: false,
+      locale: 'en', isRTL: false, t: (k) => k,
     });
     await engine.start(game);
     step(3);
@@ -103,7 +102,7 @@ describe('SceneEngine', () => {
     const engine = createSceneEngine({
       canvas: document.createElement('canvas'),
       renderer: new FakeRenderer() as unknown as THREE.WebGLRenderer,
-      locale: 'en', isRTL: false,
+      locale: 'en', isRTL: false, t: (k) => k,
     });
     await engine.start(game);
     step(1);
@@ -122,7 +121,7 @@ describe('SceneEngine', () => {
     const engine = createSceneEngine({
       canvas: document.createElement('canvas'),
       renderer: new FakeRenderer() as unknown as THREE.WebGLRenderer,
-      locale: 'en', isRTL: false,
+      locale: 'en', isRTL: false, t: (k) => k,
     });
     await engine.start(game);
     engine.pause();
@@ -142,7 +141,7 @@ describe('SceneEngine', () => {
     const engine = createSceneEngine({
       canvas: document.createElement('canvas'),
       renderer: new FakeRenderer() as unknown as THREE.WebGLRenderer,
-      locale: 'en', isRTL: false,
+      locale: 'en', isRTL: false, t: (k) => k,
     });
     await engine.start(game);
     engine.dispose();
@@ -164,7 +163,7 @@ describe('SceneEngine', () => {
     const engine = createSceneEngine({
       canvas: document.createElement('canvas'),
       renderer: new FakeRenderer() as unknown as THREE.WebGLRenderer,
-      locale: 'en', isRTL: false,
+      locale: 'en', isRTL: false, t: (k) => k,
       onComplete,
     });
     await engine.start(game);

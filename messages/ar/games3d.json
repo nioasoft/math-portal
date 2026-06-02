@@ -21,10 +21,21 @@
     "geometry": "الهندسة",
     "units": "وحدات القياس"
   },
+  "controls": {
+    "rows": "صفوف",
+    "columns": "أعمدة",
+    "width": "عرض",
+    "height": "ارتفاع",
+    "total": "المجموع",
+    "check": "تحقق",
+    "reset": "مسح"
+  },
   "multiplicationArray": {
     "title": "مصفوفات الضرب",
     "description": "ابنِ مصفوفة مكعبات لحل مسألة ضرب",
-    "instructions": "انقر لإضافة مكعبات حتى تطابق المصفوفة المسألة"
+    "instructions": "اسحب للبناء، أو استخدم أزرار − / + لإضافة الصفوف والأعمدة، ثم اضغط تحقق",
+    "prompt": "ابنِ {rows} صفوف × {cols} أعمدة   |   بنيت: {br}×{bc} = {total}",
+    "correct": "{rows} × {cols} = {product}!"
   },
   "measureFill": {
     "title": "ملء الوعاء",

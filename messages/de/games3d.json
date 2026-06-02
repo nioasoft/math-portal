@@ -21,7 +21,8 @@
     "fractions": "Brüche",
     "geometry": "Geometrie",
     "units": "Maßeinheiten",
-    "percentage": "Prozente"
+    "percentage": "Prozente",
+    "ratio": "Verhältnis"
   },
   "controls": {
     "rows": "Reihen",
@@ -47,7 +48,9 @@
     "jump": "Sprung",
     "forward": "Vorwärts",
     "back": "Zurück",
-    "percent": "Prozent"
+    "percent": "Prozent",
+    "juiceA": "Saft A",
+    "juiceB": "Saft B"
   },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
@@ -237,5 +240,13 @@
     "prompt": "Fülle {percent}% der Tribüne",
     "correct": "Super! Du hast {percent}% der Tribüne gefüllt",
     "wrong": "Fast! Prüfe den Prozentsatz und korrigiere die Füllung"
+  },
+  "ratioMixer": {
+    "title": "Verhältnis-Mixer",
+    "description": "Mische an der Saftbar zwei Säfte im gesuchten Verhältnis – und entdecke, dass gleichwertige Verhältnisse gleich schmecken.",
+    "instructions": "Stelle die Menge von Saft A und Saft B mit den Tasten − und + ein (oder ziehe ein Glas nach oben zum Füllen, nach unten zum Leeren), bis ihr Verhältnis zum Ziel passt – jede gleichwertige Menge zählt – und drücke dann Prüfen.",
+    "prompt": "Mische im Verhältnis {a}:{b}",
+    "correct": "Super! Gleichwertig zu {a}:{b}",
+    "wrong": "Noch nicht das richtige Verhältnis – ändere die Mengen und versuche es erneut"
   }
 }

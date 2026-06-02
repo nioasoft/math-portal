@@ -21,7 +21,8 @@
     "fractions": "Fractions",
     "geometry": "Geometry",
     "units": "Measurement",
-    "percentage": "Percentages"
+    "percentage": "Percentages",
+    "ratio": "Ratio"
   },
   "controls": {
     "rows": "Rows",
@@ -47,7 +48,9 @@
     "jump": "Jump",
     "forward": "Forward",
     "back": "Back",
-    "percent": "Percent"
+    "percent": "Percent",
+    "juiceA": "Juice A",
+    "juiceB": "Juice B"
   },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
@@ -237,5 +240,13 @@
     "prompt": "Fill {percent}% of the stand",
     "correct": "Great! You filled {percent}% of the stand",
     "wrong": "Almost! Check the percent and fix the fill"
+  },
+  "ratioMixer": {
+    "title": "Ratio Mixer",
+    "description": "Mix two juices at the smoothie bar to match the target ratio — and discover that equivalent ratios taste the same.",
+    "instructions": "Set the amount of Juice A and Juice B with the − and + buttons (or drag a glass up to fill it, down to empty it) until their ratio matches the target — any equivalent amounts work — then press Check.",
+    "prompt": "Mix in the ratio {a}:{b}",
+    "correct": "Nice! Equivalent to {a}:{b}",
+    "wrong": "Not the right ratio yet — adjust the amounts and try again"
   }
 }

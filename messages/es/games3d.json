@@ -21,7 +21,8 @@
     "fractions": "Fracciones",
     "geometry": "Geometría",
     "units": "Medidas",
-    "percentage": "Porcentajes"
+    "percentage": "Porcentajes",
+    "ratio": "Razón"
   },
   "controls": {
     "rows": "Filas",
@@ -47,7 +48,9 @@
     "jump": "Salto",
     "forward": "Adelante",
     "back": "Atrás",
-    "percent": "Porcentaje"
+    "percent": "Porcentaje",
+    "juiceA": "Zumo A",
+    "juiceB": "Zumo B"
   },
   "multiplicationArray": {
     "title": "Arreglos de multiplicación",
@@ -237,5 +240,13 @@
     "prompt": "Llena el {percent}% de la grada",
     "correct": "¡Genial! Llenaste el {percent}% de la grada",
     "wrong": "¡Casi! Revisa el porcentaje y corrige el llenado"
+  },
+  "ratioMixer": {
+    "title": "Mezclador de razones",
+    "description": "Mezcla dos zumos en la barra de batidos según la razón pedida — y descubre que las razones equivalentes saben igual.",
+    "instructions": "Ajusta la cantidad de Zumo A y Zumo B con los botones − y + (o arrastra un vaso hacia arriba para llenarlo, hacia abajo para vaciarlo) hasta que su razón coincida con la pedida — cualquier cantidad equivalente sirve — y luego pulsa Comprobar.",
+    "prompt": "Mezcla en la razón {a}:{b}",
+    "correct": "¡Bien! Equivalente a {a}:{b}",
+    "wrong": "Aún no es la razón correcta — ajusta las cantidades e inténtalo de nuevo"
   }
 }

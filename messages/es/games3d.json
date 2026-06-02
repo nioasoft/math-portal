@@ -56,7 +56,8 @@
     "value": "Valor",
     "angle": "Ángulo",
     "perChest": "Por cofre",
-    "showAgain": "Mostrar otra vez"
+    "showAgain": "Mostrar otra vez",
+    "slice": "Cortar"
   },
   "multiplicationArray": {
     "title": "Arreglos de multiplicación",
@@ -302,5 +303,13 @@
     "prompt": "¿Cuántos puntos viste?",
     "correct": "¡Genial! Viste {count} puntos",
     "wrong": "¡Casi! Echa otro vistazo e intenta contar los puntos"
+  },
+  "arrayMultiply": {
+    "title": "Matriz de Multiplicación",
+    "description": "Cuenta las frutas dispuestas en una matriz y averigua cuántas hay en total",
+    "instructions": "Cuenta cuántas frutas hay en la matriz (filas × columnas). Usa los botones − / + o arrastra hacia arriba para introducir el total, pulsa 'Cortar' para verlo fila por fila y luego pulsa Comprobar",
+    "prompt": "¿Cuántas hay en total?",
+    "correct": "{rows} × {cols} = {product}!",
+    "wrong": "Cuenta de nuevo — filas × columnas"
   }
 }

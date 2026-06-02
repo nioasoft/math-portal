@@ -70,6 +70,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./bar-graph-builder/BarGraphBuilderGame').then((m) => ({ default: m.barGraphBuilderGame })),
   'subitize-dots': () =>
     import('./subitize-dots/SubitizeDotsGame').then((m) => ({ default: m.subitizeDotsGame })),
+  'array-multiply-slice': () =>
+    import('./array-multiply-slice/ArrayMultiplySliceGame').then((m) => ({ default: m.arrayMultiplySliceGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

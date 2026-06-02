@@ -30,6 +30,7 @@ import { angleBuilderGame } from './angle-builder/AngleBuilderGame';
 import { divisionShareGame } from './division-share/DivisionShareGame';
 import { barGraphBuilderGame } from './bar-graph-builder/BarGraphBuilderGame';
 import { subitizeDotsGame } from './subitize-dots/SubitizeDotsGame';
+import { arrayMultiplySliceGame } from './array-multiply-slice/ArrayMultiplySliceGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -71,6 +72,7 @@ const games: Game3D[] = [
   divisionShareGame,
   barGraphBuilderGame,
   subitizeDotsGame,
+  arrayMultiplySliceGame,
 ];
 
 let registered = false;

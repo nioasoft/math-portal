@@ -56,7 +56,8 @@
     "value": "Value",
     "angle": "Angle",
     "perChest": "Per chest",
-    "showAgain": "Show again"
+    "showAgain": "Show again",
+    "slice": "Slice"
   },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
@@ -302,5 +303,13 @@
     "prompt": "How many dots did you see?",
     "correct": "Great! You saw {count} dots",
     "wrong": "Almost! Take another look and try counting the dots"
+  },
+  "arrayMultiply": {
+    "title": "Multiplication Array",
+    "description": "Count the fruits arranged in an array and find how many there are in total",
+    "instructions": "Count how many fruits are in the array (rows × columns). Use the − / + buttons or drag up to enter the total, press 'Slice' to see it row by row, then press Check",
+    "prompt": "How many in total?",
+    "correct": "{rows} × {cols} = {product}!",
+    "wrong": "Count again — rows × columns"
   }
 }

@@ -56,7 +56,8 @@
     "value": "Wert",
     "angle": "Winkel",
     "perChest": "Pro Truhe",
-    "showAgain": "Nochmal zeigen"
+    "showAgain": "Nochmal zeigen",
+    "slice": "Schneiden"
   },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
@@ -302,5 +303,13 @@
     "prompt": "Wie viele Punkte hast du gesehen?",
     "correct": "Super! Du hast {count} Punkte gesehen",
     "wrong": "Fast! Schau noch einmal und versuche, die Punkte zu zählen"
+  },
+  "arrayMultiply": {
+    "title": "Multiplikations-Feld",
+    "description": "Zähle die im Feld angeordneten Früchte und finde heraus, wie viele es insgesamt sind",
+    "instructions": "Zähle, wie viele Früchte im Feld sind (Zeilen × Spalten). Nutze die − / + Tasten oder ziehe nach oben, um die Gesamtzahl einzugeben, drücke 'Schneiden', um es Reihe für Reihe zu sehen, und drücke dann Prüfen",
+    "prompt": "Wie viele insgesamt?",
+    "correct": "{rows} × {cols} = {product}!",
+    "wrong": "Zähle noch einmal — Zeilen × Spalten"
   }
 }

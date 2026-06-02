@@ -32,6 +32,7 @@ import { barGraphBuilderGame } from './bar-graph-builder/BarGraphBuilderGame';
 import { subitizeDotsGame } from './subitize-dots/SubitizeDotsGame';
 import { arrayMultiplySliceGame } from './array-multiply-slice/ArrayMultiplySliceGame';
 import { fractionSliceGame } from './fraction-slice/FractionSliceGame';
+import { patternCompleteGame } from './pattern-complete/PatternCompleteGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -75,6 +76,7 @@ const games: Game3D[] = [
   subitizeDotsGame,
   arrayMultiplySliceGame,
   fractionSliceGame,
+  patternCompleteGame,
 ];
 
 let registered = false;

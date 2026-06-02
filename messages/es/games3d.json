@@ -319,5 +319,13 @@
     "prompt": "Colorea {n} de {d} partes",
     "correct": "¡Genial! Coloreaste {n} de {d}",
     "wrong": "¡Casi! Corta y colorea el número correcto de partes y corrige"
+  },
+  "patternComplete": {
+    "title": "Constructor de patrones",
+    "description": "Construye la torre que falta para que la fila siga la regla del patrón",
+    "instructions": "Observa cómo crecen las torres y descubre la regla. Usa los botones − / + (o arrastra hacia arriba) para construir la torre que falta a la altura correcta, y luego pulsa Comprobar",
+    "prompt": "¿Cuántos cubos tiene la torre que falta?",
+    "correct": "¡Correcto! La torre que falta tiene {value} cubos",
+    "wrong": "¡Casi! Descubre la regla y construye de nuevo"
   }
 }

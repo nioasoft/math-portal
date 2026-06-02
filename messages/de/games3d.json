@@ -319,5 +319,13 @@
     "prompt": "Färbe {n} von {d} Teilen",
     "correct": "Super! Du hast {n} von {d} gefärbt",
     "wrong": "Fast! Schneide und färbe die richtige Anzahl Teile und korrigiere"
+  },
+  "patternComplete": {
+    "title": "Muster bauen",
+    "description": "Baue den fehlenden Turm so, dass die Reihe der Regel des Musters folgt",
+    "instructions": "Schau, wie die Türme wachsen, und finde die Regel heraus. Baue mit den − / + Tasten (oder ziehe nach oben) den fehlenden Turm auf die richtige Höhe und drücke dann Prüfen",
+    "prompt": "Wie viele Würfel hat der fehlende Turm?",
+    "correct": "Richtig! Der fehlende Turm hat {value} Würfel",
+    "wrong": "Fast! Finde die Regel heraus und baue noch einmal"
   }
 }

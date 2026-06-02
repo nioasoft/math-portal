@@ -319,5 +319,13 @@
     "prompt": "Shade {n} out of {d} parts",
     "correct": "Great! You shaded {n} out of {d}",
     "wrong": "Almost! Slice and shade the right number of parts and fix it"
+  },
+  "patternComplete": {
+    "title": "Pattern Builder",
+    "description": "Build the missing tower so the row follows the pattern's rule",
+    "instructions": "Look at how the towers grow and work out the rule. Use the − / + buttons (or drag up) to build the missing tower to the right height, then press Check",
+    "prompt": "How many cubes in the missing tower?",
+    "correct": "Correct! The missing tower has {value} cubes",
+    "wrong": "Almost! Work out the rule and build again"
   }
 }

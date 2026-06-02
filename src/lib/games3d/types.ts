@@ -68,6 +68,8 @@ export interface SceneContext {
   prompt: PromptController;
   /** On-screen HTML control buttons (−/+, Check, Reset, …) rendered by the React overlay. */
   controls: ControlsController;
+  /** Reward/progress channel surfaced to the HUD (stars, streak, progress). */
+  status: StatusController;
   /**
    * In-game translator, scoped to the `games3d` i18n namespace. Games are vanilla
    * TS and cannot use the React `useTranslations` hook directly, so the localized
@@ -118,6 +120,29 @@ export interface FeedbackController {
  */
 export interface PromptController {
   set(text: string): void;
+  clear(): void;
+}
+
+// =========== Status / reward channel ============
+
+/**
+ * Lightweight game-status snapshot surfaced to the React HUD (stars earned,
+ * current streak, progress through a set of questions). All fields optional so a
+ * game can set just the parts it tracks.
+ */
+export interface GameStatus {
+  stars?: number;
+  maxStars?: number;
+  streak?: number;
+  progress?: { current: number; total: number };
+}
+
+/**
+ * Persistent status channel — like {@link PromptController}, what's set here
+ * stays on screen until replaced or cleared.
+ */
+export interface StatusController {
+  set(status: GameStatus): void;
   clear(): void;
 }
 

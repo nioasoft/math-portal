@@ -11,12 +11,15 @@ import {
   createFeedbackController,
   createPromptController,
   createControlsController,
+  createStatusController,
   ObservableScore,
   ObservableFeedback,
   ObservablePrompt,
   ObservableControls,
+  ObservableStatus,
 } from './SceneContext';
 import { createPerformanceMonitor } from './PerformanceMonitor';
+import { tweenGroup } from '../kit/juice';
 
 export interface SceneEngineOptions {
   canvas: HTMLCanvasElement;
@@ -42,6 +45,7 @@ export interface SceneEngineInstance {
   subscribeFeedback: ObservableFeedback['subscribe'];
   subscribePrompt: ObservablePrompt['subscribe'];
   subscribeControls: ObservableControls['subscribe'];
+  subscribeStatus: ObservableStatus['subscribe'];
   _debug(): {
     renderer: THREE.WebGLRenderer;
     scene: THREE.Scene;
@@ -60,6 +64,16 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
     new THREE.WebGLRenderer({ canvas: opts.canvas, antialias: true, alpha: true });
   renderer.setSize(width, height, false);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  // Soft shadows + filmic tone mapping for the warm "clay" look. The kit sets up
+  // a single shadow-casting light to keep this cheap (see kit/scene.ts).
+  // Guarded so injected fake renderers (tests) without these fields don't break.
+  if ('shadowMap' in renderer) {
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  }
+  if ('toneMapping' in renderer) {
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  }
 
   const input: InputAdapterInstance = createInputAdapter(opts.canvas, camera, scene);
   const audio = createAudioManager();
@@ -70,6 +84,7 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
   const feedback: ObservableFeedback = createFeedbackController();
   const prompt: ObservablePrompt = createPromptController();
   const controls: ObservableControls = createControlsController();
+  const status: ObservableStatus = createStatusController();
 
   let game: Game3D | null = null;
   let instance: GameInstance | null = null;
@@ -96,6 +111,9 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
     const dt = lastTime > 0 ? (now - lastTime) / 1000 : 0;
     lastTime = now;
     const elapsed = (now - startTime) / 1000;
+    // Advance kit tweens (popIn/punch/shake/tweenTo) before the game's own frame
+    // logic, using the same high-res timestamp the loop already receives.
+    tweenGroup.update(now);
     instance?.onFrame?.(dt, elapsed);
     renderer.render(scene, camera);
     perfMonitor.tick();
@@ -175,7 +193,7 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
       isRTL: opts.isRTL,
       mode: opts.mode ?? 'practice',
       prefersReducedMotion: opts.prefersReducedMotion ?? false,
-      score, feedback, prompt, controls,
+      score, feedback, prompt, controls, status,
       t: opts.t,
       onComplete: (summary) => {
         pause();
@@ -220,6 +238,9 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
     window.removeEventListener('resize', onResize);
     instance?.dispose();
     instance = null;
+    // Drop any in-flight kit tweens so a disposed game's objects aren't kept alive.
+    tweenGroup.getAll().forEach((tw) => tw.stop());
+    tweenGroup.removeAll();
     input.dispose?.();
     assetLoader.evict();
     if (!opts.renderer) renderer.dispose?.();
@@ -233,6 +254,7 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
     subscribeFeedback: (o) => feedback.subscribe(o),
     subscribePrompt: (o) => prompt.subscribe(o),
     subscribeControls: (o) => controls.subscribe(o),
+    subscribeStatus: (o) => status.subscribe(o),
     _debug: () => ({ renderer, scene, camera }),
   };
 }

@@ -7,6 +7,8 @@ import type {
   PromptController,
   ControlsController,
   ControlButton,
+  StatusController,
+  GameStatus,
   CompleteSummary,
   AudioManager,
   InputAdapter,
@@ -135,6 +137,36 @@ export function createControlsController(): ObservableControls {
   };
 }
 
+// =========== StatusController ============
+
+export interface ObservableStatus extends StatusController {
+  get(): GameStatus;
+  subscribe(observer: (status: GameStatus) => void): () => void;
+}
+
+export function createStatusController(): ObservableStatus {
+  let status: GameStatus = {};
+  const observers = new Set<(s: GameStatus) => void>();
+  const notify = () => observers.forEach((o) => o(status));
+  return {
+    set(s) {
+      status = { ...s };
+      notify();
+    },
+    clear() {
+      status = {};
+      notify();
+    },
+    get() {
+      return status;
+    },
+    subscribe(o) {
+      observers.add(o);
+      return () => observers.delete(o);
+    },
+  };
+}
+
 // =========== SceneContext factory ============
 
 export interface CreateContextArgs {
@@ -152,6 +184,7 @@ export interface CreateContextArgs {
   feedback: ObservableFeedback;
   prompt: ObservablePrompt;
   controls: ObservableControls;
+  status: ObservableStatus;
   t: (key: string, params?: Record<string, string | number>) => string;
   onComplete: (summary: CompleteSummary) => void;
   cameraPresets: CameraPresetsAPI;
@@ -175,6 +208,7 @@ export function createSceneContext(args: CreateContextArgs): SceneContext {
     feedback: args.feedback,
     prompt: args.prompt,
     controls: args.controls,
+    status: args.status,
     t: args.t,
     complete: args.onComplete,
     presets: { camera: args.cameraPresets, lighting: args.lightingPresets },

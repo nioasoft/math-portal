@@ -258,5 +258,13 @@
     "prompt": "Completa la secuencia",
     "correct": "¡Correcto! El número que falta es {value}",
     "wrong": "¡Casi! Descubre la regla e inténtalo de nuevo"
+  },
+  "fractionStrip": {
+    "title": "Tiras de fracciones",
+    "description": "Construye una fracción igual a la dada usando dos tiras de madera y una balanza",
+    "instructions": "La tira de arriba está dada. Construye la de abajo: ajusta el número de cortes con denominador −/+ y las piezas coloreadas con numerador −/+ (o arrastra: derecha = más piezas coloreadas, arriba = más cortes), para que tenga el mismo TAMAÑO que la tira de arriba pero con un número de piezas diferente. La balanza se nivela cuando las dos fracciones son iguales. Luego pulsa Comprobar",
+    "prompt": "Construye una fracción igual a {num}/{den}",
+    "correct": "¡Genial! {rnum}/{rden} es igual a {num}/{den}",
+    "wrong": "¡Casi! Construye una tira del mismo tamaño pero con un denominador diferente — la balanza se nivelará"
   }
 }

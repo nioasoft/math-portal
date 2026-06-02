@@ -258,5 +258,13 @@
     "prompt": "Vervollständige die Folge",
     "correct": "Richtig! Die fehlende Zahl ist {value}",
     "wrong": "Fast! Finde die Regel und versuch es noch einmal"
+  },
+  "fractionStrip": {
+    "title": "Bruchstreifen",
+    "description": "Baue einen Bruch, der dem gegebenen gleicht, mit zwei Holzstreifen und einer Waage",
+    "instructions": "Der obere Streifen ist vorgegeben. Baue den unteren: Stelle die Anzahl der Schnitte mit Nenner −/+ und die gefärbten Stücke mit Zähler −/+ ein (oder ziehe: rechts = mehr gefärbte Stücke, oben = mehr Schnitte), sodass er gleich groß wie der obere Streifen ist, aber eine andere Anzahl Stücke hat. Die Waage ist im Gleichgewicht, wenn beide Brüche gleich sind. Dann drücke Prüfen",
+    "prompt": "Baue einen Bruch, der gleich {num}/{den} ist",
+    "correct": "Toll! {rnum}/{rden} ist gleich {num}/{den}",
+    "wrong": "Fast! Baue einen Streifen gleicher Größe, aber mit anderem Nenner — die Waage pendelt sich ein"
   }
 }

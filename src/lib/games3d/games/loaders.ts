@@ -58,6 +58,10 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./ratio-mixer/RatioMixerGame').then((m) => ({ default: m.ratioMixerGame })),
   'number-sequence': () =>
     import('./number-sequence/NumberSequenceGame').then((m) => ({ default: m.numberSequenceGame })),
+  'fraction-strip-compare': () =>
+    import('./fraction-strip-compare/FractionStripCompareGame').then((m) => ({
+      default: m.fractionStripCompareGame,
+    })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

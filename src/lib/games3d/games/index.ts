@@ -25,6 +25,7 @@ import { weightBalanceGame } from './weight-balance/WeightBalanceGame';
 import { percentBarGame } from './percent-bar/PercentBarGame';
 import { ratioMixerGame } from './ratio-mixer/RatioMixerGame';
 import { numberSequenceGame } from './number-sequence/NumberSequenceGame';
+import { fractionStripCompareGame } from './fraction-strip-compare/FractionStripCompareGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -61,6 +62,7 @@ const games: Game3D[] = [
   percentBarGame,
   ratioMixerGame,
   numberSequenceGame,
+  fractionStripCompareGame,
 ];
 
 let registered = false;

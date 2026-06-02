@@ -258,5 +258,13 @@
     "prompt": "Complete the sequence",
     "correct": "Correct! The missing number is {value}",
     "wrong": "Almost! Find the rule and try again"
+  },
+  "fractionStrip": {
+    "title": "Fraction Strips",
+    "description": "Build a fraction equal to the given one using two wooden strips and a balance",
+    "instructions": "The top strip is given. Build the bottom one: set the number of saw-cuts with denominator −/+ and the colored pieces with numerator −/+ (or drag: right = more colored pieces, up = more cuts), so it is the same SIZE as the top strip but with a different number of pieces. The balance levels when the two fractions are equal. Then press Check",
+    "prompt": "Build a fraction equal to {num}/{den}",
+    "correct": "Great! {rnum}/{rden} equals {num}/{den}",
+    "wrong": "Almost! Build a strip the same size but with a different denominator — the balance will level"
   }
 }

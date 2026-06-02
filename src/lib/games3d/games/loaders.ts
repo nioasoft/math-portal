@@ -22,6 +22,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./clock-builder/ClockBuilderGame').then((m) => ({ default: m.clockBuilderGame })),
   'fraction-number-line': () =>
     import('./fraction-number-line/FractionNumberLineGame').then((m) => ({ default: m.fractionNumberLineGame })),
+  'algebra-balance': () =>
+    import('./algebra-balance/AlgebraBalanceGame').then((m) => ({ default: m.algebraBalanceGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

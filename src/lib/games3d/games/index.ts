@@ -8,6 +8,7 @@ import { tenFrameFillGame } from './ten-frame-fill/TenFrameFillGame';
 import { placeValueBuilderGame } from './place-value-builder/PlaceValueBuilderGame';
 import { clockBuilderGame } from './clock-builder/ClockBuilderGame';
 import { fractionNumberLineGame } from './fraction-number-line/FractionNumberLineGame';
+import { algebraBalanceGame } from './algebra-balance/AlgebraBalanceGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -27,6 +28,7 @@ const games: Game3D[] = [
   placeValueBuilderGame,
   clockBuilderGame,
   fractionNumberLineGame,
+  algebraBalanceGame,
 ];
 
 let registered = false;

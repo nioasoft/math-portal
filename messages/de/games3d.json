@@ -36,7 +36,9 @@
     "hour": "Stunde",
     "minute": "Minute",
     "numerator": "Zähler",
-    "denominator": "Nenner"
+    "denominator": "Nenner",
+    "left": "Links",
+    "right": "Rechts"
   },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
@@ -106,5 +108,13 @@
     "prompt": "Platziere {num}/{den} auf dem Strahl",
     "correct": "Super! Du hast {num}/{den} richtig platziert",
     "wrong": "Fast! Zieh die Perle an die richtige Stelle und korrigiere"
+  },
+  "algebraBalance": {
+    "title": "Algebra-Waage",
+    "description": "Entferne gleich viele Kristalle von beiden Seiten der Waage, bis das ? allein steht",
+    "instructions": "Die Waage startet im Gleichgewicht. Entferne von beiden Seiten gleich viele Kristalle (Links −/+, Rechts −/+), bis das ? allein steht und der Balken wieder waagerecht ist. Ungleiches Entfernen senkt die schwerere Seite. Dann auf Prüfen drücken",
+    "prompt": "Löse: ? + {b} = {c}",
+    "correct": "Super! ? = {x}",
+    "wrong": "Fast! Entferne von beiden Seiten gleich viele, bis das ? allein steht und die Waage im Gleichgewicht ist"
   }
 }

@@ -36,7 +36,9 @@
     "hour": "Hour",
     "minute": "Minute",
     "numerator": "Numerator",
-    "denominator": "Denominator"
+    "denominator": "Denominator",
+    "left": "Left",
+    "right": "Right"
   },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
@@ -106,5 +108,13 @@
     "prompt": "Place {num}/{den} on the line",
     "correct": "Great! You placed {num}/{den} correctly",
     "wrong": "Almost! Drag the bead to the right spot and fix it"
+  },
+  "algebraBalance": {
+    "title": "Algebra Balance",
+    "description": "Remove equal crystals from both sides of the scale until the ? stands alone",
+    "instructions": "The scale starts balanced. Remove an equal number of crystals from both sides (Left −/+, Right −/+) until the ? stands alone and the beam is level again. Removing unequally tips the heavier side down. Then press Check",
+    "prompt": "Solve: ? + {b} = {c}",
+    "correct": "Great! ? = {x}",
+    "wrong": "Almost! Remove an equal number from both sides until the ? stands alone and the scale is balanced"
   }
 }

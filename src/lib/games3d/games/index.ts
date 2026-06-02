@@ -29,6 +29,7 @@ import { fractionStripCompareGame } from './fraction-strip-compare/FractionStrip
 import { angleBuilderGame } from './angle-builder/AngleBuilderGame';
 import { divisionShareGame } from './division-share/DivisionShareGame';
 import { barGraphBuilderGame } from './bar-graph-builder/BarGraphBuilderGame';
+import { subitizeDotsGame } from './subitize-dots/SubitizeDotsGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -69,6 +70,7 @@ const games: Game3D[] = [
   angleBuilderGame,
   divisionShareGame,
   barGraphBuilderGame,
+  subitizeDotsGame,
 ];
 
 let registered = false;

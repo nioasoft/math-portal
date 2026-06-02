@@ -68,6 +68,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./division-share/DivisionShareGame').then((m) => ({ default: m.divisionShareGame })),
   'bar-graph-builder': () =>
     import('./bar-graph-builder/BarGraphBuilderGame').then((m) => ({ default: m.barGraphBuilderGame })),
+  'subitize-dots': () =>
+    import('./subitize-dots/SubitizeDotsGame').then((m) => ({ default: m.subitizeDotsGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

@@ -55,7 +55,8 @@
     "juiceB": "Saft B",
     "value": "Wert",
     "angle": "Winkel",
-    "perChest": "Pro Truhe"
+    "perChest": "Pro Truhe",
+    "showAgain": "Nochmal zeigen"
   },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
@@ -293,5 +294,13 @@
     "prompt": "Wie viel mehr {a} als {b}?",
     "correct": "Richtig! Der Unterschied ist {diff}",
     "wrong": "Fast! Lies die Höhe jedes Balkens noch einmal und versuche es erneut"
+  },
+  "subitize": {
+    "title": "Punkteblitz",
+    "description": "Punkte blitzen kurz auf dem Tisch des Zauberers auf — wie viele hast du gesehen?",
+    "instructions": "Sieh zu, wie die Punkte auf dem Tisch aufblitzen und dann unter einem Tuch verschwinden. Gib mit den Tasten − / + ein, wie viele Punkte du gesehen hast (drücke \"Nochmal zeigen\", um sie erneut zu sehen), und drücke dann Prüfen",
+    "prompt": "Wie viele Punkte hast du gesehen?",
+    "correct": "Super! Du hast {count} Punkte gesehen",
+    "wrong": "Fast! Schau noch einmal und versuche, die Punkte zu zählen"
   }
 }

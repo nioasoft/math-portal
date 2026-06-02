@@ -55,7 +55,8 @@
     "juiceB": "Zumo B",
     "value": "Valor",
     "angle": "Ángulo",
-    "perChest": "Por cofre"
+    "perChest": "Por cofre",
+    "showAgain": "Mostrar otra vez"
   },
   "multiplicationArray": {
     "title": "Arreglos de multiplicación",
@@ -293,5 +294,13 @@
     "prompt": "¿Cuántas {a} más que {b}?",
     "correct": "¡Correcto! La diferencia es {diff}",
     "wrong": "¡Casi! Lee de nuevo la altura de cada barra e inténtalo otra vez"
+  },
+  "subitize": {
+    "title": "Destello de puntos",
+    "description": "Los puntos destellan un instante en la mesa del mago: ¿cuántos viste?",
+    "instructions": "Observa cómo los puntos destellan en la mesa y luego desaparecen bajo un paño. Usa los botones − / + para introducir cuántos puntos viste (pulsa \"Mostrar otra vez\" para verlos de nuevo) y pulsa Comprobar",
+    "prompt": "¿Cuántos puntos viste?",
+    "correct": "¡Genial! Viste {count} puntos",
+    "wrong": "¡Casi! Echa otro vistazo e intenta contar los puntos"
   }
 }

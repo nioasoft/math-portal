@@ -55,7 +55,8 @@
     "juiceB": "Juice B",
     "value": "Value",
     "angle": "Angle",
-    "perChest": "Per chest"
+    "perChest": "Per chest",
+    "showAgain": "Show again"
   },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
@@ -293,5 +294,13 @@
     "prompt": "How many more {a} than {b}?",
     "correct": "Correct! The difference is {diff}",
     "wrong": "Almost! Read each bar's height again and try again"
+  },
+  "subitize": {
+    "title": "Dot Flash",
+    "description": "Dots flash for a moment on the magician's table — how many did you see?",
+    "instructions": "Watch the dots flash on the table, then they vanish under a cloth. Use the − / + buttons to enter how many dots you saw (press \"Show again\" to see them once more), then press Check",
+    "prompt": "How many dots did you see?",
+    "correct": "Great! You saw {count} dots",
+    "wrong": "Almost! Take another look and try counting the dots"
   }
 }

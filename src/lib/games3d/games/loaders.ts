@@ -30,6 +30,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./addition-mine/AdditionMineGame').then((m) => ({ default: m.additionMineGame })),
   'volume-cube-fill': () =>
     import('./volume-cube-fill/VolumeCubeFillGame').then((m) => ({ default: m.volumeCubeFillGame })),
+  'ruler-measure': () =>
+    import('./ruler-measure/RulerMeasureGame').then((m) => ({ default: m.rulerMeasureGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

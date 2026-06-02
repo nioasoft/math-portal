@@ -12,6 +12,7 @@ import { algebraBalanceGame } from './algebra-balance/AlgebraBalanceGame';
 import { moneyShopGame } from './money-shop/MoneyShopGame';
 import { additionMineGame } from './addition-mine/AdditionMineGame';
 import { volumeCubeFillGame } from './volume-cube-fill/VolumeCubeFillGame';
+import { rulerMeasureGame } from './ruler-measure/RulerMeasureGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -35,6 +36,7 @@ const games: Game3D[] = [
   moneyShopGame,
   additionMineGame,
   volumeCubeFillGame,
+  rulerMeasureGame,
 ];
 
 let registered = false;

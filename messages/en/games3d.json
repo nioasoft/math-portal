@@ -141,5 +141,13 @@
     "prompt": "Build a box with volume {volume}",
     "correct": "Great! The box volume is {volume}",
     "wrong": "Almost! Change the length, width or height and try again"
+  },
+  "rulerMeasure": {
+    "title": "Ruler Measure",
+    "description": "Measure the length of the object lying on the ruler, in centimeters",
+    "instructions": "Line up the left flag with the object's left end and the right flag with its right end, using the left ±1 and right ±1 buttons (or drag). Note: the object doesn't always start at 0, so length = right reading − left reading. Then press Check",
+    "prompt": "Measure the object's length",
+    "correct": "Great! The object is {length} cm long",
+    "wrong": "Almost! Line each flag up with the matching end of the object and fix it"
   }
 }

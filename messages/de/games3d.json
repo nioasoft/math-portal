@@ -141,5 +141,13 @@
     "prompt": "Baue eine Kiste mit dem Volumen {volume}",
     "correct": "Super! Das Volumen der Kiste ist {volume}",
     "wrong": "Fast! Ändere Länge, Breite oder Höhe und versuche es erneut"
+  },
+  "rulerMeasure": {
+    "title": "Mit dem Lineal messen",
+    "description": "Miss die Länge des Objekts auf dem Lineal in Zentimetern",
+    "instructions": "Richte die linke Fahne am linken Ende des Objekts aus und die rechte Fahne an seinem rechten Ende, mit den Tasten Links ±1 und Rechts ±1 (oder durch Ziehen). Achtung: Das Objekt beginnt nicht immer bei 0, daher gilt Länge = rechter Wert − linker Wert. Dann auf Prüfen drücken",
+    "prompt": "Miss die Länge des Objekts",
+    "correct": "Super! Das Objekt ist {length} cm lang",
+    "wrong": "Fast! Richte jede Fahne am passenden Ende des Objekts aus und korrigiere"
   }
 }

@@ -141,5 +141,13 @@
     "prompt": "Construye una caja con volumen {volume}",
     "correct": "¡Genial! El volumen de la caja es {volume}",
     "wrong": "¡Casi! Cambia el largo, el ancho o la altura e inténtalo de nuevo"
+  },
+  "rulerMeasure": {
+    "title": "Medir con la regla",
+    "description": "Mide la longitud del objeto que está sobre la regla, en centímetros",
+    "instructions": "Alinea la bandera izquierda con el extremo izquierdo del objeto y la bandera derecha con su extremo derecho, con los botones Izquierda ±1 y Derecha ±1 (o arrastrando). Atención: el objeto no siempre empieza en 0, así que longitud = lectura derecha − lectura izquierda. Luego pulsa Comprobar",
+    "prompt": "Mide la longitud del objeto",
+    "correct": "¡Genial! El objeto mide {length} cm",
+    "wrong": "¡Casi! Alinea cada bandera con el extremo correspondiente del objeto y corrige"
   }
 }

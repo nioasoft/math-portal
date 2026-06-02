@@ -148,6 +148,14 @@
     "correct": "Great! The correct sum is {total}",
     "wrong": "Almost! Check the digits and fix the sum"
   },
+  "subtractionBridge": {
+    "title": "Subtraction Bridge",
+    "description": "Take the stone bridge apart block by block to reach the difference, breaking a ten-stone when a column runs out",
+    "instructions": "Remove stones with the − / + buttons for each digit (hundreds, tens, ones), or drag down over a column to remove a stone. When a column is too small, press − to break a ten-stone from the next digit into ten little stones (the bridge breaks). Then press Check",
+    "prompt": "Subtract: {a} − {b}",
+    "correct": "Great! The difference is {diff}",
+    "wrong": "Almost! Check the digits and fix the difference"
+  },
   "volumeBuilder": {
     "title": "Volume Builder",
     "description": "Build a box of unit cubes that has the given volume",

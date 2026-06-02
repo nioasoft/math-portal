@@ -148,6 +148,14 @@
     "correct": "Toll! Die richtige Summe ist {total}",
     "wrong": "Fast! Prüfe die Ziffern und korrigiere die Summe"
   },
+  "subtractionBridge": {
+    "title": "Subtraktionsbrücke",
+    "description": "Baue die Steinbrücke Stein für Stein ab, um die Differenz zu erreichen, und zerbrich einen Zehner-Stein, wenn nötig",
+    "instructions": "Entferne Steine mit den − / + Tasten für jede Stelle (Hunderter, Zehner, Einer) oder ziehe über einer Spalte nach unten, um einen Stein zu entfernen. Wenn eine Spalte zu klein ist, drücke −, um einen Zehner-Stein der nächsthöheren Stelle in zehn kleine Steine zu zerbrechen (die Brücke bricht). Dann drücke Prüfen",
+    "prompt": "Subtrahiere: {a} − {b}",
+    "correct": "Super! Die Differenz ist {diff}",
+    "wrong": "Fast! Prüfe die Ziffern und korrigiere die Differenz"
+  },
   "volumeBuilder": {
     "title": "Volumen-Baumeister",
     "description": "Baue eine Kiste aus Einheitswürfeln mit dem vorgegebenen Volumen",

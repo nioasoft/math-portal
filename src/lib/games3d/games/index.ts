@@ -19,6 +19,7 @@ import { numberLineJumpGame } from './number-line-jump/NumberLineJumpGame';
 import { explodingDotsGame } from './exploding-dots/ExplodingDotsGame';
 import { balanceScaleEquationsGame } from './balance-scale-equations/BalanceScaleEquationsGame';
 import { factrisBlocksGame } from './factris-blocks/FactrisBlocksGame';
+import { subtractionBridgeGame } from './subtraction-bridge/SubtractionBridgeGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -49,6 +50,7 @@ const games: Game3D[] = [
   explodingDotsGame,
   balanceScaleEquationsGame,
   factrisBlocksGame,
+  subtractionBridgeGame,
 ];
 
 let registered = false;

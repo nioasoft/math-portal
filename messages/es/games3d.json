@@ -148,6 +148,14 @@
     "correct": "¡Genial! La suma correcta es {total}",
     "wrong": "¡Casi! Revisa las cifras y corrige la suma"
   },
+  "subtractionBridge": {
+    "title": "Puente de la Resta",
+    "description": "Desarma el puente de piedra bloque a bloque para llegar a la diferencia, rompiendo una piedra-decena cuando haga falta",
+    "instructions": "Quita piedras con los botones − / + de cada dígito (centenas, decenas, unidades), o arrastra hacia abajo sobre una columna para quitar una piedra. Cuando una columna es demasiado pequeña, pulsa − para romper una piedra-decena del dígito superior en diez piedras pequeñas (el puente se rompe). Luego pulsa Comprobar",
+    "prompt": "Resta: {a} − {b}",
+    "correct": "¡Genial! La diferencia es {diff}",
+    "wrong": "¡Casi! Revisa los dígitos y corrige la diferencia"
+  },
   "volumeBuilder": {
     "title": "Constructor de volumen",
     "description": "Construye una caja de cubos unitarios con el volumen dado",

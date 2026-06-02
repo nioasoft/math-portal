@@ -46,6 +46,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     })),
   'factris-blocks': () =>
     import('./factris-blocks/FactrisBlocksGame').then((m) => ({ default: m.factrisBlocksGame })),
+  'subtraction-bridge': () =>
+    import('./subtraction-bridge/SubtractionBridgeGame').then((m) => ({ default: m.subtractionBridgeGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

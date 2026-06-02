@@ -1,18 +1,27 @@
 import * as THREE from 'three';
+import type { Tween } from '@tweenjs/tween.js';
 import type { ControlButton, Game3D } from '@/lib/games3d/types';
 import { createQuizController } from '@/lib/games3d/quiz/controller';
+import { applyClayLook, roundedBox, popIn, punch, shake, celebrate, bigCelebrate, computeStars } from '@/lib/games3d/kit';
 import { createMultiplicationGenerator, type MultiplicationProblem } from './problems';
 
-// Layout: flat tiles on a grid, viewed top-down. Columns run along screen-X,
-// rows run along screen-Z (which reads as vertical from the top-down camera) —
-// so the array reads exactly like one drawn on paper.
+// Layout: chocolate squares on a grid, viewed top-down. Columns run along
+// screen-X, rows run along screen-Z (which reads as vertical from the top-down
+// camera) — so the array reads exactly like a chocolate bar (or one drawn on
+// paper). A 2×3 bar of chocolate squares is a natural multiplication model.
 const TILE = 0.9;
-const GAP = 0.1;
+const GAP = 0.12;
 const STEP = TILE + GAP;
+const TILE_HEIGHT = 0.34; // thickness so squares read as 3D chocolate chunks
+const TILE_Y = TILE_HEIGHT / 2;
 const MIN_BUILD = 1;
 const MAX_BUILD = 10;
 const QUIZ_LENGTH = 10;
 const POINTS_PER_CORRECT = 10;
+
+// Warm chocolate palette (milk → dark) cycled by row so the board has depth.
+const CHOCOLATE_COLORS = [0x7b4a2d, 0x6b3d22, 0x8a5535] as const;
+const POP_STAGGER_MS = 22; // small per-square delay so growth feels alive, not heavy
 
 /** Map a normalized pointer coordinate (-1..1) to an integer build count 1..MAX. */
 function pointerToCount(normalized: number): number {
@@ -35,7 +44,17 @@ export const multiplicationArrayGame: Game3D = {
   init(ctx) {
     // Top-down view over a flat grid so rows/columns are unambiguous.
     ctx.presets.camera.topDown(new THREE.Vector3(0, 0, 0), 14);
-    ctx.presets.lighting.daylight(ctx.scene);
+
+    // Clay/toy look (warm chocolate-shop ambience). Ground disabled: from the
+    // top-down camera a full ground plane adds nothing and the chocolate board
+    // below reads as the surface. The engine already enables soft shadows.
+    const clayLook = applyClayLook(ctx, {
+      topColor: '#f3e0c7',
+      bottomColor: '#e8cda6',
+      ground: false,
+      shadowArea: 9,
+      fog: false,
+    });
 
     const generator = createMultiplicationGenerator();
     const quiz =
@@ -46,30 +65,53 @@ export const multiplicationArrayGame: Game3D = {
           })
         : null;
 
-    // Shared geometry/material reused by every tile (rebuilt group on each change).
-    const tileGeo = new THREE.BoxGeometry(TILE, 0.3, TILE);
-    const tileMat = new THREE.MeshStandardMaterial({ color: 0x4f7cff });
+    // Shared geometry + one material per chocolate shade, reused by every square.
+    const tileGeo = roundedBox(TILE, TILE_HEIGHT, TILE, 0.14, 4);
+    const tileMats = CHOCOLATE_COLORS.map(
+      (color) =>
+        new THREE.MeshStandardMaterial({
+          color,
+          roughness: 0.55,
+          metalness: 0.05,
+        })
+    );
+
     const group = new THREE.Group();
     ctx.scene.add(group);
 
-    // Faint base plane so the buildable area is visible.
+    // "Chocolate board" base: a thin matte tray under the squares (catches the
+    // soft shadow, frames the buildable area).
     const baseSize = MAX_BUILD * STEP;
-    const baseGeo = new THREE.PlaneGeometry(baseSize, baseSize);
+    const baseGeo = roundedBox(baseSize, 0.18, baseSize, 0.2, 3);
     const baseMat = new THREE.MeshStandardMaterial({
-      color: 0x1e293b,
+      color: 0x4a2f1c,
+      roughness: 0.85,
       transparent: true,
-      opacity: 0.35,
+      opacity: 0.45,
     });
     const basePlane = new THREE.Mesh(baseGeo, baseMat);
-    basePlane.rotation.x = -Math.PI / 2;
-    basePlane.position.y = -0.01;
+    basePlane.position.y = -0.1;
+    basePlane.receiveShadow = true;
     ctx.scene.add(basePlane);
+
+    // Track game-started tweens so dispose can stop every one (no tween outlives
+    // its target). buildTiles clears stale entries each rebuild.
+    const liveTweens = new Set<Tween<{ s: number } | { t: number }>>();
+    function track(t: Tween<{ s: number }> | Tween<{ t: number }>): void {
+      liveTweens.add(t as Tween<{ s: number } | { t: number }>);
+    }
+    function stopAllTweens(): void {
+      liveTweens.forEach((t) => t.stop());
+      liveTweens.clear();
+    }
 
     // Mutable state captured by ref so button/drag closures always read the latest.
     const state = {
       problem: (quiz ? quiz.state().current : generator.next()) as MultiplicationProblem,
       builtRows: 1,
       builtCols: 1,
+      streak: 0,
+      answered: 0,
     };
 
     function showPrompt(): void {
@@ -84,15 +126,47 @@ export const multiplicationArrayGame: Game3D = {
       );
     }
 
-    function buildTiles(): void {
+    function showStatus(): void {
+      if (quiz) {
+        ctx.status.set({
+          streak: state.streak,
+          progress: { current: state.answered, total: QUIZ_LENGTH },
+        });
+      } else {
+        // Practice: streak only (HUD shows it once it's > 1). Stars by milestone.
+        ctx.status.set({
+          streak: state.streak,
+          stars: Math.min(3, Math.floor(state.streak / 3)),
+          maxStars: 3,
+        });
+      }
+    }
+
+    /**
+     * Rebuild the chocolate squares to match builtRows × builtCols. Squares that
+     * are newly appearing (index >= prevCount) pop in with a slight stagger;
+     * existing squares stay put so taps/drags feel smooth and cheap (we don't
+     * re-animate the whole array every change).
+     */
+    function buildTiles(prevCount: number): void {
+      stopAllTweens();
       group.clear();
       const offsetX = -((state.builtCols - 1) * STEP) / 2;
       const offsetZ = -((state.builtRows - 1) * STEP) / 2;
+      let index = 0;
+      let newOrdinal = 0;
       for (let r = 0; r < state.builtRows; r++) {
         for (let c = 0; c < state.builtCols; c++) {
-          const tile = new THREE.Mesh(tileGeo, tileMat);
-          tile.position.set(offsetX + c * STEP, 0.15, offsetZ + r * STEP);
+          const tile = new THREE.Mesh(tileGeo, tileMats[r % tileMats.length]);
+          tile.position.set(offsetX + c * STEP, TILE_Y, offsetZ + r * STEP);
+          tile.castShadow = true;
+          tile.receiveShadow = true;
+          if (index >= prevCount) {
+            track(popIn(tile, { delay: newOrdinal * POP_STAGGER_MS }));
+            newOrdinal += 1;
+          }
           group.add(tile);
+          index += 1;
         }
       }
     }
@@ -102,44 +176,28 @@ export const multiplicationArrayGame: Game3D = {
         {
           id: 'rows-dec',
           label: `${ctx.t('controls.rows')} −`,
-          onPress: () => {
-            state.builtRows = Math.max(MIN_BUILD, state.builtRows - 1);
-            refresh();
-          },
+          onPress: () => updateBuild(Math.max(MIN_BUILD, state.builtRows - 1), state.builtCols),
         },
         {
           id: 'rows-inc',
           label: `${ctx.t('controls.rows')} +`,
-          onPress: () => {
-            state.builtRows = Math.min(MAX_BUILD, state.builtRows + 1);
-            refresh();
-          },
+          onPress: () => updateBuild(Math.min(MAX_BUILD, state.builtRows + 1), state.builtCols),
         },
         {
           id: 'cols-dec',
           label: `${ctx.t('controls.columns')} −`,
-          onPress: () => {
-            state.builtCols = Math.max(MIN_BUILD, state.builtCols - 1);
-            refresh();
-          },
+          onPress: () => updateBuild(state.builtRows, Math.max(MIN_BUILD, state.builtCols - 1)),
         },
         {
           id: 'cols-inc',
           label: `${ctx.t('controls.columns')} +`,
-          onPress: () => {
-            state.builtCols = Math.min(MAX_BUILD, state.builtCols + 1);
-            refresh();
-          },
+          onPress: () => updateBuild(state.builtRows, Math.min(MAX_BUILD, state.builtCols + 1)),
         },
         {
           id: 'reset',
           label: ctx.t('controls.reset'),
           variant: 'reset',
-          onPress: () => {
-            state.builtRows = 1;
-            state.builtCols = 1;
-            refresh();
-          },
+          onPress: () => updateBuild(1, 1),
         },
         {
           id: 'check',
@@ -151,11 +209,21 @@ export const multiplicationArrayGame: Game3D = {
       ctx.controls.set(buttons);
     }
 
-    /** Rebuild tiles + prompt + controls so everything reflects current state. */
+    /** Apply a new build size, popping in any newly-added squares. */
+    function updateBuild(rows: number, cols: number): void {
+      const prevCount = state.builtRows * state.builtCols;
+      state.builtRows = rows;
+      state.builtCols = cols;
+      buildTiles(prevCount);
+      showPrompt();
+    }
+
+    /** Full refresh: rebuild everything from scratch (all squares pop in). */
     function refresh(): void {
-      buildTiles();
+      buildTiles(0);
       showPrompt();
       setControls();
+      showStatus();
     }
 
     function startNewProblem(): void {
@@ -164,50 +232,72 @@ export const multiplicationArrayGame: Game3D = {
       refresh();
     }
 
+    function onCorrect(): void {
+      ctx.audio.play('success');
+      ctx.feedback.correct(
+        ctx.t('multiplicationArray.correct', {
+          rows: state.problem.rows,
+          cols: state.problem.cols,
+          product: state.problem.product,
+        })
+      );
+      track(punch(group, 0.16));
+      celebrate();
+    }
+
+    function onWrong(): void {
+      ctx.audio.play('fail');
+      ctx.feedback.wrong();
+      track(shake(group, 0.08, 260));
+    }
+
     function confirm(): void {
       const answer = state.builtRows * state.builtCols;
       const ok = generator.check(state.problem, answer);
 
       if (quiz) {
-        ctx.audio.play(ok ? 'success' : 'fail');
         if (ok) {
-          ctx.feedback.correct(
-            ctx.t('multiplicationArray.correct', {
-              rows: state.problem.rows,
-              cols: state.problem.cols,
-              product: state.problem.product,
-            })
-          );
+          state.streak += 1;
+          onCorrect();
         } else {
-          ctx.feedback.wrong();
+          state.streak = 0;
+          onWrong();
         }
         quiz.submit(answer);
-        ctx.score.set(quiz.state().score);
-        if (quiz.state().finished) {
-          ctx.complete(quiz.summary());
+        const qs = quiz.state();
+        state.answered = qs.index;
+        ctx.score.set(qs.score);
+        if (qs.finished) {
+          showStatus();
+          const summary = quiz.summary();
+          const stars = computeStars(summary.accuracy);
+          ctx.status.set({
+            stars,
+            maxStars: 3,
+            streak: state.streak,
+            progress: { current: QUIZ_LENGTH, total: QUIZ_LENGTH },
+          });
+          bigCelebrate();
+          ctx.complete(summary);
           return;
         }
-        state.problem = quiz.state().current;
+        state.problem = qs.current;
         startNewProblem();
         return;
       }
 
       // Practice: correct → score + next problem; wrong → keep the array to fix.
       if (ok) {
-        ctx.audio.play('success');
-        ctx.feedback.correct(
-          ctx.t('multiplicationArray.correct', {
-            rows: state.problem.rows,
-            cols: state.problem.cols,
-            product: state.problem.product,
-          })
-        );
+        state.streak += 1;
+        onCorrect();
         ctx.score.add(POINTS_PER_CORRECT);
+        if (state.streak > 0 && state.streak % 3 === 0) bigCelebrate();
         state.problem = generator.next();
         startNewProblem();
       } else {
-        ctx.audio.play('fail');
-        ctx.feedback.wrong();
+        state.streak = 0;
+        onWrong();
+        showStatus();
       }
     }
 
@@ -216,9 +306,7 @@ export const multiplicationArrayGame: Game3D = {
     // top-down camera, NDC +y is the far (top) edge → fewer rows, NDC -y is near
     // (bottom) → more rows, so dragging downward grows the array outward.
     const offDrag = ctx.input.on('drag', (p) => {
-      state.builtCols = pointerToCount(p.x);
-      state.builtRows = pointerToCount(-p.y);
-      refresh();
+      updateBuild(pointerToCount(-p.y), pointerToCount(p.x));
     });
 
     refresh();
@@ -227,13 +315,16 @@ export const multiplicationArrayGame: Game3D = {
       onResize() {},
       dispose() {
         offDrag();
+        stopAllTweens();
         ctx.controls.clear();
         ctx.prompt.clear();
+        ctx.status.clear();
+        clayLook.dispose();
         group.clear();
         ctx.scene.remove(group);
         ctx.scene.remove(basePlane);
         tileGeo.dispose();
-        tileMat.dispose();
+        tileMats.forEach((m) => m.dispose());
         baseGeo.dispose();
         baseMat.dispose();
       },

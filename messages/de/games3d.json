@@ -42,7 +42,10 @@
     "denominator": "Nenner",
     "left": "Links",
     "right": "Rechts",
-    "length": "Länge"
+    "length": "Länge",
+    "jump": "Sprung",
+    "forward": "Vorwärts",
+    "back": "Zurück"
   },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
@@ -168,5 +171,13 @@
     "prompt": "Zerlege {target} in zwei Teile",
     "correct": "Super! Die beiden Teile ergeben zusammen {target}",
     "wrong": "Fast! Lass die beiden Teile zusammen genau die Lücke überspannen, dann drücke Prüfen"
+  },
+  "numberLineJump": {
+    "title": "Sprung auf dem Zahlenstrahl",
+    "description": "Hüpfe mit dem Auto über die Rennstrecke bis zur Flagge",
+    "instructions": "Stelle die Sprungweite mit − / + ein, dann drücke → Vorwärts oder ← Zurück, um das Auto über die Strecke zu hüpfen. Du kannst mehrmals hüpfen, bis du genau auf der Flagge landest. Dann drücke Prüfen",
+    "prompt": "Springe zu {target}",
+    "correct": "Super! Du bist genau auf {target} gelandet",
+    "wrong": "Fast! Hüpfe vor oder zurück, bis du genau auf der Flagge landest"
   }
 }

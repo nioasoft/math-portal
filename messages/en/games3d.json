@@ -42,7 +42,10 @@
     "denominator": "Denominator",
     "left": "Left",
     "right": "Right",
-    "length": "Length"
+    "length": "Length",
+    "jump": "Jump",
+    "forward": "Forward",
+    "back": "Back"
   },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
@@ -168,5 +171,13 @@
     "prompt": "Split {target} into two parts",
     "correct": "Great! The two parts together make {target}",
     "wrong": "Almost! Make the two parts add up to span the gap exactly, then press Check"
+  },
+  "numberLineJump": {
+    "title": "Number Line Jump",
+    "description": "Hop the car along the race track until you reach the flag",
+    "instructions": "Set the jump size with − / +, then press → Forward or ← Back to hop the car along the track. You can hop several times until you land exactly on the flag. Then press Check",
+    "prompt": "Hop to {target}",
+    "correct": "Great! You landed exactly on {target}",
+    "wrong": "Almost! Hop forward or back until you land exactly on the flag"
   }
 }

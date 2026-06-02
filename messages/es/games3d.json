@@ -42,7 +42,10 @@
     "denominator": "denominador",
     "left": "Izquierda",
     "right": "Derecha",
-    "length": "Largo"
+    "length": "Largo",
+    "jump": "Salto",
+    "forward": "Adelante",
+    "back": "Atrás"
   },
   "multiplicationArray": {
     "title": "Arreglos de multiplicación",
@@ -168,5 +171,13 @@
     "prompt": "Descompón {target} en dos partes",
     "correct": "¡Genial! Las dos partes juntas suman {target}",
     "wrong": "¡Casi! Haz que las dos partes sumen exactamente el ancho del hueco, luego pulsa Comprobar"
+  },
+  "numberLineJump": {
+    "title": "Salto en la recta numérica",
+    "description": "Salta con el coche por la pista de carreras hasta llegar a la bandera",
+    "instructions": "Ajusta el tamaño del salto con − / +, luego pulsa → Adelante o ← Atrás para que el coche salte por la pista. Puedes saltar varias veces hasta caer justo en la bandera. Después pulsa Comprobar",
+    "prompt": "Salta hasta {target}",
+    "correct": "¡Genial! Caíste justo en {target}",
+    "wrong": "¡Casi! Salta adelante o atrás hasta caer justo en la bandera"
   }
 }

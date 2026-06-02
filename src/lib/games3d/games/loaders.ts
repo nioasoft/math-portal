@@ -44,6 +44,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./balance-scale-equations/BalanceScaleEquationsGame').then((m) => ({
       default: m.balanceScaleEquationsGame,
     })),
+  'factris-blocks': () =>
+    import('./factris-blocks/FactrisBlocksGame').then((m) => ({ default: m.factrisBlocksGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

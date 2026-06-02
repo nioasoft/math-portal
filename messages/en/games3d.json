@@ -195,5 +195,13 @@
     "prompt": "Build the number {target}",
     "correct": "Great! You built {target}",
     "wrong": "Almost! Check the boxes and fix the number"
+  },
+  "factris": {
+    "title": "Factris",
+    "description": "Reshape a stack of warehouse blocks so it exactly fills the glowing storage shelf",
+    "instructions": "Change the stack's width with the − / + buttons (or drag right to widen, left to narrow) until the blocks form a full rectangle that exactly fills the glowing shelf. If the width doesn't fit, the top row stays incomplete — that's not a clean rectangle. Then press Check.",
+    "prompt": "Arrange {area} blocks to fill the shelf",
+    "correct": "Great! {slotW} wide × {height} tall = {area}",
+    "wrong": "Almost! Change the width until the blocks exactly fill the glowing shelf"
   }
 }

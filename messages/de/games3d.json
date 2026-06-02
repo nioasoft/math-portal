@@ -195,5 +195,13 @@
     "prompt": "Baue die Zahl {target}",
     "correct": "Super! Du hast {target} gebaut",
     "wrong": "Fast! Prüfe die Boxen und korrigiere die Zahl"
+  },
+  "factris": {
+    "title": "Factris",
+    "description": "Forme einen Lager-Block-Stapel um, sodass er das leuchtende Regalfach genau ausfüllt",
+    "instructions": "Ändere die Breite des Stapels mit den − / + Tasten (oder ziehe nach rechts zum Verbreitern, nach links zum Verschmälern), bis die Blöcke ein volles Rechteck bilden, das das leuchtende Regal genau ausfüllt. Passt die Breite nicht, bleibt die oberste Reihe unvollständig — das ist kein sauberes Rechteck. Drücke dann Prüfen.",
+    "prompt": "Ordne {area} Blöcke an, um das Regal zu füllen",
+    "correct": "Super! {slotW} breit × {height} hoch = {area}",
+    "wrong": "Fast! Ändere die Breite, bis die Blöcke das leuchtende Regal genau ausfüllen"
   }
 }

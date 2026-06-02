@@ -195,5 +195,13 @@
     "prompt": "Construye el número {target}",
     "correct": "¡Genial! Construiste {target}",
     "wrong": "¡Casi! Revisa las cajas y corrige el número"
+  },
+  "factris": {
+    "title": "Factris",
+    "description": "Reorganiza una pila de bloques del almacén para que llene exactamente el estante luminoso",
+    "instructions": "Cambia el ancho de la pila con los botones − / + (o arrastra a la derecha para ensanchar, a la izquierda para estrechar) hasta que los bloques formen un rectángulo completo que llene exactamente el estante luminoso. Si el ancho no encaja, la fila superior queda incompleta: no es un rectángulo limpio. Luego pulsa Comprobar.",
+    "prompt": "Organiza {area} bloques para llenar el estante",
+    "correct": "¡Genial! {slotW} de ancho × {height} de alto = {area}",
+    "wrong": "¡Casi! Cambia el ancho hasta que los bloques llenen exactamente el estante luminoso"
   }
 }

@@ -56,7 +56,12 @@
   "areaPerimeter": {
     "title": "Fläche & Umfang",
     "description": "Baue ein Rechteck mit vorgegebener Fläche oder vorgegebenem Umfang",
-    "instructions": "Ziehe, um die Größe des Rechtecks anzupassen, bis Fläche/Umfang passen"
+    "instructions": "Ziehe, um die Größe des Beets zu ändern, oder nutze die Breite/Höhe − / + Tasten, dann drücke Prüfen",
+    "prompt": "{kindLabel}: {target}   |   {w}×{h} → {value}",
+    "correct": "Super! {kindLabel} = {target}",
+    "wrong": "Fast! Ändere die Größe des Beets und versuche es erneut",
+    "kindArea": "Fläche",
+    "kindPerimeter": "Umfang"
   },
   "canary": {
     "title": "Tippe auf den Würfel",

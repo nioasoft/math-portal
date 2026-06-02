@@ -56,7 +56,12 @@
   "areaPerimeter": {
     "title": "المساحة والمحيط",
     "description": "ابنِ مستطيلاً بمساحة أو محيط معطى",
-    "instructions": "اسحب لتغيير حجم المستطيل حتى تتطابق المساحة أو المحيط"
+    "instructions": "اسحب لتغيير حجم الحديقة، أو استخدم أزرار العرض/الارتفاع − / +، ثم اضغط تحقق",
+    "prompt": "{kindLabel}: {target}   |   {w}×{h} ← {value}",
+    "correct": "رائع! {kindLabel} = {target}",
+    "wrong": "اقتربت! غيّر حجم الحديقة وحاول مرة أخرى",
+    "kindArea": "المساحة",
+    "kindPerimeter": "المحيط"
   },
   "canary": {
     "title": "اضغط على المكعب",

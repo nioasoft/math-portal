@@ -56,7 +56,12 @@
   "areaPerimeter": {
     "title": "Área y perímetro",
     "description": "Construye un rectángulo con un área o perímetro dado",
-    "instructions": "Arrastra para cambiar el tamaño del rectángulo hasta que el área o el perímetro coincida"
+    "instructions": "Arrastra para cambiar el tamaño del huerto, o usa los botones ancho/alto − / +, luego pulsa Comprobar",
+    "prompt": "{kindLabel}: {target}   |   {w}×{h} → {value}",
+    "correct": "¡Genial! {kindLabel} = {target}",
+    "wrong": "¡Casi! Cambia el tamaño del huerto e inténtalo de nuevo",
+    "kindArea": "Área",
+    "kindPerimeter": "Perímetro"
   },
   "canary": {
     "title": "Toca el cubo",

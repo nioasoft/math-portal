@@ -56,7 +56,12 @@
   "areaPerimeter": {
     "title": "שטח והיקף",
     "description": "בנה מלבן עם שטח או היקף נתון",
-    "instructions": "גרור כדי לשנות את גודל המלבן עד שהשטח/ההיקף מתאים"
+    "instructions": "גרור כדי לשנות את גודל הגינה, או השתמש בכפתורי רוחב/גובה − / +, ואז לחץ בדוק",
+    "prompt": "{kindLabel}: {target}   |   {w}×{h} ← {value}",
+    "correct": "מצוין! {kindLabel} = {target}",
+    "wrong": "כמעט! שנה את גודל הגינה ונסה שוב",
+    "kindArea": "שטח",
+    "kindPerimeter": "היקף"
   },
   "canary": {
     "title": "לחץ על הקובייה",

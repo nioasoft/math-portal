@@ -124,6 +124,14 @@
     "correct": "¡Genial! ? = {x}",
     "wrong": "¡Casi! Quita el mismo número de ambos lados hasta que la ? quede sola y la balanza esté equilibrada"
   },
+  "balanceScale": {
+    "title": "Balanza",
+    "description": "Construye el plato derecho con pesas numeradas para que iguale al plato izquierdo",
+    "instructions": "Lee las pesas de los cubos del plato izquierdo y súmalas. Añade pesas numeradas al plato derecho con los botones de más y menos (1, 2, 5, 10) hasta que la barra quede nivelada: cuando está nivelada, ambos lados son iguales. Luego pulsa Comprobar",
+    "prompt": "Equilibra la balanza",
+    "correct": "¡Genial! Ambos lados suman {total}",
+    "wrong": "¡Casi! Añade o quita pesas en la derecha hasta que la barra quede nivelada"
+  },
   "moneyShop": {
     "title": "Tienda de Monedas",
     "description": "Paga la cantidad exacta en séqueles en un puesto del mercado",

@@ -17,6 +17,7 @@ import { decimalPlaceValueGame } from './decimal-place-value/DecimalPlaceValueGa
 import { numberBondSplitGame } from './number-bond-split/NumberBondSplitGame';
 import { numberLineJumpGame } from './number-line-jump/NumberLineJumpGame';
 import { explodingDotsGame } from './exploding-dots/ExplodingDotsGame';
+import { balanceScaleEquationsGame } from './balance-scale-equations/BalanceScaleEquationsGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -45,6 +46,7 @@ const games: Game3D[] = [
   numberBondSplitGame,
   numberLineJumpGame,
   explodingDotsGame,
+  balanceScaleEquationsGame,
 ];
 
 let registered = false;

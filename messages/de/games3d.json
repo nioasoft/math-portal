@@ -124,6 +124,14 @@
     "correct": "Super! ? = {x}",
     "wrong": "Fast! Entferne von beiden Seiten gleich viele, bis das ? allein steht und die Waage im Gleichgewicht ist"
   },
+  "balanceScale": {
+    "title": "Waage",
+    "description": "Baue die rechte Schale mit nummerierten Gewichten so, dass sie der linken gleicht",
+    "instructions": "Lies die Gewichte auf den Würfeln in der linken Schale und addiere sie. Füge der rechten Schale mit den Plus- und Minus-Tasten (1, 2, 5, 10) nummerierte Gewichte hinzu, bis der Balken waagerecht ist — dann sind beide Seiten gleich. Dann auf Prüfen drücken",
+    "prompt": "Bring die Waage ins Gleichgewicht",
+    "correct": "Super! Beide Seiten ergeben {total}",
+    "wrong": "Fast! Füge rechts Gewichte hinzu oder entferne sie, bis der Balken waagerecht ist"
+  },
   "moneyShop": {
     "title": "Geldladen",
     "description": "Zahle den genauen Betrag in Schekel am Marktstand",

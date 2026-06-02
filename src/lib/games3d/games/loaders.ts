@@ -40,6 +40,10 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./number-line-jump/NumberLineJumpGame').then((m) => ({ default: m.numberLineJumpGame })),
   'exploding-dots': () =>
     import('./exploding-dots/ExplodingDotsGame').then((m) => ({ default: m.explodingDotsGame })),
+  'balance-scale-equations': () =>
+    import('./balance-scale-equations/BalanceScaleEquationsGame').then((m) => ({
+      default: m.balanceScaleEquationsGame,
+    })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

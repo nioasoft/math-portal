@@ -124,6 +124,14 @@
     "correct": "Great! ? = {x}",
     "wrong": "Almost! Remove an equal number from both sides until the ? stands alone and the scale is balanced"
   },
+  "balanceScale": {
+    "title": "Balance Scale",
+    "description": "Build the right pan with numbered weights so it equals the left pan",
+    "instructions": "Read the weights on the cubes in the left pan and add them up. Add numbered weights to the right pan with the plus and minus buttons (1, 2, 5, 10) until the beam is level — when it is level, both sides are equal. Then press Check",
+    "prompt": "Balance the scale",
+    "correct": "Great! Both sides equal {total}",
+    "wrong": "Almost! Add or remove weights on the right until the beam is level"
+  },
   "moneyShop": {
     "title": "Money Shop",
     "description": "Pay the exact amount in shekels at a market stall",

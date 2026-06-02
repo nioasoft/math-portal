@@ -82,6 +82,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./symmetry-mirror/SymmetryMirrorGame').then((m) => ({ default: m.symmetryMirrorGame })),
   'hundred-chart-colour': () =>
     import('./hundred-chart-colour/HundredChartColourGame').then((m) => ({ default: m.hundredChartColourGame })),
+  'geoboard-shapes': () =>
+    import('./geoboard-shapes/GeoboardShapesGame').then((m) => ({ default: m.geoboardShapesGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

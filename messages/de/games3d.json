@@ -58,7 +58,8 @@
     "perChest": "Pro Truhe",
     "showAgain": "Nochmal zeigen",
     "slice": "Schneiden",
-    "fold": "Falten"
+    "fold": "Falten",
+    "area": "Fläche"
   },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
@@ -352,5 +353,13 @@
     "prompt": "Färbe alle Vielfachen von {n}",
     "correct": "Gut gemacht! Du hast alle Vielfachen von {n} gefärbt.",
     "wrong": "Noch nicht. Prüfe, welche Felder fehlen oder zu viel sind, und versuche es erneut."
+  },
+  "geoboard": {
+    "title": "Geobrett",
+    "description": "Spanne ein farbiges Gummiband über die Nägel des Geobretts, um eine Form mit der Zielfläche einzuschließen.",
+    "instructions": "Tippe auf Nägel, um die Ecken deiner Form zu setzen — das Band verbindet sie und schließt die Schleife. Tippe die letzte Ecke erneut an, um sie rückgängig zu machen. Baue eine beliebige Form mit der passenden Fläche und drücke dann Prüfen.",
+    "prompt": "Bilde eine Form mit der Fläche {area} Quadrateinheiten",
+    "correct": "Toll! Du hast eine Form mit der Fläche {area} gebaut.",
+    "wrong": "Deine Form hat die Fläche {area}, das Ziel ist {target}. Probiere eine andere Form."
   }
 }

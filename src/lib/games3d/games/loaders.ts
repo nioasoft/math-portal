@@ -92,6 +92,10 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./word-problem-bar/WordProblemBarGame').then((m) => ({ default: m.wordProblemBarGame })),
   'estimation-land': () =>
     import('./estimation-land/EstimationLandGame').then((m) => ({ default: m.estimationLandGame })),
+  'multiplication-factor-tree': () =>
+    import('./multiplication-factor-tree/MultiplicationFactorTreeGame').then((m) => ({
+      default: m.multiplicationFactorTreeGame,
+    })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

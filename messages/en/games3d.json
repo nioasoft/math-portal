@@ -413,5 +413,13 @@
     "wrong": "Not close enough, try again",
     "tooHigh": "Too high",
     "tooLow": "Too low"
+  },
+  "factorTree": {
+    "title": "Factor Tree",
+    "description": "Break a number into a product of two factors — a tree that splits from the number at the top into two branches",
+    "instructions": "The number sits at the top of the tree and splits into two branches. Use the −/+ buttons (or drag right to raise, left to lower) to set the left factor. The right branch shows the partner you get by dividing. When the factor divides the number evenly it turns green; otherwise a red question mark appears. Then press Check",
+    "prompt": "Split {n} into a product of two factors",
+    "correct": "Great! {a} × {b} = {n}",
+    "wrong": "Almost! Pick a factor that divides {n} evenly (greater than 1 and smaller than the number), then press Check"
   }
 }

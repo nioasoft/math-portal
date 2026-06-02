@@ -413,5 +413,13 @@
     "wrong": "Noch nicht nah genug, versuch es noch einmal",
     "tooHigh": "Zu hoch",
     "tooLow": "Zu niedrig"
+  },
+  "factorTree": {
+    "title": "Faktorbaum",
+    "description": "Zerlege eine Zahl in ein Produkt zweier Faktoren — ein Baum, der sich von der Zahl oben in zwei Äste teilt",
+    "instructions": "Die Zahl steht an der Spitze des Baums und teilt sich in zwei Äste. Stelle mit den −/+ Tasten (oder ziehe nach rechts zum Erhöhen, nach links zum Verringern) den linken Faktor ein. Der rechte Ast zeigt den Partner, der sich durch Teilen ergibt. Teilt der Faktor die Zahl genau auf, wird er grün; sonst erscheint ein rotes Fragezeichen. Dann drücke Prüfen",
+    "prompt": "Zerlege {n} in ein Produkt zweier Faktoren",
+    "correct": "Super! {a} × {b} = {n}",
+    "wrong": "Fast! Wähle einen Faktor, der {n} genau teilt (größer als 1 und kleiner als die Zahl), dann drücke Prüfen"
   }
 }

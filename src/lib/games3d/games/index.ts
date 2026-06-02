@@ -41,6 +41,7 @@ import { shapeSort3DGame } from './shape-sort-3d/ShapeSort3DGame';
 import { coordinatePlotGame } from './coordinate-plot/CoordinatePlotGame';
 import { wordProblemBarGame } from './word-problem-bar/WordProblemBarGame';
 import { estimationLandGame } from './estimation-land/EstimationLandGame';
+import { multiplicationFactorTreeGame } from './multiplication-factor-tree/MultiplicationFactorTreeGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -93,6 +94,7 @@ const games: Game3D[] = [
   coordinatePlotGame,
   wordProblemBarGame,
   estimationLandGame,
+  multiplicationFactorTreeGame,
 ];
 
 let registered = false;

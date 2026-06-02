@@ -57,7 +57,8 @@
     "angle": "Winkel",
     "perChest": "Pro Truhe",
     "showAgain": "Nochmal zeigen",
-    "slice": "Schneiden"
+    "slice": "Schneiden",
+    "fold": "Falten"
   },
   "multiplicationArray": {
     "title": "Multiplikations-Felder",
@@ -327,5 +328,13 @@
     "prompt": "Wie viele Würfel hat der fehlende Turm?",
     "correct": "Richtig! Der fehlende Turm hat {value} Würfel",
     "wrong": "Fast! Finde die Regel heraus und baue noch einmal"
+  },
+  "netFold": {
+    "title": "Netz-Falter",
+    "description": "Ein flaches Netz aus Flächen faltet sich zu einem 3D-Körper — wie viele Flächen hat er?",
+    "instructions": "Drücke \"Falten\", um das flache Netz zu einer 3D-Form zu falten (sie dreht sich, damit du alle Seiten siehst). Zähle die Flächen des Körpers, gib die Zahl mit − / + oder durch Ziehen nach oben ein und drücke dann Prüfen",
+    "prompt": "Wie viele Flächen hat der Körper?",
+    "correct": "Super! Der Körper hat {count} Flächen",
+    "wrong": "Fast! Falte und drehe den Körper und zähle die Flächen noch einmal"
   }
 }

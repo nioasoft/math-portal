@@ -76,6 +76,8 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./fraction-slice/FractionSliceGame').then((m) => ({ default: m.fractionSliceGame })),
   'pattern-complete': () =>
     import('./pattern-complete/PatternCompleteGame').then((m) => ({ default: m.patternCompleteGame })),
+  'net-fold': () =>
+    import('./net-fold/NetFoldGame').then((m) => ({ default: m.netFoldGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

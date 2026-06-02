@@ -57,7 +57,8 @@
     "angle": "Angle",
     "perChest": "Per chest",
     "showAgain": "Show again",
-    "slice": "Slice"
+    "slice": "Slice",
+    "fold": "Fold"
   },
   "multiplicationArray": {
     "title": "Multiplication Arrays",
@@ -327,5 +328,13 @@
     "prompt": "How many cubes in the missing tower?",
     "correct": "Correct! The missing tower has {value} cubes",
     "wrong": "Almost! Work out the rule and build again"
+  },
+  "netFold": {
+    "title": "Net Folder",
+    "description": "A flat net of faces folds up into a 3D solid — how many faces does it have?",
+    "instructions": "Press \"Fold\" to fold the flat net into a 3D shape (it rotates so you can see every side). Count how many faces the solid has, enter the number with − / + or by dragging up, then press Check",
+    "prompt": "How many faces does the solid have?",
+    "correct": "Great! The solid has {count} faces",
+    "wrong": "Almost! Fold and rotate the solid, then count its faces again"
   }
 }

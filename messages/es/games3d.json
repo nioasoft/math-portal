@@ -57,7 +57,8 @@
     "angle": "Ángulo",
     "perChest": "Por cofre",
     "showAgain": "Mostrar otra vez",
-    "slice": "Cortar"
+    "slice": "Cortar",
+    "fold": "Plegar"
   },
   "multiplicationArray": {
     "title": "Arreglos de multiplicación",
@@ -327,5 +328,13 @@
     "prompt": "¿Cuántos cubos tiene la torre que falta?",
     "correct": "¡Correcto! La torre que falta tiene {value} cubos",
     "wrong": "¡Casi! Descubre la regla y construye de nuevo"
+  },
+  "netFold": {
+    "title": "Plegador de redes",
+    "description": "Una red plana de caras se pliega en un sólido 3D — ¿cuántas caras tiene?",
+    "instructions": "Pulsa \"Plegar\" para plegar la red plana en una figura 3D (gira para que veas todos los lados). Cuenta cuántas caras tiene el sólido, introduce el número con − / + o arrastrando hacia arriba y luego pulsa Comprobar",
+    "prompt": "¿Cuántas caras tiene el sólido?",
+    "correct": "¡Genial! El sólido tiene {count} caras",
+    "wrong": "¡Casi! Pliega y gira el sólido y vuelve a contar sus caras"
   }
 }

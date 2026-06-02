@@ -33,6 +33,7 @@ import { subitizeDotsGame } from './subitize-dots/SubitizeDotsGame';
 import { arrayMultiplySliceGame } from './array-multiply-slice/ArrayMultiplySliceGame';
 import { fractionSliceGame } from './fraction-slice/FractionSliceGame';
 import { patternCompleteGame } from './pattern-complete/PatternCompleteGame';
+import { netFoldGame } from './net-fold/NetFoldGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -77,6 +78,7 @@ const games: Game3D[] = [
   arrayMultiplySliceGame,
   fractionSliceGame,
   patternCompleteGame,
+  netFoldGame,
 ];
 
 let registered = false;

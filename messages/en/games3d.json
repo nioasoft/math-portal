@@ -311,5 +311,13 @@
     "prompt": "How many in total?",
     "correct": "{rows} × {cols} = {product}!",
     "wrong": "Count again — rows × columns"
+  },
+  "fractionSlice": {
+    "title": "Fraction Slicer",
+    "description": "Slice a pizza into equal parts and shade some of them to build a fraction",
+    "instructions": "Use the denominator −/+ buttons to set how many equal parts to slice the pizza into, and the numerator −/+ buttons (or drag up/down) to shade that many parts, then press Check",
+    "prompt": "Shade {n} out of {d} parts",
+    "correct": "Great! You shaded {n} out of {d}",
+    "wrong": "Almost! Slice and shade the right number of parts and fix it"
   }
 }

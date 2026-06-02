@@ -311,5 +311,13 @@
     "prompt": "¿Cuántas hay en total?",
     "correct": "{rows} × {cols} = {product}!",
     "wrong": "Cuenta de nuevo — filas × columnas"
+  },
+  "fractionSlice": {
+    "title": "Cortador de fracciones",
+    "description": "Corta una pizza en partes iguales y colorea algunas para formar una fracción",
+    "instructions": "Usa los botones denominador −/+ para fijar en cuántas partes iguales cortar la pizza, y los botones numerador −/+ (o arrastra arriba/abajo) para colorear esa cantidad de partes, luego pulsa Comprobar",
+    "prompt": "Colorea {n} de {d} partes",
+    "correct": "¡Genial! Coloreaste {n} de {d}",
+    "wrong": "¡Casi! Corta y colorea el número correcto de partes y corrige"
   }
 }

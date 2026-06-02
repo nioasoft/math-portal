@@ -311,5 +311,13 @@
     "prompt": "Wie viele insgesamt?",
     "correct": "{rows} × {cols} = {product}!",
     "wrong": "Zähle noch einmal — Zeilen × Spalten"
+  },
+  "fractionSlice": {
+    "title": "Bruch-Schneider",
+    "description": "Schneide eine Pizza in gleiche Teile und färbe einige, um einen Bruch zu bauen",
+    "instructions": "Nutze die Tasten Nenner −/+, um festzulegen, in wie viele gleiche Teile die Pizza geschnitten wird, und die Tasten Zähler −/+ (oder ziehe nach oben/unten), um so viele Teile zu färben, dann drücke Prüfen",
+    "prompt": "Färbe {n} von {d} Teilen",
+    "correct": "Super! Du hast {n} von {d} gefärbt",
+    "wrong": "Fast! Schneide und färbe die richtige Anzahl Teile und korrigiere"
   }
 }

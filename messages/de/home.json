@@ -101,5 +101,14 @@
     "printDesc": "Arbeitsblätter zum Ausdrucken",
     "interactive": "Interaktiv",
     "interactiveDesc": "Online-Spiele und Übungen"
+  },
+  "gamesHub": {
+    "badge": "Interaktive Spiele",
+    "title": "{count} 3D-Lernspiele",
+    "subtitle": "Übe Rechnen, Geometrie, Brüche und mehr — direkt im Browser, ohne Download",
+    "cta": "Jetzt spielen",
+    "trust": "Kostenlos · Ohne Anmeldung · Auf jedem Gerät",
+    "showAll": "Alle",
+    "empty": "Noch keine Spiele verfügbar"
   }
 }

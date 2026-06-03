@@ -121,5 +121,14 @@
     "printDesc": "Worksheets designed for printing",
     "interactive": "Interactive",
     "interactiveDesc": "Online games and exercises"
+  },
+  "gamesHub": {
+    "badge": "Interactive games",
+    "title": "{count} 3D learning games",
+    "subtitle": "Practice arithmetic, geometry, fractions and more — right in your browser, no downloads",
+    "cta": "Play now",
+    "trust": "Free · No signup · Works on any device",
+    "showAll": "All",
+    "empty": "No games available yet"
   }
 }

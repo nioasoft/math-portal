@@ -101,5 +101,14 @@
     "printDesc": "Hojas de trabajo diseñadas para imprimir",
     "interactive": "Interactivo",
     "interactiveDesc": "Juegos y ejercicios en línea"
+  },
+  "gamesHub": {
+    "badge": "Juegos interactivos",
+    "title": "{count} juegos de aprendizaje en 3D",
+    "subtitle": "Practica aritmética, geometría, fracciones y más — directamente en el navegador, sin descargas",
+    "cta": "Jugar ahora",
+    "trust": "Gratis · Sin registro · Funciona en cualquier dispositivo",
+    "showAll": "Todos",
+    "empty": "Aún no hay juegos disponibles"
   }
 }

@@ -271,7 +271,6 @@ export const volumeCubeFillGame: Game3D = {
       ctx.audio.play('success');
       ctx.feedback.correct(ctx.t('volumeBuilder.correct', { volume: state.problem.target }));
       track(punch(cubeGroup, 0.14));
-      track(punch(tankEdges, 0.1));
       celebrate();
     }
 

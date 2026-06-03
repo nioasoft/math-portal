@@ -171,6 +171,7 @@ export const fractionBuildGame: Game3D = {
       const mid = start + span / 2;
       for (const spot of oliveSpots(mid, span)) {
         const olive = new THREE.Mesh(oliveGeo, oliveMat);
+        olive.raycast = () => {}; // §8c: a topping must never steal the tap from the wedge below it
         olive.rotation.x = Math.PI / 2; // lay the ring flat on the pizza (hole faces up)
         olive.position.set(spot.x, HEIGHT / 2 + TOPPING_LIFT, spot.z);
         olive.castShadow = true;

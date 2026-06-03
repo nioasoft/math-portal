@@ -12,6 +12,7 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "perf:games3d": "tsx scripts/games3d-perf.ts",
+    "i18n:check": "node scripts/check-i18n-parity.mjs",
     "e2e": "playwright test"
   },
   "dependencies": {

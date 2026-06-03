@@ -89,6 +89,15 @@
     "footer": {
       "worksheetsPrompt": "Хотите напечатать задания?",
       "backToHome": "Вернитесь на главную страницу для печати"
+    },
+    "catalog": {
+      "title": "Обучающие 3D-игры",
+      "subtitle": "Все интерактивные игры по темам",
+      "all": "Все",
+      "count": "{n} игр",
+      "empty": "В этой теме нет игр",
+      "quizzesTitle": "Быстрые викторины",
+      "quizzesSubtitle": "2D-викторины на время"
     }
   },
   "setup": {
@@ -117,9 +126,21 @@
     "percentage": "Игра с процентами"
   },
   "fractionDifficulty": {
-    "level1": { "title": "Уровень 1", "description": "Одинаковые знаменатели (+/-)" },
-    "level2": { "title": "Уровень 2", "description": "Разные знаменатели (+/-)" },
-    "level3": { "title": "Уровень 3", "description": "Смешанные числа" },
-    "level4": { "title": "Уровень 4", "description": "Умножение и деление" }
+    "level1": {
+      "title": "Уровень 1",
+      "description": "Одинаковые знаменатели (+/-)"
+    },
+    "level2": {
+      "title": "Уровень 2",
+      "description": "Разные знаменатели (+/-)"
+    },
+    "level3": {
+      "title": "Уровень 3",
+      "description": "Смешанные числа"
+    },
+    "level4": {
+      "title": "Уровень 4",
+      "description": "Умножение и деление"
+    }
   }
 }

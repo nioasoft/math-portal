@@ -19,7 +19,7 @@ import { join } from 'node:path';
 const ROOT = process.cwd();
 const LOCALES = ['he', 'en', 'ar', 'de', 'es', 'ru'];
 const REF = 'he';
-const NAMESPACES = ['games3d', 'home'];
+const NAMESPACES = ['games3d', 'home', 'games'];
 
 function load(locale, ns) {
   return JSON.parse(readFileSync(join(ROOT, `messages/${locale}/${ns}.json`), 'utf8'));

@@ -89,6 +89,15 @@
     "footer": {
       "worksheetsPrompt": "Want to print worksheets?",
       "backToHome": "Go back to the homepage to print"
+    },
+    "catalog": {
+      "title": "3D learning games",
+      "subtitle": "All the interactive games, by topic",
+      "all": "All",
+      "count": "{n} games",
+      "empty": "No games in this topic",
+      "quizzesTitle": "Quick quizzes",
+      "quizzesSubtitle": "Timed 2D quiz games"
     }
   },
   "setup": {
@@ -117,9 +126,21 @@
     "percentage": "Percentage Game"
   },
   "fractionDifficulty": {
-    "level1": { "title": "Level 1", "description": "Same denominators (+/-)" },
-    "level2": { "title": "Level 2", "description": "Different denominators (+/-)" },
-    "level3": { "title": "Level 3", "description": "Mixed numbers" },
-    "level4": { "title": "Level 4", "description": "Multiplication & Division" }
+    "level1": {
+      "title": "Level 1",
+      "description": "Same denominators (+/-)"
+    },
+    "level2": {
+      "title": "Level 2",
+      "description": "Different denominators (+/-)"
+    },
+    "level3": {
+      "title": "Level 3",
+      "description": "Mixed numbers"
+    },
+    "level4": {
+      "title": "Level 4",
+      "description": "Multiplication & Division"
+    }
   }
 }

@@ -1,11 +1,14 @@
 import { Metadata } from 'next';
 import { Link } from '@/i18n/navigation';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { Calculator, Percent, PieChart, Gamepad2, Trophy, Zap } from 'lucide-react';
+import { Calculator, Percent, PieChart, Gamepad2, Zap } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
 import { getRegisteredGames } from '@/lib/games3d/games';
+import { GamesCatalog, type CatalogTopic } from '@/components/games3d/GamesCatalog';
+import { TOPIC_ORDER } from '@/components/games3d/topicMeta';
+import type { GameCardData } from '@/components/games3d/GameCard';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
@@ -23,198 +26,140 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     };
 }
 
-const topics = [
-    {
-        id: 'math',
-        icon: Calculator,
-        color: 'from-blue-500 to-blue-600',
-        bgColor: 'bg-blue-50',
-        href: '/play/math'
-    },
-    {
-        id: 'fractions',
-        icon: PieChart,
-        color: 'from-purple-500 to-purple-600',
-        bgColor: 'bg-purple-50',
-        href: '/play/fractions'
-    },
-    {
-        id: 'percentage',
-        icon: Percent,
-        color: 'from-emerald-500 to-emerald-600',
-        bgColor: 'bg-emerald-50',
-        href: '/play/percentage'
-    }
+/** The 3 classic 2D timed-quiz games (distinct from the 3D games catalog). */
+const quizTopics = [
+    { id: 'math', icon: Calculator, gradient: 'from-blue-500 to-blue-600', href: '/play/math' },
+    { id: 'fractions', icon: PieChart, gradient: 'from-violet-500 to-purple-600', href: '/play/fractions' },
+    { id: 'percentage', icon: Percent, gradient: 'from-emerald-500 to-emerald-600', href: '/play/percentage' },
 ];
 
 export default async function PlayPage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'games.play' });
     const metaT = await getTranslations({ locale, namespace: 'meta' });
-
-    const games3d = getRegisteredGames();
     const tGames3d = await getTranslations({ locale, namespace: 'games3d' });
 
+    // Resolve localized card data for every registered 3D game.
+    const cards: GameCardData[] = getRegisteredGames().map((g) => {
+        const suffix = g.meta.i18nKey.replace('games3d.', '');
+        const block = tGames3d.raw(suffix) as { title?: string } | undefined;
+        return {
+            id: g.meta.id,
+            title: block?.title ?? g.meta.id,
+            topic: g.meta.topic,
+            topicLabel: tGames3d(`topics.${g.meta.topic}`),
+            gradeLabel: tGames3d('grades', { from: g.meta.gradeRange[0], to: g.meta.gradeRange[1] }),
+        };
+    });
+
+    // Topic chips, ordered, with counts.
+    const counts = cards.reduce<Record<string, number>>((acc, c) => {
+        acc[c.topic] = (acc[c.topic] ?? 0) + 1;
+        return acc;
+    }, {});
+    const catalogTopics: CatalogTopic[] = [
+        ...TOPIC_ORDER.filter((tp) => counts[tp]),
+        ...Object.keys(counts).filter((tp) => !TOPIC_ORDER.includes(tp)),
+    ].map((key) => ({ key, count: counts[key] }));
+
     const breadcrumbSchema = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: metaT('breadcrumb.home'), item: 'https://www.tirgul.net' },
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": metaT('breadcrumb.home'),
-                "item": "https://www.tirgul.net"
+                '@type': 'ListItem',
+                position: 2,
+                name: metaT('pages.play.title'),
+                item: `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/play`,
             },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": metaT('pages.play.title'),
-                "item": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/play`
-            }
-        ]
+        ],
     };
 
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(breadcrumbSchema)
-                }}
-            />
-        <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
-            {/* Header - Compact on mobile */}
-            <div className="bg-white border-b border-slate-200 shadow-sm">
-                {/* Breadcrumbs */}
-                <div className="container-custom pt-3">
-                    <Breadcrumb
-                        items={[
-                            { label: metaT('breadcrumb.home'), href: '/' },
-                            { label: metaT('breadcrumb.play') },
-                        ]}
-                    />
-                </div>
-                <div className="container-custom py-3 md:py-6">
-                    <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2 md:gap-3">
-                            <div className="p-2 md:p-3 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg md:rounded-xl shadow-lg">
-                                <Gamepad2 className="w-5 h-5 md:w-6 md:h-6 text-white" />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+            <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
+                {/* Page header */}
+                <div className="border-b border-slate-200 bg-white shadow-sm">
+                    <div className="container-custom pt-3">
+                        <Breadcrumb
+                            items={[
+                                { label: metaT('breadcrumb.home'), href: '/' },
+                                { label: metaT('breadcrumb.play') },
+                            ]}
+                        />
+                    </div>
+                    <div className="container-custom py-3 md:py-6">
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-2 md:gap-3">
+                                <div className="rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 p-2 shadow-lg md:rounded-xl md:p-3">
+                                    <Gamepad2 className="h-5 w-5 text-white md:h-6 md:w-6" />
+                                </div>
+                                <div>
+                                    <h1 className="text-lg font-bold text-slate-800 md:text-2xl">{t('header.title')}</h1>
+                                    <p className="hidden text-xs text-slate-500 md:block md:text-sm">{t('header.subtitle')}</p>
+                                </div>
                             </div>
+                            <Link href="/" className="text-sm text-slate-500 transition hover:text-slate-700">
+                                {t('header.back')}
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Main content */}
+                <div className="container-custom py-5 md:py-8">
+                    {/* 3D games catalog — the primary content */}
+                    <div className="mb-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                        <h2 className="text-xl font-black text-slate-800 md:text-2xl">{t('catalog.title')}</h2>
+                        <p className="text-sm text-slate-500">{t('catalog.subtitle')}</p>
+                    </div>
+
+                    <GamesCatalog games={cards} topics={catalogTopics} />
+
+                    {/* Classic 2D quick quizzes — clearly separated secondary section */}
+                    <section className="mt-14 border-t border-slate-200 pt-8">
+                        <div className="mb-5 flex items-center gap-2">
+                            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-100">
+                                <Zap className="h-5 w-5 text-amber-600" />
+                            </span>
                             <div>
-                                <h1 className="text-lg md:text-2xl font-bold text-slate-800">{t('header.title')}</h1>
-                                <p className="text-slate-500 text-xs md:text-sm hidden md:block">{t('header.subtitle')}</p>
+                                <h2 className="text-lg font-black text-slate-800 md:text-xl">{t('catalog.quizzesTitle')}</h2>
+                                <p className="text-xs text-slate-500 md:text-sm">{t('catalog.quizzesSubtitle')}</p>
                             </div>
                         </div>
-                        <Link
-                            href="/"
-                            className="text-slate-500 hover:text-slate-700 transition text-sm"
-                        >
-                            {t('header.back')}
+                        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 md:gap-4">
+                            {quizTopics.map((topic) => {
+                                const Icon = topic.icon;
+                                return (
+                                    <Link
+                                        key={topic.id}
+                                        href={topic.href}
+                                        className="group flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-slate-300 hover:shadow-md"
+                                    >
+                                        <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${topic.gradient} shadow-sm transition-transform group-hover:scale-110`}>
+                                            <Icon className="h-6 w-6 text-white" />
+                                        </span>
+                                        <div className="min-w-0">
+                                            <h3 className="font-bold text-slate-800">{t(`topics.${topic.id}.title`)}</h3>
+                                            <p className="truncate text-xs text-slate-500 md:text-sm">{t(`topics.${topic.id}.description`)}</p>
+                                        </div>
+                                    </Link>
+                                );
+                            })}
+                        </div>
+                    </section>
+
+                    {/* Back to worksheets */}
+                    <div className="mt-10 text-center">
+                        <p className="mb-1 text-sm text-slate-500">{t('footer.worksheetsPrompt')}</p>
+                        <Link href="/" className="text-sm font-medium text-indigo-600 transition hover:text-indigo-700">
+                            {t('footer.backToHome')}
                         </Link>
                     </div>
                 </div>
             </div>
-
-            {/* Main Content */}
-            <div className="container-custom py-4 md:py-12">
-                {/* Topic Cards - First on mobile */}
-                <h2 className="text-lg md:text-xl font-bold text-slate-800 mb-4 md:mb-6">{t('topics.title')}</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 mb-6 md:mb-12">
-                    {topics.map((topic) => {
-                        const Icon = topic.icon;
-                        return (
-                            <Link
-                                key={topic.id}
-                                href={topic.href}
-                                className="group"
-                            >
-                                <div className={`${topic.bgColor} rounded-xl md:rounded-2xl p-4 md:p-6 shadow-sm border border-slate-200 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-slate-300 flex md:block items-center gap-4`}>
-                                    <div className={`w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl bg-gradient-to-br ${topic.color} flex items-center justify-center md:mb-4 shadow-lg group-hover:scale-110 transition-transform flex-shrink-0`}>
-                                        <Icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h3 className="text-lg md:text-xl font-bold text-slate-800 mb-0.5 md:mb-2">{t(`topics.${topic.id}.title`)}</h3>
-                                        <p className="text-slate-600 text-xs md:text-sm">{t(`topics.${topic.id}.description`)}</p>
-                                    </div>
-                                    <div className="hidden md:flex mt-4 items-center gap-2 text-sm font-medium text-slate-500 group-hover:text-slate-700 transition">
-                                        <span>{t('topics.startPlaying')}</span>
-                                        <span className="group-hover:translate-x-[-4px] transition-transform">←</span>
-                                    </div>
-                                </div>
-                            </Link>
-                        );
-                    })}
-                </div>
-
-                {games3d.length > 0 && (
-                  <section className="mt-12">
-                    <h2 className="mb-6 text-2xl font-bold">{tGames3d('sectionTitle')}</h2>
-                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                      {games3d.map((g) => {
-                        const gt = tGames3d.raw(g.meta.i18nKey.replace('games3d.', '')) as {
-                          title: string;
-                          description: string;
-                        };
-                        return (
-                          <Link
-                            key={g.meta.id}
-                            href={`/play/${g.meta.id}`}
-                            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md"
-                          >
-                            <span className="mb-2 inline-block rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">
-                              3D · {tGames3d(`topics.${g.meta.topic}`)}
-                            </span>
-                            <h3 className="text-lg font-bold">{gt.title}</h3>
-                            <p className="mt-1 text-sm text-slate-600">{gt.description}</p>
-                            <p className="mt-2 text-xs text-slate-400">
-                              {tGames3d('grades', { from: g.meta.gradeRange[0], to: g.meta.gradeRange[1] })}
-                            </p>
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </section>
-                )}
-
-                {/* Game Mode Explanation - Hidden on mobile */}
-                <div className="hidden md:grid md:grid-cols-2 gap-6 mb-12">
-                    <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="p-2 bg-green-100 rounded-lg">
-                                <Zap className="w-5 h-5 text-green-600" />
-                            </div>
-                            <h2 className="text-lg font-bold text-slate-800">{t('gameModes.practice.title')}</h2>
-                        </div>
-                        <p className="text-slate-600 text-sm leading-relaxed">
-                            {t('gameModes.practice.description')}
-                        </p>
-                    </div>
-
-                    <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="p-2 bg-orange-100 rounded-lg">
-                                <Trophy className="w-5 h-5 text-orange-600" />
-                            </div>
-                            <h2 className="text-lg font-bold text-slate-800">{t('gameModes.quiz.title')}</h2>
-                        </div>
-                        <p className="text-slate-600 text-sm leading-relaxed">
-                            {t('gameModes.quiz.description')}
-                        </p>
-                    </div>
-                </div>
-
-                {/* Back to worksheets link */}
-                <div className="mt-6 md:mt-8 text-center">
-                    <p className="text-slate-500 text-sm mb-2">{t('footer.worksheetsPrompt')}</p>
-                    <Link
-                        href="/"
-                        className="text-indigo-600 hover:text-indigo-700 font-medium text-sm"
-                    >
-                        {t('footer.backToHome')}
-                    </Link>
-                </div>
-            </div>
-        </div>
         </>
     );
 }

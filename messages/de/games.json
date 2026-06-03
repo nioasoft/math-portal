@@ -89,6 +89,15 @@
     "footer": {
       "worksheetsPrompt": "Möchten Sie Arbeitsblätter drucken?",
       "backToHome": "Zurück zur Startseite zum Drucken"
+    },
+    "catalog": {
+      "title": "3D-Lernspiele",
+      "subtitle": "Alle interaktiven Spiele, nach Thema",
+      "all": "Alle",
+      "count": "{n} Spiele",
+      "empty": "Keine Spiele in diesem Thema",
+      "quizzesTitle": "Schnelle Quizze",
+      "quizzesSubtitle": "2D-Quizspiele mit Timer"
     }
   },
   "setup": {
@@ -117,9 +126,21 @@
     "percentage": "Prozentrechnen"
   },
   "fractionDifficulty": {
-    "level1": { "title": "Stufe 1", "description": "Gleiche Nenner (+/-)" },
-    "level2": { "title": "Stufe 2", "description": "Verschiedene Nenner (+/-)" },
-    "level3": { "title": "Stufe 3", "description": "Gemischte Zahlen" },
-    "level4": { "title": "Stufe 4", "description": "Multiplikation & Division" }
+    "level1": {
+      "title": "Stufe 1",
+      "description": "Gleiche Nenner (+/-)"
+    },
+    "level2": {
+      "title": "Stufe 2",
+      "description": "Verschiedene Nenner (+/-)"
+    },
+    "level3": {
+      "title": "Stufe 3",
+      "description": "Gemischte Zahlen"
+    },
+    "level4": {
+      "title": "Stufe 4",
+      "description": "Multiplikation & Division"
+    }
   }
 }

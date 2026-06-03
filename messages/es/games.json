@@ -89,6 +89,15 @@
     "footer": {
       "worksheetsPrompt": "¿Quieres imprimir hojas de trabajo?",
       "backToHome": "Vuelve a la página principal para imprimir"
+    },
+    "catalog": {
+      "title": "Juegos de aprendizaje en 3D",
+      "subtitle": "Todos los juegos interactivos, por tema",
+      "all": "Todos",
+      "count": "{n} juegos",
+      "empty": "No hay juegos en este tema",
+      "quizzesTitle": "Cuestionarios rápidos",
+      "quizzesSubtitle": "Juegos de cuestionario 2D con cronómetro"
     }
   },
   "setup": {
@@ -117,9 +126,21 @@
     "percentage": "Juego de porcentajes"
   },
   "fractionDifficulty": {
-    "level1": { "title": "Nivel 1", "description": "Denominadores iguales (+/-)" },
-    "level2": { "title": "Nivel 2", "description": "Denominadores diferentes (+/-)" },
-    "level3": { "title": "Nivel 3", "description": "Números mixtos" },
-    "level4": { "title": "Nivel 4", "description": "Multiplicación y División" }
+    "level1": {
+      "title": "Nivel 1",
+      "description": "Denominadores iguales (+/-)"
+    },
+    "level2": {
+      "title": "Nivel 2",
+      "description": "Denominadores diferentes (+/-)"
+    },
+    "level3": {
+      "title": "Nivel 3",
+      "description": "Números mixtos"
+    },
+    "level4": {
+      "title": "Nivel 4",
+      "description": "Multiplicación y División"
+    }
   }
 }

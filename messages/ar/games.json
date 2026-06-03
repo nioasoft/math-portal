@@ -89,6 +89,15 @@
     "footer": {
       "worksheetsPrompt": "تريد طباعة أوراق عمل؟",
       "backToHome": "عد إلى الصفحة الرئيسية للطباعة"
+    },
+    "catalog": {
+      "title": "ألعاب تعليمية ثلاثية الأبعاد",
+      "subtitle": "كل الألعاب التفاعلية، حسب الموضوع",
+      "all": "الكل",
+      "count": "{n} ألعاب",
+      "empty": "لا توجد ألعاب في هذا الموضوع",
+      "quizzesTitle": "اختبارات سريعة",
+      "quizzesSubtitle": "ألعاب اختبار ثنائية الأبعاد بمؤقّت"
     }
   },
   "setup": {
@@ -117,9 +126,21 @@
     "percentage": "لعبة النسب المئوية"
   },
   "fractionDifficulty": {
-    "level1": { "title": "المستوى 1", "description": "مقامات متساوية (+/-)" },
-    "level2": { "title": "المستوى 2", "description": "مقامات مختلفة (+/-)" },
-    "level3": { "title": "المستوى 3", "description": "أعداد مختلطة" },
-    "level4": { "title": "المستوى 4", "description": "الضرب والقسمة" }
+    "level1": {
+      "title": "المستوى 1",
+      "description": "مقامات متساوية (+/-)"
+    },
+    "level2": {
+      "title": "المستوى 2",
+      "description": "مقامات مختلفة (+/-)"
+    },
+    "level3": {
+      "title": "المستوى 3",
+      "description": "أعداد مختلطة"
+    },
+    "level4": {
+      "title": "المستوى 4",
+      "description": "الضرب والقسمة"
+    }
   }
 }

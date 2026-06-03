@@ -89,6 +89,15 @@
     "footer": {
       "worksheetsPrompt": "רוצים להדפיס דפי עבודה?",
       "backToHome": "חזרו לדף הראשי להדפסה"
+    },
+    "catalog": {
+      "title": "משחקי לימוד תלת־ממד",
+      "subtitle": "כל המשחקים האינטראקטיביים, לפי נושא",
+      "all": "הכל",
+      "count": "{n} משחקים",
+      "empty": "אין משחקים בנושא זה",
+      "quizzesTitle": "חידונים מהירים",
+      "quizzesSubtitle": "משחקי חידון עם טיימר"
     }
   },
   "setup": {
@@ -117,9 +126,21 @@
     "percentage": "משחק אחוזים"
   },
   "fractionDifficulty": {
-    "level1": { "title": "רמה 1", "description": "מכנים זהים (+/-)" },
-    "level2": { "title": "רמה 2", "description": "מכנים שונים (+/-)" },
-    "level3": { "title": "רמה 3", "description": "מספרים מעורבים" },
-    "level4": { "title": "רמה 4", "description": "כפל וחילוק" }
+    "level1": {
+      "title": "רמה 1",
+      "description": "מכנים זהים (+/-)"
+    },
+    "level2": {
+      "title": "רמה 2",
+      "description": "מכנים שונים (+/-)"
+    },
+    "level3": {
+      "title": "רמה 3",
+      "description": "מספרים מעורבים"
+    },
+    "level4": {
+      "title": "רמה 4",
+      "description": "כפל וחילוק"
+    }
   }
 }

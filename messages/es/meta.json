@@ -1,9 +1,9 @@
 {
   "site": {
-    "name": "Hojas de Trabajo Inteligentes",
-    "title": "Hojas de Trabajo Inteligentes | Práctica y Juegos de Matemáticas",
-    "description": "Hojas de trabajo inteligentes imprimibles y juegos de matemáticas interactivos para grados 1-6. ¡Gratis y sin registro!",
-    "keywords": "hojas de trabajo matemáticas, juegos de matemáticas, hojas de trabajo para imprimir, ejercicios de matemáticas, juegos de matemáticas para niños, matemáticas primer grado, generador de hojas de trabajo, hojas de trabajo de fracciones"
+    "name": "Tirgul",
+    "title": "Juegos de Matemáticas para Niños | Hojas Inteligentes",
+    "description": "Juegos de matemáticas interactivos en 3D para grados 1-6, más hojas imprimibles para práctica adicional. ¡Gratis y sin registro!",
+    "keywords": "juegos de matemáticas, juegos de matemáticas para niños, juegos de matemáticas interactivos, juegos 3D de matemáticas, juegos de multiplicación, juegos de fracciones, juegos de geometría, hojas de trabajo matemáticas"
   },
   "breadcrumb": {
     "home": "Inicio",
@@ -27,8 +27,8 @@
   },
   "pages": {
     "home": {
-      "title": "Hojas de Trabajo Inteligentes y Juegos de Matemáticas",
-      "description": "Hojas de trabajo inteligentes imprimibles y juegos de matemáticas interactivos para grados 1-6. ¡Gratis y sin registro!"
+      "title": "Juegos de Matemáticas para Niños y Hojas Inteligentes",
+      "description": "Juega juegos de matemáticas interactivos en 3D para grados 1-6 y crea hojas imprimibles cuando necesites práctica adicional."
     },
     "fractions": {
       "title": "Crear Hoja de Trabajo de Fracciones para Imprimir - Generador Gratis",
@@ -47,8 +47,8 @@
       "description": "Genera hojas de trabajo de decimales para imprimir. Suma, resta y conversión de fracciones. Define precisión e imprime."
     },
     "games": {
-      "title": "Juegos de Matemáticas Interactivos",
-      "description": "Juegos de matemáticas interactivos para practicar operaciones - suma, resta, multiplicación y división."
+      "title": "Juegos de Matemáticas Interactivos para Niños",
+      "description": "Juegos de matemáticas online para practicar suma, resta, multiplicación, división, fracciones, geometría y más."
     },
     "series": {
       "title": "Crear Hoja de Trabajo de Secuencias para Imprimir - Generador Gratis",
@@ -72,7 +72,7 @@
     },
     "about": {
       "title": "Sobre Nosotros",
-      "description": "Sobre Hojas de Trabajo Inteligentes - el generador gratuito de hojas de trabajo de matemáticas para imprimir."
+      "description": "Sobre Tirgul - juegos de matemáticas interactivos y hojas inteligentes imprimibles para niños de grados 1-6."
     },
     "blog": {
       "title": "Blog - Consejos para Padres",
@@ -84,15 +84,15 @@
     },
     "privacy": {
       "title": "Política de Privacidad",
-      "description": "Política de privacidad del sitio web Hojas de Trabajo Inteligentes."
+      "description": "Política de privacidad del sitio web Tirgul."
     },
     "contact": {
       "title": "Contáctenos",
-      "description": "Contacta al equipo de Hojas de Trabajo Inteligentes - comentarios, sugerencias e informes de errores."
+      "description": "Contacta al equipo de Tirgul - comentarios, sugerencias e informes de errores."
     },
     "play": {
-      "title": "Juegos de Matemáticas Interactivos",
-      "description": "Juegos de matemáticas interactivos para practicar - ¡elige un tema y comienza a jugar!"
+      "title": "Juegos de Matemáticas Online para Niños",
+      "description": "Una colección de juegos de matemáticas interactivos en 3D para niños - elige un tema y juega gratis."
     },
     "playMath": {
       "title": "Juego de Matemáticas - Suma, Resta, Multiplicación y División",

@@ -28,13 +28,13 @@
     "quickNav": "Quick Navigation",
     "byGrade": "By Grade",
     "topics": "Topics",
-    "copyright": "© {year} Smart Worksheets. All rights reserved.",
-    "description": "Math worksheet generator for grades 1-6. Print worksheets for free without registration.",
+    "copyright": "© {year} Tirgul. All rights reserved.",
+    "description": "Interactive math games for grades 1-6, with printable worksheets for extra practice. Free and no registration required.",
     "feature1": "Covers curriculum topics for grades 1-6",
     "feature2": "Customize difficulty level",
     "feature3": "Completely free without registration",
     "aboutSite": "About the site:",
-    "aboutDescription": "The exercises and worksheets on this site are inspired by elementary school math curriculum topics, designed to help parents, teachers, and students with independent practice.",
+    "aboutDescription": "The math games, exercises and worksheets on this site are inspired by elementary school curriculum topics, designed to help parents, teachers and students with independent practice.",
     "sendFeedback": "Send Feedback",
     "madeWith": "Made with love for excellent learning",
     "addSubtract": "Addition & Subtraction",
@@ -67,10 +67,10 @@
     "errorSubmit": "Error submitting feedback",
     "errorRetry": "Error submitting feedback, please try again later"
   },
-  "siteName": "Smart Worksheets",
+  "siteName": "Tirgul",
   "contentSection": {
     "featuresTitle": "What can you practice?",
-    "benefitsTitle": "Why use the worksheet generator?",
+    "benefitsTitle": "Why use the games and practice tools?",
     "tipsTitle": "Tips for successful practice with children"
   },
   "featuredPosts": {

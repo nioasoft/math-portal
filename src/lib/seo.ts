@@ -109,12 +109,7 @@ export function generateOpenGraphMeta(
     title,
     description,
     url,
-    siteName: localeConfig[locale].name === 'עברית' ? 'תרגול' :
-              localeConfig[locale].name === 'English' ? 'Smart Worksheets' :
-              localeConfig[locale].name === 'العربية' ? 'أوراق عمل ذكية' :
-              localeConfig[locale].name === 'Deutsch' ? 'Clevere Arbeitsblätter' :
-              localeConfig[locale].name === 'Русский' ? 'Умные задания' :
-              'Hojas de Trabajo Inteligentes',
+    siteName: getSiteName(locale),
     locale: ogLocale,
     type: 'website',
     images: [
@@ -154,11 +149,11 @@ export function generateTwitterMeta(
 export function getSiteName(locale: Locale): string {
   const siteNames: Record<Locale, string> = {
     he: 'תרגול',
-    en: 'Smart Worksheets',
-    ar: 'أوراق عمل ذكية',
-    de: 'Clevere Arbeitsblätter',
-    es: 'Hojas de Trabajo Inteligentes',
-    ru: 'Умные задания',
+    en: 'Tirgul',
+    ar: 'Tirgul',
+    de: 'Tirgul',
+    es: 'Tirgul',
+    ru: 'Tirgul',
   };
   return siteNames[locale];
 }
@@ -170,12 +165,12 @@ export function getSiteName(locale: Locale): string {
  */
 export function getOrganizationName(locale: Locale): string {
   const orgNames: Record<Locale, string> = {
-    he: 'דפי עבודה חכמים',
-    en: 'Smart Worksheets',
-    ar: 'أوراق عمل ذكية',
-    de: 'Clevere Arbeitsblätter',
-    es: 'Hojas de Trabajo Inteligentes',
-    ru: 'Умные задания',
+    he: 'תרגול',
+    en: 'Tirgul',
+    ar: 'Tirgul',
+    de: 'Tirgul',
+    es: 'Tirgul',
+    ru: 'Tirgul',
   };
   return orgNames[locale];
 }

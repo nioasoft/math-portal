@@ -162,22 +162,6 @@ export default async function Home() {
 
               {/* Dual CTA Cards */}
               <div className="flex flex-col sm:flex-row gap-4 md:gap-5 max-w-3xl md:max-w-4xl mx-auto animate-slide-up delay-200">
-                {/* Worksheets Card */}
-                <a
-                  href="#generators"
-                  className="flex-1 bg-white border-2 border-orange-200 rounded-xl p-5 md:p-6 hover:border-orange-400 hover:shadow-lg transition-all group text-right"
-                >
-                  <div className="flex items-center gap-2 mb-2">
-                    <Printer className="w-7 h-7 md:w-8 md:h-8 text-orange-500" />
-                    <h3 className="text-xl md:text-2xl font-bold text-slate-800">{t('hero.worksheetCard.title')}</h3>
-                  </div>
-                  <p className="text-base md:text-lg text-slate-600 mb-3">{t('hero.worksheetCard.desc')}</p>
-                  <span className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-bold text-base md:text-lg group-hover:-translate-y-0.5 transition-transform">
-                    {t('hero.worksheetCard.cta')}
-                    <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
-                  </span>
-                </a>
-
                 {/* Games Card */}
                 <Link
                   href="/play"
@@ -193,6 +177,22 @@ export default async function Home() {
                     <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
                   </span>
                 </Link>
+
+                {/* Worksheets Card */}
+                <a
+                  href="#generators"
+                  className="flex-1 bg-white border-2 border-orange-200 rounded-xl p-5 md:p-6 hover:border-orange-400 hover:shadow-lg transition-all group text-right"
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <Printer className="w-7 h-7 md:w-8 md:h-8 text-orange-500" />
+                    <h3 className="text-xl md:text-2xl font-bold text-slate-800">{t('hero.worksheetCard.title')}</h3>
+                  </div>
+                  <p className="text-base md:text-lg text-slate-600 mb-3">{t('hero.worksheetCard.desc')}</p>
+                  <span className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-bold text-base md:text-lg group-hover:-translate-y-0.5 transition-transform">
+                    {t('hero.worksheetCard.cta')}
+                    <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
+                  </span>
+                </a>
               </div>
 
               {/* Quick Games Strip */}

@@ -3,7 +3,7 @@
   "hero": {
     "title": "Learning Math,",
     "titleHighlight": "Made Fun",
-    "description": "\"Smart Worksheets\" is a social initiative designed to provide parents and teachers with a simple, free, and professional tool for personalized math practice.",
+    "description": "\"Tirgul\" is a free initiative for interactive math games, exercises and printable worksheets that help parents and teachers create personalized math practice.",
     "subdescription": "The system covers math topics taught in grades 1-6, enabling focused practice at every level."
   },
   "howItWorks": {
@@ -87,7 +87,7 @@
     "button": "Go to Our Generators"
   },
   "schema": {
-    "name": "Smart Worksheets",
+    "name": "Tirgul",
     "description": "Educational initiative providing a free tool for parents and teachers to create personalized math worksheets for grades 1-6",
     "areaServed": "Israel",
     "knowsAbout": {

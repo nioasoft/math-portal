@@ -1,12 +1,12 @@
 {
   "hero": {
-    "badge": "New: Arithmetic Sequences Worksheet Generator",
-    "title": "Practice Math",
+    "badge": "44 3D math learning games",
+    "title": "Math Games",
     "titleHighlight": "Fun & Easy",
-    "description": "Create custom worksheets in seconds.",
-    "descriptionLine2": "Pick a topic, click 'Print', and get a perfect practice sheet –",
+    "description": "Play interactive math games for kids in grades 1-6.",
+    "descriptionLine2": "Choose a topic, start playing, and print worksheets when you need extra practice –",
     "free": "Free",
-    "cta": "Start Practicing",
+    "cta": "Start Playing",
     "ctaSecondary": "How does it work?",
     "ctaGames": "🎮 Math Games",
     "trustPrint": "Direct Print",
@@ -14,7 +14,7 @@
     "trustFree": "100% Free",
     "worksheetCard": {
       "title": "Printable Worksheets",
-      "desc": "Create custom worksheets and print them",
+      "desc": "Written practice to follow up after the games",
       "cta": "Start Creating"
     },
     "gamesCard": {
@@ -34,8 +34,8 @@
     "percentageDesc": "Calculate Percentages"
   },
   "generators": {
-    "title": "What would you like to practice today?",
-    "subtitle": "Choose a topic and start creating custom worksheets",
+    "title": "Need printable worksheets too?",
+    "subtitle": "After the games, create custom worksheets for extra printed practice",
     "cta": "Create Worksheet",
     "addSubtract": {
       "title": "Addition & Subtraction",
@@ -63,9 +63,9 @@
     }
   },
   "games": {
-    "title": "Games & Activities",
-    "subtitle": "Learn math the fun way!",
-    "cta": "All Games & Activities"
+    "title": "Math Games",
+    "subtitle": "Learn arithmetic, fractions and geometry through play!",
+    "cta": "All Math Games"
   },
   "grades": {
     "label": "By Grade:",
@@ -79,7 +79,7 @@
   },
   "whyUs": {
     "title": "Why parents and teachers choose",
-    "titleHighlight": "Smart Worksheets?",
+    "titleHighlight": "Tirgul?",
     "feature1": {
       "title": "Personalized for your child",
       "desc": "Unlike standard workbooks, here you control the difficulty level. Start easy and gradually increase the challenge."
@@ -120,7 +120,7 @@
     "print": "Printable",
     "printDesc": "Worksheets designed for printing",
     "interactive": "Interactive",
-    "interactiveDesc": "Online games and exercises"
+    "interactiveDesc": "Math games and online exercises"
   },
   "gamesHub": {
     "badge": "Interactive games",

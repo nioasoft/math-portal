@@ -1,9 +1,9 @@
 {
   "site": {
-    "name": "Clevere Arbeitsblätter",
-    "title": "Clevere Arbeitsblätter | Mathe-Übungen & Spiele",
-    "description": "Druckbare clevere Arbeitsblätter und interaktive Mathe-Spiele für die Klassen 1-6. Kostenlos und ohne Registrierung!",
-    "keywords": "Mathe Arbeitsblätter, Mathe Spiele, druckbare Arbeitsblätter, Mathe Übungen, Mathe Spiele für Kinder, Mathe erste Klasse, Arbeitsblatt Generator, Brüche Arbeitsblätter"
+    "name": "Tirgul",
+    "title": "Mathe-Spiele für Kinder | Tirgul",
+    "description": "Interaktive 3D-Mathe-Spiele für die Klassen 1-6, plus druckbare Arbeitsblätter für zusätzliche Übung. Kostenlos und ohne Registrierung!",
+    "keywords": "Mathe Spiele, Mathe Spiele für Kinder, interaktive Mathe Spiele, 3D Mathe Spiele, Multiplikationsspiele, Bruch Spiele, Geometrie Spiele, Mathe Arbeitsblätter"
   },
   "breadcrumb": {
     "home": "Startseite",
@@ -27,8 +27,8 @@
   },
   "pages": {
     "home": {
-      "title": "Clevere Arbeitsblätter & Mathe-Spiele",
-      "description": "Druckbare clevere Arbeitsblätter und interaktive Mathe-Spiele für die Klassen 1-6. Kostenlos und ohne Registrierung!"
+      "title": "Mathe-Spiele für Kinder & clevere Arbeitsblätter",
+      "description": "Spielen Sie interaktive 3D-Mathe-Spiele für die Klassen 1-6 und erstellen Sie Arbeitsblätter zum Drucken für zusätzliche Übung."
     },
     "fractions": {
       "title": "Bruch-Arbeitsblatt zum Drucken erstellen - Kostenloser Generator",
@@ -47,8 +47,8 @@
       "description": "Dezimalzahl-Arbeitsblätter zum Drucken generieren. Addition, Subtraktion und Bruchumrechnung. Präzision festlegen und drucken."
     },
     "games": {
-      "title": "Interaktive Mathe-Spiele",
-      "description": "Interaktive Mathe-Spiele zum Üben von Rechenoperationen - Addition, Subtraktion, Multiplikation und Division."
+      "title": "Interaktive Mathe-Spiele für Kinder",
+      "description": "Online-Mathe-Spiele zum Üben von Addition, Subtraktion, Multiplikation, Division, Brüchen, Geometrie und mehr."
     },
     "series": {
       "title": "Zahlenfolgen-Arbeitsblatt zum Drucken erstellen - Kostenloser Generator",
@@ -72,7 +72,7 @@
     },
     "about": {
       "title": "Über uns",
-      "description": "Über Clevere Arbeitsblätter - der kostenlose Mathe-Arbeitsblatt-Generator zum Drucken."
+      "description": "Über Tirgul - interaktive Mathe-Spiele und clevere Arbeitsblätter zum Drucken für Kinder in den Klassen 1-6."
     },
     "blog": {
       "title": "Blog - Tipps für Eltern",
@@ -84,15 +84,15 @@
     },
     "privacy": {
       "title": "Datenschutzrichtlinie",
-      "description": "Datenschutzrichtlinie der Website Clevere Arbeitsblätter."
+      "description": "Datenschutzrichtlinie der Tirgul-Website."
     },
     "contact": {
       "title": "Kontakt",
-      "description": "Kontaktieren Sie das Team von Clevere Arbeitsblätter - Feedback, Vorschläge und Fehlermeldungen."
+      "description": "Kontaktieren Sie das Tirgul-Team - Feedback, Vorschläge und Fehlermeldungen."
     },
     "play": {
-      "title": "Interaktive Mathe-Spiele",
-      "description": "Interaktive Mathe-Spiele zum Üben - wählen Sie ein Thema und beginnen Sie zu spielen!"
+      "title": "Online-Mathe-Spiele für Kinder",
+      "description": "Eine Sammlung interaktiver 3D-Mathe-Spiele für Kinder - wählen Sie ein Thema und spielen Sie kostenlos."
     },
     "playMath": {
       "title": "Mathe-Spiel - Addition, Subtraktion, Multiplikation & Division",

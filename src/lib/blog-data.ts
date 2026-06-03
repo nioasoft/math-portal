@@ -35,7 +35,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'התמודדות עם קושי',
     image: '/blog/math-anxiety-tips.webp',
     tags: ['חרדה', 'הורים', 'פסיכולוגיה'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '15/01/2026',
     content: `
       <h2>מהי חרדת מתמטיקה?</h2>
@@ -67,7 +67,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'התמודדות עם קושי',
     image: '/blog/my-child-hates-math.webp',
     tags: ['מוטיבציה', 'הורים'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '2026-01-17',
     content: `
         <h2>למה ילדים מפתחים שנאה לחשבון?</h2>
@@ -87,7 +87,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'התמודדות עם קושי',
     image: '/blog/overcoming-multiplication-fear.webp',
     tags: ['לוח הכפל', 'חרדה'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '2026-01-17',
     content: `
         <h2>זה רק נראה הרבה</h2>
@@ -108,7 +108,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'טיפים ושיטות לימוד',
     image: '/blog/table-multiplication-hacks.webp',
     tags: ['לוח הכפל', 'זיכרון'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '10/01/2026',
     content: `
       <h2>למה לוח הכפל כל כך חשוב?</h2>
@@ -134,7 +134,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'טיפים ושיטות לימוד',
     image: '/blog/fractions-made-easy.webp',
     tags: ['שברים', 'המחשה'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '22/01/2026',
     content: `
         <h2>שברים הם חלק מהחיים</h2>
@@ -154,7 +154,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'טיפים ושיטות לימוד',
     image: '/blog/long-division-steps.webp',
     tags: ['חילוק ארוך', 'כיתה ד'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '2026-01-17',
     content: `
         <h2>אבא, אמא, אחות, אח (ד.מ.כ.ח)</h2>
@@ -174,7 +174,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'שיעורי בית',
     image: '/blog/homework-struggles.webp',
     tags: ['חינוך', 'הרגלים'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '2026-01-17',
     content: `
         <h2>קבעו זמן קבוע</h2>
@@ -193,7 +193,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'שיעורי בית',
     image: '/blog/check-homework-guide.webp',
     tags: ['בדיקה', 'הורים'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '2026-01-17',
     content: `
         <h2>אל תהיו המורה האדום</h2>
@@ -213,7 +213,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'תוכנית הלימודים',
     image: '/blog/grade-1-math-goals.webp',
     tags: ['כיתה א', 'תוכנית לימודים'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '05/02/2026',
     content: `
         <h2>הבסיס לכל העתיד</h2>
@@ -236,7 +236,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'תוכנית הלימודים',
     image: '/blog/grade-4-fractions.webp',
     tags: ['כיתה ד', 'שברים'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '2026-01-17',
     content: `
         <h2>שלב המעבר</h2>
@@ -256,7 +256,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'משחקים ופעילויות',
     image: '/blog/math-games-at-home.webp',
     tags: ['משחקים', 'חיי יומיום'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '2026-01-17',
     content: `
         <h2>כמה עודף מגיע לנו?</h2>
@@ -275,7 +275,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'משחקים ופעילויות',
     image: '/blog/card-games-math.webp',
     tags: ['משחקים', 'קלפים'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '2026-01-17',
     content: `
         <h2>מלחמה - גרסת הכפל</h2>
@@ -296,7 +296,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'משחקים ופעילויות',
     image: '/blog/geometry-in-real-life.webp',
     tags: ['הנדסה', 'פעילות'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '2026-01-17',
     content: '<p>הביטו בחלונות (מלבנים), בצלחות (עיגולים) ובמשולשי הפיצה. הנדסה היא בכל מקום.</p>'
   },
@@ -310,7 +310,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'תוכנית הלימודים',
     image: '/blog/prep-for-junior-high.webp',
     tags: ['חטיבת ביניים', 'כיתה ו'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '2026-01-17',
     content: '<p>שליטה בשברים, אחוזים, סדר פעולות חשבון ומשוואות פשוטות הם המפתח להצלחה באלגברה.</p>'
   },
@@ -324,7 +324,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'התמודדות עם קושי',
     image: '/blog/dyscalculia-signs.webp',
     tags: ['לקויות למידה', 'דיסקלקוליה'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '2026-01-17',
     content: '<p>קושי מתמשך בחיבור כמויות למספרים, בלבול בכיוונים, ואי-הבנה של מושגי יסוד.</p>'
   },
@@ -338,7 +338,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'טיפים ושיטות לימוד',
     image: '/blog/percentage-shopping.webp',
     tags: ['אחוזים', 'צרכנות'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '2026-01-17',
     content: '<p>ראיתם שלט של "30% הנחה"? תנו לילד לחשב את המחיר הסופי. השתמשו ב<a href="/percentage">מחולל האחוזים</a> להכנה בבית.</p>'
   },
@@ -352,7 +352,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'טיפים ושיטות לימוד',
     image: '/blog/summer-vacation-math.webp',
     tags: ['חופש גדול', 'תרגול'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '2026-01-17',
     content: '<p>10 דקות ביומיים. זה כל מה שצריך כדי שהחומר לא יתנדף.</p>'
   },
@@ -366,7 +366,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'טיפים ושיטות לימוד',
     image: '/blog/word-problems-strategies.webp',
     tags: ['בעיות מילוליות', 'אסטרטגיה'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '2026-01-17',
     content: '<p>1. קראו את כל השאלה. 2. הקיפו את המספרים ומילי המפתח. 3. ציירו את הבעיה.</p>'
   },
@@ -380,7 +380,7 @@ export const blogPosts: BlogPost[] = [
     categoryLabel: 'תוכנית הלימודים',
     image: '/blog/metric-system-guide.webp',
     tags: ['מדידות', 'המרות'],
-    author: 'צוות דפי עבודה חכמים',
+    author: 'צוות תרגול',
     lastModified: '2026-01-17',
     content: '<p>זכרו את השיטה העשרונית. 10 מ"מ = 1 ס"מ. 100 ס"מ = 1 מטר. תרגלו ב<a href="/units">מחולל ההמרות</a>.</p>'
   }

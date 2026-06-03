@@ -3,7 +3,7 @@
   "hero": {
     "title": "Aprender matemáticas,",
     "titleHighlight": "de forma divertida",
-    "description": "\"Hojas de Trabajo Inteligentes\" es una iniciativa social diseñada para proporcionar a padres y maestros una herramienta simple, gratuita y profesional para la práctica de matemáticas personalizada.",
+    "description": "\"Tirgul\" es una iniciativa gratuita de juegos de matemáticas interactivos, ejercicios y hojas imprimibles que ayuda a padres y maestros a crear práctica personalizada.",
     "subdescription": "El sistema cubre temas de matemáticas enseñados en los grados 1-6, permitiendo práctica enfocada en cada nivel."
   },
   "howItWorks": {
@@ -87,7 +87,7 @@
     "button": "Ir a nuestros generadores"
   },
   "schema": {
-    "name": "Hojas de Trabajo Inteligentes",
+    "name": "Tirgul",
     "description": "Iniciativa educativa que proporciona una herramienta gratuita para padres y maestros para crear hojas de trabajo de matemáticas personalizadas para los grados 1-6",
     "areaServed": "Israel",
     "knowsAbout": {

@@ -31,7 +31,7 @@ export async function POST(request: Request) {
         };
 
         const { error } = await resend.emails.send({
-            from: 'דפי עבודה חכמים <onboarding@resend.dev>',
+            from: 'תרגול <onboarding@resend.dev>',
             to: 'benatia.asaf@gmail.com',
             subject: `[${feedbackId}] משוב חדש: ${typeLabels[type] || type}`,
             html: `

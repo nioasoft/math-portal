@@ -1,9 +1,9 @@
 {
   "site": {
-    "name": "Smart Worksheets",
-    "title": "Smart Worksheets | Math Practice & Games",
-    "description": "Printable smart worksheets and interactive math games for grades 1-6. Free and no registration required!",
-    "keywords": "math worksheets, math games, printable worksheets, math exercises, math games for kids, first grade math, worksheet generator, fractions worksheets"
+    "name": "Tirgul",
+    "title": "Math Games for Kids | Tirgul",
+    "description": "Interactive 3D math games for grades 1-6, plus printable smart worksheets when kids need extra practice. Free and no registration required!",
+    "keywords": "math games, math games for kids, interactive math games, 3D math games, multiplication games, fractions games, geometry games, math worksheets"
   },
   "breadcrumb": {
     "home": "Home",
@@ -27,8 +27,8 @@
   },
   "pages": {
     "home": {
-      "title": "Smart Worksheets & Math Games",
-      "description": "Printable smart worksheets and interactive math games for grades 1-6. Free and no registration required!"
+      "title": "Math Games for Kids & Smart Practice",
+      "description": "Play interactive 3D math games for grades 1-6, and create printable worksheets when kids need extra practice."
     },
     "fractions": {
       "title": "Create Printable Fractions Worksheet - Free Generator",
@@ -47,8 +47,8 @@
       "description": "Generate decimal worksheets for instant printing. Addition, subtraction, and fraction conversion. Set precision and print now."
     },
     "games": {
-      "title": "Interactive Math Games",
-      "description": "Interactive math games for practicing arithmetic operations - addition, subtraction, multiplication, and division."
+      "title": "Interactive Math Games for Kids",
+      "description": "Online math games for practicing addition, subtraction, multiplication, division, fractions, geometry and more."
     },
     "series": {
       "title": "Create Printable Number Sequences Worksheet - Free Generator",
@@ -72,7 +72,7 @@
     },
     "about": {
       "title": "About Us",
-      "description": "About Smart Worksheets - the free math worksheet generator for printable practice sheets."
+      "description": "About Tirgul - interactive math games and smart printable worksheets for kids in grades 1-6."
     },
     "blog": {
       "title": "Blog - Tips for Parents",
@@ -84,15 +84,15 @@
     },
     "privacy": {
       "title": "Privacy Policy",
-      "description": "Privacy policy for Smart Worksheets website."
+      "description": "Privacy policy for the Tirgul website."
     },
     "contact": {
       "title": "Contact Us",
-      "description": "Contact the Smart Worksheets team - feedback, suggestions, and bug reports."
+      "description": "Contact the Tirgul team - feedback, suggestions, and bug reports."
     },
     "play": {
-      "title": "Interactive Math Games",
-      "description": "Interactive math games for practice - choose a topic and start playing!"
+      "title": "Online Math Games for Kids",
+      "description": "A collection of interactive 3D math games for kids - choose a topic and start playing for free."
     },
     "playMath": {
       "title": "Math Game - Addition, Subtraction, Multiplication & Division",

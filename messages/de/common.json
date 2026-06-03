@@ -28,13 +28,13 @@
     "quickNav": "Schnellnavigation",
     "byGrade": "Nach Klassenstufe",
     "topics": "Themen",
-    "copyright": "© {year} Clevere Arbeitsblätter. Alle Rechte vorbehalten.",
-    "description": "Mathe-Arbeitsblattgenerator für Klassen 1-6. Drucken Sie Arbeitsblätter kostenlos und ohne Registrierung.",
+    "copyright": "© {year} Tirgul. Alle Rechte vorbehalten.",
+    "description": "Interaktive Mathe-Spiele für die Klassen 1-6, mit druckbaren Arbeitsblättern für zusätzliche Übung. Kostenlos und ohne Registrierung.",
     "feature1": "Behandelt Lehrplanthemen für Klassen 1-6",
     "feature2": "Anpassbare Schwierigkeitsstufen",
     "feature3": "Komplett kostenlos ohne Registrierung",
     "aboutSite": "Über die Seite:",
-    "aboutDescription": "Die Übungen und Arbeitsblätter auf dieser Seite wurden inspiriert von Mathe-Themen der Grundschule und sollen Eltern, Lehrern und Schülern beim selbstständigen Üben helfen.",
+    "aboutDescription": "Die Mathe-Spiele, Übungen und Arbeitsblätter auf dieser Seite wurden von Grundschul-Mathethemen inspiriert und helfen Eltern, Lehrern und Schülern beim selbstständigen Üben.",
     "sendFeedback": "Feedback senden",
     "madeWith": "Mit Liebe gemacht für exzellentes Lernen",
     "addSubtract": "Addition & Subtraktion",
@@ -67,10 +67,10 @@
     "errorSubmit": "Fehler beim Senden des Feedbacks",
     "errorRetry": "Fehler beim Senden, bitte versuchen Sie es später erneut"
   },
-  "siteName": "Clevere Arbeitsblätter",
+  "siteName": "Tirgul",
   "contentSection": {
     "featuresTitle": "Was kann man üben?",
-    "benefitsTitle": "Warum den Arbeitsblatt-Generator verwenden?",
+    "benefitsTitle": "Warum die Spiele und Übungstools verwenden?",
     "tipsTitle": "Tipps für erfolgreiches Üben mit Kindern"
   },
   "featuredPosts": {

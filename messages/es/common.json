@@ -28,13 +28,13 @@
     "quickNav": "Navegación Rápida",
     "byGrade": "Por Grado",
     "topics": "Temas",
-    "copyright": "© {year} Hojas de Trabajo Inteligentes. Todos los derechos reservados.",
-    "description": "Generador de hojas de trabajo de matemáticas para grados 1-6. Imprime hojas de trabajo gratis sin registro.",
+    "copyright": "© {year} Tirgul. Todos los derechos reservados.",
+    "description": "Juegos de matemáticas interactivos para grados 1-6, con hojas imprimibles para práctica adicional. Gratis y sin registro.",
     "feature1": "Cubre temas del plan de estudios para grados 1-6",
     "feature2": "Personaliza el nivel de dificultad",
     "feature3": "Completamente gratis sin registro",
     "aboutSite": "Acerca del sitio:",
-    "aboutDescription": "Los ejercicios y hojas de trabajo en este sitio están inspirados en temas de matemáticas de la escuela primaria, diseñados para ayudar a padres, maestros y estudiantes con la práctica independiente.",
+    "aboutDescription": "Los juegos de matemáticas, ejercicios y hojas de trabajo de este sitio están inspirados en temas de primaria y ayudan a padres, maestros y estudiantes con la práctica independiente.",
     "sendFeedback": "Enviar Comentarios",
     "madeWith": "Hecho con amor para un excelente aprendizaje",
     "addSubtract": "Suma y Resta",
@@ -67,10 +67,10 @@
     "errorSubmit": "Error al enviar comentarios",
     "errorRetry": "Error al enviar, por favor intenta más tarde"
   },
-  "siteName": "Hojas de Trabajo Inteligentes",
+  "siteName": "Tirgul",
   "contentSection": {
     "featuresTitle": "¿Qué puedes practicar?",
-    "benefitsTitle": "¿Por qué usar el generador de hojas de trabajo?",
+    "benefitsTitle": "¿Por qué usar los juegos y herramientas de práctica?",
     "tipsTitle": "Consejos para practicar con éxito con los niños"
   },
   "featuredPosts": {

@@ -3,7 +3,7 @@
   "hero": {
     "title": "Mathematik lernen,",
     "titleHighlight": "macht Spaß",
-    "description": "\"Intelligente Arbeitsblätter\" ist eine soziale Initiative, die Eltern und Lehrern ein einfaches, kostenloses und professionelles Werkzeug für personalisiertes Mathetraining bietet.",
+    "description": "\"Tirgul\" ist eine kostenlose Initiative für interaktive Mathe-Spiele, Übungen und druckbare Arbeitsblätter, die Eltern und Lehrern personalisiertes Mathetraining erleichtert.",
     "subdescription": "Das System deckt Mathematikthemen ab, die in den Klassen 1-6 unterrichtet werden, und ermöglicht gezieltes Üben auf jeder Stufe."
   },
   "howItWorks": {
@@ -87,7 +87,7 @@
     "button": "Zu unseren Generatoren"
   },
   "schema": {
-    "name": "Intelligente Arbeitsblätter",
+    "name": "Tirgul",
     "description": "Bildungsinitiative, die ein kostenloses Tool für Eltern und Lehrer zur Erstellung personalisierter Mathematikarbeitsblätter für die Klassen 1-6 bietet",
     "areaServed": "Israel",
     "knowsAbout": {

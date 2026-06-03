@@ -1,12 +1,12 @@
 {
   "hero": {
-    "badge": "Neu: Generator für arithmetische Folgen",
-    "title": "Mathe üben",
+    "badge": "44 3D-Mathe-Lernspiele",
+    "title": "Mathe-Spiele",
     "titleHighlight": "spielend leicht",
-    "description": "Erstellen Sie individuelle Arbeitsblätter in wenigen Sekunden.",
-    "descriptionLine2": "Wählen Sie ein Thema, klicken Sie auf 'Drucken' und erhalten Sie ein perfektes Übungsblatt –",
+    "description": "Spielen Sie interaktive Mathe-Spiele für Kinder in den Klassen 1-6.",
+    "descriptionLine2": "Wählen Sie ein Thema, starten Sie das Spiel und drucken Sie Arbeitsblätter für zusätzliche Übung –",
     "free": "kostenlos",
-    "cta": "Jetzt üben",
+    "cta": "Jetzt spielen",
     "ctaSecondary": "Wie funktioniert es?",
     "ctaGames": "🎮 Mathe-Spiele",
     "trustPrint": "Direkter Druck",
@@ -14,7 +14,7 @@
     "trustFree": "100% kostenlos",
     "worksheetCard": {
       "title": "Druckbare Arbeitsblätter",
-      "desc": "Erstelle eigene Arbeitsblätter und drucke sie",
+      "desc": "Schriftliche Übung als Ergänzung nach den Spielen",
       "cta": "Jetzt erstellen"
     },
     "gamesCard": {
@@ -24,8 +24,8 @@
     }
   },
   "generators": {
-    "title": "Was möchten Sie heute üben?",
-    "subtitle": "Wählen Sie ein Thema und erstellen Sie individuelle Arbeitsblätter",
+    "title": "Brauchen Sie auch Arbeitsblätter?",
+    "subtitle": "Nach den Spielen können Sie individuelle Arbeitsblätter für zusätzliche Übung drucken",
     "cta": "Arbeitsblatt erstellen",
     "addSubtract": {
       "title": "Addition & Subtraktion",
@@ -53,9 +53,9 @@
     }
   },
   "games": {
-    "title": "Spiele & Aktivitäten",
-    "subtitle": "Mathe lernen mit Spaß!",
-    "cta": "Alle Spiele & Aktivitäten"
+    "title": "Mathe-Spiele",
+    "subtitle": "Rechnen, Brüche und Geometrie spielerisch lernen!",
+    "cta": "Alle Mathe-Spiele"
   },
   "grades": {
     "label": "Nach Klassenstufe:",
@@ -69,7 +69,7 @@
   },
   "whyUs": {
     "title": "Warum Eltern und Lehrer",
-    "titleHighlight": "'Clevere Arbeitsblätter' wählen?",
+    "titleHighlight": "'Tirgul' wählen?",
     "feature1": {
       "title": "Individuell für Ihr Kind",
       "desc": "Anders als bei Standardarbeitsheften bestimmen Sie hier den Schwierigkeitsgrad. Beginnen Sie leicht und steigern Sie die Herausforderung schrittweise."
@@ -110,7 +110,7 @@
     "print": "Druckbar",
     "printDesc": "Arbeitsblätter zum Ausdrucken",
     "interactive": "Interaktiv",
-    "interactiveDesc": "Online-Spiele und Übungen"
+    "interactiveDesc": "Mathe-Spiele und Online-Übungen"
   },
   "gamesHub": {
     "badge": "Interaktive Spiele",

@@ -1,12 +1,12 @@
 {
   "hero": {
-    "badge": "Nuevo: Generador de Hojas de Secuencias Aritméticas",
-    "title": "Practicar Matemáticas",
+    "badge": "44 juegos de matemáticas en 3D",
+    "title": "Juegos de Matemáticas",
     "titleHighlight": "Fácil y Divertido",
-    "description": "Crea hojas de trabajo personalizadas en segundos.",
-    "descriptionLine2": "Elige un tema, haz clic en 'Imprimir' y obtén una hoja de práctica perfecta –",
+    "description": "Juega juegos de matemáticas interactivos para niños de grados 1-6.",
+    "descriptionLine2": "Elige un tema, empieza a jugar e imprime hojas cuando necesites práctica adicional –",
     "free": "Gratis",
-    "cta": "Empezar a Practicar",
+    "cta": "Empezar a Jugar",
     "ctaSecondary": "¿Cómo funciona?",
     "ctaGames": "🎮 Juegos de Matemáticas",
     "trustPrint": "Impresión Directa",
@@ -14,7 +14,7 @@
     "trustFree": "100% Gratis",
     "worksheetCard": {
       "title": "Fichas imprimibles",
-      "desc": "Crea fichas personalizadas e imprímelas",
+      "desc": "Práctica escrita para continuar después de los juegos",
       "cta": "Empezar a crear"
     },
     "gamesCard": {
@@ -24,8 +24,8 @@
     }
   },
   "generators": {
-    "title": "¿Qué te gustaría practicar hoy?",
-    "subtitle": "Elige un tema y comienza a crear hojas de trabajo personalizadas",
+    "title": "¿También necesitas hojas imprimibles?",
+    "subtitle": "Después de los juegos, crea hojas personalizadas para práctica adicional impresa",
     "cta": "Crear Hoja de Trabajo",
     "addSubtract": {
       "title": "Suma y Resta",
@@ -53,9 +53,9 @@
     }
   },
   "games": {
-    "title": "Juegos y Actividades",
-    "subtitle": "¡Aprende matemáticas de forma divertida!",
-    "cta": "Todos los Juegos y Actividades"
+    "title": "Juegos de Matemáticas",
+    "subtitle": "¡Aprende aritmética, fracciones y geometría jugando!",
+    "cta": "Todos los Juegos de Matemáticas"
   },
   "grades": {
     "label": "Por Grado:",
@@ -69,7 +69,7 @@
   },
   "whyUs": {
     "title": "¿Por qué padres y maestros eligen",
-    "titleHighlight": "Hojas de Trabajo Inteligentes?",
+    "titleHighlight": "Tirgul?",
     "feature1": {
       "title": "Personalizado para tu hijo",
       "desc": "A diferencia de los cuadernos estándar, aquí tú controlas el nivel de dificultad. Comienza fácil y aumenta gradualmente el desafío."
@@ -110,7 +110,7 @@
     "print": "Imprimible",
     "printDesc": "Hojas de trabajo diseñadas para imprimir",
     "interactive": "Interactivo",
-    "interactiveDesc": "Juegos y ejercicios en línea"
+    "interactiveDesc": "Juegos de matemáticas y ejercicios en línea"
   },
   "gamesHub": {
     "badge": "Juegos interactivos",

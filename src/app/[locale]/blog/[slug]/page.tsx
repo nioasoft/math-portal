@@ -131,8 +131,8 @@ export async function generateMetadata(
     // Build the metadata object
     const metadata: Metadata = {
         title: locale === 'he'
-            ? `${post.title} | בלוג דפי עבודה חכמים`
-            : `${post.title} | Smart Worksheets Blog`,
+            ? `${post.title} | בלוג תרגול`
+            : `${post.title} | Tirgul Blog`,
         description: post.excerpt,
         alternates: generateAlternates(`/blog/${slug}`, localeKey, blogLocales),
         openGraph: {

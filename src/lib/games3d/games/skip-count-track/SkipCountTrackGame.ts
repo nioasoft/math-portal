@@ -284,6 +284,7 @@ export const skipCountTrackGame: Game3D = {
 
         // A redundant front plate plane is NOT needed — face index 4 carries it.
         const stone = new THREE.Mesh(stoneGeo, stoneMat);
+        stone.raycast = () => {}; // §8c: the marker must never steal the tap from the tile beneath it
         stone.position.set(pos.x, TILE_Y0 + pos.y, STONE_LIFT);
         stone.visible = false;
         tileGroup.add(stone);

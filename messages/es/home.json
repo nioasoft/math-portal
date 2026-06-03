@@ -11,7 +11,17 @@
     "ctaGames": "🎮 Juegos de Matemáticas",
     "trustPrint": "Impresión Directa",
     "trustNoSignup": "Sin Registro",
-    "trustFree": "100% Gratis"
+    "trustFree": "100% Gratis",
+    "worksheetCard": {
+      "title": "Fichas imprimibles",
+      "desc": "Crea fichas personalizadas e imprímelas",
+      "cta": "Empezar a crear"
+    },
+    "gamesCard": {
+      "title": "Juegos interactivos",
+      "desc": "¡Juega a juegos de matemáticas y aprende divirtiéndote!",
+      "cta": "¡A jugar!"
+    }
   },
   "generators": {
     "title": "¿Qué te gustaría practicar hoy?",
@@ -110,5 +120,15 @@
     "trust": "Gratis · Sin registro · Funciona en cualquier dispositivo",
     "showAll": "Todos",
     "empty": "Aún no hay juegos disponibles"
+  },
+  "quickGames": {
+    "title": "¡A jugar!",
+    "subtitle": "Juegos de matemáticas interactivos",
+    "math": "Matemáticas",
+    "mathDesc": "Suma y resta",
+    "fractions": "Fracciones",
+    "fractionsDesc": "Fracciones simples",
+    "percentage": "Porcentajes",
+    "percentageDesc": "Calcular porcentajes"
   }
 }

@@ -11,7 +11,17 @@
     "ctaGames": "🎮 Mathe-Spiele",
     "trustPrint": "Direkter Druck",
     "trustNoSignup": "Keine Registrierung",
-    "trustFree": "100% kostenlos"
+    "trustFree": "100% kostenlos",
+    "worksheetCard": {
+      "title": "Druckbare Arbeitsblätter",
+      "desc": "Erstelle eigene Arbeitsblätter und drucke sie",
+      "cta": "Jetzt erstellen"
+    },
+    "gamesCard": {
+      "title": "Interaktive Spiele",
+      "desc": "Spiele Mathe-Spiele und lerne mit Spaß!",
+      "cta": "Los geht’s!"
+    }
   },
   "generators": {
     "title": "Was möchten Sie heute üben?",
@@ -110,5 +120,15 @@
     "trust": "Kostenlos · Ohne Anmeldung · Auf jedem Gerät",
     "showAll": "Alle",
     "empty": "Noch keine Spiele verfügbar"
+  },
+  "quickGames": {
+    "title": "Los geht’s!",
+    "subtitle": "Interaktive Mathe-Spiele",
+    "math": "Mathe",
+    "mathDesc": "Addition & Subtraktion",
+    "fractions": "Brüche",
+    "fractionsDesc": "Einfache Brüche",
+    "percentage": "Prozente",
+    "percentageDesc": "Prozente berechnen"
   }
 }

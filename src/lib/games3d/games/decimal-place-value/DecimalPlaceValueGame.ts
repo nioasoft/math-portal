@@ -52,7 +52,9 @@ type Place = 'ones' | 'tenths' | 'hundredths';
 interface JarView {
   place: Place;
   x: number;
-  /** The colored-sand mesh (unit-height cylinder scaled by digit). */
+  /** Wrapper group for the sand mesh — punch targets this so scale.setScalar is uniform. */
+  sandGroup: THREE.Group;
+  /** The colored-sand mesh (unit-height cylinder scaled non-uniformly by digit). */
   sand: THREE.Mesh;
   /** In-flight fill tween for this jar, so a new change supersedes it. */
   fillTween: Tween<{ v: number }> | null;
@@ -146,14 +148,20 @@ export const decimalPlaceValueGame: Game3D = {
       base.receiveShadow = true;
       sceneRoot.add(base);
 
+      // Wrap sand in a group so punch() (which calls scale.setScalar) animates the
+      // group uniformly and never touches the non-uniform scale.y on the sand mesh.
+      const sandGroup = new THREE.Group();
+      sandGroup.position.set(x, FLOOR_Y, 0);
+      sceneRoot.add(sandGroup);
+
       const sand = new THREE.Mesh(sandGeo, sandMat);
-      sand.position.set(x, FLOOR_Y, 0);
+      sand.position.set(0, 0, 0); // local to sandGroup; y managed by applyJarLevel
       sand.scale.set(1, 0.0001, 1); // empty to start
       sand.castShadow = true;
       sand.receiveShadow = true;
-      sceneRoot.add(sand);
+      sandGroup.add(sand);
 
-      return { place, x, sand, fillTween: null };
+      return { place, x, sandGroup, sand, fillTween: null };
     }
 
     const jars: Record<Place, JarView> = {
@@ -201,7 +209,8 @@ export const decimalPlaceValueGame: Game3D = {
       const setLevel = (h: number): void => {
         jar.sand.scale.y = h;
         // Keep the sand resting on the jar floor (cylinder is centered, so lift by h/2).
-        jar.sand.position.y = FLOOR_Y + h / 2;
+        // position is local to sandGroup (which sits at FLOOR_Y), so no FLOOR_Y offset here.
+        jar.sand.position.y = h / 2;
       };
       if (!animate || ctx.prefersReducedMotion) {
         setLevel(targetH);
@@ -258,9 +267,9 @@ export const decimalPlaceValueGame: Game3D = {
     function onCorrect(): void {
       ctx.audio.play('success');
       ctx.feedback.correct(ctx.t('decimalBuilder.correct', { target: formatHundredths(state.problem.targetHundredths) }));
-      track(punch(jars.ones.sand, 0.16));
-      track(punch(jars.tenths.sand, 0.16));
-      track(punch(jars.hundredths.sand, 0.16));
+      track(punch(jars.ones.sandGroup, 0.16));
+      track(punch(jars.tenths.sandGroup, 0.16));
+      track(punch(jars.hundredths.sandGroup, 0.16));
       celebrate();
     }
 

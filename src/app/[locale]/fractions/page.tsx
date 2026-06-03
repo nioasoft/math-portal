@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import FractionsClient from '@/components/worksheet/FractionsClient';
+import { FeaturedTopicGames } from '@/components/games3d/FeaturedTopicGames';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
@@ -77,6 +78,7 @@ export default async function FractionsPage({ params }: { params: Promise<{ loca
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalResourceSchema) }}
             />
             <FractionsClient />
+            <FeaturedTopicGames locale={locale} topic="fractions" />
         </>
     );
 }

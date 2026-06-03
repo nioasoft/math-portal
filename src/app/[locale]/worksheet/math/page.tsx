@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import WorksheetClient from '@/components/worksheet/WorksheetClient';
+import { FeaturedTopicGames } from '@/components/games3d/FeaturedTopicGames';
 import { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels } from '@/lib/seo';
@@ -79,6 +80,7 @@ export default async function MathWorksheetPage({ params }: { params: Promise<{ 
             <Suspense fallback={<div className="p-10 text-center animate-pulse">...</div>}>
                 <WorksheetClient />
             </Suspense>
+            <FeaturedTopicGames locale={locale} topic="arithmetic" />
         </>
     );
 }

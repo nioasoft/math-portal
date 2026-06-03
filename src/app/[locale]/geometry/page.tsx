@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import GeometryClient from '@/components/worksheet/GeometryClient';
+import { FeaturedTopicGames } from '@/components/games3d/FeaturedTopicGames';
 import { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels } from '@/lib/seo';
@@ -80,6 +81,7 @@ export default async function GeometryWorksheetPage({ params }: { params: Promis
             <Suspense fallback={<div className="p-10 text-center animate-pulse">...</div>}>
                 <GeometryClient />
             </Suspense>
+            <FeaturedTopicGames locale={locale} topic="geometry" />
         </>
     );
 }

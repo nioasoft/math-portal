@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
 import { Game3DShell } from '../Game3DShell';
 import type { Game3D } from '@/lib/games3d/types';
@@ -30,13 +30,13 @@ const game: Game3D = {
 };
 
 describe('Game3DShell', () => {
-  it('renders WebGL fallback when WebGL unavailable', () => {
+  it('renders WebGL fallback when WebGL unavailable', async () => {
     render(wrap(<Game3DShell gameId={game.meta.id} meta={game.meta} title="Test" webGLAvailable={false} />));
-    expect(screen.getByText(/Not supported/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Not supported/i)).toBeInTheDocument();
   });
 
-  it('renders mute button when WebGL available', () => {
+  it('renders mute button when WebGL available', async () => {
     render(wrap(<Game3DShell gameId={game.meta.id} meta={game.meta} title="Test" webGLAvailable={true} />));
-    expect(screen.getByLabelText(/Mute|Unmute/)).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByLabelText(/Mute|Unmute/)).toBeInTheDocument());
   });
 });

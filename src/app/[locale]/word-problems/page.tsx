@@ -1,4 +1,5 @@
 import WordProblemsClient from '@/components/worksheet/WordProblemsClient';
+import { FeaturedTopicGames } from '@/components/games3d/FeaturedTopicGames';
 import { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels } from '@/lib/seo';
@@ -76,6 +77,7 @@ export default async function WordProblemsPage({ params }: { params: Promise<{ l
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalResourceSchema) }}
             />
             <WordProblemsClient />
+            <FeaturedTopicGames locale={locale} topic="wordProblems" />
         </>
     );
 }

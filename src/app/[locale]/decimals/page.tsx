@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import DecimalsClient from '@/components/worksheet/DecimalsClient';
+import { FeaturedTopicGames } from '@/components/games3d/FeaturedTopicGames';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
@@ -77,6 +78,7 @@ export default async function DecimalsPage({ params }: { params: Promise<{ local
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalResourceSchema) }}
             />
             <DecimalsClient />
+            <FeaturedTopicGames locale={locale} topic="decimals" />
         </>
     );
 }

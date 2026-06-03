@@ -1,4 +1,5 @@
 import SeriesClient from '@/components/worksheet/SeriesClient';
+import { FeaturedTopicGames } from '@/components/games3d/FeaturedTopicGames';
 import { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels } from '@/lib/seo';
@@ -76,6 +77,7 @@ export default async function SeriesPage({ params }: { params: Promise<{ locale:
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalResourceSchema) }}
             />
             <SeriesClient />
+            <FeaturedTopicGames locale={locale} topic="series" />
         </>
     );
 }

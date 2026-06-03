@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Assistant, Noto_Sans_Arabic, Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -17,31 +16,13 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const assistant = Assistant({
-  subsets: ["hebrew", "latin"],
-  variable: "--font-assistant",
-  display: "swap",
-});
-
-const notoArabic = Noto_Sans_Arabic({
-  subsets: ["arabic"],
-  variable: "--font-noto-arabic",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
 const fontByLocale: Record<Locale, string> = {
-  he: assistant.variable,
-  ar: notoArabic.variable,
-  en: inter.variable,
-  de: inter.variable,
-  es: inter.variable,
-  ru: inter.variable,
+  he: "font-locale-he",
+  ar: "font-locale-ar",
+  en: "font-locale-latin",
+  de: "font-locale-latin",
+  es: "font-locale-latin",
+  ru: "font-locale-latin",
 };
 
 export function generateStaticParams() {

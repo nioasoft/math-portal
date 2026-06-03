@@ -7,6 +7,7 @@ import {
     getHelpTopics,
     parseContentDate,
 } from '@/lib/content'
+import { GAME_IDS } from '@/lib/games3d/games/loaders'
 
 const BASE_URL = 'https://www.tirgul.net'
 
@@ -78,6 +79,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         { path: '/play/math', priority: 0.7, changeFrequency: 'weekly' as const },
         { path: '/play/fractions', priority: 0.7, changeFrequency: 'weekly' as const },
         { path: '/play/percentage', priority: 0.7, changeFrequency: 'weekly' as const },
+        ...GAME_IDS.map(gameId => ({
+            path: `/play/${gameId}`,
+            priority: 0.7,
+            changeFrequency: 'weekly' as const,
+        })),
     ]
 
     // Blog pages

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import RatioClient from '@/components/worksheet/RatioClient';
+import { FeaturedTopicGames } from '@/components/games3d/FeaturedTopicGames';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
@@ -76,6 +77,7 @@ export default async function RatioPage({ params }: { params: Promise<{ locale: 
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalResourceSchema) }}
             />
             <RatioClient />
+            <FeaturedTopicGames locale={locale} topic="ratio" />
         </>
     );
 }

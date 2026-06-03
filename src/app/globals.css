@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-rubik: var(--font-rubik);
+  --font-sans: var(--font-locale), ui-sans-serif, system-ui, sans-serif;
   /* Warm, educational color palette */
   --color-primary: #1e3a5f;
   --color-accent: #f97316;
@@ -10,6 +10,7 @@
 }
 
 :root {
+  --font-locale: ui-sans-serif, system-ui, sans-serif;
   --foreground-rgb: 30, 58, 95;
   --background-start-rgb: 254, 247, 237;
   --background-end-rgb: 255, 255, 255;
@@ -23,6 +24,18 @@
   --color-paper: #fffbf5;
   --color-sage: #22c55e;
   --color-sky: #0ea5e9;
+}
+
+.font-locale-he {
+  --font-locale: "Arial Hebrew", "Noto Sans Hebrew", "Rubik", Arial, sans-serif;
+}
+
+.font-locale-ar {
+  --font-locale: "Noto Sans Arabic", "Tahoma", Arial, sans-serif;
+}
+
+.font-locale-latin {
+  --font-locale: Inter, Arial, Helvetica, sans-serif;
 }
 
 /* Print Styles */

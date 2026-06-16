@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { Assistant, Noto_Sans_Arabic, Inter } from "next/font/google";
 import "../globals.css";
 import { PWAInstallBanner } from "@/components/PWAInstallBanner";
 import { CookieConsent } from "@/components/CookieConsent";
@@ -10,6 +11,27 @@ import { GoogleAdsense } from "@/components/GoogleAdsense";
 import { locales, localeConfig, defaultLocale, type Locale } from "@/i18n/config";
 import { BASE_URL, getSiteName, getOrganizationName, getEducationalLevels } from "@/lib/seo";
 
+const assistant = Assistant({
+  subsets: ["latin", "hebrew"],
+  display: "swap",
+  variable: "--font-assistant",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const notoSansArabic = Noto_Sans_Arabic({
+  subsets: ["arabic"],
+  display: "swap",
+  variable: "--font-noto-arabic",
+  weight: ["400", "500", "600", "700"],
+});
+
+const inter = Inter({
+  subsets: ["latin", "cyrillic"],
+  display: "swap",
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+});
+
 export const viewport: Viewport = {
   themeColor: "#f97316",
   width: "device-width",
@@ -17,12 +39,12 @@ export const viewport: Viewport = {
 };
 
 const fontByLocale: Record<Locale, string> = {
-  he: "font-locale-he",
-  ar: "font-locale-ar",
-  en: "font-locale-latin",
-  de: "font-locale-latin",
-  es: "font-locale-latin",
-  ru: "font-locale-latin",
+  he: `font-locale-he ${assistant.variable}`,
+  ar: `font-locale-ar ${notoSansArabic.variable}`,
+  en: `font-locale-latin ${inter.variable}`,
+  de: `font-locale-latin ${inter.variable}`,
+  es: `font-locale-latin ${inter.variable}`,
+  ru: `font-locale-latin ${inter.variable}`,
 };
 
 export function generateStaticParams() {
@@ -66,14 +88,13 @@ export async function generateMetadata({
   const canonicalUrl = locale === defaultLocale ? BASE_URL : `${BASE_URL}/${locale}`;
 
   return {
-    metadataBase: new URL("https://www.tirgul.net"),
     title: {
       default: t('site.title'),
       template: `%s | ${siteName}`,
     },
     description: t('site.description'),
     keywords: t('site.keywords'),
-    manifest: "/manifest.json",
+    manifest: `/${locale}/manifest.json`,
     appleWebApp: {
       capable: true,
       statusBarStyle: "default",
@@ -188,14 +209,6 @@ export default async function LocaleLayout({
     name: orgName,
     url: "https://www.tirgul.net",
     inLanguage: locale,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://www.tirgul.net/search?q={search_term_string}",
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 
   const educationalOrganizationSchema = {

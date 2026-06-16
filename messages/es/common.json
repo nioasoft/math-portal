@@ -120,6 +120,27 @@
     "errorSubmit": "Error al enviar comentarios",
     "errorRetry": "Error al enviar, intente de nuevo más tarde"
   },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "Parece que has llegado a una página que no existe. Puede haber sido movida o el enlace es incorrecto.",
+    "goHome": "Volver al inicio",
+    "worksheets": "Hojas de trabajo",
+    "games": "Juegos"
+  },
+  "error": {
+    "title": "Algo salió mal",
+    "description": "Ocurrió un error inesperado. Intenta actualizar la página o volver a la página de inicio.",
+    "tryAgain": "Intentar de nuevo",
+    "goHome": "Volver al inicio"
+  },
+  "blog": {
+    "backToBlog": "Volver al Blog",
+    "readingTime": "min de lectura",
+    "relatedGuides": "Guías para Padres sobre Este Tema",
+    "readyToPractice": "¿Listo para Practicar?",
+    "practiceCta": "Ve a nuestros generadores y crea hojas de trabajo personalizadas",
+    "allGenerators": "Todos los Generadores"
+  },
   "testimonials": {
     "title": "Lo que dicen los padres",
     "items": [

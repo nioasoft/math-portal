@@ -15,6 +15,8 @@ interface Props {
   mode: import('@/lib/games3d/types').GameMode3D;
   /** In-game translator (scoped to the `games3d` namespace). */
   t: (key: string, params?: Record<string, string | number>) => string;
+  /** Human-readable game title for accessibility. */
+  gameTitle?: string;
   onComplete?: (summary: CompleteSummary) => void;
   onScore?: (score: number) => void;
   onFeedback?: (event: FeedbackEvent) => void;
@@ -33,6 +35,7 @@ export function Canvas3D({
   isRTL,
   mode,
   t,
+  gameTitle,
   onComplete,
   onScore,
   onFeedback,
@@ -98,7 +101,9 @@ export function Canvas3D({
     <canvas
       ref={canvasRef}
       className="w-full h-full block touch-none select-none"
-      aria-label={`Game canvas: ${game.meta.id}`}
+      role="application"
+      aria-label={gameTitle ? `${gameTitle} - interactive math game` : `Game canvas: ${game.meta.id}`}
+      tabIndex={0}
     />
   );
 }

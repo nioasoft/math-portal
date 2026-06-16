@@ -120,6 +120,27 @@
     "errorSubmit": "Error submitting feedback",
     "errorRetry": "Error submitting feedback, please try again later"
   },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "It looks like you've reached a page that doesn't exist. It may have been moved or the link might be incorrect.",
+    "goHome": "Back to Home",
+    "worksheets": "Worksheets",
+    "games": "Games"
+  },
+  "error": {
+    "title": "Something Went Wrong",
+    "description": "An unexpected error occurred. Try refreshing the page or go back to the home page.",
+    "tryAgain": "Try Again",
+    "goHome": "Back to Home"
+  },
+  "blog": {
+    "backToBlog": "Back to Blog",
+    "readingTime": "min read",
+    "relatedGuides": "Parent Guides on This Topic",
+    "readyToPractice": "Ready to Practice?",
+    "practiceCta": "Go to our generators and create custom worksheets",
+    "allGenerators": "All Generators"
+  },
   "testimonials": {
     "title": "What Parents Say",
     "items": [

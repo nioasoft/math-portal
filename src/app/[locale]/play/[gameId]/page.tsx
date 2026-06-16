@@ -74,7 +74,13 @@ export default async function GamePage({
     topicLabel,
   });
   const faqJsonLd = buildGameFaqJsonLd({ locale: locale as Locale, meta, topicLabel });
-  const breadcrumbJsonLd = buildGameBreadcrumbJsonLd({ locale: locale as Locale, title, gameId });
+  const breadcrumbJsonLd = buildGameBreadcrumbJsonLd({
+    locale: locale as Locale,
+    title,
+    gameId,
+    homeName: metaT('breadcrumb.home'),
+    playName: metaT('breadcrumb.play'),
+  });
 
   // Optional `?mode=` deep link: pre-select a mode and skip the picker, but only
   // if it's a valid mode this game actually supports.

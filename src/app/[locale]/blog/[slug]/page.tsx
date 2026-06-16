@@ -15,6 +15,7 @@ import { getBlogContentLocales, hasLocalizedBlogContent } from '@/lib/content';
 // Map blog post tags to related help topics
 function getRelatedHelpTopics(tags: string[], content: string) {
     const tagMap: Record<string, string[]> = {
+        // Hebrew
         'לוח הכפל': ['multiplication', 'division'],
         'כפל': ['multiplication'],
         'חילוק': ['division'],
@@ -28,17 +29,82 @@ function getRelatedHelpTopics(tags: string[], content: string) {
         'סדרות': ['series'],
         'חיבור': ['addition'],
         'חיסור': ['subtraction'],
-        // English tags
+        'עשרוניים': ['decimals'],
+        'פרופורציה': ['ratio'],
+        'יחס': ['ratio'],
+        // English
         'multiplication': ['multiplication'],
         'division': ['division'],
         'fractions': ['fractions'],
         'percentage': ['percentage'],
+        'percentages': ['percentage'],
         'geometry': ['geometry'],
         'units': ['units'],
         'word-problems': ['word-problems'],
+        'word problems': ['word-problems'],
         'series': ['series'],
         'addition': ['addition'],
         'subtraction': ['subtraction'],
+        'decimals': ['decimals'],
+        'ratio': ['ratio'],
+        'proportion': ['ratio'],
+        'measurements': ['units'],
+        'conversions': ['units'],
+        'multiplication table': ['multiplication'],
+        'long division': ['division'],
+        // Arabic
+        'ضرب': ['multiplication'],
+        'قسمة': ['division'],
+        'كسور': ['fractions'],
+        'نسب مئوية': ['percentage'],
+        'هندسة': ['geometry'],
+        'وحدات': ['units'],
+        'مسائل كلامية': ['word-problems'],
+        'متسلسلات': ['series'],
+        'جمع': ['addition'],
+        'طرح': ['subtraction'],
+        'أعداد عشرية': ['decimals'],
+        'نسبة': ['ratio'],
+        'تناسب': ['ratio'],
+        // German
+        'multiplikation': ['multiplication'],
+        'brüche': ['fractions'],
+        'prozent': ['percentage'],
+        'geometrie': ['geometry'],
+        'einheiten': ['units'],
+        'textaufgaben': ['word-problems'],
+        'zahlenreihen': ['series'],
+        'subtraktion': ['subtraction'],
+        'dezimalzahlen': ['decimals'],
+        'verhältnis': ['ratio'],
+        // Spanish
+        'multiplicación': ['multiplication'],
+        'división': ['division'],
+        'fracciones': ['fractions'],
+        'porcentajes': ['percentage'],
+        'geometría': ['geometry'],
+        'unidades': ['units'],
+        'problemas': ['word-problems'],
+        'secuencias': ['series'],
+        'suma': ['addition'],
+        'resta': ['subtraction'],
+        'decimales': ['decimals'],
+        'razón': ['ratio'],
+        'proporción': ['ratio'],
+        // Russian
+        'умножение': ['multiplication'],
+        'деление': ['division'],
+        'дроби': ['fractions'],
+        'проценты': ['percentage'],
+        'геометрия': ['geometry'],
+        'единицы измерения': ['units'],
+        'текстовые задачи': ['word-problems'],
+        'последовательности': ['series'],
+        'сложение': ['addition'],
+        'вычитание': ['subtraction'],
+        'десятичные дроби': ['decimals'],
+        'пропорции': ['ratio'],
+        'таблица умножения': ['multiplication'],
     };
 
     const relatedSlugs = new Set<string>();
@@ -63,33 +129,96 @@ function getRelatedHelpTopics(tags: string[], content: string) {
 // Map blog post tags to related generator paths for SEO hints
 function getRelatedGeneratorPath(tags: string[]): string | null {
     const tagToGenerator: Record<string, string> = {
+        // English
         'fractions': '/fractions',
-        'שברים': '/fractions',
         'percentage': '/percentage',
-        'אחוזים': '/percentage',
+        'percentages': '/percentage',
         'geometry': '/geometry',
+        'decimals': '/decimals',
+        'units': '/units',
+        'measurements': '/units',
+        'conversions': '/units',
+        'series': '/series',
+        'ratio': '/ratio',
+        'proportion': '/ratio',
+        'word-problems': '/word-problems',
+        'word problems': '/word-problems',
+        'multiplication': '/worksheet/math?op=mul',
+        'multiplication table': '/worksheet/math?op=mul',
+        'division': '/worksheet/math?op=div',
+        'long division': '/worksheet/math?op=div',
+        'addition': '/worksheet/math?op=add',
+        'subtraction': '/worksheet/math?op=sub',
+        // Hebrew
+        'שברים': '/fractions',
+        'אחוזים': '/percentage',
         'גיאומטריה': '/geometry',
         'הנדסה': '/geometry',
-        'decimals': '/decimals',
         'עשרוניים': '/decimals',
-        'units': '/units',
         'מדידות': '/units',
         'המרות': '/units',
-        'series': '/series',
         'סדרות': '/series',
-        'ratio': '/ratio',
         'יחס': '/ratio',
-        'word-problems': '/word-problems',
+        'פרופורציה': '/ratio',
         'בעיות מילוליות': '/word-problems',
-        'multiplication': '/worksheet/math?op=mul',
         'כפל': '/worksheet/math?op=mul',
         'לוח הכפל': '/worksheet/math?op=mul',
-        'division': '/worksheet/math?op=div',
         'חילוק': '/worksheet/math?op=div',
-        'addition': '/worksheet/math?op=add',
         'חיבור': '/worksheet/math?op=add',
-        'subtraction': '/worksheet/math?op=sub',
         'חיסור': '/worksheet/math?op=sub',
+        // Arabic
+        'كسور': '/fractions',
+        'نسب مئوية': '/percentage',
+        'هندسة': '/geometry',
+        'أعداد عشرية': '/decimals',
+        'وحدات': '/units',
+        'متسلسلات': '/series',
+        'نسبة': '/ratio',
+        'تناسب': '/ratio',
+        'مسائل كلامية': '/word-problems',
+        'ضرب': '/worksheet/math?op=mul',
+        'قسمة': '/worksheet/math?op=div',
+        'جمع': '/worksheet/math?op=add',
+        'طرح': '/worksheet/math?op=sub',
+        // German
+        'brüche': '/fractions',
+        'prozent': '/percentage',
+        'geometrie': '/geometry',
+        'dezimalzahlen': '/decimals',
+        'einheiten': '/units',
+        'zahlenreihen': '/series',
+        'verhältnis': '/ratio',
+        'textaufgaben': '/word-problems',
+        'multiplikation': '/worksheet/math?op=mul',
+        'subtraktion': '/worksheet/math?op=sub',
+        // Spanish
+        'fracciones': '/fractions',
+        'porcentajes': '/percentage',
+        'geometría': '/geometry',
+        'decimales': '/decimals',
+        'unidades': '/units',
+        'secuencias': '/series',
+        'razón': '/ratio',
+        'proporción': '/ratio',
+        'problemas': '/word-problems',
+        'multiplicación': '/worksheet/math?op=mul',
+        'división': '/worksheet/math?op=div',
+        'suma': '/worksheet/math?op=add',
+        'resta': '/worksheet/math?op=sub',
+        // Russian
+        'дроби': '/fractions',
+        'проценты': '/percentage',
+        'геометрия': '/geometry',
+        'десятичные дроби': '/decimals',
+        'единицы измерения': '/units',
+        'последовательности': '/series',
+        'пропорции': '/ratio',
+        'текстовые задачи': '/word-problems',
+        'умножение': '/worksheet/math?op=mul',
+        'таблица умножения': '/worksheet/math?op=mul',
+        'деление': '/worksheet/math?op=div',
+        'сложение': '/worksheet/math?op=add',
+        'вычитание': '/worksheet/math?op=sub',
     };
 
     for (const tag of tags) {
@@ -197,6 +326,7 @@ export default async function BlogPostPage({ params }: Props) {
 
     const post = await getBlogPost(slug, locale as Locale);
     const t = await getTranslations({ locale, namespace: 'meta' });
+    const commonT = await getTranslations({ locale, namespace: 'common' });
 
     if (!post) {
         notFound();
@@ -335,7 +465,7 @@ export default async function BlogPostPage({ params }: Props) {
                             className="inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 font-bold mb-6 transition-colors"
                         >
                             <ArrowRight size={18} />
-                            <span>חזרה לבלוג</span>
+                            <span>{commonT('blog.backToBlog')}</span>
                         </Link>
                     </div>
                 </section>
@@ -357,7 +487,7 @@ export default async function BlogPostPage({ params }: Props) {
 
                                 <div className="flex items-center gap-6 text-sm text-slate-400">
                                     <span className="flex items-center gap-2"><Calendar size={16} /> {post.date}</span>
-                                    <span className="flex items-center gap-2"><Clock size={16} /> {post.readTime} קריאה</span>
+                                    <span className="flex items-center gap-2"><Clock size={16} /> {post.readTime} {commonT('blog.readingTime')}</span>
                                 </div>
                             </header>
 
@@ -385,7 +515,7 @@ export default async function BlogPostPage({ params }: Props) {
                                     <div className="mt-10 pt-8 border-t border-slate-100">
                                         <div className="flex items-center gap-2 mb-6">
                                             <GraduationCap size={20} className="text-emerald-600" />
-                                            <h3 className="font-bold text-slate-800">הסברים להורים בנושא</h3>
+                                            <h3 className="font-bold text-slate-800">{commonT('blog.relatedGuides')}</h3>
                                         </div>
                                         <div className="grid sm:grid-cols-3 gap-3">
                                             {relatedTopics.map(topic => (
@@ -406,15 +536,15 @@ export default async function BlogPostPage({ params }: Props) {
 
                         {/* CTA */}
                         <div className="mt-8 bg-gradient-to-br from-orange-500 to-orange-600 text-white p-8 rounded-3xl shadow-xl shadow-orange-200/50">
-                            <h3 className="text-2xl font-black mb-3">מוכנים לתרגל?</h3>
+                            <h3 className="text-2xl font-black mb-3">{commonT('blog.readyToPractice')}</h3>
                             <p className="text-orange-100 mb-6 text-lg">
-                                עברו למחוללים שלנו וצרו דפי עבודה מותאמים אישית
+                                {commonT('blog.practiceCta')}
                             </p>
                             <Link
                                 href="/"
                                 className="inline-flex items-center gap-2 bg-white text-orange-600 px-6 py-3 rounded-xl font-bold hover:shadow-lg hover:-translate-y-0.5 transition-all"
                             >
-                                <span>לכל המחוללים</span>
+                                <span>{commonT('blog.allGenerators')}</span>
                                 <ArrowLeft size={18} />
                             </Link>
                         </div>

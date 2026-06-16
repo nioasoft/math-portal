@@ -27,15 +27,15 @@
 }
 
 .font-locale-he {
-  --font-locale: "Arial Hebrew", "Noto Sans Hebrew", "Rubik", Arial, sans-serif;
+  --font-locale: var(--font-assistant), "Rubik", Arial, sans-serif;
 }
 
 .font-locale-ar {
-  --font-locale: "Noto Sans Arabic", "Tahoma", Arial, sans-serif;
+  --font-locale: var(--font-noto-arabic), "Tahoma", Arial, sans-serif;
 }
 
 .font-locale-latin {
-  --font-locale: Inter, Arial, Helvetica, sans-serif;
+  --font-locale: var(--font-inter), Arial, Helvetica, sans-serif;
 }
 
 /* Print Styles */
@@ -173,6 +173,20 @@
 
 .animate-fade-in {
   animation: fade-in 0.8s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-delayed,
+  .animate-float-slow,
+  .animate-float-fast,
+  .animate-pulse-soft,
+  .animate-slide-up,
+  .animate-fade-in,
+  .animate-bounce-in,
+  .animate-shake {
+    animation: none !important;
+  }
 }
 
 /* Stagger delays */

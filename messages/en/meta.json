@@ -1,9 +1,9 @@
 {
   "site": {
     "name": "Tirgul",
-    "title": "Math Games for Kids | Tirgul",
-    "description": "Interactive 3D math games for grades 1-6, plus printable smart worksheets when kids need extra practice. Free and no registration required!",
-    "keywords": "math games, math games for kids, interactive math games, 3D math games, multiplication games, fractions games, geometry games, math worksheets"
+    "title": "Math Worksheets & Games for Kids | Tirgul",
+    "description": "Free printable math worksheets and interactive 3D math games for grades 1-6. Generate custom worksheets for arithmetic, fractions, geometry, and more. No registration required!",
+    "keywords": "math worksheets, printable math worksheets, math worksheets for kids, free math worksheet generator, math games, interactive math games, 3D math games, multiplication worksheets, fractions worksheets, geometry worksheets, math practice"
   },
   "breadcrumb": {
     "home": "Home",
@@ -27,8 +27,8 @@
   },
   "pages": {
     "home": {
-      "title": "Math Games for Kids & Smart Practice",
-      "description": "Play interactive 3D math games for grades 1-6, and create printable worksheets when kids need extra practice."
+      "title": "Math Worksheets & Games for Kids",
+      "description": "Free printable math worksheets and interactive 3D math games for grades 1-6. Create custom practice sheets and play educational games."
     },
     "fractions": {
       "title": "Create Printable Fractions Worksheet - Free Generator",

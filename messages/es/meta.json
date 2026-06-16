@@ -1,9 +1,9 @@
 {
   "site": {
     "name": "Tirgul",
-    "title": "Juegos de Matemáticas para Niños | Hojas Inteligentes",
-    "description": "Juegos de matemáticas interactivos en 3D para grados 1-6, más hojas imprimibles para práctica adicional. ¡Gratis y sin registro!",
-    "keywords": "juegos de matemáticas, juegos de matemáticas para niños, juegos de matemáticas interactivos, juegos 3D de matemáticas, juegos de multiplicación, juegos de fracciones, juegos de geometría, hojas de trabajo matemáticas"
+    "title": "Hojas de Matemáticas y Juegos | Tirgul",
+    "description": "Hojas de trabajo de matemáticas imprimibles gratuitas y juegos 3D interactivos para grados 1-6. Genera hojas personalizadas para aritmética, fracciones, geometría y más. ¡Sin registro!",
+    "keywords": "hojas de matemáticas, hojas de matemáticas imprimibles, hojas de matemáticas para niños, generador gratuito de hojas de matemáticas, juegos de matemáticas, juegos de matemáticas interactivos, juegos 3D de matemáticas, hojas de multiplicación, hojas de fracciones, hojas de geometría"
   },
   "breadcrumb": {
     "home": "Inicio",
@@ -27,8 +27,8 @@
   },
   "pages": {
     "home": {
-      "title": "Juegos de Matemáticas para Niños y Hojas Inteligentes",
-      "description": "Juega juegos de matemáticas interactivos en 3D para grados 1-6 y crea hojas imprimibles cuando necesites práctica adicional."
+      "title": "Hojas de Matemáticas y Juegos para Niños",
+      "description": "Hojas de trabajo de matemáticas imprimibles gratuitas y juegos 3D interactivos para grados 1-6. Crea hojas personalizadas y juega juegos educativos."
     },
     "fractions": {
       "title": "Crear Hoja de Trabajo de Fracciones para Imprimir - Generador Gratis",

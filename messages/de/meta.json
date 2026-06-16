@@ -1,9 +1,9 @@
 {
   "site": {
     "name": "Tirgul",
-    "title": "Mathe-Spiele für Kinder | Tirgul",
-    "description": "Interaktive 3D-Mathe-Spiele für die Klassen 1-6, plus druckbare Arbeitsblätter für zusätzliche Übung. Kostenlos und ohne Registrierung!",
-    "keywords": "Mathe Spiele, Mathe Spiele für Kinder, interaktive Mathe Spiele, 3D Mathe Spiele, Multiplikationsspiele, Bruch Spiele, Geometrie Spiele, Mathe Arbeitsblätter"
+    "title": "Mathe Arbeitsblätter & Spiele | Tirgul",
+    "description": "Kostenlose druckbare Mathe-Arbeitsblätter und interaktive 3D-Mathe-Spiele für die Klassen 1-6. Erstellen Sie individuelle Übungsblätter für Rechnen, Brüche, Geometrie und mehr. Ohne Registrierung!",
+    "keywords": "Mathe Arbeitsblätter, druckbare Mathe Arbeitsblätter, Mathe Arbeitsblätter für Kinder, kostenloser Mathe Arbeitsblatt Generator, Mathe Spiele, interaktive Mathe Spiele, 3D Mathe Spiele, Multiplikationsarbeitsblätter, Bruch Arbeitsblätter, Geometrie Arbeitsblätter"
   },
   "breadcrumb": {
     "home": "Startseite",
@@ -27,8 +27,8 @@
   },
   "pages": {
     "home": {
-      "title": "Mathe-Spiele für Kinder & clevere Arbeitsblätter",
-      "description": "Spielen Sie interaktive 3D-Mathe-Spiele für die Klassen 1-6 und erstellen Sie Arbeitsblätter zum Drucken für zusätzliche Übung."
+      "title": "Mathe Arbeitsblätter & Spiele für Kinder",
+      "description": "Kostenlose druckbare Mathe-Arbeitsblätter und interaktive 3D-Mathe-Spiele für die Klassen 1-6. Erstellen Sie individuelle Übungsblätter und spielen Sie Lernspiele."
     },
     "fractions": {
       "title": "Bruch-Arbeitsblatt zum Drucken erstellen - Kostenloser Generator",

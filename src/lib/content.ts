@@ -3,8 +3,25 @@ import { BlogCategory, blogCategories } from './blog-data';
 import fs from 'fs';
 import path from 'path';
 
+const FALLBACK_LOCALE: Locale = 'en';
+
 function getContentDir(section: 'blog' | 'help', locale: Locale): string {
   return path.join(process.cwd(), 'content', section, locale);
+}
+
+function resolveContentDir(section: 'blog' | 'help', locale: Locale): string {
+  const localeDir = getContentDir(section, locale);
+  if (fs.existsSync(localeDir) && fs.readdirSync(localeDir).some(f => f.endsWith('.json'))) {
+    return localeDir;
+  }
+  // For non-Hebrew locales, prefer English fallback; for Hebrew, use Hebrew
+  if (locale !== defaultLocale) {
+    const enDir = getContentDir(section, FALLBACK_LOCALE);
+    if (fs.existsSync(enDir) && fs.readdirSync(enDir).some(f => f.endsWith('.json'))) {
+      return enDir;
+    }
+  }
+  return getContentDir(section, defaultLocale);
 }
 
 function hasLocalizedSectionContent(section: 'blog' | 'help', locale: Locale): boolean {
@@ -63,14 +80,10 @@ export interface BlogPostJSON {
 
 /**
  * Get all blog posts for a specific locale
- * Falls back to Hebrew if locale-specific content doesn't exist
+ * Falls back to English (then Hebrew) if locale-specific content doesn't exist
  */
 export async function getBlogPosts(locale: Locale = defaultLocale): Promise<BlogPostJSON[]> {
-  const contentDir = getContentDir('blog', locale);
-  const fallbackDir = getContentDir('blog', defaultLocale);
-
-  // Use locale directory if it exists, otherwise fallback to default
-  const dir = fs.existsSync(contentDir) ? contentDir : fallbackDir;
+  const dir = resolveContentDir('blog', locale);
 
   if (!fs.existsSync(dir)) {
     return [];
@@ -102,13 +115,20 @@ export async function getBlogPosts(locale: Locale = defaultLocale): Promise<Blog
 
 /**
  * Get a single blog post by slug
- * Falls back to Hebrew if locale-specific content doesn't exist
+ * Falls back to English (then Hebrew) if locale-specific content doesn't exist
  */
 export async function getBlogPost(slug: string, locale: Locale = defaultLocale): Promise<BlogPostJSON | null> {
   const localePath = path.join(getContentDir('blog', locale), `${slug}.json`);
-  const fallbackPath = path.join(getContentDir('blog', defaultLocale), `${slug}.json`);
+  const enPath = path.join(getContentDir('blog', FALLBACK_LOCALE), `${slug}.json`);
+  const hePath = path.join(getContentDir('blog', defaultLocale), `${slug}.json`);
 
-  const filePath = fs.existsSync(localePath) ? localePath : fallbackPath;
+  let filePath = localePath;
+  if (!fs.existsSync(filePath)) {
+    filePath = locale !== defaultLocale ? enPath : hePath;
+  }
+  if (!fs.existsSync(filePath)) {
+    filePath = hePath;
+  }
 
   if (!fs.existsSync(filePath)) {
     return null;
@@ -166,20 +186,10 @@ export interface HelpTopicJSON {
 
 /**
  * Get all help topics for a specific locale
- * Falls back to Hebrew if locale-specific content doesn't exist
+ * Falls back to English (then Hebrew) if locale-specific content doesn't exist
  */
 export async function getHelpTopics(locale: Locale = defaultLocale): Promise<HelpTopicJSON[]> {
-  const contentDir = getContentDir('help', locale);
-  const fallbackDir = getContentDir('help', defaultLocale);
-
-  // Use locale directory if it exists and has files, otherwise fallback to default
-  let dir = fallbackDir;
-  if (fs.existsSync(contentDir)) {
-    const files = fs.readdirSync(contentDir).filter(f => f.endsWith('.json'));
-    if (files.length > 0) {
-      dir = contentDir;
-    }
-  }
+  const dir = resolveContentDir('help', locale);
 
   if (!fs.existsSync(dir)) {
     return [];
@@ -204,13 +214,20 @@ export async function getHelpTopics(locale: Locale = defaultLocale): Promise<Hel
 
 /**
  * Get a single help topic by slug
- * Falls back to Hebrew if locale-specific content doesn't exist
+ * Falls back to English (then Hebrew) if locale-specific content doesn't exist
  */
 export async function getHelpTopic(slug: string, locale: Locale = defaultLocale): Promise<HelpTopicJSON | null> {
   const localePath = path.join(getContentDir('help', locale), `${slug}.json`);
-  const fallbackPath = path.join(getContentDir('help', defaultLocale), `${slug}.json`);
+  const enPath = path.join(getContentDir('help', FALLBACK_LOCALE), `${slug}.json`);
+  const hePath = path.join(getContentDir('help', defaultLocale), `${slug}.json`);
 
-  const filePath = fs.existsSync(localePath) ? localePath : fallbackPath;
+  let filePath = localePath;
+  if (!fs.existsSync(filePath)) {
+    filePath = locale !== defaultLocale ? enPath : hePath;
+  }
+  if (!fs.existsSync(filePath)) {
+    filePath = hePath;
+  }
 
   if (!fs.existsSync(filePath)) {
     return null;

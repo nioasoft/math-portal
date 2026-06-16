@@ -162,6 +162,7 @@ export function Game3DShell({
                   locale={locale}
                   isRTL={isRTL}
                   t={t}
+                  gameTitle={title}
                   onScore={setScore}
                   onFeedback={setFeedback}
                   onPrompt={setPrompt}

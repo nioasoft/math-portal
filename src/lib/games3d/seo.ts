@@ -668,6 +668,8 @@ export function buildGameBreadcrumbJsonLd(args: {
   locale: Locale;
   title: string;
   gameId: string;
+  homeName?: string;
+  playName?: string;
 }) {
   const base = args.locale === 'he' ? BASE_URL : `${BASE_URL}/${args.locale}`;
   const gameUrl = getLocalizedUrl(`/play/${args.gameId}`, args.locale);
@@ -676,8 +678,8 @@ export function buildGameBreadcrumbJsonLd(args: {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Tirgul', item: base },
-      { '@type': 'ListItem', position: 2, name: 'Play', item: getLocalizedUrl('/play', args.locale) },
+      { '@type': 'ListItem', position: 1, name: args.homeName ?? 'Tirgul', item: base },
+      { '@type': 'ListItem', position: 2, name: args.playName ?? 'Play', item: getLocalizedUrl('/play', args.locale) },
       { '@type': 'ListItem', position: 3, name: args.title, item: gameUrl },
     ],
   };

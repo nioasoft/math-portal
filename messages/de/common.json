@@ -120,6 +120,27 @@
     "errorSubmit": "Fehler beim Senden des Feedbacks",
     "errorRetry": "Fehler beim Senden, bitte versuchen Sie es später erneut"
   },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Es scheint, als hätten Sie eine Seite erreicht, die nicht existiert. Sie wurde möglicherweise verschoben oder der Link ist fehlerhaft.",
+    "goHome": "Zur Startseite",
+    "worksheets": "Arbeitsblätter",
+    "games": "Spiele"
+  },
+  "error": {
+    "title": "Etwas ist schiefgelaufen",
+    "description": "Ein unerwarteter Fehler ist aufgetreten. Versuchen Sie, die Seite zu aktualisieren oder zur Startseite zurückzukehren.",
+    "tryAgain": "Erneut versuchen",
+    "goHome": "Zur Startseite"
+  },
+  "blog": {
+    "backToBlog": "Zurück zum Blog",
+    "readingTime": "Min. Lesezeit",
+    "relatedGuides": "Elternratgeber zu diesem Thema",
+    "readyToPractice": "Bereit zum Üben?",
+    "practiceCta": "Gehen Sie zu unseren Generatoren und erstellen Sie individuelle Arbeitsblätter",
+    "allGenerators": "Alle Generatoren"
+  },
   "testimonials": {
     "title": "Was Eltern sagen",
     "items": [

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Link } from '@/i18n/navigation';
@@ -7,11 +8,14 @@ import {
   Shapes, Scale, Star, BookOpen, GraduationCap, Printer, Zap, Gamepad2, PieChart
 } from 'lucide-react';
 import { FeaturedPosts } from '@/components/FeaturedPosts';
-import { GamesHub } from '@/components/games3d/GamesHub';
 import { getBlogPosts, getHelpTopics } from '@/lib/content';
 import { getTranslations, getLocale } from 'next-intl/server';
 import { Locale } from '@/i18n/config';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
+
+const GamesHub = dynamic(() => import('@/components/games3d/GamesHub').then(m => m.GamesHub), {
+  loading: () => <div className="h-96 bg-slate-100 animate-pulse rounded-3xl" />,
+});
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;

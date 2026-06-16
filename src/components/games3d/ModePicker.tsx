@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { Gamepad2, Trophy } from 'lucide-react';
 import type { GameMode3D } from '@/lib/games3d/types';
 
 interface Props {
@@ -9,6 +10,21 @@ interface Props {
   /** Optional short how-to-play text shown under the heading. */
   instructions?: string;
 }
+
+const MODE_STYLES = {
+  practice: {
+    Icon: Gamepad2,
+    gradient: 'from-indigo-600 to-indigo-700',
+    hover: 'hover:from-indigo-500 hover:to-indigo-600',
+    descKey: 'practiceDesc',
+  },
+  quiz: {
+    Icon: Trophy,
+    gradient: 'from-amber-500 to-amber-600',
+    hover: 'hover:from-amber-400 hover:to-amber-500',
+    descKey: 'quizDesc',
+  },
+} as const;
 
 export function ModePicker({ supportedModes, onPick, instructions }: Props): React.ReactElement {
   const t = useTranslations('games3d.modes');
@@ -21,16 +37,24 @@ export function ModePicker({ supportedModes, onPick, instructions }: Props): Rea
         </p>
       )}
       <div className="flex gap-4">
-        {supportedModes.map((mode) => (
-          <button
-            key={mode}
-            type="button"
-            onClick={() => onPick(mode)}
-            className="rounded-2xl bg-indigo-600 px-8 py-4 text-lg font-bold text-white shadow-lg transition hover:bg-indigo-500 active:scale-95"
-          >
-            {t(mode)}
-          </button>
-        ))}
+        {supportedModes.map((mode) => {
+          const style = MODE_STYLES[mode];
+          const Icon = style.Icon;
+          let desc = '';
+          try { desc = t(style.descKey); } catch { /* fallback below */ }
+          return (
+            <button
+              key={mode}
+              type="button"
+              onClick={() => onPick(mode)}
+              className={`flex flex-col items-center gap-2 rounded-2xl bg-gradient-to-br ${style.gradient} ${style.hover} px-8 py-5 text-white shadow-lg transition hover:shadow-xl active:scale-95`}
+            >
+              <Icon className="w-8 h-8" aria-hidden="true" />
+              <span className="text-lg font-bold">{t(mode)}</span>
+              {desc && <span className="text-xs opacity-80">{desc}</span>}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

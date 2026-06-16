@@ -6,6 +6,24 @@
   "gameLoadError": "The game failed to load.",
   "retry": "Try again",
   "playAgain": "Play again",
+  "volume": "Volume",
+  "paused": "Game Paused",
+  "resume": "Resume Game",
+  "newBest": "New Best!",
+  "bestStreak": "Best Streak",
+  "stars": "{count} Stars",
+  "loadingTips": [
+    "Did you know? Zero is both even and not positive!",
+    "A rainbow is always round — because it's part of a circle!",
+    "The word 'hundred' comes from the Old Norse 'hundrath', meaning 120, not 100!",
+    "A clock's minute hand makes a full circle 1,440 times in a year!",
+    "The sum of all numbers on a dice opposite faces always equals 7!",
+    "A shape with 100 sides is called a hectogon!",
+    "The number 9 has a magic trick: multiply any number by 9, the digits always add up to 9!",
+    "A honeycomb cell is a perfect hexagon — the strongest shape for its size!",
+    "The biggest number with a name is googolplex — 10 to the power of a googol!",
+    "Mathematics is the only science where you can always be 100% sure of the answer!"
+  ],
   "webglNotSupported": "Your browser does not support 3D graphics. Try a more modern browser or device.",
   "frameRateLowNotice": "Reducing quality for smoother gameplay",
   "sectionTitle": "3D Games",
@@ -13,7 +31,9 @@
   "modes": {
     "choose": "Choose a mode",
     "practice": "Practice",
-    "quiz": "Quiz"
+    "practiceDesc": "Free practice, no time pressure",
+    "quiz": "Quiz",
+    "quizDesc": "Scored challenge with streaks"
   },
   "topics": {
     "decimals": "Decimals",

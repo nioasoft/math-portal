@@ -218,6 +218,12 @@
   animation: shake 0.5s ease-in-out;
 }
 
+/* Game HUD toast animation */
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
 /* Card hover lift effect */
 .card-lift {
   transition: transform 0.3s ease, box-shadow 0.3s ease;

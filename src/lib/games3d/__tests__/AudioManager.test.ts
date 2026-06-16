@@ -11,7 +11,7 @@ class FakeBufferSource {
   onended: (() => void) | null = null;
 }
 class FakeGain {
-  gain = { value: 1 };
+  gain = { value: 1, linearRampToValueAtTime: vi.fn() };
   connect = vi.fn();
   disconnect = vi.fn();
 }

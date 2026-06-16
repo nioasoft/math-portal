@@ -6,9 +6,9 @@ import type { CameraPresetsAPI } from '../types';
  */
 export function createCameraPresets(camera: THREE.PerspectiveCamera): CameraPresetsAPI {
   return {
-    orbit(target: THREE.Vector3, distance: number): void {
-      const yaw = Math.PI / 4; // 45 degrees
-      const pitch = Math.PI / 6; // 30 degrees
+    orbit(target: THREE.Vector3, distance: number, opts?: { yaw?: number; pitch?: number }): void {
+      const yaw = opts?.yaw ?? Math.PI / 4;
+      const pitch = opts?.pitch ?? Math.PI / 6;
       camera.position.set(
         target.x + distance * Math.cos(pitch) * Math.sin(yaw),
         target.y + distance * Math.sin(pitch),
@@ -19,6 +19,11 @@ export function createCameraPresets(camera: THREE.PerspectiveCamera): CameraPres
 
     topDown(target: THREE.Vector3, distance: number): void {
       camera.position.set(target.x, target.y + distance, target.z + 0.0001);
+      camera.lookAt(target);
+    },
+
+    side(target: THREE.Vector3, distance: number): void {
+      camera.position.set(target.x + distance, target.y, target.z);
       camera.lookAt(target);
     },
 

@@ -6,6 +6,18 @@
   "gameLoadError": "Error al cargar el juego.",
   "retry": "Intentar de nuevo",
   "playAgain": "Jugar de nuevo",
+  "volume": "Volumen",
+  "paused": "Juego en pausa",
+  "resume": "Reanudar juego",
+  "newBest": "¡Nuevo récord!",
+  "bestStreak": "Mejor racha",
+  "stars": "{count} estrellas",
+  "loadingTips": [
+    "¿Sabías? ¡El cero es par y no positivo!",
+    "¡Un arcoíris siempre es redondo — porque es parte de un círculo!",
+    "¡El número más grande con nombre es googolplex — 10 elevado a un googol!",
+    "¡Las matemáticas son la única ciencia donde puedes estar 100% seguro de la respuesta!"
+  ],
   "webglNotSupported": "Tu navegador no admite gráficos 3D. Prueba un navegador o dispositivo más moderno.",
   "frameRateLowNotice": "Reduciendo la calidad para un juego más fluido",
   "sectionTitle": "Juegos 3D",
@@ -13,7 +25,9 @@
   "modes": {
     "choose": "Elige un modo",
     "practice": "Práctica",
-    "quiz": "Cuestionario"
+    "practiceDesc": "Práctica libre, sin presión de tiempo",
+    "quiz": "Cuestionario",
+    "quizDesc": "Desafío con puntuación y rachas"
   },
   "topics": {
     "decimals": "Decimales",

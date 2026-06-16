@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import type { SceneContext } from '../types';
+import type { SceneContext, DisposableLook } from '../types';
 import { PALETTE } from './palette';
 
 export interface ClayLookOptions {
@@ -15,10 +15,6 @@ export interface ClayLookOptions {
   shadowArea?: number;
   /** Add subtle fog matching the bottom background color. Default true. */
   fog?: boolean;
-}
-
-export interface DisposableLook {
-  dispose(): void;
 }
 
 const DEFAULT_TOP = '#cfe8ff';

@@ -158,6 +158,7 @@ export interface ControlButton {
   label: string;
   onPress: () => void;
   variant?: 'default' | 'confirm' | 'reset';
+  disabled?: boolean;
 }
 
 export interface ControlsController {
@@ -179,6 +180,7 @@ export interface PointerInfo {
 
 export type InputEventMap = {
   tap: PointerInfo;
+  hover: PointerInfo;
   dragStart: PointerInfo;
   drag: PointerInfo;
   dragEnd: PointerInfo;
@@ -197,11 +199,16 @@ export interface InputAdapter {
 
 // =========== Audio ============
 
-export type SharedSfxKey = 'success' | 'fail' | 'click';
+export type SharedSfxKey = 'success' | 'fail' | 'click' | 'pop' | 'whoosh' | 'tick' | 'levelUp' | 'streak';
 
 export interface AudioManager {
   play(key: SharedSfxKey): void;
   play(key: string, url: string): void;
+  playPitched(key: SharedSfxKey, pitchRange?: number): void;
+  playBGM(key: string, url: string, opts?: { volume?: number }): void;
+  stopBGM(opts?: { fadeMs?: number }): void;
+  getVolume(): number;
+  setVolume(volume: number): void;
   isMuted(): boolean;
   setMuted(muted: boolean): void;
   preload(key: string, url: string): Promise<void>;
@@ -217,16 +224,22 @@ export interface AssetCache {
 
 // =========== Presets ============
 
+export interface DisposableLook {
+  dispose(): void;
+}
+
 export interface CameraPresetsAPI {
-  orbit(target: THREE.Vector3, distance: number): void;
+  orbit(target: THREE.Vector3, distance: number, opts?: { yaw?: number; pitch?: number }): void;
   topDown(target: THREE.Vector3, distance: number): void;
+  side(target: THREE.Vector3, distance: number): void;
   locked(position: THREE.Vector3, lookAt: THREE.Vector3): void;
 }
 
 export interface LightingPresetsAPI {
-  daylight(scene: THREE.Scene): void;
-  soft(scene: THREE.Scene): void;
-  dramatic(scene: THREE.Scene): void;
+  daylight(scene: THREE.Scene): DisposableLook;
+  soft(scene: THREE.Scene): DisposableLook;
+  dramatic(scene: THREE.Scene): DisposableLook;
+  night(scene: THREE.Scene): DisposableLook;
 }
 
 // =========== Debug ============

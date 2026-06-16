@@ -30,6 +30,7 @@ export function createInputAdapter(
 ): InputAdapterInstance {
   type ListenerSet = {
     tap: Set<(p: PointerInfo) => void>;
+    hover: Set<(p: PointerInfo) => void>;
     dragStart: Set<(p: PointerInfo) => void>;
     drag: Set<(p: PointerInfo) => void>;
     dragEnd: Set<(p: PointerInfo) => void>;
@@ -39,6 +40,7 @@ export function createInputAdapter(
   };
   const listeners: ListenerSet = {
     tap: new Set(),
+    hover: new Set(),
     dragStart: new Set(),
     drag: new Set(),
     dragEnd: new Set(),
@@ -80,6 +82,7 @@ export function createInputAdapter(
 
   function onPointerDown(ev: PointerEvent): void {
     ev.preventDefault?.();
+    try { canvas.setPointerCapture(ev.pointerId); } catch { /* progressive enhancement */ }
     active.set(ev.pointerId, {
       id: ev.pointerId,
       startX: ev.clientX,
@@ -117,7 +120,14 @@ export function createInputAdapter(
 
   function onPointerMove(ev: PointerEvent): void {
     const ptr = active.get(ev.pointerId);
-    if (!ptr) return;
+    if (!ptr) {
+      // No active pointer — emit hover for desktop feedback
+      if (listeners.hover.size > 0) {
+        const info = buildPointerInfo(ev.clientX, ev.clientY);
+        listeners.hover.forEach((h) => h(info));
+      }
+      return;
+    }
     ptr.lastX = ev.clientX;
     ptr.lastY = ev.clientY;
 
@@ -159,6 +169,7 @@ export function createInputAdapter(
   }
 
   function onPointerUp(ev: PointerEvent): void {
+    try { canvas.releasePointerCapture(ev.pointerId); } catch { /* progressive enhancement */ }
     if (active.size <= 2) { lastPinchDistance = null; lastPinchAngle = null; }
     const ptr = active.get(ev.pointerId);
     if (!ptr) return;
@@ -182,6 +193,7 @@ export function createInputAdapter(
   }
 
   function onPointerCancel(ev: PointerEvent): void {
+    try { canvas.releasePointerCapture(ev.pointerId); } catch { /* no capture */ }
     if (active.size <= 2) { lastPinchDistance = null; lastPinchAngle = null; }
     const ptr = active.get(ev.pointerId);
     if (ptr?.isDragging) {

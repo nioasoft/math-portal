@@ -104,7 +104,16 @@ export function clearStats(): void {
 // ============ 3D Games extensions ============
 
 const KEY_3D_BEST_PREFIX = 'tirgul.games3d.best.';
+const KEY_3D_RECORD_PREFIX = 'tirgul.games3d.record.';
 const KEY_MUTE = 'tirgul.games3d.muted';
+const KEY_VOLUME = 'tirgul.games3d.volume';
+
+export interface Game3DRecord {
+  bestScore: number;
+  bestAccuracy: number;
+  bestStreak: number;
+  totalPlays: number;
+}
 
 function safeRead(key: string): string | null {
     try {
@@ -142,4 +151,35 @@ export function getMutePreference(): boolean {
 
 export function setMutePreference(muted: boolean): void {
     safeWrite(KEY_MUTE, muted ? '1' : '0');
+}
+
+export function getGame3DRecord(gameId: string): Game3DRecord {
+    const raw = safeRead(KEY_3D_RECORD_PREFIX + gameId);
+    if (!raw) return { bestScore: 0, bestAccuracy: 0, bestStreak: 0, totalPlays: 0 };
+    try {
+        const parsed = JSON.parse(raw) as Game3DRecord;
+        return {
+            bestScore: Number.isFinite(parsed.bestScore) ? parsed.bestScore : 0,
+            bestAccuracy: Number.isFinite(parsed.bestAccuracy) ? parsed.bestAccuracy : 0,
+            bestStreak: Number.isFinite(parsed.bestStreak) ? parsed.bestStreak : 0,
+            totalPlays: Number.isFinite(parsed.totalPlays) ? parsed.totalPlays : 0,
+        };
+    } catch {
+        return { bestScore: 0, bestAccuracy: 0, bestStreak: 0, totalPlays: 0 };
+    }
+}
+
+export function setGame3DRecord(gameId: string, record: Game3DRecord): void {
+    safeWrite(KEY_3D_RECORD_PREFIX + gameId, JSON.stringify(record));
+}
+
+export function getAudioVolumePreference(): number {
+    const raw = safeRead(KEY_VOLUME);
+    if (!raw) return 1;
+    const n = Number(raw);
+    return Number.isFinite(n) && n >= 0 && n <= 1 ? n : 1;
+}
+
+export function setAudioVolumePreference(volume: number): void {
+    safeWrite(KEY_VOLUME, String(Math.max(0, Math.min(1, volume))));
 }

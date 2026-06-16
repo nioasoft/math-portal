@@ -6,6 +6,18 @@
   "gameLoadError": "Das Spiel konnte nicht geladen werden.",
   "retry": "Erneut versuchen",
   "playAgain": "Nochmal spielen",
+  "volume": "Lautstärke",
+  "paused": "Spiel pausiert",
+  "resume": "Spiel fortsetzen",
+  "newBest": "Neuer Rekord!",
+  "bestStreak": "Beste Serie",
+  "stars": "{count} Sterne",
+  "loadingTips": [
+    "Wusstest du? Null ist gerade und nicht positiv!",
+    "Ein Regenbogen ist immer rund — weil er Teil eines Kreises ist!",
+    "Die größte Zahl mit einem Namen ist Googolplex — 10 hoch Googol!",
+    "Mathematik ist die einzige Wissenschaft, in der man zu 100% sicher sein kann!"
+  ],
   "webglNotSupported": "Dein Browser unterstützt keine 3D-Grafik. Probier einen moderneren Browser oder ein neueres Gerät.",
   "frameRateLowNotice": "Qualität wird reduziert für flüssigeres Spielen",
   "sectionTitle": "3D-Spiele",
@@ -13,7 +25,9 @@
   "modes": {
     "choose": "Modus wählen",
     "practice": "Üben",
-    "quiz": "Quiz"
+    "practiceDesc": "Freies Üben, kein Zeitdruck",
+    "quiz": "Quiz",
+    "quizDesc": "Herausforderung mit Punkten und Serien"
   },
   "topics": {
     "decimals": "Dezimalzahlen",

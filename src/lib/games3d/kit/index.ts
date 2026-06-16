@@ -4,18 +4,19 @@
  */
 
 // Color
-export { PALETTE, PALETTE_SERIES, PALETTE_HEX } from './palette';
+export { PALETTE, PALETTE_SERIES, PALETTE_HEX, FEEDBACK_COLORS, FEEDBACK_COLORS_HEX } from './palette';
 export type { PaletteKey } from './palette';
 
 // Scene look
 export { applyClayLook } from './scene';
-export type { ClayLookOptions, DisposableLook } from './scene';
+export type { ClayLookOptions } from './scene';
+export type { DisposableLook } from '../types';
 
 // Geometry
 export { roundedBox } from './geometry';
 
 // Juice (tweens)
-export { tweenGroup, popIn, punch, tweenTo, shake, clearAllTweens } from './juice';
+export { tweenGroup, popIn, punch, tweenTo, shake, clearAllTweens, spinTo, slideTo, float, popInGroup } from './juice';
 
 // Confetti
 export { celebrate, bigCelebrate } from './confetti';

@@ -11,10 +11,11 @@ import { WebGLFallback } from './WebGLFallback';
 import { LoadingScene } from './LoadingScene';
 import { GameLoadError } from './GameLoadError';
 import { ModePicker } from './ModePicker';
-import { recordBestScore } from './completion';
+import { recordCompletion } from './completion';
+import { computeStars } from '@/lib/games3d/kit';
 import type { CompleteSummary, ControlButton, FeedbackEvent, Game3D, GameMeta, GameMode3D, GameStatus } from '@/lib/games3d/types';
 import { gameLoaders } from '@/lib/games3d/games/loaders';
-import { getMutePreference, setMutePreference } from '@/lib/game/storage';
+import { getMutePreference, setMutePreference, getAudioVolumePreference, setAudioVolumePreference } from '@/lib/game/storage';
 
 interface Props {
   /** Game id — resolved to the actual Game3D module on the client (the game object
@@ -46,11 +47,12 @@ export function Game3DShell({
 
   const [game, setGame] = useState<Game3D | null>(null);
   const [muted, setMuted] = useState<boolean>(() => getMutePreference());
+  const [volume, setVolume] = useState<number>(() => getAudioVolumePreference());
   const supportedModes = meta.supportedModes;
   const [mode, setMode] = useState<GameMode3D | null>(
     initialMode ?? (supportedModes.length === 1 ? supportedModes[0] : null)
   );
-  const [summary, setSummary] = useState<CompleteSummary | null>(null);
+  const [summary, setSummary] = useState<(CompleteSummary & { isNewBest?: boolean }) | null>(null);
   const [score, setScore] = useState<number>(0);
   const [feedback, setFeedback] = useState<FeedbackEvent | null>(null);
   const [prompt, setPrompt] = useState<string>('');
@@ -100,6 +102,15 @@ export function Game3DShell({
     });
   }, []);
 
+  const handleVolumeChange = useCallback((v: number) => {
+    setVolume(v);
+    setAudioVolumePreference(v);
+    if (v > 0 && muted) {
+      setMuted(false);
+      setMutePreference(false);
+    }
+  }, [muted]);
+
   const handleLoadProgress = useCallback((f: number) => {
     setProgress(f);
     if (f >= 1) setLoaded(true);
@@ -117,8 +128,8 @@ export function Game3DShell({
   }, []);
 
   const handleComplete = useCallback((s: CompleteSummary) => {
-    recordBestScore(gameId, s.totalPoints);
-    setSummary(s);
+    const result = recordCompletion(gameId, s);
+    setSummary({ ...s, isNewBest: result.isNewBest });
     onComplete?.(s);
   }, [gameId, onComplete]);
 
@@ -134,7 +145,7 @@ export function Game3DShell({
   }, [supportedModes, initialMode]);
 
   const topBar = webGLAvailable ? (
-    <MuteButton muted={muted} onToggle={toggleMute} />
+    <MuteButton muted={muted} onToggle={toggleMute} volume={volume} onVolumeChange={handleVolumeChange} />
   ) : undefined;
 
   return (
@@ -174,22 +185,48 @@ export function Game3DShell({
                 />
               )}
               <OverlayHUD score={score} feedback={feedback} prompt={prompt} instructions={instructions} controls={controls} status={status} />
-              {summary && (
-                <div className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-4 bg-slate-900/95 text-white">
-                  <div className="text-3xl font-bold">{summary.totalPoints}</div>
-                  <div className="text-sm opacity-80">
-                    {Math.round(summary.accuracy * 100)}% · {Math.round(summary.durationSec)}s
+              {summary && (() => {
+                const starCount = computeStars(summary.accuracy);
+                return (
+                  <div className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-3 bg-slate-900/95 text-white animate-[fade-in_300ms_ease-out]">
+                    {summary.isNewBest && (
+                      <div className="rounded-full bg-amber-500 px-4 py-1 text-sm font-bold text-slate-900 animate-bounce-in">
+                        {t('newBest')}
+                      </div>
+                    )}
+                    <div className="flex items-center gap-1">
+                      {Array.from({ length: 3 }, (_, i) => (
+                        <span
+                          key={i}
+                          className={`text-3xl transition-transform duration-300 ${i < starCount ? 'text-amber-300 scale-110' : 'text-slate-600 scale-100'}`}
+                        >
+                          {i < starCount ? '★' : '☆'}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="text-3xl font-bold">{summary.totalPoints}</div>
+                    <div className="flex items-center gap-3 text-sm opacity-80">
+                      <span>{Math.round(summary.accuracy * 100)}%</span>
+                      <span>·</span>
+                      <span>{Math.round(summary.durationSec)}s</span>
+                      {summary.streak && summary.streak > 1 && (
+                        <>
+                          <span>·</span>
+                          <span>🔥 {t('bestStreak')}: {summary.streak}</span>
+                        </>
+                      )}
+                    </div>
+                    <button
+                      type="button"
+                      onClick={playAgain}
+                      aria-label={t('playAgain')}
+                      className="mt-2 rounded-2xl bg-indigo-600 px-8 py-3 font-bold shadow-lg hover:bg-indigo-500 active:scale-95"
+                    >
+                      ↻ {t('playAgain')}
+                    </button>
                   </div>
-                  <button
-                    type="button"
-                    onClick={playAgain}
-                    aria-label={t('playAgain')}
-                    className="rounded-2xl bg-indigo-600 px-8 py-3 font-bold shadow-lg hover:bg-indigo-500 active:scale-95"
-                  >
-                    ↻
-                  </button>
-                </div>
-              )}
+                );
+              })()}
             </>
           )}
         </div>

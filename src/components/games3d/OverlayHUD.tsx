@@ -36,9 +36,6 @@ const FEEDBACK_STYLES = {
 const CONTROL_VARIANT_STYLES = {
   default: 'bg-indigo-600 text-white hover:bg-indigo-500 active:scale-95',
   confirm: 'bg-emerald-600 text-white hover:bg-emerald-500 active:scale-95',
-  // Solid muted fill (not transparent) so it stays clearly visible on both the
-  // light clay-look backgrounds and dark scenes — a transparent/outline button
-  // disappeared against the pastel backgrounds.
   reset:   'bg-slate-600 text-white border border-white/25 hover:bg-slate-500 active:scale-95',
 } as const;
 
@@ -59,7 +56,11 @@ export function OverlayHUD({ score, feedback, prompt, instructions, controls, st
             {maxStars > 0 && (
               <span className="flex items-center gap-0.5" aria-label={`${stars}/${maxStars}`}>
                 {Array.from({ length: maxStars }, (_, i) => (
-                  <span key={i} className={i < stars ? 'text-amber-300' : 'text-slate-500'} aria-hidden="true">
+                  <span
+                    key={i}
+                    className={`inline-block transition-transform duration-300 ${i < stars ? 'text-amber-300 scale-110' : 'text-slate-500 scale-100'}`}
+                    aria-hidden="true"
+                  >
                     {i < stars ? '★' : '☆'}
                   </span>
                 ))}
@@ -114,8 +115,9 @@ export function OverlayHUD({ score, feedback, prompt, instructions, controls, st
       {feedback && (
         <div
           data-testid="feedback-toast"
-          className={`self-center mb-4 px-4 py-2 rounded-full flex items-center gap-2 shadow-lg ${FEEDBACK_STYLES[feedback.kind].bg} ${FEEDBACK_STYLES[feedback.kind].text} ${controls && controls.length > 0 ? 'mt-2' : 'mt-auto'}`}
+          className={`self-center mb-4 px-4 py-2 rounded-full flex items-center gap-2 shadow-lg animate-[toastIn_200ms_ease-out] ${FEEDBACK_STYLES[feedback.kind].bg} ${FEEDBACK_STYLES[feedback.kind].text} ${controls && controls.length > 0 ? 'mt-2' : 'mt-auto'}`}
           role="status"
+          aria-live="polite"
         >
           {(() => {
             const Icon = FEEDBACK_STYLES[feedback.kind].Icon;
@@ -135,7 +137,8 @@ export function OverlayHUD({ score, feedback, prompt, instructions, controls, st
               key={btn.id}
               type="button"
               onClick={btn.onPress}
-              className={`min-h-[44px] min-w-[44px] rounded-xl px-4 py-2.5 text-base font-bold shadow-lg backdrop-blur transition-transform ${CONTROL_VARIANT_STYLES[btn.variant ?? 'default']}`}
+              disabled={btn.disabled}
+              className={`min-h-[44px] min-w-[44px] rounded-xl px-4 py-2.5 text-base font-bold shadow-lg backdrop-blur transition-transform ${CONTROL_VARIANT_STYLES[btn.variant ?? 'default']} ${btn.disabled ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''}`}
             >
               {btn.label}
             </button>

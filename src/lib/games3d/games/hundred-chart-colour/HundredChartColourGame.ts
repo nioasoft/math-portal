@@ -87,8 +87,8 @@ export const hundredChartColourGame: Game3D = {
     // monotonic (natural, no inversion). The chart's binding extent is its WIDTH
     // (COLS·CELL ≈ 7 units); D fits that with margin (60° FOV vertical, ~1.4 aspect).
     const halfWidth = (COLS * CELL) / 2; // ~3.54
-    const aspect = 1.4;
-    const D = halfWidth / aspect / Math.tan(Math.PI / 6) + 3.0; // fit width with margin
+    const aspect = ctx.camera.aspect;
+    const D = halfWidth / (Math.tan(Math.PI / 6) * aspect) + 3.0; // fit width with margin
     ctx.presets.camera.locked(new THREE.Vector3(0, 0, D), new THREE.Vector3(0, 0, 0));
 
     // Content is centred on the origin and spans y ∈ [-2.4, 2.4] (above AND below

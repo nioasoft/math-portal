@@ -151,8 +151,8 @@ export const tangramBuildGame: Game3D = {
     // [-3.6, 3.4]. Fit the WIDTH with margin so the figure + tray both sit centred
     // and fully in view; pointer-x → world-x stays monotonic (no inversion).
     const halfWidth = 5.3;
-    const aspect = 1.4;
-    const D = halfWidth / aspect / Math.tan(Math.PI / 6) + 3.0;
+    const aspect = ctx.camera.aspect;
+    const D = halfWidth / (Math.tan(Math.PI / 6) * aspect) + 3.0;
     ctx.presets.camera.locked(new THREE.Vector3(0, -0.2, D), new THREE.Vector3(0, -0.2, 0));
 
     // All content sits in the XY plane (a flat board) — keep the clay ground OFF

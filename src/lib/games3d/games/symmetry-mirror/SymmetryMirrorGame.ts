@@ -63,7 +63,12 @@ export const symmetryMirrorGame: Game3D = {
     // monotonic (natural, no inversion). The board's binding extent is its WIDTH
     // (2*COLS_PER_SIDE = 8 units); distance D is sized to fit that with margin.
     const halfWidth = COLS_PER_SIDE * CELL; // 4
-    const D = halfWidth / Math.tan((Math.PI / 6)) + 2.2; // 60° FOV vertical, fit width w/ margin
+    const halfHeight = COLS_PER_SIDE * CELL; // board is square
+    const aspect = ctx.camera.aspect;
+    const fovRad = Math.PI / 3; // 60° vertical FOV
+    const distForW = halfWidth / (Math.tan(fovRad / 2) * aspect);
+    const distForH = halfHeight / Math.tan(fovRad / 2);
+    const D = Math.max(distForW, distForH) + 2.2;
     ctx.presets.camera.locked(new THREE.Vector3(0, 0, D), new THREE.Vector3(0, 0, 0));
 
     // Content sits centred on the origin and spans y ∈ [-2, 2] (above and below 0),

@@ -58,7 +58,7 @@ export function OverlayHUD({ score, feedback, prompt, instructions, controls, st
                 {Array.from({ length: maxStars }, (_, i) => (
                   <span
                     key={i}
-                    className={`inline-block transition-transform duration-300 ${i < stars ? 'text-amber-300 scale-110' : 'text-slate-500 scale-100'}`}
+                    className={`inline-block transition-transform duration-300 ${i < stars ? 'text-amber-300 scale-110' : 'text-slate-300 scale-100'}`}
                     aria-hidden="true"
                   >
                     {i < stars ? '★' : '☆'}

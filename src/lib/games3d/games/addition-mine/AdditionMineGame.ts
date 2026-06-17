@@ -262,6 +262,24 @@ export const additionMineGame: Game3D = {
       rebuildColumn(columns.hundreds, prev.hundreds, animate);
       rebuildColumn(columns.tens, prev.tens, animate);
       rebuildColumn(columns.ones, prev.ones, animate);
+      frameCamera();
+    }
+
+    /** Dynamically adjust orbit distance so tall stacks stay in view. */
+    function frameCamera(): void {
+      const maxH = Math.max(
+        state.counts.hundreds * (HUNDRED_H + STACK_GAP),
+        state.counts.tens * (TEN_H + STACK_GAP),
+        state.counts.ones * (ONE_H + STACK_GAP),
+        1,
+      );
+      const contentH = maxH + 1.5;
+      const pitch = Math.PI / 6;
+      const fovRad = (60 * Math.PI) / 180;
+      const vertDist = (contentH / 2) / Math.tan(fovRad / 2) + 2;
+      const dist = Math.max(10, vertDist / Math.sin(pitch));
+      const targetY = maxH / 2;
+      ctx.presets.camera.orbit(new THREE.Vector3(0, targetY, 0), dist);
     }
 
     /**

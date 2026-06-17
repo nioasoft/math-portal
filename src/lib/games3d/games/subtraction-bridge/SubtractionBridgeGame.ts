@@ -235,6 +235,23 @@ export const subtractionBridgeGame: Game3D = {
       rebuildColumn(columns.hundreds, prev.hundreds, animate);
       rebuildColumn(columns.tens, prev.tens, animate);
       rebuildColumn(columns.ones, prev.ones, animate);
+      frameCamera();
+    }
+
+    /** Dynamically adjust camera so tall stacks stay in view. */
+    function frameCamera(): void {
+      const maxH = Math.max(
+        state.counts.hundreds * (HUNDRED_H + STACK_GAP),
+        state.counts.tens * (TEN_H + STACK_GAP),
+        state.counts.ones * (ONE_H + STACK_GAP),
+        1,
+      );
+      const topY = FLOOR_Y + maxH;
+      const centerY = topY / 2;
+      const contentH = topY + 1.5;
+      const fovRad = (60 * Math.PI) / 180;
+      const dist = Math.max(8, contentH / 2 / Math.tan(fovRad / 2) + 3);
+      ctx.presets.camera.locked(new THREE.Vector3(0, centerY, dist), new THREE.Vector3(0, centerY, 0));
     }
 
     /**

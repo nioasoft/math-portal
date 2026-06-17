@@ -209,6 +209,7 @@ export const moneyShopGame: Game3D = {
       if (next < 0 || next > MAX_PER_DENOM) return;
       state.counts = { ...state.counts, [denom]: next };
       rebuildColumn(column, prevCount, true);
+      frameCamera();
       showPrompt();
     }
 
@@ -226,6 +227,24 @@ export const moneyShopGame: Game3D = {
 
     function rebuildAll(prev: TrayCounts, animate: boolean): void {
       for (const denom of DENOMINATIONS) rebuildColumn(columns[denom], prev[denom], animate);
+      frameCamera();
+    }
+
+    /** Dynamically adjust orbit distance so tall stacks stay in view. */
+    function frameCamera(): void {
+      let maxH = 1;
+      for (const denom of DENOMINATIONS) {
+        const col = columns[denom];
+        const h = state.counts[denom] * col.pitch;
+        if (h > maxH) maxH = h;
+      }
+      const contentH = maxH + 1.5;
+      const pitch = Math.PI / 6;
+      const fovRad = (60 * Math.PI) / 180;
+      const vertDist = (contentH / 2) / Math.tan(fovRad / 2) + 2;
+      const dist = Math.max(8, vertDist / Math.sin(pitch));
+      const targetY = maxH / 2;
+      ctx.presets.camera.orbit(new THREE.Vector3(0, targetY, 0), dist);
     }
 
     function resetTray(): void {

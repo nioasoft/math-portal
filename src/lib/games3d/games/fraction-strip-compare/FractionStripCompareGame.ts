@@ -72,7 +72,7 @@ const WOOD_PLANK = 0xc8975a; // warm sawn pine
 const WOOD_CUT = 0x9a6b34; // darker board behind the cuts (gap backing)
 const PAINT_TOP = PALETTE.coral; // given strip's painted pieces (saturated)
 const PAINT_BOTTOM = PALETTE.sky; // child's strip's painted pieces (saturated, distinct)
-const LEVER_COLOR = 0x7a4f25; // dark stained lever + fulcrum (high contrast)
+const LEVER_COLOR = 0x3d2812; // dark stained lever + fulcrum (high contrast on warm bg)
 
 export const fractionStripCompareGame: Game3D = {
   meta: {

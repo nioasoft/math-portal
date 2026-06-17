@@ -128,8 +128,8 @@ export const shapeSort3DGame: Game3D = {
     // containers while keeping picking stable. Content spans width ≈ 9 units and
     // y ∈ [~0.5, ~3.9], all above y=0. Fit the WIDTH with margin.
     const halfWidth = 4.9;
-    const aspect = 1.4;
-    const D = halfWidth / aspect / Math.tan(Math.PI / 6) + 3.2;
+    const aspect = ctx.camera.aspect;
+    const D = halfWidth / (Math.tan(Math.PI / 6) * aspect) + 3.2;
     ctx.presets.camera.locked(new THREE.Vector3(0, 2.0, D), new THREE.Vector3(0, 1.9, 0));
 
     // All content sits above y=0 → keep the clay ground OFF so it never occludes.

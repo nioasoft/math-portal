@@ -3,6 +3,7 @@ import type { Tween } from '@tweenjs/tween.js';
 import type { ControlButton, Game3D } from '@/lib/games3d/types';
 import { createQuizController } from '@/lib/games3d/quiz/controller';
 import { applyClayLook, roundedBox, punch, shake, celebrate, bigCelebrate, computeStars, tweenTo } from '@/lib/games3d/kit';
+import { fitDistance } from '@/lib/games3d/kit/camera';
 import {
   createDecimalGenerator,
   formatHundredths,
@@ -71,7 +72,13 @@ export const decimalPlaceValueGame: Game3D = {
     supportedModes: ['practice', 'quiz'],
   },
   init(ctx) {
-    ctx.presets.camera.orbit(new THREE.Vector3(0, 1.4, 0), 13);
+    const JARS_HALF_W = 5.1; // 3 jars at ~3.4 spacing ≈ 10.2 total
+    const pitch = Math.PI / 6;
+    function reframe(): void {
+      const dist = fitDistance(JARS_HALF_W, ctx.camera.aspect, 2) / Math.sin(pitch);
+      ctx.presets.camera.orbit(new THREE.Vector3(0, 1.4, 0), Math.max(10, dist));
+    }
+    reframe();
 
     const clayLook = applyClayLook(ctx, {
       topColor: '#e6f0f6',
@@ -363,7 +370,7 @@ export const decimalPlaceValueGame: Game3D = {
     showStatus();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDragStart();
         offDrag();

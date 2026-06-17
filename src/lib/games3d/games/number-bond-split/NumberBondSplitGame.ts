@@ -385,7 +385,7 @@ export const numberBondSplitGame: Game3D = {
     showStatus();
 
     return {
-      onResize() {},
+      onResize() { fitCamera(); },
       dispose() {
         offDrag();
         offDragEnd();

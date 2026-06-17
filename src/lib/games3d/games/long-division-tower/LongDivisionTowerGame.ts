@@ -264,7 +264,7 @@ export const longDivisionTowerGame: Game3D = {
       const centerY = (towersTopY + poolBottomY) / 2;
       // Fit both height and width into a 60° vertical FOV at ~1.4 aspect.
       const fovV = (60 * Math.PI) / 180;
-      const aspect = 1.4;
+      const aspect = ctx.camera.aspect;
       const distForH = contentH / 2 / Math.tan(fovV / 2);
       const distForW = contentW / 2 / (Math.tan(fovV / 2) * aspect);
       const dist = Math.max(distForH, distForW) * 1.18 + 1.5; // margin
@@ -443,7 +443,7 @@ export const longDivisionTowerGame: Game3D = {
     showStatus();
 
     return {
-      onResize() {},
+      onResize() { frameCamera(); },
       dispose() {
         offDrag();
         offDragEnd();

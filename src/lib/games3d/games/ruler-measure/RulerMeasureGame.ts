@@ -14,6 +14,7 @@ import {
   PALETTE,
 } from '@/lib/games3d/kit';
 import { tweenTo } from '@/lib/games3d/kit/juice';
+import { lockedCameraFrame } from '@/lib/games3d/kit/camera';
 import {
   createRulerMeasureGenerator,
   RULER_MAX,
@@ -109,7 +110,12 @@ export const rulerMeasureGame: Game3D = {
   init(ctx) {
     // Front view of the ruler: lock the camera in front of the XY plane so "right"
     // on screen is +X (larger cm) and the ruler reads horizontally, undistorted.
-    ctx.presets.camera.locked(new THREE.Vector3(0, 0, 13), new THREE.Vector3(0, -0.3, 0));
+    const RULER_HALF_W = 5.6; // 20cm ruler ≈ 11.2 units wide
+    function reframe(): void {
+      const f = lockedCameraFrame(RULER_HALF_W, -0.15, ctx.camera.aspect, 3);
+      ctx.presets.camera.locked(f.position, f.lookAt);
+    }
+    reframe();
 
     // Warm desk ambience. A ground plane reads as the desk surface; the engine
     // casts the soft shadow under the ruler.
@@ -438,7 +444,7 @@ export const rulerMeasureGame: Game3D = {
     showStatus();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDrag();
         offDragEnd();

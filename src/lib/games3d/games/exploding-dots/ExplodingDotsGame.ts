@@ -3,6 +3,7 @@ import type { Tween } from '@tweenjs/tween.js';
 import type { ControlButton, Game3D } from '@/lib/games3d/types';
 import { createQuizController } from '@/lib/games3d/quiz/controller';
 import { applyClayLook, roundedBox, popIn, punch, shake, tweenTo, celebrate, bigCelebrate, computeStars } from '@/lib/games3d/kit';
+import { lockedCameraFrame } from '@/lib/games3d/kit/camera';
 import {
   createExplodingDotsGenerator,
   normalize,
@@ -77,7 +78,12 @@ export const explodingDotsGame: Game3D = {
     // Straight-on locked camera (clock-builder pattern): keeps drag-x → world-x
     // monotonic and frames the three boxes head-on. Distance sized so all three
     // boxes (total width ≈ 2·BOX_GAP + BOX_W ≈ 12.6) FILL the viewport with margin.
-    ctx.presets.camera.locked(new THREE.Vector3(0, 0, 15), new THREE.Vector3(0, 0, 0));
+    const BOXES_HALF_W = 6.3; // 3 boxes at 4.2 gap ≈ 12.6 total
+    function reframe(): void {
+      const f = lockedCameraFrame(BOXES_HALF_W, 0, ctx.camera.aspect, 3);
+      ctx.presets.camera.locked(f.position, f.lookAt);
+    }
+    reframe();
 
     // Dark lab. No ground plane (content is centered on y=0 and would be occluded
     // by a horizontal clay floor) — the deep gradient IS the lab backdrop.
@@ -473,7 +479,7 @@ export const explodingDotsGame: Game3D = {
     showStatus();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDragStart();
         offDrag();

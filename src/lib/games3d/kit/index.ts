@@ -24,3 +24,6 @@ export { celebrate, bigCelebrate } from './confetti';
 // Rewards (pure)
 export { computeStars } from './rewards';
 export type { ComputeStarsOptions } from './rewards';
+
+// Camera helpers
+export { fitDistance, lockedCameraFrame } from './camera';

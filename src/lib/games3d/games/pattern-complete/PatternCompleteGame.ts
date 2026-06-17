@@ -13,6 +13,7 @@ import {
   computeStars,
   PALETTE,
 } from '@/lib/games3d/kit';
+import { fitDistance } from '@/lib/games3d/kit/camera';
 import {
   createPatternCompleteGenerator,
   SEQUENCE_LENGTH,
@@ -79,7 +80,16 @@ export const patternCompleteGame: Game3D = {
     // Look at the vertical middle of the content so both the bases and the tall
     // tower tops fit. Distance ~ fits ~12 units of vertical extent with margin.
     const lookY = towerTall * 0.45;
-    ctx.presets.camera.locked(new THREE.Vector3(0, lookY, 17), new THREE.Vector3(0, lookY, 0));
+    const HALF_W = rowWidth / 2;
+    const HALF_H = towerTall / 2;
+    function reframe(): void {
+      const aspect = ctx.camera.aspect;
+      const distW = fitDistance(HALF_W, aspect, 3);
+      const distH = fitDistance(HALF_H, 1 / aspect, 3);
+      const dist = Math.max(distW, distH, 12);
+      ctx.presets.camera.locked(new THREE.Vector3(0, lookY, dist), new THREE.Vector3(0, lookY, 0));
+    }
+    reframe();
 
     // Clay/toy look. ground:false because we lay our OWN dark slab at y=0 (the
     // clay ground would clash with the construction-site theme and could occlude).
@@ -355,7 +365,7 @@ export const patternCompleteGame: Game3D = {
     showStatus();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDrag();
         offDragEnd();

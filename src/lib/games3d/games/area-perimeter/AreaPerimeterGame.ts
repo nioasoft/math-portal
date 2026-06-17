@@ -3,6 +3,7 @@ import type { Tween } from '@tweenjs/tween.js';
 import type { ControlButton, Game3D } from '@/lib/games3d/types';
 import { createQuizController } from '@/lib/games3d/quiz/controller';
 import { applyClayLook, roundedBox, popIn, punch, shake, celebrate, bigCelebrate, computeStars, PALETTE } from '@/lib/games3d/kit';
+import { fitDistance } from '@/lib/games3d/kit/camera';
 import { createAreaPerimeterGenerator, MAX_SIDE, type AreaPerimeterProblem } from './problems';
 
 // Theme: a GARDEN PLOT viewed top-down. The rectangle is a planted patch built
@@ -49,7 +50,12 @@ export const areaPerimeterGame: Game3D = {
   },
   init(ctx) {
     // Top-down view centered on the buildable grid so width/height are unambiguous.
-    ctx.presets.camera.topDown(new THREE.Vector3(0, 0, 0), 13);
+    const GRID_HALF_W = 5; // 10x10 grid ≈ 10 units wide
+    function reframe(): void {
+      const dist = fitDistance(GRID_HALF_W, ctx.camera.aspect, 3);
+      ctx.presets.camera.topDown(new THREE.Vector3(0, 0, 0), Math.max(10, dist));
+    }
+    reframe();
 
     // Clay/toy look — warm garden ambience. Ground disabled (top-down: the soil
     // tray reads as the surface). The engine provides the soft shadow.
@@ -345,7 +351,7 @@ export const areaPerimeterGame: Game3D = {
     showStatus();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDrag();
         offDragEnd();

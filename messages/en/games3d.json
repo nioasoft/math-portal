@@ -217,6 +217,22 @@
     "correct": "Great! You built {target}",
     "wrong": "Almost! Check the ones, tenths and hundredths and fix the number"
   },
+  "decimalNumberLine": {
+    "title": "Decimal on a Number Line",
+    "description": "Place a decimal number on a number line — practice ordering and magnitude of decimals",
+    "instructions": "Drag the train to the correct position on the line (0 to 1), then press Check",
+    "prompt": "Place {decimal} on the line",
+    "correct": "Correct! {decimal} is in the right position",
+    "wrong": "Almost! Check the position and try again"
+  },
+  "decimalAddition": {
+    "title": "Decimal Addition",
+    "description": "Add two decimal numbers digit by digit — practice addition with carrying",
+    "instructions": "Build the sum: set the ones, tenths and hundredths with the − / + buttons, then press Check",
+    "prompt": "What is {a} + {b}?",
+    "correct": "Correct! {a} + {b} = {result}",
+    "wrong": "Almost! Check each digit separately and remember to carry"
+  },
   "numberBond": {
     "title": "Number Bond Splitter",
     "description": "Split a whole number into two parts that compose it, and a crystal bridge spans the chasm",
@@ -273,6 +289,22 @@
     "correct": "Great! You filled {percent}% of the stand",
     "wrong": "Almost! Check the percent and fix the fill"
   },
+  "percentOfQuantity": {
+    "title": "Percent of a Number",
+    "description": "Calculate what a percentage of a quantity is — mental math practice with percentages",
+    "instructions": "Read the problem on the sign, set your answer with the − / + buttons, then press Check",
+    "prompt": "What is {percent}% of {total}?",
+    "correct": "Correct! {percent}% of {total} is {result}",
+    "wrong": "Not quite — try calculating again"
+  },
+  "percentDiscount": {
+    "title": "Shop Discount",
+    "description": "Calculate the sale price after a discount — real-world percentage practice",
+    "instructions": "Read the original price and discount percentage, set the sale price with the − / + buttons, then press Check",
+    "prompt": "An item costs ₪{original} with a {discount}% discount. What is the sale price?",
+    "correct": "Correct! The sale price is ₪{salePrice}",
+    "wrong": "Not quite — calculate the discount amount then subtract from the original price"
+  },
   "ratioMixer": {
     "title": "Ratio Mixer",
     "description": "Mix two juices at the smoothie bar to match the target ratio — and discover that equivalent ratios taste the same.",
@@ -281,6 +313,22 @@
     "correct": "Nice! Equivalent to {a}:{b}",
     "wrong": "Not the right ratio yet — adjust the amounts and try again"
   },
+  "ratioRecipe": {
+    "title": "Recipe Scaling",
+    "description": "Scale a recipe to a different number of servings — practice multiplying quantities by a ratio",
+    "instructions": "Read the original recipe, set the required ingredient amount with the − / + buttons, then press Check",
+    "prompt": "Scale the recipe to {servings} servings. How much {ingredient} is needed?",
+    "correct": "Correct! You need {amount} of {ingredient}",
+    "wrong": "Almost! Multiply the original amount by the serving ratio"
+  },
+  "ratioTable": {
+    "title": "Ratio Table",
+    "description": "Fill in the missing value in a ratio table — practice scaling ratios",
+    "instructions": "Read the table, set the missing value with the − / + buttons, then press Check",
+    "prompt": "In the ratio table {a}:{b}, fill in the missing value",
+    "correct": "Correct! The missing value is {value}",
+    "wrong": "Almost! Calculate the value using the scaling factor"
+  },
   "numberSequence": {
     "title": "Number Sequence",
     "description": "Find the rule and fill in the missing stone in the sequence",
@@ -288,6 +336,14 @@
     "prompt": "Complete the sequence",
     "correct": "Correct! The missing number is {value}",
     "wrong": "Almost! Find the rule and try again"
+  },
+  "geometricSequence": {
+    "title": "Geometric Sequence",
+    "description": "Find the multiplication rule and fill in the missing stone — multiplication sequences",
+    "instructions": "Find the rule (×2 or ×3), set the missing stone with the − / + buttons, then press Check",
+    "prompt": "Complete the geometric sequence",
+    "correct": "Correct! The missing number is {value}",
+    "wrong": "Almost! Look for the multiplier between consecutive terms"
   },
   "fractionStrip": {
     "title": "Fraction Strips",
@@ -320,6 +376,14 @@
     "prompt": "How many more {a} than {b}?",
     "correct": "Correct! The difference is {diff}",
     "wrong": "Almost! Read each bar's height again and try again"
+  },
+  "vennSort": {
+    "title": "Venn Diagram Sort",
+    "description": "Classify a number by divisibility properties — logical thinking with overlapping circles",
+    "instructions": "Read the number and two properties, then tap the correct region: left only, right only, both, or neither",
+    "prompt": "Classify {value}: ÷{a} and ÷{b}",
+    "correct": "Correct! {value} is classified right",
+    "wrong": "Almost! Check if the number is divisible by each property separately"
   },
   "subitize": {
     "title": "Dot Flash",
@@ -423,6 +487,14 @@
     "item3": "flowers",
     "item4": "stickers",
     "item5": "cookies"
+  },
+  "wordProblemSteps": {
+    "title": "Two-Step Problem",
+    "description": "Solve a word problem that requires two operations — advanced reasoning",
+    "instructions": "Read the problem on the blueprint, set your answer with the − / + buttons, then press Check",
+    "prompt": "Solve the two-step problem",
+    "correct": "Correct! The answer is {result}",
+    "wrong": "Almost! Calculate each step separately then the final result"
   },
   "estimationLand": {
     "title": "Estimation Land",

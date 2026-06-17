@@ -211,6 +211,22 @@
     "correct": "¡Genial! Construiste {target}",
     "wrong": "¡Casi! Revisa las unidades, décimas y centésimas y corrige el número"
   },
+  "decimalNumberLine": {
+    "title": "Decimal en la recta numérica",
+    "description": "Coloca un número decimal en la recta numérica — práctica de orden y magnitud de decimales",
+    "instructions": "Arrastra el tren a la posición correcta en la recta (0 a 1) y luego pulsa Comprobar",
+    "prompt": "Coloca {decimal} en la recta",
+    "correct": "¡Correcto! {decimal} está en la posición correcta",
+    "wrong": "¡Casi! Revisa la posición e inténtalo de nuevo"
+  },
+  "decimalAddition": {
+    "title": "Suma de decimales",
+    "description": "Suma dos números decimales dígito a dígito — práctica de suma con llevada",
+    "instructions": "Construye la suma: ajusta las unidades, décimas y centésimas con los botones − / + y luego pulsa Comprobar",
+    "prompt": "¿Cuánto es {a} + {b}?",
+    "correct": "¡Correcto! {a} + {b} = {result}",
+    "wrong": "¡Casi! Revisa cada dígito por separado y recuerda la llevada"
+  },
   "numberBond": {
     "title": "Descomponer el número",
     "description": "Divide un número entero en dos partes que lo componen, y un puente de cristal cruza el abismo",
@@ -267,6 +283,22 @@
     "correct": "¡Genial! Llenaste el {percent}% de la grada",
     "wrong": "¡Casi! Revisa el porcentaje y corrige el llenado"
   },
+  "percentOfQuantity": {
+    "title": "Porcentaje de una cantidad",
+    "description": "Calcula cuánto es un porcentaje de una cantidad — cálculo mental con porcentajes",
+    "instructions": "Lee el problema en el letrero, ajusta tu respuesta con los botones − / +, y luego pulsa Comprobar",
+    "prompt": "¿Cuánto es el {percent}% de {total}?",
+    "correct": "¡Correcto! El {percent}% de {total} es {result}",
+    "wrong": "No es exacto — intenta calcular de nuevo"
+  },
+  "percentDiscount": {
+    "title": "Descuento de tienda",
+    "description": "Calcula el precio de venta tras un descuento — porcentajes en la vida real",
+    "instructions": "Lee el precio original y el porcentaje de descuento, ajusta el precio de venta con los botones − / + y luego pulsa Comprobar",
+    "prompt": "Un artículo cuesta ₪{original} con un {discount}% de descuento. ¿Cuál es el precio de venta?",
+    "correct": "¡Correcto! El precio de venta es ₪{salePrice}",
+    "wrong": "No es exacto — calcula el monto del descuento y réstalo del precio original"
+  },
   "ratioMixer": {
     "title": "Mezclador de razones",
     "description": "Mezcla dos zumos en la barra de batidos según la razón pedida — y descubre que las razones equivalentes saben igual.",
@@ -275,6 +307,22 @@
     "correct": "¡Bien! Equivalente a {a}:{b}",
     "wrong": "Aún no es la razón correcta — ajusta las cantidades e inténtalo de nuevo"
   },
+  "ratioRecipe": {
+    "title": "Escalar receta",
+    "description": "Escala una receta a un número diferente de porciones — práctica de multiplicar cantidades por una razón",
+    "instructions": "Lee la receta original, ajusta la cantidad del ingrediente con los botones − / + y luego pulsa Comprobar",
+    "prompt": "Escala la receta a {servings} porciones. ¿Cuánto {ingredient} se necesita?",
+    "correct": "¡Correcto! Necesitas {amount} de {ingredient}",
+    "wrong": "¡Casi! Multiplica la cantidad original por la razón de porciones"
+  },
+  "ratioTable": {
+    "title": "Tabla de razones",
+    "description": "Completa el valor que falta en una tabla de razones — práctica de escalar razones",
+    "instructions": "Lee la tabla, ajusta el valor que falta con los botones − / + y luego pulsa Comprobar",
+    "prompt": "En la tabla de razones {a}:{b}, completa el valor que falta",
+    "correct": "¡Correcto! El valor que falta es {value}",
+    "wrong": "¡Casi! Calcula el valor usando el factor de escala"
+  },
   "numberSequence": {
     "title": "Secuencia numérica",
     "description": "Descubre la regla y completa la piedra que falta en la secuencia",
@@ -282,6 +330,14 @@
     "prompt": "Completa la secuencia",
     "correct": "¡Correcto! El número que falta es {value}",
     "wrong": "¡Casi! Descubre la regla e inténtalo de nuevo"
+  },
+  "geometricSequence": {
+    "title": "Secuencia geométrica",
+    "description": "Descubre la regla de multiplicación y completa la piedra que falta — secuencias de multiplicación",
+    "instructions": "Descubre la regla (×2 o ×3), ajusta la piedra que falta con los botones − / + y luego pulsa Comprobar",
+    "prompt": "Completa la secuencia geométrica",
+    "correct": "¡Correcto! El número que falta es {value}",
+    "wrong": "¡Casi! Busca el multiplicador entre términos consecutivos"
   },
   "fractionStrip": {
     "title": "Tiras de fracciones",
@@ -314,6 +370,14 @@
     "prompt": "¿Cuántas {a} más que {b}?",
     "correct": "¡Correcto! La diferencia es {diff}",
     "wrong": "¡Casi! Lee de nuevo la altura de cada barra e inténtalo otra vez"
+  },
+  "vennSort": {
+    "title": "Orden con diagrama de Venn",
+    "description": "Clasifica un número por propiedades de divisibilidad — pensamiento lógico con círculos superpuestos",
+    "instructions": "Lee el número y las dos propiedades, luego pulsa la región correcta: solo izquierda, solo derecha, ambos o ninguno",
+    "prompt": "Clasifica {value}: ÷{a} y ÷{b}",
+    "correct": "¡Correcto! {value} está bien clasificado",
+    "wrong": "¡Casi! Comprueba si el número es divisible por cada propiedad por separado"
   },
   "subitize": {
     "title": "Destello de puntos",
@@ -417,6 +481,14 @@
     "item3": "flores",
     "item4": "pegatinas",
     "item5": "galletas"
+  },
+  "wordProblemSteps": {
+    "title": "Problema en dos pasos",
+    "description": "Resuelve un problema verbal que requiere dos operaciones — razonamiento avanzado",
+    "instructions": "Lee el problema en el plano, ajusta tu respuesta con los botones − / + y luego pulsa Comprobar",
+    "prompt": "Resuelve el problema en dos pasos",
+    "correct": "¡Correcto! La respuesta es {result}",
+    "wrong": "¡Casi! Calcula cada paso por separado y luego el resultado final"
   },
   "estimationLand": {
     "title": "Tierra de la Estimación",

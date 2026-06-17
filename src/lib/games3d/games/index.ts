@@ -44,6 +44,15 @@ import { estimationLandGame } from './estimation-land/EstimationLandGame';
 import { multiplicationFactorTreeGame } from './multiplication-factor-tree/MultiplicationFactorTreeGame';
 import { longDivisionTowerGame } from './long-division-tower/LongDivisionTowerGame';
 import { tangramBuildGame } from './tangram-build/TangramBuildGame';
+import { percentOfQuantityGame } from './percent-of-quantity/PercentOfQuantityGame';
+import { percentDiscountGame } from './percent-discount/PercentDiscountGame';
+import { decimalNumberLineGame } from './decimal-number-line/DecimalNumberLineGame';
+import { ratioRecipeGame } from './ratio-recipe/RatioRecipeGame';
+import { geometricSequenceGame } from './geometric-sequence/GeometricSequenceGame';
+import { decimalAdditionGame } from './decimal-addition/DecimalAdditionGame';
+import { ratioTableGame } from './ratio-table/RatioTableGame';
+import { wordProblemStepsGame } from './word-problem-steps/WordProblemStepsGame';
+import { vennSortGame } from './venn-sort/VennSortGame';
 
 /**
  * Server/registry-side catalog: the static `games` array + registration helpers.
@@ -99,6 +108,15 @@ const games: Game3D[] = [
   multiplicationFactorTreeGame,
   longDivisionTowerGame,
   tangramBuildGame,
+  percentOfQuantityGame,
+  percentDiscountGame,
+  decimalNumberLineGame,
+  ratioRecipeGame,
+  geometricSequenceGame,
+  decimalAdditionGame,
+  ratioTableGame,
+  wordProblemStepsGame,
+  vennSortGame,
 ];
 
 let registered = false;

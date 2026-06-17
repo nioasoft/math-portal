@@ -211,6 +211,22 @@
     "correct": "Super! Du hast {target} gebaut",
     "wrong": "Fast! Prüfe Einer, Zehntel und Hundertstel und korrigiere die Zahl"
   },
+  "decimalNumberLine": {
+    "title": "Dezimalzahl am Zahlenstrahl",
+    "description": "Setze eine Dezimalzahl auf den Zahlenstrahl — Übung zu Reihenfolge und Größe von Dezimalzahlen",
+    "instructions": "Ziehe den Zug an die richtige Position auf dem Strahl (0 bis 1) und drücke dann Prüfen",
+    "prompt": "Setze {decimal} auf den Strahl",
+    "correct": "Richtig! {decimal} liegt an der richtigen Position",
+    "wrong": "Fast! Prüfe die Position und versuche es erneut"
+  },
+  "decimalAddition": {
+    "title": "Dezimaladdition",
+    "description": "Addiere zwei Dezimalzahlen stellengerecht — Übung zum Addieren mit Zehnerübergang",
+    "instructions": "Baue die Summe: Stelle Einer, Zehntel und Hundertstel mit den Tasten − / + ein und drücke dann Prüfen",
+    "prompt": "Was ist {a} + {b}?",
+    "correct": "Richtig! {a} + {b} = {result}",
+    "wrong": "Fast! Prüfe jede Stelle einzeln und denke an den Übergang"
+  },
   "numberBond": {
     "title": "Zahlen zerlegen",
     "description": "Zerlege eine ganze Zahl in zwei Teile, die sie ergeben — eine Kristallbrücke überspannt die Schlucht",
@@ -267,6 +283,22 @@
     "correct": "Super! Du hast {percent}% der Tribüne gefüllt",
     "wrong": "Fast! Prüfe den Prozentsatz und korrigiere die Füllung"
   },
+  "percentOfQuantity": {
+    "title": "Prozent einer Zahl",
+    "description": "Berechne, wie viel ein bestimmter Prozentsatz einer Menge ist — Kopfrechnen mit Prozenten",
+    "instructions": "Lies die Aufgabe auf dem Schild, stelle deine Antwort mit den Tasten − / + ein und drücke dann Prüfen",
+    "prompt": "Was ist {percent}% von {total}?",
+    "correct": "Richtig! {percent}% von {total} ist {result}",
+    "wrong": "Nicht ganz — versuche es noch einmal"
+  },
+  "percentDiscount": {
+    "title": "Shop-Rabatt",
+    "description": "Berechne den Verkaufspreis nach Rabatt — Prozentrechnung aus dem Alltag",
+    "instructions": "Lies den Originalpreis und den Rabatt, stelle den Verkaufspreis mit den Tasten − / + ein und drücke dann Prüfen",
+    "prompt": "Ein Artikel kostet ₪{original} mit {discount}% Rabatt. Was ist der Verkaufspreis?",
+    "correct": "Richtig! Der Verkaufspreis ist ₪{salePrice}",
+    "wrong": "Nicht ganz — berechne den Rabattbetrag und ziehe ihn vom Originalpreis ab"
+  },
   "ratioMixer": {
     "title": "Verhältnis-Mixer",
     "description": "Mische an der Saftbar zwei Säfte im gesuchten Verhältnis – und entdecke, dass gleichwertige Verhältnisse gleich schmecken.",
@@ -275,6 +307,22 @@
     "correct": "Super! Gleichwertig zu {a}:{b}",
     "wrong": "Noch nicht das richtige Verhältnis – ändere die Mengen und versuche es erneut"
   },
+  "ratioRecipe": {
+    "title": "Rezept anpassen",
+    "description": "Passe ein Rezept auf eine andere Portionszahl an — Übung zum Multiplizieren von Mengen mit einem Verhältnis",
+    "instructions": "Lies das Originalrezept, stelle die benötigte Zutatmenge mit den Tasten − / + ein und drücke dann Prüfen",
+    "prompt": "Passe das Rezept auf {servings} Portionen an. Wie viel {ingredient} wird benötigt?",
+    "correct": "Richtig! Du brauchst {amount} {ingredient}",
+    "wrong": "Fast! Multipliziere die Originalmenge mit dem Portionen-Verhältnis"
+  },
+  "ratioTable": {
+    "title": "Verhältnistabelle",
+    "description": "Fülle den fehlenden Wert in einer Verhältnistabelle — Übung zum Skalieren von Verhältnissen",
+    "instructions": "Lies die Tabelle, stelle den fehlenden Wert mit den Tasten − / + ein und drücke dann Prüfen",
+    "prompt": "In der Verhältnistabelle {a}:{b} fehlt ein Wert",
+    "correct": "Richtig! Der fehlende Wert ist {value}",
+    "wrong": "Fast! Berechne den Wert mit dem Skalierungsfaktor"
+  },
   "numberSequence": {
     "title": "Zahlenfolge",
     "description": "Finde die Regel und ergänze den fehlenden Stein in der Folge",
@@ -282,6 +330,14 @@
     "prompt": "Vervollständige die Folge",
     "correct": "Richtig! Die fehlende Zahl ist {value}",
     "wrong": "Fast! Finde die Regel und versuch es noch einmal"
+  },
+  "geometricSequence": {
+    "title": "Geometrische Folge",
+    "description": "Finde die Multiplikationsregel und ergänze den fehlenden Stein — Multiplikationsfolgen",
+    "instructions": "Finde die Regel (×2 oder ×3), stelle den fehlenden Stein mit den Tasten − / + ein und drücke dann Prüfen",
+    "prompt": "Vervollständige die geometrische Folge",
+    "correct": "Richtig! Die fehlende Zahl ist {value}",
+    "wrong": "Fast! Suche den Multiplikator zwischen aufeinanderfolgenden Gliedern"
   },
   "fractionStrip": {
     "title": "Bruchstreifen",
@@ -314,6 +370,14 @@
     "prompt": "Wie viel mehr {a} als {b}?",
     "correct": "Richtig! Der Unterschied ist {diff}",
     "wrong": "Fast! Lies die Höhe jedes Balkens noch einmal und versuche es erneut"
+  },
+  "vennSort": {
+    "title": "Venn-Diagramm-Sortierung",
+    "description": "Klassifiziere eine Zahl nach Teilbarkeitseigenschaften — logisches Denken mit sich überschneidenden Kreisen",
+    "instructions": "Lies die Zahl und die zwei Eigenschaften, tippe dann auf die richtige Region: nur links, nur rechts, beides oder keines",
+    "prompt": "Klassifiziere {value}: ÷{a} und ÷{b}",
+    "correct": "Richtig! {value} ist richtig eingeordnet",
+    "wrong": "Fast! Prüfe, ob die Zahl durch jede Eigenschaft einzeln teilbar ist"
   },
   "subitize": {
     "title": "Punkteblitz",
@@ -417,6 +481,14 @@
     "item3": "Blumen",
     "item4": "Sticker",
     "item5": "Kekse"
+  },
+  "wordProblemSteps": {
+    "title": "Zweistufige Aufgabe",
+    "description": "Löse eine Textaufgabe mit zwei Operationen — fortgeschrittenes Denken",
+    "instructions": "Lies die Aufgabe auf dem Bauplan, stelle deine Antwort mit den Tasten − / + ein und drücke dann Prüfen",
+    "prompt": "Löse die zweistufige Aufgabe",
+    "correct": "Richtig! Die Antwort ist {result}",
+    "wrong": "Fast! Berechne jeden Schritt einzeln, dann das Endergebnis"
   },
   "estimationLand": {
     "title": "Schätzland",

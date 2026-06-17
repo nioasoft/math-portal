@@ -100,6 +100,24 @@ export const gameLoaders: Record<string, () => Promise<{ default: Game3D }>> = {
     import('./long-division-tower/LongDivisionTowerGame').then((m) => ({ default: m.longDivisionTowerGame })),
   'tangram-build': () =>
     import('./tangram-build/TangramBuildGame').then((m) => ({ default: m.tangramBuildGame })),
+  'percent-of-quantity': () =>
+    import('./percent-of-quantity/PercentOfQuantityGame').then((m) => ({ default: m.percentOfQuantityGame })),
+  'percent-discount': () =>
+    import('./percent-discount/PercentDiscountGame').then((m) => ({ default: m.percentDiscountGame })),
+  'decimal-number-line': () =>
+    import('./decimal-number-line/DecimalNumberLineGame').then((m) => ({ default: m.decimalNumberLineGame })),
+  'ratio-recipe': () =>
+    import('./ratio-recipe/RatioRecipeGame').then((m) => ({ default: m.ratioRecipeGame })),
+  'geometric-sequence': () =>
+    import('./geometric-sequence/GeometricSequenceGame').then((m) => ({ default: m.geometricSequenceGame })),
+  'decimal-addition': () =>
+    import('./decimal-addition/DecimalAdditionGame').then((m) => ({ default: m.decimalAdditionGame })),
+  'ratio-table': () =>
+    import('./ratio-table/RatioTableGame').then((m) => ({ default: m.ratioTableGame })),
+  'word-problem-steps': () =>
+    import('./word-problem-steps/WordProblemStepsGame').then((m) => ({ default: m.wordProblemStepsGame })),
+  'venn-sort': () =>
+    import('./venn-sort/VennSortGame').then((m) => ({ default: m.vennSortGame })),
 };
 
 export const GAME_IDS = Object.keys(gameLoaders);

@@ -13,6 +13,7 @@ import {
   computeStars,
   PALETTE,
 } from '@/lib/games3d/kit';
+import { lockedCameraFrame } from '@/lib/games3d/kit/camera';
 import {
   createFactrisGenerator,
   MAX_WIDTH,
@@ -81,8 +82,11 @@ export const factrisBlocksGame: Game3D = {
     // and the whole warehouse shelf + block fill the central viewport. Distance
     // sized to the largest footprint (widest MAX_WIDTH × tallest MAX_HEIGHT).
     const fitExtent = Math.max(MAX_WIDTH, MAX_HEIGHT) * CELL; // ≈12 units
-    const camDist = fitExtent * 1.15; // a little margin around the content
-    ctx.presets.camera.locked(new THREE.Vector3(0, 0, camDist), new THREE.Vector3(0, 0, 0));
+    function reframe(): void {
+      const f = lockedCameraFrame(fitExtent / 2, 0, ctx.camera.aspect);
+      ctx.presets.camera.locked(f.position, f.lookAt);
+    }
+    reframe();
 
     // Warehouse ambience. No ground plane (the dark shelf back-plate reads as the
     // surface behind the floating crates); the engine still provides soft shadow.
@@ -385,7 +389,7 @@ export const factrisBlocksGame: Game3D = {
     showPrompt();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDrag();
         offDragEnd();

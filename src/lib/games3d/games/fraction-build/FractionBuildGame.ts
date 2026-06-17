@@ -3,6 +3,7 @@ import type { Tween } from '@tweenjs/tween.js';
 import type { ControlButton, Game3D } from '@/lib/games3d/types';
 import { createQuizController } from '@/lib/games3d/quiz/controller';
 import { applyClayLook, popIn, punch, shake, celebrate, bigCelebrate, computeStars } from '@/lib/games3d/kit';
+import { fitDistance } from '@/lib/games3d/kit/camera';
 import { createFractionGenerator, type FractionProblem } from './problems';
 
 // Theme: a PIZZA viewed top-down, split into `denominator` wedge meshes.
@@ -76,7 +77,11 @@ export const fractionBuildGame: Game3D = {
   },
   init(ctx) {
     // Top-down view straight onto the pie.
-    ctx.presets.camera.topDown(new THREE.Vector3(0, 0, 0), 9);
+    function reframe(): void {
+      const dist = fitDistance(3, ctx.camera.aspect);
+      ctx.presets.camera.topDown(new THREE.Vector3(0, 0, 0), dist);
+    }
+    reframe();
 
     // Clay/toy look — warm pizzeria ambience. Ground disabled (top-down view: the
     // pie itself reads as the surface). The engine provides the soft shadow.
@@ -383,7 +388,7 @@ export const fractionBuildGame: Game3D = {
     showStatus();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offTap();
         stopAllTweens();

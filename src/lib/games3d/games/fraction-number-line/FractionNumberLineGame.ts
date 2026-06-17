@@ -13,6 +13,7 @@ import {
   computeStars,
   PALETTE,
 } from '@/lib/games3d/kit';
+import { lockedCameraFrame } from '@/lib/games3d/kit/camera';
 import { tweenTo } from '@/lib/games3d/kit/juice';
 import {
   createFractionNumberLineGenerator,
@@ -94,7 +95,11 @@ export const fractionNumberLineGame: Game3D = {
   init(ctx) {
     // The ribbon faces the viewer: lock the camera in front of the XY plane so
     // "right" on screen is +X (larger value) and the line reads horizontally.
-    ctx.presets.camera.locked(new THREE.Vector3(0, 0, 12), new THREE.Vector3(0, 0, 0));
+    function reframe(): void {
+      const f = lockedCameraFrame(5.2, 0, ctx.camera.aspect);
+      ctx.presets.camera.locked(f.position, f.lookAt);
+    }
+    reframe();
 
     // Soft cloth/craft ambience. No ground plane (the tape floats); the engine
     // still casts the soft shadow.
@@ -394,7 +399,7 @@ export const fractionNumberLineGame: Game3D = {
     startNewProblem();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDrag();
         offDragEnd();

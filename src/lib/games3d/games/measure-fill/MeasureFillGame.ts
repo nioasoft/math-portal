@@ -4,6 +4,7 @@ import type { Tween } from '@tweenjs/tween.js';
 import type { ControlButton, Game3D } from '@/lib/games3d/types';
 import { createQuizController } from '@/lib/games3d/quiz/controller';
 import { applyClayLook, tweenTo, punch, shake, celebrate, bigCelebrate, computeStars, PALETTE } from '@/lib/games3d/kit';
+import { lockedCameraFrame } from '@/lib/games3d/kit/camera';
 import { createMeasureFillGenerator, type MeasureFillProblem } from './problems';
 
 // Theme: a glass of JUICE / measuring jug, viewed from the side. The player
@@ -45,7 +46,11 @@ export const measureFillGame: Game3D = {
   },
   init(ctx) {
     // Side view of the glass sitting on a surface.
-    ctx.presets.camera.locked(new THREE.Vector3(0, 2.2, 8), new THREE.Vector3(0, 1.9, 0));
+    function reframe(): void {
+      const f = lockedCameraFrame(1.2, 1.6, ctx.camera.aspect);
+      ctx.presets.camera.locked(f.position, f.lookAt);
+    }
+    reframe();
 
     // Clay/toy look — ground at y=0 so the glass reads as standing on a counter,
     // with the engine's soft shadow under it.
@@ -356,7 +361,7 @@ export const measureFillGame: Game3D = {
           if (b.position.y >= surface - 0.05) resetBubble(b, false);
         }
       },
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDrag();
         stopAllTweens();

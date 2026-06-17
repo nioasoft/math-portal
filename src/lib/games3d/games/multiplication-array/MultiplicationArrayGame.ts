@@ -3,6 +3,7 @@ import type { Tween } from '@tweenjs/tween.js';
 import type { ControlButton, Game3D } from '@/lib/games3d/types';
 import { createQuizController } from '@/lib/games3d/quiz/controller';
 import { applyClayLook, roundedBox, popIn, punch, shake, celebrate, bigCelebrate, computeStars } from '@/lib/games3d/kit';
+import { fitDistance } from '@/lib/games3d/kit/camera';
 import { createMultiplicationGenerator, type MultiplicationProblem } from './problems';
 
 // Layout: chocolate squares on a grid, viewed top-down. Columns run along
@@ -43,7 +44,11 @@ export const multiplicationArrayGame: Game3D = {
   },
   init(ctx) {
     // Top-down view over a flat grid so rows/columns are unambiguous.
-    ctx.presets.camera.topDown(new THREE.Vector3(0, 0, 0), 14);
+    function reframe(): void {
+      const dist = fitDistance(4.75, ctx.camera.aspect);
+      ctx.presets.camera.topDown(new THREE.Vector3(0, 0, 0), dist);
+    }
+    reframe();
 
     // Clay/toy look (warm chocolate-shop ambience). Ground disabled: from the
     // top-down camera a full ground plane adds nothing and the chocolate board
@@ -309,7 +314,7 @@ export const multiplicationArrayGame: Game3D = {
     refresh();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDrag();
         stopAllTweens();

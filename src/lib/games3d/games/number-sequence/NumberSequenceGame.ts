@@ -3,6 +3,7 @@ import type { Tween } from '@tweenjs/tween.js';
 import type { ControlButton, Game3D } from '@/lib/games3d/types';
 import { createQuizController } from '@/lib/games3d/quiz/controller';
 import { applyClayLook, roundedBox, popIn, punch, shake, celebrate, bigCelebrate, computeStars } from '@/lib/games3d/kit';
+import { lockedCameraFrame } from '@/lib/games3d/kit/camera';
 import { createNumberSequenceGenerator, MAX_VALUE, type NumberSequenceProblem } from './problems';
 
 // Theme: an ancient TEMPLE. A row of engraved stone tablets stands on a low
@@ -66,7 +67,11 @@ export const numberSequenceGame: Game3D = {
     // fills the viewport. Width of 5 tablets ≈ 5*PITCH - GAP ≈ 10.7; at 60° FOV the
     // half-height visible at distance D is D*tan(30°); with aspect ~1.4 the
     // half-width ≈ 1.4*D*tan(30°). For half-width ~5.9 → D ≈ 7.3. Use 10 for margin.
-    ctx.presets.camera.locked(new THREE.Vector3(0, 0, 10), new THREE.Vector3(0, 0, 0));
+    function reframe() {
+      const { position, lookAt } = lockedCameraFrame(5.35, 0, ctx.camera.aspect);
+      ctx.presets.camera.locked(position, lookAt);
+    }
+    reframe();
 
     // Warm temple ambience. No ground plane — the plinth is the visible surface and
     // the tablets sit just above y=0, so the clay ground would only occlude them.
@@ -356,7 +361,7 @@ export const numberSequenceGame: Game3D = {
     showStatus();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDrag();
         offDragEnd();

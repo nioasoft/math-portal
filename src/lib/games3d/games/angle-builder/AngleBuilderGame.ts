@@ -12,6 +12,7 @@ import {
   computeStars,
   PALETTE,
 } from '@/lib/games3d/kit';
+import { lockedCameraFrame } from '@/lib/games3d/kit/camera';
 import { tweenTo } from '@/lib/games3d/kit/juice';
 import {
   createAngleGenerator,
@@ -85,7 +86,11 @@ export const angleBuilderGame: Game3D = {
     // Front-facing scene: lock the camera in front of the XY plane looking at a
     // point lifted to y≈1.2 (the content lives in the upper half as the movable
     // ray sweeps from +X up to −X). Straight-on so drag-x → world-x is monotonic.
-    ctx.presets.camera.locked(new THREE.Vector3(0, 1.2, 12), new THREE.Vector3(0, 1.2, 0));
+    function reframe() {
+      const { position, lookAt } = lockedCameraFrame(4.5, 1.2, ctx.camera.aspect);
+      ctx.presets.camera.locked(position, lookAt);
+    }
+    reframe();
 
     // Dark space ambience. No ground plane (content sits at/around y=0 in deep
     // space; a clay ground would occlude the lower beam) — ground:false per def 12b.
@@ -442,7 +447,7 @@ export const angleBuilderGame: Game3D = {
     startNewProblem();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDrag();
         offDragEnd();

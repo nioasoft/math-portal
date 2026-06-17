@@ -16,6 +16,7 @@ import {
 // group — adapted here to animate the beam pivot's `rotation.z` (the kit's
 // popIn/punch/shake only touch scale/position), exactly like algebra-balance.
 import { tweenTo } from '@/lib/games3d/kit/juice';
+import { lockedCameraFrame } from '@/lib/games3d/kit/camera';
 import {
   createBalanceScaleGenerator,
   countsTotal,
@@ -149,10 +150,12 @@ export const balanceScaleEquationsGame: Game3D = {
     // Front-facing locked camera: "up" on screen is +Y so the tilt reads naturally
     // and drag-x → world-x stays monotonic. Distance sized to FILL the viewport
     // with the full scale (≈8.6 wide incl. pans, ≈5 tall from pans to beam top).
-    ctx.presets.camera.locked(
-      new THREE.Vector3(0, BEAM_Y * 0.45, 13.5),
-      new THREE.Vector3(0, BEAM_Y * 0.45, 0)
-    );
+    const lookY = BEAM_Y * 0.45;
+    function reframe(): void {
+      const f = lockedCameraFrame(4.3, lookY, ctx.camera.aspect);
+      ctx.presets.camera.locked(f.position, f.lookAt);
+    }
+    reframe();
 
     // Warm potion-shop ambience. The scale stands on a counter modeled below, so
     // the clay ground plane (y≈0) would occlude the pans → disable it (def. 12b).
@@ -559,7 +562,7 @@ export const balanceScaleEquationsGame: Game3D = {
     setControls();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDragStart();
         offDrag();

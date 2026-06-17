@@ -12,6 +12,7 @@ import {
   bigCelebrate,
   computeStars,
 } from '@/lib/games3d/kit';
+import { lockedCameraFrame } from '@/lib/games3d/kit/camera';
 import {
   createDivisionShareGenerator,
   quotientOf,
@@ -70,7 +71,11 @@ export const divisionShareGame: Game3D = {
     // Front-facing locked camera so screen-up is +Y and drag-up = more coins.
     // Distance sized to frame up to 6 chests in a row (the widest case) plus the
     // remainder cup, with a little margin.
-    ctx.presets.camera.locked(new THREE.Vector3(0, 1.2, 16.5), new THREE.Vector3(0, 1.2, 0));
+    function reframe() {
+      const { position, lookAt } = lockedCameraFrame(6, 1.2, ctx.camera.aspect);
+      ctx.presets.camera.locked(position, lookAt);
+    }
+    reframe();
 
     // Pirate-cove ambience. Ground disabled — the chests "sit" framed by the
     // gradient backdrop and the engine's soft shadow (content stays above y=0).
@@ -403,7 +408,7 @@ export const divisionShareGame: Game3D = {
     showStatus();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDrag();
         offDragEnd();

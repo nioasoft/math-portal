@@ -3,6 +3,7 @@ import type { Tween } from '@tweenjs/tween.js';
 import type { ControlButton, Game3D } from '@/lib/games3d/types';
 import { createQuizController } from '@/lib/games3d/quiz/controller';
 import { applyClayLook, roundedBox, popIn, punch, shake, celebrate, bigCelebrate, computeStars, PALETTE } from '@/lib/games3d/kit';
+import { fitDistance } from '@/lib/games3d/kit/camera';
 import { createTenFrameGenerator, MAX_TARGET, type TenFrameProblem } from './problems';
 
 // Theme: a wooden PEG BOARD with marbles, viewed top-down. Each ten-frame is a
@@ -69,7 +70,11 @@ export const tenFrameFillGame: Game3D = {
   },
   init(ctx) {
     // Top-down view so both ten-frames and the fill order are unambiguous.
-    ctx.presets.camera.topDown(new THREE.Vector3(0, 0, 0), 16);
+    function reframe(): void {
+      const dist = fitDistance(5.5, ctx.camera.aspect);
+      ctx.presets.camera.topDown(new THREE.Vector3(0, 0, 0), dist);
+    }
+    reframe();
 
     const clayLook = applyClayLook(ctx, {
       topColor: '#dCe8ff',
@@ -325,7 +330,7 @@ export const tenFrameFillGame: Game3D = {
     showStatus();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDrag();
         offDragEnd();

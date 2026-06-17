@@ -17,6 +17,7 @@ import {
 // group — we adapt it to animate the beam pivot's `rotation.z` (the kit's
 // popIn/punch/shake only touch scale/position), exactly like ClockBuilderGame.
 import { tweenTo } from '@/lib/games3d/kit/juice';
+import { lockedCameraFrame } from '@/lib/games3d/kit/camera';
 import {
   createAlgebraBalanceGenerator,
   type AlgebraBalanceProblem,
@@ -97,10 +98,12 @@ export const algebraBalanceGame: Game3D = {
   init(ctx) {
     // The balance faces the viewer: lock the camera in front of the XY-plane scene
     // looking at the beam, so "up" on screen is +Y and the tilt reads naturally.
-    ctx.presets.camera.locked(
-      new THREE.Vector3(0, BEAM_Y * 0.5, 14),
-      new THREE.Vector3(0, BEAM_Y * 0.5, 0)
-    );
+    const lookY = BEAM_Y * 0.5;
+    function reframe(): void {
+      const f = lockedCameraFrame(3.9, lookY, ctx.camera.aspect);
+      ctx.presets.camera.locked(f.position, f.lookAt);
+    }
+    reframe();
 
     // Cool, futuristic-lab ambience. No ground plane (the scale stands on the
     // gradient backdrop); the engine still provides the soft contact shadow.
@@ -460,7 +463,7 @@ export const algebraBalanceGame: Game3D = {
     showStatus();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDragEnd();
         stopAllTweens();

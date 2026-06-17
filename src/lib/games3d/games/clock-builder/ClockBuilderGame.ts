@@ -13,6 +13,7 @@ import {
   computeStars,
   PALETTE,
 } from '@/lib/games3d/kit';
+import { lockedCameraFrame } from '@/lib/games3d/kit/camera';
 // `tweenTo` drives a numeric proxy on the kit's shared, engine-updated tween
 // group — we adapt it to animate a hand pivot's `rotation.z` (the kit's
 // popIn/punch/shake only touch scale/position).
@@ -84,7 +85,11 @@ export const clockBuilderGame: Game3D = {
   init(ctx) {
     // A wall clock faces the viewer: lock the camera in front of the XY-plane face
     // looking at the origin, so "up" on screen is +Y and the clock reads naturally.
-    ctx.presets.camera.locked(new THREE.Vector3(0, 0, 13), new THREE.Vector3(0, 0, 0));
+    function reframe(): void {
+      const f = lockedCameraFrame(4.55, 0, ctx.camera.aspect);
+      ctx.presets.camera.locked(f.position, f.lookAt);
+    }
+    reframe();
 
     // Warm bakery ambience. No ground plane (the clock hangs on a wall, framed by
     // the gradient backdrop); the engine still provides the soft shadow.
@@ -395,7 +400,7 @@ export const clockBuilderGame: Game3D = {
     startNewProblem();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDrag();
         offDragEnd();

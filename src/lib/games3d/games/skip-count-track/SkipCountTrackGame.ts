@@ -14,6 +14,7 @@ import {
   PALETTE,
 } from '@/lib/games3d/kit';
 import { tweenTo } from '@/lib/games3d/kit/juice';
+import { lockedCameraFrame } from '@/lib/games3d/kit/camera';
 import {
   createSkipCountGenerator,
   MAX_TARGET,
@@ -103,8 +104,11 @@ export const skipCountTrackGame: Game3D = {
     // Camera distance sized to fit the LARGEST possible grid (40 tiles → 5 rows ×
     // 8 cols). Width-bound for the 8-col row; chosen so even the full track fits
     // the central viewport with margin.
-    const CAM_DIST = 13.5;
-    ctx.presets.camera.locked(new THREE.Vector3(0, 0, CAM_DIST), new THREE.Vector3(0, 0, 0));
+    function reframe(): void {
+      const f = lockedCameraFrame(5.25, 0, ctx.camera.aspect);
+      ctx.presets.camera.locked(f.position, f.lookAt);
+    }
+    reframe();
 
     // Warm savanna ambience. No ground plane (tiles sit at y≈0; a clay plane there
     // would occlude them) — the engine still casts the soft shadow.
@@ -516,7 +520,7 @@ export const skipCountTrackGame: Game3D = {
     showStatus();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offTap();
         stopAllTweens();

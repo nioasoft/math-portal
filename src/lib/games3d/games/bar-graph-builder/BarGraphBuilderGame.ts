@@ -3,6 +3,7 @@ import type { Tween } from '@tweenjs/tween.js';
 import type { ControlButton, Game3D } from '@/lib/games3d/types';
 import { createQuizController } from '@/lib/games3d/quiz/controller';
 import { applyClayLook, roundedBox, popIn, punch, shake, celebrate, bigCelebrate, computeStars, PALETTE } from '@/lib/games3d/kit';
+import { lockedCameraFrame } from '@/lib/games3d/kit/camera';
 import { createBarGraphGenerator, MAX_COUNT, type BarGraphProblem } from './problems';
 
 // Theme: a CLASSROOM bar graph pinned to the wall. Three colored bars stand on a
@@ -67,7 +68,11 @@ export const barGraphBuilderGame: Game3D = {
     // MAX_COUNT*UNIT_H ≈ 6.2. Aim the camera at the chart's mid-height for symmetric
     // framing; z=11 fits the full width/height with margin.
     const midY = BASE_Y + (MAX_COUNT * UNIT_H) / 2;
-    ctx.presets.camera.locked(new THREE.Vector3(0, midY, 11), new THREE.Vector3(0, midY, 0));
+    function reframe() {
+      const { position, lookAt } = lockedCameraFrame(3.35, midY, ctx.camera.aspect);
+      ctx.presets.camera.locked(position, lookAt);
+    }
+    reframe();
 
     // Warm classroom ambience. No ground plane — the base plate is the surface and
     // everything sits above y=0, so the clay ground would only occlude the chart.
@@ -422,7 +427,7 @@ export const barGraphBuilderGame: Game3D = {
     showStatus();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDrag();
         offDragEnd();

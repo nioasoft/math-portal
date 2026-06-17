@@ -14,6 +14,7 @@ import {
   tweenTo,
   PALETTE,
 } from '@/lib/games3d/kit';
+import { lockedCameraFrame } from '@/lib/games3d/kit/camera';
 import { createRatioGenerator, MAX_AMOUNT, type RatioProblem } from './problems';
 
 // Theme: a SMOOTHIE / JUICE BAR. Two tall measuring glasses sit side by side on
@@ -73,7 +74,11 @@ export const ratioMixerGame: Game3D = {
   init(ctx) {
     // Straight-on front view: glasses sit on the X axis centered at the origin,
     // camera looks down -Z so drag-x → world-x and drag-up → taller are natural.
-    ctx.presets.camera.locked(new THREE.Vector3(0, GLASS_H / 2, 12), new THREE.Vector3(0, GLASS_H / 2, 0));
+    function reframe() {
+      const { position, lookAt } = lockedCameraFrame(4.85, GLASS_H / 2, ctx.camera.aspect);
+      ctx.presets.camera.locked(position, lookAt);
+    }
+    reframe();
 
     // Juice-bar ambience: a light counter look. The glasses STAND on the counter
     // at y=0, so keep ground on at y=0 for the soft shadow under the bar.
@@ -344,7 +349,7 @@ export const ratioMixerGame: Game3D = {
     showStatus();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDrag();
         offDragEnd();

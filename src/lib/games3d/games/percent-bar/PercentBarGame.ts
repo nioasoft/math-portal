@@ -13,6 +13,7 @@ import {
   computeStars,
   PALETTE,
 } from '@/lib/games3d/kit';
+import { lockedCameraFrame } from '@/lib/games3d/kit/camera';
 import { createPercentBarGenerator, PERCENT_STEP, type PercentTarget } from './problems';
 
 // Theme: a STADIUM STAND. A tall vertical bar in the XY plane (facing the locked
@@ -72,7 +73,11 @@ export const percentBarGame: Game3D = {
     // The stand faces the viewer: lock the camera in front of the XY plane so
     // "up" on screen is +Y (more fill) and the stand reads vertically. Distance
     // sized to fit the stand's height (~9 units) with margin under a 60° FOV.
-    ctx.presets.camera.locked(new THREE.Vector3(0, 0, 12.5), new THREE.Vector3(0, 0, 0));
+    function reframe() {
+      const { position, lookAt } = lockedCameraFrame(2.3, 0, ctx.camera.aspect);
+      ctx.presets.camera.locked(position, lookAt);
+    }
+    reframe();
 
     // Stadium-evening ambience. No ground plane — the stand floats centered on the
     // origin and would otherwise dip below y=0 into the clay floor; the engine
@@ -337,7 +342,7 @@ export const percentBarGame: Game3D = {
     startNewProblem();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDrag();
         offDragEnd();

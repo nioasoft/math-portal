@@ -3,6 +3,7 @@ import type { Tween } from '@tweenjs/tween.js';
 import type { ControlButton, Game3D } from '@/lib/games3d/types';
 import { createQuizController } from '@/lib/games3d/quiz/controller';
 import { applyClayLook, roundedBox, popIn, punch, shake, celebrate, bigCelebrate, computeStars, PALETTE } from '@/lib/games3d/kit';
+import { fitDistance } from '@/lib/games3d/kit/camera';
 import { createVolumeCubeFillGenerator, MAX_DIM, MIN_DIM, type VolumeProblem } from './problems';
 
 // Theme: a transparent GLASS AQUARIUM / tank. The child fills it with glowing
@@ -44,7 +45,12 @@ export const volumeCubeFillGame: Game3D = {
   },
   init(ctx) {
     // Orbit so the box reads with depth (length, width AND height are visible).
-    ctx.presets.camera.orbit(new THREE.Vector3(0, 1.4, 0), 12);
+    const pitch = Math.PI / 6;
+    function reframe(): void {
+      const dist = fitDistance(2.5, ctx.camera.aspect) / Math.sin(pitch);
+      ctx.presets.camera.orbit(new THREE.Vector3(0, 1.4, 0), Math.max(10, dist));
+    }
+    reframe();
 
     // Clay/toy look — cool aquarium ambience. The engine provides the soft shadow.
     const clayLook = applyClayLook(ctx, {
@@ -344,7 +350,7 @@ export const volumeCubeFillGame: Game3D = {
     showStatus();
 
     return {
-      onResize() {},
+      onResize() { reframe(); },
       dispose() {
         offDrag();
         offDragEnd();

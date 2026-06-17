@@ -105,6 +105,8 @@ export async function generateMetadata({
     },
     icons: {
       icon: [
+        { url: "/favicon.svg", type: "image/svg+xml" },
+        { url: "/favicon.ico", sizes: "32x32" },
         { url: "/icons/icon-48.png", sizes: "48x48", type: "image/png" },
         { url: "/icons/icon-72.png", sizes: "72x72", type: "image/png" },
         { url: "/icons/icon-96.png", sizes: "96x96", type: "image/png" },

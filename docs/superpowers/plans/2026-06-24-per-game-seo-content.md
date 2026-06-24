@@ -17,6 +17,7 @@
 - **`seo` block required fields (every game, every locale):** `intro` (string), `howToPlay` (string[], ≥3), `skills` (string), `example` (string), `mistakes` (string), `faqs` (Array<{q,a}>, ≥3). Target ~250–300 words total per locale.
 - **FAQ uniqueness:** no two games may share an identical first FAQ question (`faqs[0].q`). FAQs must be substantively game-specific, not a name-swapped template.
 - **Content confidence:** `he` + `en` authored at full confidence. `ar`/`de`/`es`/`ru` are AI-generated and MUST be flagged "needs native review" in each authoring task's commit body.
+- **Hebrew quality (hebrew-writer skill, Tier-1 rules — CI-enforced over every `he` `seo` string):** (1) ZERO em-dash `—` and en-dash `–` (use comma / period / colon / parentheses instead — the #1 AI tell); (2) ZERO blacklisted words: מגוון, מרתק, חיוני, מהותי, ייחודי, רב-ממדי, מקיף, חדשני, פורץ דרך, חסר תקדים, משמעותי, מרכזי, בולט, רלוונטי, רב-תכליתי, מאתגר, מהווה. Beyond the gate, Hebrew must read native: pro-drop (drop redundant אני/הוא), nominal sentences (no forced copula), varied sentence length, casual-direct register (אז/כי/אבל over לפיכך/כאשר/על מנת), no significance inflation. Register target for these blocks: educational/landing, not blog — no forced slang or "soul".
 - **TypeScript:** strict, no `any`. Files ≤800 lines.
 - **TS-facing user strings stay in i18n JSON** (never hardcoded in components). JSDoc/comments in English.
 - **Commit attribution:** disabled (per user global settings) — no Co-Authored-By trailer.

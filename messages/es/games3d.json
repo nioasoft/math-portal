@@ -861,7 +861,33 @@
     "instructions": "Ajusta la cantidad de Zumo A y Zumo B con los botones − y + (o arrastra un vaso hacia arriba para llenarlo, hacia abajo para vaciarlo) hasta que su razón coincida con la pedida — cualquier cantidad equivalente sirve — y luego pulsa Comprobar.",
     "prompt": "Mezcla en la razón {a}:{b}",
     "correct": "¡Bien! Equivalente a {a}:{b}",
-    "wrong": "Aún no es la razón correcta — ajusta las cantidades e inténtalo de nuevo"
+    "wrong": "Aún no es la razón correcta — ajusta las cantidades e inténtalo de nuevo",
+    "seo": {
+      "intro": "Mezclador de razones sitúa a los alumnos en una barra de zumos con dos vasos. El objetivo es servir el Zumo A y el Zumo B en una razón objetivo, descubriendo que 1:2, 2:4 y 3:6 producen el mismo sabor. Ajustar las cantidades hasta que la razón encaje hace que la equivalencia sea concreta, no simbólica.",
+      "howToPlay": [
+        "Lee la razón objetivo que se muestra sobre los vasos (por ejemplo, 1:2).",
+        "Usa los botones − y + o arrastra cada vaso hacia arriba o abajo para ajustar las cantidades de Zumo A y Zumo B.",
+        "Se acepta cualquier par de cantidades que forme una razón equivalente — experimenta libremente.",
+        "Pulsa Comprobar cuando tu mezcla coincida con la razón objetivo."
+      ],
+      "skills": "Mezclador de razones construye la comprensión fundamental de que una razón describe una relación entre dos cantidades, no un par fijo de números. Los alumnos descubren que multiplicar ambas partes por el mismo factor conserva la razón — la base del razonamiento proporcional en los cursos 5 y 6.",
+      "example": "Para una razón objetivo de 1:2, se aceptan 3 unidades de Zumo A y 6 de Zumo B porque 3:6 se simplifica a 1:2. Los alumnos ven que el sabor — la razón — se mantiene igual independientemente del volumen total.",
+      "mistakes": "Los alumnos suelen fijar una cantidad y solo ajustan la otra, lo que raramente mantiene la razón. El juego enseña que ambas cantidades deben escalar juntas con el mismo factor.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia ajustar cantidades en Mezclador de razones de rellenar un valor que falta en la Tabla de razones?",
+          "a": "En Mezclador de razones se elige libremente cualquier par de cantidades equivalentes válido. En Tabla de razones se identifica un factor de escala fijo y se calcula un único valor que falta."
+        },
+        {
+          "q": "¿Para qué cursos es Mezclador de razones?",
+          "a": "Cursos 5-6, donde los alumnos definen la razón como relación entre dos cantidades y exploran razones equivalentes dentro del razonamiento proporcional."
+        },
+        {
+          "q": "¿Por qué el juego acepta cualquier razón equivalente y no solo los números exactos del objetivo?",
+          "a": "Aceptar todas las formas equivalentes es la lección: 2:4 y 3:6 son la misma razón que 1:2. Si solo hubiera una respuesta correcta, los alumnos adivinarían números en lugar de comprender la equivalencia."
+        }
+      ]
+    }
   },
   "ratioRecipe": {
     "title": "Escalar receta",
@@ -869,7 +895,34 @@
     "instructions": "Lee la receta original, ajusta la cantidad del ingrediente con los botones − / + y luego pulsa Comprobar",
     "prompt": "Escala la receta a {servings} porciones. ¿Cuánto {ingredient} se necesita?",
     "correct": "¡Correcto! Necesitas {amount} de {ingredient}",
-    "wrong": "¡Casi! Multiplica la cantidad original por la razón de porciones"
+    "wrong": "¡Casi! Multiplica la cantidad original por la razón de porciones",
+    "seo": {
+      "intro": "Escalar receta muestra una tarjeta de receta para un número fijo de porciones y pide a los alumnos que recalculen cada ingrediente para un número diferente de porciones. Triplicar 200 g de harina a 600 g da al pensamiento proporcional un propósito real que el ejercicio abstracto no puede igualar.",
+      "howToPlay": [
+        "Lee la receta original: número de porciones y cantidades de ingredientes.",
+        "Comprueba cuántas porciones se piden.",
+        "Calcula el factor de escala: nuevas porciones divididas entre las originales.",
+        "Multiplica la cantidad del ingrediente mostrada por ese factor e introduce el resultado con los botones − / +.",
+        "Pulsa Comprobar."
+      ],
+      "skills": "Escalar receta practica la escala multiplicativa: identificar el factor entre dos números de porciones y aplicarlo a cada ingrediente. Este es el núcleo aplicado del razonamiento proporcional — la misma habilidad que se usa en conversión de unidades, escala de mapas y problemas de porcentaje en los cursos 5 y 6.",
+      "example": "Una receta para 4 porciones necesita 200 g de harina. Convertirla a 12 porciones requiere un factor de 3 (12 ÷ 4), por lo que la harina pasa a ser 200 × 3 = 600 g. Los alumnos deben identificar primero el factor y luego aplicarlo — dos pasos distintos.",
+      "mistakes": "Los alumnos suelen sumar la diferencia de porciones en vez de multiplicar por el factor (por ejemplo, sumar 8 a 200 g en lugar de multiplicar por 3). El contexto de la receta hace evidente el error: sumar solo agranda la receta ligeramente en vez de triplicarla de verdad.",
+      "faqs": [
+        {
+          "q": "¿Qué enseña escalar una receta que la mecánica de mezcla de Mezclador de razones no enseña?",
+          "a": "En Escalar receta el factor es explícito: los alumnos lo calculan (porciones nuevas divididas entre las originales) y luego lo aplican. En Mezclador de razones reconocen la equivalencia sin nombrar un factor concreto."
+        },
+        {
+          "q": "¿Para qué cursos es Escalar receta?",
+          "a": "Cursos 5-6, donde los alumnos aplican el razonamiento proporcional a problemas reales de varios pasos y practican multiplicar por una razón entera o fracción simple."
+        },
+        {
+          "q": "¿El juego pregunta por todos los ingredientes o solo por uno?",
+          "a": "Cada ronda se centra en un ingrediente con nombre tomado de la receta. Así el cálculo se mantiene en un paso por ronda, aunque sigue siendo necesario identificar el factor de escala correcto a partir de los números de porciones."
+        }
+      ]
+    }
   },
   "ratioTable": {
     "title": "Tabla de razones",
@@ -877,7 +930,33 @@
     "instructions": "Lee la tabla, ajusta el valor que falta con los botones − / + y luego pulsa Comprobar",
     "prompt": "En la tabla de razones {a}:{b}, completa el valor que falta",
     "correct": "¡Correcto! El valor que falta es {value}",
-    "wrong": "¡Casi! Calcula el valor usando el factor de escala"
+    "wrong": "¡Casi! Calcula el valor usando el factor de escala",
+    "seo": {
+      "intro": "Tabla de razones presenta una cuadrícula de razones equivalentes con un valor que falta. Los alumnos leen las columnas para encontrar el factor de multiplicación y luego rellenan el hueco. El formato de tabla hace visible el patrón de razones equivalentes como una estructura, no como pares aislados.",
+      "howToPlay": [
+        "Lee la tabla de razones: cada columna muestra un par de valores con la misma razón.",
+        "Compara dos columnas completas para identificar el factor de escala entre ellas.",
+        "Aplica ese factor al valor conocido de la columna incompleta.",
+        "Introduce el valor que falta con los botones − / + y pulsa Comprobar."
+      ],
+      "skills": "Trabajar con una tabla de razones desarrolla el hábito de leer relaciones a lo largo de las filas, no solo dentro de un par. Este pensamiento por filas es la preparación directa para resolver proporciones, problemas de tasa unitaria y tablas de funciones en los cursos 4 a 6.",
+      "example": "En una tabla de razón 3:5, la primera columna muestra 3 y 5, la segunda 6 y 10, y la tercera 9 y un hueco. El factor de escala de la columna 1 a la columna 3 es 3, así que el valor que falta es 5 × 3 = 15.",
+      "mistakes": "Los alumnos a veces suman una constante a cada valor a lo largo de las filas en vez de multiplicar. El diseño de la tabla hace visible este error porque el patrón se rompe en la otra fila — la cuadrícula estructurada se corrige a sí misma.",
+      "faqs": [
+        {
+          "q": "¿Cómo ayuda el formato de tabla a los alumnos a ver el patrón en las razones equivalentes?",
+          "a": "Alinear varios pares equivalentes en columnas permite ver que el factor de escala es idéntico en ambas filas. Este patrón es más difícil de observar cuando las razones se presentan como pares aislados."
+        },
+        {
+          "q": "¿Para qué cursos es Tabla de razones?",
+          "a": "Cursos 4-6: los alumnos de 4.º usan tablas más sencillas para explorar razones equivalentes, mientras que los de 5.º y 6.º trabajan con factores mayores como parte del razonamiento proporcional formal."
+        },
+        {
+          "q": "¿En qué se diferencia Tabla de razones de Mezclador de razones y Escalar receta?",
+          "a": "Tabla de razones se centra en leer y ampliar una cuadrícula estructurada de pares equivalentes. Mezclador de razones pide que los alumnos elijan libremente cualquier equivalente válido. Escalar receta pide aplicar un factor calculado a un ingrediente real."
+        }
+      ]
+    }
   },
   "numberSequence": {
     "title": "Secuencia numérica",

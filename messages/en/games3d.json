@@ -841,7 +841,33 @@
     "instructions": "Set the amount of Juice A and Juice B with the − and + buttons (or drag a glass up to fill it, down to empty it) until their ratio matches the target — any equivalent amounts work — then press Check.",
     "prompt": "Mix in the ratio {a}:{b}",
     "correct": "Nice! Equivalent to {a}:{b}",
-    "wrong": "Not the right ratio yet — adjust the amounts and try again"
+    "wrong": "Not the right ratio yet — adjust the amounts and try again",
+    "seo": {
+      "intro": "Ratio Mixer places students at a smoothie bar with two juice glasses. The goal is to pour Juice A and Juice B in a target ratio — and discover that 1:2, 2:4, and 3:6 all produce the same drink. The act of adjusting amounts until the ratio clicks makes equivalence feel concrete rather than symbolic.",
+      "howToPlay": [
+        "Read the target ratio shown above the glasses (for example, 1:2).",
+        "Use the − and + buttons, or drag each glass up or down, to set the amounts of Juice A and Juice B.",
+        "Any pair of amounts that forms an equivalent ratio will be accepted — experiment freely.",
+        "Press Check when your mix matches the target ratio."
+      ],
+      "skills": "Ratio Mixer builds the core understanding that a ratio describes a relationship between two quantities, not a fixed pair of numbers. Students discover that multiplying both parts by the same factor preserves the ratio — the foundation for proportional reasoning in grades 5 and 6.",
+      "example": "For a target of 1:2, pouring 3 units of Juice A and 6 units of Juice B is accepted because 3:6 simplifies to 1:2. Students see that the flavour — the ratio — stays the same regardless of total volume.",
+      "mistakes": "Students often fix one amount and only adjust the other, which rarely keeps the ratio correct. The game teaches that both quantities must scale together, correcting the common belief that only one side of a ratio can change.",
+      "faqs": [
+        {
+          "q": "How does adjusting amounts in Ratio Mixer differ from filling a ratio table in the Ratio Table game?",
+          "a": "Ratio Mixer asks students to find any valid combination by experimenting with two quantities simultaneously. Ratio Table presents a structured grid where students compute a single missing value using a fixed scaling factor."
+        },
+        {
+          "q": "Which grades is Ratio Mixer for?",
+          "a": "Grades 5-6, where students first define ratio as a relationship between two quantities and explore equivalent ratios as part of the proportional reasoning strand."
+        },
+        {
+          "q": "Why does the game accept any equivalent ratio, not just the target numbers?",
+          "a": "Accepting all equivalent forms is the lesson: 2:4 and 3:6 are the same ratio as 1:2. If only one answer were correct, students would guess numbers rather than understand why the ratio is preserved."
+        }
+      ]
+    }
   },
   "ratioRecipe": {
     "title": "Recipe Scaling",
@@ -849,7 +875,34 @@
     "instructions": "Read the original recipe, set the required ingredient amount with the − / + buttons, then press Check",
     "prompt": "Scale the recipe to {servings} servings. How much {ingredient} is needed?",
     "correct": "Correct! You need {amount} of {ingredient}",
-    "wrong": "Almost! Multiply the original amount by the serving ratio"
+    "wrong": "Almost! Multiply the original amount by the serving ratio",
+    "seo": {
+      "intro": "Recipe Scaling shows a kitchen recipe card for a fixed number of servings and asks students to recompute every ingredient for a different serving count. Scaling a recipe by a whole-number factor — say, tripling flour from 200g to 600g — gives ratio multiplication a real-world purpose that abstract drill cannot match.",
+      "howToPlay": [
+        "Read the original recipe: note the number of servings and each ingredient amount.",
+        "Check the target serving count shown above the recipe card.",
+        "Calculate the scaling factor: new servings divided by original servings.",
+        "Multiply the displayed ingredient by that factor and enter your answer with the − / + buttons.",
+        "Press Check to confirm."
+      ],
+      "skills": "Recipe Scaling practises multiplicative scaling: identifying the ratio between two serving counts and applying it to each ingredient. This is the applied core of proportional reasoning — the same skill used in unit conversion, map reading, and percentage problems in grades 5 and 6.",
+      "example": "A recipe for 4 servings needs 200 g of flour. Scaling to 12 servings requires a factor of 3 (12 ÷ 4), so flour becomes 200 × 3 = 600 g. Students must identify the factor first, then apply it — two distinct steps.",
+      "mistakes": "Students often add the serving difference rather than multiply by the factor (e.g. adding 8 to 200 g instead of multiplying by 3). The recipe context makes the error obvious: adding makes the recipe only slightly bigger rather than truly tripled.",
+      "faqs": [
+        {
+          "q": "What does scaling a recipe teach that the mixing mechanic in Ratio Mixer does not?",
+          "a": "Recipe Scaling makes the scaling factor explicit: students must divide the new serving count by the original to find it, then multiply each ingredient. Ratio Mixer focuses on recognising equivalent ratios without computing a named factor."
+        },
+        {
+          "q": "Which grades is Recipe Scaling for?",
+          "a": "Grades 5-6, where students apply proportional reasoning to multi-step real-world problems and practise multiplying by a ratio expressed as a whole number or simple fraction."
+        },
+        {
+          "q": "Does the game ask about one ingredient or all of them?",
+          "a": "Each round focuses on one named ingredient chosen from the recipe. This keeps the calculation to one step per round while still requiring students to identify the correct scaling factor from the serving counts."
+        }
+      ]
+    }
   },
   "ratioTable": {
     "title": "Ratio Table",
@@ -857,7 +910,33 @@
     "instructions": "Read the table, set the missing value with the − / + buttons, then press Check",
     "prompt": "In the ratio table {a}:{b}, fill in the missing value",
     "correct": "Correct! The missing value is {value}",
-    "wrong": "Almost! Calculate the value using the scaling factor"
+    "wrong": "Almost! Calculate the value using the scaling factor",
+    "seo": {
+      "intro": "Ratio Table presents a grid of equivalent ratios with one value missing. Students read across the rows to find the scaling factor that connects column to column, then fill in the blank. The table format makes the pattern of equivalent ratios visible as a structure, not just isolated pairs.",
+      "howToPlay": [
+        "Read the ratio table: each column shows a pair of values in the same ratio.",
+        "Compare two complete columns to identify the scaling factor between them.",
+        "Apply that factor to the known value in the incomplete column to find the missing value.",
+        "Enter the missing value with the − / + buttons, then press Check."
+      ],
+      "skills": "Working with a ratio table builds the habit of reading relationships across rows, not just within a single pair. This row-based thinking is the direct preparation for setting up and solving proportions, unit rate problems, and function tables in grades 4 through 6.",
+      "example": "In a 3:5 ratio table, the first column shows 3 and 5, the second shows 6 and 10, and the third shows 9 and a blank. The scaling factor from column 1 to column 3 is 3, so the missing value is 5 × 3 = 15.",
+      "mistakes": "Students sometimes add a constant instead of multiplying (for example, adding 3 to each value across rows). The table layout makes this error visible because the pattern breaks in the other row — the structured grid is its own correction tool.",
+      "faqs": [
+        {
+          "q": "How does the table layout help students see the pattern in equivalent ratios?",
+          "a": "Aligning multiple equivalent pairs in columns lets students spot the scaling factor visually: both rows grow by the same multiplier across columns. This structure is harder to see when ratios are presented as isolated pairs."
+        },
+        {
+          "q": "Which grades is Ratio Table for?",
+          "a": "Grades 4-6: grade 4 students use simpler whole-number tables to explore equivalent ratios, while grades 5-6 work with larger factors as part of formal proportional reasoning."
+        },
+        {
+          "q": "How is Ratio Table different from Ratio Mixer and Recipe Scaling?",
+          "a": "Ratio Table focuses on reading and extending a structured grid of equivalent pairs, training pattern recognition across multiple ratios at once. Ratio Mixer asks students to find any valid equivalent by adjusting two quantities freely; Recipe Scaling asks them to apply a single computed factor to a real-world ingredient."
+        }
+      ]
+    }
   },
   "numberSequence": {
     "title": "Number Sequence",

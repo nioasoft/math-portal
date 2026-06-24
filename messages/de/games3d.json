@@ -861,7 +861,33 @@
     "instructions": "Stelle die Menge von Saft A und Saft B mit den Tasten − und + ein (oder ziehe ein Glas nach oben zum Füllen, nach unten zum Leeren), bis ihr Verhältnis zum Ziel passt – jede gleichwertige Menge zählt – und drücke dann Prüfen.",
     "prompt": "Mische im Verhältnis {a}:{b}",
     "correct": "Super! Gleichwertig zu {a}:{b}",
-    "wrong": "Noch nicht das richtige Verhältnis – ändere die Mengen und versuche es erneut"
+    "wrong": "Noch nicht das richtige Verhältnis – ändere die Mengen und versuche es erneut",
+    "seo": {
+      "intro": "Verhältnis-Mixer stellt Schüler an eine Saftbar mit zwei Gläsern. Ziel ist es, Saft A und Saft B in einem Zielverhältnis einzuschenken — und zu entdecken, dass 1:2, 2:4 und 3:6 identisch schmecken. Das Anpassen der Mengen bis das Verhältnis stimmt macht Äquivalenz greifbar statt abstrakt.",
+      "howToPlay": [
+        "Lies das Zielverhältnis, das über den Gläsern angezeigt wird (z. B. 1:2).",
+        "Verwende die Tasten − und + oder ziehe jedes Glas nach oben oder unten, um die Mengen von Saft A und Saft B einzustellen.",
+        "Jedes Mengenpaar, das ein gleichwertiges Verhältnis ergibt, wird akzeptiert — probiere frei aus.",
+        "Drücke Prüfen, wenn deine Mischung dem Zielverhältnis entspricht."
+      ],
+      "skills": "Verhältnis-Mixer vermittelt das Kernverständnis, dass ein Verhältnis eine Beziehung zwischen zwei Größen beschreibt und kein festes Zahlenpaar ist. Schüler entdecken, dass das Multiplizieren beider Teile mit demselben Faktor das Verhältnis erhält — die Grundlage für proportionales Denken in den Klassen 5 und 6.",
+      "example": "Für ein Zielverhältnis von 1:2 werden 3 Einheiten Saft A und 6 Einheiten Saft B akzeptiert, weil 3:6 zu 1:2 vereinfacht. Schüler sehen, dass der Geschmack — das Verhältnis — unabhängig vom Gesamtvolumen gleich bleibt.",
+      "mistakes": "Schüler fixieren häufig eine Menge und passen nur die andere an, was selten das Verhältnis erhält. Das Spiel lehrt, dass beide Mengen gemeinsam mit demselben Faktor skalieren müssen.",
+      "faqs": [
+        {
+          "q": "Wie unterscheidet sich das Einstellen der Mengen im Verhältnis-Mixer vom Ausfüllen eines fehlenden Werts in der Verhältnistabelle?",
+          "a": "Im Verhältnis-Mixer wählt man frei jedes gültige gleichwertige Mengenpaar. In der Verhältnistabelle bestimmt man einen festen Skalierungsfaktor und berechnet einen einzelnen fehlenden Wert."
+        },
+        {
+          "q": "Für welche Klassen ist Verhältnis-Mixer geeignet?",
+          "a": "Klassen 5–6, wo Schüler Verhältnisse als Beziehung zwischen zwei Größen definieren und gleichwertige Verhältnisse im Rahmen des proportionalen Denkens erkunden."
+        },
+        {
+          "q": "Warum akzeptiert das Spiel jedes gleichwertige Verhältnis und nicht nur die genauen Zielzahlen?",
+          "a": "Das Akzeptieren aller gleichwertigen Formen ist die Lektion: 2:4 und 3:6 sind dasselbe Verhältnis wie 1:2. Gäbe es nur eine richtige Antwort, würden Schüler Zahlen raten statt die Äquivalenz zu verstehen."
+        }
+      ]
+    }
   },
   "ratioRecipe": {
     "title": "Rezept anpassen",
@@ -869,7 +895,34 @@
     "instructions": "Lies das Originalrezept, stelle die benötigte Zutatmenge mit den Tasten − / + ein und drücke dann Prüfen",
     "prompt": "Passe das Rezept auf {servings} Portionen an. Wie viel {ingredient} wird benötigt?",
     "correct": "Richtig! Du brauchst {amount} {ingredient}",
-    "wrong": "Fast! Multipliziere die Originalmenge mit dem Portionen-Verhältnis"
+    "wrong": "Fast! Multipliziere die Originalmenge mit dem Portionen-Verhältnis",
+    "seo": {
+      "intro": "Rezept anpassen zeigt eine Rezeptkarte für eine bestimmte Portionszahl und fordert Schüler auf, jede Zutat für eine andere Portionszahl neu zu berechnen. Das Verdreifachen von 200 g Mehl auf 600 g verleiht dem Multiplizieren mit Verhältnissen einen realen Zweck, den abstraktes Üben nicht bieten kann.",
+      "howToPlay": [
+        "Lies das Originalrezept: Portionszahl und Zutatenmengen.",
+        "Prüfe, wie viele Portionen gefordert sind.",
+        "Berechne den Skalierungsfaktor: neue Portionszahl geteilt durch die ursprüngliche.",
+        "Multipliziere die angezeigte Zutatmenge mit dem Faktor und gib das Ergebnis mit den Tasten − / + ein.",
+        "Drücke Prüfen."
+      ],
+      "skills": "Rezept anpassen übt multiplikatives Skalieren: den Faktor zwischen zwei Portionszahlen bestimmen und auf jede Zutat anwenden. Das ist der angewandte Kern des proportionalen Denkens — dieselbe Fähigkeit, die bei Einheitenumrechnung, Kartenmaßstab und Prozentaufgaben in den Klassen 5 und 6 gefragt ist.",
+      "example": "Ein Rezept für 4 Portionen braucht 200 g Mehl. Das Umrechnen auf 12 Portionen ergibt den Faktor 3 (12 ÷ 4), also werden aus 200 g Mehl 200 × 3 = 600 g. Schüler müssen zuerst den Faktor bestimmen und ihn dann anwenden — zwei getrennte Schritte.",
+      "mistakes": "Schüler addieren häufig die Portionsdifferenz statt mit dem Faktor zu multiplizieren (z. B. 8 zu 200 g addieren statt mit 3 zu multiplizieren). Der Rezeptkontext macht den Fehler offensichtlich: Addition vergrößert das Rezept nur leicht statt es wirklich zu verdreifachen.",
+      "faqs": [
+        {
+          "q": "Was lehrt das Skalieren eines Rezepts, was die Mischmechanik im Verhältnis-Mixer nicht lehrt?",
+          "a": "Bei Rezept anpassen ist der Faktor explizit: Schüler berechnen ihn (neue Portionen geteilt durch ursprüngliche) und wenden ihn dann an. Im Verhältnis-Mixer erkennen sie Äquivalenz, ohne einen bestimmten Faktor zu benennen."
+        },
+        {
+          "q": "Für welche Klassen ist Rezept anpassen geeignet?",
+          "a": "Klassen 5–6, wo Schüler proportionales Denken auf mehrstufige Alltagsprobleme anwenden und das Multiplizieren mit einem ganzzahligen oder einfachen Bruchverhältnis üben."
+        },
+        {
+          "q": "Fragt das Spiel nach allen Zutaten oder nur nach einer?",
+          "a": "Jede Runde konzentriert sich auf eine benannte Zutat aus dem Rezept. So bleibt die Berechnung einschrittig pro Runde und erfordert dennoch die Bestimmung des richtigen Skalierungsfaktors aus den Portionszahlen."
+        }
+      ]
+    }
   },
   "ratioTable": {
     "title": "Verhältnistabelle",
@@ -877,7 +930,33 @@
     "instructions": "Lies die Tabelle, stelle den fehlenden Wert mit den Tasten − / + ein und drücke dann Prüfen",
     "prompt": "In der Verhältnistabelle {a}:{b} fehlt ein Wert",
     "correct": "Richtig! Der fehlende Wert ist {value}",
-    "wrong": "Fast! Berechne den Wert mit dem Skalierungsfaktor"
+    "wrong": "Fast! Berechne den Wert mit dem Skalierungsfaktor",
+    "seo": {
+      "intro": "Verhältnistabelle zeigt ein Raster gleichwertiger Verhältnisse mit einem fehlenden Wert. Schüler lesen die Spalten, um den Multiplikationsfaktor zu ermitteln, und füllen dann die Lücke. Das Tabellenformat macht das Muster gleichwertiger Verhältnisse als sichtbare Struktur erkennbar — nicht nur als isolierte Paare.",
+      "howToPlay": [
+        "Lies die Verhältnistabelle: Jede Spalte zeigt ein Wertepaar im selben Verhältnis.",
+        "Vergleiche zwei vollständige Spalten, um den Skalierungsfaktor zwischen ihnen zu bestimmen.",
+        "Wende den Faktor auf den bekannten Wert in der unvollständigen Spalte an.",
+        "Gib den fehlenden Wert mit den Tasten − / + ein und drücke Prüfen."
+      ],
+      "skills": "Das Arbeiten mit einer Verhältnistabelle schult die Gewohnheit, Beziehungen über Zeilen hinweg zu lesen statt nur innerhalb eines einzelnen Paares. Dieses zeilenbasierte Denken bereitet direkt auf das Lösen von Proportionen, Einheitsraten und Funktionstabellen in den Klassen 4 bis 6 vor.",
+      "example": "In einer 3:5-Verhältnistabelle zeigt die erste Spalte 3 und 5, die zweite 6 und 10, die dritte 9 und einen Leerstellen. Der Skalierungsfaktor von Spalte 1 zu Spalte 3 ist 3, also ist der fehlende Wert 5 × 3 = 15.",
+      "mistakes": "Schüler addieren manchmal eine Konstante zu jedem Wert über die Zeilen hinweg statt zu multiplizieren. Das Tabellenlayout macht diesen Fehler sichtbar, weil das Muster in der anderen Zeile zusammenbricht — das strukturierte Raster korrigiert sich selbst.",
+      "faqs": [
+        {
+          "q": "Wie hilft das Tabellenlayout Schülern, das Muster in gleichwertigen Verhältnissen zu sehen?",
+          "a": "Das Ausrichten mehrerer gleichwertiger Paare in Spalten zeigt, dass der Skalierungsfaktor in beiden Zeilen gleich ist. Dieses Muster ist schwerer zu erkennen, wenn Verhältnisse als isolierte Paare präsentiert werden."
+        },
+        {
+          "q": "Für welche Klassen ist Verhältnistabelle geeignet?",
+          "a": "Klassen 4–6: Viertklässler verwenden einfachere Tabellen zur Erkundung gleichwertiger Verhältnisse, während Klassen 5–6 mit größeren Faktoren als Teil des formalen proportionalen Denkens arbeiten."
+        },
+        {
+          "q": "Wie unterscheidet sich Verhältnistabelle von Verhältnis-Mixer und Rezept anpassen?",
+          "a": "Verhältnistabelle konzentriert sich auf das Lesen und Erweitern eines strukturierten Rasters gleichwertiger Paare. Verhältnis-Mixer lässt Schüler frei jede gültige Äquivalenz wählen. Rezept anpassen verlangt, einen berechneten Faktor auf eine reale Zutat anzuwenden."
+        }
+      ]
+    }
   },
   "numberSequence": {
     "title": "Zahlenfolge",

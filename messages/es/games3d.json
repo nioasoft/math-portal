@@ -759,7 +759,33 @@
     "instructions": "Usa los botones de porcentaje ±5%, o arrastra hacia arriba para agregar aficionados, para llenar la grada al porcentaje correcto y luego pulsa Comprobar",
     "prompt": "Llena el {percent}% de la grada",
     "correct": "¡Genial! Llenaste el {percent}% de la grada",
-    "wrong": "¡Casi! Revisa el porcentaje y corrige el llenado"
+    "wrong": "¡Casi! Revisa el porcentaje y corrige el llenado",
+    "seo": {
+      "intro": "Barra de porcentaje muestra una grada de estadio dividida en 100 secciones iguales. Los alumnos arrastran o tocan para llenar exactamente el número correcto de secciones, haciendo que la idea abstracta de que el porcentaje significa partes de 100 sea concreta e inmediata. A diferencia de una fracción escrita, la longitud total de la barra siempre es la misma.",
+      "howToPlay": [
+        "Lee el porcentaje objetivo mostrado sobre la grada.",
+        "Usa los botones +5% y −5%, o arrastra hacia arriba, para agregar aficionados a la grada.",
+        "Observa cómo el nivel de llenado y el contador de porcentaje se actualizan juntos.",
+        "Cuando la parte llena coincida con el objetivo, pulsa Comprobar."
+      ],
+      "skills": "La barra de porcentaje fija la definición central: el porcentaje es siempre de 100. Llenar la misma barra fija a diferentes niveles desarrolla la noción espacial de que el 50 % es la mitad, el 25 % un cuarto y el 75 % tres cuartos, antes de introducir ninguna fórmula.",
+      "example": "Para el 30 %, el alumno llena 30 de las 100 secciones. Comparar el resultado con una barra a la mitad hace evidente que el 30 % es menos de la mitad, sin ningún cálculo.",
+      "mistakes": "Los alumnos a veces confunden el valor del porcentaje con el número de clics. La barra fija de 100 secciones lo corrige: el 30 % siempre significa exactamente 30 secciones llenas, independientemente de cuántos clics se necesitaron.",
+      "faqs": [
+        {
+          "q": "¿Cómo ayuda llenar una barra a entender el porcentaje como partes de 100?",
+          "a": "La barra siempre tiene 100 secciones, así que llenarla al 40 % coloca literalmente 40 de 100 secciones. La longitud visual hace evidente la definición de fracción de 100 antes de enunciar ninguna regla."
+        },
+        {
+          "q": "¿Para qué cursos es Barra de porcentaje?",
+          "a": "Cursos 5-6, donde los alumnos definen el porcentaje como una razón de 100 y necesitan un modelo visual antes de trabajar con cálculos de porcentajes."
+        },
+        {
+          "q": "¿En qué se diferencia Barra de porcentaje de Porcentaje de una cantidad?",
+          "a": "Barra de porcentaje es un modelo visual: los alumnos sombrean una barra fija para ver cómo luce un porcentaje. Porcentaje de una cantidad es un juego de cálculo: los alumnos calculan una cantidad específica como el 30 % de 80. Uno construye el concepto; el otro lo aplica."
+        }
+      ]
+    }
   },
   "percentOfQuantity": {
     "title": "Porcentaje de una cantidad",
@@ -767,7 +793,33 @@
     "instructions": "Lee el problema en el letrero, ajusta tu respuesta con los botones − / +, y luego pulsa Comprobar",
     "prompt": "¿Cuánto es el {percent}% de {total}?",
     "correct": "¡Correcto! El {percent}% de {total} es {result}",
-    "wrong": "No es exacto — intenta calcular de nuevo"
+    "wrong": "No es exacto — intenta calcular de nuevo",
+    "seo": {
+      "intro": "Porcentaje de una cantidad presenta un letrero con un porcentaje y una cantidad, y los alumnos ajustan la respuesta numérica con botones. El juego entrena el cálculo mental en dos pasos: convertir el porcentaje a fracción o decimal y luego multiplicar por el total, haciendo que la aritmética de porcentajes sea fluida y rápida.",
+      "howToPlay": [
+        "Lee el porcentaje y la cantidad mostrados en el letrero.",
+        "Calcula mentalmente: convierte el porcentaje a fracción (p. ej. 25 % = 1/4) o usa su forma decimal.",
+        "Usa los botones +/− para ajustar tu respuesta calculada.",
+        "Pulsa Comprobar para confirmar."
+      ],
+      "skills": "Porcentaje de una cantidad desarrolla fluidez automática en el cálculo porcentual: encontrar el 10 %, el 25 %, el 50 % y otros porcentajes cómodos de un número entero. Esta destreza es la base de los descuentos, propinas, impuestos y cualquier situación de porcentaje en la vida real.",
+      "example": "Para el 25 % de 80: los alumnos reconocen el 25 % como un cuarto y dividen 80 entre 4 para obtener 20. Practicar primero porcentajes cómodos hace que valores más difíciles como el 15 % o el 35 % sean abordables mediante descomposición.",
+      "mistakes": "Un error frecuente es ingresar el valor del porcentaje mismo (25 en lugar de 20 para el 25 % de 80). El juego lo expone al requerir la cantidad real, no el símbolo de porcentaje.",
+      "faqs": [
+        {
+          "q": "¿Qué cálculo de dos pasos practica este juego?",
+          "a": "Los alumnos convierten el porcentaje a fracción o decimal y luego multiplican por la cantidad dada. Ambos pasos deben ser correctos para llegar a la respuesta correcta."
+        },
+        {
+          "q": "¿Para qué cursos es Porcentaje de una cantidad?",
+          "a": "Cursos 5-6, donde los alumnos pasan de comprender qué representa un porcentaje a calcular un porcentaje de una cantidad dada en contextos de la vida real."
+        },
+        {
+          "q": "¿En qué se diferencia este juego de Descuento de tienda?",
+          "a": "Porcentaje de una cantidad pide el resultado directo del porcentaje (¿cuánto es el 30 % de 80?). Descuento de tienda aplica ese cálculo a un contexto de compra: hallar el monto del descuento y luego restarlo del precio original para obtener el precio de venta."
+        }
+      ]
+    }
   },
   "percentDiscount": {
     "title": "Descuento de tienda",
@@ -775,7 +827,33 @@
     "instructions": "Lee el precio original y el porcentaje de descuento, ajusta el precio de venta con los botones − / + y luego pulsa Comprobar",
     "prompt": "Un artículo cuesta ₪{original} con un {discount}% de descuento. ¿Cuál es el precio de venta?",
     "correct": "¡Correcto! El precio de venta es ₪{salePrice}",
-    "wrong": "No es exacto — calcula el monto del descuento y réstalo del precio original"
+    "wrong": "No es exacto — calcula el monto del descuento y réstalo del precio original",
+    "seo": {
+      "intro": "Descuento de tienda sitúa a los alumnos en una tienda virtual donde deben calcular el precio de venta final tras un descuento porcentual. Al trabajar con una transacción de compra realista, los alumnos practican el proceso de dos etapas: calcular el importe del descuento y luego restarlo del precio original.",
+      "howToPlay": [
+        "Lee el precio original y el porcentaje de descuento mostrados en la tienda.",
+        "Calcula el importe del descuento: aplica el porcentaje al precio original.",
+        "Resta el descuento del precio original para obtener el precio de venta.",
+        "Usa los botones +/− para ingresar el precio de venta y luego pulsa Comprobar."
+      ],
+      "skills": "Descuento de tienda desarrolla la aplicación real del porcentaje de una cantidad: calcular una reducción porcentual y aplicarla. Los alumnos aprenden que encontrar un descuento es un proceso de dos pasos (porcentaje de un total, luego resta), que es la base para calcular impuestos, propinas y comisiones.",
+      "example": "Un artículo cuesta 200 con un 25 % de descuento. Los alumnos calculan el 25 % de 200 = 50, luego restan: 200 − 50 = 150. El precio de venta es 150. Cada paso cobra significado en el marco de la compra.",
+      "mistakes": "Muchos alumnos ingresan el importe del descuento (50) en lugar del precio de venta final (150). El campo de entrada etiquetado como precio de venta orienta a los alumnos a completar el paso de resta que distingue este juego de un simple cálculo de porcentaje.",
+      "faqs": [
+        {
+          "q": "¿Por qué el juego pide el precio de venta y no el importe del descuento?",
+          "a": "Calcular el precio de venta completo requiere ambos pasos: el porcentaje de la cantidad y la resta. Detenerse en el importe del descuento omite el paso de resta necesario en toda situación real de descuento."
+        },
+        {
+          "q": "¿Para qué cursos es Descuento de tienda?",
+          "a": "Cursos 5-6, donde los alumnos aplican cálculos de porcentajes a contextos de la vida real, incluyendo compras, impuestos y otros ajustes basados en porcentajes."
+        },
+        {
+          "q": "¿En qué se diferencia Descuento de tienda de Barra de porcentaje?",
+          "a": "Barra de porcentaje es un modelo visual que muestra cómo luce un porcentaje en una barra fija de 100 secciones. Descuento de tienda es un problema de cálculo en dos pasos en un contexto real: calcular un porcentaje de una cantidad y luego aplicarlo para obtener un nuevo precio."
+        }
+      ]
+    }
   },
   "ratioMixer": {
     "title": "Mezclador de razones",

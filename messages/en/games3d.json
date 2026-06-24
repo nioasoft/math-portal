@@ -739,7 +739,33 @@
     "instructions": "Use the percent ±5% buttons, or drag up to add fans, to fill the stand to the right percent, then press Check",
     "prompt": "Fill {percent}% of the stand",
     "correct": "Great! You filled {percent}% of the stand",
-    "wrong": "Almost! Check the percent and fix the fill"
+    "wrong": "Almost! Check the percent and fix the fill",
+    "seo": {
+      "intro": "Percent Bar shows a stadium stand divided into 100 equal sections. Students drag or tap to fill exactly the right number of sections, making the abstract idea that percent means parts out of 100 concrete and immediate. Unlike a written fraction, the bar is always the same total length.",
+      "howToPlay": [
+        "Read the target percentage shown above the stand.",
+        "Use the +5% and -5% buttons, or drag upward, to fill fans into the stand.",
+        "Watch the fill level and the live percentage counter update together.",
+        "When the filled portion matches the target, press Check."
+      ],
+      "skills": "Percent Bar anchors the core definition: percent is always out of 100. Filling the same fixed bar to different levels builds the spatial sense that 50% is half, 25% is a quarter, and 75% is three-quarters, before any formula is introduced.",
+      "example": "For 30% the student fills 30 of the 100 sections. Comparing the result to a half-full bar makes it obvious that 30% is less than half, without any calculation.",
+      "mistakes": "Students sometimes confuse the percent value with the number of fans to add rather than the total fill level. The fixed 100-section bar corrects this: reaching 30% always means exactly 30 sections filled, regardless of how many clicks it took.",
+      "faqs": [
+        {
+          "q": "How does filling a bar help students understand percent as parts out of 100?",
+          "a": "The bar is always 100 sections wide, so filling it to 40% literally places 40 out of 100 sections. The visual length makes the fraction-out-of-100 definition self-evident before any rule is stated."
+        },
+        {
+          "q": "Which grades is Percent Bar for?",
+          "a": "Grades 5-6, where students first define percent as a ratio out of 100 and need a visual model before working with percent calculations."
+        },
+        {
+          "q": "How is Percent Bar different from Percent of a Number?",
+          "a": "Percent Bar is a visual model: students shade a fixed bar to see what a percent looks like. Percent of a Number is a calculation game: students compute a specific quantity such as 30% of 80. One builds the concept; the other applies it."
+        }
+      ]
+    }
   },
   "percentOfQuantity": {
     "title": "Percent of a Number",
@@ -747,7 +773,33 @@
     "instructions": "Read the problem on the sign, set your answer with the − / + buttons, then press Check",
     "prompt": "What is {percent}% of {total}?",
     "correct": "Correct! {percent}% of {total} is {result}",
-    "wrong": "Not quite — try calculating again"
+    "wrong": "Not quite — try calculating again",
+    "seo": {
+      "intro": "Percent of a Number presents a sign showing a percentage and a quantity, and students set the numeric answer using buttons. The game trains the two-step mental calculation: convert the percent to a decimal or fraction, then multiply by the whole, making percentage arithmetic fluent and fast.",
+      "howToPlay": [
+        "Read the percentage and the quantity shown on the sign.",
+        "Calculate mentally: convert the percent to a fraction (e.g. 25% = 1/4) or multiply by the decimal form.",
+        "Use the +/- buttons to set your calculated answer.",
+        "Press Check to confirm."
+      ],
+      "skills": "Percent of a Number builds automatic fluency with the percent-of calculation: finding 10%, 25%, 50%, and other friendly percents of a whole number. This is the computational skill that underlies discounts, tips, tax, and every real-world percentage situation.",
+      "example": "For 25% of 80: students recognise 25% as one-quarter, then divide 80 by 4 to get 20. Practicing friendly percents first makes trickier values like 15% or 35% approachable by decomposition.",
+      "mistakes": "A common error is computing the percent value directly (writing 25 instead of 20 for 25% of 80). The game exposes this by requiring the actual quantity, not the percent symbol, training students to complete both steps of the calculation.",
+      "faqs": [
+        {
+          "q": "What two-step calculation does this game practise?",
+          "a": "Students convert the percent to a fraction or decimal, then multiply by the given quantity. Both steps must be done correctly to reach the right answer, building fluency with the full calculation."
+        },
+        {
+          "q": "Which grades is Percent of a Number for?",
+          "a": "Grades 5-6, where students move from understanding what a percent represents to calculating a percent of a given quantity in real-world contexts."
+        },
+        {
+          "q": "How is this different from Percent Discount?",
+          "a": "Percent of a Number asks for the raw percent-of result (what is 30% of 80?). Percent Discount applies that calculation to a shopping context: find the discount amount, then subtract it from the original price to get the sale price."
+        }
+      ]
+    }
   },
   "percentDiscount": {
     "title": "Shop Discount",
@@ -755,7 +807,33 @@
     "instructions": "Read the original price and discount percentage, set the sale price with the − / + buttons, then press Check",
     "prompt": "An item costs ₪{original} with a {discount}% discount. What is the sale price?",
     "correct": "Correct! The sale price is ₪{salePrice}",
-    "wrong": "Not quite — calculate the discount amount then subtract from the original price"
+    "wrong": "Not quite — calculate the discount amount then subtract from the original price",
+    "seo": {
+      "intro": "Shop Discount sets students in a virtual store where they must calculate the final sale price after a percentage discount. By working through a realistic shopping transaction, students practise the two-stage process: compute the discount amount, then subtract it from the original price.",
+      "howToPlay": [
+        "Read the original price and the discount percentage shown in the shop.",
+        "Calculate the discount amount: apply the percentage to the original price.",
+        "Subtract the discount from the original price to find the sale price.",
+        "Use the +/- buttons to enter the sale price, then press Check."
+      ],
+      "skills": "Shop Discount develops the real-world application of percent-of: computing a percentage reduction and applying it. Students learn that finding a discount is a two-step process (percent of a whole, then subtraction), which is the foundation for calculating tax, tips, and commission.",
+      "example": "An item costs 200 with a 25% discount. Students calculate 25% of 200 = 50, then subtract: 200 - 50 = 150. The sale price is 150. Seeing the full workflow in a shopping frame makes each step purposeful.",
+      "mistakes": "Many students enter the discount amount itself (50) rather than the final sale price (150). The game labels the input field as sale price, directing students to complete the subtraction step that distinguishes this game from a plain percent-of calculation.",
+      "faqs": [
+        {
+          "q": "Why does this game ask for the sale price rather than the discount amount?",
+          "a": "Computing the full sale price requires both steps: finding the percent-of and subtracting. Stopping at the discount amount skips the subtraction stage that is needed in every real discount situation."
+        },
+        {
+          "q": "Which grades is Shop Discount for?",
+          "a": "Grades 5-6, where students apply percent calculations to real-world contexts including shopping, tax, and other percentage-based adjustments."
+        },
+        {
+          "q": "How is Shop Discount different from Percent Bar?",
+          "a": "Percent Bar is a visual model that shows what a percentage looks like on a fixed bar of 100 sections. Shop Discount is a two-step calculation problem set in a real context, requiring students to compute a percent-of and then apply it to find a new price."
+        }
+      ]
+    }
   },
   "ratioMixer": {
     "title": "Ratio Mixer",

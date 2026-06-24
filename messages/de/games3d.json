@@ -759,7 +759,33 @@
     "instructions": "Nutze die Prozent-Tasten ±5% oder ziehe nach oben, um Fans hinzuzufügen, fülle die Tribüne auf den richtigen Prozentsatz und drücke dann Prüfen",
     "prompt": "Fülle {percent}% der Tribüne",
     "correct": "Super! Du hast {percent}% der Tribüne gefüllt",
-    "wrong": "Fast! Prüfe den Prozentsatz und korrigiere die Füllung"
+    "wrong": "Fast! Prüfe den Prozentsatz und korrigiere die Füllung",
+    "seo": {
+      "intro": "Prozentbalken zeigt eine Stadiontribüne, die in 100 gleiche Abschnitte unterteilt ist. Schüler ziehen oder tippen, um genau die richtige Anzahl von Abschnitten zu füllen — so wird die abstrakte Idee, dass Prozent Teile von 100 bedeutet, greifbar und unmittelbar. Anders als ein geschriebener Bruch bleibt die Gesamtlänge des Balkens immer gleich.",
+      "howToPlay": [
+        "Lies den Ziel-Prozentwert, der über der Tribüne angezeigt wird.",
+        "Nutze die Tasten +5% und −5% oder ziehe nach oben, um Fans zur Tribüne hinzuzufügen.",
+        "Beobachte, wie Füllstand und Live-Prozentanzeige gemeinsam aktualisiert werden.",
+        "Wenn der gefüllte Anteil dem Ziel entspricht, drücke Prüfen."
+      ],
+      "skills": "Der Prozentbalken verankert die Kerndefinition: Prozent bedeutet immer von 100. Das Befüllen desselben festen Balkens auf verschiedene Niveaus vermittelt räumliches Gefühl — 50 % ist die Hälfte, 25 % ein Viertel, 75 % drei Viertel — bevor eine Formel eingeführt wird.",
+      "example": "Bei 30 % füllt der Schüler 30 der 100 Abschnitte. Der Vergleich mit einem halbvollen Balken macht sofort deutlich, dass 30 % weniger als die Hälfte ist — ganz ohne Rechnung.",
+      "mistakes": "Schüler verwechseln manchmal den Prozentwert mit der Anzahl der Klicks. Der feste 100-Abschnitt-Balken korrigiert das: 30 % bedeutet immer genau 30 gefüllte Abschnitte, egal wie viele Klicks nötig waren.",
+      "faqs": [
+        {
+          "q": "Wie hilft das Befüllen eines Balkens Schülern, Prozent als Teile von 100 zu verstehen?",
+          "a": "Der Balken hat immer 100 Abschnitte, also platziert das Füllen auf 40 % buchstäblich 40 von 100 Abschnitten. Die visuelle Länge macht die Bruch-aus-100-Definition selbst evident, bevor eine Regel formuliert wird."
+        },
+        {
+          "q": "Für welche Klassen ist Prozentbalken geeignet?",
+          "a": "Klassen 5–6, in denen Schüler Prozent als Verhältnis von 100 definieren und ein visuelles Modell benötigen, bevor sie Prozentberechnungen durchführen."
+        },
+        {
+          "q": "Wie unterscheidet sich Prozentbalken von Prozent einer Zahl?",
+          "a": "Prozentbalken ist ein visuelles Modell: Schüler schattieren einen festen Balken, um zu sehen, wie ein Prozentsatz aussieht. Prozent einer Zahl ist ein Rechenspiel: Schüler berechnen eine bestimmte Menge wie 30 % von 80. Das eine baut das Konzept auf, das andere wendet es an."
+        }
+      ]
+    }
   },
   "percentOfQuantity": {
     "title": "Prozent einer Zahl",
@@ -767,7 +793,33 @@
     "instructions": "Lies die Aufgabe auf dem Schild, stelle deine Antwort mit den Tasten − / + ein und drücke dann Prüfen",
     "prompt": "Was ist {percent}% von {total}?",
     "correct": "Richtig! {percent}% von {total} ist {result}",
-    "wrong": "Nicht ganz — versuche es noch einmal"
+    "wrong": "Nicht ganz — versuche es noch einmal",
+    "seo": {
+      "intro": "Prozent einer Zahl zeigt ein Schild mit einem Prozentwert und einer Menge; Schüler stellen die numerische Antwort mit Tasten ein. Das Spiel trainiert die zweiteilige Kopfrechnung: den Prozentsatz in einen Bruch oder Dezimalwert umwandeln, dann mit dem Ganzen multiplizieren — so wird Prozentrechnung flüssig und schnell.",
+      "howToPlay": [
+        "Lies den Prozentwert und die Menge auf dem Schild.",
+        "Rechne im Kopf: Wandle den Prozentsatz in einen Bruch um (z. B. 25 % = 1/4) oder nutze die Dezimalform.",
+        "Stelle deine berechnete Antwort mit den +/−-Tasten ein.",
+        "Drücke Prüfen zur Bestätigung."
+      ],
+      "skills": "Prozent einer Zahl baut automatische Sicherheit bei der Prozentrechnung auf: 10 %, 25 %, 50 % und andere gängige Prozentwerte einer ganzen Zahl finden. Diese Rechenfertigkeit bildet die Grundlage für Rabatte, Trinkgelder, Steuern und alle Alltagssituationen mit Prozenten.",
+      "example": "Für 25 % von 80: Schüler erkennen 25 % als ein Viertel und dividieren 80 durch 4, um 20 zu erhalten. Das Üben freundlicher Prozentwerte zuerst macht schwierigere Werte wie 15 % oder 35 % durch Zerlegung zugänglich.",
+      "mistakes": "Ein häufiger Fehler ist das Eingeben des Prozentwertes selbst (25 statt 20 für 25 % von 80). Das Spiel deckt das auf, weil es die tatsächliche Menge verlangt, nicht das Prozentzeichen.",
+      "faqs": [
+        {
+          "q": "Welche zweiteilige Rechnung trainiert dieses Spiel?",
+          "a": "Schüler wandeln den Prozentsatz in einen Bruch oder Dezimalwert um und multiplizieren dann mit der gegebenen Menge. Beide Schritte müssen korrekt sein, um zur richtigen Antwort zu gelangen."
+        },
+        {
+          "q": "Für welche Klassen ist Prozent einer Zahl geeignet?",
+          "a": "Klassen 5–6, in denen Schüler vom Verständnis, was ein Prozentsatz darstellt, zur Berechnung eines Prozentsatzes einer gegebenen Menge in Alltagskontexten übergehen."
+        },
+        {
+          "q": "Wie unterscheidet sich dieses Spiel von Shop-Rabatt?",
+          "a": "Prozent einer Zahl fragt nach dem reinen Prozentergebnis (Was sind 30 % von 80?). Shop-Rabatt wendet diese Rechnung in einem Einkaufskontext an: Rabattbetrag berechnen, dann vom Originalpreis abziehen, um den Verkaufspreis zu erhalten."
+        }
+      ]
+    }
   },
   "percentDiscount": {
     "title": "Shop-Rabatt",
@@ -775,7 +827,33 @@
     "instructions": "Lies den Originalpreis und den Rabatt, stelle den Verkaufspreis mit den Tasten − / + ein und drücke dann Prüfen",
     "prompt": "Ein Artikel kostet ₪{original} mit {discount}% Rabatt. Was ist der Verkaufspreis?",
     "correct": "Richtig! Der Verkaufspreis ist ₪{salePrice}",
-    "wrong": "Nicht ganz — berechne den Rabattbetrag und ziehe ihn vom Originalpreis ab"
+    "wrong": "Nicht ganz — berechne den Rabattbetrag und ziehe ihn vom Originalpreis ab",
+    "seo": {
+      "intro": "Shop-Rabatt versetzt Schüler in einen virtuellen Laden, in dem sie den endgültigen Verkaufspreis nach einem prozentualen Rabatt berechnen müssen. Durch die Arbeit an einer realistischen Einkaufssituation üben Schüler den zweistufigen Prozess: Rabattbetrag berechnen, dann vom Originalpreis abziehen.",
+      "howToPlay": [
+        "Lies den Originalpreis und den Rabattprozentsatz im Laden.",
+        "Berechne den Rabattbetrag: Wende den Prozentsatz auf den Originalpreis an.",
+        "Ziehe den Rabatt vom Originalpreis ab, um den Verkaufspreis zu erhalten.",
+        "Gib den Verkaufspreis mit den +/−-Tasten ein und drücke Prüfen."
+      ],
+      "skills": "Shop-Rabatt entwickelt die Alltagsanwendung von Prozent einer Zahl: eine prozentuale Senkung berechnen und anwenden. Schüler lernen, dass das Finden eines Rabatts ein zweistufiger Prozess ist (Prozent vom Ganzen, dann Subtraktion) — die Grundlage für die Berechnung von Steuern, Trinkgeldern und Provisionen.",
+      "example": "Ein Artikel kostet 200 mit 25 % Rabatt. Schüler berechnen 25 % von 200 = 50, dann subtrahieren: 200 − 50 = 150. Der Verkaufspreis ist 150. Jeder Schritt gewinnt Bedeutung im Einkaufsrahmen.",
+      "mistakes": "Viele Schüler geben den Rabattbetrag selbst (50) statt des Endverkaufspreises (150) ein. Das als Verkaufspreis beschriftete Eingabefeld lenkt Schüler dazu an, den Subtraktionsschritt abzuschließen, der dieses Spiel von einer einfachen Prozentrechnung unterscheidet.",
+      "faqs": [
+        {
+          "q": "Warum fragt das Spiel nach dem Verkaufspreis und nicht nach dem Rabattbetrag?",
+          "a": "Die Berechnung des vollen Verkaufspreises erfordert beide Schritte: den Prozent-von und die Subtraktion. Beim Rabattbetrag aufzuhören, überspringt den Subtraktionsschritt, der in jeder realen Rabattsituation benötigt wird."
+        },
+        {
+          "q": "Für welche Klassen ist Shop-Rabatt geeignet?",
+          "a": "Klassen 5–6, in denen Schüler Prozentberechnungen auf Alltagskontexte anwenden, einschließlich Einkaufen, Steuern und andere prozentbasierte Anpassungen."
+        },
+        {
+          "q": "Wie unterscheidet sich Shop-Rabatt von Prozentbalken?",
+          "a": "Prozentbalken ist ein visuelles Modell, das zeigt, wie ein Prozentsatz auf einem festen Balken von 100 Abschnitten aussieht. Shop-Rabatt ist eine zweistufige Rechenaufgabe in einem realen Kontext: einen Prozent-von berechnen und dann anwenden, um einen neuen Preis zu finden."
+        }
+      ]
+    }
   },
   "ratioMixer": {
     "title": "Verhältnis-Mixer",

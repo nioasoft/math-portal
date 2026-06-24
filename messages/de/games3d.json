@@ -135,7 +135,33 @@
     "correct": "Super! {kindLabel} = {target}",
     "wrong": "Fast! Ändere die Größe des Beets und versuche es erneut",
     "kindArea": "Fläche",
-    "kindPerimeter": "Umfang"
+    "kindPerimeter": "Umfang",
+    "seo": {
+      "intro": "Fläche und Umfang zeigt einen Garten, dessen Größe man durch Ziehen verändern kann. Mal lautet die Aufgabe, eine bestimmte Fläche zu treffen, mal einen bestimmten Umfang. Die zentrale Entdeckung: Zwei Rechtecke mit gleicher Fläche können völlig unterschiedliche Umfänge haben.",
+      "howToPlay": [
+        "Lese, ob das Ziel eine Fläche (Quadrateinheiten) oder ein Umfang (Längeneinheiten) ist.",
+        "Ziehe die Kante des Gartens oder nutze die Breite/Höhe-Tasten −/+, um die Größe zu ändern.",
+        "Beobachte die Live-Anzeigen: Fläche (Länge × Breite) und Umfang (2 × Länge + 2 × Breite) ändern sich gleichzeitig.",
+        "Drücke Prüfen, wenn das gesuchte Maß dem Ziel entspricht."
+      ],
+      "skills": "Die Unterscheidung von Fläche und Umfang gehört zu den häufigsten Verwechslungen in der Grundschulgeometrie. Beide Maße am selben Objekt zu bearbeiten und ihre unabhängige Veränderung zu beobachten baut ein Verständnis auf, das Formeln allein nicht liefern.",
+      "example": "Ein 3×4-Rechteck hat Fläche 12 und Umfang 14. Ein 2×6-Rechteck hat ebenfalls Fläche 12, aber Umfang 16. Beide auf demselben Bildschirm zu wechseln macht den Unterschied sofort deutlich.",
+      "mistakes": "Viele Schüler addieren alle vier Seitenlängen für die Fläche (Verwechslung mit Umfang) oder multiplizieren Länge und Breite für den Umfang. Beide Zahlen gleichzeitig zu sehen korrigiert beide Fehler auf einmal.",
+      "faqs": [
+        {
+          "q": "Kann dieselbe Zielfläche mit verschiedenen Rechtecken erreicht werden?",
+          "a": "Ja. Viele Flächenziele haben mehr als eine Lösung (z. B. Fläche 12 passt zu 2×6, 3×4 oder 1×12). Das Spiel akzeptiert jedes gültige Rechteck."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 3-4, wenn Schüler die Formeln für Fläche und Umfang von Rechtecken lernen."
+        },
+        {
+          "q": "Wie unterscheidet es sich vom Geobrett, das auch Flächen misst?",
+          "a": "Fläche und Umfang beschränkt die Form auf ein Rechteck und vergleicht beide Maße. Das Geobrett erlaubt beliebige Vielecke und zielt nur auf die Fläche."
+        }
+      ]
+    }
   },
   "tenFrame": {
     "title": "Zehnerfeld füllen",
@@ -245,7 +271,33 @@
     "instructions": "Stelle Länge, Breite und Höhe mit den Tasten − / + ein (oder ziehe: nach oben = länger, rechts = breiter; die Höhe stellst du mit den Tasten ein). Die Würfel füllen das Aquarium Schicht für Schicht. Drücke zum Schluss Prüfen",
     "prompt": "Baue eine Kiste mit dem Volumen {volume}",
     "correct": "Super! Das Volumen der Kiste ist {volume}",
-    "wrong": "Fast! Ändere Länge, Breite oder Höhe und versuche es erneut"
+    "wrong": "Fast! Ändere Länge, Breite oder Höhe und versuche es erneut",
+    "seo": {
+      "intro": "Der Volumen-Baumeister füllt einen transparenten Tank Schicht für Schicht mit Einheitswürfeln, während Schüler Länge, Breite und Höhe einstellen. Das Ziel ist ein bestimmtes Volumen, und die Würfel stapeln sich sichtbar, sodass die abstrakte Formel V = l × b × h zu echten Objekten wird.",
+      "howToPlay": [
+        "Lese das Zielvolumen, das über dem Tank angezeigt wird.",
+        "Stelle Länge und Breite durch Ziehen oder mit den −/+-Tasten ein; die Grundschicht füllt den Boden des Tanks.",
+        "Stelle die Höhe mit den Höhe-Tasten ein; der Tank füllt sich Schicht für Schicht nach oben.",
+        "Drücke Prüfen, wenn die Würfelanzahl dem Zielvolumen entspricht."
+      ],
+      "skills": "Das Einstellen von drei unabhängigen Maßen festigt die Idee, dass Volumen ein Produkt aus drei Längen ist (l × b × h) und keine Eigenschaft der Oberfläche. Dies bereitet auf Klasse 4-6 vor: zusammengesetzte Körper, Oberflächen und den Unterschied zwischen 2D-Fläche und 3D-Volumen.",
+      "example": "Für Volumen 24 kann man 4×3×2 wählen: vier Würfel breit, drei tief, zwei Schichten hoch. Wechseln zu 6×2×2 ergibt dasselbe Volumen mit anderer Form.",
+      "mistakes": "Schüler verwechseln Volumen oft mit der Oberfläche und zählen die äußeren Flächen statt der Würfel innen. Das Füllen des Inneren Würfel für Würfel adressiert dies direkt.",
+      "faqs": [
+        {
+          "q": "Kann dasselbe Volumen mit verschiedenen Maßen erreicht werden?",
+          "a": "Ja. Viele Ziele haben mehrere gültige Maßkombinationen. Das Spiel akzeptiert jede (l, b, h), deren Produkt dem Ziel entspricht."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 4-6, wenn Schüler das Volumen als dreidimensionale Messung kennenlernen und die Formel l × b × h erarbeiten."
+        },
+        {
+          "q": "Wie unterscheidet sich der Volumen-Baumeister vom Geobrett?",
+          "a": "Das Geobrett misst 2D-Fläche in Quadrateinheiten auf einem flachen Raster. Der Volumen-Baumeister misst 3D-Volumen in Kubikeinheiten. Der Sprung von Quadraten zu Würfeln ist genau der konzeptuelle Schritt, den beide Spiele bilden."
+        }
+      ]
+    }
   },
   "rulerMeasure": {
     "title": "Mit dem Lineal messen",
@@ -431,7 +483,33 @@
     "instructions": "Drehe den beweglichen Laser mit den −/+ Tasten (je 15°) oder durch Ziehen, bis der leuchtende Bogen den gesuchten Winkel zeigt, und drücke dann Prüfen.",
     "prompt": "Baue einen Winkel von {angle}°",
     "correct": "Super! Du hast einen {angle}°-Winkel gebaut.",
-    "wrong": "Noch nicht. Drehe den Strahl zum gesuchten Winkel und versuche es erneut."
+    "wrong": "Noch nicht. Drehe den Strahl zum gesuchten Winkel und versuche es erneut.",
+    "seo": {
+      "intro": "Der Winkel-Baumeister versetzt ein Geodreieck in ein Raumstations-Szenario: Schüler drehen einen Laserstrahl, bis der leuchtende Bogen einer Zielgradzahl entspricht. Die Gradanzeige aktualisiert sich live, sodass das abstrakte Symbol «90°» zu einem sichtbaren und spürbaren Winkel wird.",
+      "howToPlay": [
+        "Lies den Zielwinkel ab, der über dem Geodreieck angezeigt wird.",
+        "Ziehe den beweglichen Laserstrahl oder nutze die −/+-Tasten (je 15° pro Schritt) in Richtung des Ziels.",
+        "Beobachte den leuchtenden Bogen und die Live-Gradanzeige, während der Winkel sich öffnet oder schließt.",
+        "Drücke Prüfen, wenn der Bogen dem Ziel entspricht."
+      ],
+      "skills": "Winkel nach Grad zu bauen bereitet Schüler darauf vor, Winkel als spitz, rechtwinklig, stumpf oder gestreckt einzustufen und ein echtes Geodreieck genau zu verwenden. Dies ist die Kernkompetenz der Geometrie in Klasse 4-5, bevor Winkelsummen in Dreiecken und Vielecken behandelt werden.",
+      "example": "Für 120° dreht sich der Strahl über die 90°-Markierung (rechter Winkel) hinaus und ein Drittel des Weges Richtung 180° (gestreckter Winkel). Das Überschreiten von 90° führt das Wort «stumpf» natürlich ein.",
+      "mistakes": "Schüler verwechseln oft die beiden Skalen eines Geodreiecks. Das Spiel zeigt nur eine Anzeige, entfernt so die Verwechslung und lässt Schüler sich auf die Beziehung zwischen Drehung und Grad konzentrieren.",
+      "faqs": [
+        {
+          "q": "In welchen Schritten bewegt sich der Strahl?",
+          "a": "Jeder Tastendruck bewegt den Strahl um 15°, sodass Vielfache von 15 geübt werden: 30°, 45°, 60°, 90°, 120°, 135°, 150° und 180°."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 4-5, wenn Schüler Winkel erstmals messen und nach Art klassifizieren."
+        },
+        {
+          "q": "Wie unterscheidet es sich vom Geobrett?",
+          "a": "Der Winkel-Baumeister fokussiert auf das Gradmaß eines einzelnen Winkels. Das Geobrett baut ganze Formen und misst deren Fläche in Quadrateinheiten."
+        }
+      ]
+    }
   },
   "divisionShare": {
     "title": "Gerecht teilen",
@@ -521,7 +599,33 @@
     "instructions": "Drücke \"Falten\", um das flache Netz zu einer 3D-Form zu falten (sie dreht sich, damit du alle Seiten siehst). Zähle die Flächen des Körpers, gib die Zahl mit − / + oder durch Ziehen nach oben ein und drücke dann Prüfen",
     "prompt": "Wie viele Flächen hat der Körper?",
     "correct": "Super! Der Körper hat {count} Flächen",
-    "wrong": "Fast! Falte und drehe den Körper und zähle die Flächen noch einmal"
+    "wrong": "Fast! Falte und drehe den Körper und zähle die Flächen noch einmal",
+    "seo": {
+      "intro": "Der Netz-Falter zeigt eine flache Anordnung aus Vielecken, die auf dem Bildschirm animiert wird und sich zu einem 3D-Körper faltet. Schüler drehen das Ergebnis, um jede Fläche zu untersuchen und zu zählen, und bauen so die mentale Verbindung zwischen einer flachen Zeichnung und dem daraus entstehenden Körper auf.",
+      "howToPlay": [
+        "Untersuche das flache Netz: Zähle und benenne die vieleckigen Flächen vor dem Falten.",
+        "Drücke Falten, um das Netz zu einem 3D-Körper zusammenzufalten.",
+        "Drehe den Körper mit den Bildschirmsteuerungen, um alle Flächen einschließlich der verdeckten zu sehen.",
+        "Gib die Gesamtzahl der Flächen mit den −/+-Tasten ein und drücke Prüfen."
+      ],
+      "skills": "Die Vorstellung, wie ein 2D-Netz zu einem 3D-Körper faltet, entwickelt räumliches Denken und baut das Vokabular Flächen, Kanten, Ecken auf. Dies legt die Grundlage für Oberflächen und die Klassifikation von Prismen, Pyramiden und Polyedern in Klasse 3-5.",
+      "example": "Ein kreuzförmiges Netz aus sechs Quadraten faltet sich zu einem Würfel mit 6 Flächen. Das Spiel zeigt nur gültige Netze, damit Schüler sich auf das Zählen nach dem Falten konzentrieren können.",
+      "mistakes": "Schüler zählen beim Drehen oft eine Fläche doppelt oder übersehen die Bodenfläche, die sich unten zusammenfaltet. Systematisches Drehen (oben, vorne, Seiten, unten) und Strichliste lösen beide Probleme.",
+      "faqs": [
+        {
+          "q": "Welche 3D-Körper erscheinen im Spiel?",
+          "a": "Übliche Lehrplankörper: Würfel, Quader, Dreiecksprisma, quadratische Pyramide und Dreieckspyramide, jeder mit eigenem Netz und Flächenanzahl."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 3-5, wenn Schüler 3D-Formen, ihre Eigenschaften und die Beziehung zwischen Netzen und Körpern studieren."
+        },
+        {
+          "q": "Wie unterscheidet es sich vom Körper sortieren?",
+          "a": "Netz-Falter dreht sich um die Verbindung zwischen einem flachen Netz und dem daraus entstehenden 3D-Körper. Körper sortieren klassifiziert fertige Körper danach, ob sie rollen."
+        }
+      ]
+    }
   },
   "symmetryMirror": {
     "title": "Spiegelbild",
@@ -529,7 +633,33 @@
     "instructions": "Die linke Seite ist vorgegeben. Tippe oder ziehe auf den Feldern der rechten Seite, um die Felder zu füllen, die sie an der Linie spiegeln, und drücke dann Prüfen. Tippe ein gefülltes Feld erneut an, um es zu leeren.",
     "prompt": "Vervollständige das Spiegelbild",
     "correct": "Toll! Das Spiegelbild ist vollständig.",
-    "wrong": "Noch kein genaues Spiegelbild. Prüfe, welche Felder fehlen oder zu viel sind."
+    "wrong": "Noch kein genaues Spiegelbild. Prüfe, welche Felder fehlen oder zu viel sind.",
+    "seo": {
+      "intro": "Spiegelbild zeigt eine Hälfte eines Schmetterlingsflügels auf einem Raster und fordert Schüler auf, die passenden Felder auf der anderen Seite der Spiegellinie auszufüllen. Das Vervollständigen der Reflexion Feld für Feld macht die abstrakte Symmetrieregel zu einer konkreten Entscheidung.",
+      "howToPlay": [
+        "Schaue dir die gefüllten Felder auf der linken Seite der Spiegellinie an.",
+        "Für jedes gefüllte Feld: Suche seine Spiegelposition rechts: gleiche Reihe, gleicher Abstand von der Linie.",
+        "Tippe auf das passende Feld rechts, um es zu füllen; erneutes Tippen löscht einen Fehler.",
+        "Drücke Prüfen, wenn alle Spiegelfelder gefüllt sind und keine zusätzlichen Felder markiert sind."
+      ],
+      "skills": "Symmetrieachsen erkennen und vervollständigen unterstützt räumliches Denken und Formenklassifikation. In den Klassen 2-4 ist es das Einstiegskonzept vor Drehsymmetrie und Koordinatenspiegelung.",
+      "example": "Liegt ein Feld 2 Quadrate links der Spiegellinie in Reihe 3, dann liegt sein Spiegelbild 2 Quadrate rechts in derselben Reihe 3. Reihe für Reihe arbeiten und gleiche Abstände zählen verhindert Raten.",
+      "mistakes": "Schüler platzieren das Spiegelbild manchmal diagonal statt horizontal. Die Reihennummer zuerst prüfen, dann den gleichen Abstand zur Linie zählen, korrigiert das systematisch.",
+      "faqs": [
+        {
+          "q": "Ist die Spiegellinie immer senkrecht?",
+          "a": "Der Schmetterlingsflügel-Kontext nutzt eine senkrechte Spiegellinie, den häufigsten Ausgangspunkt in Klasse 2-3. Diagonale und waagerechte Linien können in höheren Schwierigkeitsstufen erscheinen."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 2-4 von der ersten Symmetrieerkennung bis zur genauen Feld-für-Feld-Spiegelung."
+        },
+        {
+          "q": "Wie unterscheidet es sich vom Tangram, das auch räumliches Anordnen beinhaltet?",
+          "a": "Spiegelbild konzentriert sich auf die Reflexionsregel: gleicher Abstand von der Linie auf beiden Seiten. Tangram bedeutet, Teile in einen Umriss einzupassen, ohne Reflexionsregel."
+        }
+      ]
+    }
   },
   "hundredChart": {
     "title": "Vielfachentafel",
@@ -545,7 +675,33 @@
     "instructions": "Tippe auf Nägel, um die Ecken deiner Form zu setzen — das Band verbindet sie und schließt die Schleife. Tippe die letzte Ecke erneut an, um sie rückgängig zu machen. Baue eine beliebige Form mit der passenden Fläche und drücke dann Prüfen.",
     "prompt": "Bilde eine Form mit der Fläche {area} Quadrateinheiten",
     "correct": "Toll! Du hast eine Form mit der Fläche {area} gebaut.",
-    "wrong": "Deine Form hat die Fläche {area}, das Ziel ist {target}. Probiere eine andere Form."
+    "wrong": "Deine Form hat die Fläche {area}, das Ziel ist {target}. Probiere eine andere Form.",
+    "seo": {
+      "intro": "Das Geobrett lässt Schüler ein virtuelles Gummiband über ein Nagelraster spannen, um beliebige Formen zu bauen, solange ihre Fläche die Zielanzahl an Quadrateinheiten trifft. Es gibt keine einzige richtige Form, nur Formen mit der richtigen Fläche.",
+      "howToPlay": [
+        "Lies die Zielfläche ab, die über dem Brett angezeigt wird.",
+        "Tippe Nägel an, um die Ecken des Vielecks zu setzen; das Band verbindet sie zu einer Form.",
+        "Beobachte den Live-Flächenzähler, während die Form wächst; tippe eine Ecke erneut an, um sie rückgängig zu machen.",
+        "Drücke Prüfen, wenn die eingeschlossene Fläche dem Ziel entspricht."
+      ],
+      "skills": "Das Zählen von Quadrateinheiten in unregelmäßigen Vielecken auf einem Raster entwickelt Flächenintuition, die dem Formelansatz vorausgeht. Schüler entdecken, dass viele verschiedene Formen dieselbe Fläche teilen können.",
+      "example": "Für Fläche 6 könnte ein Schüler ein 2×3-Rechteck, eine L-Form oder ein Dreieck mit Basis 4 und Höhe 3 bauen. Jede ist gültig.",
+      "mistakes": "Schüler verfolgen häufig den Umfang (Kanten zählen) statt der Fläche (eingeschlossene Quadrate zählen). Das Spiel zählt eingeschlossene Quadrateinheiten genau.",
+      "faqs": [
+        {
+          "q": "Muss die Form ein Rechteck sein?",
+          "a": "Nein. Jedes geschlossene Vieleck, dessen Ecken auf Nägeln liegen, ist gültig, solange die eingeschlossene Fläche dem Ziel entspricht."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 3-5, von der ersten Begegnung mit Fläche als Zählen von Quadrateinheiten bis zu komplexeren Vieleckformen."
+        },
+        {
+          "q": "Wie unterscheidet es sich vom Volumen-Baumeister?",
+          "a": "Das Geobrett arbeitet zweidimensional: Fläche in Quadrateinheiten auf einem flachen Raster. Der Volumen-Baumeister arbeitet dreidimensional, zählt Würfel, um eine Kiste zu füllen."
+        }
+      ]
+    }
   },
   "shapeSort": {
     "title": "Körper sortieren",
@@ -555,7 +711,33 @@
     "correct": "Gut gemacht! Du hast alle Körper richtig sortiert.",
     "wrong": "Noch nicht. Prüfe, welche Körper rollen und welche nicht, und versuche es erneut.",
     "binRoll": "Rollt",
-    "binFlat": "Rollt nicht"
+    "binFlat": "Rollt nicht",
+    "seo": {
+      "intro": "Körper sortieren präsentiert eine Reihe von 3D-Formen und stellt eine gezielte Frage: Rollt dieser Körper? Das Sortieren nach dem Vorhandensein einer gekrümmten Fläche macht eine abstrakte Eigenschaft zu einer Entscheidung, die Schüler ab Klasse 2 begründen können.",
+      "howToPlay": [
+        "Schaue jeden 3D-Körper an und entscheide, ob er eine gekrümmte Fläche hat.",
+        "Tippe den Körper an, um ihn aufzunehmen, dann tippe auf die passende Kiste: «Rollt» für gekrümmte Flächen, «Rollt nicht» für nur ebene Flächen.",
+        "Du kannst einen Körper in eine andere Kiste verschieben, bevor du Prüfen drückst.",
+        "Drücke Prüfen, wenn alle Körper sortiert sind."
+      ],
+      "skills": "Das Klassifizieren von Körpern nach Flächentyp baut das grundlegende 3D-Formenvokabular auf: ebene Fläche, gekrümmte Fläche, Kante, Ecke. Dies wird in Klasse 3-4 zu Flächenzählung und Unterscheidung von Prismen und Pyramiden erweitert.",
+      "example": "Ein Zylinder hat zwei ebene Flächen (die kreisförmigen Enden) und eine gekrümmte Fläche (die Seite), also rollt er. Ein Würfel hat sechs ebene Flächen und keine gekrümmte, also bleibt er stehen.",
+      "mistakes": "Schüler sortieren oft nach dem Formnamen («Ball», «Kiste»), ohne die Flächen zu untersuchen. Das Spiel erzwingt die Flächenprüfung.",
+      "faqs": [
+        {
+          "q": "Welche Körper erscheinen im Spiel?",
+          "a": "Gängige Grundschulkörper: Kugel, Zylinder, Kegel, Würfel, Quader, Dreiecksprisma und Pyramide."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 2-4 von der ersten 3D-Formenerkennung bis zur formalen Klassifikation."
+        },
+        {
+          "q": "Wie unterscheidet es sich vom Netz-Falter?",
+          "a": "Körper sortieren klassifiziert fertige Körper nach einer Flächeneigenschaft (Rollen). Netz-Falter dreht sich darum, wie ein flaches Netz zu einem Körper faltet."
+        }
+      ]
+    }
   },
   "coordinatePlot": {
     "title": "Punkt einzeichnen",
@@ -563,7 +745,33 @@
     "instructions": "Bewege die Nadel mit den X- und Y-Tasten oder ziehe sie über das Papier, bis sie die gesuchten Koordinaten erreicht, und drücke dann Prüfen.",
     "prompt": "Zeichne den Punkt bei ({x}, {y}) ein",
     "correct": "Super! Der Punkt liegt bei ({x}, {y}).",
-    "wrong": "Noch nicht. Prüfe die X- und Y-Werte und versuche es erneut."
+    "wrong": "Noch nicht. Prüfe die X- und Y-Werte und versuche es erneut.",
+    "seo": {
+      "intro": "Punkt einzeichnen setzt eine Nadel auf einem Koordinatengitter und bittet Schüler, sie zu einem bestimmten (x, y)-Paar zu bewegen. Geordnete Paare zu lesen und zu setzen wird zu einer körperlichen Handlung: erst rechts entlang der x-Achse, dann hoch entlang der y-Achse.",
+      "howToPlay": [
+        "Lies die Zielkoordinaten ab, die als (x, y) über dem Gitter angezeigt werden.",
+        "Ziehe die Nadel oder nutze die X- und Y-Tasten: X steuert die horizontale Position, Y die vertikale.",
+        "Zähle Gitterquadrate vom Ursprung (0, 0), um die Position zu bestätigen.",
+        "Drücke Prüfen, wenn die Nadel am Zielpunkt liegt."
+      ],
+      "skills": "Geordnete Paare eintragen ist die Einstiegsfähigkeit für Grafiken in Klasse 4-6: Karten, Datendiagramme, Funktionstabellen und geometrische Transformationen stützen sich alle auf das flüssige Lesen der (x, y)-Notation.",
+      "example": "Für den Punkt (3, 5) bewegt sich die Nadel 3 Quadrate nach rechts und dann 5 nach oben. Vertauscht ein Schüler 5 rechts und 3 hoch, zeigt das Live-Gitter die Nadel an der falschen Stelle.",
+      "mistakes": "Der häufigste Fehler ist das Vertauschen von x und y. Das Spiel korrigiert das durch Anzeige der aktualisierten Koordinate, sobald die Nadel bewegt wird.",
+      "faqs": [
+        {
+          "q": "Enthält das Gitter negative Koordinaten?",
+          "a": "Das Spiel kann Punkte in jedem Quadranten zeigen, sodass Schüler mit steigendem Schwierigkeitsgrad negative x- oder y-Werte begegnen können."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 4-6, wenn Schüler das Koordinatensystem kennenlernen."
+        },
+        {
+          "q": "Wie unterscheidet es sich vom Zahlenstrahl-Hüpfer?",
+          "a": "Der Zahlenstrahl-Hüpfer bewegt sich nur auf einer Achse. Punkt einzeichnen erfordert das gleichzeitige Navigieren auf zwei senkrechten Achsen."
+        }
+      ]
+    }
   },
   "wordProblemBar": {
     "title": "Balkenmodell",
@@ -626,6 +834,32 @@
     "instructions": "Tippe auf ein Teil, um es aufzuheben, und tippe dann auf den Umriss mit der gleichen Form, um es abzulegen. Ordne jedes Teil dem Umriss mit der gleichen Form zu. Tippe auf ein gelegtes Teil, um es wieder zu bewegen. Wenn du fertig bist, drücke auf Prüfen. Zurücksetzen legt alle Teile wieder ins Tablett.",
     "prompt": "Baue die Figur — jedes Teil an seinen Platz",
     "correct": "Ausgezeichnet! Du hast die ganze Figur richtig zusammengesetzt.",
-    "wrong": "Noch nicht. Einige Teile fehlen oder liegen falsch — ordne jedes Teil seinem Umriss zu und versuche es erneut."
+    "wrong": "Noch nicht. Einige Teile fehlen oder liegen falsch — ordne jedes Teil seinem Umriss zu und versuche es erneut.",
+    "seo": {
+      "intro": "Tangram gibt Schüler ein Set klassischer geometrischer Teile — Dreiecke, ein Quadrat und ein Parallelogramm — sowie einen Silhouettenumriss zum Füllen. Jedes Teil muss seinem richtigen Schlitz zugeordnet werden, wobei Formenerkennung, Teil-Ganzes-Denken und räumliche Passgenauigkeit entwickelt werden.",
+      "howToPlay": [
+        "Schaue den Silhouettenumriss an und identifiziere die Formen der einzelnen Teile darin.",
+        "Tippe ein Teil aus dem Tablett an, um es aufzuheben, dann tippe auf die passende Umrissregion, um es abzulegen.",
+        "Passt ein Teil nicht in einen Schlitz, versuche ein anderes. Jede Farbe und Form hat genau einen passenden Umriss.",
+        "Drücke Prüfen, wenn alle Umrissregionen gefüllt sind."
+      ],
+      "skills": "Geometrische Teile einem Umriss zuzuordnen entwickelt Formenerkennung (Dreiecke verschiedener Größe, Parallelogramm-Ausrichtung) und räumliche Zerlegung: die Fähigkeit, eine komplexe Form als Summe einfacher Teile zu sehen.",
+      "example": "Die Silhouette einer laufenden Figur enthält zwei große Dreiecke, ein mittleres Dreieck, zwei kleine Dreiecke, ein Quadrat und ein Parallelogramm. Den Parallelogramm-Schlitz zu erkennen, bevor das Quadrat gelegt wird, vermeidet den häufigsten Platzierfehler.",
+      "mistakes": "Schüler versuchen manchmal, ein Dreieck in einen Schlitz mit Dreiecksform aber falscher Größe zu zwingen, weil sie sich auf den Formtyp statt die Größe konzentrieren.",
+      "faqs": [
+        {
+          "q": "Müssen die Teile gedreht oder gespiegelt werden?",
+          "a": "In dieser Version passt jedes Teil ohne Drehen oder Spiegeln genau in seinen Schlitz, damit der Fokus auf Formenerkennung bleibt."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 2-5: Jüngere ordnen nach Form und Farbe zu, ältere Schüler nutzen geometrisches Vokabular."
+        },
+        {
+          "q": "Wie unterscheidet sich Tangram vom Spiegelbild?",
+          "a": "Tangram dreht sich um das Zuordnen diskreter Teile zu einem Umriss: Formenerkennung und Teil-Ganzes-Zusammenbau. Spiegelbild wendet eine Reflexionsregel auf einzelne Rasterfelder an."
+        }
+      ]
+    }
   }
 }

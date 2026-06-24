@@ -135,7 +135,33 @@
     "correct": "¡Genial! {kindLabel} = {target}",
     "wrong": "¡Casi! Cambia el tamaño del huerto e inténtalo de nuevo",
     "kindArea": "Área",
-    "kindPerimeter": "Perímetro"
+    "kindPerimeter": "Perímetro",
+    "seo": {
+      "intro": "Área y perímetro muestra un huerto cuyo tamaño se puede cambiar arrastrando. A veces el objetivo es un área determinada y a veces un perímetro determinado. El descubrimiento clave: dos rectángulos con la misma área pueden tener perímetros completamente diferentes.",
+      "howToPlay": [
+        "Lee si el objetivo es un área (unidades cuadradas) o un perímetro (unidades de longitud).",
+        "Arrastra el borde del huerto o usa los botones de ancho/alto −/+ para cambiar el tamaño.",
+        "Observa las lecturas en vivo: el área (largo × ancho) y el perímetro (2 × largo + 2 × ancho) se actualizan juntos.",
+        "Pulsa Comprobar cuando la medida correcta coincida con el objetivo."
+      ],
+      "skills": "Distinguir entre área y perímetro es una de las confusiones más frecuentes en la geometría de primaria. Trabajar con ambas medidas en la misma figura y ver cómo cambian de forma independiente construye la comprensión conceptual que las fórmulas solas no logran.",
+      "example": "Un rectángulo 3×4 tiene área 12 y perímetro 14. Uno 2×6 también tiene área 12 pero perímetro 16. Cambiar entre los dos en la misma pantalla hace la diferencia evidente.",
+      "mistakes": "Muchos alumnos suman los cuatro lados para calcular el área (confundiéndola con el perímetro) o multiplican largo por ancho para el perímetro. Ver los dos números cambiar simultáneamente corrige ambos errores de una vez.",
+      "faqs": [
+        {
+          "q": "¿Se puede llegar al mismo objetivo de área con rectángulos distintos?",
+          "a": "Sí. Muchos objetivos de área tienen más de una solución (p. ej., área 12 vale para 2×6, 3×4 o 1×12). El juego acepta cualquier rectángulo válido."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 3.º y 4.º, cuando los alumnos aprenden las fórmulas de área y perímetro del rectángulo."
+        },
+        {
+          "q": "¿En qué se diferencia del Geoplano, que también mide área?",
+          "a": "Área y perímetro limita la figura a un rectángulo y compara las dos medidas. El Geoplano permite construir cualquier polígono y solo apunta al área."
+        }
+      ]
+    }
   },
   "tenFrame": {
     "title": "Marco de diez",
@@ -245,7 +271,33 @@
     "instructions": "Ajusta el largo, el ancho y la altura con los botones − / + (o arrastra: arriba = más largo, derecha = más ancho; la altura se ajusta con los botones). Los cubos llenan el acuario capa por capa. Cuando termines, pulsa Comprobar",
     "prompt": "Construye una caja con volumen {volume}",
     "correct": "¡Genial! El volumen de la caja es {volume}",
-    "wrong": "¡Casi! Cambia el largo, el ancho o la altura e inténtalo de nuevo"
+    "wrong": "¡Casi! Cambia el largo, el ancho o la altura e inténtalo de nuevo",
+    "seo": {
+      "intro": "El Constructor de volumen llena un depósito transparente con cubos unitarios capa por capa mientras los alumnos ajustan largo, ancho y altura. El objetivo es un volumen concreto, y los cubos se acumulan visualmente para convertir la fórmula abstracta V = l × a × h en un recuento de objetos reales.",
+      "howToPlay": [
+        "Lee el volumen objetivo que aparece encima del depósito.",
+        "Ajusta el largo y el ancho arrastrando o con los botones −/+; la capa base de cubos llena el suelo del depósito.",
+        "Ajusta la altura con los botones de altura; el depósito se llena hacia arriba capa por capa.",
+        "Pulsa Comprobar cuando el número de cubos iguale el volumen objetivo."
+      ],
+      "skills": "Construir el volumen ajustando tres dimensiones independientes consolida la idea de que el volumen es el producto de tres longitudes (l × a × h) y no una propiedad de la superficie. Esto prepara para el trabajo en 4.º-6.º con volúmenes compuestos, áreas de la superficie y la distinción entre área 2D y volumen 3D.",
+      "example": "Para un volumen de 24 se puede fijar 4×3×2: cuatro cubos de ancho, tres de profundidad, dos capas de altura. Cambiar a 6×2×2 da el mismo volumen con otra forma.",
+      "mistakes": "Los alumnos confunden a menudo volumen y área de la superficie, contando las caras exteriores en lugar de los cubos interiores. Ver el interior llenarse cubo a cubo lo aborda directamente.",
+      "faqs": [
+        {
+          "q": "¿Se puede alcanzar el mismo volumen con diferentes dimensiones?",
+          "a": "Sí. Muchos objetivos tienen varias combinaciones de dimensiones válidas. El juego acepta cualquier (l, a, h) cuyo producto sea igual al objetivo."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 4.º-6.º, cuando los alumnos conocen el volumen como medida del espacio tridimensional y aprenden la fórmula l × a × h."
+        },
+        {
+          "q": "¿En qué se diferencia el Constructor de volumen del Geoplano?",
+          "a": "El Geoplano mide área 2D en unidades cuadradas sobre una cuadrícula plana. El Constructor de volumen mide volumen 3D en unidades cúbicas llenando una caja."
+        }
+      ]
+    }
   },
   "rulerMeasure": {
     "title": "Medir con la regla",
@@ -431,7 +483,33 @@
     "instructions": "Gira el láser móvil con los botones −/+ (15° cada uno) o arrastrándolo, hasta que el arco brillante muestre el ángulo objetivo, y luego pulsa Comprobar.",
     "prompt": "Construye un ángulo de {angle}°",
     "correct": "¡Muy bien! Construiste un ángulo de {angle}°.",
-    "wrong": "Todavía no. Gira el rayo hasta el ángulo objetivo e inténtalo de nuevo."
+    "wrong": "Todavía no. Gira el rayo hasta el ángulo objetivo e inténtalo de nuevo.",
+    "seo": {
+      "intro": "El Constructor de Ángulos coloca un transportador en un escenario de estación espacial: los alumnos giran un rayo láser hasta que el arco brillante coincide con un número de grados objetivo. La lectura de grados se actualiza en vivo, por lo que el símbolo abstracto «90°» se convierte en una esquina que se puede ver y sentir.",
+      "howToPlay": [
+        "Lee el ángulo objetivo que aparece encima del transportador.",
+        "Arrastra el rayo láser móvil o usa los botones −/+ (15° por paso) hacia el objetivo.",
+        "Observa el arco brillante y el contador de grados en vivo mientras el ángulo se abre o se cierra.",
+        "Pulsa Comprobar cuando el arco coincida con el objetivo."
+      ],
+      "skills": "Construir ángulos por su medida en grados prepara a los alumnos para clasificarlos como agudos, rectos, obtusos o llanos, y para usar un transportador real con precisión. Esta es la competencia clave de la geometría en 4.º-5.º antes de estudiar las sumas de ángulos en triángulos y polígonos.",
+      "example": "Para 120° el rayo pasa la marca de 90° (ángulo recto) y continúa un tercio del camino hasta 180° (ángulo llano). Pasar por 90° introduce la palabra «obtuso» de forma natural.",
+      "mistakes": "Los alumnos confunden a menudo las dos escalas de un transportador. El juego muestra solo un contador, eliminando esa confusión y permitiendo enfocarse en la relación entre rotación y grados.",
+      "faqs": [
+        {
+          "q": "¿En qué incrementos se mueve el rayo?",
+          "a": "Cada pulsación de botón mueve el rayo 15°, por lo que se practican múltiplos de 15: 30°, 45°, 60°, 90°, 120°, 135°, 150° y 180°."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 4.º y 5.º, cuando los alumnos miden ángulos por primera vez y los clasifican por tipo."
+        },
+        {
+          "q": "¿En qué se diferencia del Geoplano, que también trabaja con formas y medidas?",
+          "a": "El Constructor de Ángulos se centra en la medida en grados de un único ángulo. El Geoplano construye figuras completas y mide su área en unidades cuadradas."
+        }
+      ]
+    }
   },
   "divisionShare": {
     "title": "Reparto justo",
@@ -521,7 +599,33 @@
     "instructions": "Pulsa \"Plegar\" para plegar la red plana en una figura 3D (gira para que veas todos los lados). Cuenta cuántas caras tiene el sólido, introduce el número con − / + o arrastrando hacia arriba y luego pulsa Comprobar",
     "prompt": "¿Cuántas caras tiene el sólido?",
     "correct": "¡Genial! El sólido tiene {count} caras",
-    "wrong": "¡Casi! Pliega y gira el sólido y vuelve a contar sus caras"
+    "wrong": "¡Casi! Pliega y gira el sólido y vuelve a contar sus caras",
+    "seo": {
+      "intro": "El Plegador de redes muestra una disposición plana de polígonos que se anima y se pliega en un sólido 3D en pantalla. Los alumnos giran el resultado para inspeccionar cada cara y contarlas, construyendo el vínculo mental entre un dibujo plano y el sólido que forma.",
+      "howToPlay": [
+        "Examina la red plana: cuenta y nombra las caras poligonales antes de plegar.",
+        "Pulsa Plegar para ver cómo la red se cierra en un sólido 3D.",
+        "Gira el sólido con los controles de pantalla para ver todas las caras, incluidas las ocultas.",
+        "Introduce el número total de caras con los botones −/+ y pulsa Comprobar."
+      ],
+      "skills": "Visualizar cómo una red 2D se pliega en un sólido 3D desarrolla el razonamiento espacial y construye el vocabulario de caras, aristas y vértices. Esto sienta las bases para el área de la superficie y la clasificación de prismas, pirámides y poliedros en 3.º-5.º.",
+      "example": "Una red en forma de cruz de seis cuadrados se pliega en un cubo con 6 caras. El juego solo presenta redes válidas, para que los alumnos puedan concentrarse en contar tras el plegado.",
+      "mistakes": "Los alumnos a menudo cuentan una cara dos veces al girar, o se pierden la base que se pliega por debajo. Girar de forma sistemática (arriba, frente, lados, abajo) y llevar la cuenta resuelve ambos problemas.",
+      "faqs": [
+        {
+          "q": "¿Qué sólidos 3D aparecen en el juego?",
+          "a": "Sólidos habituales en el currículo: cubo, paralelepípedo, prisma triangular, pirámide cuadrada y pirámide triangular, cada uno con una red y un número de caras diferente."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 3.º-5.º, cuando los alumnos estudian figuras 3D, sus propiedades y la relación entre redes y sólidos."
+        },
+        {
+          "q": "¿En qué se diferencia de Clasifica cuerpos, que también usa sólidos 3D?",
+          "a": "El Plegador de redes trata la conexión entre una red plana y el sólido que genera. Clasifica cuerpos clasifica sólidos terminados según si ruedan o no."
+        }
+      ]
+    }
   },
   "symmetryMirror": {
     "title": "Imagen espejo",
@@ -529,7 +633,33 @@
     "instructions": "El lado izquierdo está dado. Toca o arrastra sobre las casillas del lado derecho para rellenar las casillas que lo reflejan a través de la línea, y luego pulsa Comprobar. Toca de nuevo una casilla llena para vaciarla.",
     "prompt": "Completa la imagen espejo",
     "correct": "¡Genial! La imagen espejo está completa.",
-    "wrong": "Aún no es un espejo exacto. Revisa qué casillas faltan o sobran."
+    "wrong": "Aún no es un espejo exacto. Revisa qué casillas faltan o sobran.",
+    "seo": {
+      "intro": "Imagen espejo muestra la mitad de un ala de mariposa en una cuadrícula y pide a los alumnos que rellenen las casillas correspondientes al otro lado de la línea de simetría. Completar el reflejo casilla a casilla convierte la regla abstracta de simetría en una decisión concreta.",
+      "howToPlay": [
+        "Observa las casillas rellenas del lado izquierdo de la línea de simetría.",
+        "Para cada casilla rellena, encuentra su posición espejo a la derecha: misma fila, misma distancia de la línea.",
+        "Toca la casilla correspondiente a la derecha para rellenarla; tócala otra vez para borrar un error.",
+        "Pulsa Comprobar cuando todas las casillas espejo estén rellenas y no sobren casillas."
+      ],
+      "skills": "Identificar y completar ejes de simetría apoya el razonamiento espacial y la clasificación de figuras. En 2.º-4.º es el concepto de entrada antes de la simetría rotacional y el reflejo de coordenadas en cursos superiores.",
+      "example": "Si una casilla está 2 cuadros a la izquierda de la línea de simetría en la fila 3, su espejo está 2 cuadros a la derecha en la misma fila 3. Trabajar fila por fila y contar distancias iguales desde la línea elimina la adivinanza.",
+      "mistakes": "Los alumnos colocan a veces la casilla espejo en diagonal en lugar de horizontalmente, poniéndola en la fila incorrecta. Comprobar primero el número de fila y luego contar la distancia igual desde la línea lo corrige.",
+      "faqs": [
+        {
+          "q": "¿La línea de simetría siempre es vertical?",
+          "a": "El contexto del ala de mariposa usa una línea vertical, el punto de partida más común en 2.º-3.º. Las líneas diagonales y horizontales pueden aparecer en niveles de dificultad superiores."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 2.º-4.º, desde el primer reconocimiento de simetría en figuras hasta el reflejo preciso casilla a casilla."
+        },
+        {
+          "q": "¿En qué se diferencia del Tangram, que también implica colocar figuras espacialmente?",
+          "a": "Imagen espejo se centra en la regla de reflexión: igual distancia desde la línea a ambos lados. El Tangram consiste en encajar piezas en un contorno sin ninguna regla de reflexión."
+        }
+      ]
+    }
   },
   "hundredChart": {
     "title": "Tabla de múltiplos",
@@ -545,7 +675,33 @@
     "instructions": "Toca las clavijas para colocar las esquinas de tu figura — la banda las conecta y cierra el contorno. Toca de nuevo la última esquina para deshacerla. Construye cualquier figura cuya área coincida con el objetivo y luego pulsa Comprobar.",
     "prompt": "Crea una figura con área de {area} unidades cuadradas",
     "correct": "¡Genial! Creaste una figura con área {area}.",
-    "wrong": "Tu figura tiene área {area}, pero el objetivo es {target}. Prueba otra figura."
+    "wrong": "Tu figura tiene área {area}, pero el objetivo es {target}. Prueba otra figura.",
+    "seo": {
+      "intro": "El Geoplano digital simula el clásico tablero de clavijas: los alumnos colocan esquinas sobre las clavijas y la banda elástica cierra el contorno automáticamente. El objetivo es construir cualquier polígono cuya área coincida con el número dado, lo que permite múltiples soluciones correctas.",
+      "howToPlay": [
+        "Lee el área objetivo en unidades cuadradas mostrada en pantalla.",
+        "Toca las clavijas del tablero para colocar las esquinas de tu figura; la banda cierra el contorno al volver a la clavija de inicio.",
+        "Observa cómo cambia el contador de área en tiempo real mientras mueves las esquinas.",
+        "Cuando el área coincida con el objetivo, pulsa Comprobar para confirmar."
+      ],
+      "skills": "Construir polígonos que alcancen un área objetivo desarrolla la intuición geométrica y refuerza las fórmulas de área para rectángulos, triángulos y figuras compuestas. Los alumnos de 3.º-5.º aprenden que muchas formas distintas pueden compartir la misma área.",
+      "example": "Para un objetivo de 6 unidades cuadradas, un rectángulo 2x3 funciona, pero también lo hace un triángulo rectángulo con base 4 y altura 3. Encontrar varias soluciones muestra que el área no determina la forma.",
+      "mistakes": "Los alumnos a menudo asumen que solo hay un polígono correcto, o cuentan los cuadrados de la cuadrícula sin ajustar las esquinas. Explorar varias figuras hasta que el contador muestre el objetivo corrige ambos hábitos.",
+      "faqs": [
+        {
+          "q": "¿La figura tiene que ser un rectángulo?",
+          "a": "No, cualquier polígono cerrado cuenta: triángulos, pentágonos, o cualquier figura irregular, mientras su área total coincida con el objetivo en unidades cuadradas."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 3.º-5.º, cuando los alumnos pasan de contar cuadrados a usar fórmulas de área y exploran la relación entre forma y medida."
+        },
+        {
+          "q": "¿En qué se diferencia del juego de Área y Perímetro?",
+          "a": "Área y Perímetro usa rectángulos y compara dos medidas distintas. El Geoplano acepta cualquier polígono y se centra solo en el área, con libertad de forma total."
+        }
+      ]
+    }
   },
   "shapeSort": {
     "title": "Clasifica cuerpos",
@@ -555,7 +711,33 @@
     "correct": "¡Muy bien! Clasificaste todos los cuerpos correctamente.",
     "wrong": "Todavía no. Mira qué cuerpos ruedan y cuáles no, e inténtalo otra vez.",
     "binRoll": "Rueda",
-    "binFlat": "No rueda"
+    "binFlat": "No rueda",
+    "seo": {
+      "intro": "Clasifica cuerpos pide a los alumnos que dividan sólidos 3D en dos grupos según su capacidad de rodar. Arrastrar y soltar cada cuerpo en la caja correcta obliga a examinar sus superficies, ya sea curvas o planas, antes de decidir.",
+      "howToPlay": [
+        "Observa cada cuerpo 3D de la bandeja y examina si tiene alguna superficie curva.",
+        "Toca el cuerpo para seleccionarlo y luego toca la caja correcta: Rueda o No rueda.",
+        "Si te equivocas, toca el cuerpo ya colocado para devolverlo y reclasificarlo.",
+        "Cuando todos los cuerpos estén en su caja, pulsa Comprobar."
+      ],
+      "skills": "Clasificar sólidos por su capacidad de rodar desarrolla la conciencia táctil y visual de las propiedades 3D: superficies curvas frente a caras planas. Esto sienta las bases del vocabulario de poliedros y la geometría sólida en 1.º-3.º.",
+      "example": "Una esfera rueda en cualquier dirección (toda la superficie es curva). Un cubo no rueda (solo tiene caras planas). Un cilindro rueda en línea recta pero no puede girar aleatoriamente como una esfera.",
+      "mistakes": "Los alumnos confunden a menudo los conos con los cubos porque tienen una punta puntiaguda, o no reconocen que los cilindros ruedan. Que el alumno haga rodar el objeto físicamente (o lo imagine) antes de clasificarlo ayuda.",
+      "faqs": [
+        {
+          "q": "¿Qué cuerpos aparecen en el juego?",
+          "a": "Cuerpos del currículo escolar: esfera, cubo, cilindro, cono, pirámide cuadrada y paralelepípedo, que representan una variedad de propiedades de superficie."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 1.º-3.º, cuando los alumnos aprenden los nombres de los sólidos 3D y sus propiedades básicas mediante clasificación práctica."
+        },
+        {
+          "q": "¿En qué se diferencia del Plegador de redes, que también usa sólidos 3D?",
+          "a": "Clasifica cuerpos clasifica sólidos terminados por sus superficies. El Plegador de redes muestra cómo una red 2D se pliega para formar el sólido: son habilidades complementarias."
+        }
+      ]
+    }
   },
   "coordinatePlot": {
     "title": "Ubica el punto",
@@ -563,7 +745,33 @@
     "instructions": "Mueve el alfiler con los botones X e Y, o arrástralo por el papel, hasta llegar a las coordenadas pedidas, y luego pulsa Comprobar.",
     "prompt": "Ubica el punto en ({x}, {y})",
     "correct": "¡Bien! El punto está en ({x}, {y}).",
-    "wrong": "Todavía no. Revisa los valores de X e Y e inténtalo otra vez."
+    "wrong": "Todavía no. Revisa los valores de X e Y e inténtalo otra vez.",
+    "seo": {
+      "intro": "Ubica el punto presenta un plano de coordenadas y pide a los alumnos que muevan un alfiler hasta las coordenadas exactas indicadas. Mover primero en X y luego en Y transforma la notación abstracta (x, y) en dos pasos concretos y medibles.",
+      "howToPlay": [
+        "Lee las coordenadas objetivo (x, y) indicadas en el enunciado.",
+        "Mueve el alfiler a lo largo del eje X usando los botones X o arrastrando horizontalmente.",
+        "Mueve el alfiler a lo largo del eje Y usando los botones Y o arrastrando verticalmente.",
+        "Cuando el alfiler coincida con el punto objetivo, pulsa Comprobar."
+      ],
+      "skills": "Leer e interpretar coordenadas en el plano cartesiano es una habilidad fundamental de 4.º-6.º. Este juego fija el orden convencional (x primero, y después) y prepara a los alumnos para representar datos, trazar polígonos y estudiar transformaciones.",
+      "example": "Para (3, 2): mueve el alfiler 3 unidades a la derecha del origen, luego 2 unidades hacia arriba. Memorizar 'primero el pasillo, luego la escalera' (x antes de y) evita la confusión más habitual.",
+      "mistakes": "El error más frecuente es invertir los ejes: mover Y primero y X después. Leer siempre la coordenada x antes de mover el alfiler y confirmar que está en la columna correcta resuelve la confusión.",
+      "faqs": [
+        {
+          "q": "¿La cuadrícula incluye coordenadas negativas?",
+          "a": "La cuadrícula base usa el primer cuadrante (x, y positivos), adecuado para 4.º-5.º. Las coordenadas negativas y los cuatro cuadrantes aparecen en niveles de dificultad superiores para 6.º."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 4.º-6.º, cuando los alumnos aprenden a leer y trazar puntos en el plano de coordenadas para el análisis de datos y la geometría."
+        },
+        {
+          "q": "¿En qué se diferencia del Geoplano, que también usa una cuadrícula?",
+          "a": "El Geoplano trata el área: los alumnos construyen polígonos contando unidades cuadradas. Ubica el punto trata la posición exacta: los alumnos leen pares de coordenadas y colocan un punto con precisión."
+        }
+      ]
+    }
   },
   "wordProblemBar": {
     "title": "Modelo de barras",
@@ -626,6 +834,32 @@
     "instructions": "Toca una pieza para levantarla y luego toca el contorno de la misma forma para colocarla. Empareja cada pieza con el contorno de la misma forma. Toca una pieza ya colocada para moverla de nuevo. Cuando termines, pulsa Comprobar. Reiniciar devuelve todas las piezas a la bandeja.",
     "prompt": "Arma la figura — cada pieza en su lugar",
     "correct": "¡Excelente! Armaste toda la figura correctamente.",
-    "wrong": "Todavía no. Faltan piezas o están en el lugar equivocado — empareja cada pieza con su contorno e inténtalo de nuevo."
+    "wrong": "Todavía no. Faltan piezas o están en el lugar equivocado — empareja cada pieza con su contorno e inténtalo de nuevo.",
+    "seo": {
+      "intro": "El Tangram digital presenta el puzle clásico de 7 piezas en pantalla: los alumnos tocan cada pieza y la colocan en el contorno correspondiente hasta completar la figura. Reconocer triángulos, cuadrados y rombos en posiciones rotadas desarrolla la percepción espacial de forma lúdica.",
+      "howToPlay": [
+        "Observa la figura completa y los contornos individuales dentro de ella.",
+        "Toca una pieza de la bandeja para seleccionarla y examina su forma.",
+        "Toca el contorno de la figura que encaje con esa pieza para colocarla.",
+        "Repite hasta que todas las piezas estén en su lugar y pulsa Comprobar."
+      ],
+      "skills": "Ensamblar un tangram desarrolla el reconocimiento de formas geométricas en distintas orientaciones, el razonamiento espacial y la perseverancia. Los alumnos de 1.º-4.º aprenden a distinguir triángulos, cuadrados y rombos independientemente de su rotación.",
+      "example": "Un triángulo grande puede caber boca arriba o boca abajo según la figura. Si la pieza no encaja, girarla mentalmente 180 grados y volver a intentarlo ayuda a encontrar la orientación correcta.",
+      "mistakes": "Los alumnos intentan colocar las piezas por color en lugar de por forma, o se bloquean cuando una pieza triangular está girada. Comparar el número de lados y los ángulos de la pieza con el contorno es más fiable que la intuición visual.",
+      "faqs": [
+        {
+          "q": "¿Las piezas hay que girarlas o voltearlas?",
+          "a": "Las piezas pueden aparecer rotadas respecto a su posición en la bandeja. El juego indica el contorno exacto, por lo que basta con hacer coincidir la forma sin necesidad de deducir manualmente la rotación."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 1.º-4.º: en los cursos inferiores para el reconocimiento básico de formas, y en los superiores para introducir conceptos de congruencia y transformaciones geométricas."
+        },
+        {
+          "q": "¿En qué se diferencia de Imagen espejo, que también implica colocar figuras espacialmente?",
+          "a": "El Tangram consiste en emparejar piezas con contornos individuales dentro de una figura compuesta. Imagen espejo aplica la regla matemática de reflexión: misma distancia a ambos lados de una línea."
+        }
+      ]
+    }
   }
 }

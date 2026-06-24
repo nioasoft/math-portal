@@ -141,7 +141,33 @@
     "correct": "Great! {kindLabel} = {target}",
     "wrong": "Almost! Resize the garden and try again",
     "kindArea": "Area",
-    "kindPerimeter": "Perimeter"
+    "kindPerimeter": "Perimeter",
+    "seo": {
+      "intro": "Area and Perimeter presents a garden you can resize by dragging its edges. Sometimes the challenge asks for a specific area, sometimes a specific perimeter — and the key discovery is that two rectangles with the same area can have completely different perimeters, and vice versa.",
+      "howToPlay": [
+        "Read whether the target is an area (square units) or a perimeter (linear units).",
+        "Drag the garden's edge or use the width and height −/+ buttons to resize it.",
+        "Watch the live readouts: area (length × width) and perimeter (2 × length + 2 × width) update together.",
+        "Press Check when the correct measurement matches the target."
+      ],
+      "skills": "Distinguishing area from perimeter is one of the most persistent confusions in primary geometry. Working with both measurements on the same shape — and seeing them change independently as you resize — builds the conceptual separation that formulas alone cannot.",
+      "example": "A 3 × 4 rectangle has area 12 and perimeter 14. A 2 × 6 rectangle also has area 12 but perimeter 16. Resizing between them on the same screen makes the contrast immediate and memorable.",
+      "mistakes": "Most students add all four side lengths for area (confusing it with perimeter) or multiply length and width for perimeter. Watching both numbers change simultaneously as the garden grows corrects both errors at once.",
+      "faqs": [
+        {
+          "q": "Can the same target area be reached with different rectangles?",
+          "a": "Yes. Many area targets have more than one solution (for example area 12 works for 2×6, 3×4, or 1×12). The game accepts any valid rectangle, making the task open-ended by design."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It suits grades 3-4, when students learn the formulas for area and perimeter of rectangles and need to see them as separate measurements."
+        },
+        {
+          "q": "How is this different from the Geoboard game, which also measures area?",
+          "a": "Area and Perimeter constrains the shape to a rectangle and focuses on comparing area vs. perimeter of the same shape. Geoboard lets students build any polygon and targets area alone — more open, different skill."
+        }
+      ]
+    }
   },
   "tenFrame": {
     "title": "Ten Frame Fill",
@@ -437,7 +463,33 @@
     "instructions": "Rotate the movable laser with the −/+ buttons (15° each) or by dragging it, until the glowing arc shows the target angle, then press Check.",
     "prompt": "Build a {angle}° angle",
     "correct": "Nice! You built a {angle}° angle.",
-    "wrong": "Not yet. Rotate the beam to the target angle and try again."
+    "wrong": "Not yet. Rotate the beam to the target angle and try again.",
+    "seo": {
+      "intro": "Angle Builder puts a protractor into a space-station setting: students rotate a laser beam until the glowing arc matches a target number of degrees. The degree reading updates live, so the abstract symbol '90°' becomes a corner you can see and feel.",
+      "howToPlay": [
+        "Read the target angle shown above the protractor.",
+        "Drag the movable laser beam, or use the −/+ buttons (15° each step), to rotate it toward the target.",
+        "Watch the glowing arc and the live degree counter as the angle opens or closes.",
+        "Press Check when the arc matches the target."
+      ],
+      "skills": "Building angles by degree measure prepares students to classify angles as acute, right, obtuse, or reflex, and to use a real protractor accurately — the core grade 4-5 geometry skill before students encounter triangles and polygon angle sums.",
+      "example": "For a 120° target the beam rotates past the right-angle mark (90°) and continues one-third of the way to a straight angle (180°). Seeing it cross 90° naturally introduces the word 'obtuse' without needing a definition first.",
+      "mistakes": "Students often confuse which arc reading to use when a protractor has two scales. The game shows only one live counter, removing that confusion and letting students focus on the relationship between rotation and degree measure.",
+      "faqs": [
+        {
+          "q": "What angle increments does Angle Builder use?",
+          "a": "Each button press moves the beam 15°, so students practise multiples of 15: 30°, 45°, 60°, 90°, 120°, 135°, 150°, and 180° — the most common angles in the curriculum."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It fits grades 4-5, when students first measure angles with a protractor and classify them by type."
+        },
+        {
+          "q": "How is this different from the Geoboard game, which also involves shape and measurement?",
+          "a": "Angle Builder focuses on a single angle's degree measure. Geoboard creates whole shapes and measures their area in square units — different geometric properties, different tools."
+        }
+      ]
+    }
   },
   "divisionShare": {
     "title": "Fair Share",
@@ -527,7 +579,33 @@
     "instructions": "Press \"Fold\" to fold the flat net into a 3D shape (it rotates so you can see every side). Count how many faces the solid has, enter the number with − / + or by dragging up, then press Check",
     "prompt": "How many faces does the solid have?",
     "correct": "Great! The solid has {count} faces",
-    "wrong": "Almost! Fold and rotate the solid, then count its faces again"
+    "wrong": "Almost! Fold and rotate the solid, then count its faces again",
+    "seo": {
+      "intro": "Net Folder shows a flat arrangement of polygons — a net — that animates and folds into a 3D solid on screen. Students rotate the result to inspect every face and count them, building the mental link between a flat drawing and the solid it becomes.",
+      "howToPlay": [
+        "Examine the flat net: count and name the polygon faces before folding.",
+        "Press Fold to watch the net close into a 3D solid.",
+        "Rotate the solid using the on-screen controls to see every face, including hidden ones.",
+        "Enter the total face count with the −/+ buttons and press Check."
+      ],
+      "skills": "Visualising how a 2D net folds into a 3D solid develops spatial reasoning and builds the vocabulary of faces, edges, and vertices. This skill underpins later work on surface area and the classification of prisms, pyramids, and polyhedra in grades 3-5.",
+      "example": "A cross-shaped net of six squares folds into a cube with 6 faces. A T-shaped net of five squares plus a triangle does not close into any standard solid — the game only presents valid nets, so students can focus on counting after folding rather than on net validity.",
+      "mistakes": "Students often miscount faces by counting the same face twice as they rotate, or by missing the base that folds underneath. Systematic rotation — top, front, sides, bottom — and keeping a tally solves both issues.",
+      "faqs": [
+        {
+          "q": "Which 3D solids appear in the game?",
+          "a": "Common curriculum solids: cubes, rectangular prisms, triangular prisms, square pyramids, and triangular pyramids — each with a different net and face count."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It suits grades 3-5, when students study 3D shapes, their properties, and the relationship between nets and solids."
+        },
+        {
+          "q": "How is this different from Shape Sorter, which also involves 3D solids?",
+          "a": "Net Folder is about the connection between a flat net and the 3D shape it becomes. Shape Sorter classifies finished solids by whether they roll. Different properties, different reasoning."
+        }
+      ]
+    }
   },
   "symmetryMirror": {
     "title": "Mirror Image",
@@ -535,7 +613,33 @@
     "instructions": "The left side is given. Tap or drag on the cells on the right side to fill the cells that mirror it across the line, then press Check. Tap a filled cell again to clear it.",
     "prompt": "Complete the mirror image",
     "correct": "Great! The mirror image is complete.",
-    "wrong": "Not a perfect mirror yet. Check which cells are missing or extra."
+    "wrong": "Not a perfect mirror yet. Check which cells are missing or extra.",
+    "seo": {
+      "intro": "Mirror Image shows one half of a butterfly wing on a grid and asks students to fill in the matching cells on the other side of the mirror line. Completing the reflection turns an abstract symmetry rule — 'each point is the same distance from the line on the other side' — into a cell-by-cell decision.",
+      "howToPlay": [
+        "Look at the filled cells on the left side of the mirror line.",
+        "For each filled cell, find its mirror position on the right: same row, same distance from the line.",
+        "Tap the matching cell on the right to fill it; tap again to clear a mistake.",
+        "Press Check when every mirror cell is filled and no extra cells are shaded."
+      ],
+      "skills": "Identifying and completing lines of symmetry supports spatial reasoning, shape classification, and art-integrated mathematics. In grades 2-4 it is the gateway concept before students extend to rotational symmetry and coordinate reflections in higher grades.",
+      "example": "If a cell sits 2 squares to the left of the mirror line in row 3, its mirror is 2 squares to the right in the same row 3. Working row by row and counting equal distances from the line removes guesswork and builds the habit of measuring symmetry rather than guessing it.",
+      "mistakes": "Students often reflect diagonally rather than horizontally across a vertical line, placing the mirror cell in the wrong row. Counting the row number first, then counting equal distance from the line, corrects this systematically.",
+      "faqs": [
+        {
+          "q": "Is the mirror line always vertical?",
+          "a": "The butterfly wing context uses a vertical mirror line, which is the most common starting point at grades 2-3. Diagonal and horizontal lines may appear at higher difficulty levels."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It fits grades 2-4, from first recognition of symmetry in shapes through accurate cell-by-cell reflection on a grid."
+        },
+        {
+          "q": "How is this different from Tangram, which also involves spatial arrangement of shapes?",
+          "a": "Mirror Image focuses on the rule of reflection: equal distance from a line on each side. Tangram is about fitting pieces into an outline without any reflection rule — pure spatial fitting."
+        }
+      ]
+    }
   },
   "hundredChart": {
     "title": "Multiples Chart",
@@ -551,7 +655,33 @@
     "instructions": "Tap pegs to place the corners of your shape — the band connects them and closes the loop. Tap the last corner again to undo it. Build any shape whose area matches the target, then press Check.",
     "prompt": "Make a shape with area {area} square units",
     "correct": "Great! You made a shape with area {area}.",
-    "wrong": "Your shape has area {area}, but the target is {target}. Try another shape."
+    "wrong": "Your shape has area {area}, but the target is {target}. Try another shape.",
+    "seo": {
+      "intro": "Geoboard lets students stretch a virtual rubber band over a peg grid to build any shape they like, as long as its area hits the target number of square units. There is no single correct shape — only shapes with the right area — so the game rewards spatial exploration over formula recall.",
+      "howToPlay": [
+        "Read the target area shown above the board.",
+        "Tap pegs to place the corners of your polygon; the band stretches between them and closes into a shape.",
+        "Watch the live area counter as the shape grows; adjust corners by tapping a peg again to undo.",
+        "Press Check when the enclosed area equals the target."
+      ],
+      "skills": "Counting square units inside irregular polygons on a grid develops area intuition that later supports the formula approach. Students discover that many different shapes can share the same area — a spatial insight that the rectangle-formula alone cannot give.",
+      "example": "For area 6 a student might build a 2×3 rectangle, an L-shape, or a triangle with base 4 and height 3. Each works, and comparing them on screen shows that area is a property of the enclosed region, not the shape's outline.",
+      "mistakes": "Students frequently trace the perimeter of the grid squares (counting edges) instead of the enclosed squares (counting area). The game counts enclosed square units precisely, so border-tracing strategies show the wrong answer and prompt recounting.",
+      "faqs": [
+        {
+          "q": "Does the shape have to be a rectangle?",
+          "a": "No. Any closed polygon whose corners sit on pegs is valid, including triangles, L-shapes, and irregular quadrilaterals — as long as the enclosed area matches the target."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It fits grades 3-5, from first encounters with area as square-unit counting through more complex polygon shapes."
+        },
+        {
+          "q": "How is this different from Volume Builder, which also counts unit cells?",
+          "a": "Geoboard works in two dimensions — area in square units on a flat grid. Volume Builder works in three dimensions, counting cubic units to fill a box. Same counting logic, different geometric dimension."
+        }
+      ]
+    }
   },
   "shapeSort": {
     "title": "Solid Sorter",
@@ -561,7 +691,33 @@
     "correct": "Well done! You sorted every solid correctly.",
     "wrong": "Not yet. Check which solids roll and which don't, then try again.",
     "binRoll": "Rolls",
-    "binFlat": "Doesn't roll"
+    "binFlat": "Doesn't roll",
+    "seo": {
+      "intro": "Solid Sorter presents a set of 3D shapes and asks one focused question: does this solid roll or stay flat? Sorting by the presence of a curved surface turns an abstract property into a physical decision students can reason about with confidence from grade 2.",
+      "howToPlay": [
+        "Look at each 3D solid and decide whether it has any curved surface.",
+        "Tap the solid to pick it up, then tap the correct bin: 'Rolls' for curved surfaces, 'Doesn't roll' for all-flat faces.",
+        "You can move a solid to a different bin before pressing Check.",
+        "Press Check when all solids are sorted."
+      ],
+      "skills": "Classifying solids by surface type builds the foundational 3D shape vocabulary — flat face, curved surface, edge, vertex — that students extend in grades 3-4 to counting faces and distinguishing prisms from pyramids and cylinders from cones.",
+      "example": "A cylinder has two flat faces (the circular ends) and one curved surface (the side), so it rolls. A cube has six flat faces and no curved surface, so it stays put. The cylinder is the most common source of surprise, as students sometimes expect it to behave like a prism.",
+      "mistakes": "Students often try to sort by shape name ('ball', 'box') without examining the surfaces. The game forces surface inspection: only looking at whether any face curves predicts the roll outcome reliably.",
+      "faqs": [
+        {
+          "q": "Which solids appear in the game?",
+          "a": "Common primary-school solids: sphere, cylinder, cone, cube, rectangular prism, triangular prism, and pyramid — covering both curved and flat-only groups."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It fits grades 2-4, from first 3D shape recognition through the formal classification of solids by their properties."
+        },
+        {
+          "q": "How is this different from Net Folder, which also uses 3D solids?",
+          "a": "Solid Sorter classifies finished shapes by a surface property (rolling). Net Folder is about how a flat net folds into a solid. Each game targets a distinct spatial concept."
+        }
+      ]
+    }
   },
   "coordinatePlot": {
     "title": "Plot the Point",
@@ -569,7 +725,33 @@
     "instructions": "Move the pin with the X and Y buttons, or drag it across the paper, until it reaches the asked coordinates, then press Check.",
     "prompt": "Plot the point at ({x}, {y})",
     "correct": "Nice! The point is at ({x}, {y}).",
-    "wrong": "Not yet. Check the X and Y values and try again."
+    "wrong": "Not yet. Check the X and Y values and try again.",
+    "seo": {
+      "intro": "Plot the Point places a pin on a coordinate grid and asks students to move it to a specific (x, y) pair. Reading and placing ordered pairs becomes a physical act of moving right along the x-axis, then up along the y-axis — the exact two-step procedure they need to remember.",
+      "howToPlay": [
+        "Read the target coordinates shown as (x, y) above the grid.",
+        "Drag the pin or use the X and Y buttons to move it: X controls the horizontal position, Y the vertical.",
+        "Count the grid squares from the origin (0, 0) to confirm the position.",
+        "Press Check when the pin is at the target point."
+      ],
+      "skills": "Plotting ordered pairs is the entry skill for graphing in grades 4-6: maps, data plots, function tables, and geometric transformations all rely on the ability to read (x, y) notation fluently and locate a point without reversing the axes.",
+      "example": "For the point (3, 5) the pin moves 3 squares right and then 5 squares up. If a student accidentally moves 5 right and 3 up, the live grid shows the pin in the wrong place — a clear prompt to re-read the order of the pair.",
+      "mistakes": "The most common error is swapping x and y: moving up first, then right. The game labels the axes and updates the coordinate display as the pin moves, making axis-reversal immediately visible before the student presses Check.",
+      "faqs": [
+        {
+          "q": "Does the grid include negative coordinates?",
+          "a": "The game can present points in any quadrant depending on the difficulty level, so students may encounter negative x or y values as they progress."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It fits grades 4-6, when students are introduced to the coordinate plane and need repeated practice locating points before moving to graphing lines or shapes."
+        },
+        {
+          "q": "How is this different from the Number Line Jump game, which also uses a linear axis?",
+          "a": "Number Line Jump moves along one axis only (a single number line). Plot the Point requires navigating two perpendicular axes simultaneously — a more complex spatial skill."
+        }
+      ]
+    }
   },
   "wordProblemBar": {
     "title": "Bar Model",
@@ -632,6 +814,66 @@
     "instructions": "Tap a piece to pick it up, then tap the outline of the same shape to place it. Match each piece to the outline with the same shape. Tap a placed piece to move it again. When you're done, press Check. Reset returns every piece to the tray.",
     "prompt": "Build the figure — each piece in its place",
     "correct": "Excellent! You assembled the whole figure correctly.",
-    "wrong": "Not yet. Some pieces are missing or in the wrong place — match each piece to its outline and try again."
+    "wrong": "Not yet. Some pieces are missing or in the wrong place — match each piece to its outline and try again.",
+    "seo": {
+      "intro": "Tangram gives students a set of classic geometric pieces — triangles, a square, and a parallelogram — and a silhouette outline to fill. Each piece must be matched to its correct slot, building shape-recognition, part-whole reasoning, and spatial fitting skills across grades 2-5.",
+      "howToPlay": [
+        "Look at the silhouette outline and identify the individual piece shapes within it.",
+        "Tap a piece from the tray to pick it up, then tap the matching outline region to place it.",
+        "If a piece does not fit a slot, try a different one — each colour and shape has exactly one matching outline.",
+        "Press Check when every outline region is filled."
+      ],
+      "skills": "Matching geometric pieces to an outline develops shape recognition (triangles of different sizes, parallelogram orientation) and spatial decomposition — the ability to see a complex shape as a sum of simpler parts, a foundation for area and fractions of shapes.",
+      "example": "The large silhouette of a running figure contains two large triangles, one medium triangle, two small triangles, a square, and a parallelogram. Identifying the parallelogram's outline slot before placing the square prevents the most common placement error.",
+      "mistakes": "Students often try to force a triangle into a slot that is the right triangle shape but the wrong size, because they focus on shape type rather than shape size. Colour-coded pieces help, but size-checking — 'is this piece big enough?' — must become the first question.",
+      "faqs": [
+        {
+          "q": "Do the pieces need to be rotated or flipped?",
+          "a": "In this version each piece matches one outline exactly without rotation or flipping, keeping the focus on shape recognition rather than spatial transformation."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It suits grades 2-5: younger students match by shape and colour, older students reason about geometry vocabulary — triangle types, parallelogram, square — as they place each piece."
+        },
+        {
+          "q": "How is Tangram different from Mirror Image, which also involves fitting shapes on a grid?",
+          "a": "Tangram is about matching discrete pieces to an outline: shape recognition and part-whole assembly. Mirror Image is about applying a reflection rule to fill individual grid cells. Completely different spatial skills."
+        }
+      ]
+    }
+  },
+  "volumeBuilder": {
+    "title": "Volume Builder",
+    "description": "Build a box of unit cubes that has the given volume",
+    "instructions": "Set the length, width and height with the − / + buttons (or drag: up = longer, right = wider; height uses the buttons). The cubes fill the tank layer by layer. When you are done, press Check",
+    "prompt": "Build a box with volume {volume}",
+    "correct": "Great! The box volume is {volume}",
+    "wrong": "Almost! Change the length, width or height and try again",
+    "seo": {
+      "intro": "Volume Builder fills a transparent tank with unit cubes layer by layer as students set length, width, and height. The target is a specific volume, and the cubes accumulate visually so the abstract formula V = l × w × h becomes a count of real objects being stacked.",
+      "howToPlay": [
+        "Read the target volume shown above the tank.",
+        "Set the length and width by dragging or using the −/+ buttons; the base layer of cubes fills the tank floor.",
+        "Set the height with the height buttons; the tank fills upward layer by layer.",
+        "Press Check when the cube count matches the target volume."
+      ],
+      "skills": "Building volume by adjusting three independent dimensions cements the idea that volume is a product of three lengths (l × w × h) rather than a property of surface. This prepares students for grade 4-6 work on composite volumes, surface area, and the distinction between 2D area and 3D volume.",
+      "example": "For volume 24 a student might set 4 × 3 × 2: four cubes wide, three deep, two layers high. Changing to 6 × 2 × 2 gives the same volume with a different shape — a direct demonstration that volume is independent of the box's proportions.",
+      "mistakes": "Students often confuse volume with surface area, counting the outside faces rather than the total cubes inside. Watching the interior fill cube by cube — and noticing that hidden inner cubes also count — addresses this directly.",
+      "faqs": [
+        {
+          "q": "Can the same volume be reached with different dimensions?",
+          "a": "Yes. Many targets have multiple valid dimension combinations. The game accepts any (l, w, h) whose product equals the target, rewarding exploration of factor triples."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It fits grades 4-6, when students first encounter volume as a measurement of three-dimensional space and learn the formula l × w × h."
+        },
+        {
+          "q": "How is Volume Builder different from Geoboard, which also involves measuring space?",
+          "a": "Geoboard measures 2D area in square units on a flat grid. Volume Builder measures 3D volume in cubic units by filling a box. The step from squares to cubes is exactly the conceptual jump these games bracket."
+        }
+      ]
+    }
   }
 }

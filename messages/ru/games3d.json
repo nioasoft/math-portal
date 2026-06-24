@@ -101,28 +101,28 @@
     "prompt": "Заполни {num}/{den} пиццы",
     "correct": "Отлично! Заполнено {num}/{den}",
     "seo": {
-      "intro": "V igre Stroitel drobey abstraktnaya drob prevraschaetsya v pirog, kotoryy zapolnyaetsya vruchnuyu. Chitaete tsel — naprimer 3/4 — i zakrashivaete sektora, poka pirog ne sovpadyot s obraztsom: simvol perestayet byt dvumya tsiframi i stanovitsya vidimym kolichestvom.",
+      "intro": "В игре «Строитель дробей» абстрактная дробь превращается в пирог, который заполняешь своими руками. Читаешь цель — например 3/4 — и закрашиваешь секторы, пока пирог не совпадёт с образцом: символ перестаёт быть двумя цифрами и становится видимым количеством.",
       "howToPlay": [
-        "Prochitayte tselevuyu drob, otobrazhyonnuyu nad pirogom.",
-        "Nazhibayte ili peretaghivayte, chtoby zakrashivat sektora, schitaya do chislitelya.",
-        "Obratite vnimanie: znamenatel opredelyaet, na skolko ravnykh chastey razrezan pirog.",
-        "Nazhmite Proverit, chtoby ubeditsya, chto zakrashennaya chast sootvetstvuyet tseli."
+        "Прочитай целевую дробь, которая отображается над пирогом.",
+        "Нажимай или перетаскивай, чтобы закрашивать секторы, считая до числителя.",
+        "Обрати внимание: знаменатель определяет, на сколько равных частей разрезан пирог.",
+        "Нажми «Проверить», чтобы убедиться, что закрашенная часть соответствует цели."
       ],
-      "skills": "Igra zakreplyaet klyuchevuyu ideyu: znamenatel zadayet razmer kazhdoy ravnoy chasti, a chislitel schitayet, skolko chastey beryotsya — fundament, neobkhodimyy do sravneniya i slozheniya drobi.",
-      "example": "Dlya 3/4 pirog delitsya na 4 ravnykh sektora, i 3 iz nikh zakrashivayutsya. Odin pustoy sektor naglyadno pokazyvayet, chto 3/4 — eto na odin sektor menshe tselogo, a ne prosto tri i chetyre.",
-      "mistakes": "Mnogie ucheniki chitayut 3/4 kak tri iz chetyryokh otdelnykh predmetov i upuskayut, chto chasti dolzhny byt ravnymi. Zapolneniye piroga trebuyet ravnykh doley i ispravlyayet samuyu rasprostranennuyu rannuyu oshibku s drobyami.",
+      "skills": "Игра закрепляет ключевую идею: знаменатель задаёт размер каждой равной части, а числитель считает, сколько частей берётся — фундамент, необходимый до сравнения и сложения дробей.",
+      "example": "Для 3/4 пирог делится на 4 равных сектора, и 3 из них закрашиваются. Один пустой сектор наглядно показывает, что 3/4 — это на один сектор меньше целого, а не просто «три и четыре».",
+      "mistakes": "Многие ученики читают 3/4 как «три из четырёх отдельных предметов» и упускают, что части должны быть равными. Заполнение пирога требует равных долей и исправляет самую распространённую раннюю ошибку с дробями.",
       "faqs": [
         {
-          "q": "Dlya kakikh klassov podkhodit Stroitel drobey?",
-          "a": "Dlya 3 i 4 klassov, gde ucheniki vpervye znakомyatsya s drobyami kak ravnymi chastyami odnogo tselogo."
+          "q": "Для каких классов подходит «Строитель дробей»?",
+          "a": "Для 3 и 4 классов, где ученики впервые знакомятся с дробями как равными частями одного целого."
         },
         {
-          "q": "Nuzhno li znat tablitsu mnozheniya pered igroy?",
-          "a": "Net. Dostatochno umet schitat i ponimat ideyu ravnogo deleniya — igra otlichno rabotayet kak pervoye znakomstvo s drobyami."
+          "q": "Нужно ли знать таблицу умножения перед игрой?",
+          "a": "Нет. Достаточно уметь считать и понимать идею равного деления — игра отлично работает как первое знакомство с дробями."
         },
         {
-          "q": "Chem eto otlichaetsya ot igry Drob na chislovoy osi?",
-          "a": "Stroitel drobey pokazyvayet drob kak chast odnogo tselogo (pirog); Drob na chislovoy osi pomeschayet tu zhe drob kak tochku mezhdu 0 i 1 — dva vzaimodopolnyayushchikh predstavleniya."
+          "q": "Чем это отличается от игры «Дробь на числовой оси»?",
+          "a": "«Строитель дробей» показывает дробь как часть одного целого (пирог); «Дробь на числовой оси» помещает ту же дробь как точку между 0 и 1 — два взаимодополняющих представления."
         }
       ]
     }
@@ -173,28 +173,28 @@
     "correct": "Отлично! Вы правильно поставили {num}/{den}",
     "wrong": "Почти! Перетащите бусину в нужное место и исправьте",
     "seo": {
-      "intro": "V igre Drob na chislovoy osi drob pokidayet pirog i okazyvaetsya na lineeke mezhdu 0 i 1. Peretaghivaya businu v tochnoe polozhenie, ucheniki obnaruzhivayut, chto drob — eto rasstoyaniye, a ne prosto podschyot zakrashennykh kuskov.",
+      "intro": "В игре «Дробь на числовой оси» дробь покидает пирог и оказывается на линейке между 0 и 1. Перетаскивая бусину в точное положение, ученики обнаруживают, что дробь — это расстояние, а не просто подсчёт закрашенных кусков.",
       "howToPlay": [
-        "Prochitayte tselevuyu drob, otobrazhyonnuyu nad chislovoy osyu.",
-        "Otreguliruyete znamenatel knopkami plyus-minus 1, chtoby razdelit os na nuzhnoe kolichestvo ravnykh otrezkov.",
-        "Peretaghite businu k nuzhnoy otmetke ili utochnite s pomoshchyu knopok plyus-minus 1 chislitelya.",
-        "Nazhmite Proverit, kogda busina zaymet tselevoe polozhenie."
+        "Прочитай целевую дробь, которая отображается над числовой осью.",
+        "Настрой знаменатель кнопками ±1, чтобы разделить ось на нужное количество равных отрезков.",
+        "Перетащи бусину к нужной отметке или уточни с помощью кнопок ±1 числителя.",
+        "Нажми «Проверить», когда бусина займёт целевое положение."
       ],
-      "skills": "Razmescheniye drobi na chislovoy osi gotovit uchenikov k sravneniyu drobi, nakhozhdeniyu ekvivalentnykh drobi i ponimaniyu drobi bolshe 1.",
-      "example": "Dlya 2/3 os delitsya na 3 ravnykh otrezka, i busina dolzhna stoyt na vtoroy otmetke. Pri izmenenii znamenatelya na 6 vidno, chto 4/6 popadayet v tu zhe tochku — ekvivalentnye drobi stanovyatsya vidimymi bez vychisleniy.",
-      "mistakes": "Ucheniki chasto stavyat businu na otmetku, sootvetstvuyushchuyu chislitelyu, ne prinimaя vo vnimanie znamenatel. Mgnovennoye razdeleniye osi delayet ochevidnym: znamenatel upravlyayet razmerom kazhdogo shaga.",
+      "skills": "Размещение дроби на числовой оси готовит учеников к сравнению дробей, нахождению эквивалентных дробей и пониманию дробей больше 1.",
+      "example": "Для 2/3 ось делится на 3 равных отрезка, и бусина должна стоять на второй отметке. При изменении знаменателя на 6 видно, что 4/6 попадает в ту же точку — эквивалентные дроби становятся видимыми без вычислений.",
+      "mistakes": "Ученики часто ставят бусину на отметку, соответствующую числителю, не принимая во внимание знаменатель. Мгновенное разделение оси делает очевидным: знаменатель управляет размером каждого шага.",
       "faqs": [
         {
-          "q": "Chto pokazyvayet chislovaya os, chego ne pokazyvayet diagramma piroga?",
-          "a": "Os pokazyvayet drob kak polozheniye mezhdu dvumya tselymi chislami — model, neobkhodimaya dlya uporyadochivaniya, slozheniya i posleduyushchego ponimaniya desyatichnykh drobi."
+          "q": "Что показывает числовая ось, чего не показывает диаграмма пирога?",
+          "a": "Ось показывает дробь как положение между двумя целыми числами — модель, необходимая для упорядочивания, сложения и последующего понимания десятичных дробей."
         },
         {
-          "q": "Dlya kakikh klassov prednaznachena igra?",
-          "a": "Dlya 3 i 4 klassov, posle togo kak ucheniki poznakомilis s drobyami kak chastyami tselogo i gotovy videt ikh na osi."
+          "q": "Для каких классов предназначена игра?",
+          "a": "Для 3 и 4 классов, после того как ученики познакомились с дробями как частями целого и готовы видеть их на оси."
         },
         {
-          "q": "Chto proiskhodit pri izmenenii znamenatelya?",
-          "a": "Os mgnovenno pererazbіvaetsya, otmetki sdvigayutsya i busina pokazyvayet svoyo polozheniye na novoy shkale — zhivaya demonstratsiya togo, kak znamenatel zadayet razmer shaga."
+          "q": "Что происходит при изменении знаменателя?",
+          "a": "Ось мгновенно переразбивается, отметки сдвигаются и бусина показывает своё положение на новой шкале — живая демонстрация того, как знаменатель задаёт размер шага."
         }
       ]
     }
@@ -399,28 +399,28 @@
     "correct": "Отлично! {rnum}/{rden} равно {num}/{den}",
     "wrong": "Почти! Построй полоску того же размера, но с другим знаменателем — весы выровняются",
     "seo": {
-      "intro": "V igre Poloski drobey ryadom lezhat dve derevyannye polosky, a mezhdu nimi — vesy. Verkhnyaya poloska pokazyvayet tselevuyu drob; zadacha — postroit nizhnyuyu polosku toy zhe dliny, no s sovershenno drugim znamenatelem. Eto osyazayemoye opredeleniye ekvivalentnykh drobi.",
+      "intro": "В игре «Полоски дробей» рядом лежат две деревянные полоски, а между ними — весы. Верхняя полоска показывает целевую дробь; задача — построить нижнюю полоску той же длины, но с совершенно другим знаменателем. Это осязаемое определение эквивалентных дробей.",
       "howToPlay": [
-        "Prochitayte drob na verkhnoy poloske.",
-        "Knopkami minus i plyus znamenatelya zadayte kolichestvo ravnykh otrezkov na nizhney poloske.",
-        "Knopkami minus i plyus chislitelya (ili peretaghivaniyem vpravo ili vlevo) zakrasite nuzhnoe kolichestvo otrezkov.",
-        "Vesy uravnovesyatsya, kogda obe polosky odinakovogo razmera — togda nazhmite Proverit."
+        "Прочитай дробь на верхней полоске.",
+        "Кнопками − и + знаменателя задай количество равных отрезков на нижней полоске.",
+        "Кнопками − и + числителя (или перетаскиванием вправо или влево) закрась нужное количество отрезков.",
+        "Весы уравновесятся, когда обе полоски одинакового размера — тогда нажми «Проверить»."
       ],
-      "skills": "Ekvivalentnye drobi — eto vorota k slozheniyu drobi s raznymi znamenatelyami i k sokrashcheniyu. Igra delayet ekvivalentnost osyazayemoy: vesy naklonyayutsya i vyravnivayutsya pri kazhdoy korrektirovke.",
-      "example": "Verkhnyaya poloska pokazyvayet 1/2. Uravnovesit eyo mozhno s pomoshchyu 2/4, 3/6 ili 4/8 — kazhdaya kombinatsiya, vyravnivayushchaya vesy, yavlyayetsya ekvivalentnoy drobyu. Neskolko resheniy na odnom ekrane prevraschayut vyuchennoe pravilo v prochuvstvovannuyu svyaz.",
-      "mistakes": "Ucheniki inogda vosproizvodyat tselevuyu drob tochka v tochku (tot zhe chislitel i znamenatel) vmesto togo, chtoby nayti ekvivalentnuyu s drugim znamenatelem. Igra trebuyet drugogo znamenatelya i blokuyet etot obkhodnoу put.",
+      "skills": "Эквивалентные дроби — это ворота к сложению дробей с разными знаменателями и к сокращению. Игра делает эквивалентность осязаемой: весы наклоняются и выравниваются при каждой корректировке.",
+      "example": "Верхняя полоска показывает 1/2. Уравновесить её можно с помощью 2/4, 3/6 или 4/8 — каждая комбинация, выравнивающая весы, является эквивалентной дробью. Несколько решений на одном экране превращают выученное правило в прочувствованную связь.",
+      "mistakes": "Ученики иногда воспроизводят целевую дробь точь-в-точь (тот же числитель и знаменатель) вместо того, чтобы найти эквивалентную с другим знаменателем. Игра требует другого знаменателя и блокирует этот обходной путь.",
       "faqs": [
         {
-          "q": "Chem Poloski drobey otlichayutsya ot trekh drugikh igr s drobyami?",
-          "a": "Poloski drobey — yedinstvennaya igra, sosredotochennaya na ekvivalentnykh drobyakh: nuzhno postroit novuyu drob, ravnuyu tselevoy, no s drugim znamenatelem. Tri drugikh igry posvyashcheny ponimaniyu odnoy drobi."
+          "q": "Чем «Полоски дробей» отличаются от трёх других игр с дробями?",
+          "a": "«Полоски дробей» — единственная игра, сосредоточенная на эквивалентных дробях: нужно построить новую дробь, равную целевой, но с другим знаменателем. Три другие игры посвящены пониманию одной дроби."
         },
         {
-          "q": "Dlya kakikh klassov prednaznachena igra?",
-          "a": "Dlya 3 i 4 klassov, kogda ucheniki ponimayut, chto predstavlyayet soboy drob, i gotovy sravnivat ikh i nakhodit ekvivalentnye formy."
+          "q": "Для каких классов предназначена игра?",
+          "a": "Для 3 и 4 классов, когда ученики понимают, что представляет собой дробь, и готовы сравнивать их и находить эквивалентные формы."
         },
         {
-          "q": "Kak vesy pomogayut v obuchenii?",
-          "a": "Vesy dayut mgnovennuyu vizualnuyu obratnuyu svyaz: naklonyayutsya, kogda polosky neravny, i vyravnivayutsya, kogda sovpadayut — bez kakikh-libo dogadok."
+          "q": "Как весы помогают в обучении?",
+          "a": "Весы дают мгновенную визуальную обратную связь: наклоняются, когда полоски неравны, и выравниваются, когда совпадают — без каких-либо догадок."
         }
       ]
     }
@@ -481,28 +481,28 @@
     "correct": "Отлично! Вы закрасили {n} из {d}",
     "wrong": "Почти! Разрежьте и закрасьте нужное число частей и исправьте",
     "seo": {
-      "intro": "V igre Narezka drobi igrok sam vybirayet, na skolko kuskov narezat pitstsu i skolko kuskov zakrasit. Drob ne zadayotsya gotovoy — ona stroitsya s nulya: snachala znamenatel, potom chislitel.",
+      "intro": "В игре «Нарезка дроби» игрок сам выбирает, на сколько кусков нарезать пиццу и сколько кусков закрасить. Дробь не задаётся готовой — она строится с нуля: сначала знаменатель, потом числитель.",
       "howToPlay": [
-        "Prochitayte tselevuyu drob na ekrane.",
-        "Knopkami minus i plyus znamenatelya zadayte, na skolko ravnykh chastey delitsya pitstsa.",
-        "Knopkami minus i plyus chislitelya (ili peretaghivaniyem) zakrasite nuzhnoe kolichestvo chastey.",
-        "Nazhmite Proverit, chtoby ubeditsya, chto postroennaya drob sovpadayet s tselyu."
+        "Прочитай целевую дробь на экране.",
+        "Кнопками − и + знаменателя задай, на сколько равных частей делится пицца.",
+        "Кнопками − и + числителя (или перетаскиванием) закрась нужное количество частей.",
+        "Нажми «Проверить», чтобы убедиться, что построенная дробь совпадает с целью."
       ],
-      "skills": "Razdeleniye shaga narezki (znamenatel) i shaga zakrashivaniya (chislitel) zakreplyayet logicheskuyu posledovatelnost: snachala delim tseloye na ravnye chasti, zatem vybiraem, skolko chastey vzya.",
-      "example": "Dlya 3/5 snachala narezayut na 5 chastey, zatem zakrashivayut 3. Izmeneniye znamenatelya na 4 menyayet razmer kazhdoy chasti i trebuyet povtornogo zakrashivaniya — eto naglyadno pokazyvayet, pochemu chislitel i znamenatel svyazany.",
-      "mistakes": "Ucheniki sklonny zakrashivat chasti po vizualnomu razmeru, a ne po schyotu. Neobkhodimost snachala ustanovit znamenatel lomаyet etu privychku i formiruyet sistematicheskoye myshleniye.",
+      "skills": "Разделение шага нарезки (знаменатель) и шага закрашивания (числитель) закрепляет логическую последовательность: сначала делим целое на равные части, затем выбираем, сколько частей взять.",
+      "example": "Для 3/5 сначала нарезают на 5 частей, затем закрашивают 3. Изменение знаменателя на 4 меняет размер каждой части и требует повторного закрашивания — это наглядно показывает, почему числитель и знаменатель связаны.",
+      "mistakes": "Ученики склонны закрашивать части по визуальному размеру, а не по счёту. Необходимость сначала установить знаменатель ломает эту привычку и формирует систематическое мышление.",
       "faqs": [
         {
-          "q": "Chem Narezka drobi otlichaetsya ot Stroitelya drobey?",
-          "a": "V Narezke uchenik nastraivayet i znamenatel i chislitel; v Stroitele znamenatel fiksirovаn i nuzhno tolko zakrashivat. Narezka vvodit polnyy protsess postroyeniya drobi."
+          "q": "Чем «Нарезка дроби» отличается от «Строителя дробей»?",
+          "a": "В «Нарезке» ученик настраивает и знаменатель, и числитель; в «Строителе» знаменатель фиксирован и нужно только закрашивать. «Нарезка» вводит полный процесс построения дроби."
         },
         {
-          "q": "Dlya kakikh klassov prednaznachena igra?",
-          "a": "Dlya 3 i 4 klassov, v ideale posle togo kak ucheniki poznakомilis s ponyatiyem drobi i gotovy stroit eyo samostoyatelno."
+          "q": "Для каких классов предназначена игра?",
+          "a": "Для 3 и 4 классов, в идеале после того как ученики познакомились с понятием дроби и готовы строить её самостоятельно."
         },
         {
-          "q": "Mozhno li poluchit odnu i tu zhe tsel pri raznom kolichestve kuskov?",
-          "a": "Da — naprimer 2/4 i 1/2 zakrashivayut odinakovo ploshaд. Eto estestvennoye otkrytiye otkryvayet obsuzhdeniye ekvivalentnykh drobi bez dopolnitelnykh instruktsiy."
+          "q": "Можно ли получить одну и ту же цель при разном количестве кусков?",
+          "a": "Да — например, 2/4 и 1/2 закрашивают одинаковую площадь. Это естественное открытие открывает обсуждение эквивалентных дробей без дополнительных инструкций."
         }
       ]
     }

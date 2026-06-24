@@ -101,28 +101,28 @@
     "prompt": "Fülle {num}/{den} der Pizza",
     "correct": "Super! Du hast {num}/{den} gefüllt",
     "seo": {
-      "intro": "Beim Spiel Bruchbauer wird ein abstrakter Bruch zu einem Kuchen, den man selbst befuellt. Man liest ein Ziel wie 3/4, schraffiert dann Stuecke, bis der Kuchen passt — und ploetzlich ist das Symbol keine zwei Zahlen mehr, sondern eine sichtbare Menge.",
+      "intro": "Beim Spiel Bruchbauer wird ein abstrakter Bruch zu einem Kuchen, den man selbst befüllt. Man liest ein Ziel wie 3/4, schraffiert dann Stücke, bis der Kuchen passt — und plötzlich ist das Symbol keine zwei Zahlen mehr, sondern eine sichtbare Menge.",
       "howToPlay": [
-        "Lies den Zielbruch, der ueber dem Kuchen erscheint.",
-        "Tippe oder ziehe, um Stuecke zu schraffieren — zaehle dabei bis zum Zaehler.",
-        "Achte darauf, dass der Nenner bestimmt, in wie viele gleiche Stuecke das Ganze geschnitten wird.",
-        "Druecke auf Pruefen, um zu bestaetigen, dass der schraffierte Teil dem Zielbruch entspricht."
+        "Lies den Zielbruch, der über dem Kuchen erscheint.",
+        "Tippe oder ziehe, um Stücke zu schraffieren — zähle dabei bis zum Zähler.",
+        "Achte darauf, dass der Nenner bestimmt, in wie viele gleiche Stücke das Ganze geschnitten wird.",
+        "Drücke auf Prüfen, um zu bestätigen, dass der schraffierte Teil dem Zielbruch entspricht."
       ],
-      "skills": "Das Spiel festigt die Kernidee: Der Nenner benennt die Groesse jedes gleichen Teils, der Zaehler zaehlt, wie viele Teile genommen werden — die Grundlage, die Schueler brauchen, bevor sie Brueche vergleichen oder addieren.",
-      "example": "Bei 3/4 wird der Kuchen in 4 gleiche Stuecke geschnitten und 3 werden schraffiert. Das eine leere Stueck macht sofort klar, dass 3/4 ein Stueck weniger als ein Ganzes sind — nicht nur drei und vier.",
-      "mistakes": "Viele Schueler lesen 3/4 als drei von vier getrennten Dingen und uebersehen, dass die Teile gleich gross sein muessen. Der Kuchen erzwingt gleiche Stuecke und korrigiert den haeufigsten fruehen Bruchfehler.",
+      "skills": "Das Spiel festigt die Kernidee: Der Nenner benennt die Größe jedes gleichen Teils, der Zähler zählt, wie viele Teile genommen werden — die Grundlage, die Schüler brauchen, bevor sie Brüche vergleichen oder addieren.",
+      "example": "Bei 3/4 wird der Kuchen in 4 gleiche Stücke geschnitten und 3 werden schraffiert. Das eine leere Stück macht sofort klar, dass 3/4 ein Stück weniger als ein Ganzes sind — nicht nur drei und vier.",
+      "mistakes": "Viele Schüler lesen 3/4 als drei von vier getrennten Dingen und übersehen, dass die Teile gleich groß sein müssen. Der Kuchen erzwingt gleiche Stücke und korrigiert den häufigsten frühen Bruchfehler.",
       "faqs": [
         {
-          "q": "Fuer welche Klassenstufen ist Bruchbauer geeignet?",
-          "a": "Das Spiel eignet sich fuer die Klassen 3 und 4, in denen Schueler Brueche erstmals als gleiche Teile eines Ganzen kennenlernen."
+          "q": "Für welche Klassenstufen ist Bruchbauer geeignet?",
+          "a": "Das Spiel eignet sich für die Klassen 3 und 4, in denen Schüler Brüche erstmals als gleiche Teile eines Ganzen kennenlernen."
         },
         {
-          "q": "Muessen Schueler vor diesem Spiel das Einmaleins kennen?",
-          "a": "Nein. Bruchbauer erfordert nur Zaehlen und die Idee des gleichmaessigen Teilens — ideal als erste Einfuehrung in Brueche."
+          "q": "Müssen Schüler vor diesem Spiel das Einmaleins kennen?",
+          "a": "Nein. Bruchbauer erfordert nur Zählen und die Idee des gleichmäßigen Teilens — ideal als erste Einführung in Brüche."
         },
         {
           "q": "Was ist der Unterschied zum Spiel Bruch auf dem Zahlenstrahl?",
-          "a": "Bruchbauer zeigt einen Bruch als Teil eines Ganzen (Kuchen); Bruch auf dem Zahlenstrahl setzt denselben Bruch als Punkt zwischen 0 und 1 — zwei sich ergaenzende Modelle."
+          "a": "Bruchbauer zeigt einen Bruch als Teil eines Ganzen (Kuchen); Bruch auf dem Zahlenstrahl setzt denselben Bruch als Punkt zwischen 0 und 1 — zwei sich ergänzende Modelle."
         }
       ]
     }
@@ -173,27 +173,27 @@
     "correct": "Super! Du hast {num}/{den} richtig platziert",
     "wrong": "Fast! Zieh die Perle an die richtige Stelle und korrigiere",
     "seo": {
-      "intro": "Beim Spiel Bruch auf dem Zahlenstrahl verlaesst der Bruch den Kuchen und landet auf einem Lineal zwischen 0 und 1. Indem man eine Perle an die genaue Stelle zieht, entdeckt man, dass ein Bruch eine Entfernung ist — kein blosses Zaehlen von Stuecken.",
+      "intro": "Beim Spiel Bruch auf dem Zahlenstrahl verlässt der Bruch den Kuchen und landet auf einem Lineal zwischen 0 und 1. Indem man eine Perle an die genaue Stelle zieht, entdeckt man, dass ein Bruch eine Entfernung ist — kein bloßes Zählen von Stücken.",
       "howToPlay": [
-        "Lies den Zielbruch, der ueber dem Zahlenstrahl angezeigt wird.",
-        "Passe den Nenner mit den plus-minus-1-Schaltflaechen an, um den Strahl in die richtige Anzahl gleicher Abschnitte zu unterteilen.",
-        "Ziehe die Perle auf den richtigen Strich, oder korrigiere mit den plus-minus-1-Schaltflaechen am Zaehler.",
-        "Druecke auf Pruefen, wenn die Perle an der Zielposition sitzt."
+        "Lies den Zielbruch, der über dem Zahlenstrahl angezeigt wird.",
+        "Passe den Nenner mit den ±1-Schaltflächen an, um den Strahl in die richtige Anzahl gleicher Abschnitte zu unterteilen.",
+        "Ziehe die Perle auf den richtigen Strich, oder korrigiere mit den ±1-Schaltflächen am Zähler.",
+        "Drücke auf Prüfen, wenn die Perle an der Zielposition sitzt."
       ],
-      "skills": "Brueche auf einem Zahlenstrahl einzuordnen bereitet Schueler auf das Vergleichen von Bruechen, das Finden gleichwertiger Brueche und das Verstehen von Bruechen groesser als 1 vor.",
-      "example": "Bei 2/3 wird der Strahl in 3 gleiche Abschnitte unterteilt und die Perle gehoert auf den zweiten Strich. Wechselt man den Nenner auf 6, landet 4/6 auf demselben Punkt — gleichwertige Brueche werden ohne Rechnung sichtbar.",
-      "mistakes": "Schueler setzen die Perle oft auf den Strich, dessen Nummer dem Zaehler entspricht, ohne den Nenner zu beachten. Die Live-Unterteilung zeigt klar: Der Nenner steuert die Schrittgroesse.",
+      "skills": "Brüche auf einem Zahlenstrahl einzuordnen bereitet Schüler auf das Vergleichen von Brüchen, das Finden gleichwertiger Brüche und das Verstehen von Brüchen größer als 1 vor.",
+      "example": "Bei 2/3 wird der Strahl in 3 gleiche Abschnitte unterteilt und die Perle gehört auf den zweiten Strich. Wechselt man den Nenner auf 6, landet 4/6 auf demselben Punkt — gleichwertige Brüche werden ohne Rechnung sichtbar.",
+      "mistakes": "Schüler setzen die Perle oft auf den Strich, dessen Nummer dem Zähler entspricht, ohne den Nenner zu beachten. Die Live-Unterteilung zeigt klar: Der Nenner steuert die Schrittgröße.",
       "faqs": [
         {
           "q": "Was lehrt der Zahlenstrahl, was ein Kuchendiagramm nicht lehrt?",
-          "a": "Der Zahlenstrahl zeigt einen Bruch als Position zwischen zwei ganzen Zahlen — das Modell, das Schueler zum Ordnen, Addieren und spaeterem Verstehen von Dezimalzahlen benoetigen."
+          "a": "Der Zahlenstrahl zeigt einen Bruch als Position zwischen zwei ganzen Zahlen — das Modell, das Schüler zum Ordnen, Addieren und späterem Verstehen von Dezimalzahlen benötigen."
         },
         {
-          "q": "Fuer welche Klassen ist das Spiel gedacht?",
-          "a": "Es eignet sich fuer Klasse 3 bis 4, nachdem Schueler Brueche als Teile eines Ganzen kennengelernt haben und bereit sind, sie auf einem Strahl zu sehen."
+          "q": "Für welche Klassen ist das Spiel gedacht?",
+          "a": "Es eignet sich für Klasse 3 bis 4, nachdem Schüler Brüche als Teile eines Ganzen kennengelernt haben und bereit sind, sie auf einem Strahl zu sehen."
         },
         {
-          "q": "Was passiert, wenn ich den Nenner aendere?",
+          "q": "Was passiert, wenn ich den Nenner ändere?",
           "a": "Der Strahl wird sofort neu unterteilt, die Striche verschieben sich und die Perle zeigt ihre Position auf der neuen Skala — eine Live-Demonstration der Wirkung des Nenners."
         }
       ]
@@ -399,28 +399,28 @@
     "correct": "Toll! {rnum}/{rden} ist gleich {num}/{den}",
     "wrong": "Fast! Baue einen Streifen gleicher Größe, aber mit anderem Nenner — die Waage pendelt sich ein",
     "seo": {
-      "intro": "Beim Spiel Bruchstreifen liegen zwei Holzstreifen nebeneinander, mit einer Waage dazwischen. Der obere Streifen zeigt den Zielbruch; deine Aufgabe ist es, einen unteren Streifen mit exakt derselben Laenge aufzubauen — aber mit einem ganz anderen Nenner. Das ist die greifbare Definition gleichwertiger Brueche.",
+      "intro": "Beim Spiel Bruchstreifen liegen zwei Holzstreifen nebeneinander, mit einer Waage dazwischen. Der obere Streifen zeigt den Zielbruch; deine Aufgabe ist es, einen unteren Streifen mit exakt derselben Länge aufzubauen — aber mit einem ganz anderen Nenner. Das ist die greifbare Definition gleichwertiger Brüche.",
       "howToPlay": [
         "Lies den Bruch auf dem oberen Streifen.",
-        "Stelle mit den Nenner-Schaltflaechen minus und plus ein, wie viele gleiche Abschnitte der untere Streifen erhalten soll.",
-        "Stelle mit den Zaehler-Schaltflaechen minus und plus (oder Ziehen) die Anzahl der eingefaerbten Abschnitte ein.",
-        "Die Waage balanciert sich aus, wenn beide Streifen gleich gross sind — druecke dann Pruefen."
+        "Stelle mit den Nenner-Schaltflächen − und + ein, wie viele gleiche Abschnitte der untere Streifen erhalten soll.",
+        "Stelle mit den Zähler-Schaltflächen − und + (oder Ziehen) die Anzahl der eingefärbten Abschnitte ein.",
+        "Die Waage balanciert sich aus, wenn beide Streifen gleich groß sind — drücke dann Prüfen."
       ],
-      "skills": "Gleichwertige Brueche sind das Tor zum Addieren von Bruechen mit ungleichen Nennern und zum Kuerzen. Das Spiel macht Gleichwertigkeit spuerbar: Die Waage kippt und balanciert bei jedem Anpassen.",
-      "example": "Der obere Streifen zeigt 1/2. Man kann ihn mit 2/4, 3/6 oder 4/8 ausbalancieren — jede Kombination, die die Waage ausgleicht, ist ein gleichwertiger Bruch. Mehrere Loesungen auf einem Bildschirm macht aus einer auswendig gelernten Regel eine erlebte Beziehung.",
-      "mistakes": "Schueler bauen manchmal den Zielbruch exakt nach (gleicher Zaehler, gleicher Nenner) statt einen gleichwertigen Bruch mit anderem Nenner zu finden. Das Spiel fordert einen anderen Nenner und sperrt damit diese Abkuerzung.",
+      "skills": "Gleichwertige Brüche sind das Tor zum Addieren von Brüchen mit ungleichen Nennern und zum Kürzen. Das Spiel macht Gleichwertigkeit spürbar: Die Waage kippt und balanciert bei jedem Anpassen.",
+      "example": "Der obere Streifen zeigt 1/2. Man kann ihn mit 2/4, 3/6 oder 4/8 ausbalancieren — jede Kombination, die die Waage ausgleicht, ist ein gleichwertiger Bruch. Mehrere Lösungen auf einem Bildschirm macht aus einer auswendig gelernten Regel eine erlebte Beziehung.",
+      "mistakes": "Schüler bauen manchmal den Zielbruch exakt nach (gleicher Zähler, gleicher Nenner) statt einen gleichwertigen Bruch mit anderem Nenner zu finden. Das Spiel fordert einen anderen Nenner und sperrt damit diese Abkürzung.",
       "faqs": [
         {
           "q": "Wie unterscheiden sich Bruchstreifen von den anderen drei Bruchspielen?",
-          "a": "Bruchstreifen ist das einzige Spiel, das sich auf gleichwertige Brueche konzentriert — einen neuen Bruch mit anderem Nenner zu bauen, der dem Ziel entspricht. Die anderen drei Spiele befassen sich mit dem Verstehen eines einzelnen Bruchs."
+          "a": "Bruchstreifen ist das einzige Spiel, das sich auf gleichwertige Brüche konzentriert — einen neuen Bruch mit anderem Nenner zu bauen, der dem Ziel entspricht. Die anderen drei Spiele befassen sich mit dem Verstehen eines einzelnen Bruchs."
         },
         {
-          "q": "Fuer welche Klassen ist das Spiel geeignet?",
-          "a": "Klasse 3 bis 4, sobald Schueler verstehen, was ein Bruch darstellt, und bereit sind, Brueche zu vergleichen und gleichwertige Formen zu finden."
+          "q": "Für welche Klassen ist das Spiel geeignet?",
+          "a": "Klasse 3 bis 4, sobald Schüler verstehen, was ein Bruch darstellt, und bereit sind, Brüche zu vergleichen und gleichwertige Formen zu finden."
         },
         {
           "q": "Wie hilft die Waage beim Lernen?",
-          "a": "Die Waage gibt sofortiges visuelles Feedback: Sie kippt, wenn die Streifen ungleich sind, und balanciert sich, wenn sie uebereinstimmen — ohne Raten."
+          "a": "Die Waage gibt sofortiges visuelles Feedback: Sie kippt, wenn die Streifen ungleich sind, und balanciert sich, wenn sie übereinstimmen — ohne Raten."
         }
       ]
     }
@@ -481,28 +481,28 @@
     "correct": "Super! Du hast {n} von {d} gefärbt",
     "wrong": "Fast! Schneide und färbe die richtige Anzahl Teile und korrigiere",
     "seo": {
-      "intro": "Beim Spiel Bruch Schneiden bestimmt der Spieler selbst, in wie viele Stuecke die Pizza geschnitten wird — und wie viele Stuecke er einfarbt. Der Bruch wird nicht vorgegeben, sondern von Grund auf aufgebaut: erst Nenner, dann Zaehler.",
+      "intro": "Beim Spiel Bruch-Schneider bestimmt der Spieler selbst, in wie viele Stücke die Pizza geschnitten wird — und wie viele Stücke er einfärbt. Der Bruch wird nicht vorgegeben, sondern von Grund auf aufgebaut: erst Nenner, dann Zähler.",
       "howToPlay": [
         "Lies den angezeigten Zielbruch.",
-        "Stelle mit den Nenner-Schaltflaechen minus und plus ein, in wie viele gleiche Stuecke die Pizza geteilt wird.",
-        "Stelle mit den Zaehler-Schaltflaechen minus und plus (oder Ziehen) ein, wie viele Stuecke eingefaerbt werden.",
-        "Druecke auf Pruefen, um zu bestaetigen, dass der aufgebaute Bruch dem Ziel entspricht."
+        "Stelle mit den Nenner-Schaltflächen − und + ein, in wie viele gleiche Stücke die Pizza geteilt wird.",
+        "Stelle mit den Zähler-Schaltflächen − und + (oder Ziehen) ein, wie viele Stücke eingefärbt werden.",
+        "Drücke auf Prüfen, um zu bestätigen, dass der aufgebaute Bruch dem Ziel entspricht."
       ],
-      "skills": "Die Trennung von Schneidschritt (Nenner) und Faerbeschritt (Zaehler) festigt die logische Reihenfolge: erst das Ganze in gleiche Teile zerlegen, dann entscheiden, wie viele Teile zu nehmen sind.",
-      "example": "Bei 3/5 schneidet man zunaechst in 5 Stuecke, dann faerbt man 3. Aendert man den Nenner auf 4, veraendern sich die Stueckgroessen und erfordern neues Einfarben — das zeigt anschaulich, warum Zaehler und Nenner zusammenhaengen.",
-      "mistakes": "Schueler neigen dazu, Stuecke nach ihrer optischen Groesse einzufaerben statt zu zaehlen. Indem sie den Nenner vor dem Zaehler einstellen muessen, wird diese Gewohnheit unterbrochen.",
+      "skills": "Die Trennung von Schneidschritt (Nenner) und Färbeschritt (Zähler) festigt die logische Reihenfolge: erst das Ganze in gleiche Teile zerlegen, dann entscheiden, wie viele Teile zu nehmen sind.",
+      "example": "Bei 3/5 schneidet man zunächst in 5 Stücke, dann färbt man 3. Ändert man den Nenner auf 4, verändern sich die Stückgrößen und erfordern neues Einfärben — das zeigt anschaulich, warum Zähler und Nenner zusammenhängen.",
+      "mistakes": "Schüler neigen dazu, Stücke nach ihrer optischen Größe einzufärben statt zu zählen. Indem sie den Nenner vor dem Zähler einstellen müssen, wird diese Gewohnheit unterbrochen.",
       "faqs": [
         {
-          "q": "Was unterscheidet Bruch Schneiden von Bruchbauer?",
-          "a": "Bei Bruch Schneiden stellt der Spieler sowohl Nenner als auch Zaehler ein; bei Bruchbauer ist der Nenner fest und es wird nur gefaerbt. Bruch Schneiden fuehrt den gesamten Aufbauprozess ein."
+          "q": "Was unterscheidet Bruch-Schneider von Bruchbauer?",
+          "a": "Bei Bruch-Schneider stellt der Spieler sowohl Nenner als auch Zähler ein; bei Bruchbauer ist der Nenner fest und es wird nur schraffiert. Bruch-Schneider führt den gesamten Aufbauprozess ein."
         },
         {
-          "q": "Fuer welche Klassen ist das Spiel geeignet?",
-          "a": "Klasse 3 bis 4, idealerweise nachdem die Schueler den Bruchbegriff kennengelernt haben und bereit sind, selbst einen Bruch aufzubauen."
+          "q": "Für welche Klassen ist das Spiel geeignet?",
+          "a": "Klasse 3 bis 4, idealerweise nachdem die Schüler den Bruchbegriff kennengelernt haben und bereit sind, selbst einen Bruch aufzubauen."
         },
         {
-          "q": "Kann dasselbe Ziel mit unterschiedlich vielen Stuecken erreicht werden?",
-          "a": "Ja — zum Beispiel ergeben 2/4 und 1/2 dieselbe visuelle Flaeche. Diese Entdeckung oeffnet ein natuerliches Gespraech ueber gleichwertige Brueche."
+          "q": "Kann dasselbe Ziel mit unterschiedlich vielen Stücken erreicht werden?",
+          "a": "Ja — zum Beispiel ergeben 2/4 und 1/2 dieselbe visuelle Fläche. Diese Entdeckung öffnet ein natürliches Gespräch über gleichwertige Brüche."
         }
       ]
     }

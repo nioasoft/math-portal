@@ -101,28 +101,28 @@
     "prompt": "Rellena {num}/{den} de la pizza",
     "correct": "¡Genial! Rellenaste {num}/{den}",
     "seo": {
-      "intro": "En el juego Constructor de Fracciones la fraccion abstracta se convierte en un pastel que tu mismo rellenas. Lees un objetivo como 3/4 y sombrean sectores hasta que el pastel coincide — el simbolo deja de ser dos numeros y se convierte en una cantidad visible.",
+      "intro": "En el juego Constructor de Fracciones la fracción abstracta se convierte en un pastel que tú mismo rellenas. Lees un objetivo como 3/4 y sombrean sectores hasta que el pastel coincide — el símbolo deja de ser dos números y se convierte en una cantidad visible.",
       "howToPlay": [
-        "Lee la fraccion objetivo que aparece sobre el pastel.",
+        "Lee la fracción objetivo que aparece sobre el pastel.",
         "Toca o arrastra para sombrear sectores, contando hasta el numerador.",
-        "Observa que el denominador decide en cuantas partes iguales se divide el todo.",
-        "Pulsa Comprobar para confirmar que la parte sombreada coincide con la fraccion objetivo."
+        "Observa que el denominador decide en cuántas partes iguales se divide el todo.",
+        "Pulsa Comprobar para confirmar que la parte sombreada coincide con la fracción objetivo."
       ],
-      "skills": "El juego consolida la idea central: el denominador nombra el tamano de cada parte igual y el numerador cuenta cuantas se toman — la base que los alumnos necesitan antes de comparar o sumar fracciones.",
-      "example": "Para 3/4 el pastel se divide en 4 sectores iguales y se sombrean 3. Ver el unico sector vacio hace evidente que 3/4 es un sector menos que un entero, no solo tres y cuatro.",
-      "mistakes": "Muchos alumnos leen 3/4 como tres de cuatro cosas separadas y no captan que las partes deben ser iguales. Construir el pastel obliga a usar partes iguales y corrige el error mas comun con fracciones.",
+      "skills": "El juego consolida la idea central: el denominador nombra el tamaño de cada parte igual y el numerador cuenta cuántas se toman — la base que los alumnos necesitan antes de comparar o sumar fracciones.",
+      "example": "Para 3/4 el pastel se divide en 4 sectores iguales y se sombrean 3. Ver el único sector vacío hace evidente que 3/4 es un sector menos que un entero, no solo tres y cuatro.",
+      "mistakes": "Muchos alumnos leen 3/4 como tres de cuatro cosas separadas y no captan que las partes deben ser iguales. Construir el pastel obliga a usar partes iguales y corrige el error más común con fracciones.",
       "faqs": [
         {
-          "q": "Para que cursos es Constructor de Fracciones?",
+          "q": "¿Para qué cursos es Constructor de Fracciones?",
           "a": "Es adecuado para los cursos 3 y 4, donde los alumnos conocen las fracciones por primera vez como partes iguales de un todo."
         },
         {
-          "q": "Necesitan saber multiplicar antes de jugar?",
-          "a": "No. Solo se necesita contar y la idea de reparto igual, por lo que es ideal como primera introduccion a las fracciones."
+          "q": "¿Necesitan saber multiplicar antes de jugar?",
+          "a": "No. Solo se necesita contar y la idea de reparto igual, por lo que es ideal como primera introducción a las fracciones."
         },
         {
-          "q": "En que se diferencia del juego Fraccion en la recta numerica?",
-          "a": "Constructor de Fracciones muestra la fraccion como parte de un todo (pastel); Fraccion en la recta numerica situa esa misma fraccion como un punto entre 0 y 1 — dos modelos complementarios."
+          "q": "¿En qué se diferencia del juego Fracción en la recta numérica?",
+          "a": "Constructor de Fracciones muestra la fracción como parte de un todo (pastel); Fracción en la recta numérica sitúa esa misma fracción como un punto entre 0 y 1 — dos modelos complementarios."
         }
       ]
     }
@@ -173,28 +173,28 @@
     "correct": "¡Genial! Colocaste {num}/{den} correctamente",
     "wrong": "¡Casi! Arrastra la cuenta al lugar correcto y corrige",
     "seo": {
-      "intro": "En Fraccion en la recta numerica la fraccion ya no es un trozo de pastel — es un punto en una regla que va de 0 a 1. Al arrastrar una cuenta hasta la posicion exacta, los alumnos descubren que una fraccion es una distancia, no solo una cantidad de trozos.",
+      "intro": "En Fracción en la recta numérica la fracción ya no es un trozo de pastel — es un punto en una regla que va de 0 a 1. Al arrastrar una cuenta hasta la posición exacta, los alumnos descubren que una fracción es una distancia, no solo una cantidad de trozos.",
       "howToPlay": [
-        "Lee la fraccion objetivo que aparece sobre la recta numerica.",
-        "Ajusta el denominador con los botones mas o menos 1 para subdividir la recta en el numero correcto de intervalos.",
-        "Arrastra la cuenta hasta la marca correcta, o afina con los botones mas o menos 1 del numerador.",
-        "Pulsa Comprobar cuando la cuenta este en la posicion objetivo."
+        "Lee la fracción objetivo que aparece sobre la recta numérica.",
+        "Ajusta el denominador con los botones ±1 para subdividir la recta en el número correcto de intervalos.",
+        "Arrastra la cuenta hasta la marca correcta, o afina con los botones ±1 del numerador.",
+        "Pulsa Comprobar cuando la cuenta esté en la posición objetivo."
       ],
-      "skills": "Situar fracciones en una recta numerica prepara a los alumnos para ordenarlas, encontrar fracciones equivalentes y comprender mas adelante fracciones mayores que 1.",
+      "skills": "Situar fracciones en una recta numérica prepara a los alumnos para ordenarlas, encontrar fracciones equivalentes y comprender más adelante fracciones mayores que 1.",
       "example": "Para 2/3 la recta se divide en 3 intervalos iguales y la cuenta va sobre la segunda marca. Cambiando el denominador a 6 se ve que 4/6 cae en el mismo punto — las fracciones equivalentes se hacen visibles sin calcular.",
-      "mistakes": "Los alumnos suelen colocar la cuenta en la marca cuyo numero coincide con el numerador, sin tener en cuenta el denominador. La subdivision en tiempo real aclara que el denominador controla el tamano de cada paso.",
+      "mistakes": "Los alumnos suelen colocar la cuenta en la marca cuyo número coincide con el numerador, sin tener en cuenta el denominador. La subdivisión en tiempo real aclara que el denominador controla el tamaño de cada paso.",
       "faqs": [
         {
-          "q": "Que ensena la recta numerica que no ensena el diagrama de pastel?",
-          "a": "La recta muestra la fraccion como una posicion entre dos numeros enteros — el modelo que los alumnos necesitan para ordenar, sumar y entender mas tarde los decimales."
+          "q": "¿Qué enseña la recta numérica que no enseña el diagrama de pastel?",
+          "a": "La recta muestra la fracción como una posición entre dos números enteros — el modelo que los alumnos necesitan para ordenar, sumar y entender más tarde los decimales."
         },
         {
-          "q": "Para que cursos es este juego?",
-          "a": "Es adecuado para los cursos 3 y 4, despues de que los alumnos hayan conocido las fracciones como partes de un todo y esten listos para verlas en una recta."
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para los cursos 3 y 4, después de que los alumnos hayan conocido las fracciones como partes de un todo y estén listos para verlas en una recta."
         },
         {
-          "q": "Que pasa cuando cambio el denominador?",
-          "a": "La recta se subdivide al instante, las marcas se desplazan y la cuenta muestra su posicion en la nueva escala — una demostracion en vivo de como actua el denominador."
+          "q": "¿Qué pasa cuando cambio el denominador?",
+          "a": "La recta se subdivide al instante, las marcas se desplazan y la cuenta muestra su posición en la nueva escala — una demostración en vivo de cómo actúa el denominador."
         }
       ]
     }
@@ -399,28 +399,28 @@
     "correct": "¡Genial! {rnum}/{rden} es igual a {num}/{den}",
     "wrong": "¡Casi! Construye una tira del mismo tamaño pero con un denominador diferente — la balanza se nivelará",
     "seo": {
-      "intro": "En Tiras de Fracciones hay dos tiras de madera una al lado de la otra con una balanza entre ellas. La tira superior muestra la fraccion objetivo; tu tarea es construir una tira inferior de exactamente la misma longitud pero con un denominador completamente distinto — la definicion concreta de fracciones equivalentes.",
+      "intro": "En Tiras de Fracciones hay dos tiras de madera una al lado de la otra con una balanza entre ellas. La tira superior muestra la fracción objetivo; tu tarea es construir una tira inferior de exactamente la misma longitud pero con un denominador completamente distinto — la definición concreta de fracciones equivalentes.",
       "howToPlay": [
-        "Lee la fraccion que muestra la tira superior.",
-        "Usa los botones menos y mas del denominador para fijar cuantas secciones iguales tendra la tira inferior.",
-        "Usa los botones menos y mas del numerador (o arrastra) para colorear el numero correcto de secciones.",
-        "La balanza se nivela cuando las dos tiras son del mismo tamano — entonces pulsa Comprobar."
+        "Lee la fracción que muestra la tira superior.",
+        "Usa los botones − y + del denominador para fijar cuántas secciones iguales tendrá la tira inferior.",
+        "Usa los botones − y + del numerador (o arrastra) para colorear el número correcto de secciones.",
+        "La balanza se nivela cuando las dos tiras son del mismo tamaño — entonces pulsa Comprobar."
       ],
       "skills": "Las fracciones equivalentes son la puerta de entrada para sumar fracciones con distinto denominador y para simplificarlas. El juego hace tangible la equivalencia: la balanza bascula y se nivela con cada ajuste.",
-      "example": "La tira superior muestra 1/2. Se puede equilibrar con 2/4, 3/6 o 4/8 — cada combinacion que nivela la balanza es una fraccion equivalente. Ver varias soluciones a la vez convierte una regla memorizada en una relacion experimentada.",
-      "mistakes": "Los alumnos a veces reproducen la fraccion objetivo exacta (mismo numerador, mismo denominador) en lugar de construir una equivalente con distinto denominador. El juego exige un denominador diferente, cerrando ese atajo.",
+      "example": "La tira superior muestra 1/2. Se puede equilibrar con 2/4, 3/6 o 4/8 — cada combinación que nivela la balanza es una fracción equivalente. Ver varias soluciones a la vez convierte una regla memorizada en una relación experimentada.",
+      "mistakes": "Los alumnos a veces reproducen la fracción objetivo exacta (mismo numerador, mismo denominador) en lugar de construir una equivalente con distinto denominador. El juego exige un denominador diferente, cerrando ese atajo.",
       "faqs": [
         {
-          "q": "En que se diferencia Tiras de Fracciones de los otros tres juegos de fracciones?",
-          "a": "Tiras de Fracciones es el unico centrado en fracciones equivalentes — construir una fraccion nueva que iguale al objetivo con distinto denominador. Los otros tres tratan de entender una fraccion individual."
+          "q": "¿En qué se diferencia Tiras de Fracciones de los otros tres juegos de fracciones?",
+          "a": "Tiras de Fracciones es el único centrado en fracciones equivalentes — construir una fracción nueva que iguale al objetivo con distinto denominador. Los otros tres tratan de entender una fracción individual."
         },
         {
-          "q": "Para que cursos es este juego?",
-          "a": "Para los cursos 3 y 4, una vez que los alumnos entienden que representa una fraccion y estan listos para compararlas y encontrar formas equivalentes."
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Para los cursos 3 y 4, una vez que los alumnos entienden qué representa una fracción y están listos para compararlas y encontrar formas equivalentes."
         },
         {
-          "q": "Como ayuda la balanza al aprendizaje?",
-          "a": "La balanza ofrece retroalimentacion visual inmediata: bascula cuando las tiras son desiguales y se nivela cuando coinciden — sin necesidad de adivinar."
+          "q": "¿Cómo ayuda la balanza al aprendizaje?",
+          "a": "La balanza ofrece retroalimentación visual inmediata: bascula cuando las tiras son desiguales y se nivela cuando coinciden — sin necesidad de adivinar."
         }
       ]
     }
@@ -481,28 +481,28 @@
     "correct": "¡Genial! Coloreaste {n} de {d}",
     "wrong": "¡Casi! Corta y colorea el número correcto de partes y corrige",
     "seo": {
-      "intro": "En Cortador de Fracciones el jugador elige cuantas porciones cortar en la pizza y cuantas colorear. La fraccion no se da hecha — se construye desde cero: primero el denominador, luego el numerador.",
+      "intro": "En Cortador de Fracciones el jugador elige cuántas porciones cortar en la pizza y cuántas colorear. La fracción no se da hecha — se construye desde cero: primero el denominador, luego el numerador.",
       "howToPlay": [
-        "Lee la fraccion objetivo en pantalla.",
-        "Usa los botones menos y mas del denominador para decidir en cuantas partes iguales se divide la pizza.",
-        "Usa los botones menos y mas del numerador (o arrastra) para colorear el numero correcto de porciones.",
-        "Pulsa Comprobar para confirmar que la fraccion construida coincide con el objetivo."
+        "Lee la fracción objetivo en pantalla.",
+        "Usa los botones − y + del denominador para decidir en cuántas partes iguales se divide la pizza.",
+        "Usa los botones − y + del numerador (o arrastra) para colorear el número correcto de porciones.",
+        "Pulsa Comprobar para confirmar que la fracción construida coincide con el objetivo."
       ],
-      "skills": "Separar el paso de cortar (denominador) del paso de colorear (numerador) refuerza el orden logico: primero dividir el todo en partes iguales, luego decidir cuantas partes tomar.",
-      "example": "Para 3/5 se corta primero en 5 porciones y luego se colorean 3. Cambiar el denominador a 4 cambia el tamano de cada porcion y exige volver a colorear — esto muestra de forma practica por que numerador y denominador estan ligados.",
-      "mistakes": "Los alumnos tienden a colorear por tamano visual en lugar de contar. Obligarles a fijar el denominador antes del numerador rompe ese habito y fomenta el razonamiento sistematico.",
+      "skills": "Separar el paso de cortar (denominador) del paso de colorear (numerador) refuerza el orden lógico: primero dividir el todo en partes iguales, luego decidir cuántas partes tomar.",
+      "example": "Para 3/5 se corta primero en 5 porciones y luego se colorean 3. Cambiar el denominador a 4 cambia el tamaño de cada porción y exige volver a colorear — esto muestra de forma práctica por qué numerador y denominador están ligados.",
+      "mistakes": "Los alumnos tienden a colorear por tamaño visual en lugar de contar. Obligarles a fijar el denominador antes del numerador rompe ese hábito y fomenta el razonamiento sistemático.",
       "faqs": [
         {
-          "q": "Como se diferencia Cortador de Fracciones de Constructor de Fracciones?",
-          "a": "En Cortador el alumno ajusta tanto el denominador como el numerador; en Constructor el denominador esta fijo y solo se sombrea. Cortador introduce el proceso completo de construccion."
+          "q": "¿Cómo se diferencia Cortador de Fracciones de Constructor de Fracciones?",
+          "a": "En Cortador el alumno ajusta tanto el denominador como el numerador; en Constructor el denominador está fijo y solo se sombrea. Cortador introduce el proceso completo de construcción."
         },
         {
-          "q": "Para que cursos es este juego?",
-          "a": "Para los cursos 3 y 4, idealmente despues de que los alumnos conozcan el concepto de fraccion y esten listos para construir una por si mismos."
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Para los cursos 3 y 4, idealmente después de que los alumnos conozcan el concepto de fracción y estén listos para construir una por sí mismos."
         },
         {
-          "q": "Se puede alcanzar el mismo objetivo con distinto numero de porciones?",
-          "a": "Si — por ejemplo 2/4 y 1/2 colorean la misma area. Ese descubrimiento natural abre una conversacion sobre fracciones equivalentes sin instruccion adicional."
+          "q": "¿Se puede alcanzar el mismo objetivo con distinto número de porciones?",
+          "a": "Sí — por ejemplo 2/4 y 1/2 colorean la misma área. Ese descubrimiento natural abre una conversación sobre fracciones equivalentes sin instrucción adicional."
         }
       ]
     }

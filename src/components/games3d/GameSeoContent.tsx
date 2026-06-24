@@ -1,10 +1,9 @@
 import { Link } from '@/i18n/navigation';
 import type { GameMeta } from '@/lib/games3d/types';
+import type { GameSeo } from '@/lib/games3d/gameSeo';
 import {
   getGameSeoCopy,
-  getGameSpecificSeoGuide,
   getTopicPracticePath,
-  getTopicSeoGuide,
   interpolate,
 } from '@/lib/games3d/seo';
 
@@ -17,24 +16,20 @@ interface GameSeoContentProps {
   locale: string;
   meta: GameMeta;
   title: string;
-  description: string;
-  instructions: string;
   topicLabel: string;
   relatedGames: RelatedGame[];
+  seo: GameSeo;
 }
 
 export function GameSeoContent({
   locale,
   meta,
   title,
-  description,
-  instructions,
   topicLabel,
   relatedGames,
+  seo,
 }: GameSeoContentProps) {
   const copy = getGameSeoCopy(locale);
-  const guide = getTopicSeoGuide(locale, meta.topic);
-  const gameGuide = getGameSpecificSeoGuide(locale, meta.id);
   const gradeValues = { from: meta.gradeRange[0], to: meta.gradeRange[1], topic: topicLabel };
   const practicePath = getTopicPracticePath(meta.topic);
 
@@ -46,23 +41,25 @@ export function GameSeoContent({
             {copy.gameType} · {interpolate(copy.grades, gradeValues)}
           </p>
           <h2 className="text-2xl font-black text-slate-900 md:text-3xl">{title}</h2>
-          <p className="mt-3 max-w-3xl text-base leading-7 text-slate-600">{description}</p>
-          {gameGuide && (
-            <p className="mt-3 max-w-3xl text-base leading-7 text-slate-600">{gameGuide}</p>
-          )}
+          <p className="mt-3 max-w-3xl text-base leading-7 text-slate-600">{seo.intro}</p>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
-            <div>
-              <h3 className="text-lg font-bold text-slate-900">{copy.practiceTitle}</h3>
-              <p className="mt-2 leading-7 text-slate-600">
-                {copy.skillPrefix} {topicLabel}. {instructions}
-              </p>
-              <p className="mt-2 leading-7 text-slate-600">{guide.focus}</p>
-            </div>
+          <div className="mt-6">
+            <h3 className="text-lg font-bold text-slate-900">{copy.practiceTitle}</h3>
+            <p className="mt-2 leading-7 text-slate-600">{seo.skills}</p>
+            <ol className="mt-3 list-decimal space-y-1 ps-5 leading-7 text-slate-600">
+              {seo.howToPlay.map((step, i) => (
+                <li key={i}>{step}</li>
+              ))}
+            </ol>
+          </div>
+
+          <div className="mt-6 grid gap-5 md:grid-cols-2">
             <div>
               <h3 className="text-lg font-bold text-slate-900">{copy.parentTitle}</h3>
-              <p className="mt-2 leading-7 text-slate-600">{guide.method}</p>
-              <p className="mt-2 leading-7 text-slate-600">{guide.outcome}</p>
+              <p className="mt-2 leading-7 text-slate-600">{seo.example}</p>
+            </div>
+            <div>
+              <p className="mt-2 leading-7 text-slate-600">{seo.mistakes}</p>
               <p className="mt-2 leading-7 text-slate-600">{copy.classroomUse}</p>
               <p className="mt-2 leading-7 text-slate-600">{copy.playCta}</p>
             </div>
@@ -102,20 +99,12 @@ export function GameSeoContent({
         <div className="md:col-span-2">
           <h3 className="text-lg font-black text-slate-900">{copy.faqTitle}</h3>
           <dl className="mt-4 grid gap-4 md:grid-cols-3">
-            <div className="rounded-xl border border-slate-200 p-4">
-              <dt className="font-bold text-slate-900">{copy.faqGameQuestion}</dt>
-              <dd className="mt-2 text-sm leading-6 text-slate-600">
-                {interpolate(copy.faqGameAnswer, gradeValues)}
-              </dd>
-            </div>
-            <div className="rounded-xl border border-slate-200 p-4">
-              <dt className="font-bold text-slate-900">{copy.faqCostQuestion}</dt>
-              <dd className="mt-2 text-sm leading-6 text-slate-600">{copy.faqCostAnswer}</dd>
-            </div>
-            <div className="rounded-xl border border-slate-200 p-4">
-              <dt className="font-bold text-slate-900">{copy.faqUseQuestion}</dt>
-              <dd className="mt-2 text-sm leading-6 text-slate-600">{copy.faqUseAnswer}</dd>
-            </div>
+            {seo.faqs.map((faq, i) => (
+              <div key={i} className="rounded-xl border border-slate-200 p-4">
+                <dt className="font-bold text-slate-900">{faq.q}</dt>
+                <dd className="mt-2 text-sm leading-6 text-slate-600">{faq.a}</dd>
+              </div>
+            ))}
           </dl>
         </div>
       </div>

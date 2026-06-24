@@ -83,7 +83,33 @@
     "description": "Baue ein Würfelfeld, um eine Multiplikation zu lösen",
     "instructions": "Ziehe zum Bauen oder nutze die − / + Tasten für Reihen und Spalten, dann drücke Prüfen",
     "prompt": "Baue ein Feld aus {rows} Reihen × {cols} Spalten",
-    "correct": "{rows} × {cols} = {product}!"
+    "correct": "{rows} × {cols} = {product}!",
+    "seo": {
+      "intro": "Bei Multiplikationsfelder bauen die Lernenden selbst ein dreidimensionales Würfelgitter, indem sie Zeilen und Spalten wählen und anschließend Prüfen drücken. Im Gegensatz zum vorhandenen Malfeld-Spiel mit fertigem Obstgitter baut der Lernende hier das Rechteck selbst — und verknüpft Gleichung und Form in einem einzigen Schritt.",
+      "howToPlay": [
+        "Lies die angezeigte Multiplikationsaufgabe (z. B. 3 Reihen × 4 Spalten).",
+        "Ziehe oder nutze −/+-Tasten, um die Anzahl der Reihen und Spalten einzustellen.",
+        "Beobachte, wie das Würfelgitter wächst und sich füllt.",
+        "Drücke Prüfen, um zu bestätigen, dass Reihen × Spalten dem angegebenen Produkt entsprechen."
+      ],
+      "skills": "Das Bauen des Feldes trainiert, Multiplikation als rechteckige Fläche zu sehen: Reihen mal Spalten. Indem sie beide Maße selbst wählen, entdecken die Lernenden, dass die Reihenfolge der Faktoren das Produkt nicht ändert — das Kommutativgesetz wird zur eigenen Erkenntnis, nicht zur auswendig gelernten Regel.",
+      "example": "Für 4×6 stellt das Kind 4 Reihen und 6 Spalten ein und füllt ein Rechteck mit 24 Würfeln. Die Ansicht auf 6 Reihen und 4 Spalten zu drehen zeigt sofort, dass 4×6=6×4 gilt — ohne jede Erklärung.",
+      "mistakes": "Schülerinnen und Schüler vertauschen manchmal Reihen und Spalten und legen 6 Reihen und 4 Spalten für eine 4×6-Aufgabe ein. Das Spiel akzeptiert beide Ausrichtungen, weil das Produkt identisch ist — und hilft so, das Kommutativgesetz zu entdecken statt es zu pauken.",
+      "faqs": [
+        {
+          "q": "Worin unterscheidet sich das Bauen des Feldes vom Malfeld-Spiel (Obstgitter)?",
+          "a": "Das Obstgitter zeigt ein fertiges Feld und fragt nach der Gesamtzahl. Hier erhalten die Lernenden die Faktoren und bauen das Rechteck selbst — die Verbindung zwischen Gleichung und Form ist aktiv, nicht nur beobachtend."
+        },
+        {
+          "q": "Für welche Klassen ist Multiplikationsfelder geeignet?",
+          "a": "Klassen 3–4, in denen die Lernenden vom wiederholten Addieren zum Flächenmodell wechseln und beide Faktoren eines Produkts verinnerlichen müssen, bevor sie Einmaleins-Fakten auswendig lernen."
+        },
+        {
+          "q": "Deckt das Spiel alle Einmaleinsfakten ab?",
+          "a": "Es deckt die Multiplikationsaufgaben der Klassen 3–4 ab, mit Feldern, die Produkte bis zu 100 darstellen können."
+        }
+      ]
+    }
   },
   "measureFill": {
     "title": "Behälter füllen",
@@ -92,14 +118,66 @@
     "prompt": "Fülle bis {target} ml",
     "correct": "Super! Bis {target} ml gefüllt",
     "wrong": "Fast! Komm näher an die Zielmarke",
-    "unit": "ml"
+    "unit": "ml",
+    "seo": {
+      "intro": "\"Behälter füllen\" verwandelt das Messen von Volumen in eine Eingießaufgabe zum Anfassen. Die Schüler ziehen, um ein Glas bis zu einer Milliliter-Marke zu füllen, und entdecken, dass Fassungsvermögen eine kontinuierliche Größe ist, die von einer Skala abgelesen wird, nicht eine Anzahl von Gegenständen. Der Live-Füllstand liefert sofortiges Feedback zur Schätzgenauigkeit.",
+      "howToPlay": [
+        "Lies das Zielvolumen ab, das über dem Behälter angezeigt wird.",
+        "Ziehe nach oben, um Flüssigkeit einzufüllen, und beobachte, wie der Pegel an der Skala steigt.",
+        "Verlangsame dich, wenn du die Zielmarke annäherst — die letzten Milliliter entscheiden.",
+        "Drücke Prüfen, wenn der Flüssigkeitsstand genau auf dem Zielstrich liegt."
+      ],
+      "skills": "Das Üben des Volumenmessens festigt das Verständnis, dass Fassungsvermögen eine kontinuierliche Größe ist, die von einer Skala abgelesen wird, nicht eine Zählung von Objekten. Schüler lernen, Zwischenteilstriche zu lesen und entwickeln die nötige Genauigkeit, bevor sie in den Klassen 3–4 zu mehrstufigen Aufgaben übergehen.",
+      "example": "Das Ziel ist 350 ml. Die Skala des Glases zeigt Markierungen alle 50 ml. Die Schüler gießen bis zur 300-Marke und fügen dann vorsichtig 50 ml hinzu, um 350 zu erreichen — sie nutzen die Hauptmarkierungen als Sprungsteine zur genauen Ablesung.",
+      "mistakes": "Schüler überschießen das Ziel oft und halten erst an, wenn der Pegel die Marke deutlich überschritten hat. Das Spiel fördert langsameres, sorgfältigeres Eingießen nahe dem Ziel und baut die Gewohnheit auf, sich einem Messwert von unten zu nähern statt eine Überfüllung zu korrigieren.",
+      "faqs": [
+        {
+          "q": "Was lehrt das Ziehen zum Füllen des Behälters beim Volumen, was das Aufschreiben einer Antwort nicht lehrt?",
+          "a": "Das Eingießen verbindet die abstrakte Zahl mit dem tatsächlichen Flüssigkeitsstand — Milliliter fühlen sich wie eine echte Menge an, nicht wie eine willkürliche Zahl."
+        },
+        {
+          "q": "Für welche Klassen ist 'Behälter füllen' gedacht?",
+          "a": "Klassen 3–4, in denen der Lehrplan Standardkapazitätseinheiten und das Ablesen von Messskalen in Alltagszusammenhängen einführt."
+        },
+        {
+          "q": "Wie unterscheidet sich das vom Lineal-Spiel?",
+          "a": "'Behälter füllen' misst das Volumen (ml) an einer vertikalen Flüssigkeitsskala; 'Mit dem Lineal messen' misst die Länge (cm) mit zwei Fahnen auf einem horizontalen Lineal. Beide üben das Ablesen einer Skala, aber für verschiedene Messeigenschaften."
+        }
+      ]
+    }
   },
   "fractionBuild": {
     "title": "Bruch-Baumeister",
     "description": "Fülle Teile des Kreises, um den Bruch zu treffen",
     "instructions": "Tippe auf Segmente, um sie zu füllen, dann drücke Prüfen",
     "prompt": "Fülle {num}/{den} der Pizza",
-    "correct": "Super! Du hast {num}/{den} gefüllt"
+    "correct": "Super! Du hast {num}/{den} gefüllt",
+    "seo": {
+      "intro": "Beim Spiel Bruchbauer wird ein abstrakter Bruch zu einem Kuchen, den man selbst befüllt. Man liest ein Ziel wie 3/4, schraffiert dann Stücke, bis der Kuchen passt — und plötzlich ist das Symbol keine zwei Zahlen mehr, sondern eine sichtbare Menge.",
+      "howToPlay": [
+        "Lies den Zielbruch, der über dem Kuchen erscheint.",
+        "Tippe oder ziehe, um Stücke zu schraffieren — zähle dabei bis zum Zähler.",
+        "Achte darauf, dass der Nenner bestimmt, in wie viele gleiche Stücke das Ganze geschnitten wird.",
+        "Drücke auf Prüfen, um zu bestätigen, dass der schraffierte Teil dem Zielbruch entspricht."
+      ],
+      "skills": "Das Spiel festigt die Kernidee: Der Nenner benennt die Größe jedes gleichen Teils, der Zähler zählt, wie viele Teile genommen werden — die Grundlage, die Schüler brauchen, bevor sie Brüche vergleichen oder addieren.",
+      "example": "Bei 3/4 wird der Kuchen in 4 gleiche Stücke geschnitten und 3 werden schraffiert. Das eine leere Stück macht sofort klar, dass 3/4 ein Stück weniger als ein Ganzes sind — nicht nur drei und vier.",
+      "mistakes": "Viele Schüler lesen 3/4 als drei von vier getrennten Dingen und übersehen, dass die Teile gleich groß sein müssen. Der Kuchen erzwingt gleiche Stücke und korrigiert den häufigsten frühen Bruchfehler.",
+      "faqs": [
+        {
+          "q": "Für welche Klassenstufen ist Bruchbauer geeignet?",
+          "a": "Das Spiel eignet sich für die Klassen 3 und 4, in denen Schüler Brüche erstmals als gleiche Teile eines Ganzen kennenlernen."
+        },
+        {
+          "q": "Müssen Schüler vor diesem Spiel das Einmaleins kennen?",
+          "a": "Nein. Bruchbauer erfordert nur Zählen und die Idee des gleichmäßigen Teilens — ideal als erste Einführung in Brüche."
+        },
+        {
+          "q": "Was ist der Unterschied zum Spiel Bruch auf dem Zahlenstrahl?",
+          "a": "Bruchbauer zeigt einen Bruch als Teil eines Ganzen (Kuchen); Bruch auf dem Zahlenstrahl setzt denselben Bruch als Punkt zwischen 0 und 1 — zwei sich ergänzende Modelle."
+        }
+      ]
+    }
   },
   "areaPerimeter": {
     "title": "Fläche & Umfang",
@@ -109,7 +187,33 @@
     "correct": "Super! {kindLabel} = {target}",
     "wrong": "Fast! Ändere die Größe des Beets und versuche es erneut",
     "kindArea": "Fläche",
-    "kindPerimeter": "Umfang"
+    "kindPerimeter": "Umfang",
+    "seo": {
+      "intro": "Fläche und Umfang zeigt einen Garten, dessen Größe man durch Ziehen verändern kann. Mal lautet die Aufgabe, eine bestimmte Fläche zu treffen, mal einen bestimmten Umfang. Die zentrale Entdeckung: Zwei Rechtecke mit gleicher Fläche können völlig unterschiedliche Umfänge haben.",
+      "howToPlay": [
+        "Lese, ob das Ziel eine Fläche (Quadrateinheiten) oder ein Umfang (Längeneinheiten) ist.",
+        "Ziehe die Kante des Gartens oder nutze die Breite/Höhe-Tasten −/+, um die Größe zu ändern.",
+        "Beobachte die Live-Anzeigen: Fläche (Länge × Breite) und Umfang (2 × Länge + 2 × Breite) ändern sich gleichzeitig.",
+        "Drücke Prüfen, wenn das gesuchte Maß dem Ziel entspricht."
+      ],
+      "skills": "Die Unterscheidung von Fläche und Umfang gehört zu den häufigsten Verwechslungen in der Grundschulgeometrie. Beide Maße am selben Objekt zu bearbeiten und ihre unabhängige Veränderung zu beobachten baut ein Verständnis auf, das Formeln allein nicht liefern.",
+      "example": "Ein 3×4-Rechteck hat Fläche 12 und Umfang 14. Ein 2×6-Rechteck hat ebenfalls Fläche 12, aber Umfang 16. Beide auf demselben Bildschirm zu wechseln macht den Unterschied sofort deutlich.",
+      "mistakes": "Viele Schüler addieren alle vier Seitenlängen für die Fläche (Verwechslung mit Umfang) oder multiplizieren Länge und Breite für den Umfang. Beide Zahlen gleichzeitig zu sehen korrigiert beide Fehler auf einmal.",
+      "faqs": [
+        {
+          "q": "Kann dieselbe Zielfläche mit verschiedenen Rechtecken erreicht werden?",
+          "a": "Ja. Viele Flächenziele haben mehr als eine Lösung (z. B. Fläche 12 passt zu 2×6, 3×4 oder 1×12). Das Spiel akzeptiert jedes gültige Rechteck."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 3-4, wenn Schüler die Formeln für Fläche und Umfang von Rechtecken lernen."
+        },
+        {
+          "q": "Wie unterscheidet es sich vom Geobrett, das auch Flächen misst?",
+          "a": "Fläche und Umfang beschränkt die Form auf ein Rechteck und vergleicht beide Maße. Das Geobrett erlaubt beliebige Vielecke und zielt nur auf die Fläche."
+        }
+      ]
+    }
   },
   "tenFrame": {
     "title": "Zehnerfeld füllen",
@@ -117,7 +221,33 @@
     "instructions": "Ziehe über die Löcher, um Murmeln zu füllen, oder nutze die − / + Tasten, dann drücke Prüfen",
     "prompt": "Lege {target} Murmeln",
     "correct": "Super! Du hast {target} Murmeln gelegt",
-    "wrong": "Fast! Zähle die Murmeln noch einmal und korrigiere"
+    "wrong": "Fast! Zähle die Murmeln noch einmal und korrigiere",
+    "seo": {
+      "intro": "Zehnrahmen-Füller stellt den Lernenden ein 2×5-Raster mit Löchern vor und bittet sie, die richtige Anzahl Murmeln einzulegen. Das feste Zehn-Felder-Raster verankert jede Zahl von 1 bis 10 an ihrem Abstand zu zehn — das macht die Struktur kleiner Zahlen konkret und automatisch.",
+      "howToPlay": [
+        "Lies die Zielzahl über dem Zehnrahmen.",
+        "Ziehe über die Löcher oder nutze −/+-Tasten, um Murmeln hinzuzufügen oder zu entfernen.",
+        "Beachte, wie viele Felder leer bleiben — so viele fehlen noch bis zur Zehn.",
+        "Wenn die gefüllten Felder der Zielzahl entsprechen, drücke Prüfen."
+      ],
+      "skills": "Der Zehnrahmen baut den Zehn-Freund-Gedanken auf: Jede Zahl von 1 bis 9 wird als eine bestimmte Anzahl Murmeln plus eine bestimmte Anzahl leerer Felder verstanden. Diese Beziehung zur Zehn beschleunigt das mentale Addieren (7+5=10+2) und Subtrahieren weit über das hinaus, was bloßes Weiterzählen erreicht.",
+      "example": "7 Murmeln einlegen füllt die obere Reihe vollständig (5) und 2 Felder in der unteren Reihe, lässt 3 leer. Das Kind sieht sofort 7=5+2 und 10−7=3, ohne zu zählen.",
+      "mistakes": "Lernende, die einfach bis zum Ziel zählen, verpassen die wichtigste Lektion des Zehnrahmens: die Beziehung zwischen der Zahl und der Zehn. Es hilft zu fragen: 'Wie viele sind leer?' neben 'Wie viele sind gefüllt?', um das ergänzende Denken zu aktivieren, für das der Rahmen konzipiert wurde.",
+      "faqs": [
+        {
+          "q": "Worin unterscheidet sich Zehnrahmen-Füller vom Zahlzerteiler?",
+          "a": "Der Zehnrahmen zerlegt eine Zahl immer in Bezug auf zehn: gefüllte versus leere Felder in einem festen 10-Zellen-Raster. Zahlzerteiler ist offen: Er zerlegt jede kleine Zahl in zwei beliebige Teile, ohne an die Zehn gebunden zu sein."
+        },
+        {
+          "q": "Für welche Klassen ist Zehnrahmen-Füller geeignet?",
+          "a": "Klassen 1–2, in denen die Lernenden mentale Bilder der Zahlen 1–10 und ihre Beziehungen zur Zehn aufbauen — die Grundlage für Addition- und Subtraktionsfakten."
+        },
+        {
+          "q": "Erscheinen im Spiel auch Zahlen größer als 10?",
+          "a": "Das Basisspiel deckt 1–10 ab. Manche Runden nutzen einen Doppel-Zehnrahmen für die Zahlen 11–20 und zeigen, dass Teenagerzahlen aus zehn und einigen Einern bestehen."
+        }
+      ]
+    }
   },
   "placeValue": {
     "title": "Stellenwert-Baumeister",
@@ -125,7 +255,33 @@
     "instructions": "Füge mit den − / + Tasten Kisten zu jeder Stelle hinzu (Hunderter, Zehner, Einer) oder ziehe über einer Spalte nach oben, um hinzuzufügen. Erreicht eine Spalte 10, werden zehn kleine Kisten zu einer größeren gebündelt. Drücke Prüfen zum Bewerten",
     "prompt": "Baue die Zahl {target}",
     "correct": "Super! Du hast {target} gebaut",
-    "wrong": "Fast! Prüfe die Ziffern und korrigiere die Zahl"
+    "wrong": "Fast! Prüfe die Ziffern und korrigiere die Zahl",
+    "seo": {
+      "intro": "Stellenwert-Builder versetzt die Lernenden in ein Lager, wo sie physische Blöcke in Hunderte-, Zehner- und Einer-Spalten stapeln, um eine Zielzahl zu bauen. Wenn eine Spalte zehn Blöcke erreicht, bündeln sie sich automatisch zu einer größeren Einheit — so wird die Tausch-Regel des Zehnersystems zum sichtbaren Ereignis.",
+      "howToPlay": [
+        "Lies die Zielzahl über den Lagerspalten.",
+        "Nutze −/+ oder ziehe nach oben auf jede Spalte, um Hunderte-, Zehner- oder Einer-Blöcke hinzuzufügen.",
+        "Beobachte, wie zehn kleine Würfel automatisch zu einem großen bündeln.",
+        "Sobald alle drei Spalten den Ziffern der Zielzahl entsprechen, drücke Prüfen."
+      ],
+      "skills": "Stellenwert-Builder entwickelt das Verständnis dafür, dass die Position einer Ziffer ihren Wert bestimmt: eine 3 in der Hunderterstelle steht für 300, nicht 3. Die Lernenden üben, mehrstellige Zahlen aus ihren Bestandteilen zusammenzusetzen, und erleben Bündelung als natürliche Folge des Zehnersystems.",
+      "example": "Um 234 zu bauen: 2 Hunderter-Platten, 3 Zehner-Stäbe und 4 Einer-Würfel. Das Lager zeigt 200+30+4 getrennt, und Prüfen bestätigt, dass der Gesamtwert 234 ergibt.",
+      "mistakes": "Lernende geben häufig die Ziffer selbst ein, nicht den Wert — sie legen 2 Einer für 234 ein, weil sie die Einerstelle zuletzt lesen. Die farbcodierten Spalten (blau für Hunderte, gelb für Zehner, rot für Einer) trainieren, jede Ziffer in ihrer richtigen Spalte zu lesen, bevor Blöcke gesetzt werden.",
+      "faqs": [
+        {
+          "q": "Wie unterscheidet sich Stellenwert-Builder vom Exploding-Dots-Spiel?",
+          "a": "Exploding Dots konzentriert sich auf den Bündelungsmoment: Zehn Punkte explodieren in der nächsten Spalte zu einem. Stellenwert-Builder konzentriert sich darauf, eine statische Zahl aus ihren Ziffern korrekt aufzubauen. Das Bündeln ist hier ein Nebeneffekt, nicht das Hauptereignis."
+        },
+        {
+          "q": "Für welche Klassen ist Stellenwert-Builder geeignet?",
+          "a": "Klassen 2–4, von zweistelligen Zahlen in Klasse 2 bis dreistelligen Zahlen und ersten vierstelligen Zahlen in den Klassen 3 und 4."
+        },
+        {
+          "q": "Kann dieselbe Zahl auf mehrere Arten aufgebaut werden?",
+          "a": "Nein. Das Ziel ist eine bestimmte Ziffernzerlegung (z. B. 2 Hunderte, 3 Zehner, 4 Einer für 234). Die Lernenden müssen der Standardform entsprechen, um das kanonische Stellenwert-Denken zu üben."
+        }
+      ]
+    }
   },
   "clockBuilder": {
     "title": "Uhrzeit-Baumeister",
@@ -133,7 +289,33 @@
     "instructions": "Ziehe den Minutenzeiger um die Uhr (der Stundenzeiger folgt proportional) oder nutze die Tasten Stunde ±1 und Minute ±5, dann drücke Prüfen",
     "prompt": "Stelle die Uhr auf {time}",
     "correct": "Super! Du hast die Uhr auf {time} gestellt",
-    "wrong": "Fast! Prüfe die Stunde und die Minuten und korrigiere"
+    "wrong": "Fast! Prüfe die Stunde und die Minuten und korrigiere",
+    "seo": {
+      "intro": "'Uhrzeit-Baumeister' verbindet digitale und analoge Uhrzeit, indem Schüler den Minutenzeiger auf eine angezeigte digitale Zeit ziehen. Der Stundenzeiger folgt dabei proportional in Echtzeit — so sehen die Schüler den Zusammenhang zwischen beiden Zeigern, anstatt isolierte Positionen auswendig zu lernen.",
+      "howToPlay": [
+        "Lies die digitale Uhrzeit ab, die über dem Zifferblatt angezeigt wird.",
+        "Ziehe den Minutenzeiger auf die richtige Minutenposition und beobachte, wie der Stundenzeiger folgt.",
+        "Feinjustiere Stunden und Minuten mit den ±1- und ±5-Tasten, falls nötig.",
+        "Drücke Prüfen, sobald beide Zeiger auf die richtige Position weisen."
+      ],
+      "skills": "Das Einstellen der analogen Zeiger auf eine digitale Uhrzeit schult zwei Fähigkeiten gleichzeitig: die Minutenskala in 5-Minuten-Schritten ablesen und verstehen, dass der Stundenzeiger sich stetig über das Zifferblatt bewegt und nicht von Zahl zu Zahl springt. Beide Fähigkeiten sind in Klasse 2–3 für das flüssige Ablesen der Uhr erforderlich.",
+      "example": "Für 3:45 zeigt der Minutenzeiger auf die 9 (45 Minuten), während der Stundenzeiger drei Viertel des Weges zwischen 3 und 4 steht. Das Bewegen des Minutenzeigers auf 45 zeigt deutlich, warum sich die Stundenangabe mit fortschreitenden Minuten verändert.",
+      "mistakes": "Schüler stellen den Stundenzeiger oft genau auf die Stundenzahl, selbst wenn die Zeit die halbe Stunde überschritten hat. Zu sehen, dass der Stundenzeiger zwischen zwei Ziffern steht (nicht auf einer), korrigiert die Annahme, dass Analog- und Digitalstunde immer an derselben Position übereinstimmen.",
+      "faqs": [
+        {
+          "q": "Was zeigt das Ziehen des Minutenzeigers, was ein statisches Uhrbild nicht zeigt?",
+          "a": "Die lebendige proportionale Bewegung des Stundenzeigers zeigt, dass beide Zeiger sich kontinuierlich bewegen und miteinander verbunden sind — eine wichtige Erkenntnis, die Schüler verpassen, wenn sie nur mit statischen Abbildungen üben."
+        },
+        {
+          "q": "Für welche Klassen ist 'Uhrzeit-Baumeister' gedacht?",
+          "a": "Klassen 2–3, in denen der Lehrplan das Ablesen der Uhrzeit auf 5 Minuten genau und das Lesen beider Formate (analog und digital) umfasst."
+        },
+        {
+          "q": "Wie unterscheidet sich das von den Spielen 'Mit dem Lineal messen' und 'Waage'?",
+          "a": "'Uhrzeit-Baumeister' misst Zeit mit einem runden Zifferblatt und zwei beweglichen Zeigern; die anderen Messspiele nutzen lineare Skalen oder Balkenwaagen. Alle vier Spiele lehren das Ablesen eines Standardmessinstruments, aber jeweils für eine andere Eigenschaft und Einheit."
+        }
+      ]
+    }
   },
   "canary": {
     "title": "Tippe auf den Würfel",
@@ -145,7 +327,33 @@
     "instructions": "Ziehe die Perle auf dem Band zum Zielbruch (sie rastet an der nächsten Markierung ein) oder nutze die Tasten Zähler ±1 und Nenner ±1. Der Nenner teilt den Strahl live. Dann auf Prüfen drücken",
     "prompt": "Platziere {num}/{den} auf dem Strahl",
     "correct": "Super! Du hast {num}/{den} richtig platziert",
-    "wrong": "Fast! Zieh die Perle an die richtige Stelle und korrigiere"
+    "wrong": "Fast! Zieh die Perle an die richtige Stelle und korrigiere",
+    "seo": {
+      "intro": "Beim Spiel Bruch auf dem Zahlenstrahl verlässt der Bruch den Kuchen und landet auf einem Lineal zwischen 0 und 1. Indem man eine Perle an die genaue Stelle zieht, entdeckt man, dass ein Bruch eine Entfernung ist — kein bloßes Zählen von Stücken.",
+      "howToPlay": [
+        "Lies den Zielbruch, der über dem Zahlenstrahl angezeigt wird.",
+        "Passe den Nenner mit den ±1-Schaltflächen an, um den Strahl in die richtige Anzahl gleicher Abschnitte zu unterteilen.",
+        "Ziehe die Perle auf den richtigen Strich, oder korrigiere mit den ±1-Schaltflächen am Zähler.",
+        "Drücke auf Prüfen, wenn die Perle an der Zielposition sitzt."
+      ],
+      "skills": "Brüche auf einem Zahlenstrahl einzuordnen bereitet Schüler auf das Vergleichen von Brüchen, das Finden gleichwertiger Brüche und das Verstehen von Brüchen größer als 1 vor.",
+      "example": "Bei 2/3 wird der Strahl in 3 gleiche Abschnitte unterteilt und die Perle gehört auf den zweiten Strich. Wechselt man den Nenner auf 6, landet 4/6 auf demselben Punkt — gleichwertige Brüche werden ohne Rechnung sichtbar.",
+      "mistakes": "Schüler setzen die Perle oft auf den Strich, dessen Nummer dem Zähler entspricht, ohne den Nenner zu beachten. Die Live-Unterteilung zeigt klar: Der Nenner steuert die Schrittgröße.",
+      "faqs": [
+        {
+          "q": "Was lehrt der Zahlenstrahl, was ein Kuchendiagramm nicht lehrt?",
+          "a": "Der Zahlenstrahl zeigt einen Bruch als Position zwischen zwei ganzen Zahlen — das Modell, das Schüler zum Ordnen, Addieren und späterem Verstehen von Dezimalzahlen benötigen."
+        },
+        {
+          "q": "Für welche Klassen ist das Spiel gedacht?",
+          "a": "Es eignet sich für Klasse 3 bis 4, nachdem Schüler Brüche als Teile eines Ganzen kennengelernt haben und bereit sind, sie auf einem Strahl zu sehen."
+        },
+        {
+          "q": "Was passiert, wenn ich den Nenner ändere?",
+          "a": "Der Strahl wird sofort neu unterteilt, die Striche verschieben sich und die Perle zeigt ihre Position auf der neuen Skala — eine Live-Demonstration der Wirkung des Nenners."
+        }
+      ]
+    }
   },
   "algebraBalance": {
     "title": "Algebra-Waage",
@@ -153,7 +361,24 @@
     "instructions": "Die Waage startet im Gleichgewicht. Entferne von beiden Seiten gleich viele Kristalle (Links −/+, Rechts −/+), bis das ? allein steht und der Balken wieder waagerecht ist. Ungleiches Entfernen senkt die schwerere Seite. Dann auf Prüfen drücken",
     "prompt": "Löse: ? + {b} = {c}",
     "correct": "Super! ? = {x}",
-    "wrong": "Fast! Entferne von beiden Seiten gleich viele, bis das ? allein steht und die Waage im Gleichgewicht ist"
+    "wrong": "Fast! Entferne von beiden Seiten gleich viele, bis das ? allein steht und die Waage im Gleichgewicht ist",
+    "seo": {
+      "intro": "Die Algebra-Waage macht eine Gleichung sichtbar. Die Waage startet im Gleichgewicht: Kristalle auf beiden Seiten, darunter ein Fragezeichen. Schüler entfernen gleich viele Kristalle von beiden Seiten, bis das Fragezeichen allein steht — und das Umkehrprinzip offenbart sich von selbst.",
+      "howToPlay": [
+        "Betrachte die Waage: eine Seite hat ein Fragezeichen plus Kristalle, die andere nur Kristalle.",
+        "Nutze die −/+ Tasten beider Seiten, um gleich viele Kristalle von jeder Seite zu entfernen.",
+        "Fahre fort, bis das Fragezeichen allein steht.",
+        "Wenn der Balken gerade und das Fragezeichen allein ist, drücke Prüfen."
+      ],
+      "skills": "Die Algebra-Waage lehrt das Kernprinzip des Gleichungslösens: was du einer Seite antust, tust du auch der anderen. Diese haptische Erfahrung der Umkehroperation bereitet auf formale Algebra weit besser vor als das Auswendiglernen von Umformungsregeln.",
+      "example": "Die Waage zeigt ? + 4 = 9. Entferne 4 Kristalle von jeder Seite: links wird ?, rechts wird 5. Der Balken nivelliert sich und ? = 5. Schüler spüren die Logik statt zu raten.",
+      "mistakes": "Anfänger entfernen Kristalle manchmal nur von einer Seite. Der Balken kippt sofort und gibt unmittelbares Feedback ohne weiteren Erklärungsbedarf.",
+      "faqs": [
+        { "q": "Welchen Gleichungstyp übt die Algebra-Waage?", "a": "Gleichungen der Form ? + b = c, für Klassen 5–6, wo Schüler erstmals formale Unbekannte und Umkehroperationen begegnen." },
+        { "q": "Wie unterscheidet sich das von der normalen Waage?", "a": "Die Waage fokussiert auf Arithmetik: eine Summe berechnen und mit Gewichten nachbauen. Die Algebra-Waage beginnt bereits im Gleichgewicht und fordert, eine Unbekannte durch gleiche Entnahme zu isolieren — das ist algebraisches Denken." },
+        { "q": "Braucht man Algebra-Vorkenntnisse?", "a": "Nein. Das konkrete Waagen-Modell lässt Schüler das Prinzip der gleichmäßigen Entnahme selbst entdecken, bevor sie auf formale Notation treffen." }
+      ]
+    }
   },
   "balanceScale": {
     "title": "Waage",
@@ -161,7 +386,24 @@
     "instructions": "Lies die Gewichte auf den Würfeln in der linken Schale und addiere sie. Füge der rechten Schale mit den Plus- und Minus-Tasten (1, 2, 5, 10) nummerierte Gewichte hinzu, bis der Balken waagerecht ist — dann sind beide Seiten gleich. Dann auf Prüfen drücken",
     "prompt": "Bring die Waage ins Gleichgewicht",
     "correct": "Super! Beide Seiten ergeben {total}",
-    "wrong": "Fast! Füge rechts Gewichte hinzu oder entferne sie, bis der Balken waagerecht ist"
+    "wrong": "Fast! Füge rechts Gewichte hinzu oder entferne sie, bis der Balken waagerecht ist",
+    "seo": {
+      "intro": "Die Waage zeigt, was eine Gleichung bedeutet, noch bevor Schüler eine aufschreiben. Die linke Schale hält nummerierte Würfel; Schüler fügen Gewichte (1, 2, 5, 10) zur rechten Schale hinzu, bis der Balken exakt waagerecht ist. Weil beide Seiten physisch gleich sein müssen, wird das Gleichheitsprinzip unmittelbar spürbar.",
+      "howToPlay": [
+        "Lies die nummerierten Würfel in der linken Schale und addiere ihre Werte.",
+        "Nutze die +/− Tasten, um Gewichte (1, 2, 5, 10) in der rechten Schale hinzuzufügen oder zu entfernen.",
+        "Justiere, bis der Balken vollkommen waagerecht ist — beide Schalen gleich schwer.",
+        "Drücke Prüfen, sobald die Waage im Gleichgewicht ist."
+      ],
+      "skills": "Die Waage baut das grundlegende Verständnis von Gleichheit auf: beide Seiten eines Gleichheitszeichens müssen den gleichen Wert tragen. Schüler üben mentales Addieren und Zerlegung, während das visuelle Feedback des sich nivellierenden Balkens jede richtige Antwort sofort befriedigend macht.",
+      "example": "Linke Schale: Würfel mit Werten 3, 7 und 5. Summe: 15. Zwei Fünfer und ein Zehner: 20 — zu schwer. Umstellen auf 10 und 5 ergibt 15. Der Balken nivelliert sich.",
+      "mistakes": "Schüler überschreiten manchmal und fügen weiter Gewichte hinzu, wenn der Balken bereits zu weit gekippt ist. Gewichte entfernen (verringern) ist genauso wichtig wie hinzufügen, und das Spiel erfordert beide Richtungen.",
+      "faqs": [
+        { "q": "Für welchen Klassenstufenbereich ist die Waage?", "a": "Klassen 2–5, wo Schüler Addition, mentales Rechnen und frühe Gleichungskonzepte mit zunehmend größeren Zahlen üben." },
+        { "q": "Wie unterscheidet sich das von der Algebra-Waage?", "a": "Die Waage fokussiert auf Arithmetik: Summe berechnen und mit Gewichten replizieren. Die Algebra-Waage beginnt bereits im Gleichgewicht und fordert, eine Unbekannte durch gleiche Entnahme zu isolieren." },
+        { "q": "Gibt es mehrere Lösungen für die rechte Schale?", "a": "Ja. Viele Gewichtskombinationen erreichen dieselbe Summe, und das Spiel akzeptiert jede richtige Kombination — das ermutigt zur Erkundung verschiedener Zerlegungen." }
+      ]
+    }
   },
   "moneyShop": {
     "title": "Geldladen",
@@ -169,7 +411,33 @@
     "instructions": "Ziehe über dem Tablett nach oben, um eine ₪1-Münze hinzuzufügen, oder nutze die − / + Tasten jeder Münze und jedes Scheins (₪1, ₪2, ₪5, ₪10, ₪20, ₪50). Lege Münzen und Scheine, bis der Betrag erreicht ist, und drücke dann Prüfen",
     "prompt": "Zahle ₪{amount}",
     "correct": "Toll! Du hast genau ₪{amount} bezahlt",
-    "wrong": "Fast! Prüfe den Betrag auf dem Tablett und korrigiere ihn"
+    "wrong": "Fast! Prüfe den Betrag auf dem Tablett und korrigiere ihn",
+    "seo": {
+      "intro": "Im Geldladen stehen die Schülerinnen und Schüler an einem Marktstand und bezahlen genaue Beträge mit Münzen und Scheinen. Sie ziehen echtes Geld auf das Tablett und beobachten, wie die laufende Summe steigt, bis sie dem Preis entspricht — so werden abstrakte Münzwerte zu einer echten Einkaufssituation.",
+      "howToPlay": [
+        "Lies den Preis auf dem Ladenschild.",
+        "Ziehe Münzen und Scheine auf das Tablett oder nutze die −/+-Tasten für jede Währungseinheit.",
+        "Beobachte, wie der Gesamtbetrag mit jeder Zugabe steigt.",
+        "Sobald das Tablett genau dem Preis entspricht, drücke Prüfen."
+      ],
+      "skills": "Der Geldladen fördert die Sicherheit im Umgang mit Münz- und Scheinstückelungen sowie das Addieren mehrerer Beträge. Die Schülerinnen und Schüler lernen, möglichst wenige Münzen zu verwenden, und üben das Herausgeben von Wechselgeld als Differenz zwischen gezahltem Betrag und Preis.",
+      "example": "Um ₪17 zu bezahlen, legt ein Kind einen ₪10-Schein, eine ₪5-Münze und zwei ₪1-Münzen. Das Tablett zeigt 10+5+1+1=17 und bestätigt die Kombination vor dem Drücken von Prüfen.",
+      "mistakes": "Häufig werden zu viele kleine Münzen gestapelt, anstatt größere Einheiten zu wählen. Der sofortige Gesamtbetrag auf dem Tablett motiviert dazu, kleine Münzen durch einen größeren Schein zu ersetzen, wenn der Betrag den Preis überschreitet.",
+      "faqs": [
+        {
+          "q": "Wie übt das Spiel Wechselgeld geben, nicht nur exaktes Bezahlen?",
+          "a": "In manchen Runden liegt bereits ein Betrag auf dem Tablett, und der Schüler muss ihn anpassen — Münzen hinzufügen oder entfernen, um genau den Preis zu erreichen, genau wie beim Herausgeben von Wechselgeld im Alltag."
+        },
+        {
+          "q": "Für welche Klassen ist der Geldladen geeignet?",
+          "a": "Klassen 2–4, von der grundlegenden Münzkenntnis in Klasse 2 bis zu mehrstufigen Wechselgeldberechnungen in Klasse 4."
+        },
+        {
+          "q": "Verwendet das Spiel echte israelische Währungseinheiten?",
+          "a": "Ja. Die Münzen und Scheine sind ₪1, ₪2, ₪5, ₪10, ₪20 und ₪50 — die Einheiten, mit denen die Schülerinnen und Schüler im Alltag in Israel umgehen."
+        }
+      ]
+    }
   },
   "additionMine": {
     "title": "Additions-Mine",
@@ -177,7 +445,24 @@
     "instructions": "Baue die Summe mit den − / + Tasten jeder Stelle (Hunderter, Zehner, Einer) oder ziehe über einer Spalte nach oben, um einen Kristall hinzuzufügen. Wenn eine Spalte über 9 voll wird, fährt ein Erzwagen auf der Schiene und bringt das Bündel zur nächsten Stelle. Drücke Prüfen zum Prüfen",
     "prompt": "Addiere: {a} + {b}",
     "correct": "Toll! Die richtige Summe ist {total}",
-    "wrong": "Fast! Prüfe die Ziffern und korrigiere die Summe"
+    "wrong": "Fast! Prüfe die Ziffern und korrigiere die Summe",
+    "seo": {
+      "intro": "Die Additions-Mine stellt Stellenwert-Spalten direkt vor Augen. Schüler füllen Einer-, Zehner- und Hunderter-Spalten mit Erzkristallen, um eine Zielsumme zu bauen. Wenn eine Spalte zehn Kristalle erreicht, fährt ein Erzwagen zur nächsten Spalte — so wird das Übertragen sichtbar statt abstrakt.",
+      "howToPlay": [
+        "Lies die zwei Zahlen oben im Minenschacht.",
+        "Nutze die −/+ Tasten oder ziehe nach oben, um Kristalle in die Einer-, Zehner- und Hunderter-Spalten zu legen.",
+        "Wenn eine Spalte zehn Kristalle erreicht, fährt der Wagen mit dem Bündel zur nächsten Spalte.",
+        "Fülle weiter, bis die Summe dem Ziel entspricht, dann drücke Prüfen."
+      ],
+      "skills": "Die Mine baut ein konkretes Verständnis des Übertragens auf, das dem schriftlichen Addieren zugrunde liegt. Spalten zu füllen und zu sehen, wie zehn Einheiten zu einer in der nächsten Stelle werden, zeigt Schülern, warum der Algorithmus funktioniert.",
+      "example": "47 + 36: 7 Einer und 6 Einer ergeben 13 — der Wagen trägt zehn hinüber, 3 Einer bleiben. 4 Zehner und 3 Zehner plus der übertragene ergibt 8 Zehner. Ergebnis: 83.",
+      "mistakes": "Schüler addieren alle Ziffern oft ohne Stellenwert zu beachten und schreiben 47 + 36 = 713 statt 83. Der Wagen korrigiert diesen Spaltenfehler bevor er zur Gewohnheit wird.",
+      "faqs": [
+        { "q": "Für welche Klassen ist die Additions-Mine?", "a": "Für Klassen 2–4, die zweistellige und dreistellige Addition mit Übertrag üben — der Kern des frühen Grundschul-Kopfrechens." },
+        { "q": "Gibt es immer einen Übertrag?", "a": "Nein. Einige Aufgaben haben keinen Übertrag, andere einen oder zwei. Der Wagen erscheint nur, wenn eine Spalte tatsächlich zehn überschreitet." },
+        { "q": "Wie unterscheidet sich das von der Waage?", "a": "Die Mine baut eine Summe Stelle für Stelle mit Übertrag. Die Waage verlangt, eine Gesamtsumme zu finden und sie durch Gewichte anzupassen — der Fokus liegt auf Gleichheit, nicht auf dem Addieren von Spalten." }
+      ]
+    }
   },
   "subtractionBridge": {
     "title": "Subtraktionsbrücke",
@@ -185,7 +470,33 @@
     "instructions": "Entferne Steine mit den − / + Tasten für jede Stelle (Hunderter, Zehner, Einer) oder ziehe über einer Spalte nach unten, um einen Stein zu entfernen. Wenn eine Spalte zu klein ist, drücke −, um einen Zehner-Stein der nächsthöheren Stelle in zehn kleine Steine zu zerbrechen (die Brücke bricht). Dann drücke Prüfen",
     "prompt": "Subtrahiere: {a} − {b}",
     "correct": "Super! Die Differenz ist {diff}",
-    "wrong": "Fast! Prüfe die Ziffern und korrigiere die Differenz"
+    "wrong": "Fast! Prüfe die Ziffern und korrigiere die Differenz",
+    "seo": {
+      "intro": "Die Subtraktionsbrücke fordert auf, eine Steinbrücke Stein für Stein, Spalte für Spalte abzutragen, um die Differenz zu finden. Wenn die Einerspalte zu klein wird, zerbricht ein Zehnerstück aus der nächsten Spalte in zehn kleine Steine — so wird der Übertragsschritt zum begreifbaren Abbruchvorgang statt zur auswendig gelernten Regel.",
+      "howToPlay": [
+        "Lies die Subtraktionsaufgabe über der Brücke.",
+        "Entferne Steine aus den Einer-, Zehner- oder Hunderter-Spalten mit −/+ oder durch Ziehen nach unten.",
+        "Wenn eine Spalte zu klein wird, drücke −, um einen Zehnerstück aus der nächsten Spalte in zehn kleine Steine zu zerlegen.",
+        "Sobald alle Spalten die richtige Differenz zeigen, drücke Prüfen."
+      ],
+      "skills": "Die Subtraktionsbrücke festigt das Verständnis des Übertrags beim mehrstelligen Subtrahieren — der verwirrendste Schritt im schriftlichen Algorithmus. Wer sieht, wie eine Zehn buchstäblich in zehn Einer zerbricht, versteht, warum die Ziffer in der nächsten Spalte um 1 sinkt, und vermeidet den häufigsten Subtraktionsfehler in der Grundschule.",
+      "example": "47 von 83 subtrahieren: Die Einerspalte enthält 3, braucht aber 7. Drücke −, um einen Zehnerstein zu zerbrechen: Die Zehnerspalte fällt von 8 auf 7, die Einerspalte steigt von 3 auf 13. Jetzt ist 13−7=6 und 7−4=3, also 36.",
+      "mistakes": "Der typische Fehler ist, die kleinere von der größeren Ziffer zu subtrahieren, unabhängig davon, welche oben steht (83−47 wird als 40+4=44 berechnet). Der Brücken-Mechanismus zwingt dazu, die richtige Menge zu entfernen, und die Richtung der Subtraktion wird eindeutig.",
+      "faqs": [
+        {
+          "q": "Wie lehrt der Brücken-Mechanismus den Übertrag ohne die abstrakte schriftliche Regel?",
+          "a": "Wenn eine Spalte zu wenig hat, zerbrechen durch Drücken von − zehn Stücke direkt vor dem Lernenden in zehn Einersteine. Er sieht die Ziffer in der nächsten Spalte sinken und den Einerpool steigen. Die schriftliche Übertragsregel ist eine Kurzform dieses Vorgangs."
+        },
+        {
+          "q": "Für welche Klassen ist die Subtraktionsbrücke geeignet?",
+          "a": "Klassen 2–4, von zweistelliger Subtraktion mit Übertrag in Klasse 2 bis dreistelligen Aufgaben mit doppeltem Übertrag in den Klassen 3 und 4."
+        },
+        {
+          "q": "Was passiert, wenn aus den Hunderten in die Zehner ausgeliehen werden muss?",
+          "a": "Das Spiel unterstützt kaskadierende Überträge: Wenn auch die Zehnerspalte leer läuft, zerbrechen durch Drücken von − ein Hunderterstück in zehn Zehner — visuell dargestellt als zweistufiger Übertrag."
+        }
+      ]
+    }
   },
   "volumeBuilder": {
     "title": "Volumen-Baumeister",
@@ -193,7 +504,33 @@
     "instructions": "Stelle Länge, Breite und Höhe mit den Tasten − / + ein (oder ziehe: nach oben = länger, rechts = breiter; die Höhe stellst du mit den Tasten ein). Die Würfel füllen das Aquarium Schicht für Schicht. Drücke zum Schluss Prüfen",
     "prompt": "Baue eine Kiste mit dem Volumen {volume}",
     "correct": "Super! Das Volumen der Kiste ist {volume}",
-    "wrong": "Fast! Ändere Länge, Breite oder Höhe und versuche es erneut"
+    "wrong": "Fast! Ändere Länge, Breite oder Höhe und versuche es erneut",
+    "seo": {
+      "intro": "Der Volumen-Baumeister füllt einen transparenten Tank Schicht für Schicht mit Einheitswürfeln, während Schüler Länge, Breite und Höhe einstellen. Das Ziel ist ein bestimmtes Volumen, und die Würfel stapeln sich sichtbar, sodass die abstrakte Formel V = l × b × h zu echten Objekten wird.",
+      "howToPlay": [
+        "Lese das Zielvolumen, das über dem Tank angezeigt wird.",
+        "Stelle Länge und Breite durch Ziehen oder mit den −/+-Tasten ein; die Grundschicht füllt den Boden des Tanks.",
+        "Stelle die Höhe mit den Höhe-Tasten ein; der Tank füllt sich Schicht für Schicht nach oben.",
+        "Drücke Prüfen, wenn die Würfelanzahl dem Zielvolumen entspricht."
+      ],
+      "skills": "Das Einstellen von drei unabhängigen Maßen festigt die Idee, dass Volumen ein Produkt aus drei Längen ist (l × b × h) und keine Eigenschaft der Oberfläche. Dies bereitet auf Klasse 4-6 vor: zusammengesetzte Körper, Oberflächen und den Unterschied zwischen 2D-Fläche und 3D-Volumen.",
+      "example": "Für Volumen 24 kann man 4×3×2 wählen: vier Würfel breit, drei tief, zwei Schichten hoch. Wechseln zu 6×2×2 ergibt dasselbe Volumen mit anderer Form.",
+      "mistakes": "Schüler verwechseln Volumen oft mit der Oberfläche und zählen die äußeren Flächen statt der Würfel innen. Das Füllen des Inneren Würfel für Würfel adressiert dies direkt.",
+      "faqs": [
+        {
+          "q": "Kann dasselbe Volumen mit verschiedenen Maßen erreicht werden?",
+          "a": "Ja. Viele Ziele haben mehrere gültige Maßkombinationen. Das Spiel akzeptiert jede (l, b, h), deren Produkt dem Ziel entspricht."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 4-6, wenn Schüler das Volumen als dreidimensionale Messung kennenlernen und die Formel l × b × h erarbeiten."
+        },
+        {
+          "q": "Wie unterscheidet sich der Volumen-Baumeister vom Geobrett?",
+          "a": "Das Geobrett misst 2D-Fläche in Quadrateinheiten auf einem flachen Raster. Der Volumen-Baumeister misst 3D-Volumen in Kubikeinheiten. Der Sprung von Quadraten zu Würfeln ist genau der konzeptuelle Schritt, den beide Spiele bilden."
+        }
+      ]
+    }
   },
   "rulerMeasure": {
     "title": "Mit dem Lineal messen",
@@ -201,7 +538,33 @@
     "instructions": "Richte die linke Fahne am linken Ende des Objekts aus und die rechte Fahne an seinem rechten Ende, mit den Tasten Links ±1 und Rechts ±1 (oder durch Ziehen). Achtung: Das Objekt beginnt nicht immer bei 0, daher gilt Länge = rechter Wert − linker Wert. Dann auf Prüfen drücken",
     "prompt": "Miss die Länge des Objekts",
     "correct": "Super! Das Objekt ist {length} cm lang",
-    "wrong": "Fast! Richte jede Fahne am passenden Ende des Objekts aus und korrigiere"
+    "wrong": "Fast! Richte jede Fahne am passenden Ende des Objekts aus und korrigiere",
+    "seo": {
+      "intro": "'Mit dem Lineal messen' legt ein Objekt an beliebiger Stelle auf einem Lineal ab und fordert die Schüler auf, zwei Fahnen an seinen Enden zu positionieren. Da das Objekt nicht immer bei null beginnt, müssen die Schüler beide Ablesungen subtrahieren, um die Länge zu ermitteln — genau wie beim echten Messen im Alltag.",
+      "howToPlay": [
+        "Schau auf das Objekt auf dem Lineal und finde heraus, wo sein linkes Ende liegt.",
+        "Ziehe oder drücke die linke Fahnen-Tasten, um die linke Fahne am linken Ende des Objekts auszurichten.",
+        "Nutze die rechten Fahnen-Tasten (oder ziehe), um die rechte Fahne am rechten Ende auszurichten.",
+        "Berechne: Länge = rechter Wert minus linker Wert, dann Prüfen drücken."
+      ],
+      "skills": "Das Messen ab einem Nicht-Null-Start lehrt, dass Länge eine Differenz zwischen zwei Positionen ist, keine einzelne Ablesung. Dieses Verständnis ist grundlegend für die Verwendung echter Lineale und Maßbänder und verhindert den häufigen Fehler, immer davon auszugehen, dass das Objekt bei null beginnt. Geeignet für Klassen 2–4.",
+      "example": "Das linke Ende des Objekts liegt bei 3 cm, das rechte bei 11 cm. Die Länge beträgt 11 − 3 = 8 cm. Wer immer ab null misst, würde 11 aufschreiben und eine falsche Antwort erhalten; dieses Spiel erzwingt den Subtraktionsschritt jedes Mal.",
+      "mistakes": "Der häufigste Fehler ist, nur die Position der rechten Fahne abzulesen und den Versatz der linken Fahne zu ignorieren. Beide Fahnen unabhängig voneinander zu setzen, bevor gerechnet wird, macht die Subtraktion unausweichlich und baut korrekte Messgewohnheiten auf.",
+      "faqs": [
+        {
+          "q": "Warum beginnt das Objekt nicht immer bei null auf dem Lineal?",
+          "a": "Im echten Leben beginnt eine Messung selten bei null — Maßbänder, zerbrochene Lineale und versetzte Objekte sind alltäglich. Das Üben mit einem Nicht-Null-Startpunkt verhindert das Verlassen auf eine perfekte Ausrichtung und baut echte Messfähigkeiten auf."
+        },
+        {
+          "q": "Für welche Klassen ist 'Mit dem Lineal messen' gedacht?",
+          "a": "Klassen 2–4, vom einfachen Zählen von Zentimetern bis zum Ablesen des Lineals an beliebiger Position und zur Berechnung der Differenz."
+        },
+        {
+          "q": "Wie unterscheidet sich das vom Spiel 'Behälter füllen'?",
+          "a": "'Mit dem Lineal messen' arbeitet mit Längen in Zentimetern, einem horizontalen Lineal und zwei Positionsfahnen; 'Behälter füllen' arbeitet mit Volumen in Millilitern und einer vertikalen Flüssigkeitsskala. Beide üben das Ablesen einer graduierten Skala, aber für verschiedene Messeigenschaften."
+        }
+      ]
+    }
   },
   "decimalBuilder": {
     "title": "Dezimalzahl-Baumeister",
@@ -209,7 +572,34 @@
     "instructions": "Fülle die Gläser für Einer, Zehntel und Hundertstel mit den − / + Tasten (der Sandstand jedes Glases zeigt diese Stelle), dann auf Prüfen drücken",
     "prompt": "Baue die Zahl {target}",
     "correct": "Super! Du hast {target} gebaut",
-    "wrong": "Fast! Prüfe Einer, Zehntel und Hundertstel und korrigiere die Zahl"
+    "wrong": "Fast! Prüfe Einer, Zehntel und Hundertstel und korrigiere die Zahl",
+    "seo": {
+      "intro": "Dezimalzahl-Baumeister versetzt Schülerinnen und Schüler in ein Labor mit drei Sandgläsern für Einer, Zehntel und Hundertstel. Sie befüllen jedes Glas auf den richtigen Stand, um eine Zielzahl zu bauen — so wird abstrakte Stellenwertnotation zu einer sichtbaren, physischen Menge.",
+      "howToPlay": [
+        "Lies die Zielzahl, die über den Gläsern angezeigt wird.",
+        "Stelle das Einerglas auf die Ziffer vor dem Komma ein.",
+        "Stelle das Zehntelglas auf die erste Nachkommastelle ein.",
+        "Stelle das Hundertstelglas auf die zweite Nachkommastelle ein.",
+        "Drücke Prüfen, wenn der Sandstand aller drei Gläser mit der Zahl übereinstimmt."
+      ],
+      "skills": "Dezimalzahl-Baumeister entwickelt das Stellenwertverständnis für Dezimalzahlen: Schüler lesen jede Ziffer in ihrer Stelle (Einer, Zehntel, Hundertstel) und übersetzen sie in eine physische Menge. Das ist die Grundlage vor dem Vergleichen, Ordnen und Addieren von Dezimalzahlen.",
+      "example": "Für die Zielzahl 2,35: das Einerglas wird auf 2 gefüllt, das Zehntelglas auf 3, das Hundertstelglas auf 5. Drei getrennte Gläser machen die Struktur 2 + 0,3 + 0,05 sofort sichtbar.",
+      "mistakes": "Schüler behandeln Dezimalzahlen oft wie ganze Zahlen und tragen 35 in das Hundertstelglas für 0,35 ein. Getrennte Gläser erzwingen die stellenweise Bearbeitung und durchbrechen die Gewohnheit, über das Komma hinwegzulesen.",
+      "faqs": [
+        {
+          "q": "Wie zeigen die Sandgläser den Dezimalstellenwert anders als die Würfelsäulen im Stellenwert-Baumeister?",
+          "a": "Der Stellenwert-Baumeister nutzt stapelbare Würfel für Hunderter-, Zehner- und Einersäulen ganzer Zahlen. Dezimalzahl-Baumeister nutzt Sandgläser für Einer, Zehntel und Hundertstel und macht so die gebrochenen Stellen ohne Würfel sichtbar."
+        },
+        {
+          "q": "Für welche Klassen ist Dezimalzahl-Baumeister geeignet?",
+          "a": "Klassen 4–5, in denen Schüler Zehntel und Hundertstel als Stellenwerte erstmals kennenlernen."
+        },
+        {
+          "q": "Kann man eine Ziffer größer als 9 in ein Glas eingeben?",
+          "a": "Nein. Jedes Glas ist auf 9 begrenzt, sodass das Spiel die standardmäßige Dezimalnotation beibehält. Das Übertragen wird separat in der Dezimaladdition geübt."
+        }
+      ]
+    }
   },
   "decimalNumberLine": {
     "title": "Dezimalzahl am Zahlenstrahl",
@@ -217,7 +607,34 @@
     "instructions": "Ziehe den Zug an die richtige Position auf dem Strahl (0 bis 1) und drücke dann Prüfen",
     "prompt": "Setze {decimal} auf den Strahl",
     "correct": "Richtig! {decimal} liegt an der richtigen Position",
-    "wrong": "Fast! Prüfe die Position und versuche es erneut"
+    "wrong": "Fast! Prüfe die Position und versuche es erneut",
+    "seo": {
+      "intro": "Dezimalzahl am Zahlenstrahl fordert Schüler auf, einen Zug an die genaue Position einer Dezimalzahl zwischen 0 und 1 zu ziehen. Das Platzieren auf dem Lineal zeigt, dass eine Dezimalzahl ein Abstand auf einer Skala ist — kein bloßes Ziffernmuster — und baut räumliches Größengefühl auf.",
+      "howToPlay": [
+        "Lies die Zielzahl, die über dem Zahlenstrahl angezeigt wird.",
+        "Schätze, wo die Zahl zwischen 0 und 1 liegt.",
+        "Ziehe den Zug entlang des Strahls an die geschätzte Position.",
+        "Feinjustiere, bis der Zug auf dem richtigen Punkt steht.",
+        "Drücke Prüfen."
+      ],
+      "skills": "Das Platzieren von Dezimalzahlen am Zahlenstrahl trainiert den Größenvergleich: 0,7 ist größer als 0,3, weil es weiter rechts liegt. Dieses räumliche Größengefühl ist die Grundlage für das Ordnen von Dezimalzahlen und ihre Verknüpfung mit Brüchen.",
+      "example": "Für 0,6: Der Strahl verläuft von 0 bis 1 und der Zug gehört auf den sechsten Strich von zehn gleichen Abschnitten. Der Vergleich mit dem Bruch 6/10 zeigt, dass Position und Bruchname denselben Punkt benennen.",
+      "mistakes": "Schüler verwechseln häufig Ziffernanzahl mit Größe: Sie platzieren 0,35 rechts von 0,9, weil 35 größer wirkt als 9. Die feste Skala des Strahls entlarvt diesen Fehler sofort, da 0,9 sehr nah an 1 liegt.",
+      "faqs": [
+        {
+          "q": "Wie unterscheidet sich das Platzieren einer Dezimalzahl am Strahl vom Brüche-Zahlenstrahl-Spiel?",
+          "a": "Der Brüche-Zahlenstrahl verwendet einen anpassbaren Teilungsabstand, um Brüche wie 2/3 zu platzieren. Dezimalzahl am Zahlenstrahl verwendet eine feste Dezimalskala (Zehntel), um Werte wie 0,6 zu platzieren und Geläufigkeit mit der Dezimalschreibweise zu trainieren."
+        },
+        {
+          "q": "Für welche Klassen ist das Spiel geeignet?",
+          "a": "Klassen 3–5: Zehntel für Klassen 3–4, Hundertstelziele erweitern auf Klasse 5."
+        },
+        {
+          "q": "Deckt das Spiel auch Zahlen größer als 1 ab?",
+          "a": "Nein. Der Strahl verläuft von 0 bis 1, um den Fokus auf den Dezimalteil zu legen. Das Ordnen mehrstelliger Dezimalzahlen folgt in späteren Aktivitäten."
+        }
+      ]
+    }
   },
   "decimalAddition": {
     "title": "Dezimaladdition",
@@ -225,7 +642,34 @@
     "instructions": "Baue die Summe: Stelle Einer, Zehntel und Hundertstel mit den Tasten − / + ein und drücke dann Prüfen",
     "prompt": "Was ist {a} + {b}?",
     "correct": "Richtig! {a} + {b} = {result}",
-    "wrong": "Fast! Prüfe jede Stelle einzeln und denke an den Übergang"
+    "wrong": "Fast! Prüfe jede Stelle einzeln und denke an den Übergang",
+    "seo": {
+      "intro": "Dezimaladdition leitet Schüler durch die spaltenweise Addition zweier Dezimalzahlen. Getrennte Ziffernräder für Einer, Zehntel und Hundertstel machen die Kommaausrichtungsregel greifbar: Jede Stelle wird separat eingestellt und der Übertrag wird sichtbar.",
+      "howToPlay": [
+        "Lies die zwei Summanden auf dem Bildschirm.",
+        "Addiere zuerst die Hundertstel und stelle sie am Hundertstelrad ein.",
+        "Wenn die Hundertstel 10 oder mehr ergeben, übertrage 1 in die Zehntelstelle.",
+        "Wiederhole für Zehntel, dann Einer, mit Übertrag nach Bedarf.",
+        "Drücke Prüfen, wenn alle drei Räder die richtige Summe anzeigen."
+      ],
+      "skills": "Dezimaladdition übt den spaltenweisen Algorithmus mit Dezimalzahlen: Kommaausrichtung, Addition gleicher Stellen (Hundertstel mit Hundertstel, Zehntel mit Zehntel) und Übertrag zwischen Stellen. Es sind dieselben Fertigkeiten wie bei der Addition ganzer Zahlen, auf gebrochene Stellen ausgeweitet.",
+      "example": "Für 1,47 + 0,86: Hundertstel 7+6=13, stelle 3 ein und übertrage 1; Zehntel 4+8+1=13, stelle 3 ein und übertrage 1; Einer 1+0+1=2. Ergebnis 2,33. Jeder Schritt erfolgt an einem separaten Rad.",
+      "mistakes": "Der häufigste Fehler ist das Ignorieren der Ausrichtung: Schüler addieren 1,47 + 0,86 wie 147 + 86. Getrennte Räder verhindern das, da jedes Rad nur die Ziffer seiner Stelle annimmt.",
+      "faqs": [
+        {
+          "q": "Wie lehren die Stellenräder die Kommaausrichtung beim Dezimalpunkt?",
+          "a": "Jedes Rad ist mit Einer, Zehntel oder Hundertstel beschriftet und nimmt nur die eigene Ziffer an. So kann kein Zehntel versehentlich in die Einerstelle eingetragen werden. Die Struktur erzwingt die Ausrichtung ohne schriftliches Raster."
+        },
+        {
+          "q": "Für welche Klassen ist Dezimaladdition geeignet?",
+          "a": "Klassen 4–5, in denen die Spaltenaddition auf Dezimalzahlen mit Zehntel und Hundertstel ausgeweitet wird."
+        },
+        {
+          "q": "Deckt das Spiel auch die Dezimalsubtraktion ab?",
+          "a": "Nein. Dezimaladdition konzentriert sich auf den Additionsalgorithmus mit Übertrag. Die Dezimalsubtraktion mit Borgen ist eine separate Fähigkeit, die in einer anderen Aktivität geübt wird."
+        }
+      ]
+    }
   },
   "numberBond": {
     "title": "Zahlen zerlegen",
@@ -233,7 +677,33 @@
     "instructions": "Zwei Steinplattformen schweben über einer Schlucht. Baue die Brücke: Mit links −/+ stellst du den linken Teil ein und mit rechts −/+ den rechten Teil (du kannst auch auf jeder Seite ziehen). Die Brücke verbindet sich, wenn beide Teile zusammen genau die Lücke überspannen. Dann drücke Prüfen",
     "prompt": "Zerlege {target} in zwei Teile",
     "correct": "Super! Die beiden Teile ergeben zusammen {target}",
-    "wrong": "Fast! Lass die beiden Teile zusammen genau die Lücke überspannen, dann drücke Prüfen"
+    "wrong": "Fast! Lass die beiden Teile zusammen genau die Lücke überspannen, dann drücke Prüfen",
+    "seo": {
+      "intro": "Beim Zahlzerteiler schweben zwei Steinplattformen über einer Schlucht. Die Lernenden stellen die linke und rechte Zahl so ein, dass ihre Summe der Ganzen entspricht, und eine Kristallbrücke erscheint, sobald die Teile stimmen. Die Brücken-über-Schlucht-Metapher macht die Teil-Teil-Ganzes-Beziehung greifbar.",
+      "howToPlay": [
+        "Lies die ganze Zahl, die über der Schlucht angezeigt wird.",
+        "Stelle mit −/+-Tasten oder Ziehen auf jeder Plattform den linken Teil ein.",
+        "Beobachte, wie der rechte Teil sich aktualisiert und zeigt, was noch fehlt.",
+        "Sobald die Brücke die Plattformen verbindet, drücke Prüfen."
+      ],
+      "skills": "Zahlzerlegungen bauen automatische Zerlegungsflüssigkeit für kleine Zahlen (1–20) auf — die Grundlage für mentales Addieren und Subtrahieren. Wer weiß, dass 7 sich in 3+4 oder 5+2 zerlegen lässt, kann über Zehner addieren ohne Finger abzuzählen.",
+      "example": "Für die Ganze 8 stellt das Kind den linken Teil auf 5; der rechte Teil zeigt automatisch 3. Die Brücke erscheint und bestätigt 5+3=8. Ein Versuch mit 6 und 2 zeigt eine andere gültige Zerlegung.",
+      "mistakes": "Kleine Kinder fixieren einen Teil auf 1 und zählen den anderen hoch, und verpassen dabei, dass viele gültige Paare existieren. Das interaktive Ziehen regt zum Erkunden des gesamten Zerlegungsbereichs an, statt beim ersten richtigen Ergebnis aufzuhören.",
+      "faqs": [
+        {
+          "q": "Worin unterscheidet sich Zahlzerteiler vom Zehnrahmen-Spiel?",
+          "a": "Der Zehnrahmen zeigt eine Zahl als gefüllte und leere Felder in einem festen 10-Zellen-Raster und baut die Beziehung zur Zehn auf. Zahlzerteiler ist offen: Er zerlegt jede kleine Zahl in zwei beliebige Teile, ohne an die Zehn gebunden zu sein."
+        },
+        {
+          "q": "Für welche Klassen ist Zahlzerteiler geeignet?",
+          "a": "Klassen 1–2, in denen die Lernenden Zahlen bis 20 zerlegen und die Teil-Teil-Ganzes-Beziehung flüssig beherrschen müssen, bevor Additionsalgorithmen eingeführt werden."
+        },
+        {
+          "q": "Akzeptiert das Spiel jede gültige Zerlegung oder nur ein bestimmtes Paar?",
+          "a": "Jedes Paar, das in der Summe der Ganzen entspricht, wird akzeptiert. Das Spiel regt dazu an, über mehrere Runden alle Zerlegungen der Zielzahl zu erkunden."
+        }
+      ]
+    }
   },
   "numberLineJump": {
     "title": "Sprung auf dem Zahlenstrahl",
@@ -241,7 +711,33 @@
     "instructions": "Stelle die Sprungweite mit − / + ein, dann drücke → Vorwärts oder ← Zurück, um das Auto über die Strecke zu hüpfen. Du kannst mehrmals hüpfen, bis du genau auf der Flagge landest. Dann drücke Prüfen",
     "prompt": "Springe zu {target}",
     "correct": "Super! Du bist genau auf {target} gelandet",
-    "wrong": "Fast! Hüpfe vor oder zurück, bis du genau auf der Flagge landest"
+    "wrong": "Fast! Hüpfe vor oder zurück, bis du genau auf der Flagge landest",
+    "seo": {
+      "intro": "Zahlenstrahl-Sprünge setzt ein Auto auf eine Rennstrecke und lässt es mit selbst gewählten Sprüngen zu einer Zielposition hüpfen. Jeder Sprung vor- oder rückwärts ist eine sichtbare Addition oder Subtraktion — die abstrakte Operation wird zu einer echten Reise auf einem skalierten Strahl.",
+      "howToPlay": [
+        "Lies die Zielzahl, die von der Flagge auf der Strecke markiert wird.",
+        "Stelle die Sprungweite mit −/+-Tasten ein.",
+        "Drücke Vorwärts oder Rückwärts, um das Auto um diese Anzahl Felder zu bewegen.",
+        "Lande genau auf der Flagge und drücke dann Prüfen."
+      ],
+      "skills": "Zahlenstrahl-Sprünge fördert flexibles mentales Rechnen, indem Addieren und Subtrahieren eine Richtung bekommen: vorwärts für Plus, rückwärts für Minus. Die Lernenden entwickeln ein Gefühl für Abstände und Richtungen auf dem Strahl, was später für Ganzzahloperationen und Koordinatenarbeit hilfreich ist.",
+      "example": "Um von 0 mit Sprüngen der Weite 5 die Zahl 17 zu erreichen: drei Sprünge vorwärts landen auf 15, dann wechsle zu Sprungweite 2 für einen weiteren Sprung auf 17. Die Lernenden sehen 5+5+5+2=17 als Weg, nicht als abstrakte Summe.",
+      "mistakes": "Lernende wählen manchmal eine Sprungweite, die die Zielzahl nicht teilt, und überschießen — dann fällt der Rückweg schwer. Das Spiel erlaubt verschiedene Sprungweiten in einer Runde und regt zu einem zweistufigen Vorgehen an.",
+      "faqs": [
+        {
+          "q": "Wie unterscheidet sich Zahlenstrahl-Sprünge vom Zählsprung-Rennen?",
+          "a": "Das Zählsprung-Rennen legt die Sprungweite fest und fordert, jede Landung in einer Reihe zu markieren — das übt Vielfache als Muster. Zahlenstrahl-Sprünge lässt beliebige Sprungweiten zu, um ein einzelnes Ziel zu erreichen, und deckt Addition und Subtraktion gemeinsam ab."
+        },
+        {
+          "q": "Für welche Klassen ist Zahlenstrahl-Sprünge geeignet?",
+          "a": "Klassen 1–4, mit einfacheren Zielen und größeren Sprüngen für Jüngere sowie zweistelligen Zielen, die gemischte Sprungweiten erfordern, für ältere Lernende."
+        },
+        {
+          "q": "Kann das Auto rückwärts hüpfen, um Subtraktion zu üben?",
+          "a": "Ja. Mit der Rückwärts-Taste hüpft das Auto nach links auf der Strecke — das modelliert Subtraktion. Manchmal ist es nötig, das Ziel zu überschießen und dann zurückzuhüpfen, um genau darauf zu landen."
+        }
+      ]
+    }
   },
   "explodingDots": {
     "title": "Explodierende Punkte",
@@ -249,7 +745,24 @@
     "instructions": "Füge mit den − / + Tasten Punkte in jede Box ein (Hunderter, Zehner, Einer) oder ziehe über einer Box nach oben. Erreicht eine Box zehn Punkte, explodieren sie zu einem Punkt in der Box links daneben. Baue die Zahl und drücke Prüfen.",
     "prompt": "Baue die Zahl {target}",
     "correct": "Super! Du hast {target} gebaut",
-    "wrong": "Fast! Prüfe die Boxen und korrigiere die Zahl"
+    "wrong": "Fast! Prüfe die Boxen und korrigiere die Zahl",
+    "seo": {
+      "intro": "Explodierende Punkte machen das Bündeln zu einem Spektakel. Schüler legen Neon-Punkte in Einer-, Zehner- und Hunderter-Boxen, um eine Zielzahl darzustellen. Wenn eine Box zehn Punkte erreicht, explodieren sie zu einem Punkt in der Box links — so wird die Zehnerbasis erlebbar statt nur gelernt.",
+      "howToPlay": [
+        "Lies die Zielzahl über den Boxen.",
+        "Nutze −/+ Tasten oder ziehe nach oben, um Punkte in Einer-, Zehner- oder Hunderter-Box zu legen.",
+        "Wenn eine Box zehn Punkte erreicht, beobachte die Explosion, die sie nach links trägt.",
+        "Justiere, bis die Boxen zusammen die Zielzahl darstellen, dann drücke Prüfen."
+      ],
+      "skills": "Explodierende Punkte bauen tiefes Gespür für den Zehnerwert auf. Statt auswendig zu lernen, dass zehn Einer einen Zehner ergeben, sieht man es als Explosion. Dieses animationsgetriebene Verständnis bereitet auf mehrstellige Addition, Subtraktion und zukünftige Zahlensysteme in anderen Basen vor.",
+      "example": "23 aufbauen: 3 Punkte in Einer, 2 in Zehner. Keine Explosionen. 33 aufbauen: 13 Einer hinzufügen — bei zehn explodiert die Box, 3 Einer bleiben, ein Zehner entsteht. Ergebnis: 3 Zehner und 3 Einer = 33.",
+      "mistakes": "Schüler überfüllen manchmal eine Box und verpassen die Explosion. Das Spiel friert überfüllte Boxen ein, bis die Explosion ausgelöst wird — so wird die Zehn-Grenze verinnerlicht.",
+      "faqs": [
+        { "q": "Für welche Klassen sind Explodierende Punkte?", "a": "Klassen 2–3, wo Schüler Stellenwert-Intuition für zwei- und dreistellige Zahlen aufbauen und die Logik des Übertragens bei der Addition beginnen zu verstehen." },
+        { "q": "Ist das mit James Tantons Exploding-Dots-Projekt verwandt?", "a": "Die Mechanik ist vom selben Zehnerbasis-Punkte-Modell inspiriert, das in der Mathematikdidaktik verbreitet ist. Das Spiel nutzt dieselbe visuelle Sprache, um das Bündeln selbsterklärend zu machen." },
+        { "q": "Wie unterscheidet sich das von der Additions-Mine?", "a": "Explodierende Punkte konzentriert sich auf die Darstellung einer einzelnen Zahl und die Explosionsregel. Die Additions-Mine nutzt dieselben Spalten, aber im Kontext der Addition zweier Zahlen mit dem Wagen-Mechanismus." }
+      ]
+    }
   },
   "factris": {
     "title": "Factris",
@@ -257,7 +770,24 @@
     "instructions": "Ändere die Breite des Stapels mit den − / + Tasten (oder ziehe nach rechts zum Verbreitern, nach links zum Verschmälern), bis die Blöcke ein volles Rechteck bilden, das das leuchtende Regal genau ausfüllt. Passt die Breite nicht, bleibt die oberste Reihe unvollständig — das ist kein sauberes Rechteck. Drücke dann Prüfen.",
     "prompt": "Ordne {area} Blöcke an, um das Regal zu füllen",
     "correct": "Super! {slotW} breit × {height} hoch = {area}",
-    "wrong": "Fast! Ändere die Breite, bis die Blöcke das leuchtende Regal genau ausfüllen"
+    "wrong": "Fast! Ändere die Breite, bis die Blöcke das leuchtende Regal genau ausfüllen",
+    "seo": {
+      "intro": "Factris verleiht dem Multiplizieren und Faktorisieren einen Tetris-ähnlichen Dreh. Eine feste Anzahl von Lagerblöcken muss zu einem perfekten Rechteck geformt werden, das ein leuchtendes Regal exakt ausfüllt. Schüler suchen eine gültige Breite — also einen Teiler der Gesamtzahl — und die Höhe passt sich automatisch an.",
+      "howToPlay": [
+        "Lies die Gesamtanzahl der Blöcke in der Aufgabe.",
+        "Nutze −/+ Tasten oder ziehe links/rechts, um die Breite des Stapels zu ändern.",
+        "Beobachte, wie sich die Höhe anpasst, sodass Breite × Höhe stets der Gesamtzahl entspricht.",
+        "Finde eine Breite, die jede Zelle im leuchtenden Regal ohne Lücken füllt, und drücke Prüfen."
+      ],
+      "skills": "Factris baut Sicherheit mit Faktoren, Vielfachen und dem Zusammenhang zwischen Multiplikation und Fläche auf. Eine gültige Breite zu suchen ist identisch damit, ein Faktorpaar zu finden — Schüler verinnerlichen Faktorpaare durch räumliches Ausprobieren statt durch Auswendiglernen.",
+      "example": "Das Regal fasst 12 Blöcke. Breite 3 ergibt Höhe 4 — das Rechteck ist voll. Breite 5 lässt 2 Blöcke in der obersten Reihe übrig — kein Faktor. Man erkennt schnell: 1, 2, 3, 4, 6, 12 funktionieren; 5, 7, 8, 9, 10, 11 nicht.",
+      "mistakes": "Schüler probieren manchmal alle Zahlen der Reihe nach statt über Faktoren nachzudenken. Die Einsicht, dass Breite × Höhe = Gesamt, ist der Aha-Moment, den das Spiel auslösen soll.",
+      "faqs": [
+        { "q": "Für welche Klassen ist Factris?", "a": "Klassen 3–5, die Faktorpaare, Vielfache und das Flächenmodell der Multiplikation behandeln." },
+        { "q": "Wie unterscheidet sich das von der Multiplikations-Anordnung?", "a": "Die Multiplikations-Anordnung zeigt ein fertiges Gitter und fragt nach dem Gesamtprodukt. Factris gibt das Produkt und fragt nach einer Breite, die ein gültiges Rechteck ergibt — es kehrt das Anordnungsmodell um." },
+        { "q": "Zeigt das Spiel alle Faktorpaare?", "a": "Das Spiel akzeptiert jede gültige Breite. Schüler, die mehrere Breiten ausprobieren, entdecken natürlich alle Faktorpaare der Gesamtzahl." }
+      ]
+    }
   },
   "skipCount": {
     "title": "Skip-Count-Rennen",
@@ -265,7 +795,33 @@
     "instructions": "Tippe auf die Felder, auf denen das Tier bei jedem Sprung landet. Markiere alle bis zum Ende und drücke dann Prüfen — das Tier hüpft über die Steine. Tippe ein Feld erneut an, um die Markierung zu entfernen, oder Zurücksetzen für einen Neustart.",
     "prompt": "Markiere jeden {step}er-Sprung bis {target}",
     "correct": "Super! Du hast in {step}er-Schritten bis {target} gezählt",
-    "wrong": "Fast! Markiere genau jeden Sprung — keinen weglassen und keinen zu viel"
+    "wrong": "Fast! Markiere genau jeden Sprung — keinen weglassen und keinen zu viel",
+    "seo": {
+      "intro": "Das Zählsprung-Rennen schickt ein Safaritier über Trittsteinen auf einer Strecke. Die Lernenden tippen auf jeden Stein, auf dem das Tier beim Zählen in 2er-, 5er- oder 10er-Schritten landet, und das Tier prescht zur Bestätigung los. Das eigene Markieren des Musters vor der Animation macht die Regelmäßigkeit des Zählens erlebbar.",
+      "howToPlay": [
+        "Lies die Schrittweite und das Ziel über der Safaristrecke.",
+        "Tippe auf jeden Stein, der auf einem Vielfachen der Schrittweite liegt.",
+        "Markiere alle Steine bis zum Ziel — keine auslassen und keinen zu viel.",
+        "Drücke Prüfen, um das Tier über die markierten Steine hüpfen zu sehen."
+      ],
+      "skills": "Zählen in 2er-, 5er- und 10er-Schritten ist der Einstieg in die Einmaleins-Tabellen. Das Erkennen jedes Vielfachen trainiert rhythmisches Zählen und legt das konzeptuelle Fundament für das Verständnis von Multiplikation als wiederholte Addition in einer strukturierten Folge.",
+      "example": "Zählen in 5er-Schritten bis 30: Tippe auf 5, 10, 15, 20, 25, 30. Die gleichmäßigen Abstände der markierten Steine machen das 5er-Muster visuell erkennbar, bevor eine einzige Einmaleins-Reihe eingeführt wird.",
+      "mistakes": "Lernende lassen häufig den ersten Schritt aus (starten bei 0 statt bei der Schrittweite) oder markieren den Zielstein, vergessen aber die Steine davor. Das Spiel fordert jeden Vielfachen: Ein fehlender oder überschüssiger Stein schlägt fehl und stärkt die vollständige Reihe, nicht nur das Endergebnis.",
+      "faqs": [
+        {
+          "q": "Wie unterscheidet sich das Zählsprung-Rennen von Zahlenstrahl-Sprüngen?",
+          "a": "Das Zählsprung-Rennen legt die Schrittweite fest und fordert, jede Landung in einer Reihe zu markieren — das übt Vielfache als Muster. Zahlenstrahl-Sprünge erlaubt beliebige Schrittweiten, um ein einzelnes Ziel zu erreichen, und umfasst Addition und Subtraktion gemeinsam."
+        },
+        {
+          "q": "Für welche Klassen ist das Zählsprung-Rennen geeignet?",
+          "a": "Klassen 2–3, in denen die Lernenden das Zählen in 2er-, 5er- und 10er-Schritten als direkte Vorbereitung auf das Einmaleins festigen."
+        },
+        {
+          "q": "Behandelt das Spiel auch andere Schrittweiten als 2, 5 und 10?",
+          "a": "Das Basisspiel verwendet 2, 5 und 10 entsprechend dem Lehrplan für Klassen 2–3. In fortgeschrittenen Runden können weitere Intervalle auftreten, wenn die Lernenden Fortschritte machen."
+        }
+      ]
+    }
   },
   "weightBalance": {
     "title": "Waage",
@@ -273,7 +829,33 @@
     "instructions": "Lege mit den − / + Tasten Grammgewichte auf die rechte Schale (1 g, 10 g, 100 g) oder ziehe nach oben, um ein 10-g-Gewicht hinzuzufügen, bis der Balken waagerecht ist. Drücke dann Prüfen",
     "prompt": "Wiege die Frucht aus — {weight} g",
     "correct": "Super! Du hast genau {weight} g ausgewogen",
-    "wrong": "Fast! Der Balken ist noch geneigt – prüfe das Gesamtgewicht und korrigiere es"
+    "wrong": "Fast! Der Balken ist noch geneigt – prüfe das Gesamtgewicht und korrigiere es",
+    "seo": {
+      "intro": "'Waage' versetzt Schüler an einen Marktstand, wo sie Früchte in einer Schale mit Grammgewichten (1 g, 10 g, 100 g) in der anderen auswiegen müssen. Der neigende Balken liefert sofortiges Feedback, ob das Gesamtgewicht zu leicht oder zu schwer ist, und macht Gewichtsmessen zu einer konkreten Gleichgewichtsaufgabe.",
+      "howToPlay": [
+        "Lies das Zielgewicht der Frucht in der linken Schale ab.",
+        "Nutze die Tasten 100 g, 10 g und 1 g, um Gewichte auf die rechte Schale zu legen.",
+        "Beachte den Balken: Links geneigt bedeutet, die rechte Schale ist zu leicht; rechts geneigt ist sie zu schwer.",
+        "Drücke Prüfen, sobald der Balken vollkommen waagerecht ist."
+      ],
+      "skills": "Das Zusammensetzen eines Zielgewichts aus 1-g-, 10-g- und 100-g-Gewichten schult das Stellenwertverständnis für dreistellige Zahlen und übt gleichzeitig die reale Messfähigkeit, die effizienteste Gewichtskombination zu wählen — dieselbe Überlegung, die an jedem Marktstand und in jeder Küche angewendet wird. Geeignet für Klassen 2–3.",
+      "example": "Das Zielgewicht ist 253 g. Die Schüler legen zwei 100-g-Gewichte (200 g), fünf 10-g-Gewichte (50 g) und drei 1-g-Gewichte (3 g) auf und erreichen genau 253 g. Die schrittweise Zerlegung spiegelt die Stellenwertstruktur der Zahl selbst wider.",
+      "mistakes": "Schüler verwenden häufig zu viele kleine Gewichte, statt zehn 1-g-Stücke gegen ein 10-g-Stück zu tauschen. Die begrenzte Anzahl von Gewichten auf dem Bildschirm fördert diesen Bündelungsschritt — analog zum Übertrag beim schriftlichen Addieren.",
+      "faqs": [
+        {
+          "q": "Wie stärkt die Auswahl von Grammgewichten das Stellenwertverständnis in diesem Spiel?",
+          "a": "Die drei Einheiten (1 g, 10 g, 100 g) entsprechen Einern, Zehnern und Hundertern. Ein Gewicht von 253 g aufzubauen macht die dreistellige Struktur greifbar, nicht abstrakt."
+        },
+        {
+          "q": "Für welche Klassen ist die 'Waage' gedacht?",
+          "a": "Klassen 2–3, in denen Schüler Standardmasseeinheiten (Gramm) kennenlernen, dreistellige Zahlen zusammensetzen und Messinstrumente einsetzen."
+        },
+        {
+          "q": "Wie unterscheidet sich das vom Spiel 'Balkenwaage' (Arithmetik)?",
+          "a": "Die 'Waage' (Thema: Maßeinheiten) misst physische Masse in Gramm und schult Mess- und Stellenwertfähigkeiten. Die 'Balkenwaage' (Thema: Arithmetik) übt Kopfrechnen, indem eine Summe durch nummerierte Gewichte nachgebildet wird — es geht um Gleichheit und Rechnen, nicht um Masseeinheiten."
+        }
+      ]
+    }
   },
   "percentBar": {
     "title": "Prozentbalken",
@@ -281,7 +863,33 @@
     "instructions": "Nutze die Prozent-Tasten ±5% oder ziehe nach oben, um Fans hinzuzufügen, fülle die Tribüne auf den richtigen Prozentsatz und drücke dann Prüfen",
     "prompt": "Fülle {percent}% der Tribüne",
     "correct": "Super! Du hast {percent}% der Tribüne gefüllt",
-    "wrong": "Fast! Prüfe den Prozentsatz und korrigiere die Füllung"
+    "wrong": "Fast! Prüfe den Prozentsatz und korrigiere die Füllung",
+    "seo": {
+      "intro": "Prozentbalken zeigt eine Stadiontribüne, die in 100 gleiche Abschnitte unterteilt ist. Schüler ziehen oder tippen, um genau die richtige Anzahl von Abschnitten zu füllen — so wird die abstrakte Idee, dass Prozent Teile von 100 bedeutet, greifbar und unmittelbar. Anders als ein geschriebener Bruch bleibt die Gesamtlänge des Balkens immer gleich.",
+      "howToPlay": [
+        "Lies den Ziel-Prozentwert, der über der Tribüne angezeigt wird.",
+        "Nutze die Tasten +5% und −5% oder ziehe nach oben, um Fans zur Tribüne hinzuzufügen.",
+        "Beobachte, wie Füllstand und Live-Prozentanzeige gemeinsam aktualisiert werden.",
+        "Wenn der gefüllte Anteil dem Ziel entspricht, drücke Prüfen."
+      ],
+      "skills": "Der Prozentbalken verankert die Kerndefinition: Prozent bedeutet immer von 100. Das Befüllen desselben festen Balkens auf verschiedene Niveaus vermittelt räumliches Gefühl — 50 % ist die Hälfte, 25 % ein Viertel, 75 % drei Viertel — bevor eine Formel eingeführt wird.",
+      "example": "Bei 30 % füllt der Schüler 30 der 100 Abschnitte. Der Vergleich mit einem halbvollen Balken macht sofort deutlich, dass 30 % weniger als die Hälfte ist — ganz ohne Rechnung.",
+      "mistakes": "Schüler verwechseln manchmal den Prozentwert mit der Anzahl der Klicks. Der feste 100-Abschnitt-Balken korrigiert das: 30 % bedeutet immer genau 30 gefüllte Abschnitte, egal wie viele Klicks nötig waren.",
+      "faqs": [
+        {
+          "q": "Wie hilft das Befüllen eines Balkens Schülern, Prozent als Teile von 100 zu verstehen?",
+          "a": "Der Balken hat immer 100 Abschnitte, also platziert das Füllen auf 40 % buchstäblich 40 von 100 Abschnitten. Die visuelle Länge macht die Bruch-aus-100-Definition selbst evident, bevor eine Regel formuliert wird."
+        },
+        {
+          "q": "Für welche Klassen ist Prozentbalken geeignet?",
+          "a": "Klassen 5–6, in denen Schüler Prozent als Verhältnis von 100 definieren und ein visuelles Modell benötigen, bevor sie Prozentberechnungen durchführen."
+        },
+        {
+          "q": "Wie unterscheidet sich Prozentbalken von Prozent einer Zahl?",
+          "a": "Prozentbalken ist ein visuelles Modell: Schüler schattieren einen festen Balken, um zu sehen, wie ein Prozentsatz aussieht. Prozent einer Zahl ist ein Rechenspiel: Schüler berechnen eine bestimmte Menge wie 30 % von 80. Das eine baut das Konzept auf, das andere wendet es an."
+        }
+      ]
+    }
   },
   "percentOfQuantity": {
     "title": "Prozent einer Zahl",
@@ -289,7 +897,33 @@
     "instructions": "Lies die Aufgabe auf dem Schild, stelle deine Antwort mit den Tasten − / + ein und drücke dann Prüfen",
     "prompt": "Was ist {percent}% von {total}?",
     "correct": "Richtig! {percent}% von {total} ist {result}",
-    "wrong": "Nicht ganz — versuche es noch einmal"
+    "wrong": "Nicht ganz — versuche es noch einmal",
+    "seo": {
+      "intro": "Prozent einer Zahl zeigt ein Schild mit einem Prozentwert und einer Menge; Schüler stellen die numerische Antwort mit Tasten ein. Das Spiel trainiert die zweiteilige Kopfrechnung: den Prozentsatz in einen Bruch oder Dezimalwert umwandeln, dann mit dem Ganzen multiplizieren — so wird Prozentrechnung flüssig und schnell.",
+      "howToPlay": [
+        "Lies den Prozentwert und die Menge auf dem Schild.",
+        "Rechne im Kopf: Wandle den Prozentsatz in einen Bruch um (z. B. 25 % = 1/4) oder nutze die Dezimalform.",
+        "Stelle deine berechnete Antwort mit den +/−-Tasten ein.",
+        "Drücke Prüfen zur Bestätigung."
+      ],
+      "skills": "Prozent einer Zahl baut automatische Sicherheit bei der Prozentrechnung auf: 10 %, 25 %, 50 % und andere gängige Prozentwerte einer ganzen Zahl finden. Diese Rechenfertigkeit bildet die Grundlage für Rabatte, Trinkgelder, Steuern und alle Alltagssituationen mit Prozenten.",
+      "example": "Für 25 % von 80: Schüler erkennen 25 % als ein Viertel und dividieren 80 durch 4, um 20 zu erhalten. Das Üben freundlicher Prozentwerte zuerst macht schwierigere Werte wie 15 % oder 35 % durch Zerlegung zugänglich.",
+      "mistakes": "Ein häufiger Fehler ist das Eingeben des Prozentwertes selbst (25 statt 20 für 25 % von 80). Das Spiel deckt das auf, weil es die tatsächliche Menge verlangt, nicht das Prozentzeichen.",
+      "faqs": [
+        {
+          "q": "Welche zweiteilige Rechnung trainiert dieses Spiel?",
+          "a": "Schüler wandeln den Prozentsatz in einen Bruch oder Dezimalwert um und multiplizieren dann mit der gegebenen Menge. Beide Schritte müssen korrekt sein, um zur richtigen Antwort zu gelangen."
+        },
+        {
+          "q": "Für welche Klassen ist Prozent einer Zahl geeignet?",
+          "a": "Klassen 5–6, in denen Schüler vom Verständnis, was ein Prozentsatz darstellt, zur Berechnung eines Prozentsatzes einer gegebenen Menge in Alltagskontexten übergehen."
+        },
+        {
+          "q": "Wie unterscheidet sich dieses Spiel von Shop-Rabatt?",
+          "a": "Prozent einer Zahl fragt nach dem reinen Prozentergebnis (Was sind 30 % von 80?). Shop-Rabatt wendet diese Rechnung in einem Einkaufskontext an: Rabattbetrag berechnen, dann vom Originalpreis abziehen, um den Verkaufspreis zu erhalten."
+        }
+      ]
+    }
   },
   "percentDiscount": {
     "title": "Shop-Rabatt",
@@ -297,7 +931,33 @@
     "instructions": "Lies den Originalpreis und den Rabatt, stelle den Verkaufspreis mit den Tasten − / + ein und drücke dann Prüfen",
     "prompt": "Ein Artikel kostet ₪{original} mit {discount}% Rabatt. Was ist der Verkaufspreis?",
     "correct": "Richtig! Der Verkaufspreis ist ₪{salePrice}",
-    "wrong": "Nicht ganz — berechne den Rabattbetrag und ziehe ihn vom Originalpreis ab"
+    "wrong": "Nicht ganz — berechne den Rabattbetrag und ziehe ihn vom Originalpreis ab",
+    "seo": {
+      "intro": "Shop-Rabatt versetzt Schüler in einen virtuellen Laden, in dem sie den endgültigen Verkaufspreis nach einem prozentualen Rabatt berechnen müssen. Durch die Arbeit an einer realistischen Einkaufssituation üben Schüler den zweistufigen Prozess: Rabattbetrag berechnen, dann vom Originalpreis abziehen.",
+      "howToPlay": [
+        "Lies den Originalpreis und den Rabattprozentsatz im Laden.",
+        "Berechne den Rabattbetrag: Wende den Prozentsatz auf den Originalpreis an.",
+        "Ziehe den Rabatt vom Originalpreis ab, um den Verkaufspreis zu erhalten.",
+        "Gib den Verkaufspreis mit den +/−-Tasten ein und drücke Prüfen."
+      ],
+      "skills": "Shop-Rabatt entwickelt die Alltagsanwendung von Prozent einer Zahl: eine prozentuale Senkung berechnen und anwenden. Schüler lernen, dass das Finden eines Rabatts ein zweistufiger Prozess ist (Prozent vom Ganzen, dann Subtraktion) — die Grundlage für die Berechnung von Steuern, Trinkgeldern und Provisionen.",
+      "example": "Ein Artikel kostet 200 mit 25 % Rabatt. Schüler berechnen 25 % von 200 = 50, dann subtrahieren: 200 − 50 = 150. Der Verkaufspreis ist 150. Jeder Schritt gewinnt Bedeutung im Einkaufsrahmen.",
+      "mistakes": "Viele Schüler geben den Rabattbetrag selbst (50) statt des Endverkaufspreises (150) ein. Das als Verkaufspreis beschriftete Eingabefeld lenkt Schüler dazu an, den Subtraktionsschritt abzuschließen, der dieses Spiel von einer einfachen Prozentrechnung unterscheidet.",
+      "faqs": [
+        {
+          "q": "Warum fragt das Spiel nach dem Verkaufspreis und nicht nach dem Rabattbetrag?",
+          "a": "Die Berechnung des vollen Verkaufspreises erfordert beide Schritte: den Prozent-von und die Subtraktion. Beim Rabattbetrag aufzuhören, überspringt den Subtraktionsschritt, der in jeder realen Rabattsituation benötigt wird."
+        },
+        {
+          "q": "Für welche Klassen ist Shop-Rabatt geeignet?",
+          "a": "Klassen 5–6, in denen Schüler Prozentberechnungen auf Alltagskontexte anwenden, einschließlich Einkaufen, Steuern und andere prozentbasierte Anpassungen."
+        },
+        {
+          "q": "Wie unterscheidet sich Shop-Rabatt von Prozentbalken?",
+          "a": "Prozentbalken ist ein visuelles Modell, das zeigt, wie ein Prozentsatz auf einem festen Balken von 100 Abschnitten aussieht. Shop-Rabatt ist eine zweistufige Rechenaufgabe in einem realen Kontext: einen Prozent-von berechnen und dann anwenden, um einen neuen Preis zu finden."
+        }
+      ]
+    }
   },
   "ratioMixer": {
     "title": "Verhältnis-Mixer",
@@ -305,7 +965,33 @@
     "instructions": "Stelle die Menge von Saft A und Saft B mit den Tasten − und + ein (oder ziehe ein Glas nach oben zum Füllen, nach unten zum Leeren), bis ihr Verhältnis zum Ziel passt – jede gleichwertige Menge zählt – und drücke dann Prüfen.",
     "prompt": "Mische im Verhältnis {a}:{b}",
     "correct": "Super! Gleichwertig zu {a}:{b}",
-    "wrong": "Noch nicht das richtige Verhältnis – ändere die Mengen und versuche es erneut"
+    "wrong": "Noch nicht das richtige Verhältnis – ändere die Mengen und versuche es erneut",
+    "seo": {
+      "intro": "Verhältnis-Mixer stellt Schüler an eine Saftbar mit zwei Gläsern. Ziel ist es, Saft A und Saft B in einem Zielverhältnis einzuschenken — und zu entdecken, dass 1:2, 2:4 und 3:6 identisch schmecken. Das Anpassen der Mengen bis das Verhältnis stimmt macht Äquivalenz greifbar statt abstrakt.",
+      "howToPlay": [
+        "Lies das Zielverhältnis, das über den Gläsern angezeigt wird (z. B. 1:2).",
+        "Verwende die Tasten − und + oder ziehe jedes Glas nach oben oder unten, um die Mengen von Saft A und Saft B einzustellen.",
+        "Jedes Mengenpaar, das ein gleichwertiges Verhältnis ergibt, wird akzeptiert — probiere frei aus.",
+        "Drücke Prüfen, wenn deine Mischung dem Zielverhältnis entspricht."
+      ],
+      "skills": "Verhältnis-Mixer vermittelt das Kernverständnis, dass ein Verhältnis eine Beziehung zwischen zwei Größen beschreibt und kein festes Zahlenpaar ist. Schüler entdecken, dass das Multiplizieren beider Teile mit demselben Faktor das Verhältnis erhält — die Grundlage für proportionales Denken in den Klassen 5 und 6.",
+      "example": "Für ein Zielverhältnis von 1:2 werden 3 Einheiten Saft A und 6 Einheiten Saft B akzeptiert, weil 3:6 zu 1:2 vereinfacht. Schüler sehen, dass der Geschmack — das Verhältnis — unabhängig vom Gesamtvolumen gleich bleibt.",
+      "mistakes": "Schüler fixieren häufig eine Menge und passen nur die andere an, was selten das Verhältnis erhält. Das Spiel lehrt, dass beide Mengen gemeinsam mit demselben Faktor skalieren müssen.",
+      "faqs": [
+        {
+          "q": "Wie unterscheidet sich das Einstellen der Mengen im Verhältnis-Mixer vom Ausfüllen eines fehlenden Werts in der Verhältnistabelle?",
+          "a": "Im Verhältnis-Mixer wählt man frei jedes gültige gleichwertige Mengenpaar. In der Verhältnistabelle bestimmt man einen festen Skalierungsfaktor und berechnet einen einzelnen fehlenden Wert."
+        },
+        {
+          "q": "Für welche Klassen ist Verhältnis-Mixer geeignet?",
+          "a": "Klassen 5–6, wo Schüler Verhältnisse als Beziehung zwischen zwei Größen definieren und gleichwertige Verhältnisse im Rahmen des proportionalen Denkens erkunden."
+        },
+        {
+          "q": "Warum akzeptiert das Spiel jedes gleichwertige Verhältnis und nicht nur die genauen Zielzahlen?",
+          "a": "Das Akzeptieren aller gleichwertigen Formen ist die Lektion: 2:4 und 3:6 sind dasselbe Verhältnis wie 1:2. Gäbe es nur eine richtige Antwort, würden Schüler Zahlen raten statt die Äquivalenz zu verstehen."
+        }
+      ]
+    }
   },
   "ratioRecipe": {
     "title": "Rezept anpassen",
@@ -313,7 +999,34 @@
     "instructions": "Lies das Originalrezept, stelle die benötigte Zutatmenge mit den Tasten − / + ein und drücke dann Prüfen",
     "prompt": "Passe das Rezept auf {servings} Portionen an. Wie viel {ingredient} wird benötigt?",
     "correct": "Richtig! Du brauchst {amount} {ingredient}",
-    "wrong": "Fast! Multipliziere die Originalmenge mit dem Portionen-Verhältnis"
+    "wrong": "Fast! Multipliziere die Originalmenge mit dem Portionen-Verhältnis",
+    "seo": {
+      "intro": "Rezept anpassen zeigt eine Rezeptkarte für eine bestimmte Portionszahl und fordert Schüler auf, jede Zutat für eine andere Portionszahl neu zu berechnen. Das Verdreifachen von 200 g Mehl auf 600 g verleiht dem Multiplizieren mit Verhältnissen einen realen Zweck, den abstraktes Üben nicht bieten kann.",
+      "howToPlay": [
+        "Lies das Originalrezept: Portionszahl und Zutatenmengen.",
+        "Prüfe, wie viele Portionen gefordert sind.",
+        "Berechne den Skalierungsfaktor: neue Portionszahl geteilt durch die ursprüngliche.",
+        "Multipliziere die angezeigte Zutatmenge mit dem Faktor und gib das Ergebnis mit den Tasten − / + ein.",
+        "Drücke Prüfen."
+      ],
+      "skills": "Rezept anpassen übt multiplikatives Skalieren: den Faktor zwischen zwei Portionszahlen bestimmen und auf jede Zutat anwenden. Das ist der angewandte Kern des proportionalen Denkens — dieselbe Fähigkeit, die bei Einheitenumrechnung, Kartenmaßstab und Prozentaufgaben in den Klassen 5 und 6 gefragt ist.",
+      "example": "Ein Rezept für 4 Portionen braucht 200 g Mehl. Das Umrechnen auf 12 Portionen ergibt den Faktor 3 (12 ÷ 4), also werden aus 200 g Mehl 200 × 3 = 600 g. Schüler müssen zuerst den Faktor bestimmen und ihn dann anwenden — zwei getrennte Schritte.",
+      "mistakes": "Schüler addieren häufig die Portionsdifferenz statt mit dem Faktor zu multiplizieren (z. B. 8 zu 200 g addieren statt mit 3 zu multiplizieren). Der Rezeptkontext macht den Fehler offensichtlich: Addition vergrößert das Rezept nur leicht statt es wirklich zu verdreifachen.",
+      "faqs": [
+        {
+          "q": "Was lehrt das Skalieren eines Rezepts, was die Mischmechanik im Verhältnis-Mixer nicht lehrt?",
+          "a": "Bei Rezept anpassen ist der Faktor explizit: Schüler berechnen ihn (neue Portionen geteilt durch ursprüngliche) und wenden ihn dann an. Im Verhältnis-Mixer erkennen sie Äquivalenz, ohne einen bestimmten Faktor zu benennen."
+        },
+        {
+          "q": "Für welche Klassen ist Rezept anpassen geeignet?",
+          "a": "Klassen 5–6, wo Schüler proportionales Denken auf mehrstufige Alltagsprobleme anwenden und das Multiplizieren mit einem ganzzahligen oder einfachen Bruchverhältnis üben."
+        },
+        {
+          "q": "Fragt das Spiel nach allen Zutaten oder nur nach einer?",
+          "a": "Jede Runde konzentriert sich auf eine benannte Zutat aus dem Rezept. So bleibt die Berechnung einschrittig pro Runde und erfordert dennoch die Bestimmung des richtigen Skalierungsfaktors aus den Portionszahlen."
+        }
+      ]
+    }
   },
   "ratioTable": {
     "title": "Verhältnistabelle",
@@ -321,7 +1034,33 @@
     "instructions": "Lies die Tabelle, stelle den fehlenden Wert mit den Tasten − / + ein und drücke dann Prüfen",
     "prompt": "In der Verhältnistabelle {a}:{b} fehlt ein Wert",
     "correct": "Richtig! Der fehlende Wert ist {value}",
-    "wrong": "Fast! Berechne den Wert mit dem Skalierungsfaktor"
+    "wrong": "Fast! Berechne den Wert mit dem Skalierungsfaktor",
+    "seo": {
+      "intro": "Verhältnistabelle zeigt ein Raster gleichwertiger Verhältnisse mit einem fehlenden Wert. Schüler lesen die Spalten, um den Multiplikationsfaktor zu ermitteln, und füllen dann die Lücke. Das Tabellenformat macht das Muster gleichwertiger Verhältnisse als sichtbare Struktur erkennbar — nicht nur als isolierte Paare.",
+      "howToPlay": [
+        "Lies die Verhältnistabelle: Jede Spalte zeigt ein Wertepaar im selben Verhältnis.",
+        "Vergleiche zwei vollständige Spalten, um den Skalierungsfaktor zwischen ihnen zu bestimmen.",
+        "Wende den Faktor auf den bekannten Wert in der unvollständigen Spalte an.",
+        "Gib den fehlenden Wert mit den Tasten − / + ein und drücke Prüfen."
+      ],
+      "skills": "Das Arbeiten mit einer Verhältnistabelle schult die Gewohnheit, Beziehungen über Zeilen hinweg zu lesen statt nur innerhalb eines einzelnen Paares. Dieses zeilenbasierte Denken bereitet direkt auf das Lösen von Proportionen, Einheitsraten und Funktionstabellen in den Klassen 4 bis 6 vor.",
+      "example": "In einer 3:5-Verhältnistabelle zeigt die erste Spalte 3 und 5, die zweite 6 und 10, die dritte 9 und eine Leerstelle. Der Skalierungsfaktor von Spalte 1 zu Spalte 3 ist 3, also ist der fehlende Wert 5 × 3 = 15.",
+      "mistakes": "Schüler addieren manchmal eine Konstante zu jedem Wert über die Zeilen hinweg statt zu multiplizieren. Das Tabellenlayout macht diesen Fehler sichtbar, weil das Muster in der anderen Zeile zusammenbricht — das strukturierte Raster korrigiert sich selbst.",
+      "faqs": [
+        {
+          "q": "Wie hilft das Tabellenlayout Schülern, das Muster in gleichwertigen Verhältnissen zu sehen?",
+          "a": "Das Ausrichten mehrerer gleichwertiger Paare in Spalten zeigt, dass der Skalierungsfaktor in beiden Zeilen gleich ist. Dieses Muster ist schwerer zu erkennen, wenn Verhältnisse als isolierte Paare präsentiert werden."
+        },
+        {
+          "q": "Für welche Klassen ist Verhältnistabelle geeignet?",
+          "a": "Klassen 4–6: Viertklässler verwenden einfachere Tabellen zur Erkundung gleichwertiger Verhältnisse, während Klassen 5–6 mit größeren Faktoren als Teil des formalen proportionalen Denkens arbeiten."
+        },
+        {
+          "q": "Wie unterscheidet sich Verhältnistabelle von Verhältnis-Mixer und Rezept anpassen?",
+          "a": "Verhältnistabelle konzentriert sich auf das Lesen und Erweitern eines strukturierten Rasters gleichwertiger Paare. Verhältnis-Mixer lässt Schüler frei jede gültige Äquivalenz wählen. Rezept anpassen verlangt, einen berechneten Faktor auf eine reale Zutat anzuwenden."
+        }
+      ]
+    }
   },
   "numberSequence": {
     "title": "Zahlenfolge",
@@ -329,7 +1068,33 @@
     "instructions": "Finde die Regel der Folge (addieren oder multiplizieren), stelle den fehlenden Stein mit den Tasten − / + ein (oder ziehe nach oben zum Erhöhen) und drücke dann Prüfen",
     "prompt": "Vervollständige die Folge",
     "correct": "Richtig! Die fehlende Zahl ist {value}",
-    "wrong": "Fast! Finde die Regel und versuch es noch einmal"
+    "wrong": "Fast! Finde die Regel und versuch es noch einmal",
+    "seo": {
+      "intro": "Zahlenfolge legt eine Reihe nummerierter Steine mit einem fehlenden Stein vor und fordert die Schüler auf, die Regel herauszufinden — jedes Mal dieselbe Menge addieren oder multiplizieren — und dann den fehlenden Wert anzugeben. Sie überbrückt visuelle Musterarbeit hin zum regelbasierten arithmetischen Denken für die Klassen 3–5.",
+      "howToPlay": [
+        "Lies alle sichtbaren Zahlen in der Reihe und suche, was sich zwischen jedem Paar ändert.",
+        "Entscheide, ob die Regel additiv ist (jeder Schritt addiert denselben Betrag) oder multiplikativ (jeder Schritt multipliziert).",
+        "Verwende die − / + Tasten oder ziehe den fehlenden Stein nach oben, um den richtigen Wert einzustellen.",
+        "Drücke Prüfen, um deine Antwort zu bestätigen."
+      ],
+      "skills": "Das Herausfinden einer Regel aus einer Zahlenfolge und ihre Anwendung trainiert das Zählen in Schritten, das Erkennen arithmetischer Progressionen und frühes Funktionsdenken — Fähigkeiten, die direkt in Einmaleins, Ein-Ausgabe-Tabellen und Musteralgebra in den Klassen 3–5 einfließen.",
+      "example": "Eine Folge zeigt 3, 6, 9, ?, 15. Jeder Schritt addiert 3, also ist die fehlende Zahl 12. Zu sehen, dass der Abstand zwischen jedem Paar gleich ist — nicht nur die letzte Zahl zu lesen — ist die Denkkompetenz, die Zahlenfolge entwickelt.",
+      "mistakes": "Schüler raten oft, indem sie eins mehr als den vorherigen Term addieren, anstatt den tatsächlichen Abstand zu messen. Zahlenfolge erfordert das Überprüfen mehrerer Abstände zur Bestätigung der Regel und trainiert die Gewohnheit, vor dem Antworten zu überprüfen.",
+      "faqs": [
+        {
+          "q": "Wie lehrt die Mechanik des fehlenden Steins das Finden von Regeln statt nur das Raten von Antworten?",
+          "a": "Der Stein erscheint überall in der Folge, nicht immer am Ende, sodass die Schüler die Regel aus den umgebenden Termen ableiten müssen, anstatt eine Liste um einen weiteren Schritt zu verlängern."
+        },
+        {
+          "q": "Für welche Klassen ist Zahlenfolge geeignet?",
+          "a": "Sie eignet sich für die Klassen 3–5, in denen Schüler von visuellen Mustern zu numerischen Regeln übergehen und beginnen, arithmetische und multiplikative Beziehungen zu formalisieren."
+        },
+        {
+          "q": "Wie unterscheidet sich Zahlenfolge von Geometrische Folge?",
+          "a": "Zahlenfolge mischt additive und einfache multiplikative Regeln; Geometrische Folge konzentriert sich ausschließlich auf die Multiplikation mit konstantem Verhältnis wie ×2 oder ×3 — die nächste Schwierigkeitsstufe."
+        }
+      ]
+    }
   },
   "geometricSequence": {
     "title": "Geometrische Folge",
@@ -337,7 +1102,33 @@
     "instructions": "Finde die Regel (×2 oder ×3), stelle den fehlenden Stein mit den Tasten − / + ein und drücke dann Prüfen",
     "prompt": "Vervollständige die geometrische Folge",
     "correct": "Richtig! Die fehlende Zahl ist {value}",
-    "wrong": "Fast! Suche den Multiplikator zwischen aufeinanderfolgenden Gliedern"
+    "wrong": "Fast! Suche den Multiplikator zwischen aufeinanderfolgenden Gliedern",
+    "seo": {
+      "intro": "Geometrische Folge gibt Schülern eine Reihe nummerierter Steine, bei der jedes Glied durch Multiplikation des vorherigen mit einem festen Verhältnis entsteht — ×2, ×3 oder ähnlich. Diesen konstanten Multiplikator zu identifizieren und damit den fehlenden Stein zu füllen ist die bestimmende Fähigkeit dieses Spiels für Klassen 4–6.",
+      "howToPlay": [
+        "Lies die sichtbaren Zahlen und dividiere ein Glied durch das vorherige, um das gemeinsame Verhältnis zu finden.",
+        "Bestätige, dass das Verhältnis für jedes benachbarte Paar gilt — es muss durchgehend gleich sein.",
+        "Verwende die − / + Tasten (oder ziehe den Stein), um den fehlenden Wert einzustellen.",
+        "Drücke Prüfen, um zu sehen, ob das Verhältnis über die gesamte Folge konsistent ist."
+      ],
+      "skills": "Das Erkennen und Anwenden eines konstanten multiplikativen Verhältnisses ist die Grundlage geometrischer Folgen, exponentieller Wachstumsmuster und Prozentberechnungen. Geometrische Folge baut diese Flüssigkeit auf, bevor Schüler die formale Algebra der Potenzen in den Klassen 4–6 kennenlernen.",
+      "example": "Eine Folge zeigt 2, 6, 18, ?, 162. Jedes Glied wird mit 3 multipliziert, also ist der fehlende Wert 54. Die Schlüsselerkenntnis ist, dass die Division zweier aufeinanderfolgender Glieder (18 ÷ 6 = 3) die Regel enthüllt — dieses Spiel trainiert diesen Division-als-Verhältnis-Schritt.",
+      "mistakes": "Schüler versuchen oft, eine konstante Differenz zu addieren, weil additives Denken einfacher ist. Geometrische Folge macht den Multiplikator zum einzigen, was funktioniert, und zwingt Schüler, vom additiven zum multiplikativen Denken zu wechseln.",
+      "faqs": [
+        {
+          "q": "Warum verwendet das Spiel Division, um die Regel zu finden, statt einfach eine ×2 oder ×3 Beschriftung zu lesen?",
+          "a": "Das Ableiten des Verhältnisses durch Division aufeinanderfolgender Glieder — statt es mitzuteilen — trainiert die algebraische Gewohnheit, eine Regel aus Daten zu extrahieren. Dieses Denken überträgt sich direkt auf Tabellen, Graphen und spätere Potenzarbeit."
+        },
+        {
+          "q": "Für welche Klassen ist Geometrische Folge geeignet?",
+          "a": "Sie zielt auf die Klassen 4–6, in denen Schüler sicher in der Multiplikation sind und bereit sind zu sehen, dass dieselbe wiederholt angewendete Operation exponentielles Wachstum erzeugt."
+        },
+        {
+          "q": "Wie unterscheidet sich Geometrische Folge von Zahlenfolge?",
+          "a": "Geometrische Folge verwendet nur multiplikative Regeln (konstantes Verhältnis); Zahlenfolge enthält auch additive Muster. Geometrische Folge ist die schwierigere, fokussiertere Version derselben Idee."
+        }
+      ]
+    }
   },
   "fractionStrip": {
     "title": "Bruchstreifen",
@@ -345,7 +1136,33 @@
     "instructions": "Der obere Streifen ist vorgegeben. Baue den unteren: Stelle die Anzahl der Schnitte mit Nenner −/+ und die gefärbten Stücke mit Zähler −/+ ein (oder ziehe: rechts = mehr gefärbte Stücke, oben = mehr Schnitte), sodass er gleich groß wie der obere Streifen ist, aber eine andere Anzahl Stücke hat. Die Waage ist im Gleichgewicht, wenn beide Brüche gleich sind. Dann drücke Prüfen",
     "prompt": "Baue einen Bruch, der gleich {num}/{den} ist",
     "correct": "Toll! {rnum}/{rden} ist gleich {num}/{den}",
-    "wrong": "Fast! Baue einen Streifen gleicher Größe, aber mit anderem Nenner — die Waage pendelt sich ein"
+    "wrong": "Fast! Baue einen Streifen gleicher Größe, aber mit anderem Nenner — die Waage pendelt sich ein",
+    "seo": {
+      "intro": "Beim Spiel Bruchstreifen liegen zwei Holzstreifen nebeneinander, mit einer Waage dazwischen. Der obere Streifen zeigt den Zielbruch; deine Aufgabe ist es, einen unteren Streifen mit exakt derselben Länge aufzubauen — aber mit einem ganz anderen Nenner. Das ist die greifbare Definition gleichwertiger Brüche.",
+      "howToPlay": [
+        "Lies den Bruch auf dem oberen Streifen.",
+        "Stelle mit den Nenner-Schaltflächen − und + ein, wie viele gleiche Abschnitte der untere Streifen erhalten soll.",
+        "Stelle mit den Zähler-Schaltflächen − und + (oder Ziehen) die Anzahl der eingefärbten Abschnitte ein.",
+        "Die Waage balanciert sich aus, wenn beide Streifen gleich groß sind — drücke dann Prüfen."
+      ],
+      "skills": "Gleichwertige Brüche sind das Tor zum Addieren von Brüchen mit ungleichen Nennern und zum Kürzen. Das Spiel macht Gleichwertigkeit spürbar: Die Waage kippt und balanciert bei jedem Anpassen.",
+      "example": "Der obere Streifen zeigt 1/2. Man kann ihn mit 2/4, 3/6 oder 4/8 ausbalancieren — jede Kombination, die die Waage ausgleicht, ist ein gleichwertiger Bruch. Mehrere Lösungen auf einem Bildschirm macht aus einer auswendig gelernten Regel eine erlebte Beziehung.",
+      "mistakes": "Schüler bauen manchmal den Zielbruch exakt nach (gleicher Zähler, gleicher Nenner) statt einen gleichwertigen Bruch mit anderem Nenner zu finden. Das Spiel fordert einen anderen Nenner und sperrt damit diese Abkürzung.",
+      "faqs": [
+        {
+          "q": "Wie unterscheiden sich Bruchstreifen von den anderen drei Bruchspielen?",
+          "a": "Bruchstreifen ist das einzige Spiel, das sich auf gleichwertige Brüche konzentriert — einen neuen Bruch mit anderem Nenner zu bauen, der dem Ziel entspricht. Die anderen drei Spiele befassen sich mit dem Verstehen eines einzelnen Bruchs."
+        },
+        {
+          "q": "Für welche Klassen ist das Spiel geeignet?",
+          "a": "Klasse 3 bis 4, sobald Schüler verstehen, was ein Bruch darstellt, und bereit sind, Brüche zu vergleichen und gleichwertige Formen zu finden."
+        },
+        {
+          "q": "Wie hilft die Waage beim Lernen?",
+          "a": "Die Waage gibt sofortiges visuelles Feedback: Sie kippt, wenn die Streifen ungleich sind, und balanciert sich, wenn sie übereinstimmen — ohne Raten."
+        }
+      ]
+    }
   },
   "angleBuilder": {
     "title": "Winkel-Baumeister",
@@ -353,7 +1170,33 @@
     "instructions": "Drehe den beweglichen Laser mit den −/+ Tasten (je 15°) oder durch Ziehen, bis der leuchtende Bogen den gesuchten Winkel zeigt, und drücke dann Prüfen.",
     "prompt": "Baue einen Winkel von {angle}°",
     "correct": "Super! Du hast einen {angle}°-Winkel gebaut.",
-    "wrong": "Noch nicht. Drehe den Strahl zum gesuchten Winkel und versuche es erneut."
+    "wrong": "Noch nicht. Drehe den Strahl zum gesuchten Winkel und versuche es erneut.",
+    "seo": {
+      "intro": "Der Winkel-Baumeister versetzt ein Geodreieck in ein Raumstations-Szenario: Schüler drehen einen Laserstrahl, bis der leuchtende Bogen einer Zielgradzahl entspricht. Die Gradanzeige aktualisiert sich live, sodass das abstrakte Symbol «90°» zu einem sichtbaren und spürbaren Winkel wird.",
+      "howToPlay": [
+        "Lies den Zielwinkel ab, der über dem Geodreieck angezeigt wird.",
+        "Ziehe den beweglichen Laserstrahl oder nutze die −/+-Tasten (je 15° pro Schritt) in Richtung des Ziels.",
+        "Beobachte den leuchtenden Bogen und die Live-Gradanzeige, während der Winkel sich öffnet oder schließt.",
+        "Drücke Prüfen, wenn der Bogen dem Ziel entspricht."
+      ],
+      "skills": "Winkel nach Grad zu bauen bereitet Schüler darauf vor, Winkel als spitz, rechtwinklig, stumpf oder gestreckt einzustufen und ein echtes Geodreieck genau zu verwenden. Dies ist die Kernkompetenz der Geometrie in Klasse 4-5, bevor Winkelsummen in Dreiecken und Vielecken behandelt werden.",
+      "example": "Für 120° dreht sich der Strahl über die 90°-Markierung (rechter Winkel) hinaus und ein Drittel des Weges Richtung 180° (gestreckter Winkel). Das Überschreiten von 90° führt das Wort «stumpf» natürlich ein.",
+      "mistakes": "Schüler verwechseln oft die beiden Skalen eines Geodreiecks. Das Spiel zeigt nur eine Anzeige, entfernt so die Verwechslung und lässt Schüler sich auf die Beziehung zwischen Drehung und Grad konzentrieren.",
+      "faqs": [
+        {
+          "q": "In welchen Schritten bewegt sich der Strahl?",
+          "a": "Jeder Tastendruck bewegt den Strahl um 15°, sodass Vielfache von 15 geübt werden: 30°, 45°, 60°, 90°, 120°, 135°, 150° und 180°."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 4-5, wenn Schüler Winkel erstmals messen und nach Art klassifizieren."
+        },
+        {
+          "q": "Wie unterscheidet es sich vom Geobrett?",
+          "a": "Der Winkel-Baumeister fokussiert auf das Gradmaß eines einzelnen Winkels. Das Geobrett baut ganze Formen und misst deren Fläche in Quadrateinheiten."
+        }
+      ]
+    }
   },
   "divisionShare": {
     "title": "Gerecht teilen",
@@ -361,7 +1204,24 @@
     "instructions": "Lege mit den − / + Tasten dieselbe Anzahl Münzen in jede Truhe (oder ziehe nach oben). Teile so viel wie möglich gleichmäßig auf; der Rest kommt in den Beutel. Dann auf Prüfen tippen",
     "prompt": "Teile {total} Münzen gleichmäßig auf {k} Truhen",
     "correct": "Gut gemacht! {perChest} in jeder Truhe, und {remainder} bleiben im Beutel",
-    "wrong": "Du kannst mehr gleichmäßig verteilen — versuch es noch einmal"
+    "wrong": "Du kannst mehr gleichmäßig verteilen — versuch es noch einmal",
+    "seo": {
+      "intro": "Gerecht Teilen modelliert Division als gleichmäßiges Aufteilen. Schüler verteilen einen Münzstapel auf Schatztruhen — dieselbe Anzahl in jede — und Münzen, die sich nicht gleich teilen lassen, landen im Rest-Beutel. Dadurch werden Quotient und Rest physisch unmissverständlich.",
+      "howToPlay": [
+        "Lies, wie viele Münzen geteilt werden sollen und wie viele Truhen zu füllen sind.",
+        "Nutze −/+ Tasten (oder ziehe nach oben), um gleich viele Münzen in jede Truhe zu legen.",
+        "Teile so viele Münzen wie möglich gleichmäßig auf; der Rest gehört in den Rest-Beutel.",
+        "Drücke Prüfen, wenn jede Truhe gleich viel hat und der Beutel die übrigen Münzen enthält."
+      ],
+      "skills": "Gerecht Teilen baut das partitive Divisionsmodell (Aufteilen in gleiche Gruppen) auf und gibt dem Rest eine konkrete Bedeutung. Schüler hören auf, den Rest als Fehler zu sehen, und beginnen ihn als das zu verstehen, was nach gerechtem Teilen übrig bleibt — ein wesentlicher Schritt vor der schriftlichen Division.",
+      "example": "17 Münzen auf 5 Truhen verteilen: 5 × 3 = 15, also 3 Münzen in jede Truhe und 2 in den Beutel. Der Bildschirm zeigt 5 volle Truhen und einen Beutel mit 2 Münzen: 17 ÷ 5 = 3 Rest 2.",
+      "mistakes": "Schüler versuchen manchmal, alle Münzen aufzuteilen und den Beutel leer zu lassen, indem sie Münzen aufteilen. Das Spiel akzeptiert nur ganze Zahlen pro Truhe und führt so zum Konzept des Rests.",
+      "faqs": [
+        { "q": "Für welche Klassen ist Gerecht Teilen?", "a": "Klassen 3–4, wo Schüler Division als gleichmäßiges Aufteilen lernen und zum ersten Mal Resten begegnen." },
+        { "q": "Wie unterscheidet sich das von Divisions-Türmen?", "a": "Gerecht Teilen nutzt physisches Münzteilen, um das Konzept zu vermitteln. Divisions-Türme wendet dieses Verständnis Schritt für Schritt im formalen schriftlichen Divisionsalgorithmus an." },
+        { "q": "Wählt der Schüler, wie viele Münzen in den Beutel kommen?", "a": "Der Beutel füllt sich automatisch mit dem Rest, nachdem die Truhen gefüllt sind. Schüler steuern nur die Münzanzahl pro Truhe, sodass der Fokus auf dem größten gleichen Teil liegt." }
+      ]
+    }
   },
   "barGraph": {
     "title": "Balkendiagramm-Baumeister",
@@ -369,7 +1229,33 @@
     "instructions": "Lies die Höhe jedes Balkens an der Skala an der Seite ab, gib dann mit den Tasten − / + (oder durch Ziehen nach oben) ein, wie viel mehr die erste Kategorie als die zweite hat, und drücke Prüfen",
     "prompt": "Wie viel mehr {a} als {b}?",
     "correct": "Richtig! Der Unterschied ist {diff}",
-    "wrong": "Fast! Lies die Höhe jedes Balkens noch einmal und versuche es erneut"
+    "wrong": "Fast! Lies die Höhe jedes Balkens noch einmal und versuche es erneut",
+    "seo": {
+      "intro": "Der Balkendiagramm-Baumeister lehrt Schüler, quantitative Daten von einer Skala abzulesen und den Unterschied zwischen zwei Kategorien zu berechnen. In jeder Runde erscheint ein Balkendiagramm mit beschrifteten Balken; die Schüler lesen die Höhe jedes Balkens von der seitlichen Skala ab und berechnen, wie viel mehr eine Kategorie hat. Klassen 2–5.",
+      "howToPlay": [
+        "Betrachte die zwei Balken, nach denen die Frage fragt.",
+        "Verfolge jeden Balken waagerecht zur nummerierten Skala am Rand und lies die Höhe ab.",
+        "Ziehe die kleinere Höhe von der größeren ab, um den Unterschied zu ermitteln.",
+        "Gib den Unterschied mit −/+ oder durch Ziehen ein und drücke Prüfen."
+      ],
+      "skills": "Der Balkendiagramm-Baumeister entwickelt die Fähigkeit, präzise Werte aus einer Skala zu entnehmen und Unterschiede in Daten zu erkennen — nicht nur Gesamtwerte. Schüler, die Balkendiagramme genau lesen, können Diagramme in Naturwissenschaften, Nachrichten und standardisierten Tests interpretieren, eine Fertigkeit, die von Klasse 2 bis 5 geübt wird.",
+      "example": "Ein Diagramm zeigt 'Hunde' bei der Höhe 8 und 'Katzen' bei der Höhe 5. Die Frage: Wie viel mehr Hunde als Katzen? Die Schüler lesen 8 und 5 von der Skala ab, subtrahieren und geben 3 ein.",
+      "mistakes": "Schüler schätzen Balkenhöhen mit dem Auge, anstatt sie an der Skala auszurichten, was zu Einzel-Einheit-Fehlern führt. Das Spiel stärkt die Gewohnheit, für jeden Balken zur nummerierten Achse zurückzukehren.",
+      "faqs": [
+        {
+          "q": "Wie unterscheidet sich das Ablesen der Balkenhöhe von der Skala vom bloßen Betrachten des höchsten Balkens?",
+          "a": "Visuelles Betrachten zeigt, welche Kategorie größer ist, nicht aber um wie viel. Das Ablesen der Skala liefert einen genauen Wert, der zur präzisen Berechnung von Unterschieden benötigt wird — die Kernkompetenz, die das Spiel übt."
+        },
+        {
+          "q": "Für welche Klassen ist der Balkendiagramm-Baumeister geeignet?",
+          "a": "Klassen 2–5, entsprechend der Lehrplanprogression von einfachen Balkendiagrammen in der Unterstufe bis zur Interpretation skalierter Diagramme und der Berechnung von Unterschieden in der Oberstufe."
+        },
+        {
+          "q": "Wie unterscheidet sich das von der Venn-Diagramm-Sortierung, die ebenfalls Datendarstellung beinhaltet?",
+          "a": "Der Balkendiagramm-Baumeister arbeitet mit quantitativen Daten auf einer numerischen Skala — Schüler lesen Messwerte ab und vergleichen Größen. Die Venn-Diagramm-Sortierung arbeitet mit logischer Klassifikation — Schüler entscheiden, zu welcher Menge ein Element gehört, ohne Messskala."
+        }
+      ]
+    }
   },
   "vennSort": {
     "title": "Venn-Diagramm-Sortierung",
@@ -377,7 +1263,33 @@
     "instructions": "Lies die Zahl und die zwei Eigenschaften, tippe dann auf die richtige Region: nur links, nur rechts, beides oder keines",
     "prompt": "Klassifiziere {value}: ÷{a} und ÷{b}",
     "correct": "Richtig! {value} ist richtig eingeordnet",
-    "wrong": "Fast! Prüfe, ob die Zahl durch jede Eigenschaft einzeln teilbar ist"
+    "wrong": "Fast! Prüfe, ob die Zahl durch jede Eigenschaft einzeln teilbar ist",
+    "seo": {
+      "intro": "Die Venn-Diagramm-Sortierung zeigt zwei Kreise, jeweils mit einer Teilbarkeitsregel. Schüler erhalten eine Zahl und entscheiden, wohin sie gehört: nur linker Kreis, nur rechter Kreis, die überlappende Mitte (beide) oder ganz außen (keiner). Jede Wahl erfordert das gleichzeitige Auswerten zweier unabhängiger Bedingungen — die Kernkompetenz der Mengentheorie. Klassen 4–6.",
+      "howToPlay": [
+        "Lies die zwei Teilbarkeitsregeln im linken und rechten Kreis.",
+        "Prüfe, ob die gegebene Zahl durch die linke Regel teilbar ist.",
+        "Prüfe, ob sie durch die rechte Regel teilbar ist.",
+        "Tippe auf die richtige Region: nur links, nur rechts, beide (Überschneidung) oder keiner (außen)."
+      ],
+      "skills": "Die Venn-Diagramm-Sortierung entwickelt propositionalslogisches Denken: gleichzeitiges Auswerten von AND- und OR-Bedingungen. Schüler lernen, jede Bedingung separat zu prüfen, bevor sie kombiniert werden — genau das Denkmuster, das Mengenoperationen, Datenbankabfragen und Programmierbedingungen zugrunde liegt.",
+      "example": "Die Kreise zeigen ÷3 und ÷4. Die Zahl 12 ist durch beide teilbar (12÷3=4, 12÷4=3), gehört also in die Überschneidung. Die Zahl 9 ist durch 3, aber nicht durch 4 teilbar, also nur in den linken Kreis.",
+      "mistakes": "Schüler ordnen eine Zahl oft der Überschneidung zu, weil sie mit beiden Teilern verbunden scheint, ohne die Division tatsächlich zu prüfen. Das Antippen einer bestimmten Region zwingt dazu, beide Bedingungen vor der Entscheidung zu prüfen.",
+      "faqs": [
+        {
+          "q": "Warum prüft das Spiel zwei Teilbarkeitsbedingungen gleichzeitig statt nacheinander?",
+          "a": "Das Prüfen einer Bedingung baut Rechenflüssigkeit auf. Das gleichzeitige Prüfen zweier Bedingungen baut logische Klassifikation auf: das Ergebnis des ersten Tests muss beim zweiten im Gedächtnis behalten und dann kombiniert werden — genau die AND/OR-Logik der Mengenlehre und später der Algebra."
+        },
+        {
+          "q": "Für welche Klassen ist die Venn-Diagramm-Sortierung geeignet?",
+          "a": "Klassen 4–6, wo das Wissen über Faktoren und Vielfache zur Mengenklassifikation erweitert wird und Schüler das Venn-Diagramm als formales Werkzeug kennenlernen."
+        },
+        {
+          "q": "Wie unterscheidet sich das vom Balkendiagramm-Baumeister, der ebenfalls Daten beinhaltet?",
+          "a": "Der Balkendiagramm-Baumeister arbeitet mit quantitativer Messung: Ablesen numerischer Werte und Vergleichen von Größen. Die Venn-Diagramm-Sortierung arbeitet mit logischer Klassifikation: Bestimmen, zu welcher Menge eine Zahl gehört, ohne Messung."
+        }
+      ]
+    }
   },
   "subitize": {
     "title": "Punkteblitz",
@@ -385,7 +1297,33 @@
     "instructions": "Sieh zu, wie die Punkte auf dem Tisch aufblitzen und dann unter einem Tuch verschwinden. Gib mit den Tasten − / + ein, wie viele Punkte du gesehen hast (drücke \"Nochmal zeigen\", um sie erneut zu sehen), und drücke dann Prüfen",
     "prompt": "Wie viele Punkte hast du gesehen?",
     "correct": "Super! Du hast {count} Punkte gesehen",
-    "wrong": "Fast! Schau noch einmal und versuche, die Punkte zu zählen"
+    "wrong": "Fast! Schau noch einmal und versuche, die Punkte zu zählen",
+    "seo": {
+      "intro": "Punkte-Blitz trainiert den schnellsten Zahlensinn des Gehirns: das simultane Erfassen, wie viele Punkte erscheinen, ohne zu zählen. Punkte blinken kurz auf dem Tisch des Zauberers auf und verschwinden; die Lernenden geben die Anzahl ein. Das Üben von Subitisierung legt das wahrnehmungsbasierte Fundament, das alle späteren Rechenoperationen intuitiv werden lässt.",
+      "howToPlay": [
+        "Beobachte, wie die Punkte kurz auf dem Tisch des Zauberers aufblinken.",
+        "Merke dir das Muster, wenn das Tuch es bedeckt.",
+        "Gib mit −/+-Tasten ein, wie viele Punkte du gesehen hast.",
+        "Drücke Prüfen oder Nochmal zeigen, wenn du vor der Antwort noch einmal schauen möchtest."
+      ],
+      "skills": "Subitisierung — das augenblickliche Erkennen von Mengen — ist die früheste Zahlenfertigkeit und sagt Rechenflüssigkeit direkt voraus. Wer 4 als Gruppe sieht ohne zu zählen, schreitet schneller zu Zahlenbindungen, Additionsfakten und letztlich zum mentalen Rechnen vor, weil kleine Mengen bereits automatisiert sind.",
+      "example": "Fünf Punkte im Muster einer Würfelseite erscheinen eine halbe Sekunde lang. Wer subitisiert, erkennt das vertraute Muster sofort. Wer zählt, verliert das Bild, bevor er fertig ist. Das Spiel trainiert die wahrnehmungsbasierte Abkürzung.",
+      "mistakes": "Lernende, die noch nicht subitisieren, versuchen während des Aufblinkens Punkt für Punkt zu zählen und verlieren dabei häufig den Faden. Die kurze Expositionszeit verhindert das Zählen und fördert das Mustererkennen — der Lernende wird trainiert, Gruppen statt Einzelobjekte zu sehen.",
+      "faqs": [
+        {
+          "q": "Was ist Subitisierung, und warum übt das Spiel sie statt des Zählens?",
+          "a": "Subitisierung ist das sofortige Erkennen einer kleinen Menge ohne Zählen, so wie Erwachsene Würfelflächen lesen. Sie entwickelt sich vor dem formalen Rechnen und macht Zahlenbindungen und Additionsfakten mühelos; das direkte Üben beschleunigt die allgemeine Zahlenkompetenz."
+        },
+        {
+          "q": "Für welche Klassen ist Punkte-Blitz geeignet?",
+          "a": "Klassen 1–2, um den wahrnehmungsbasierten Zahlensinn aufzubauen, der das frühe Rechnen trägt, bevor zu größeren Zahlen übergegangen wird."
+        },
+        {
+          "q": "Wie viele Punkte können in einem Blitz erscheinen?",
+          "a": "Bis zu etwa 8–9 Punkte — die Obergrenze zuverlässiger Subitisierung. Größere Mengen werden in gruppierten Anordnungen (z. B. zwei Würfelflächen) präsentiert, die dennoch sofortiges Erkennen ermöglichen."
+        }
+      ]
+    }
   },
   "arrayMultiply": {
     "title": "Multiplikations-Feld",
@@ -393,7 +1331,24 @@
     "instructions": "Zähle, wie viele Früchte im Feld sind (Zeilen × Spalten). Nutze die − / + Tasten oder ziehe nach oben, um die Gesamtzahl einzugeben, drücke 'Schneiden', um es Reihe für Reihe zu sehen, und drücke dann Prüfen",
     "prompt": "Wie viele insgesamt?",
     "correct": "{rows} × {cols} = {product}!",
-    "wrong": "Zähle noch einmal — Zeilen × Spalten"
+    "wrong": "Zähle noch einmal — Zeilen × Spalten",
+    "seo": {
+      "intro": "Das Multiplikations-Feld baut das wichtigste mentale Modell für Multiplikation: ein rechteckiges Gitter. Schüler zählen ein Feld mit Früchten, die in Zeilen und Spalten angeordnet sind, und drücken dann Schneiden, um zu sehen, wie das Feld Zeile für Zeile aufgeteilt wird — der Moment, in dem ein Gitter zur wiederholten Addition und dann zu einer Multiplikationstatsache wird.",
+      "howToPlay": [
+        "Betrachte das Früchte-Feld und zähle Zeilen und Spalten.",
+        "Nutze −/+ Tasten oder ziehe nach oben, um die Gesamtzahl einzugeben.",
+        "Drücke Schneiden, um zu sehen, wie das Feld Zeile für Zeile aufgeteilt wird.",
+        "Bestätige, dass Zeilen × Spalten = Gesamtzahl ist, dann drücke Prüfen."
+      ],
+      "skills": "Das Multiplikations-Feld verankert das Kommutativgesetz und das Flächenmodell gleichzeitig. Zu sehen, dass ein 3×4-Feld und ein 4×3-Feld dieselben 12 Früchte enthalten, macht die Kommutativität offensichtlich und bereitet direkt auf Flächenberechnungen vor.",
+      "example": "Eine 5-Zeilen-6-Spalten-Pflanzung hat 30 Orangen. Das Schneiden zeigt 5 Gruppen von je 6: 6, 12, 18, 24, 30. Multiplikation wird zu effizientem Zählen statt zu einer auswendig gelernten Tatsache.",
+      "mistakes": "Schüler zählen manchmal einzelne Früchte, anstatt Zeilen × Spalten zu nutzen. Die Schneid-Animation zeigt die Gruppierstrategie und belohnt den richtigen Ansatz.",
+      "faqs": [
+        { "q": "Für welche Klassen ist das Multiplikations-Feld?", "a": "Klassen 2–3, wo Schüler Multiplikation als wiederholte Addition kennenlernen und das Feld-Modell vor dem Auswendiglernen von Einmaleins brauchen." },
+        { "q": "Wie unterscheidet sich das von Factris?", "a": "Das Multiplikations-Feld zeigt ein fertiges Gitter und fragt nach dem Gesamtprodukt. Factris gibt das Produkt und fragt nach einer Breite, die ein gültiges Rechteck ergibt — es kehrt das Feld-Modell um." },
+        { "q": "Lehrt das Spiel das Kommutativgesetz explizit?", "a": "Nicht durch Benennung, aber implizit: dasselbe Feld kann nach Zeilen oder Spalten gezählt werden, und die Schneid-Animation kann beide Richtungen hervorheben." }
+      ]
+    }
   },
   "fractionSlice": {
     "title": "Bruch-Schneider",
@@ -401,7 +1356,33 @@
     "instructions": "Nutze die Tasten Nenner −/+, um festzulegen, in wie viele gleiche Teile die Pizza geschnitten wird, und die Tasten Zähler −/+ (oder ziehe nach oben/unten), um so viele Teile zu färben, dann drücke Prüfen",
     "prompt": "Färbe {n} von {d} Teilen",
     "correct": "Super! Du hast {n} von {d} gefärbt",
-    "wrong": "Fast! Schneide und färbe die richtige Anzahl Teile und korrigiere"
+    "wrong": "Fast! Schneide und färbe die richtige Anzahl Teile und korrigiere",
+    "seo": {
+      "intro": "Beim Spiel Bruch-Schneider bestimmt der Spieler selbst, in wie viele Stücke die Pizza geschnitten wird — und wie viele Stücke er einfärbt. Der Bruch wird nicht vorgegeben, sondern von Grund auf aufgebaut: erst Nenner, dann Zähler.",
+      "howToPlay": [
+        "Lies den angezeigten Zielbruch.",
+        "Stelle mit den Nenner-Schaltflächen − und + ein, in wie viele gleiche Stücke die Pizza geteilt wird.",
+        "Stelle mit den Zähler-Schaltflächen − und + (oder Ziehen) ein, wie viele Stücke eingefärbt werden.",
+        "Drücke auf Prüfen, um zu bestätigen, dass der aufgebaute Bruch dem Ziel entspricht."
+      ],
+      "skills": "Die Trennung von Schneidschritt (Nenner) und Färbeschritt (Zähler) festigt die logische Reihenfolge: erst das Ganze in gleiche Teile zerlegen, dann entscheiden, wie viele Teile zu nehmen sind.",
+      "example": "Bei 3/5 schneidet man zunächst in 5 Stücke, dann färbt man 3. Ändert man den Nenner auf 4, verändern sich die Stückgrößen und erfordern neues Einfärben — das zeigt anschaulich, warum Zähler und Nenner zusammenhängen.",
+      "mistakes": "Schüler neigen dazu, Stücke nach ihrer optischen Größe einzufärben statt zu zählen. Indem sie den Nenner vor dem Zähler einstellen müssen, wird diese Gewohnheit unterbrochen.",
+      "faqs": [
+        {
+          "q": "Was unterscheidet Bruch-Schneider von Bruchbauer?",
+          "a": "Bei Bruch-Schneider stellt der Spieler sowohl Nenner als auch Zähler ein; bei Bruchbauer ist der Nenner fest und es wird nur schraffiert. Bruch-Schneider führt den gesamten Aufbauprozess ein."
+        },
+        {
+          "q": "Für welche Klassen ist das Spiel geeignet?",
+          "a": "Klasse 3 bis 4, idealerweise nachdem die Schüler den Bruchbegriff kennengelernt haben und bereit sind, selbst einen Bruch aufzubauen."
+        },
+        {
+          "q": "Kann dasselbe Ziel mit unterschiedlich vielen Stücken erreicht werden?",
+          "a": "Ja — zum Beispiel ergeben 2/4 und 1/2 dieselbe visuelle Fläche. Diese Entdeckung öffnet ein natürliches Gespräch über gleichwertige Brüche."
+        }
+      ]
+    }
   },
   "patternComplete": {
     "title": "Muster bauen",
@@ -409,7 +1390,33 @@
     "instructions": "Schau, wie die Türme wachsen, und finde die Regel heraus. Baue mit den − / + Tasten (oder ziehe nach oben) den fehlenden Turm auf die richtige Höhe und drücke dann Prüfen",
     "prompt": "Wie viele Würfel hat der fehlende Turm?",
     "correct": "Richtig! Der fehlende Turm hat {value} Würfel",
-    "wrong": "Fast! Finde die Regel heraus und baue noch einmal"
+    "wrong": "Fast! Finde die Regel heraus und baue noch einmal",
+    "seo": {
+      "intro": "Muster bauen zeigt eine Reihe von Würfeltürmen, die nach einer festen Regel wachsen oder schrumpfen, und bittet die Schüler, den fehlenden Turm zu bauen. Das Finden und Anwenden dieser Regel ist der erste Schritt zu jeder Folgenarbeit und macht dies zum Einstiegspunkt für Musterdenken in den Klassen 2–4.",
+      "howToPlay": [
+        "Studiere die Höhen der Türme von links nach rechts und erkenne, was sich jedes Mal ändert.",
+        "Entscheide die Regel — fügt jeder Turm dieselbe Anzahl Würfel hinzu oder wiederholt sich die Höhe in einem Zyklus?",
+        "Verwende die − / + Tasten (oder ziehe nach oben), um den fehlenden Turm auf die richtige Höhe zu bauen.",
+        "Drücke Prüfen, um zu sehen, ob dein Turm zum Muster passt."
+      ],
+      "skills": "Das Erkennen einer sich wiederholenden oder wachsenden Regel und ihre Erweiterung trainiert Schüler darin, nach Strukturen in Daten zu suchen — die Kerngewohnheit hinter arithmetischen Folgen, Funktionstabellen und algebraischem Denken, das ab Klasse 2 eingeführt wird.",
+      "example": "Eine Reihe zeigt Türme mit 1, 3, 1, 3, 1, ? Würfeln. Das Muster wechselt zwischen 1 und 3, also ist der fehlende Turm 3. Das Erkennen der Abwechslung vor dem Rechnen ist der Schlüsselschritt, den dieses Spiel lehrt.",
+      "mistakes": "Schüler fügen oft einen Würfel mehr über dem letzten Turm hinzu, statt die gesamte Reihe für ihre Regel neu zu lesen. Muster bauen zwingt sie, die gesamte Folge, nicht nur das letzte Glied, zu betrachten, bevor sie handeln.",
+      "faqs": [
+        {
+          "q": "Wie macht die Würfelturm-Anzeige die Musterregel sichtbar, bevor irgendwelche Zahlen erscheinen?",
+          "a": "Die Türme sind physische Höhen, sodass auch Schüler, die noch keine Zahlen lesen können, einen 1-3-1-3-Wechsel als visuellen Rhythmus sehen. Zahlen und Regeln entstehen aus dem Bild, nicht aus Vorwissen."
+        },
+        {
+          "q": "Für welche Klassen ist Muster bauen geeignet?",
+          "a": "Es ist für die Klassen 2–4 konzipiert, in denen der Lehrplan sich wiederholende und wachsende Muster als erste Form algebraischen Denkens einführt."
+        },
+        {
+          "q": "Wie unterscheidet sich Muster bauen von Zahlenfolge?",
+          "a": "Muster bauen konzentriert sich auf sich wiederholende visuelle Muster (oft abwechselnde Höhen); Zahlenfolge konzentriert sich auf das Finden einer additiven oder multiplikativen Regel zur Erweiterung einer streng numerischen Folge — einen Schritt schwieriger."
+        }
+      ]
+    }
   },
   "netFold": {
     "title": "Netz-Falter",
@@ -417,7 +1424,33 @@
     "instructions": "Drücke \"Falten\", um das flache Netz zu einer 3D-Form zu falten (sie dreht sich, damit du alle Seiten siehst). Zähle die Flächen des Körpers, gib die Zahl mit − / + oder durch Ziehen nach oben ein und drücke dann Prüfen",
     "prompt": "Wie viele Flächen hat der Körper?",
     "correct": "Super! Der Körper hat {count} Flächen",
-    "wrong": "Fast! Falte und drehe den Körper und zähle die Flächen noch einmal"
+    "wrong": "Fast! Falte und drehe den Körper und zähle die Flächen noch einmal",
+    "seo": {
+      "intro": "Der Netz-Falter zeigt eine flache Anordnung aus Vielecken, die auf dem Bildschirm animiert wird und sich zu einem 3D-Körper faltet. Schüler drehen das Ergebnis, um jede Fläche zu untersuchen und zu zählen, und bauen so die mentale Verbindung zwischen einer flachen Zeichnung und dem daraus entstehenden Körper auf.",
+      "howToPlay": [
+        "Untersuche das flache Netz: Zähle und benenne die vieleckigen Flächen vor dem Falten.",
+        "Drücke Falten, um das Netz zu einem 3D-Körper zusammenzufalten.",
+        "Drehe den Körper mit den Bildschirmsteuerungen, um alle Flächen einschließlich der verdeckten zu sehen.",
+        "Gib die Gesamtzahl der Flächen mit den −/+-Tasten ein und drücke Prüfen."
+      ],
+      "skills": "Die Vorstellung, wie ein 2D-Netz zu einem 3D-Körper faltet, entwickelt räumliches Denken und baut das Vokabular Flächen, Kanten, Ecken auf. Dies legt die Grundlage für Oberflächen und die Klassifikation von Prismen, Pyramiden und Polyedern in Klasse 3-5.",
+      "example": "Ein kreuzförmiges Netz aus sechs Quadraten faltet sich zu einem Würfel mit 6 Flächen. Das Spiel zeigt nur gültige Netze, damit Schüler sich auf das Zählen nach dem Falten konzentrieren können.",
+      "mistakes": "Schüler zählen beim Drehen oft eine Fläche doppelt oder übersehen die Bodenfläche, die sich unten zusammenfaltet. Systematisches Drehen (oben, vorne, Seiten, unten) und Strichliste lösen beide Probleme.",
+      "faqs": [
+        {
+          "q": "Welche 3D-Körper erscheinen im Spiel?",
+          "a": "Übliche Lehrplankörper: Würfel, Quader, Dreiecksprisma, quadratische Pyramide und Dreieckspyramide, jeder mit eigenem Netz und Flächenanzahl."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 3-5, wenn Schüler 3D-Formen, ihre Eigenschaften und die Beziehung zwischen Netzen und Körpern studieren."
+        },
+        {
+          "q": "Wie unterscheidet es sich vom Körper sortieren?",
+          "a": "Netz-Falter dreht sich um die Verbindung zwischen einem flachen Netz und dem daraus entstehenden 3D-Körper. Körper sortieren klassifiziert fertige Körper danach, ob sie rollen."
+        }
+      ]
+    }
   },
   "symmetryMirror": {
     "title": "Spiegelbild",
@@ -425,7 +1458,33 @@
     "instructions": "Die linke Seite ist vorgegeben. Tippe oder ziehe auf den Feldern der rechten Seite, um die Felder zu füllen, die sie an der Linie spiegeln, und drücke dann Prüfen. Tippe ein gefülltes Feld erneut an, um es zu leeren.",
     "prompt": "Vervollständige das Spiegelbild",
     "correct": "Toll! Das Spiegelbild ist vollständig.",
-    "wrong": "Noch kein genaues Spiegelbild. Prüfe, welche Felder fehlen oder zu viel sind."
+    "wrong": "Noch kein genaues Spiegelbild. Prüfe, welche Felder fehlen oder zu viel sind.",
+    "seo": {
+      "intro": "Spiegelbild zeigt eine Hälfte eines Schmetterlingsflügels auf einem Raster und fordert Schüler auf, die passenden Felder auf der anderen Seite der Spiegellinie auszufüllen. Das Vervollständigen der Reflexion Feld für Feld macht die abstrakte Symmetrieregel zu einer konkreten Entscheidung.",
+      "howToPlay": [
+        "Schaue dir die gefüllten Felder auf der linken Seite der Spiegellinie an.",
+        "Für jedes gefüllte Feld: Suche seine Spiegelposition rechts: gleiche Reihe, gleicher Abstand von der Linie.",
+        "Tippe auf das passende Feld rechts, um es zu füllen; erneutes Tippen löscht einen Fehler.",
+        "Drücke Prüfen, wenn alle Spiegelfelder gefüllt sind und keine zusätzlichen Felder markiert sind."
+      ],
+      "skills": "Symmetrieachsen erkennen und vervollständigen unterstützt räumliches Denken und Formenklassifikation. In den Klassen 2-4 ist es das Einstiegskonzept vor Drehsymmetrie und Koordinatenspiegelung.",
+      "example": "Liegt ein Feld 2 Quadrate links der Spiegellinie in Reihe 3, dann liegt sein Spiegelbild 2 Quadrate rechts in derselben Reihe 3. Reihe für Reihe arbeiten und gleiche Abstände zählen verhindert Raten.",
+      "mistakes": "Schüler platzieren das Spiegelbild manchmal diagonal statt horizontal. Die Reihennummer zuerst prüfen, dann den gleichen Abstand zur Linie zählen, korrigiert das systematisch.",
+      "faqs": [
+        {
+          "q": "Ist die Spiegellinie immer senkrecht?",
+          "a": "Der Schmetterlingsflügel-Kontext nutzt eine senkrechte Spiegellinie, den häufigsten Ausgangspunkt in Klasse 2-3. Diagonale und waagerechte Linien können in höheren Schwierigkeitsstufen erscheinen."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 2-4 von der ersten Symmetrieerkennung bis zur genauen Feld-für-Feld-Spiegelung."
+        },
+        {
+          "q": "Wie unterscheidet es sich vom Tangram, das auch räumliches Anordnen beinhaltet?",
+          "a": "Spiegelbild konzentriert sich auf die Reflexionsregel: gleicher Abstand von der Linie auf beiden Seiten. Tangram bedeutet, Teile in einen Umriss einzupassen, ohne Reflexionsregel."
+        }
+      ]
+    }
   },
   "hundredChart": {
     "title": "Vielfachentafel",
@@ -433,7 +1492,24 @@
     "instructions": "Tippe ein Feld an, um es zu färben oder zu leeren, oder ziehe über die Felder, um mehrere hintereinander zu färben. Drücke zum Schluss auf Prüfen. Zurücksetzen leert die Tafel.",
     "prompt": "Färbe alle Vielfachen von {n}",
     "correct": "Gut gemacht! Du hast alle Vielfachen von {n} gefärbt.",
-    "wrong": "Noch nicht. Prüfe, welche Felder fehlen oder zu viel sind, und versuche es erneut."
+    "wrong": "Noch nicht. Prüfe, welche Felder fehlen oder zu viel sind, und versuche es erneut.",
+    "seo": {
+      "intro": "Die Vielfachentafel zeigt ein Raster von 1 bis 30 und bittet, alle Vielfachen einer Zahl einzufärben. Die gefärbten Felder enthüllen Muster des Zählens in Schritten: gleichmäßige Abstände und visuelle Rhythmen, die abstrakte Vielfache zu etwas machen, das man sieht und behält.",
+      "howToPlay": [
+        "Lies die Zahl, deren Vielfache eingefärbt werden sollen.",
+        "Tippe einzelne Felder an oder ziehe über mehrere, um sie gleichzeitig zu färben.",
+        "Färbe alle Vielfachen dieser Zahl bis 30 — nutze Schrittzählen oder das Einmaleins.",
+        "Drücke Prüfen, wenn alle Vielfachen gefärbt sind und kein Extra-Feld leuchtet."
+      ],
+      "skills": "Die Vielfachentafel baut Sicherheit im Schrittzählen, in Vielfachen und frühen Einmaleins-Mustern auf. Das visuelle Erkennen gleichmäßiger Abstände bei 2er, 5er oder 7er Schritten festigt die Musterstruktur der Multiplikation und bereitet auf gemeinsame Vielfache und Teilbarkeitsregeln vor.",
+      "example": "Vielfache von 3 bis 30 färben: Felder 3, 6, 9, 12, 15, 18, 21, 24, 27, 30 leuchten auf. Schüler bemerken: jedes dritte Feld ist gefärbt. Wechsel zu 6 zeigt, dass jedes zweite Feld der 3er-Reihe gefärbt ist.",
+      "mistakes": "Schüler verwechseln manchmal Vielfache und Teiler und färben Zahlen, die die Zielzahl teilen, statt Zahlen, die beim Schrittzählen erreicht werden. Die Aufgabe erinnert: Zahlen färben, die man beim Weiter-Zählen erreicht, nicht die Teiler.",
+      "faqs": [
+        { "q": "Für welche Klassen ist die Vielfachentafel?", "a": "Klassen 2–4, die Schrittzählen, frühe Multiplikationsmuster und Vielfache als Grundlage für das Einmaleins üben." },
+        { "q": "Geht die Tafel immer von 1 bis 30?", "a": "Ja. Der Bereich von 30 Zahlen ist groß genug, um für jede Zahl von 2 bis 10 zwei oder mehr vollständige Schrittzähl-Zyklen zu zeigen." },
+        { "q": "Ist null ein Vielfaches jeder Zahl?", "a": "Mathematisch ja, aber die Tafel beginnt bei 1, sodass Schüler nicht gebeten werden, null einzufärben. Der Fokus liegt auf dem Muster der positiven Zahlen." }
+      ]
+    }
   },
   "geoboard": {
     "title": "Geobrett",
@@ -441,7 +1517,33 @@
     "instructions": "Tippe auf Nägel, um die Ecken deiner Form zu setzen — das Band verbindet sie und schließt die Schleife. Tippe die letzte Ecke erneut an, um sie rückgängig zu machen. Baue eine beliebige Form mit der passenden Fläche und drücke dann Prüfen.",
     "prompt": "Bilde eine Form mit der Fläche {area} Quadrateinheiten",
     "correct": "Toll! Du hast eine Form mit der Fläche {area} gebaut.",
-    "wrong": "Deine Form hat die Fläche {area}, das Ziel ist {target}. Probiere eine andere Form."
+    "wrong": "Deine Form hat die Fläche {area}, das Ziel ist {target}. Probiere eine andere Form.",
+    "seo": {
+      "intro": "Das Geobrett lässt Schüler ein virtuelles Gummiband über ein Nagelraster spannen, um beliebige Formen zu bauen, solange ihre Fläche die Zielanzahl an Quadrateinheiten trifft. Es gibt keine einzige richtige Form, nur Formen mit der richtigen Fläche.",
+      "howToPlay": [
+        "Lies die Zielfläche ab, die über dem Brett angezeigt wird.",
+        "Tippe Nägel an, um die Ecken des Vielecks zu setzen; das Band verbindet sie zu einer Form.",
+        "Beobachte den Live-Flächenzähler, während die Form wächst; tippe eine Ecke erneut an, um sie rückgängig zu machen.",
+        "Drücke Prüfen, wenn die eingeschlossene Fläche dem Ziel entspricht."
+      ],
+      "skills": "Das Zählen von Quadrateinheiten in unregelmäßigen Vielecken auf einem Raster entwickelt Flächenintuition, die dem Formelansatz vorausgeht. Schüler entdecken, dass viele verschiedene Formen dieselbe Fläche teilen können.",
+      "example": "Für Fläche 6 könnte ein Schüler ein 2×3-Rechteck, eine L-Form oder ein Dreieck mit Basis 4 und Höhe 3 bauen. Jede ist gültig.",
+      "mistakes": "Schüler verfolgen häufig den Umfang (Kanten zählen) statt der Fläche (eingeschlossene Quadrate zählen). Das Spiel zählt eingeschlossene Quadrateinheiten genau.",
+      "faqs": [
+        {
+          "q": "Muss die Form ein Rechteck sein?",
+          "a": "Nein. Jedes geschlossene Vieleck, dessen Ecken auf Nägeln liegen, ist gültig, solange die eingeschlossene Fläche dem Ziel entspricht."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 3-5, von der ersten Begegnung mit Fläche als Zählen von Quadrateinheiten bis zu komplexeren Vieleckformen."
+        },
+        {
+          "q": "Wie unterscheidet es sich vom Volumen-Baumeister?",
+          "a": "Das Geobrett arbeitet zweidimensional: Fläche in Quadrateinheiten auf einem flachen Raster. Der Volumen-Baumeister arbeitet dreidimensional, zählt Würfel, um eine Kiste zu füllen."
+        }
+      ]
+    }
   },
   "shapeSort": {
     "title": "Körper sortieren",
@@ -451,7 +1553,33 @@
     "correct": "Gut gemacht! Du hast alle Körper richtig sortiert.",
     "wrong": "Noch nicht. Prüfe, welche Körper rollen und welche nicht, und versuche es erneut.",
     "binRoll": "Rollt",
-    "binFlat": "Rollt nicht"
+    "binFlat": "Rollt nicht",
+    "seo": {
+      "intro": "Körper sortieren präsentiert eine Reihe von 3D-Formen und stellt eine gezielte Frage: Rollt dieser Körper? Das Sortieren nach dem Vorhandensein einer gekrümmten Fläche macht eine abstrakte Eigenschaft zu einer Entscheidung, die Schüler ab Klasse 2 begründen können.",
+      "howToPlay": [
+        "Schaue jeden 3D-Körper an und entscheide, ob er eine gekrümmte Fläche hat.",
+        "Tippe den Körper an, um ihn aufzunehmen, dann tippe auf die passende Kiste: «Rollt» für gekrümmte Flächen, «Rollt nicht» für nur ebene Flächen.",
+        "Du kannst einen Körper in eine andere Kiste verschieben, bevor du Prüfen drückst.",
+        "Drücke Prüfen, wenn alle Körper sortiert sind."
+      ],
+      "skills": "Das Klassifizieren von Körpern nach Flächentyp baut das grundlegende 3D-Formenvokabular auf: ebene Fläche, gekrümmte Fläche, Kante, Ecke. Dies wird in Klasse 3-4 zu Flächenzählung und Unterscheidung von Prismen und Pyramiden erweitert.",
+      "example": "Ein Zylinder hat zwei ebene Flächen (die kreisförmigen Enden) und eine gekrümmte Fläche (die Seite), also rollt er. Ein Würfel hat sechs ebene Flächen und keine gekrümmte, also bleibt er stehen.",
+      "mistakes": "Schüler sortieren oft nach dem Formnamen («Ball», «Kiste»), ohne die Flächen zu untersuchen. Das Spiel erzwingt die Flächenprüfung.",
+      "faqs": [
+        {
+          "q": "Welche Körper erscheinen im Spiel?",
+          "a": "Gängige Grundschulkörper: Kugel, Zylinder, Kegel, Würfel, Quader, Dreiecksprisma und Pyramide."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 2-4 von der ersten 3D-Formenerkennung bis zur formalen Klassifikation."
+        },
+        {
+          "q": "Wie unterscheidet es sich vom Netz-Falter?",
+          "a": "Körper sortieren klassifiziert fertige Körper nach einer Flächeneigenschaft (Rollen). Netz-Falter dreht sich darum, wie ein flaches Netz zu einem Körper faltet."
+        }
+      ]
+    }
   },
   "coordinatePlot": {
     "title": "Punkt einzeichnen",
@@ -459,7 +1587,33 @@
     "instructions": "Bewege die Nadel mit den X- und Y-Tasten oder ziehe sie über das Papier, bis sie die gesuchten Koordinaten erreicht, und drücke dann Prüfen.",
     "prompt": "Zeichne den Punkt bei ({x}, {y}) ein",
     "correct": "Super! Der Punkt liegt bei ({x}, {y}).",
-    "wrong": "Noch nicht. Prüfe die X- und Y-Werte und versuche es erneut."
+    "wrong": "Noch nicht. Prüfe die X- und Y-Werte und versuche es erneut.",
+    "seo": {
+      "intro": "Punkt einzeichnen setzt eine Nadel auf einem Koordinatengitter und bittet Schüler, sie zu einem bestimmten (x, y)-Paar zu bewegen. Geordnete Paare zu lesen und zu setzen wird zu einer körperlichen Handlung: erst rechts entlang der x-Achse, dann hoch entlang der y-Achse.",
+      "howToPlay": [
+        "Lies die Zielkoordinaten ab, die als (x, y) über dem Gitter angezeigt werden.",
+        "Ziehe die Nadel oder nutze die X- und Y-Tasten: X steuert die horizontale Position, Y die vertikale.",
+        "Zähle Gitterquadrate vom Ursprung (0, 0), um die Position zu bestätigen.",
+        "Drücke Prüfen, wenn die Nadel am Zielpunkt liegt."
+      ],
+      "skills": "Geordnete Paare eintragen ist die Einstiegsfähigkeit für Grafiken in Klasse 4-6: Karten, Datendiagramme, Funktionstabellen und geometrische Transformationen stützen sich alle auf das flüssige Lesen der (x, y)-Notation.",
+      "example": "Für den Punkt (3, 5) bewegt sich die Nadel 3 Quadrate nach rechts und dann 5 nach oben. Vertauscht ein Schüler 5 rechts und 3 hoch, zeigt das Live-Gitter die Nadel an der falschen Stelle.",
+      "mistakes": "Der häufigste Fehler ist das Vertauschen von x und y. Das Spiel korrigiert das durch Anzeige der aktualisierten Koordinate, sobald die Nadel bewegt wird.",
+      "faqs": [
+        {
+          "q": "Enthält das Gitter negative Koordinaten?",
+          "a": "Das Spiel kann Punkte in jedem Quadranten zeigen, sodass Schüler mit steigendem Schwierigkeitsgrad negative x- oder y-Werte begegnen können."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 4-6, wenn Schüler das Koordinatensystem kennenlernen."
+        },
+        {
+          "q": "Wie unterscheidet es sich vom Zahlenstrahl-Hüpfer?",
+          "a": "Der Zahlenstrahl-Hüpfer bewegt sich nur auf einer Achse. Punkt einzeichnen erfordert das gleichzeitige Navigieren auf zwei senkrechten Achsen."
+        }
+      ]
+    }
   },
   "wordProblemBar": {
     "title": "Balkenmodell",
@@ -480,7 +1634,33 @@
     "item2": "Stifte",
     "item3": "Blumen",
     "item4": "Sticker",
-    "item5": "Kekse"
+    "item5": "Kekse",
+    "seo": {
+      "intro": "Das Balkenmodell verwandelt eine Textaufgabe in ein visuelles Streifendiagramm. Schüler lesen eine Aufgabe über das Kombinieren oder Wegnehmen einer Menge und ziehen dann einen Balken auf die Länge, die die Antwort darstellt. Das Diagramm macht die Teil-Ganzes-Beziehung sichtbar, bevor eine Rechnung aufgeschrieben wird. Klassen 2–4.",
+      "howToPlay": [
+        "Lies die Textaufgabe und identifiziere die bekannten Mengen und die Unbekannte.",
+        "Entscheide: Addierst du (bekam mehr) oder findest du, was übrig bleibt (gab ab)?",
+        "Ziehe den Balken nach rechts oder nutze −/+, um seine Länge auf die Antwort einzustellen.",
+        "Drücke Prüfen, um zu bestätigen, dass dein Balkenmodell der Antwort der Aufgabe entspricht."
+      ],
+      "skills": "Das Balkenmodellieren ist eine strukturierte visuelle Strategie, die die Sprache einer Textaufgabe in ein Diagramm aus Teilen und Ganzem umwandelt. Schüler, die zuerst ein Modell erstellen, wählen die richtige Operation häufiger, weil das Diagramm die Beziehung zwischen den Mengen explizit macht — eine Problemlösungsstrategie von Klasse 2 bis in die Oberstufe.",
+      "example": "Dana hatte 7 Äpfel und bekam 5 weitere. Der Schüler zieht den Balken auf Länge 12, die Gesamtzahl. Das Balkenmodell zeigt die zwei Teile (7 und 5), die sich zu einem Ganzen verbinden.",
+      "mistakes": "Schüler springen zur Rechnung, bevor sie die Struktur der Aufgabe verstanden haben, und subtrahieren manchmal statt zu addieren. Das erste Aufbauen des Balkens zwingt dazu, die Beziehung zwischen den Mengen vor dem Rechnen zu klären, und erkennt Fehler bei der Operationswahl frühzeitig.",
+      "faqs": [
+        {
+          "q": "Wie hilft das Erstellen eines Balkenmodells Schülern, die Schwierigkeiten haben, die richtige Operation in Textaufgaben zu wählen?",
+          "a": "Das Balkenmodell veranschaulicht die Teil-Ganzes-Beziehung: ein langer Balken für die Gesamtzahl, kürzere Abschnitte für die Teile. Schüler sehen, ob Gesamtzahl oder Teil unbekannt ist, bevor sie eine Operation wählen, und eliminieren das Raten, das die meisten Textaufgaben-Fehler verursacht."
+        },
+        {
+          "q": "Für welche Klassen ist das Balkenmodell geeignet?",
+          "a": "Klassen 2–4, wo Textaufgaben Addition und Subtraktion im Kontext einführen und Schüler eine visuelle Brücke zwischen dem Lesen der Aufgabe und dem Aufschreiben der Rechnung benötigen."
+        },
+        {
+          "q": "Wie unterscheidet sich das von der Zweistufigen Aufgabe, die ebenfalls Textaufgaben übt?",
+          "a": "Das Balkenmodell umfasst eine Operation und konzentriert sich auf das Erstellen des visuellen Diagramms. Die Zweistufige Aufgabe erfordert zwei aufeinanderfolgende Operationen ohne visuelle Unterstützung und testet Planung und Berechnung über eine längere Kette."
+        }
+      ]
+    }
   },
   "wordProblemSteps": {
     "title": "Zweistufige Aufgabe",
@@ -488,7 +1668,33 @@
     "instructions": "Lies die Aufgabe auf dem Bauplan, stelle deine Antwort mit den Tasten − / + ein und drücke dann Prüfen",
     "prompt": "Löse die zweistufige Aufgabe",
     "correct": "Richtig! Die Antwort ist {result}",
-    "wrong": "Fast! Berechne jeden Schritt einzeln, dann das Endergebnis"
+    "wrong": "Fast! Berechne jeden Schritt einzeln, dann das Endergebnis",
+    "seo": {
+      "intro": "Die Zweistufige Aufgabe präsentiert eine Textaufgabe, die nicht mit einer einzigen Rechnung gelöst werden kann. Schüler müssen zwei Operationen in der richtigen Reihenfolge identifizieren, jeden Schritt ausführen und das Zwischenergebnis für die endgültige Antwort verwenden. Das Bauplan-Layout hält die vollständige Aufgabe während der Arbeit auf dem Bildschirm. Klassen 3–5.",
+      "howToPlay": [
+        "Lies die vollständige Textaufgabe auf dem Bauplan, bevor du etwas berechnest.",
+        "Identifiziere die erste Operation und berechne das Zwischenergebnis.",
+        "Verwende das Zwischenergebnis in der zweiten Operation, um die endgültige Antwort zu erhalten.",
+        "Stelle die endgültige Antwort mit −/+ ein und drücke Prüfen."
+      ],
+      "skills": "Das Lösen mehrstufiger Textaufgaben erfordert die Planung der Operationsreihenfolge, das Behalten eines Zwischenergebnisses im Arbeitsgedächtnis und dessen Anwendung im nächsten Schritt. Dies sind dieselben Exekutivfunktions- und algebraischen Denk-Kompetenzen, die dem Lösen von Gleichungen, Verhältnisaufgaben und aller angewandten Mathematik ab Klasse 3 zugrunde liegen.",
+      "example": "Die Aufgabe: Omar hatte 24 Stifte, gab 8 an seine Klasse und kaufte dann 3 Packungen à 5. Schritt 1: 24-8=16. Schritt 2: 16+(3×5)=31. Beide Schritte müssen erkannt und der Reihe nach ausgeführt werden.",
+      "mistakes": "Schüler reichen oft nur das Ergebnis des ersten Schritts als Endantwort ein oder kombinieren alle Zahlen in einem einzigen Schritt. Das Spiel zeigt den Fehler sofort und lädt dazu ein, die Aufgabe erneut zu lesen und zu identifizieren, was übersehen wurde.",
+      "faqs": [
+        {
+          "q": "Wie fördert das Spiel die Gewohnheit, bei mehrstufigen Aufgaben vor dem Rechnen zu planen?",
+          "a": "Das Bauplan-Layout hält die vollständige Aufgabe auf dem Bildschirm, während die Schüler arbeiten, und verhindert die Gewohnheit, zu rechnen, sobald eine Zahl erscheint. Die Aufgabe muss bis zum Ende gelesen werden, bevor die erste Operation gewählt wird, und übt den Planungsschritt, den einstufige Aufgaben nie erfordern."
+        },
+        {
+          "q": "Für welche Klassen ist die Zweistufige Aufgabe geeignet?",
+          "a": "Klassen 3–5, wo der Lehrplan mehrstufige Textaufgaben einführt und Schüler lernen, Addition, Subtraktion, Multiplikation und Division innerhalb einer Frage zu kombinieren."
+        },
+        {
+          "q": "Wie unterscheidet sich das vom Balkenmodell, das ebenfalls Textaufgaben übt?",
+          "a": "Das Balkenmodell behandelt einstufige Aufgaben und trainiert das visuelle Darstellen der Struktur vor dem Rechnen. Die Zweistufige Aufgabe verzichtet auf das visuelle Hilfsmittel und fordert die selbstständige Planung einer Zwei-Operationen-Kette — die nächste Stufe, wenn das Modell nicht mehr benötigt wird."
+        }
+      ]
+    }
   },
   "estimationLand": {
     "title": "Schätzland",
@@ -498,7 +1704,24 @@
     "correct": "Super! Es waren {n} Gegenstände — deine Schätzung ist nah dran",
     "wrong": "Noch nicht nah genug, versuch es noch einmal",
     "tooHigh": "Zu hoch",
-    "tooLow": "Zu niedrig"
+    "tooLow": "Zu niedrig",
+    "seo": {
+      "intro": "Schätzland trainiert die Fertigkeit, die kein Taschenrechner ersetzen kann: beurteilen, wie viele es sind, ohne jeden Gegenstand zu zählen. Ein Feld verstreuter Objekte erscheint mit einer sichtbaren Referenzgruppe von zehn. Schüler nutzen diesen Anker, um die Gesamtzahl einzuschätzen.",
+      "howToPlay": [
+        "Sieh dir das Feld und die Referenzgruppe von 10 an der Seite an.",
+        "Frage dich: Wie viele Gruppen von 10 sehe ich ungefähr?",
+        "Stelle deine Schätzung mit den −/+ Tasten oder durch Ziehen ein.",
+        "Drücke Prüfen — das Spiel akzeptiert jede Schätzung innerhalb eines Toleranzbereichs."
+      ],
+      "skills": "Schätzland baut Zahlengefühl und proportionales Denken auf. Regelmäßiges Üben mit einem 10er-Anker trainiert schnelles und sicheres Mengenurteilen — eine Fertigkeit, die beim Messen, Daten lesen, Kopfrechnen und alltäglichen Entscheidungen eingesetzt wird.",
+      "example": "Ein Feld enthält 43 Sonnenblumen. Die Referenzgruppe von 10 ist gut sichtbar. Schüler erkennen etwa vier solcher Gruppen plus ein paar mehr und tippen 40 oder 45 ein — beides akzeptiert. Die genaue Zahl erscheint erst nach dem Absenden.",
+      "mistakes": "Schüler versuchen manchmal, jeden Gegenstand einzeln zu zählen, anstatt die Referenzgruppe als Anker zu nutzen. Das Spiel belohnt schnelle gruppenbasierte Schätzungen, und das Zu-hoch/Zu-niedrig-Feedback lenkt zu ankerbasiertem Denken.",
+      "faqs": [
+        { "q": "Für welche Klassen ist Schätzland?", "a": "Klassen 3–5, die Zahlengefühl neben formaler Arithmetik entwickeln und Mengen beurteilen üben müssen, bevor sie Runden und Näherungsrechnung lernen." },
+        { "q": "Wie nah muss eine Schätzung sein?", "a": "Die Toleranz ist so eingestellt, dass Schätzungen innerhalb von etwa 20 % des wahren Wertes akzeptiert werden." },
+        { "q": "Ändert sich die Anordnung der Gegenstände jede Runde?", "a": "Ja. Das Feldlayout ändert sich jede Runde, sodass Antworten nicht auswendig gelernt werden können." }
+      ]
+    }
   },
   "factorTree": {
     "title": "Faktorbaum",
@@ -506,7 +1729,33 @@
     "instructions": "Die Zahl steht an der Spitze des Baums und teilt sich in zwei Äste. Stelle mit den −/+ Tasten (oder ziehe nach rechts zum Erhöhen, nach links zum Verringern) den linken Faktor ein. Der rechte Ast zeigt den Partner, der sich durch Teilen ergibt. Teilt der Faktor die Zahl genau auf, wird er grün; sonst erscheint ein rotes Fragezeichen. Dann drücke Prüfen",
     "prompt": "Zerlege {n} in ein Produkt zweier Faktoren",
     "correct": "Super! {a} × {b} = {n}",
-    "wrong": "Fast! Wähle einen Faktor, der {n} genau teilt (größer als 1 und kleiner als die Zahl), dann drücke Prüfen"
+    "wrong": "Fast! Wähle einen Faktor, der {n} genau teilt (größer als 1 und kleiner als die Zahl), dann drücke Prüfen",
+    "seo": {
+      "intro": "Der Faktorenbaum fordert auf, eine zusammengesetzte Zahl zu zerlegen, indem zwei Faktoren gewählt werden, deren Produkt ihr entspricht, und dann Äste nach unten zu bauen, bis jedes Blatt eine Primzahl ist. Der visuelle Baum macht aus der abstrakten Idee der Primfaktorzerlegung einen greifbaren, handlungsorientierten Prozess.",
+      "howToPlay": [
+        "Lies die Zahl oben im Baum.",
+        "Stelle mit −/+ oder Ziehen den linken Faktor ein; der rechte aktualisiert sich automatisch.",
+        "Prüfe, ob der linke Faktor die Zahl genau teilt — er wird grün, wenn es stimmt.",
+        "Drücke Prüfen, um die Zerlegung des aktuellen Knotens zu bestätigen."
+      ],
+      "skills": "Der Faktorenbaum baut das Verständnis für Teilbarkeit, Primzahlen und den Fundamentalsatz der Arithmetik auf: Jede natürliche Zahl hat genau eine Primfaktorzerlegung. Die Lernenden entwickeln systematisches Faktorpaar-Denken und verbinden Multiplikation und Division als Umkehroperationen.",
+      "example": "Für 24: Wähle 4 und 6. Zerlege 4 in 2×2 und 6 in 2×3. Alle Blätter sind prim (2, 2, 2, 3) und bestätigen 24=2³×3 — unabhängig davon, welches Faktorpaar zuerst gewählt wurde.",
+      "mistakes": "Lernende wählen häufig 1 als Faktor, was nicht erlaubt ist, oder hören bei einer zusammengesetzten Zahl auf. Der Baum hebt nicht-primäre Blätter farblich hervor und fordert weiteres Aufteilen, bis jeder Ast mit einer Primzahl endet.",
+      "faqs": [
+        {
+          "q": "Warum liefert der Baum immer dieselben Primfaktoren, egal mit welchem Paar man beginnt?",
+          "a": "Das ist der Fundamentalsatz der Arithmetik: Jede Zahl hat eine eindeutige Primfaktorzerlegung. Verschiedene Faktorpaare ergeben unterschiedliche Baumformen, aber identische Primblätter — eine Entdeckung, die das Spiel bewusst herbeiführt."
+        },
+        {
+          "q": "Für welche Klassen ist der Faktorenbaum geeignet?",
+          "a": "Klassen 3–5, in denen Teilbarkeitsregeln, Prim- und zusammengesetzte Zahlen eingeführt werden und die multiplikative Struktur ganzer Zahlen verstanden werden muss."
+        },
+        {
+          "q": "Kann eine Primzahl als Wurzel des Baums eingegeben werden?",
+          "a": "Nein. Das Spiel wählt nur zusammengesetzte Zahlen, weil Primzahlen nicht weiter aufgeteilt werden können. So gibt es in jeder Runde mindestens ein gültiges Faktorpaar."
+        }
+      ]
+    }
   },
   "longDivision": {
     "title": "Teilertürme",
@@ -514,7 +1763,24 @@
     "instructions": "Baue mit den − / + Tasten in jeden Turm dieselbe Anzahl Bausteine (oder ziehe nach oben). Baue die Türme so hoch wie möglich gleichmäßig; der Rest bleibt im Vorrat. Nimmst du mehr Bausteine als vorhanden, werden die Türme rot. Dann auf Prüfen tippen",
     "prompt": "Verteile {n} Bausteine gleichmäßig auf {d} Türme — wie viele in jeden?",
     "correct": "Gut gemacht! {perTower} in jedem Turm, und {remainder} bleiben im Vorrat",
-    "wrong": "Die Türme sind noch nicht so gleich und hoch wie möglich — versuch es noch einmal"
+    "wrong": "Die Türme sind noch nicht so gleich und hoch wie möglich — versuch es noch einmal",
+    "seo": {
+      "intro": "Teilertürme verwandelt die abstrakten Schritte der schriftlichen Division in eine Bauaufgabe. Ein Vorrat an Bausteinen muss gleichmäßig auf mehrere Türme gestapelt werden. Schüler erhöhen jeden Turm auf dieselbe Höhe und lassen unteilbare Reste im Vorrat — so werden Quotient und Rest sichtbar, bevor der Algorithmus auftaucht.",
+      "howToPlay": [
+        "Lies, wie viele Bausteine im Vorrat sind und wie viele Türme gefüllt werden sollen.",
+        "Nutze −/+ Tasten oder ziehe nach oben, um alle Türme auf dieselbe Höhe zu bringen.",
+        "Fahre fort, bis die Türme so hoch wie möglich gleichmäßig stehen.",
+        "Lass Rest-Bausteine im Vorrat und drücke Prüfen."
+      ],
+      "skills": "Teilertürme baut das quotitive Divisionsmodell (wie viele gleiche Gruppen passen hinein?) auf und gibt den Teilschritten der schriftlichen Division eine konkrete Bedeutung. Jedes Stockwerk des Turms entspricht einem Zyklus Teilen-Multiplizieren-Subtrahieren im formalen Algorithmus.",
+      "example": "Vorrat: 29 Bausteine, 4 Türme. Jeder Turm wächst auf 7 (4 × 7 = 28), 1 Baustein bleibt im Vorrat. 29 ÷ 4 = 7 Rest 1.",
+      "mistakes": "Schüler bauen manchmal Türme in unterschiedlichen Höhen. Ungleiche Türme werden rot — das verstärkt, dass alle Gruppen gleich sein müssen: die Definition der Division.",
+      "faqs": [
+        { "q": "Für welche Klassen sind Teilertürme?", "a": "Klassen 3–5, die Division mit Rest üben und auf die mehrstellige schriftliche Division vorbereiten." },
+        { "q": "Wie unterscheidet sich das von Gerecht Teilen?", "a": "Gerecht Teilen nutzt Münzteilen, um den Begriff aufzubauen. Teilertürme wendet dieses Verständnis in einer Turmbau-Oberfläche an, die Schritt für Schritt dem schriftlichen Divisionsalgorithmus entspricht." },
+        { "q": "Welcher maximale Divisor wird im Spiel verwendet?", "a": "Divisoren und Dividenden skalieren mit der gewählten Klassenstufe. In höheren Stufen kann der Vorrat dreistellige Zahlen enthalten, die durch ein- oder zweistellige Divisoren geteilt werden." }
+      ]
+    }
   },
   "tangram": {
     "title": "Tangram",
@@ -522,6 +1788,32 @@
     "instructions": "Tippe auf ein Teil, um es aufzuheben, und tippe dann auf den Umriss mit der gleichen Form, um es abzulegen. Ordne jedes Teil dem Umriss mit der gleichen Form zu. Tippe auf ein gelegtes Teil, um es wieder zu bewegen. Wenn du fertig bist, drücke auf Prüfen. Zurücksetzen legt alle Teile wieder ins Tablett.",
     "prompt": "Baue die Figur — jedes Teil an seinen Platz",
     "correct": "Ausgezeichnet! Du hast die ganze Figur richtig zusammengesetzt.",
-    "wrong": "Noch nicht. Einige Teile fehlen oder liegen falsch — ordne jedes Teil seinem Umriss zu und versuche es erneut."
+    "wrong": "Noch nicht. Einige Teile fehlen oder liegen falsch — ordne jedes Teil seinem Umriss zu und versuche es erneut.",
+    "seo": {
+      "intro": "Tangram gibt Schüler ein Set klassischer geometrischer Teile — Dreiecke, ein Quadrat und ein Parallelogramm — sowie einen Silhouettenumriss zum Füllen. Jedes Teil muss seinem richtigen Schlitz zugeordnet werden, wobei Formenerkennung, Teil-Ganzes-Denken und räumliche Passgenauigkeit entwickelt werden.",
+      "howToPlay": [
+        "Schaue den Silhouettenumriss an und identifiziere die Formen der einzelnen Teile darin.",
+        "Tippe ein Teil aus dem Tablett an, um es aufzuheben, dann tippe auf die passende Umrissregion, um es abzulegen.",
+        "Passt ein Teil nicht in einen Schlitz, versuche ein anderes. Jede Farbe und Form hat genau einen passenden Umriss.",
+        "Drücke Prüfen, wenn alle Umrissregionen gefüllt sind."
+      ],
+      "skills": "Geometrische Teile einem Umriss zuzuordnen entwickelt Formenerkennung (Dreiecke verschiedener Größe, Parallelogramm-Ausrichtung) und räumliche Zerlegung: die Fähigkeit, eine komplexe Form als Summe einfacher Teile zu sehen.",
+      "example": "Die Silhouette einer laufenden Figur enthält zwei große Dreiecke, ein mittleres Dreieck, zwei kleine Dreiecke, ein Quadrat und ein Parallelogramm. Den Parallelogramm-Schlitz zu erkennen, bevor das Quadrat gelegt wird, vermeidet den häufigsten Platzierfehler.",
+      "mistakes": "Schüler versuchen manchmal, ein Dreieck in einen Schlitz mit Dreiecksform aber falscher Größe zu zwingen, weil sie sich auf den Formtyp statt die Größe konzentrieren.",
+      "faqs": [
+        {
+          "q": "Müssen die Teile gedreht oder gespiegelt werden?",
+          "a": "In dieser Version passt jedes Teil ohne Drehen oder Spiegeln genau in seinen Schlitz, damit der Fokus auf Formenerkennung bleibt."
+        },
+        {
+          "q": "Für welche Klassen ist dieses Spiel geeignet?",
+          "a": "Es passt zu den Klassen 2-5: Jüngere ordnen nach Form und Farbe zu, ältere Schüler nutzen geometrisches Vokabular."
+        },
+        {
+          "q": "Wie unterscheidet sich Tangram vom Spiegelbild?",
+          "a": "Tangram dreht sich um das Zuordnen diskreter Teile zu einem Umriss: Formenerkennung und Teil-Ganzes-Zusammenbau. Spiegelbild wendet eine Reflexionsregel auf einzelne Rasterfelder an."
+        }
+      ]
+    }
   }
 }

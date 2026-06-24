@@ -83,7 +83,33 @@
     "description": "Construye un arreglo de cubos para resolver una multiplicación",
     "instructions": "Arrastra para construir, o usa los botones − / + para añadir filas y columnas, luego pulsa Comprobar",
     "prompt": "Construye una matriz de {rows} filas × {cols} columnas",
-    "correct": "{rows} × {cols} = {product}!"
+    "correct": "{rows} × {cols} = {product}!",
+    "seo": {
+      "intro": "En Matrices de Multiplicación los alumnos construyen ellos mismos una cuadrícula de cubos 3D eligiendo el número de filas y columnas y luego pulsan Comprobar. A diferencia del juego de Matriz de Multiplicación existente con el campo de frutas ya hecho, aquí el alumno construye el rectángulo activamente, uniendo ecuación y forma en un solo paso.",
+      "howToPlay": [
+        "Lee la operación de multiplicación indicada (p. ej., 3 filas × 4 columnas).",
+        "Arrastra o usa los botones −/+ para fijar el número de filas y columnas.",
+        "Observa cómo la cuadrícula de cubos crece y se llena.",
+        "Pulsa Comprobar para confirmar que filas × columnas es igual al producto indicado."
+      ],
+      "skills": "Construir la matriz entrena a ver la multiplicación como un área rectangular: filas por columnas. Al elegir ellos mismos las dos dimensiones, los alumnos descubren que el orden de los factores no cambia el producto, convirtiendo la propiedad conmutativa en un hallazgo propio antes de la definición formal.",
+      "example": "Para 4×6, el alumno fija 4 filas y 6 columnas y llena un rectángulo de 24 cubos. Girar la vista a 6 filas y 4 columnas muestra de inmediato que 4×6=6×4 sin ninguna explicación verbal.",
+      "mistakes": "Los alumnos a veces confunden filas y columnas y ponen 6 filas y 4 columnas para una tarea de 4×6. El juego acepta ambas orientaciones porque el producto es idéntico, ayudando a descubrir la propiedad conmutativa en lugar de memorizarla.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia construir la matriz del juego de Matriz de Multiplicación (campo de frutas)?",
+          "a": "El campo de frutas muestra una cuadrícula ya hecha y pide contar el total. Aquí se dan los factores y el alumno construye el rectángulo él mismo: la conexión entre ecuación y forma es activa, no solo observacional."
+        },
+        {
+          "q": "¿Para qué cursos es adecuado Matrices de Multiplicación?",
+          "a": "Cursos 3.°–4.°, en los que los alumnos pasan de la suma repetida al modelo de área y necesitan interiorizar ambos factores de un producto antes de memorizar las tablas."
+        },
+        {
+          "q": "¿Cubre el juego todas las tablas de multiplicar?",
+          "a": "Cubre las operaciones de multiplicación de los cursos 3.°–4.°, con matrices que pueden representar productos de hasta 100."
+        }
+      ]
+    }
   },
   "measureFill": {
     "title": "Llena el recipiente",
@@ -92,14 +118,66 @@
     "prompt": "Llena hasta {target} ml",
     "correct": "¡Genial! Llenado hasta {target} ml",
     "wrong": "¡Casi! Acércate más a la marca objetivo",
-    "unit": "ml"
+    "unit": "ml",
+    "seo": {
+      "intro": "«Llena el recipiente» convierte la medición de volumen en una tarea de vertido interactiva. Los alumnos arrastran para llenar un tarro hasta una marca de mililitros determinada y descubren que la capacidad es una cantidad continua que se lee en una escala, no un recuento de objetos. El nivel del líquido en tiempo real ofrece retroalimentación inmediata sobre la precisión al estimar.",
+      "howToPlay": [
+        "Lee el volumen objetivo que aparece encima del recipiente.",
+        "Arrastra hacia arriba para verter líquido y observa cómo sube el nivel en la escala.",
+        "Ve más despacio al acercarte a la marca objetivo: los últimos mililitros son decisivos.",
+        "Pulsa Comprobar cuando el nivel del líquido coincida con la graduación objetivo."
+      ],
+      "skills": "Practicar la medición de volumen consolida la comprensión de que la capacidad es una cantidad continua que se lee en una escala, no un conteo de objetos. Los alumnos aprenden a leer graduaciones intermedias y desarrollan la precisión necesaria antes de pasar a problemas de capacidad de varios pasos en 3.° y 4.° de primaria.",
+      "example": "El objetivo es 350 ml. La escala del tarro tiene marcas cada 50 ml. Los alumnos vierten hasta la marca de 300 y añaden con cuidado 50 ml más para llegar a 350, usando las marcas principales como puntos de apoyo para una lectura exacta.",
+      "mistakes": "Los alumnos suelen sobrepasar el objetivo y no se detienen hasta que el nivel está claramente por encima de la marca. El juego fomenta un vertido más lento y cuidadoso cerca del objetivo, construyendo el hábito de acercarse al valor medido desde abajo en lugar de corregir un exceso.",
+      "faqs": [
+        {
+          "q": "¿Qué enseña arrastrar para llenar el recipiente que no enseña escribir la respuesta?",
+          "a": "El vertido relaciona el número abstracto con el nivel real del líquido: los mililitros dejan de ser una cifra arbitraria y se convierten en una cantidad real y tangible."
+        },
+        {
+          "q": "¿Para qué cursos está pensado «Llena el recipiente»?",
+          "a": "3.° y 4.° de primaria, donde el currículo introduce las unidades de capacidad estándar y la lectura de escalas graduadas en contextos cotidianos."
+        },
+        {
+          "q": "¿En qué se diferencia del juego «Medir con la regla»?",
+          "a": "«Llena el recipiente» mide el volumen (ml) con una escala de líquido vertical; «Medir con la regla» mide la longitud (cm) con dos banderas en una regla horizontal. Ambos practican la lectura de una escala, pero para atributos de medición distintos."
+        }
+      ]
+    }
   },
   "fractionBuild": {
     "title": "Constructor de fracciones",
     "description": "Rellena partes del círculo para que coincidan con la fracción",
     "instructions": "Toca las porciones para rellenarlas, luego pulsa Comprobar",
     "prompt": "Rellena {num}/{den} de la pizza",
-    "correct": "¡Genial! Rellenaste {num}/{den}"
+    "correct": "¡Genial! Rellenaste {num}/{den}",
+    "seo": {
+      "intro": "En el juego Constructor de Fracciones la fracción abstracta se convierte en un pastel que tú mismo rellenas. Lees un objetivo como 3/4 y sombrean sectores hasta que el pastel coincide — el símbolo deja de ser dos números y se convierte en una cantidad visible.",
+      "howToPlay": [
+        "Lee la fracción objetivo que aparece sobre el pastel.",
+        "Toca o arrastra para sombrear sectores, contando hasta el numerador.",
+        "Observa que el denominador decide en cuántas partes iguales se divide el todo.",
+        "Pulsa Comprobar para confirmar que la parte sombreada coincide con la fracción objetivo."
+      ],
+      "skills": "El juego consolida la idea central: el denominador nombra el tamaño de cada parte igual y el numerador cuenta cuántas se toman — la base que los alumnos necesitan antes de comparar o sumar fracciones.",
+      "example": "Para 3/4 el pastel se divide en 4 sectores iguales y se sombrean 3. Ver el único sector vacío hace evidente que 3/4 es un sector menos que un entero, no solo tres y cuatro.",
+      "mistakes": "Muchos alumnos leen 3/4 como tres de cuatro cosas separadas y no captan que las partes deben ser iguales. Construir el pastel obliga a usar partes iguales y corrige el error más común con fracciones.",
+      "faqs": [
+        {
+          "q": "¿Para qué cursos es Constructor de Fracciones?",
+          "a": "Es adecuado para los cursos 3 y 4, donde los alumnos conocen las fracciones por primera vez como partes iguales de un todo."
+        },
+        {
+          "q": "¿Necesitan saber multiplicar antes de jugar?",
+          "a": "No. Solo se necesita contar y la idea de reparto igual, por lo que es ideal como primera introducción a las fracciones."
+        },
+        {
+          "q": "¿En qué se diferencia del juego Fracción en la recta numérica?",
+          "a": "Constructor de Fracciones muestra la fracción como parte de un todo (pastel); Fracción en la recta numérica sitúa esa misma fracción como un punto entre 0 y 1 — dos modelos complementarios."
+        }
+      ]
+    }
   },
   "areaPerimeter": {
     "title": "Área y perímetro",
@@ -109,7 +187,33 @@
     "correct": "¡Genial! {kindLabel} = {target}",
     "wrong": "¡Casi! Cambia el tamaño del huerto e inténtalo de nuevo",
     "kindArea": "Área",
-    "kindPerimeter": "Perímetro"
+    "kindPerimeter": "Perímetro",
+    "seo": {
+      "intro": "Área y perímetro muestra un huerto cuyo tamaño se puede cambiar arrastrando. A veces el objetivo es un área determinada y a veces un perímetro determinado. El descubrimiento clave: dos rectángulos con la misma área pueden tener perímetros completamente diferentes.",
+      "howToPlay": [
+        "Lee si el objetivo es un área (unidades cuadradas) o un perímetro (unidades de longitud).",
+        "Arrastra el borde del huerto o usa los botones de ancho/alto −/+ para cambiar el tamaño.",
+        "Observa las lecturas en vivo: el área (largo × ancho) y el perímetro (2 × largo + 2 × ancho) se actualizan juntos.",
+        "Pulsa Comprobar cuando la medida correcta coincida con el objetivo."
+      ],
+      "skills": "Distinguir entre área y perímetro es una de las confusiones más frecuentes en la geometría de primaria. Trabajar con ambas medidas en la misma figura y ver cómo cambian de forma independiente construye la comprensión conceptual que las fórmulas solas no logran.",
+      "example": "Un rectángulo 3×4 tiene área 12 y perímetro 14. Uno 2×6 también tiene área 12 pero perímetro 16. Cambiar entre los dos en la misma pantalla hace la diferencia evidente.",
+      "mistakes": "Muchos alumnos suman los cuatro lados para calcular el área (confundiéndola con el perímetro) o multiplican largo por ancho para el perímetro. Ver los dos números cambiar simultáneamente corrige ambos errores de una vez.",
+      "faqs": [
+        {
+          "q": "¿Se puede llegar al mismo objetivo de área con rectángulos distintos?",
+          "a": "Sí. Muchos objetivos de área tienen más de una solución (p. ej., área 12 vale para 2×6, 3×4 o 1×12). El juego acepta cualquier rectángulo válido."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 3.º y 4.º, cuando los alumnos aprenden las fórmulas de área y perímetro del rectángulo."
+        },
+        {
+          "q": "¿En qué se diferencia del Geoplano, que también mide área?",
+          "a": "Área y perímetro limita la figura a un rectángulo y compara las dos medidas. El Geoplano permite construir cualquier polígono y solo apunta al área."
+        }
+      ]
+    }
   },
   "tenFrame": {
     "title": "Marco de diez",
@@ -117,7 +221,33 @@
     "instructions": "Arrastra por los huecos para llenar canicas, o usa los botones − / +, luego pulsa Comprobar",
     "prompt": "Coloca {target} canicas",
     "correct": "¡Genial! Colocaste {target} canicas",
-    "wrong": "¡Casi! Cuenta las canicas otra vez y corrige"
+    "wrong": "¡Casi! Cuenta las canicas otra vez y corrige",
+    "seo": {
+      "intro": "El Marco de Diez coloca ante el alumno una cuadrícula 2×5 de huecos y le pide llenar el número correcto de canicas. La cuadrícula fija de diez casillas ancla cada número del 1 al 10 a su distancia respecto al diez, haciendo que la estructura de los números pequeños sea concreta y automática.",
+      "howToPlay": [
+        "Lee el número objetivo que aparece sobre el marco de diez.",
+        "Arrastra sobre los huecos o usa los botones −/+ para añadir o quitar canicas.",
+        "Fíjate en cuántas casillas quedan vacías: eso es lo que falta para llegar al diez.",
+        "Cuando las casillas llenas coincidan con el objetivo, pulsa Comprobar."
+      ],
+      "skills": "El Marco de Diez construye el concepto de amigo del diez: cada número del 1 al 9 se entiende como cierto número de canicas más cierto número de casillas vacías. Esta relación con el diez acelera la suma mental (7+5=10+2) y la resta mucho más allá de lo que logra el conteo progresivo.",
+      "example": "Colocar 7 canicas llena la fila superior completamente (5) y 2 casillas de la fila inferior, dejando 3 vacías. El alumno ve de inmediato que 7=5+2 y que 10-7=3, sin contar.",
+      "mistakes": "Los alumnos que simplemente cuentan hasta el objetivo se pierden la lección clave del Marco de Diez: la relación entre el número y el diez. Preguntar también '¿cuántas están vacías?' junto a '¿cuántas están llenas?' activa el pensamiento complementario para el que está diseñado el marco.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia el Marco de Diez del Divisor de Números?",
+          "a": "El Marco de Diez descompone siempre un número respecto al diez: casillas llenas frente a vacías en una cuadrícula fija de 10. El Divisor de Números es abierto: descompone cualquier número pequeño en dos partes cualesquiera, sin anclarse al diez."
+        },
+        {
+          "q": "¿Para qué cursos es adecuado el Marco de Diez?",
+          "a": "Cursos 1.°–2.°, donde los alumnos construyen imágenes mentales de los números 1–10 y sus relaciones con el diez como base para los datos de suma y resta."
+        },
+        {
+          "q": "¿Aparecen en el juego números mayores de 10?",
+          "a": "El juego básico cubre del 1 al 10. Algunas rondas pueden usar un marco de diez doble para mostrar los números del 11 al 20 y ver que son diez más algunas unidades."
+        }
+      ]
+    }
   },
   "placeValue": {
     "title": "Constructor de valor posicional",
@@ -125,7 +255,33 @@
     "instructions": "Añade cajas a cada posición con los botones − / + (centenas, decenas, unidades), o arrastra hacia arriba sobre una columna para añadir. Cuando una columna llega a 10, diez cajas pequeñas se agrupan en una más grande. Pulsa Comprobar para evaluar",
     "prompt": "Construye el número {target}",
     "correct": "¡Genial! Construiste {target}",
-    "wrong": "¡Casi! Revisa los dígitos y corrige el número"
+    "wrong": "¡Casi! Revisa los dígitos y corrige el número",
+    "seo": {
+      "intro": "El Constructor de Valor Posicional sitúa a los alumnos en un almacén donde apilan bloques físicos en columnas de centenas, decenas y unidades para construir un número objetivo. Cuando una columna alcanza diez bloques, se agrupan automáticamente en una unidad mayor, convirtiendo la regla de canje del sistema decimal en un evento observable.",
+      "howToPlay": [
+        "Lee el número objetivo que aparece sobre las columnas del almacén.",
+        "Usa −/+ o arrastra hacia arriba en cada columna para añadir bloques de centenas, decenas o unidades.",
+        "Observa cómo diez cubos pequeños se agrupan automáticamente en un bloque mayor.",
+        "Cuando las tres columnas coincidan con los dígitos del número objetivo, pulsa Comprobar."
+      ],
+      "skills": "El Constructor de Valor Posicional desarrolla la comprensión de que la posición de un dígito determina su valor: un 3 en la columna de las centenas vale 300, no 3. Los alumnos practican la composición de números multidigitales a partir de sus partes y ven el reagrupamiento como consecuencia natural del sistema decimal.",
+      "example": "Para construir 234: coloca 2 placas de centenas, 3 barras de decenas y 4 cubos de unidades. El almacén muestra 200+30+4 por separado, y Comprobar confirma que el valor combinado es 234.",
+      "mistakes": "Los alumnos suelen introducir el dígito, no el valor: ponen 2 unidades para 234 porque el dígito de unidades es el último que ven. Las columnas codificadas por colores entrenan a leer cada dígito en su columna correcta antes de colocar bloques.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia el Constructor de Valor Posicional del juego de Puntos Explosivos?",
+          "a": "Los Puntos Explosivos se centran en el momento del canje: diez puntos explotan en uno en la columna siguiente. El Constructor de Valor Posicional se centra en construir correctamente un número estático a partir de sus dígitos. El reagrupamiento aquí es un efecto secundario, no el evento principal."
+        },
+        {
+          "q": "¿Para qué cursos es adecuado el Constructor de Valor Posicional?",
+          "a": "Cursos 2.°–4.°, desde números de dos cifras en 2.° hasta números de tres cifras e inicio de cuatro cifras en 3.° y 4.°."
+        },
+        {
+          "q": "¿Puede construirse el mismo número de más de una forma?",
+          "a": "No. El objetivo es una descomposición de dígitos específica (p. ej., 2 centenas, 3 decenas y 4 unidades para 234). Los alumnos deben ajustarse a la forma estándar para practicar la representación canónica del valor posicional."
+        }
+      ]
+    }
   },
   "clockBuilder": {
     "title": "Constructor de la hora",
@@ -133,7 +289,33 @@
     "instructions": "Arrastra el minutero alrededor del reloj (la manecilla de la hora lo sigue proporcionalmente), o usa los botones hora ±1 y minuto ±5, luego pulsa Comprobar",
     "prompt": "Pon el reloj en {time}",
     "correct": "¡Genial! Pusiste el reloj en {time}",
-    "wrong": "¡Casi! Revisa la hora y los minutos y corrige"
+    "wrong": "¡Casi! Revisa la hora y los minutos y corrige",
+    "seo": {
+      "intro": "«Constructor de la hora» une la hora digital y la analógica haciendo que los alumnos arrastren el minutero hasta la hora digital mostrada. El horario sigue de forma proporcional en tiempo real, de modo que los alumnos ven la relación entre ambas manecillas en lugar de memorizar posiciones aisladas.",
+      "howToPlay": [
+        "Lee la hora digital que aparece encima de la esfera del reloj.",
+        "Arrastra el minutero hasta la posición correcta de los minutos y observa cómo el horario lo sigue.",
+        "Ajusta la hora y los minutos con los botones ±1 y ±5 si es necesario.",
+        "Pulsa Comprobar cuando ambas manecillas apunten a la posición correcta."
+      ],
+      "skills": "Ajustar las manecillas analógicas a una hora digital desarrolla dos habilidades a la vez: leer la escala de minutos en pasos de 5 minutos y comprender que el horario se mueve de forma continua por la esfera en lugar de saltar de número en número. Ambas habilidades son necesarias para leer el reloj con fluidez en 2.° y 3.° de primaria.",
+      "example": "Para las 3:45, el minutero apunta al 9 (45 minutos) y el horario está tres cuartos del camino entre el 3 y el 4. Mover el minutero a 45 muestra claramente por qué la lectura de la hora cambia a medida que avanzan los minutos.",
+      "mistakes": "Los alumnos suelen colocar el horario justo en el número de la hora, incluso cuando el tiempo supera la media hora. Ver el horario entre dos números (no sobre uno) corrige la suposición de que el reloj analógico y el digital siempre coinciden en la misma posición.",
+      "faqs": [
+        {
+          "q": "¿Qué muestra arrastrar el minutero que no muestra un dibujo estático del reloj?",
+          "a": "El movimiento proporcional en tiempo real del horario demuestra que ambas manecillas se mueven de forma continua y están vinculadas: algo que los alumnos no perciben cuando solo practican con imágenes estáticas."
+        },
+        {
+          "q": "¿Para qué cursos está pensado «Constructor de la hora»?",
+          "a": "2.° y 3.° de primaria, donde el currículo incluye leer la hora con precisión de 5 minutos y en ambos formatos, analógico y digital."
+        },
+        {
+          "q": "¿En qué se diferencia de los juegos «Medir con la regla» y «Balanza»?",
+          "a": "«Constructor de la hora» mide el tiempo con una esfera circular y dos manecillas móviles; los otros juegos de medición usan escalas lineales o balanzas. Los cuatro juegos enseñan a leer un instrumento de medida estándar, pero cada uno para un atributo y una unidad distintos."
+        }
+      ]
+    }
   },
   "canary": {
     "title": "Toca el cubo",
@@ -145,7 +327,33 @@
     "instructions": "Arrastra la cuenta por la cinta hasta la fracción objetivo (se ajusta a la marca más cercana) o usa los botones numerador ±1 y denominador ±1. El denominador subdivide la recta en vivo. Luego pulsa Comprobar",
     "prompt": "Coloca {num}/{den} en la recta",
     "correct": "¡Genial! Colocaste {num}/{den} correctamente",
-    "wrong": "¡Casi! Arrastra la cuenta al lugar correcto y corrige"
+    "wrong": "¡Casi! Arrastra la cuenta al lugar correcto y corrige",
+    "seo": {
+      "intro": "En Fracción en la recta numérica la fracción ya no es un trozo de pastel — es un punto en una regla que va de 0 a 1. Al arrastrar una cuenta hasta la posición exacta, los alumnos descubren que una fracción es una distancia, no solo una cantidad de trozos.",
+      "howToPlay": [
+        "Lee la fracción objetivo que aparece sobre la recta numérica.",
+        "Ajusta el denominador con los botones ±1 para subdividir la recta en el número correcto de intervalos.",
+        "Arrastra la cuenta hasta la marca correcta, o afina con los botones ±1 del numerador.",
+        "Pulsa Comprobar cuando la cuenta esté en la posición objetivo."
+      ],
+      "skills": "Situar fracciones en una recta numérica prepara a los alumnos para ordenarlas, encontrar fracciones equivalentes y comprender más adelante fracciones mayores que 1.",
+      "example": "Para 2/3 la recta se divide en 3 intervalos iguales y la cuenta va sobre la segunda marca. Cambiando el denominador a 6 se ve que 4/6 cae en el mismo punto — las fracciones equivalentes se hacen visibles sin calcular.",
+      "mistakes": "Los alumnos suelen colocar la cuenta en la marca cuyo número coincide con el numerador, sin tener en cuenta el denominador. La subdivisión en tiempo real aclara que el denominador controla el tamaño de cada paso.",
+      "faqs": [
+        {
+          "q": "¿Qué enseña la recta numérica que no enseña el diagrama de pastel?",
+          "a": "La recta muestra la fracción como una posición entre dos números enteros — el modelo que los alumnos necesitan para ordenar, sumar y entender más tarde los decimales."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para los cursos 3 y 4, después de que los alumnos hayan conocido las fracciones como partes de un todo y estén listos para verlas en una recta."
+        },
+        {
+          "q": "¿Qué pasa cuando cambio el denominador?",
+          "a": "La recta se subdivide al instante, las marcas se desplazan y la cuenta muestra su posición en la nueva escala — una demostración en vivo de cómo actúa el denominador."
+        }
+      ]
+    }
   },
   "algebraBalance": {
     "title": "Balanza de álgebra",
@@ -153,7 +361,24 @@
     "instructions": "La balanza empieza equilibrada. Quita el mismo número de cristales de ambos lados (Izquierda −/+, Derecha −/+) hasta que la ? quede sola y la barra vuelva a estar nivelada. Quitar de forma desigual baja el lado más pesado. Luego pulsa Comprobar",
     "prompt": "Resuelve: ? + {b} = {c}",
     "correct": "¡Genial! ? = {x}",
-    "wrong": "¡Casi! Quita el mismo número de ambos lados hasta que la ? quede sola y la balanza esté equilibrada"
+    "wrong": "¡Casi! Quita el mismo número de ambos lados hasta que la ? quede sola y la balanza esté equilibrada",
+    "seo": {
+      "intro": "La Balanza de Álgebra hace visible una ecuación. La balanza comienza equilibrada: cristales en ambos lados y un signo de interrogación en uno de ellos. Los alumnos retiran cantidades iguales de ambos lados hasta que la incógnita queda sola, revelando el principio de la operación inversa por sí solo.",
+      "howToPlay": [
+        "Observa la balanza: un lado tiene la incógnita (?) más cristales, el otro solo cristales.",
+        "Usa los botones −/+ de ambos lados para retirar el mismo número de cristales de cada lado.",
+        "Continúa hasta que la incógnita quede sola.",
+        "Cuando la barra esté nivelada y la ? esté sola, pulsa Comprobar."
+      ],
+      "skills": "La Balanza de Álgebra enseña el principio central de resolver ecuaciones: lo que haces a un lado, debes hacerlo al otro. Esta experiencia táctil de la operación inversa prepara para el álgebra formal mucho mejor que memorizar reglas sobre mover términos al otro lado del signo igual.",
+      "example": "La balanza muestra ? + 4 = 9. Retira 4 cristales de cada lado: la izquierda queda ?, la derecha queda 5. La barra se nivela y ? = 5. Los alumnos sienten la lógica en lugar de adivinar.",
+      "mistakes": "Los principiantes a veces retiran cristales de un solo lado. La barra se inclina de inmediato, proporcionando retroalimentación correctiva instantánea sin necesidad de explicación.",
+      "faqs": [
+        { "q": "¿Qué tipo de ecuaciones practica la Balanza de Álgebra?", "a": "Ecuaciones de la forma ? + b = c, para los cursos 5–6 donde los alumnos encuentran por primera vez incógnitas y operaciones inversas." },
+        { "q": "¿En qué se diferencia de la Balanza normal?", "a": "La Balanza se centra en la aritmética: calcular una suma y replicarla con pesas. La Balanza de Álgebra comienza ya equilibrada y pide aislar una incógnita por eliminación igual, que es pensamiento algebraico." },
+        { "q": "¿Se necesitan conocimientos previos de álgebra?", "a": "No. El modelo concreto de la balanza permite a los alumnos descubrir por sí mismos el principio de la eliminación igual antes de encontrar la notación formal." }
+      ]
+    }
   },
   "balanceScale": {
     "title": "Balanza",
@@ -161,7 +386,24 @@
     "instructions": "Lee las pesas de los cubos del plato izquierdo y súmalas. Añade pesas numeradas al plato derecho con los botones de más y menos (1, 2, 5, 10) hasta que la barra quede nivelada: cuando está nivelada, ambos lados son iguales. Luego pulsa Comprobar",
     "prompt": "Equilibra la balanza",
     "correct": "¡Genial! Ambos lados suman {total}",
-    "wrong": "¡Casi! Añade o quita pesas en la derecha hasta que la barra quede nivelada"
+    "wrong": "¡Casi! Añade o quita pesas en la derecha hasta que la barra quede nivelada",
+    "seo": {
+      "intro": "La Balanza muestra qué significa una ecuación antes de que los alumnos escriban una. El plato izquierdo sostiene cubos numerados; los alumnos añaden pesas (1, 2, 5, 10) al plato derecho hasta que la barra quede exactamente nivelada. Como ambos lados deben ser físicamente iguales, la idea de que los dos miembros de una ecuación comparten el mismo valor se vuelve concreta e indiscutible.",
+      "howToPlay": [
+        "Lee los cubos numerados del plato izquierdo y suma sus valores.",
+        "Usa los botones +/− para añadir o quitar pesas (1, 2, 5, 10) en el plato derecho.",
+        "Ajusta hasta que la barra esté perfectamente nivelada y ambos platos pesen lo mismo.",
+        "Pulsa Comprobar cuando la balanza esté equilibrada."
+      ],
+      "skills": "La Balanza construye la comprensión fundamental de la igualdad: ambos lados del signo igual deben tener el mismo valor. Los alumnos practican la suma mental y la descomposición mientras la retroalimentación visual de una barra que se nivela hace cada respuesta correcta inmediatamente satisfactoria.",
+      "example": "Plato izquierdo: cubos con valores 3, 7 y 5. Suma: 15. Dos cincos y un diez dan 20, demasiado. Reajustar a 10 y 5 da 15. La barra se nivela.",
+      "mistakes": "Los alumnos a veces se pasan y siguen añadiendo pesas cuando la barra ya se ha inclinado demasiado. Aprender a quitar pesas es tan importante como añadirlas, y el juego requiere ambas direcciones de ajuste.",
+      "faqs": [
+        { "q": "¿Para qué rango de cursos es la Balanza?", "a": "Cursos 2–5, donde los alumnos practican la suma, el cálculo mental y los conceptos de ecuación con números cada vez mayores." },
+        { "q": "¿En qué se diferencia de la Balanza de Álgebra?", "a": "La Balanza se centra en la aritmética: calcular una suma y replicarla. La Balanza de Álgebra comienza equilibrada y pide aislar una incógnita por eliminación igual, que es pensamiento algebraico." },
+        { "q": "¿Hay más de una solución para el plato derecho?", "a": "Sí. Muchas combinaciones de pesas alcanzan la misma suma, y el juego acepta cualquier combinación correcta, fomentando explorar distintas descomposiciones." }
+      ]
+    }
   },
   "moneyShop": {
     "title": "Tienda de Monedas",
@@ -169,7 +411,33 @@
     "instructions": "Arrastra hacia arriba sobre la bandeja para añadir una moneda de ₪1, o usa los botones − / + de cada moneda y billete (₪1, ₪2, ₪5, ₪10, ₪20, ₪50). Añade monedas y billetes hasta alcanzar la cantidad y luego pulsa Comprobar",
     "prompt": "Paga ₪{amount}",
     "correct": "¡Genial! Pagaste exactamente ₪{amount}",
-    "wrong": "¡Casi! Revisa la cantidad en la bandeja y corrígela"
+    "wrong": "¡Casi! Revisa la cantidad en la bandeja y corrígela",
+    "seo": {
+      "intro": "En la Tienda de Monedas los alumnos se sitúan en un puesto de mercado y pagan cantidades exactas con monedas y billetes. Arrastran dinero real a la bandeja y ven cómo el total sube hasta coincidir con el precio, convirtiendo el valor abstracto de las monedas en una compra real.",
+      "howToPlay": [
+        "Lee el precio que aparece en el letrero de la tienda.",
+        "Arrastra monedas y billetes a la bandeja o usa los botones −/+ de cada denominación.",
+        "Observa cómo el total de la bandeja sube con cada adición.",
+        "Cuando la bandeja coincida exactamente con el precio, pulsa Comprobar para completar la compra."
+      ],
+      "skills": "La Tienda de Monedas desarrolla la fluidez con las denominaciones de monedas y billetes y la suma de varios valores. Los alumnos aprenden a elegir el menor número de monedas para un precio y a calcular el cambio como diferencia entre el importe entregado y el precio.",
+      "example": "Para pagar ₪17, un alumno puede poner un billete de ₪10, una moneda de ₪5 y dos monedas de ₪1. La bandeja muestra 10+5+1+1=17, confirmando la combinación antes de pulsar Comprobar.",
+      "mistakes": "Los alumnos suelen acumular demasiadas monedas pequeñas en lugar de elegir denominaciones mayores. El total inmediato de la bandeja los anima a cambiar monedas pequeñas por un billete cuando el total supera el precio.",
+      "faqs": [
+        {
+          "q": "¿Cómo enseña el juego a dar cambio, no solo a pagar cantidades exactas?",
+          "a": "En algunas rondas ya hay un importe en la bandeja y el alumno debe ajustarlo: agregar o retirar monedas para llegar exactamente al precio, tal como ocurre al dar cambio en la vida real."
+        },
+        {
+          "q": "¿Para qué cursos es adecuada la Tienda de Monedas?",
+          "a": "Cursos 2.°–4.°, desde el reconocimiento básico de monedas en 2.° hasta cálculos de cambio en múltiples pasos en 4.°."
+        },
+        {
+          "q": "¿Usa el juego las denominaciones reales del séquel israelí?",
+          "a": "Sí. Las monedas y billetes son ₪1, ₪2, ₪5, ₪10, ₪20 y ₪50, las denominaciones con las que los alumnos tratan en su vida diaria en Israel."
+        }
+      ]
+    }
   },
   "additionMine": {
     "title": "Mina de Sumas",
@@ -177,7 +445,24 @@
     "instructions": "Construye la suma usando los botones − / + de cada cifra (centenas, decenas, unidades), o arrastra hacia arriba sobre una columna para añadir un cristal. Cuando una columna se llena más allá de 9, una vagoneta de mineral recorre el riel para llevar el grupo a la siguiente posición. Pulsa Comprobar para comprobar",
     "prompt": "Suma: {a} + {b}",
     "correct": "¡Genial! La suma correcta es {total}",
-    "wrong": "¡Casi! Revisa las cifras y corrige la suma"
+    "wrong": "¡Casi! Revisa las cifras y corrige la suma",
+    "seo": {
+      "intro": "La Mina de Sumas coloca las columnas de valor posicional justo ante los ojos. Los alumnos llenan columnas de unidades, decenas y centenas con cristales de mineral para construir una suma objetivo. Cuando una columna supera diez, una vagoneta lleva el grupo a la columna siguiente, haciendo la reagrupación visible en lugar de abstracta.",
+      "howToPlay": [
+        "Lee los dos números que aparecen en la parte superior del pozo de la mina.",
+        "Usa los botones −/+ o arrastra hacia arriba para añadir cristales a las columnas de unidades, decenas y centenas.",
+        "Cuando una columna alcanza diez cristales, observa la vagoneta transportarlos a la columna siguiente.",
+        "Continúa hasta que la suma coincida con el objetivo y pulsa Comprobar."
+      ],
+      "skills": "La Mina de Sumas construye la comprensión concreta de la reagrupación (llevada) que sustenta la suma en columnas. Llenar columnas y ver cómo diez unidades se agrupan en una de la siguiente posición muestra a los alumnos por qué funciona el algoritmo antes de memorizarlo.",
+      "example": "47 + 36: 7 unidades y 6 unidades dan 13. La vagoneta lleva diez, quedan 3 unidades. 4 decenas y 3 decenas más la llevada dan 8 decenas. Resultado: 83.",
+      "mistakes": "Los alumnos suelen sumar todas las cifras sin considerar el valor posicional y escriben 47 + 36 = 713 en lugar de 83. La vagoneta corrige esta confusión de columnas antes de que se convierta en hábito.",
+      "faqs": [
+        { "q": "¿Para qué cursos es la Mina de Sumas?", "a": "Para los cursos 2–4, que se centran en la suma de dos y tres cifras con reagrupación, el núcleo de la aritmética en primaria." },
+        { "q": "¿Hay siempre reagrupación?", "a": "No. Algunos problemas no tienen llevada; otros requieren una o dos. La vagoneta aparece solo cuando una columna supera realmente diez." },
+        { "q": "¿En qué se diferencia de la Balanza?", "a": "La Mina construye una suma cifra a cifra con reagrupación. La Balanza pide encontrar un total y replicarlo con pesas, poniendo el énfasis en la igualdad, no en la suma en columnas." }
+      ]
+    }
   },
   "subtractionBridge": {
     "title": "Puente de la Resta",
@@ -185,7 +470,33 @@
     "instructions": "Quita piedras con los botones − / + de cada dígito (centenas, decenas, unidades), o arrastra hacia abajo sobre una columna para quitar una piedra. Cuando una columna es demasiado pequeña, pulsa − para romper una piedra-decena del dígito superior en diez piedras pequeñas (el puente se rompe). Luego pulsa Comprobar",
     "prompt": "Resta: {a} − {b}",
     "correct": "¡Genial! La diferencia es {diff}",
-    "wrong": "¡Casi! Revisa los dígitos y corrige la diferencia"
+    "wrong": "¡Casi! Revisa los dígitos y corrige la diferencia",
+    "seo": {
+      "intro": "El Puente de Resta pide desmontar un puente de piedra piedra a piedra, columna a columna, para encontrar la diferencia. Cuando la columna de unidades se queda corta, una piedra-decena de la columna siguiente se rompe en diez piedras pequeñas, convirtiendo el paso del reagrupamiento en una demolición física en lugar de una regla memorizada.",
+      "howToPlay": [
+        "Lee la operación de resta que aparece sobre el puente.",
+        "Retira piedras de las columnas de unidades, decenas o centenas con los botones −/+ o arrastrando hacia abajo.",
+        "Cuando una columna se quede corta, pulsa − para romper una piedra-decena de la columna siguiente en diez piedras pequeñas.",
+        "Cuando todas las columnas muestren la diferencia correcta, pulsa Comprobar."
+      ],
+      "skills": "El Puente de Resta concreta la reagrupación en la resta multidigital: el paso más confuso del algoritmo escrito. Los alumnos que ven una decena romperse literalmente en diez unidades entienden por qué el dígito de la columna siguiente disminuye en 1, evitando el error de resta más frecuente en primaria.",
+      "example": "Restar 47 a 83: la columna de unidades tiene 3 pero necesita 7. Pulsa − para romper una piedra-decena: la columna de decenas baja de 8 a 7 y la de unidades sube de 3 a 13. Ahora 13-7=6 y 7-4=3, dando 36.",
+      "mistakes": "El error típico es restar el dígito menor del mayor independientemente de cuál está arriba (se calcula 83-47 como 40+4=44). El mecanismo del puente obliga a retirar la cantidad correcta, y la dirección de la resta queda inequívoca.",
+      "faqs": [
+        {
+          "q": "¿Cómo enseña el mecanismo del puente el reagrupamiento sin la regla escrita abstracta?",
+          "a": "Cuando una columna tiene pocos bloques, pulsar − rompe una piedra-decena en diez unidades justo delante del alumno. Ve bajar el dígito de la columna siguiente y subir el grupo de unidades. La regla escrita de reagrupamiento es una abreviatura de ese evento."
+        },
+        {
+          "q": "¿Para qué cursos es adecuado el Puente de Resta?",
+          "a": "Cursos 2.°–4.°, desde la resta de dos cifras con reagrupamiento en 2.° hasta problemas de tres cifras con doble reagrupamiento en 3.° y 4.°."
+        },
+        {
+          "q": "¿Qué ocurre si es necesario reagrupar de las centenas a las decenas?",
+          "a": "El juego soporta reagrupamientos en cascada: si la columna de decenas también se queda vacía, pulsar − rompe una piedra-centena en diez decenas, mostrando visualmente un reagrupamiento en dos niveles."
+        }
+      ]
+    }
   },
   "volumeBuilder": {
     "title": "Constructor de volumen",
@@ -193,7 +504,33 @@
     "instructions": "Ajusta el largo, el ancho y la altura con los botones − / + (o arrastra: arriba = más largo, derecha = más ancho; la altura se ajusta con los botones). Los cubos llenan el acuario capa por capa. Cuando termines, pulsa Comprobar",
     "prompt": "Construye una caja con volumen {volume}",
     "correct": "¡Genial! El volumen de la caja es {volume}",
-    "wrong": "¡Casi! Cambia el largo, el ancho o la altura e inténtalo de nuevo"
+    "wrong": "¡Casi! Cambia el largo, el ancho o la altura e inténtalo de nuevo",
+    "seo": {
+      "intro": "El Constructor de volumen llena un depósito transparente con cubos unitarios capa por capa mientras los alumnos ajustan largo, ancho y altura. El objetivo es un volumen concreto, y los cubos se acumulan visualmente para convertir la fórmula abstracta V = l × a × h en un recuento de objetos reales.",
+      "howToPlay": [
+        "Lee el volumen objetivo que aparece encima del depósito.",
+        "Ajusta el largo y el ancho arrastrando o con los botones −/+; la capa base de cubos llena el suelo del depósito.",
+        "Ajusta la altura con los botones de altura; el depósito se llena hacia arriba capa por capa.",
+        "Pulsa Comprobar cuando el número de cubos iguale el volumen objetivo."
+      ],
+      "skills": "Construir el volumen ajustando tres dimensiones independientes consolida la idea de que el volumen es el producto de tres longitudes (l × a × h) y no una propiedad de la superficie. Esto prepara para el trabajo en 4.º-6.º con volúmenes compuestos, áreas de la superficie y la distinción entre área 2D y volumen 3D.",
+      "example": "Para un volumen de 24 se puede fijar 4×3×2: cuatro cubos de ancho, tres de profundidad, dos capas de altura. Cambiar a 6×2×2 da el mismo volumen con otra forma.",
+      "mistakes": "Los alumnos confunden a menudo volumen y área de la superficie, contando las caras exteriores en lugar de los cubos interiores. Ver el interior llenarse cubo a cubo lo aborda directamente.",
+      "faqs": [
+        {
+          "q": "¿Se puede alcanzar el mismo volumen con diferentes dimensiones?",
+          "a": "Sí. Muchos objetivos tienen varias combinaciones de dimensiones válidas. El juego acepta cualquier (l, a, h) cuyo producto sea igual al objetivo."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 4.º-6.º, cuando los alumnos conocen el volumen como medida del espacio tridimensional y aprenden la fórmula l × a × h."
+        },
+        {
+          "q": "¿En qué se diferencia el Constructor de volumen del Geoplano?",
+          "a": "El Geoplano mide área 2D en unidades cuadradas sobre una cuadrícula plana. El Constructor de volumen mide volumen 3D en unidades cúbicas llenando una caja."
+        }
+      ]
+    }
   },
   "rulerMeasure": {
     "title": "Medir con la regla",
@@ -201,7 +538,33 @@
     "instructions": "Alinea la bandera izquierda con el extremo izquierdo del objeto y la bandera derecha con su extremo derecho, con los botones Izquierda ±1 y Derecha ±1 (o arrastrando). Atención: el objeto no siempre empieza en 0, así que longitud = lectura derecha − lectura izquierda. Luego pulsa Comprobar",
     "prompt": "Mide la longitud del objeto",
     "correct": "¡Genial! El objeto mide {length} cm",
-    "wrong": "¡Casi! Alinea cada bandera con el extremo correspondiente del objeto y corrige"
+    "wrong": "¡Casi! Alinea cada bandera con el extremo correspondiente del objeto y corrige",
+    "seo": {
+      "intro": "«Medir con la regla» coloca un objeto en cualquier posición de una regla y pide al alumno que sitúe dos banderas en sus extremos. Como el objeto no siempre empieza en cero, el alumno debe restar las dos lecturas para encontrar la longitud, igual que al medir de verdad en la vida real.",
+      "howToPlay": [
+        "Mira el objeto sobre la regla y localiza dónde está su extremo izquierdo.",
+        "Arrastra o pulsa los botones de la bandera izquierda para alinearla con el extremo izquierdo del objeto.",
+        "Usa los botones de la bandera derecha (o arrastra) para alinearla con el extremo derecho.",
+        "Calcula: longitud = lectura derecha menos lectura izquierda, y luego pulsa Comprobar."
+      ],
+      "skills": "Medir desde un punto que no es cero enseña que la longitud es una diferencia entre dos posiciones, no una sola lectura. Esta comprensión es esencial para usar reglas y cintas métricas reales, y evita el error frecuente de suponer que el objeto siempre empieza en cero. Adecuado para 2.° a 4.° de primaria.",
+      "example": "El extremo izquierdo del objeto está en 3 cm y el derecho en 11 cm. La longitud es 11 − 3 = 8 cm. Quien mida siempre desde cero escribiría 11 y obtendría una respuesta incorrecta; este juego impone el paso de la resta cada vez.",
+      "mistakes": "El error más frecuente es leer solo la posición de la bandera derecha e ignorar el desplazamiento de la bandera izquierda. Colocar las dos banderas de forma independiente antes de calcular hace inevitable la resta y consolida hábitos de medición correctos.",
+      "faqs": [
+        {
+          "q": "¿Por qué el objeto no siempre empieza en cero en la regla?",
+          "a": "En la vida real, las mediciones raramente empiezan en cero: cintas métricas, reglas rotas y objetos desplazados son habituales. Practicar con un punto de inicio distinto de cero evita depender de una alineación perfecta y desarrolla la habilidad de medir de verdad."
+        },
+        {
+          "q": "¿Para qué cursos está pensado «Medir con la regla»?",
+          "a": "2.° a 4.° de primaria, que cubre la progresión desde contar centímetros sencillos hasta leer la regla en cualquier posición y calcular la diferencia."
+        },
+        {
+          "q": "¿En qué se diferencia del juego «Llena el recipiente»?",
+          "a": "«Medir con la regla» trabaja con longitudes en centímetros, una regla horizontal y dos banderas de posición; «Llena el recipiente» trabaja con volumen en mililitros y una escala de líquido vertical. Ambos practican la lectura de una escala graduada, pero para atributos de medición distintos."
+        }
+      ]
+    }
   },
   "decimalBuilder": {
     "title": "Constructor de decimales",
@@ -209,7 +572,34 @@
     "instructions": "Llena los frascos de unidades, décimas y centésimas con los botones − / + (el nivel de arena de cada frasco muestra esa cifra), luego pulsa Comprobar",
     "prompt": "Construye el número {target}",
     "correct": "¡Genial! Construiste {target}",
-    "wrong": "¡Casi! Revisa las unidades, décimas y centésimas y corrige el número"
+    "wrong": "¡Casi! Revisa las unidades, décimas y centésimas y corrige el número",
+    "seo": {
+      "intro": "Constructor de decimales sitúa a los estudiantes en un laboratorio con tres frascos de arena: uno para unidades, otro para décimas y otro para centésimas. Llenan cada frasco al nivel correcto para construir un decimal objetivo, convirtiendo la notación posicional abstracta en una cantidad visible.",
+      "howToPlay": [
+        "Lee el decimal objetivo que aparece sobre los frascos.",
+        "Ajusta el frasco de unidades al dígito que hay antes de la coma decimal.",
+        "Ajusta el frasco de décimas al primer dígito decimal.",
+        "Ajusta el frasco de centésimas al segundo dígito decimal.",
+        "Pulsa Comprobar cuando el nivel de arena en los tres frascos coincida con el número."
+      ],
+      "skills": "Constructor de decimales desarrolla el valor posicional de los dígitos decimales: los estudiantes leen cada dígito en su columna (unidades, décimas, centésimas) y lo traducen a una cantidad física. Es el paso fundamental antes de comparar, ordenar y sumar decimales.",
+      "example": "Para el objetivo 2,35: el frasco de unidades se llena hasta 2, el de décimas hasta 3 y el de centésimas hasta 5. Los tres frascos separados hacen evidente la estructura 2 + 0,3 + 0,05 antes de cualquier cálculo.",
+      "mistakes": "Los estudiantes suelen tratar los decimales como números enteros e introducen 35 en el frasco de centésimas para 0,35. Los frascos separados obligan a trabajar columna a columna, rompiendo el hábito de leer por encima de la coma.",
+      "faqs": [
+        {
+          "q": "¿Cómo muestran los frascos de arena el valor posicional decimal de forma diferente a las columnas de bloques del Constructor de valor posicional?",
+          "a": "El Constructor de valor posicional usa bloques apilables para las columnas de centenas, decenas y unidades de números enteros. Constructor de decimales usa frascos de arena para unidades, décimas y centésimas, haciendo visibles las columnas fraccionarias sin bloques."
+        },
+        {
+          "q": "¿Para qué cursos es Constructor de decimales?",
+          "a": "Cursos 4-5, en los que los estudiantes conocen por primera vez las décimas y centésimas como posiciones de valor posicional."
+        },
+        {
+          "q": "¿Se puede introducir un dígito mayor que 9 en algún frasco?",
+          "a": "No. Cada frasco está limitado a 9, de modo que el juego mantiene la notación decimal estándar sin necesidad de llevar, que se practica por separado en Suma de decimales."
+        }
+      ]
+    }
   },
   "decimalNumberLine": {
     "title": "Decimal en la recta numérica",
@@ -217,7 +607,34 @@
     "instructions": "Arrastra el tren a la posición correcta en la recta (0 a 1) y luego pulsa Comprobar",
     "prompt": "Coloca {decimal} en la recta",
     "correct": "¡Correcto! {decimal} está en la posición correcta",
-    "wrong": "¡Casi! Revisa la posición e inténtalo de nuevo"
+    "wrong": "¡Casi! Revisa la posición e inténtalo de nuevo",
+    "seo": {
+      "intro": "Decimal en la recta numérica pide a los estudiantes arrastrar un tren hasta la posición exacta de un decimal entre 0 y 1. Al colocar el número en una regla, el juego enseña que un decimal es una distancia en una escala, no solo un patrón de dígitos, y desarrolla el sentido espacial de magnitud.",
+      "howToPlay": [
+        "Lee el decimal objetivo que aparece sobre la recta numérica.",
+        "Estima dónde cae el número entre 0 y 1.",
+        "Arrastra el tren a lo largo de la recta hasta la posición estimada.",
+        "Ajusta hasta que el tren se detenga en el punto correcto.",
+        "Pulsa Comprobar."
+      ],
+      "skills": "Colocar decimales en la recta numérica entrena la comparación de magnitudes: 0,7 es mayor que 0,3 porque está más a la derecha. Este sentido espacial de la magnitud es la base para ordenar decimales y vincularlos con fracciones.",
+      "example": "Para 0,6: la recta va de 0 a 1 y el tren debe detenerse en la sexta marca de diez intervalos iguales. Compararlo con la fracción 6/10 muestra que la posición y el nombre de la fracción señalan el mismo punto.",
+      "mistakes": "Los estudiantes confunden frecuentemente el número de dígitos con el valor: colocan 0,35 a la derecha de 0,9 porque 35 parece mayor que 9. La escala fija de la recta expone ese error al mostrar que 0,9 está muy cerca de 1.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia colocar un decimal en la recta de colocar una fracción en el juego Fracción en la recta numérica?",
+          "a": "La Fracción en la recta numérica usa una regla con divisiones ajustables para colocar fracciones como 2/3. Decimal en la recta numérica usa una escala decimal fija (décimas) para colocar valores como 0,6, desarrollando fluidez con la notación decimal específicamente."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Cursos 3-5: las décimas para los cursos 3-4 y los objetivos de centésimas amplían al curso 5."
+        },
+        {
+          "q": "¿El juego cubre números mayores que 1?",
+          "a": "No. La recta va de 0 a 1 para centrar el foco en la parte decimal. Ordenar decimales de varias cifras se introduce en actividades posteriores."
+        }
+      ]
+    }
   },
   "decimalAddition": {
     "title": "Suma de decimales",
@@ -225,7 +642,34 @@
     "instructions": "Construye la suma: ajusta las unidades, décimas y centésimas con los botones − / + y luego pulsa Comprobar",
     "prompt": "¿Cuánto es {a} + {b}?",
     "correct": "¡Correcto! {a} + {b} = {result}",
-    "wrong": "¡Casi! Revisa cada dígito por separado y recuerda la llevada"
+    "wrong": "¡Casi! Revisa cada dígito por separado y recuerda la llevada",
+    "seo": {
+      "intro": "Suma de decimales guía a los estudiantes para construir la suma de dos decimales columna a columna. Ruedas de dígitos separadas para unidades, décimas y centésimas hacen tangible la regla de alinear la coma: cada columna se ajusta de forma independiente y la llevada se vuelve visible.",
+      "howToPlay": [
+        "Lee los dos sumandos decimales que aparecen en pantalla.",
+        "Suma primero los dígitos de centésimas y ajústalos en la rueda de centésimas.",
+        "Si la suma de centésimas es 10 o más, lleva 1 a la columna de décimas.",
+        "Repite con las décimas y luego con las unidades, llevando según sea necesario.",
+        "Pulsa Comprobar cuando las tres ruedas muestren la suma correcta."
+      ],
+      "skills": "Suma de decimales practica el algoritmo de suma por columnas con números decimales: alinear la coma, sumar cifras iguales (centésimas con centésimas, décimas con décimas) y llevar entre columnas. Son las mismas habilidades que la suma de enteros, extendidas a posiciones fraccionarias.",
+      "example": "Para 1,47 + 0,86: centésimas 7+6=13, se pone 3 y se lleva 1; décimas 4+8+1=13, se pone 3 y se lleva 1; unidades 1+0+1=2. Resultado 2,33. Cada paso se realiza en una rueda separada.",
+      "mistakes": "El error más común es ignorar la alineación y sumar 1,47 + 0,86 como si fueran 147 + 86. Las ruedas separadas lo impiden porque cada rueda solo acepta el dígito de su columna.",
+      "faqs": [
+        {
+          "q": "¿Cómo enseñan las ruedas de columna la alineación de la coma decimal?",
+          "a": "Cada rueda está etiquetada como unidades, décimas o centésimas y solo acepta su propio dígito, por lo que el estudiante no puede añadir accidentalmente un dígito de décimas a la columna de unidades. La estructura impone la alineación sin necesidad de una cuadrícula escrita."
+        },
+        {
+          "q": "¿Para qué cursos es Suma de decimales?",
+          "a": "Cursos 4-5, en los que los estudiantes extienden la suma por columnas a decimales con décimas y centésimas."
+        },
+        {
+          "q": "¿El juego también cubre la resta de decimales?",
+          "a": "No. Suma de decimales se centra en el algoritmo de suma con llevada. La resta de decimales con préstamo es una habilidad separada que se practica en otra actividad."
+        }
+      ]
+    }
   },
   "numberBond": {
     "title": "Descomponer el número",
@@ -233,7 +677,33 @@
     "instructions": "Dos plataformas de piedra flotan sobre un abismo. Construye el puente: usa izquierda −/+ para fijar la parte izquierda y derecha −/+ para la parte derecha (también puedes arrastrar en cada lado). El puente se conecta cuando las dos partes suman exactamente el ancho del hueco. Luego pulsa Comprobar",
     "prompt": "Descompón {target} en dos partes",
     "correct": "¡Genial! Las dos partes juntas suman {target}",
-    "wrong": "¡Casi! Haz que las dos partes sumen exactamente el ancho del hueco, luego pulsa Comprobar"
+    "wrong": "¡Casi! Haz que las dos partes sumen exactamente el ancho del hueco, luego pulsa Comprobar",
+    "seo": {
+      "intro": "En el Divisor de Números dos plataformas de piedra flotan sobre un abismo. Los alumnos ajustan los números izquierdo y derecho hasta que su suma iguale el todo, y un puente de cristal aparece cuando las partes son correctas. La metáfora del puente sobre el abismo hace tangible la relación parte-parte-todo.",
+      "howToPlay": [
+        "Lee el número entero que aparece sobre el abismo.",
+        "Usa los botones −/+ o arrastra en cada plataforma para fijar la parte izquierda.",
+        "Observa cómo la parte derecha se actualiza para mostrar lo que queda.",
+        "Cuando el puente una las dos plataformas, pulsa Comprobar."
+      ],
+      "skills": "Las descomposiciones numéricas construyen la fluidez automática al descomponer números pequeños (1–20), que es la base para la suma y resta mentales. Saber que 7 se descompone en 3+4 o en 5+2 permite al alumno sumar pasando por decenas sin contar con los dedos.",
+      "example": "Para el todo 8, el alumno fija la parte izquierda en 5; la parte derecha muestra automáticamente 3. El puente aparece y confirma 5+3=8. Probar 6 y luego 2 muestra una descomposición diferente y válida.",
+      "mistakes": "Los niños pequeños suelen fijar una parte en 1 y contar la otra, sin percatarse de que existen muchos pares válidos. Arrastrar de forma interactiva anima a explorar todo el rango de descomposiciones en lugar de detenerse en la primera correcta.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia el Divisor de Números del juego Marco de Diez?",
+          "a": "El Marco de Diez muestra un número como celdas llenas y vacías en una cuadrícula fija de 10, construyendo la relación con el diez. El Divisor de Números es abierto: descompone cualquier número pequeño en dos partes cualesquiera, sin anclarse al diez."
+        },
+        {
+          "q": "¿Para qué cursos es adecuado el Divisor de Números?",
+          "a": "Cursos 1.°–2.°, donde los alumnos aprenden a descomponer números hasta el 20 y necesitan dominar con fluidez la relación parte-parte-todo antes de pasar a los algoritmos de suma."
+        },
+        {
+          "q": "¿Acepta el juego cualquier descomposición válida o solo un par específico?",
+          "a": "Se acepta cualquier par cuya suma iguale el todo. El juego anima a explorar todas las descomposiciones del número objetivo a lo largo de varias rondas."
+        }
+      ]
+    }
   },
   "numberLineJump": {
     "title": "Salto en la recta numérica",
@@ -241,7 +711,33 @@
     "instructions": "Ajusta el tamaño del salto con − / +, luego pulsa → Adelante o ← Atrás para que el coche salte por la pista. Puedes saltar varias veces hasta caer justo en la bandera. Después pulsa Comprobar",
     "prompt": "Salta hasta {target}",
     "correct": "¡Genial! Caíste justo en {target}",
-    "wrong": "¡Casi! Salta adelante o atrás hasta caer justo en la bandera"
+    "wrong": "¡Casi! Salta adelante o atrás hasta caer justo en la bandera",
+    "seo": {
+      "intro": "Saltos en la Recta Numérica coloca un coche en una pista de carreras y pide que salte hasta una posición objetivo con saltos del tamaño elegido. Cada salto hacia adelante o hacia atrás es una suma o resta visible, convirtiendo la operación abstracta en un viaje real por una recta graduada.",
+      "howToPlay": [
+        "Lee el número objetivo señalado por la bandera en la pista.",
+        "Fija el tamaño del salto con los botones −/+.",
+        "Pulsa Adelante o Atrás para saltar el coche ese número de casillas cada vez.",
+        "Cae exactamente sobre la bandera y luego pulsa Comprobar."
+      ],
+      "skills": "Saltos en la Recta Numérica desarrolla el cálculo mental flexible haciendo que la suma y la resta tengan una dirección: adelante para sumar, atrás para restar. Los alumnos desarrollan el sentido de distancia y dirección en la recta, lo que prepara para las operaciones con enteros y el trabajo con coordenadas.",
+      "example": "Para llegar al 17 desde 0 con saltos de 5: tres saltos adelante llegan al 15, luego se cambia a salto de 2 para un salto más hasta el 17. Los alumnos ven 5+5+5+2=17 como un camino, no como una suma abstracta.",
+      "mistakes": "Los alumnos eligen a veces un tamaño de salto que no divide exactamente el objetivo y lo sobrepasan, teniendo luego dificultades para volver. El juego permite distintos tamaños de salto en una misma ronda, fomentando un enfoque de dos pasos.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia Saltos en la Recta Numérica de la Carrera de Conteo por Saltos?",
+          "a": "La Carrera de Conteo por Saltos fija el tamaño del salto y pide marcar cada aterrizaje en secuencia, practicando los múltiplos como patrón. Saltos en la Recta Numérica permite elegir tamaños de salto para llegar a un único objetivo, cubriendo suma y resta a la vez."
+        },
+        {
+          "q": "¿Para qué cursos es adecuado Saltos en la Recta Numérica?",
+          "a": "Cursos 1.°–4.°, con objetivos más simples y saltos mayores para los más jóvenes, y objetivos de dos cifras que requieren tamaños de salto mixtos para los cursos superiores."
+        },
+        {
+          "q": "¿Puede el coche saltar hacia atrás para practicar la resta?",
+          "a": "Sí. Pulsando el botón Atrás, el coche salta a la izquierda en la pista, modelando la resta. A veces es necesario sobrepasar el objetivo y volver atrás para caer exactamente sobre él."
+        }
+      ]
+    }
   },
   "explodingDots": {
     "title": "Puntos que explotan",
@@ -249,7 +745,24 @@
     "instructions": "Añade puntos a cada caja con los botones − / + (centenas, decenas, unidades), o arrastra hacia arriba sobre una caja para añadir. Cuando una caja llega a diez puntos, explotan en un punto en la caja de su izquierda. Construye el número y pulsa Comprobar.",
     "prompt": "Construye el número {target}",
     "correct": "¡Genial! Construiste {target}",
-    "wrong": "¡Casi! Revisa las cajas y corrige el número"
+    "wrong": "¡Casi! Revisa las cajas y corrige el número",
+    "seo": {
+      "intro": "Puntos que Explotan convierte la reagrupación en un espectáculo. Los alumnos colocan puntos de neón en cajas de unidades, decenas y centenas para representar un número objetivo. Cuando una caja alcanza diez puntos, explotan en un punto que se mueve a la izquierda, haciendo que la regla de la base diez ocurra ante los ojos en lugar de aprenderse.",
+      "howToPlay": [
+        "Lee el número objetivo que aparece encima de las cajas.",
+        "Usa los botones −/+ o arrastra hacia arriba para añadir puntos a la caja de unidades, decenas o centenas.",
+        "Cuando una caja alcanza diez puntos, observa la explosión que los mueve a la izquierda.",
+        "Ajusta hasta que las cajas representen juntas el número objetivo y pulsa Comprobar."
+      ],
+      "skills": "Puntos que Explotan construye una intuición profunda del valor posicional en base diez. En lugar de memorizar que diez unidades equivalen a una decena, los alumnos lo ven como una explosión. Este entendimiento basado en animación prepara para la suma y resta de múltiples cifras y futuros sistemas de numeración en otras bases.",
+      "example": "Construir 23: añade 3 a unidades, 2 a decenas. Sin explosiones. Construir 33: añade 13 a unidades — al llegar a diez la caja explota, quedan 3 unidades y surge una decena. Resultado: 3 decenas y 3 unidades = 33.",
+      "mistakes": "Los alumnos a veces llenan demasiado una caja y se pierden la explosión. El juego congela las cajas llenas hasta que se activa la explosión, reforzando que diez en una caja es siempre el límite.",
+      "faqs": [
+        { "q": "¿Para qué cursos son los Puntos que Explotan?", "a": "Cursos 2–3, donde los alumnos construyen la intuición del valor posicional para números de dos y tres cifras y comienzan a entender la lógica de la llevada en la suma." },
+        { "q": "¿Está relacionado con el proyecto Exploding Dots de James Tanton?", "a": "La mecánica está inspirada en el mismo modelo de puntos en base diez popularizado en la educación matemática. El juego usa el mismo lenguaje visual para hacer la reagrupación autoexplicativa." },
+        { "q": "¿En qué se diferencia de la Mina de Sumas?", "a": "Puntos que Explotan se centra en representar un solo número y ver la regla de la explosión. La Mina de Sumas usa las mismas columnas pero en el contexto de sumar dos números con la mecánica de la vagoneta." }
+      ]
+    }
   },
   "factris": {
     "title": "Factris",
@@ -257,7 +770,24 @@
     "instructions": "Cambia el ancho de la pila con los botones − / + (o arrastra a la derecha para ensanchar, a la izquierda para estrechar) hasta que los bloques formen un rectángulo completo que llene exactamente el estante luminoso. Si el ancho no encaja, la fila superior queda incompleta: no es un rectángulo limpio. Luego pulsa Comprobar.",
     "prompt": "Organiza {area} bloques para llenar el estante",
     "correct": "¡Genial! {slotW} de ancho × {height} de alto = {area}",
-    "wrong": "¡Casi! Cambia el ancho hasta que los bloques llenen exactamente el estante luminoso"
+    "wrong": "¡Casi! Cambia el ancho hasta que los bloques llenen exactamente el estante luminoso",
+    "seo": {
+      "intro": "Factris le da un giro estilo Tetris a la multiplicación y la factorización. Un número fijo de bloques de almacén debe organizarse en un rectángulo perfecto que llene exactamente un estante luminoso. Los alumnos encuentran un ancho válido, es decir, un factor del total, y la altura se ajusta automáticamente, haciendo visible el vínculo entre área, matrices y hechos de multiplicación.",
+      "howToPlay": [
+        "Lee el número total de bloques indicado en el enunciado.",
+        "Usa los botones −/+ o arrastra izquierda/derecha para cambiar el ancho de la pila.",
+        "Observa cómo la altura se ajusta para que ancho × altura siempre iguale el total.",
+        "Encuentra un ancho que llene cada celda del estante luminoso sin huecos ni saliente y pulsa Comprobar."
+      ],
+      "skills": "Factris construye fluidez con factores, múltiplos y la relación entre multiplicación y área. Buscar un ancho que funcione es idéntico a encontrar un par de factores, por lo que los alumnos interiorizan los pares de factores mediante ensayo y error espacial en lugar de memorización.",
+      "example": "El estante cabe 12 bloques. Ancho 3 da altura 4: el rectángulo llena. Ancho 5 deja 2 bloques sobrantes en la fila superior: no es factor. Los alumnos pronto comprenden que 1, 2, 3, 4, 6, 12 funcionan; 5, 7, 8, 9, 10, 11 no.",
+      "mistakes": "Los alumnos a veces prueban todos los números en orden en lugar de razonar sobre los factores. Darse cuenta de que ancho × altura = total es la intuición que el juego está diseñado para despertar.",
+      "faqs": [
+        { "q": "¿Para qué cursos es Factris?", "a": "Cursos 3–5, que cubren pares de factores, múltiplos y el modelo de área de la multiplicación." },
+        { "q": "¿En qué se diferencia de la Matriz de Multiplicación?", "a": "La Matriz muestra una cuadrícula hecha y pide encontrar el total. Factris da el total y pide encontrar qué anchos forman un rectángulo válido, invirtiendo el modelo de matriz para construir intuición de factores." },
+        { "q": "¿Muestra el juego todos los pares de factores?", "a": "El juego acepta cualquier ancho válido. Los alumnos que prueban varios anchos descubren naturalmente todos los pares de factores del total." }
+      ]
+    }
   },
   "skipCount": {
     "title": "Carrera de conteo salteado",
@@ -265,7 +795,33 @@
     "instructions": "Toca las casillas en las que cae el animal en cada salto. Márcalas todas hasta el final y luego pulsa Comprobar — el animal saltará por las piedras. Toca una casilla otra vez para desmarcarla, o Reiniciar para empezar de nuevo.",
     "prompt": "Marca cada salto de {step} hasta {target}",
     "correct": "¡Genial! Contaste de {step} en {step} hasta {target}",
-    "wrong": "¡Casi! Marca exactamente cada salto — sin que falte ni sobre ninguno"
+    "wrong": "¡Casi! Marca exactamente cada salto — sin que falte ni sobre ninguno",
+    "seo": {
+      "intro": "La Carrera de Conteo por Saltos envía a un animal de safari a través de piedras en una pista. Los alumnos tocan cada piedra donde el animal aterriza al contar de 2 en 2, de 5 en 5 o de 10 en 10, y el animal corre para confirmar. Marcar el patrón ellos mismos antes de ver la animación hace que la regularidad del conteo sea activa y memorable.",
+      "howToPlay": [
+        "Lee el intervalo de salto y el objetivo que aparecen sobre la pista de safari.",
+        "Toca cada piedra que caiga en un múltiplo del intervalo de salto.",
+        "Continúa hasta el objetivo marcando cada aterrizaje, sin que falte ni sobre ninguno.",
+        "Pulsa Comprobar para ver al animal saltar sobre las piedras marcadas."
+      ],
+      "skills": "Contar de 2 en 2, de 5 en 5 y de 10 en 10 es la puerta de entrada a las tablas de multiplicar. Identificar cada múltiplo entrena el conteo rítmico y sienta la base conceptual para entender la multiplicación como suma repetida en una secuencia estructurada.",
+      "example": "Contar de 5 en 5 hasta 30: toca los mosaicos 5, 10, 15, 20, 25, 30. El espaciado uniforme de las piedras marcadas revela el patrón del ×5 visualmente antes de introducir cualquier fila de la tabla.",
+      "mistakes": "Los alumnos suelen olvidar el primer salto (empiezan en 0 en lugar de en el intervalo) o marcan la piedra objetivo pero olvidan las anteriores. El juego requiere que se marque cada múltiplo: una piedra que falta o que sobra falla la comprobación, reforzando la secuencia completa, no solo el resultado final.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia la Carrera de Conteo por Saltos de Saltos en la Recta Numérica?",
+          "a": "La Carrera de Conteo por Saltos fija el tamaño del salto y pide marcar cada aterrizaje en secuencia, practicando múltiplos como patrón. Saltos en la Recta Numérica permite elegir tamaños de salto para llegar a un único objetivo, cubriendo suma y resta a la vez."
+        },
+        {
+          "q": "¿Para qué cursos es adecuada la Carrera de Conteo por Saltos?",
+          "a": "Cursos 2.°–3.°, donde los alumnos consolidan el conteo de 2 en 2, de 5 en 5 y de 10 en 10 como preparación directa para las tablas de multiplicar."
+        },
+        {
+          "q": "¿Cubre el juego intervalos distintos de 2, 5 y 10?",
+          "a": "El juego básico usa 2, 5 y 10 conforme al plan de estudios de los cursos 2.°–3.°. En rondas avanzadas pueden aparecer más intervalos a medida que el alumno progresa."
+        }
+      ]
+    }
   },
   "weightBalance": {
     "title": "Balanza",
@@ -273,7 +829,33 @@
     "instructions": "Añade pesas de gramos al platillo derecho con los botones − / + (1 g, 10 g, 100 g), o arrastra hacia arriba para añadir una pesa de 10 g, hasta que el brazo quede nivelado. Luego pulsa Comprobar",
     "prompt": "Equilibra la fruta — {weight} g",
     "correct": "¡Genial! Equilibraste exactamente {weight} g",
-    "wrong": "¡Casi! El brazo sigue inclinado: revisa el peso total y corrígelo"
+    "wrong": "¡Casi! El brazo sigue inclinado: revisa el peso total y corrígelo",
+    "seo": {
+      "intro": "«Balanza» sitúa a los alumnos en un puesto de mercado donde deben equilibrar fruta en un platillo añadiendo pesas de gramos (1 g, 10 g, 100 g) al otro platillo. El brazo inclinado ofrece retroalimentación inmediata sobre si el total es demasiado ligero o demasiado pesado, convirtiendo la medición del peso en una tarea concreta de equilibrio.",
+      "howToPlay": [
+        "Lee el peso objetivo de la fruta en el platillo izquierdo.",
+        "Usa los botones 100 g, 10 g y 1 g para añadir pesas al platillo derecho.",
+        "Observa el brazo: inclinado a la izquierda significa que el platillo derecho pesa poco; a la derecha, que pesa demasiado.",
+        "Pulsa Comprobar cuando el brazo esté perfectamente nivelado."
+      ],
+      "skills": "Componer un peso objetivo con pesas de 1 g, 10 g y 100 g construye la intuición del valor posicional para números de tres cifras y practica la habilidad de medición real de elegir la combinación de pesas más eficiente, el mismo razonamiento que se usa en cualquier mercado o cocina. Adecuado para 2.° y 3.° de primaria.",
+      "example": "El objetivo es 253 g. Los alumnos añaden dos pesas de 100 g (200 g), cinco de 10 g (50 g) y tres de 1 g (3 g) para llegar exactamente a 253 g. La descomposición paso a paso refleja la estructura de valor posicional del propio número.",
+      "mistakes": "Los alumnos suelen usar demasiadas pesas pequeñas en lugar de canjear diez piezas de 1 g por una de 10 g. El número limitado de pesas en pantalla fomenta la reagrupación, lo que es paralelo al concepto de llevada en la suma escrita.",
+      "faqs": [
+        {
+          "q": "¿Cómo refuerza elegir pesas de gramos el valor posicional en este juego?",
+          "a": "Las tres denominaciones (1 g, 10 g, 100 g) se corresponden con unidades, decenas y centenas. Construir un peso de 253 g hace que la estructura de tres cifras sea tangible, no abstracta."
+        },
+        {
+          "q": "¿Para qué cursos está pensada la «Balanza»?",
+          "a": "2.° y 3.° de primaria, donde los alumnos aprenden las unidades de masa estándar (gramos), practican la composición de números de tres cifras y comienzan a usar instrumentos de medición."
+        },
+        {
+          "q": "¿En qué se diferencia del juego «Balanza aritmética»?",
+          "a": "«Balanza» (tema: medidas) mide masa física en gramos y desarrolla habilidades de medición y valor posicional. «Balanza aritmética» (tema: aritmética) practica la suma mental haciendo coincidir una cantidad con pesas numeradas: trata sobre igualdad y cálculo, no sobre unidades de masa."
+        }
+      ]
+    }
   },
   "percentBar": {
     "title": "Barra de porcentaje",
@@ -281,7 +863,33 @@
     "instructions": "Usa los botones de porcentaje ±5%, o arrastra hacia arriba para agregar aficionados, para llenar la grada al porcentaje correcto y luego pulsa Comprobar",
     "prompt": "Llena el {percent}% de la grada",
     "correct": "¡Genial! Llenaste el {percent}% de la grada",
-    "wrong": "¡Casi! Revisa el porcentaje y corrige el llenado"
+    "wrong": "¡Casi! Revisa el porcentaje y corrige el llenado",
+    "seo": {
+      "intro": "Barra de porcentaje muestra una grada de estadio dividida en 100 secciones iguales. Los alumnos arrastran o tocan para llenar exactamente el número correcto de secciones, haciendo que la idea abstracta de que el porcentaje significa partes de 100 sea concreta e inmediata. A diferencia de una fracción escrita, la longitud total de la barra siempre es la misma.",
+      "howToPlay": [
+        "Lee el porcentaje objetivo mostrado sobre la grada.",
+        "Usa los botones +5% y −5%, o arrastra hacia arriba, para agregar aficionados a la grada.",
+        "Observa cómo el nivel de llenado y el contador de porcentaje se actualizan juntos.",
+        "Cuando la parte llena coincida con el objetivo, pulsa Comprobar."
+      ],
+      "skills": "La barra de porcentaje fija la definición central: el porcentaje es siempre de 100. Llenar la misma barra fija a diferentes niveles desarrolla la noción espacial de que el 50 % es la mitad, el 25 % un cuarto y el 75 % tres cuartos, antes de introducir ninguna fórmula.",
+      "example": "Para el 30 %, el alumno llena 30 de las 100 secciones. Comparar el resultado con una barra a la mitad hace evidente que el 30 % es menos de la mitad, sin ningún cálculo.",
+      "mistakes": "Los alumnos a veces confunden el valor del porcentaje con el número de clics. La barra fija de 100 secciones lo corrige: el 30 % siempre significa exactamente 30 secciones llenas, independientemente de cuántos clics se necesitaron.",
+      "faqs": [
+        {
+          "q": "¿Cómo ayuda llenar una barra a entender el porcentaje como partes de 100?",
+          "a": "La barra siempre tiene 100 secciones, así que llenarla al 40 % coloca literalmente 40 de 100 secciones. La longitud visual hace evidente la definición de fracción de 100 antes de enunciar ninguna regla."
+        },
+        {
+          "q": "¿Para qué cursos es Barra de porcentaje?",
+          "a": "Cursos 5-6, donde los alumnos definen el porcentaje como una razón de 100 y necesitan un modelo visual antes de trabajar con cálculos de porcentajes."
+        },
+        {
+          "q": "¿En qué se diferencia Barra de porcentaje de Porcentaje de una cantidad?",
+          "a": "Barra de porcentaje es un modelo visual: los alumnos sombrean una barra fija para ver cómo luce un porcentaje. Porcentaje de una cantidad es un juego de cálculo: los alumnos calculan una cantidad específica como el 30 % de 80. Uno construye el concepto; el otro lo aplica."
+        }
+      ]
+    }
   },
   "percentOfQuantity": {
     "title": "Porcentaje de una cantidad",
@@ -289,7 +897,33 @@
     "instructions": "Lee el problema en el letrero, ajusta tu respuesta con los botones − / +, y luego pulsa Comprobar",
     "prompt": "¿Cuánto es el {percent}% de {total}?",
     "correct": "¡Correcto! El {percent}% de {total} es {result}",
-    "wrong": "No es exacto — intenta calcular de nuevo"
+    "wrong": "No es exacto — intenta calcular de nuevo",
+    "seo": {
+      "intro": "Porcentaje de una cantidad presenta un letrero con un porcentaje y una cantidad, y los alumnos ajustan la respuesta numérica con botones. El juego entrena el cálculo mental en dos pasos: convertir el porcentaje a fracción o decimal y luego multiplicar por el total, haciendo que la aritmética de porcentajes sea fluida y rápida.",
+      "howToPlay": [
+        "Lee el porcentaje y la cantidad mostrados en el letrero.",
+        "Calcula mentalmente: convierte el porcentaje a fracción (p. ej. 25 % = 1/4) o usa su forma decimal.",
+        "Usa los botones +/− para ajustar tu respuesta calculada.",
+        "Pulsa Comprobar para confirmar."
+      ],
+      "skills": "Porcentaje de una cantidad desarrolla fluidez automática en el cálculo porcentual: encontrar el 10 %, el 25 %, el 50 % y otros porcentajes cómodos de un número entero. Esta destreza es la base de los descuentos, propinas, impuestos y cualquier situación de porcentaje en la vida real.",
+      "example": "Para el 25 % de 80: los alumnos reconocen el 25 % como un cuarto y dividen 80 entre 4 para obtener 20. Practicar primero porcentajes cómodos hace que valores más difíciles como el 15 % o el 35 % sean abordables mediante descomposición.",
+      "mistakes": "Un error frecuente es ingresar el valor del porcentaje mismo (25 en lugar de 20 para el 25 % de 80). El juego lo expone al requerir la cantidad real, no el símbolo de porcentaje.",
+      "faqs": [
+        {
+          "q": "¿Qué cálculo de dos pasos practica este juego?",
+          "a": "Los alumnos convierten el porcentaje a fracción o decimal y luego multiplican por la cantidad dada. Ambos pasos deben ser correctos para llegar a la respuesta correcta."
+        },
+        {
+          "q": "¿Para qué cursos es Porcentaje de una cantidad?",
+          "a": "Cursos 5-6, donde los alumnos pasan de comprender qué representa un porcentaje a calcular un porcentaje de una cantidad dada en contextos de la vida real."
+        },
+        {
+          "q": "¿En qué se diferencia este juego de Descuento de tienda?",
+          "a": "Porcentaje de una cantidad pide el resultado directo del porcentaje (¿cuánto es el 30 % de 80?). Descuento de tienda aplica ese cálculo a un contexto de compra: hallar el monto del descuento y luego restarlo del precio original para obtener el precio de venta."
+        }
+      ]
+    }
   },
   "percentDiscount": {
     "title": "Descuento de tienda",
@@ -297,7 +931,33 @@
     "instructions": "Lee el precio original y el porcentaje de descuento, ajusta el precio de venta con los botones − / + y luego pulsa Comprobar",
     "prompt": "Un artículo cuesta ₪{original} con un {discount}% de descuento. ¿Cuál es el precio de venta?",
     "correct": "¡Correcto! El precio de venta es ₪{salePrice}",
-    "wrong": "No es exacto — calcula el monto del descuento y réstalo del precio original"
+    "wrong": "No es exacto — calcula el monto del descuento y réstalo del precio original",
+    "seo": {
+      "intro": "Descuento de tienda sitúa a los alumnos en una tienda virtual donde deben calcular el precio de venta final tras un descuento porcentual. Al trabajar con una transacción de compra realista, los alumnos practican el proceso de dos etapas: calcular el importe del descuento y luego restarlo del precio original.",
+      "howToPlay": [
+        "Lee el precio original y el porcentaje de descuento mostrados en la tienda.",
+        "Calcula el importe del descuento: aplica el porcentaje al precio original.",
+        "Resta el descuento del precio original para obtener el precio de venta.",
+        "Usa los botones +/− para ingresar el precio de venta y luego pulsa Comprobar."
+      ],
+      "skills": "Descuento de tienda desarrolla la aplicación real del porcentaje de una cantidad: calcular una reducción porcentual y aplicarla. Los alumnos aprenden que encontrar un descuento es un proceso de dos pasos (porcentaje de un total, luego resta), que es la base para calcular impuestos, propinas y comisiones.",
+      "example": "Un artículo cuesta 200 con un 25 % de descuento. Los alumnos calculan el 25 % de 200 = 50, luego restan: 200 − 50 = 150. El precio de venta es 150. Cada paso cobra significado en el marco de la compra.",
+      "mistakes": "Muchos alumnos ingresan el importe del descuento (50) en lugar del precio de venta final (150). El campo de entrada etiquetado como precio de venta orienta a los alumnos a completar el paso de resta que distingue este juego de un simple cálculo de porcentaje.",
+      "faqs": [
+        {
+          "q": "¿Por qué el juego pide el precio de venta y no el importe del descuento?",
+          "a": "Calcular el precio de venta completo requiere ambos pasos: el porcentaje de la cantidad y la resta. Detenerse en el importe del descuento omite el paso de resta necesario en toda situación real de descuento."
+        },
+        {
+          "q": "¿Para qué cursos es Descuento de tienda?",
+          "a": "Cursos 5-6, donde los alumnos aplican cálculos de porcentajes a contextos de la vida real, incluyendo compras, impuestos y otros ajustes basados en porcentajes."
+        },
+        {
+          "q": "¿En qué se diferencia Descuento de tienda de Barra de porcentaje?",
+          "a": "Barra de porcentaje es un modelo visual que muestra cómo luce un porcentaje en una barra fija de 100 secciones. Descuento de tienda es un problema de cálculo en dos pasos en un contexto real: calcular un porcentaje de una cantidad y luego aplicarlo para obtener un nuevo precio."
+        }
+      ]
+    }
   },
   "ratioMixer": {
     "title": "Mezclador de razones",
@@ -305,7 +965,33 @@
     "instructions": "Ajusta la cantidad de Zumo A y Zumo B con los botones − y + (o arrastra un vaso hacia arriba para llenarlo, hacia abajo para vaciarlo) hasta que su razón coincida con la pedida — cualquier cantidad equivalente sirve — y luego pulsa Comprobar.",
     "prompt": "Mezcla en la razón {a}:{b}",
     "correct": "¡Bien! Equivalente a {a}:{b}",
-    "wrong": "Aún no es la razón correcta — ajusta las cantidades e inténtalo de nuevo"
+    "wrong": "Aún no es la razón correcta — ajusta las cantidades e inténtalo de nuevo",
+    "seo": {
+      "intro": "Mezclador de razones sitúa a los alumnos en una barra de zumos con dos vasos. El objetivo es servir el Zumo A y el Zumo B en una razón objetivo, descubriendo que 1:2, 2:4 y 3:6 producen el mismo sabor. Ajustar las cantidades hasta que la razón encaje hace que la equivalencia sea concreta, no simbólica.",
+      "howToPlay": [
+        "Lee la razón objetivo que se muestra sobre los vasos (por ejemplo, 1:2).",
+        "Usa los botones − y + o arrastra cada vaso hacia arriba o abajo para ajustar las cantidades de Zumo A y Zumo B.",
+        "Se acepta cualquier par de cantidades que forme una razón equivalente — experimenta libremente.",
+        "Pulsa Comprobar cuando tu mezcla coincida con la razón objetivo."
+      ],
+      "skills": "Mezclador de razones construye la comprensión fundamental de que una razón describe una relación entre dos cantidades, no un par fijo de números. Los alumnos descubren que multiplicar ambas partes por el mismo factor conserva la razón — la base del razonamiento proporcional en los cursos 5 y 6.",
+      "example": "Para una razón objetivo de 1:2, se aceptan 3 unidades de Zumo A y 6 de Zumo B porque 3:6 se simplifica a 1:2. Los alumnos ven que el sabor — la razón — se mantiene igual independientemente del volumen total.",
+      "mistakes": "Los alumnos suelen fijar una cantidad y solo ajustan la otra, lo que raramente mantiene la razón. El juego enseña que ambas cantidades deben escalar juntas con el mismo factor.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia ajustar cantidades en Mezclador de razones de rellenar un valor que falta en la Tabla de razones?",
+          "a": "En Mezclador de razones se elige libremente cualquier par de cantidades equivalentes válido. En Tabla de razones se identifica un factor de escala fijo y se calcula un único valor que falta."
+        },
+        {
+          "q": "¿Para qué cursos es Mezclador de razones?",
+          "a": "Cursos 5-6, donde los alumnos definen la razón como relación entre dos cantidades y exploran razones equivalentes dentro del razonamiento proporcional."
+        },
+        {
+          "q": "¿Por qué el juego acepta cualquier razón equivalente y no solo los números exactos del objetivo?",
+          "a": "Aceptar todas las formas equivalentes es la lección: 2:4 y 3:6 son la misma razón que 1:2. Si solo hubiera una respuesta correcta, los alumnos adivinarían números en lugar de comprender la equivalencia."
+        }
+      ]
+    }
   },
   "ratioRecipe": {
     "title": "Escalar receta",
@@ -313,7 +999,34 @@
     "instructions": "Lee la receta original, ajusta la cantidad del ingrediente con los botones − / + y luego pulsa Comprobar",
     "prompt": "Escala la receta a {servings} porciones. ¿Cuánto {ingredient} se necesita?",
     "correct": "¡Correcto! Necesitas {amount} de {ingredient}",
-    "wrong": "¡Casi! Multiplica la cantidad original por la razón de porciones"
+    "wrong": "¡Casi! Multiplica la cantidad original por la razón de porciones",
+    "seo": {
+      "intro": "Escalar receta muestra una tarjeta de receta para un número fijo de porciones y pide a los alumnos que recalculen cada ingrediente para un número diferente de porciones. Triplicar 200 g de harina a 600 g da al pensamiento proporcional un propósito real que el ejercicio abstracto no puede igualar.",
+      "howToPlay": [
+        "Lee la receta original: número de porciones y cantidades de ingredientes.",
+        "Comprueba cuántas porciones se piden.",
+        "Calcula el factor de escala: nuevas porciones divididas entre las originales.",
+        "Multiplica la cantidad del ingrediente mostrada por ese factor e introduce el resultado con los botones − / +.",
+        "Pulsa Comprobar."
+      ],
+      "skills": "Escalar receta practica la escala multiplicativa: identificar el factor entre dos números de porciones y aplicarlo a cada ingrediente. Este es el núcleo aplicado del razonamiento proporcional — la misma habilidad que se usa en conversión de unidades, escala de mapas y problemas de porcentaje en los cursos 5 y 6.",
+      "example": "Una receta para 4 porciones necesita 200 g de harina. Convertirla a 12 porciones requiere un factor de 3 (12 ÷ 4), por lo que la harina pasa a ser 200 × 3 = 600 g. Los alumnos deben identificar primero el factor y luego aplicarlo — dos pasos distintos.",
+      "mistakes": "Los alumnos suelen sumar la diferencia de porciones en vez de multiplicar por el factor (por ejemplo, sumar 8 a 200 g en lugar de multiplicar por 3). El contexto de la receta hace evidente el error: sumar solo agranda la receta ligeramente en vez de triplicarla de verdad.",
+      "faqs": [
+        {
+          "q": "¿Qué enseña escalar una receta que la mecánica de mezcla de Mezclador de razones no enseña?",
+          "a": "En Escalar receta el factor es explícito: los alumnos lo calculan (porciones nuevas divididas entre las originales) y luego lo aplican. En Mezclador de razones reconocen la equivalencia sin nombrar un factor concreto."
+        },
+        {
+          "q": "¿Para qué cursos es Escalar receta?",
+          "a": "Cursos 5-6, donde los alumnos aplican el razonamiento proporcional a problemas reales de varios pasos y practican multiplicar por una razón entera o fracción simple."
+        },
+        {
+          "q": "¿El juego pregunta por todos los ingredientes o solo por uno?",
+          "a": "Cada ronda se centra en un ingrediente con nombre tomado de la receta. Así el cálculo se mantiene en un paso por ronda, aunque sigue siendo necesario identificar el factor de escala correcto a partir de los números de porciones."
+        }
+      ]
+    }
   },
   "ratioTable": {
     "title": "Tabla de razones",
@@ -321,7 +1034,33 @@
     "instructions": "Lee la tabla, ajusta el valor que falta con los botones − / + y luego pulsa Comprobar",
     "prompt": "En la tabla de razones {a}:{b}, completa el valor que falta",
     "correct": "¡Correcto! El valor que falta es {value}",
-    "wrong": "¡Casi! Calcula el valor usando el factor de escala"
+    "wrong": "¡Casi! Calcula el valor usando el factor de escala",
+    "seo": {
+      "intro": "Tabla de razones presenta una cuadrícula de razones equivalentes con un valor que falta. Los alumnos leen las columnas para encontrar el factor de multiplicación y luego rellenan el hueco. El formato de tabla hace visible el patrón de razones equivalentes como una estructura, no como pares aislados.",
+      "howToPlay": [
+        "Lee la tabla de razones: cada columna muestra un par de valores con la misma razón.",
+        "Compara dos columnas completas para identificar el factor de escala entre ellas.",
+        "Aplica ese factor al valor conocido de la columna incompleta.",
+        "Introduce el valor que falta con los botones − / + y pulsa Comprobar."
+      ],
+      "skills": "Trabajar con una tabla de razones desarrolla el hábito de leer relaciones a lo largo de las filas, no solo dentro de un par. Este pensamiento por filas es la preparación directa para resolver proporciones, problemas de tasa unitaria y tablas de funciones en los cursos 4 a 6.",
+      "example": "En una tabla de razón 3:5, la primera columna muestra 3 y 5, la segunda 6 y 10, y la tercera 9 y un hueco. El factor de escala de la columna 1 a la columna 3 es 3, así que el valor que falta es 5 × 3 = 15.",
+      "mistakes": "Los alumnos a veces suman una constante a cada valor a lo largo de las filas en vez de multiplicar. El diseño de la tabla hace visible este error porque el patrón se rompe en la otra fila — la cuadrícula estructurada se corrige a sí misma.",
+      "faqs": [
+        {
+          "q": "¿Cómo ayuda el formato de tabla a los alumnos a ver el patrón en las razones equivalentes?",
+          "a": "Alinear varios pares equivalentes en columnas permite ver que el factor de escala es idéntico en ambas filas. Este patrón es más difícil de observar cuando las razones se presentan como pares aislados."
+        },
+        {
+          "q": "¿Para qué cursos es Tabla de razones?",
+          "a": "Cursos 4-6: los alumnos de 4.º usan tablas más sencillas para explorar razones equivalentes, mientras que los de 5.º y 6.º trabajan con factores mayores como parte del razonamiento proporcional formal."
+        },
+        {
+          "q": "¿En qué se diferencia Tabla de razones de Mezclador de razones y Escalar receta?",
+          "a": "Tabla de razones se centra en leer y ampliar una cuadrícula estructurada de pares equivalentes. Mezclador de razones pide que los alumnos elijan libremente cualquier equivalente válido. Escalar receta pide aplicar un factor calculado a un ingrediente real."
+        }
+      ]
+    }
   },
   "numberSequence": {
     "title": "Secuencia numérica",
@@ -329,7 +1068,33 @@
     "instructions": "Descubre la regla de la secuencia (sumar o multiplicar), ajusta la piedra que falta con los botones − / + (o arrastra hacia arriba para aumentarla) y luego pulsa Comprobar",
     "prompt": "Completa la secuencia",
     "correct": "¡Correcto! El número que falta es {value}",
-    "wrong": "¡Casi! Descubre la regla e inténtalo de nuevo"
+    "wrong": "¡Casi! Descubre la regla e inténtalo de nuevo",
+    "seo": {
+      "intro": "Secuencia numérica coloca una fila de piedras numeradas con una piedra que falta y pide a los alumnos descubrir la regla, sumar la misma cantidad cada vez o multiplicar, y luego proporcionar el valor que falta. Sirve de puente entre el trabajo con patrones visuales y el pensamiento aritmético basado en reglas para los cursos 3.º a 5.º.",
+      "howToPlay": [
+        "Lee todos los números visibles de la fila y busca qué cambia entre cada par.",
+        "Decide si la regla es aditiva (cada paso suma la misma cantidad) o multiplicativa (cada paso multiplica).",
+        "Usa los botones − / +, o arrastra la piedra que falta hacia arriba, para establecer el valor correcto.",
+        "Pulsa Comprobar para confirmar tu respuesta."
+      ],
+      "skills": "Encontrar una regla a partir de una secuencia de números y aplicarla entrena el conteo salteado, el reconocimiento de progresiones aritméticas y el pensamiento funcional temprano, habilidades que alimentan directamente las tablas de multiplicar, las tablas de entrada-salida y el álgebra de patrones en los cursos 3.º a 5.º.",
+      "example": "Una secuencia muestra 3, 6, 9, ?, 15. Cada paso suma 3, así que el número que falta es 12. Ver que la diferencia entre cada par es igual, no solo leer el último número, es la habilidad de razonamiento que desarrolla Secuencia numérica.",
+      "mistakes": "Los alumnos suelen adivinar sumando uno más que el término anterior en vez de medir la diferencia real. Secuencia numérica exige comprobar múltiples diferencias para confirmar la regla, entrenando el hábito de verificar antes de responder.",
+      "faqs": [
+        {
+          "q": "¿Cómo enseña la mecánica de la piedra que falta a encontrar la regla en vez de solo adivinar la respuesta?",
+          "a": "La piedra puede aparecer en cualquier lugar de la secuencia, no siempre al final, así que los alumnos deben establecer la regla a partir de los términos circundantes en vez de extender una lista un paso más."
+        },
+        {
+          "q": "¿Para qué cursos es Secuencia numérica?",
+          "a": "Es adecuada para los cursos 3.º a 5.º, donde los alumnos pasan de los patrones visuales a las reglas numéricas y comienzan a formalizar las relaciones aritméticas y multiplicativas."
+        },
+        {
+          "q": "¿En qué se diferencia Secuencia numérica de Secuencia geométrica?",
+          "a": "Secuencia numérica mezcla reglas aditivas y multiplicativas simples; Secuencia geométrica se centra exclusivamente en la multiplicación de razón constante como ×2 o ×3, el siguiente nivel de dificultad."
+        }
+      ]
+    }
   },
   "geometricSequence": {
     "title": "Secuencia geométrica",
@@ -337,7 +1102,33 @@
     "instructions": "Descubre la regla (×2 o ×3), ajusta la piedra que falta con los botones − / + y luego pulsa Comprobar",
     "prompt": "Completa la secuencia geométrica",
     "correct": "¡Correcto! El número que falta es {value}",
-    "wrong": "¡Casi! Busca el multiplicador entre términos consecutivos"
+    "wrong": "¡Casi! Busca el multiplicador entre términos consecutivos",
+    "seo": {
+      "intro": "Secuencia geométrica da a los alumnos una fila de piedras numeradas donde cada término se obtiene multiplicando el anterior por una razón fija, ×2, ×3 o similar. Identificar ese multiplicador constante y usarlo para rellenar la piedra que falta es la habilidad definitoria de este juego para los cursos 4.º a 6.º.",
+      "howToPlay": [
+        "Lee los números visibles y divide cualquier término por el anterior para encontrar la razón común.",
+        "Confirma que la razón se cumple para cada par adyacente: debe ser la misma a lo largo de toda la secuencia.",
+        "Usa los botones − / + (o arrastra la piedra) para establecer el valor que falta.",
+        "Pulsa Comprobar para ver si la razón es consistente a lo largo de toda la secuencia."
+      ],
+      "skills": "Reconocer y aplicar una razón multiplicativa constante es la base de las sucesiones geométricas, los patrones de crecimiento exponencial y los cálculos de porcentajes. Secuencia geométrica desarrolla esta fluidez antes de que los alumnos conozcan el álgebra formal de las potencias en los cursos 4.º a 6.º.",
+      "example": "Una secuencia muestra 2, 6, 18, ?, 162. Cada término se multiplica por 3, así que el valor que falta es 54. La clave es que dividir dos términos consecutivos (18 ÷ 6 = 3) revela la regla; este juego entrena ese movimiento de división como razón.",
+      "mistakes": "Los alumnos suelen intentar añadir una diferencia constante en vez de encontrar el multiplicador, porque el pensamiento aditivo es más fácil. Secuencia geométrica hace que el multiplicador sea lo único que funciona, obligando a los alumnos a pasar del pensamiento aditivo al multiplicativo.",
+      "faqs": [
+        {
+          "q": "¿Por qué el juego usa la división para encontrar la regla en vez de simplemente leer una etiqueta ×2 o ×3?",
+          "a": "Derivar la razón dividiendo términos consecutivos, en vez de que te la digan, entrena el hábito algebraico de extraer una regla de los datos. Ese razonamiento se transfiere directamente a tablas, gráficas y trabajo exponencial posterior."
+        },
+        {
+          "q": "¿Para qué cursos es Secuencia geométrica?",
+          "a": "Va dirigida a los cursos 4.º a 6.º, donde los alumnos son fluidos en multiplicación y están listos para ver que la misma operación aplicada repetidamente crea crecimiento exponencial."
+        },
+        {
+          "q": "¿En qué se diferencia Secuencia geométrica de Secuencia numérica?",
+          "a": "Secuencia geométrica usa únicamente reglas multiplicativas (razón constante); Secuencia numérica incluye también patrones aditivos. Secuencia geométrica es la versión más difícil y enfocada de la misma idea."
+        }
+      ]
+    }
   },
   "fractionStrip": {
     "title": "Tiras de fracciones",
@@ -345,7 +1136,33 @@
     "instructions": "La tira de arriba está dada. Construye la de abajo: ajusta el número de cortes con denominador −/+ y las piezas coloreadas con numerador −/+ (o arrastra: derecha = más piezas coloreadas, arriba = más cortes), para que tenga el mismo TAMAÑO que la tira de arriba pero con un número de piezas diferente. La balanza se nivela cuando las dos fracciones son iguales. Luego pulsa Comprobar",
     "prompt": "Construye una fracción igual a {num}/{den}",
     "correct": "¡Genial! {rnum}/{rden} es igual a {num}/{den}",
-    "wrong": "¡Casi! Construye una tira del mismo tamaño pero con un denominador diferente — la balanza se nivelará"
+    "wrong": "¡Casi! Construye una tira del mismo tamaño pero con un denominador diferente — la balanza se nivelará",
+    "seo": {
+      "intro": "En Tiras de Fracciones hay dos tiras de madera una al lado de la otra con una balanza entre ellas. La tira superior muestra la fracción objetivo; tu tarea es construir una tira inferior de exactamente la misma longitud pero con un denominador completamente distinto — la definición concreta de fracciones equivalentes.",
+      "howToPlay": [
+        "Lee la fracción que muestra la tira superior.",
+        "Usa los botones − y + del denominador para fijar cuántas secciones iguales tendrá la tira inferior.",
+        "Usa los botones − y + del numerador (o arrastra) para colorear el número correcto de secciones.",
+        "La balanza se nivela cuando las dos tiras son del mismo tamaño — entonces pulsa Comprobar."
+      ],
+      "skills": "Las fracciones equivalentes son la puerta de entrada para sumar fracciones con distinto denominador y para simplificarlas. El juego hace tangible la equivalencia: la balanza bascula y se nivela con cada ajuste.",
+      "example": "La tira superior muestra 1/2. Se puede equilibrar con 2/4, 3/6 o 4/8 — cada combinación que nivela la balanza es una fracción equivalente. Ver varias soluciones a la vez convierte una regla memorizada en una relación experimentada.",
+      "mistakes": "Los alumnos a veces reproducen la fracción objetivo exacta (mismo numerador, mismo denominador) en lugar de construir una equivalente con distinto denominador. El juego exige un denominador diferente, cerrando ese atajo.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia Tiras de Fracciones de los otros tres juegos de fracciones?",
+          "a": "Tiras de Fracciones es el único centrado en fracciones equivalentes — construir una fracción nueva que iguale al objetivo con distinto denominador. Los otros tres tratan de entender una fracción individual."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Para los cursos 3 y 4, una vez que los alumnos entienden qué representa una fracción y están listos para compararlas y encontrar formas equivalentes."
+        },
+        {
+          "q": "¿Cómo ayuda la balanza al aprendizaje?",
+          "a": "La balanza ofrece retroalimentación visual inmediata: bascula cuando las tiras son desiguales y se nivela cuando coinciden — sin necesidad de adivinar."
+        }
+      ]
+    }
   },
   "angleBuilder": {
     "title": "Constructor de Ángulos",
@@ -353,7 +1170,33 @@
     "instructions": "Gira el láser móvil con los botones −/+ (15° cada uno) o arrastrándolo, hasta que el arco brillante muestre el ángulo objetivo, y luego pulsa Comprobar.",
     "prompt": "Construye un ángulo de {angle}°",
     "correct": "¡Muy bien! Construiste un ángulo de {angle}°.",
-    "wrong": "Todavía no. Gira el rayo hasta el ángulo objetivo e inténtalo de nuevo."
+    "wrong": "Todavía no. Gira el rayo hasta el ángulo objetivo e inténtalo de nuevo.",
+    "seo": {
+      "intro": "El Constructor de Ángulos coloca un transportador en un escenario de estación espacial: los alumnos giran un rayo láser hasta que el arco brillante coincide con un número de grados objetivo. La lectura de grados se actualiza en vivo, por lo que el símbolo abstracto «90°» se convierte en una esquina que se puede ver y sentir.",
+      "howToPlay": [
+        "Lee el ángulo objetivo que aparece encima del transportador.",
+        "Arrastra el rayo láser móvil o usa los botones −/+ (15° por paso) hacia el objetivo.",
+        "Observa el arco brillante y el contador de grados en vivo mientras el ángulo se abre o se cierra.",
+        "Pulsa Comprobar cuando el arco coincida con el objetivo."
+      ],
+      "skills": "Construir ángulos por su medida en grados prepara a los alumnos para clasificarlos como agudos, rectos, obtusos o llanos, y para usar un transportador real con precisión. Esta es la competencia clave de la geometría en 4.º-5.º antes de estudiar las sumas de ángulos en triángulos y polígonos.",
+      "example": "Para 120° el rayo pasa la marca de 90° (ángulo recto) y continúa un tercio del camino hasta 180° (ángulo llano). Pasar por 90° introduce la palabra «obtuso» de forma natural.",
+      "mistakes": "Los alumnos confunden a menudo las dos escalas de un transportador. El juego muestra solo un contador, eliminando esa confusión y permitiendo enfocarse en la relación entre rotación y grados.",
+      "faqs": [
+        {
+          "q": "¿En qué incrementos se mueve el rayo?",
+          "a": "Cada pulsación de botón mueve el rayo 15°, por lo que se practican múltiplos de 15: 30°, 45°, 60°, 90°, 120°, 135°, 150° y 180°."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 4.º y 5.º, cuando los alumnos miden ángulos por primera vez y los clasifican por tipo."
+        },
+        {
+          "q": "¿En qué se diferencia del Geoplano, que también trabaja con formas y medidas?",
+          "a": "El Constructor de Ángulos se centra en la medida en grados de un único ángulo. El Geoplano construye figuras completas y mide su área en unidades cuadradas."
+        }
+      ]
+    }
   },
   "divisionShare": {
     "title": "Reparto justo",
@@ -361,7 +1204,24 @@
     "instructions": "Usa los botones − / + para poner la misma cantidad de monedas en cada cofre (o arrastra hacia arriba). Reparte todo lo que puedas por igual; lo que sobra va a la bolsa. Luego pulsa Comprobar",
     "prompt": "Reparte {total} monedas por igual entre {k} cofres",
     "correct": "¡Bien hecho! {perChest} en cada cofre, y {remainder} quedan en la bolsa",
-    "wrong": "Puedes repartir más por igual — inténtalo de nuevo"
+    "wrong": "Puedes repartir más por igual — inténtalo de nuevo",
+    "seo": {
+      "intro": "Reparto Justo modela la división como reparto igualitario. Los alumnos distribuyen una pila de monedas entre cofres del tesoro poniendo el mismo número en cada uno, y las monedas que no pueden repartirse igualmente van a la bolsa del resto. Así el cociente y el resto se vuelven físicamente inequívocos.",
+      "howToPlay": [
+        "Lee cuántas monedas hay que repartir y cuántos cofres hay que llenar.",
+        "Usa los botones −/+ (o arrastra hacia arriba) para poner el mismo número de monedas en cada cofre.",
+        "Reparte tantas monedas como sea posible por igual; las que sobran pertenecen a la bolsa del resto.",
+        "Pulsa Comprobar cuando cada cofre tenga una parte igual y la bolsa tenga las monedas sobrantes."
+      ],
+      "skills": "Reparto Justo construye el modelo de división partitiva (repartir en grupos iguales) y da al resto un significado concreto. Los alumnos dejan de ver el resto como un error y empiezan a verlo como lo que queda después de un reparto justo — un paso clave antes de la división escrita.",
+      "example": "Repartir 17 monedas entre 5 cofres: 5 × 3 = 15, así que 3 monedas en cada cofre y 2 en la bolsa. La pantalla muestra 5 cofres llenos y una bolsa con 2 monedas: 17 ÷ 5 = 3 resto 2.",
+      "mistakes": "Los alumnos a veces intentan repartir todas las monedas y dejan la bolsa vacía fraccionando las monedas. El juego solo acepta números enteros por cofre, guiando hacia el concepto de resto.",
+      "faqs": [
+        { "q": "¿Para qué cursos es Reparto Justo?", "a": "Cursos 3–4, donde los alumnos aprenden la división como reparto igualitario y encuentran por primera vez los restos en el currículo." },
+        { "q": "¿En qué se diferencia de las Torres de División?", "a": "Reparto Justo usa el reparto físico de monedas para construir el concepto. Las Torres de División aplica esa comprensión paso a paso en el algoritmo formal de la división larga escrita." },
+        { "q": "¿Elige el alumno cuántas monedas van a la bolsa?", "a": "La bolsa se llena automáticamente con lo que queda después de llenar los cofres. Los alumnos solo controlan cuántas monedas poner en cada cofre, manteniendo el foco en encontrar la mayor parte igual." }
+      ]
+    }
   },
   "barGraph": {
     "title": "Constructor de gráfico de barras",
@@ -369,7 +1229,33 @@
     "instructions": "Lee la altura de cada barra en la escala del lado, luego usa los botones − / + (o arrastra hacia arriba) para introducir cuántas más tiene la primera categoría que la segunda, y pulsa Comprobar",
     "prompt": "¿Cuántas {a} más que {b}?",
     "correct": "¡Correcto! La diferencia es {diff}",
-    "wrong": "¡Casi! Lee de nuevo la altura de cada barra e inténtalo otra vez"
+    "wrong": "¡Casi! Lee de nuevo la altura de cada barra e inténtalo otra vez",
+    "seo": {
+      "intro": "El Constructor de gráfico de barras enseña a los alumnos a leer datos cuantitativos de una escala y hallar la diferencia entre dos categorías. Cada ronda muestra un gráfico de barras con etiquetas; los alumnos leen la altura de cada barra en la escala lateral y calculan cuántas más tiene una categoría. Cursos 2.º–5.º.",
+      "howToPlay": [
+        "Observa las dos barras mencionadas en la pregunta.",
+        "Sigue horizontalmente desde la cima de cada barra hasta la escala numerada del lateral y lee la altura.",
+        "Resta la altura menor de la mayor para obtener la diferencia.",
+        "Introduce la diferencia con −/+ o arrastrando, luego pulsa Comprobar."
+      ],
+      "skills": "El gráfico de barras desarrolla la capacidad de extraer valores precisos de una escala y razonar sobre diferencias en los datos, no solo totales. Los alumnos que leen gráficos con precisión pueden interpretar diagramas en ciencias, noticias y pruebas estandarizadas, una habilidad que se practica de 2.º a 5.º.",
+      "example": "Un gráfico muestra «Perros» en la altura 8 y «Gatos» en la altura 5. La pregunta: ¿Cuántos perros más que gatos? Los alumnos leen 8 y 5 de la escala, restan e introducen 3.",
+      "mistakes": "Los alumnos estiman la altura de las barras a ojo en lugar de alinearlas con la escala, lo que produce errores de una unidad. El juego refuerza el hábito de volver al eje numerado para cada barra.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia leer la altura de una barra en la escala de simplemente mirar cuál es la más alta?",
+          "a": "La observación visual muestra qué categoría es mayor, pero no en cuánto. Leer la escala da un valor exacto, necesario para calcular diferencias con precisión, la competencia clave que practica el juego."
+        },
+        {
+          "q": "¿Para qué cursos está diseñado el Constructor de gráfico de barras?",
+          "a": "Cursos 2.º–5.º, siguiendo la progresión curricular desde gráficos de barras simples en primaria hasta la interpretación de gráficos con escala y el cálculo de diferencias en cursos superiores."
+        },
+        {
+          "q": "¿Cómo se diferencia del Diagrama de Venn, que también usa representación de datos?",
+          "a": "El gráfico de barras trabaja con datos cuantitativos en una escala numérica: los alumnos leen valores medidos y comparan magnitudes. El diagrama de Venn trabaja con clasificación lógica: los alumnos deciden a qué conjunto pertenece un elemento, sin escala de medida."
+        }
+      ]
+    }
   },
   "vennSort": {
     "title": "Orden con diagrama de Venn",
@@ -377,7 +1263,33 @@
     "instructions": "Lee el número y las dos propiedades, luego pulsa la región correcta: solo izquierda, solo derecha, ambos o ninguno",
     "prompt": "Clasifica {value}: ÷{a} y ÷{b}",
     "correct": "¡Correcto! {value} está bien clasificado",
-    "wrong": "¡Casi! Comprueba si el número es divisible por cada propiedad por separado"
+    "wrong": "¡Casi! Comprueba si el número es divisible por cada propiedad por separado",
+    "seo": {
+      "intro": "El Diagrama de Venn presenta dos círculos, cada uno con una regla de divisibilidad. Se da un número al alumno y debe decidir dónde pertenece: solo círculo izquierdo, solo derecho, la zona de intersección (ambos) o completamente fuera (ninguno). Cada elección requiere evaluar dos condiciones independientes a la vez, la competencia fundamental de la teoría de conjuntos. Cursos 4.º–6.º.",
+      "howToPlay": [
+        "Lee las dos reglas de divisibilidad en el círculo izquierdo y el derecho.",
+        "Comprueba si el número dado es divisible por la regla izquierda.",
+        "Comprueba si es divisible por la regla derecha.",
+        "Pulsa la región correcta: solo izquierda, solo derecha, ambos (intersección) o ninguno (fuera)."
+      ],
+      "skills": "El diagrama de Venn desarrolla el pensamiento lógico proposicional: evaluar condiciones AND y OR simultáneamente. Los alumnos aprenden a comprobar cada condición por separado antes de combinarlas, exactamente el patrón de razonamiento que subyace a las operaciones de conjuntos, consultas de bases de datos y condicionales de programación.",
+      "example": "Los círculos muestran ÷3 y ÷4. El número 12 es divisible por ambos (12÷3=4, 12÷4=3), así que pertenece a la intersección. El número 9 es divisible por 3 pero no por 4, así que va al círculo izquierdo.",
+      "mistakes": "Los alumnos a menudo colocan un número en la intersección porque parece relacionado con ambos divisores sin verificar realmente cada división. Pulsar una región específica obliga a comprobar ambas condiciones antes de decidir.",
+      "faqs": [
+        {
+          "q": "¿Por qué el juego prueba dos condiciones de divisibilidad a la vez en lugar de una por una?",
+          "a": "Probar una condición desarrolla la fluidez aritmética. Probar dos al mismo tiempo desarrolla la clasificación lógica: el resultado del primer test debe mantenerse en mente mientras se evalúa el segundo y luego combinarse, exactamente la lógica AND/OR de la teoría de conjuntos y el álgebra posterior."
+        },
+        {
+          "q": "¿Para qué cursos está diseñado el Diagrama de Venn?",
+          "a": "Cursos 4.º–6.º, donde el conocimiento de factores y múltiplos se extiende a la clasificación de conjuntos y los alumnos conocen el diagrama de Venn como herramienta formal para organizar información."
+        },
+        {
+          "q": "¿Cómo se diferencia del gráfico de barras, que también trabaja con representación de datos?",
+          "a": "El gráfico de barras trabaja con medición cuantitativa: leer valores numéricos y comparar magnitudes. El diagrama de Venn trabaja con clasificación lógica: determinar a qué conjunto pertenece un número, sin medición."
+        }
+      ]
+    }
   },
   "subitize": {
     "title": "Destello de puntos",
@@ -385,7 +1297,33 @@
     "instructions": "Observa cómo los puntos destellan en la mesa y luego desaparecen bajo un paño. Usa los botones − / + para introducir cuántos puntos viste (pulsa \"Mostrar otra vez\" para verlos de nuevo) y pulsa Comprobar",
     "prompt": "¿Cuántos puntos viste?",
     "correct": "¡Genial! Viste {count} puntos",
-    "wrong": "¡Casi! Echa otro vistazo e intenta contar los puntos"
+    "wrong": "¡Casi! Echa otro vistazo e intenta contar los puntos",
+    "seo": {
+      "intro": "El Destello de Puntos entrena el sentido numérico más rápido del cerebro: reconocer cuántos puntos aparecen de un vistazo sin contar. Los puntos destellan brevemente en la mesa del mago y desaparecen; los alumnos introducen cuántos vieron. Practicar la subitización sienta la base perceptiva que hace que toda la aritmética posterior sea intuitiva.",
+      "howToPlay": [
+        "Observa los puntos que destellan brevemente en la mesa del mago.",
+        "Recuerda el patrón cuando el paño los cubre.",
+        "Introduce el número de puntos que viste con los botones −/+.",
+        "Pulsa Comprobar o Mostrar de nuevo si quieres otra ojeada antes de responder."
+      ],
+      "skills": "La subitización, el reconocimiento instantáneo de cantidades, es la habilidad numérica más temprana y predice directamente la fluidez aritmética. El alumno que ve 4 como un grupo sin contar avanza más rápido hacia las descomposiciones numéricas, los datos de suma y, finalmente, el cálculo mental, porque las cantidades pequeñas ya son automáticas.",
+      "example": "Aparecen cinco puntos dispuestos como la cara de un dado durante medio segundo. El alumno que subitiza reconoce el patrón familiar al instante. El que intenta contar pierde la imagen antes de terminar. El juego entrena el atajo perceptivo.",
+      "mistakes": "Los alumnos que aún no subitizan intentarán contar punto por punto durante el destello, perdiendo a menudo la cuenta. El tiempo de exposición limitado impide el conteo y fomenta el reconocimiento de patrones, entrenando al alumno a ver grupos, no objetos individuales.",
+      "faqs": [
+        {
+          "q": "¿Qué es la subitización y por qué la entrena el juego en lugar del conteo?",
+          "a": "La subitización es reconocer una cantidad pequeña al instante sin contar, igual que los adultos leen los dados. Se desarrolla antes de la aritmética formal y hace que las descomposiciones numéricas y los datos de suma sean automáticos; practicarla directamente acelera la fluidez numérica general."
+        },
+        {
+          "q": "¿Para qué cursos es adecuado el Destello de Puntos?",
+          "a": "Cursos 1.°–2.°, para construir el sentido numérico perceptivo que apoya la aritmética temprana antes de pasar a números mayores."
+        },
+        {
+          "q": "¿Cuántos puntos pueden aparecer en un destello?",
+          "a": "Hasta unos 8–9 puntos, el límite superior de la subitización fiable. Las cantidades mayores se presentan en disposiciones agrupadas (p. ej., dos caras de dado) que aún permiten el reconocimiento instantáneo."
+        }
+      ]
+    }
   },
   "arrayMultiply": {
     "title": "Matriz de Multiplicación",
@@ -393,7 +1331,24 @@
     "instructions": "Cuenta cuántas frutas hay en la matriz (filas × columnas). Usa los botones − / + o arrastra hacia arriba para introducir el total, pulsa 'Cortar' para verlo fila por fila y luego pulsa Comprobar",
     "prompt": "¿Cuántas hay en total?",
     "correct": "{rows} × {cols} = {product}!",
-    "wrong": "Cuenta de nuevo — filas × columnas"
+    "wrong": "Cuenta de nuevo — filas × columnas",
+    "seo": {
+      "intro": "La Matriz de Multiplicación construye el modelo mental más importante para la multiplicación: una cuadrícula rectangular. Los alumnos cuentan un campo de frutas dispuestas en filas y columnas, luego pulsan Cortar para ver la matriz dividida fila por fila — el momento en que una cuadrícula se convierte en suma repetida y la suma repetida se convierte en un hecho de multiplicación.",
+      "howToPlay": [
+        "Observa la matriz de frutas y cuenta las filas y columnas que se muestran.",
+        "Usa los botones −/+ o arrastra hacia arriba para introducir el total.",
+        "Pulsa Cortar para ver cómo la matriz se divide fila por fila.",
+        "Confirma que filas × columnas = total y pulsa Comprobar."
+      ],
+      "skills": "La Matriz de Multiplicación establece la propiedad conmutativa y el modelo de área simultáneamente. Ver que una matriz de 3×4 y una de 4×3 contienen las mismas 12 frutas hace la conmutatividad evidente y prepara directamente para los cálculos de área en geometría.",
+      "example": "Un huerto de 5 filas y 6 columnas tiene 30 naranjas. Al pulsar Cortar se ven 5 grupos de 6 despegándose uno a uno: 6, 12, 18, 24, 30. La multiplicación se convierte en contar de forma eficiente en lugar de un hecho memorizado.",
+      "mistakes": "Los alumnos a veces cuentan frutas individuales en lugar de usar filas × columnas. La animación de corte muestra la estrategia de agrupación y premia el enfoque correcto.",
+      "faqs": [
+        { "q": "¿Para qué cursos es la Matriz de Multiplicación?", "a": "Cursos 2–3, donde los alumnos conocen por primera vez la multiplicación como suma repetida y necesitan el modelo de matriz antes de memorizar las tablas." },
+        { "q": "¿En qué se diferencia de Factris?", "a": "La Matriz muestra una cuadrícula ya hecha y pide encontrar el total. Factris da el total y pide encontrar qué anchos forman un rectángulo válido, invirtiendo el modelo." },
+        { "q": "¿El juego enseña la propiedad conmutativa explícitamente?", "a": "No con etiqueta, pero sí implícitamente: la misma matriz puede contarse por filas o por columnas, y la animación de corte puede destacar ambas direcciones, provocando una discusión natural." }
+      ]
+    }
   },
   "fractionSlice": {
     "title": "Cortador de fracciones",
@@ -401,7 +1356,33 @@
     "instructions": "Usa los botones denominador −/+ para fijar en cuántas partes iguales cortar la pizza, y los botones numerador −/+ (o arrastra arriba/abajo) para colorear esa cantidad de partes, luego pulsa Comprobar",
     "prompt": "Colorea {n} de {d} partes",
     "correct": "¡Genial! Coloreaste {n} de {d}",
-    "wrong": "¡Casi! Corta y colorea el número correcto de partes y corrige"
+    "wrong": "¡Casi! Corta y colorea el número correcto de partes y corrige",
+    "seo": {
+      "intro": "En Cortador de Fracciones el jugador elige cuántas porciones cortar en la pizza y cuántas colorear. La fracción no se da hecha — se construye desde cero: primero el denominador, luego el numerador.",
+      "howToPlay": [
+        "Lee la fracción objetivo en pantalla.",
+        "Usa los botones − y + del denominador para decidir en cuántas partes iguales se divide la pizza.",
+        "Usa los botones − y + del numerador (o arrastra) para colorear el número correcto de porciones.",
+        "Pulsa Comprobar para confirmar que la fracción construida coincide con el objetivo."
+      ],
+      "skills": "Separar el paso de cortar (denominador) del paso de colorear (numerador) refuerza el orden lógico: primero dividir el todo en partes iguales, luego decidir cuántas partes tomar.",
+      "example": "Para 3/5 se corta primero en 5 porciones y luego se colorean 3. Cambiar el denominador a 4 cambia el tamaño de cada porción y exige volver a colorear — esto muestra de forma práctica por qué numerador y denominador están ligados.",
+      "mistakes": "Los alumnos tienden a colorear por tamaño visual en lugar de contar. Obligarles a fijar el denominador antes del numerador rompe ese hábito y fomenta el razonamiento sistemático.",
+      "faqs": [
+        {
+          "q": "¿Cómo se diferencia Cortador de Fracciones de Constructor de Fracciones?",
+          "a": "En Cortador el alumno ajusta tanto el denominador como el numerador; en Constructor el denominador está fijo y solo se sombrea. Cortador introduce el proceso completo de construcción."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Para los cursos 3 y 4, idealmente después de que los alumnos conozcan el concepto de fracción y estén listos para construir una por sí mismos."
+        },
+        {
+          "q": "¿Se puede alcanzar el mismo objetivo con distinto número de porciones?",
+          "a": "Sí — por ejemplo 2/4 y 1/2 colorean la misma área. Ese descubrimiento natural abre una conversación sobre fracciones equivalentes sin instrucción adicional."
+        }
+      ]
+    }
   },
   "patternComplete": {
     "title": "Constructor de patrones",
@@ -409,7 +1390,33 @@
     "instructions": "Observa cómo crecen las torres y descubre la regla. Usa los botones − / + (o arrastra hacia arriba) para construir la torre que falta a la altura correcta, y luego pulsa Comprobar",
     "prompt": "¿Cuántos cubos tiene la torre que falta?",
     "correct": "¡Correcto! La torre que falta tiene {value} cubos",
-    "wrong": "¡Casi! Descubre la regla y construye de nuevo"
+    "wrong": "¡Casi! Descubre la regla y construye de nuevo",
+    "seo": {
+      "intro": "Constructor de patrones muestra una fila de torres de cubos que crecen o decrecen según una regla fija y pide a los alumnos construir la torre que falta. Encontrar y aplicar esa regla es el primer paso hacia todo trabajo con secuencias, lo que convierte este juego en el punto de entrada al pensamiento de patrones en los cursos 2.º a 4.º.",
+      "howToPlay": [
+        "Estudia las alturas de las torres de izquierda a derecha e identifica qué cambia cada vez.",
+        "Decide la regla: ¿cada torre añade el mismo número de cubos o la altura se repite en un ciclo?",
+        "Usa los botones − / + (o arrastra hacia arriba) para construir la torre que falta a la altura correcta.",
+        "Pulsa Comprobar para ver si tu torre encaja en el patrón."
+      ],
+      "skills": "Identificar una regla que se repite o crece y extenderla entrena a los alumnos para buscar estructura en los datos, el hábito central detrás de las sucesiones aritméticas, las tablas de funciones y el pensamiento algebraico introducido desde el 2.º curso.",
+      "example": "Una fila muestra torres de 1, 3, 1, 3, 1, ? cubos. El patrón alterna entre 1 y 3, así que la torre que falta es 3. Detectar la alternancia antes de calcular es el movimiento clave que enseña este juego.",
+      "mistakes": "Los alumnos suelen añadir un cubo más sobre la última torre en vez de releer toda la fila para encontrar su regla. Constructor de patrones los obliga a mirar toda la secuencia, no solo el último término, antes de actuar.",
+      "faqs": [
+        {
+          "q": "¿Cómo hace visible la regla del patrón la pantalla de torres de cubos antes de que aparezca ningún número?",
+          "a": "Las torres son alturas físicas, así que incluso los alumnos que todavía no pueden leer números ven una alternancia 1-3-1-3 como un ritmo visual. Los números y las reglas emergen del dibujo, no del conocimiento previo."
+        },
+        {
+          "q": "¿Para qué cursos es Constructor de patrones?",
+          "a": "Está diseñado para los cursos 2.º a 4.º, donde el currículo introduce los patrones que se repiten y crecen como primera forma de razonamiento algebraico."
+        },
+        {
+          "q": "¿En qué se diferencia Constructor de patrones de Secuencia numérica?",
+          "a": "Constructor de patrones se centra en patrones visuales repetitivos (a menudo alturas alternas); Secuencia numérica se centra en encontrar una regla aditiva o multiplicativa para extender una secuencia estrictamente numérica, un paso más difícil."
+        }
+      ]
+    }
   },
   "netFold": {
     "title": "Plegador de redes",
@@ -417,7 +1424,33 @@
     "instructions": "Pulsa \"Plegar\" para plegar la red plana en una figura 3D (gira para que veas todos los lados). Cuenta cuántas caras tiene el sólido, introduce el número con − / + o arrastrando hacia arriba y luego pulsa Comprobar",
     "prompt": "¿Cuántas caras tiene el sólido?",
     "correct": "¡Genial! El sólido tiene {count} caras",
-    "wrong": "¡Casi! Pliega y gira el sólido y vuelve a contar sus caras"
+    "wrong": "¡Casi! Pliega y gira el sólido y vuelve a contar sus caras",
+    "seo": {
+      "intro": "El Plegador de redes muestra una disposición plana de polígonos que se anima y se pliega en un sólido 3D en pantalla. Los alumnos giran el resultado para inspeccionar cada cara y contarlas, construyendo el vínculo mental entre un dibujo plano y el sólido que forma.",
+      "howToPlay": [
+        "Examina la red plana: cuenta y nombra las caras poligonales antes de plegar.",
+        "Pulsa Plegar para ver cómo la red se cierra en un sólido 3D.",
+        "Gira el sólido con los controles de pantalla para ver todas las caras, incluidas las ocultas.",
+        "Introduce el número total de caras con los botones −/+ y pulsa Comprobar."
+      ],
+      "skills": "Visualizar cómo una red 2D se pliega en un sólido 3D desarrolla el razonamiento espacial y construye el vocabulario de caras, aristas y vértices. Esto sienta las bases para el área de la superficie y la clasificación de prismas, pirámides y poliedros en 3.º-5.º.",
+      "example": "Una red en forma de cruz de seis cuadrados se pliega en un cubo con 6 caras. El juego solo presenta redes válidas, para que los alumnos puedan concentrarse en contar tras el plegado.",
+      "mistakes": "Los alumnos a menudo cuentan una cara dos veces al girar, o se pierden la base que se pliega por debajo. Girar de forma sistemática (arriba, frente, lados, abajo) y llevar la cuenta resuelve ambos problemas.",
+      "faqs": [
+        {
+          "q": "¿Qué sólidos 3D aparecen en el juego?",
+          "a": "Sólidos habituales en el currículo: cubo, paralelepípedo, prisma triangular, pirámide cuadrada y pirámide triangular, cada uno con una red y un número de caras diferente."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 3.º-5.º, cuando los alumnos estudian figuras 3D, sus propiedades y la relación entre redes y sólidos."
+        },
+        {
+          "q": "¿En qué se diferencia de Clasifica cuerpos, que también usa sólidos 3D?",
+          "a": "El Plegador de redes trata la conexión entre una red plana y el sólido que genera. Clasifica cuerpos clasifica sólidos terminados según si ruedan o no."
+        }
+      ]
+    }
   },
   "symmetryMirror": {
     "title": "Imagen espejo",
@@ -425,7 +1458,33 @@
     "instructions": "El lado izquierdo está dado. Toca o arrastra sobre las casillas del lado derecho para rellenar las casillas que lo reflejan a través de la línea, y luego pulsa Comprobar. Toca de nuevo una casilla llena para vaciarla.",
     "prompt": "Completa la imagen espejo",
     "correct": "¡Genial! La imagen espejo está completa.",
-    "wrong": "Aún no es un espejo exacto. Revisa qué casillas faltan o sobran."
+    "wrong": "Aún no es un espejo exacto. Revisa qué casillas faltan o sobran.",
+    "seo": {
+      "intro": "Imagen espejo muestra la mitad de un ala de mariposa en una cuadrícula y pide a los alumnos que rellenen las casillas correspondientes al otro lado de la línea de simetría. Completar el reflejo casilla a casilla convierte la regla abstracta de simetría en una decisión concreta.",
+      "howToPlay": [
+        "Observa las casillas rellenas del lado izquierdo de la línea de simetría.",
+        "Para cada casilla rellena, encuentra su posición espejo a la derecha: misma fila, misma distancia de la línea.",
+        "Toca la casilla correspondiente a la derecha para rellenarla; tócala otra vez para borrar un error.",
+        "Pulsa Comprobar cuando todas las casillas espejo estén rellenas y no sobren casillas."
+      ],
+      "skills": "Identificar y completar ejes de simetría apoya el razonamiento espacial y la clasificación de figuras. En 2.º-4.º es el concepto de entrada antes de la simetría rotacional y el reflejo de coordenadas en cursos superiores.",
+      "example": "Si una casilla está 2 cuadros a la izquierda de la línea de simetría en la fila 3, su espejo está 2 cuadros a la derecha en la misma fila 3. Trabajar fila por fila y contar distancias iguales desde la línea elimina la adivinanza.",
+      "mistakes": "Los alumnos colocan a veces la casilla espejo en diagonal en lugar de horizontalmente, poniéndola en la fila incorrecta. Comprobar primero el número de fila y luego contar la distancia igual desde la línea lo corrige.",
+      "faqs": [
+        {
+          "q": "¿La línea de simetría siempre es vertical?",
+          "a": "El contexto del ala de mariposa usa una línea vertical, el punto de partida más común en 2.º-3.º. Las líneas diagonales y horizontales pueden aparecer en niveles de dificultad superiores."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 2.º-4.º, desde el primer reconocimiento de simetría en figuras hasta el reflejo preciso casilla a casilla."
+        },
+        {
+          "q": "¿En qué se diferencia del Tangram, que también implica colocar figuras espacialmente?",
+          "a": "Imagen espejo se centra en la regla de reflexión: igual distancia desde la línea a ambos lados. El Tangram consiste en encajar piezas en un contorno sin ninguna regla de reflexión."
+        }
+      ]
+    }
   },
   "hundredChart": {
     "title": "Tabla de múltiplos",
@@ -433,7 +1492,24 @@
     "instructions": "Toca una casilla para colorearla o borrarla, o arrastra sobre las casillas para colorear varias seguidas. Cuando termines, pulsa Comprobar. Reiniciar borra la tabla.",
     "prompt": "Colorea todos los múltiplos de {n}",
     "correct": "¡Muy bien! Coloreaste todos los múltiplos de {n}.",
-    "wrong": "Todavía no. Mira qué casillas faltan o sobran e inténtalo otra vez."
+    "wrong": "Todavía no. Mira qué casillas faltan o sobran e inténtalo otra vez.",
+    "seo": {
+      "intro": "La Tabla de Múltiplos presenta una cuadrícula del 1 al 30 y pide colorear todos los múltiplos de un número dado. Las casillas coloreadas revelan patrones de conteo salteado: espacios iguales y ritmos visuales que convierten los múltiplos abstractos en algo que se ve y se recuerda.",
+      "howToPlay": [
+        "Lee el número cuyos múltiplos hay que colorear.",
+        "Toca casillas individuales para colorearlas o arrastra sobre varias a la vez.",
+        "Colorea todos los múltiplos de ese número hasta 30 usando el conteo salteado o las tablas.",
+        "Pulsa Comprobar cuando todos los múltiplos estén coloreados y no haya casillas de más."
+      ],
+      "skills": "La Tabla de Múltiplos construye fluidez en el conteo salteado, los múltiplos y los primeros patrones de las tablas de multiplicar. Reconocer visualmente los intervalos iguales del 2, el 5 o el 7 refuerza la estructura de patrón de la multiplicación y sienta las bases para los mínimos comunes múltiplos y las reglas de divisibilidad.",
+      "example": "Colorear los múltiplos de 3 hasta 30: se iluminan las casillas 3, 6, 9, 12, 15, 18, 21, 24, 27, 30. Los alumnos notan que cada tercera casilla está coloreada. Al cambiar al 6 se ve que cada segunda casilla de los 3 está coloreada, haciendo visible el múltiplo común.",
+      "mistakes": "Los alumnos a veces confunden múltiplos con divisores y colorean números que dividen al objetivo en lugar de números a los que se llega contando de ese número en ese número. El enunciado recuerda que hay que colorear los números a los que se llega saltando, no los divisores del número dado.",
+      "faqs": [
+        { "q": "¿Para qué cursos es la Tabla de Múltiplos?", "a": "Cursos 2–4, que cubren el conteo salteado, los primeros patrones de multiplicación y los múltiplos como base para la fluidez en las tablas." },
+        { "q": "¿La tabla va siempre del 1 al 30?", "a": "Sí. El rango de 30 números es suficientemente grande para mostrar dos o más ciclos completos de conteo salteado para cada número del 2 al 10, revelando claramente el patrón repetitivo." },
+        { "q": "¿Es el cero múltiplo de todos los números?", "a": "Matemáticamente sí, pero la tabla empieza en 1, por lo que no se pide a los alumnos colorear el cero. El enfoque está en el patrón de los números enteros positivos." }
+      ]
+    }
   },
   "geoboard": {
     "title": "Geoplano",
@@ -441,7 +1517,33 @@
     "instructions": "Toca las clavijas para colocar las esquinas de tu figura — la banda las conecta y cierra el contorno. Toca de nuevo la última esquina para deshacerla. Construye cualquier figura cuya área coincida con el objetivo y luego pulsa Comprobar.",
     "prompt": "Crea una figura con área de {area} unidades cuadradas",
     "correct": "¡Genial! Creaste una figura con área {area}.",
-    "wrong": "Tu figura tiene área {area}, pero el objetivo es {target}. Prueba otra figura."
+    "wrong": "Tu figura tiene área {area}, pero el objetivo es {target}. Prueba otra figura.",
+    "seo": {
+      "intro": "El Geoplano digital simula el clásico tablero de clavijas: los alumnos colocan esquinas sobre las clavijas y la banda elástica cierra el contorno automáticamente. El objetivo es construir cualquier polígono cuya área coincida con el número dado, lo que permite múltiples soluciones correctas.",
+      "howToPlay": [
+        "Lee el área objetivo en unidades cuadradas mostrada en pantalla.",
+        "Toca las clavijas del tablero para colocar las esquinas de tu figura; la banda cierra el contorno al volver a la clavija de inicio.",
+        "Observa cómo cambia el contador de área en tiempo real mientras mueves las esquinas.",
+        "Cuando el área coincida con el objetivo, pulsa Comprobar para confirmar."
+      ],
+      "skills": "Construir polígonos que alcancen un área objetivo desarrolla la intuición geométrica y refuerza las fórmulas de área para rectángulos, triángulos y figuras compuestas. Los alumnos de 3.º-5.º aprenden que muchas formas distintas pueden compartir la misma área.",
+      "example": "Para un objetivo de 6 unidades cuadradas, un rectángulo 2x3 funciona, pero también lo hace un triángulo rectángulo con base 4 y altura 3. Encontrar varias soluciones muestra que el área no determina la forma.",
+      "mistakes": "Los alumnos a menudo asumen que solo hay un polígono correcto, o cuentan los cuadrados de la cuadrícula sin ajustar las esquinas. Explorar varias figuras hasta que el contador muestre el objetivo corrige ambos hábitos.",
+      "faqs": [
+        {
+          "q": "¿La figura tiene que ser un rectángulo?",
+          "a": "No, cualquier polígono cerrado cuenta: triángulos, pentágonos, o cualquier figura irregular, mientras su área total coincida con el objetivo en unidades cuadradas."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 3.º-5.º, cuando los alumnos pasan de contar cuadrados a usar fórmulas de área y exploran la relación entre forma y medida."
+        },
+        {
+          "q": "¿En qué se diferencia del juego de Área y Perímetro?",
+          "a": "Área y Perímetro usa rectángulos y compara dos medidas distintas. El Geoplano acepta cualquier polígono y se centra solo en el área, con libertad de forma total."
+        }
+      ]
+    }
   },
   "shapeSort": {
     "title": "Clasifica cuerpos",
@@ -451,7 +1553,33 @@
     "correct": "¡Muy bien! Clasificaste todos los cuerpos correctamente.",
     "wrong": "Todavía no. Mira qué cuerpos ruedan y cuáles no, e inténtalo otra vez.",
     "binRoll": "Rueda",
-    "binFlat": "No rueda"
+    "binFlat": "No rueda",
+    "seo": {
+      "intro": "Clasifica cuerpos pide a los alumnos que dividan sólidos 3D en dos grupos según su capacidad de rodar. Arrastrar y soltar cada cuerpo en la caja correcta obliga a examinar sus superficies, ya sea curvas o planas, antes de decidir.",
+      "howToPlay": [
+        "Observa cada cuerpo 3D de la bandeja y examina si tiene alguna superficie curva.",
+        "Toca el cuerpo para seleccionarlo y luego toca la caja correcta: Rueda o No rueda.",
+        "Si te equivocas, toca el cuerpo ya colocado para devolverlo y reclasificarlo.",
+        "Cuando todos los cuerpos estén en su caja, pulsa Comprobar."
+      ],
+      "skills": "Clasificar sólidos por su capacidad de rodar desarrolla la conciencia táctil y visual de las propiedades 3D: superficies curvas frente a caras planas. Esto sienta las bases del vocabulario de poliedros y la geometría sólida en 1.º-3.º.",
+      "example": "Una esfera rueda en cualquier dirección (toda la superficie es curva). Un cubo no rueda (solo tiene caras planas). Un cilindro rueda en línea recta pero no puede girar aleatoriamente como una esfera.",
+      "mistakes": "Los alumnos confunden a menudo los conos con los cubos porque tienen una punta puntiaguda, o no reconocen que los cilindros ruedan. Que el alumno haga rodar el objeto físicamente (o lo imagine) antes de clasificarlo ayuda.",
+      "faqs": [
+        {
+          "q": "¿Qué cuerpos aparecen en el juego?",
+          "a": "Cuerpos del currículo escolar: esfera, cubo, cilindro, cono, pirámide cuadrada y paralelepípedo, que representan una variedad de propiedades de superficie."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 2.º-4.º, cuando los alumnos aprenden los nombres de los sólidos 3D y sus propiedades básicas mediante clasificación práctica."
+        },
+        {
+          "q": "¿En qué se diferencia del Plegador de redes, que también usa sólidos 3D?",
+          "a": "Clasifica cuerpos clasifica sólidos terminados por sus superficies. El Plegador de redes muestra cómo una red 2D se pliega para formar el sólido: son habilidades complementarias."
+        }
+      ]
+    }
   },
   "coordinatePlot": {
     "title": "Ubica el punto",
@@ -459,7 +1587,33 @@
     "instructions": "Mueve el alfiler con los botones X e Y, o arrástralo por el papel, hasta llegar a las coordenadas pedidas, y luego pulsa Comprobar.",
     "prompt": "Ubica el punto en ({x}, {y})",
     "correct": "¡Bien! El punto está en ({x}, {y}).",
-    "wrong": "Todavía no. Revisa los valores de X e Y e inténtalo otra vez."
+    "wrong": "Todavía no. Revisa los valores de X e Y e inténtalo otra vez.",
+    "seo": {
+      "intro": "Ubica el punto presenta un plano de coordenadas y pide a los alumnos que muevan un alfiler hasta las coordenadas exactas indicadas. Mover primero en X y luego en Y transforma la notación abstracta (x, y) en dos pasos concretos y medibles.",
+      "howToPlay": [
+        "Lee las coordenadas objetivo (x, y) indicadas en el enunciado.",
+        "Mueve el alfiler a lo largo del eje X usando los botones X o arrastrando horizontalmente.",
+        "Mueve el alfiler a lo largo del eje Y usando los botones Y o arrastrando verticalmente.",
+        "Cuando el alfiler coincida con el punto objetivo, pulsa Comprobar."
+      ],
+      "skills": "Leer e interpretar coordenadas en el plano cartesiano es una habilidad fundamental de 4.º-6.º. Este juego fija el orden convencional (x primero, y después) y prepara a los alumnos para representar datos, trazar polígonos y estudiar transformaciones.",
+      "example": "Para (3, 2): mueve el alfiler 3 unidades a la derecha del origen, luego 2 unidades hacia arriba. Memorizar 'primero el pasillo, luego la escalera' (x antes de y) evita la confusión más habitual.",
+      "mistakes": "El error más frecuente es invertir los ejes: mover Y primero y X después. Leer siempre la coordenada x antes de mover el alfiler y confirmar que está en la columna correcta resuelve la confusión.",
+      "faqs": [
+        {
+          "q": "¿La cuadrícula incluye coordenadas negativas?",
+          "a": "La cuadrícula base usa el primer cuadrante (x, y positivos), adecuado para 4.º-5.º. Las coordenadas negativas y los cuatro cuadrantes aparecen en niveles de dificultad superiores para 6.º."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 4.º-6.º, cuando los alumnos aprenden a leer y trazar puntos en el plano de coordenadas para el análisis de datos y la geometría."
+        },
+        {
+          "q": "¿En qué se diferencia del Geoplano, que también usa una cuadrícula?",
+          "a": "El Geoplano trata el área: los alumnos construyen polígonos contando unidades cuadradas. Ubica el punto trata la posición exacta: los alumnos leen pares de coordenadas y colocan un punto con precisión."
+        }
+      ]
+    }
   },
   "wordProblemBar": {
     "title": "Modelo de barras",
@@ -480,7 +1634,33 @@
     "item2": "lápices",
     "item3": "flores",
     "item4": "pegatinas",
-    "item5": "galletas"
+    "item5": "galletas",
+    "seo": {
+      "intro": "El Modelo de barras convierte un problema verbal en un diagrama de tiras visual. Los alumnos leen un problema sobre combinar o quitar una cantidad y luego arrastran una barra a la longitud que representa la respuesta. El diagrama hace visible la relación parte-todo antes de escribir cualquier operación. Cursos 2.º–4.º.",
+      "howToPlay": [
+        "Lee el problema verbal e identifica las cantidades conocidas y la incógnita.",
+        "Decide: ¿estás sumando (obtuvo más) o hallando lo que queda (regaló)?",
+        "Arrastra la barra hacia la derecha o usa −/+ para ajustar su longitud a la respuesta.",
+        "Pulsa Comprobar para confirmar que tu modelo de barras coincide con la respuesta del problema."
+      ],
+      "skills": "El modelado con barras es una estrategia visual estructurada que convierte el lenguaje de un problema verbal en un diagrama de partes y todo. Los alumnos que construyen el modelo antes de calcular eligen la operación correcta con mayor frecuencia, porque el diagrama hace explícita la relación entre las cantidades, una estrategia de resolución de problemas de 2.º a los cursos superiores.",
+      "example": "Dana tenía 7 manzanas y obtuvo 5 más. El alumno arrastra la barra hasta la longitud 12, que representa el total. El modelo de barras muestra las dos partes (7 y 5) uniéndose en un todo.",
+      "mistakes": "Los alumnos saltan a la operación antes de entender la estructura del problema, y a veces restan cuando deberían sumar. Construir la barra primero les obliga a decidir la relación entre las cantidades antes de calcular, detectando errores en la elección de operación tempranamente.",
+      "faqs": [
+        {
+          "q": "¿Cómo ayuda construir un modelo de barras a los alumnos que tienen dificultades para elegir la operación correcta en problemas verbales?",
+          "a": "El modelo de barras visualiza la relación parte-todo: una barra larga para el total, segmentos más cortos para las partes. Los alumnos ven si el total o una parte es la incógnita antes de elegir la operación, eliminando la adivinanza que causa la mayoría de los errores en problemas verbales."
+        },
+        {
+          "q": "¿Para qué cursos está diseñado el Modelo de barras?",
+          "a": "Cursos 2.º–4.º, donde los problemas verbales introducen la suma y la resta en contexto y los alumnos necesitan un puente visual entre leer el problema y escribir la operación."
+        },
+        {
+          "q": "¿Cómo se diferencia del Problema en dos pasos, que también practica problemas verbales?",
+          "a": "El modelo de barras abarca una operación y se centra en construir el diagrama visual. El Problema en dos pasos requiere dos operaciones consecutivas sin apoyo visual, poniendo a prueba la planificación y el cálculo en una cadena más larga."
+        }
+      ]
+    }
   },
   "wordProblemSteps": {
     "title": "Problema en dos pasos",
@@ -488,7 +1668,33 @@
     "instructions": "Lee el problema en el plano, ajusta tu respuesta con los botones − / + y luego pulsa Comprobar",
     "prompt": "Resuelve el problema en dos pasos",
     "correct": "¡Correcto! La respuesta es {result}",
-    "wrong": "¡Casi! Calcula cada paso por separado y luego el resultado final"
+    "wrong": "¡Casi! Calcula cada paso por separado y luego el resultado final",
+    "seo": {
+      "intro": "El Problema en dos pasos presenta un problema verbal que no puede resolverse con una sola operación. Los alumnos deben identificar dos operaciones en el orden correcto, ejecutar cada paso y usar el resultado intermedio para llegar a la respuesta final. El diseño de plano mantiene el problema completo en pantalla mientras se trabaja. Cursos 3.º–5.º.",
+      "howToPlay": [
+        "Lee el problema verbal completo en el plano antes de calcular nada.",
+        "Identifica la primera operación y calcula el resultado intermedio.",
+        "Usa ese resultado intermedio en la segunda operación para obtener la respuesta final.",
+        "Ajusta la respuesta final con −/+ y pulsa Comprobar."
+      ],
+      "skills": "Resolver problemas verbales de varios pasos requiere planificar el orden de las operaciones, mantener un resultado intermedio en la memoria de trabajo y aplicarlo en el siguiente paso. Estas son las mismas competencias de función ejecutiva y razonamiento algebraico que subyacen a la resolución de ecuaciones, problemas de razón y toda la matemática aplicada a partir de 3.º.",
+      "example": "El problema: Omar tenía 24 lápices, dio 8 a su clase y luego compró 3 cajas de 5. Paso 1: 24-8=16. Paso 2: 16+(3×5)=31. Hay que reconocer ambos pasos y ejecutarlos en orden.",
+      "mistakes": "Los alumnos suelen entregar solo el resultado del primer paso como respuesta final, o combinan todos los números en un único paso sin respetar el orden. El juego muestra el error de inmediato e invita a releer el problema para identificar lo que se pasó por alto.",
+      "faqs": [
+        {
+          "q": "¿Cómo fomenta el juego el hábito de planificar antes de calcular en problemas de varios pasos?",
+          "a": "El diseño de plano mantiene el problema completo en pantalla mientras los alumnos trabajan, evitando el hábito de calcular en cuanto aparece un número. Hay que leer hasta el final antes de elegir la primera operación, practicando el paso de planificación que los problemas de un solo paso nunca requieren."
+        },
+        {
+          "q": "¿Para qué cursos está diseñado el Problema en dos pasos?",
+          "a": "Cursos 3.º–5.º, donde el currículo introduce los problemas verbales de varios pasos y los alumnos aprenden a combinar suma, resta, multiplicación y división en una sola pregunta."
+        },
+        {
+          "q": "¿Cómo se diferencia del Modelo de barras, que también practica problemas verbales?",
+          "a": "El modelo de barras abarca una operación y entrena la representación visual de la estructura antes de calcular. El Problema en dos pasos prescinde del apoyo visual y desafía a los alumnos a planificar de forma independiente una cadena de dos operaciones, el siguiente nivel cuando el modelo ya no es necesario."
+        }
+      ]
+    }
   },
   "estimationLand": {
     "title": "Tierra de la Estimación",
@@ -498,7 +1704,24 @@
     "correct": "¡Genial! Había {n} objetos — tu estimación es cercana",
     "wrong": "No es lo bastante cercano, inténtalo de nuevo",
     "tooHigh": "Demasiado alto",
-    "tooLow": "Demasiado bajo"
+    "tooLow": "Demasiado bajo",
+    "seo": {
+      "intro": "La Tierra de la Estimación entrena la habilidad que ninguna calculadora puede reemplazar: juzgar cuántos hay aproximadamente sin contar cada objeto. Un campo de objetos esparcidos aparece en pantalla junto a un grupo de referencia visible de diez. Los alumnos usan ese punto de anclaje para estimar el total y ajustar su respuesta.",
+      "howToPlay": [
+        "Observa el campo y el grupo de referencia de 10 que aparece al lado.",
+        "Pregúntate: ¿cuántos grupos de 10 veo aproximadamente?",
+        "Ajusta tu estimación con los botones −/+ o arrastrando.",
+        "Pulsa Comprobar; el juego acepta cualquier estimación dentro de una tolerancia del recuento real."
+      ],
+      "skills": "La Tierra de la Estimación construye sentido numérico y razonamiento proporcional. Practicar regularmente con una referencia de 10 entrena a juzgar cantidades con rapidez y confianza: una habilidad usada en la medición, la lectura de datos, el cálculo mental y la toma de decisiones cotidianas.",
+      "example": "Un campo contiene 43 girasoles. El grupo de referencia de 10 está claramente visible al lado. Los alumnos distinguen unos cuatro grupos de ese tamaño más unos pocos e introducen 40 o 45. Ambos son aceptados. El recuento exacto aparece solo después de enviar.",
+      "mistakes": "Los alumnos a veces intentan contar cada objeto individualmente en lugar de usar el grupo de referencia como ancla. El juego recompensa las estimaciones rápidas basadas en grupos, y la retroalimentación demasiado alto/bajo orienta hacia el razonamiento anclado.",
+      "faqs": [
+        { "q": "¿Para qué cursos es la Tierra de la Estimación?", "a": "Cursos 3–5, donde los alumnos desarrollan sentido numérico junto con la aritmética formal y necesitan practicar el juicio de magnitudes antes del redondeo y la aproximación." },
+        { "q": "¿Qué tan cerca debe estar una estimación para ser aceptada?", "a": "La tolerancia está fijada para que las estimaciones dentro del 20% del valor real sean aceptadas, lo que refleja una precisión de estimación realista." },
+        { "q": "¿Cambia la disposición de los objetos cada ronda?", "a": "Sí. La disposición del campo cambia cada ronda para que no puedan memorizarse las respuestas. Los alumnos deben estimar de nuevo cada vez." }
+      ]
+    }
   },
   "factorTree": {
     "title": "Árbol de factores",
@@ -506,7 +1729,33 @@
     "instructions": "El número está en la cima del árbol y se divide en dos ramas. Usa los botones −/+ (o arrastra a la derecha para subir y a la izquierda para bajar) para fijar el factor izquierdo. La rama derecha muestra el compañero que resulta al dividir. Cuando el factor divide al número de forma exacta se vuelve verde; si no, aparece un signo de interrogación rojo. Luego pulsa Comprobar",
     "prompt": "Descompón {n} en un producto de dos factores",
     "correct": "¡Genial! {a} × {b} = {n}",
-    "wrong": "¡Casi! Elige un factor que divida {n} de forma exacta (mayor que 1 y menor que el número), luego pulsa Comprobar"
+    "wrong": "¡Casi! Elige un factor que divida {n} de forma exacta (mayor que 1 y menor que el número), luego pulsa Comprobar",
+    "seo": {
+      "intro": "El Árbol de Factores pide descomponer un número compuesto eligiendo dos factores cuyo producto lo iguale, y construir ramas hacia abajo hasta que cada hoja sea un número primo. El árbol visual convierte la idea abstracta de la factorización en primos en un proceso concreto y manejable.",
+      "howToPlay": [
+        "Lee el número que aparece en la cima del árbol.",
+        "Usa −/+ o arrastra para fijar el factor izquierdo; el factor derecho se actualiza automáticamente.",
+        "Comprueba que el factor izquierdo divide al número exactamente: se pondrá verde cuando sea correcto.",
+        "Pulsa Comprobar para confirmar la descomposición del nodo actual."
+      ],
+      "skills": "El Árbol de Factores desarrolla la comprensión de la divisibilidad, los números primos y el Teorema Fundamental de la Aritmética: todo número natural tiene una única descomposición en factores primos. Los alumnos desarrollan el pensamiento sistemático de pares de factores y conectan la multiplicación con la división como operaciones inversas.",
+      "example": "Para factorizar 24: elige 4 y 6. Divide 4 en 2×2 y 6 en 2×3. Todas las hojas son primas (2, 2, 2, 3) y confirman que 24=2³×3, independientemente del par de factores elegido inicialmente.",
+      "mistakes": "Los alumnos eligen a menudo 1 como factor, lo que no está permitido, o se detienen en un nodo compuesto. El árbol resalta en color diferente las hojas no primas y pide seguir dividiendo hasta que cada rama termine en un primo.",
+      "faqs": [
+        {
+          "q": "¿Por qué el árbol siempre produce los mismos factores primos sin importar con qué par se empiece?",
+          "a": "Es el Teorema Fundamental de la Aritmética: cada número tiene una única descomposición en primos. Distintos pares de factores producen árboles con formas distintas pero hojas primas idénticas, un descubrimiento que el juego está diseñado para provocar."
+        },
+        {
+          "q": "¿Para qué cursos es adecuado el Árbol de Factores?",
+          "a": "Cursos 3.°–5.°, donde los alumnos se encuentran por primera vez con reglas de divisibilidad, números primos y compuestos, y necesitan entender la estructura multiplicativa de los números enteros."
+        },
+        {
+          "q": "¿Puede introducirse un número primo como raíz del árbol?",
+          "a": "No. El juego selecciona únicamente números compuestos porque los primos no pueden dividirse más. Así se garantiza que haya al menos un par de factores válido en cada ronda."
+        }
+      ]
+    }
   },
   "longDivision": {
     "title": "Torres de división",
@@ -514,7 +1763,24 @@
     "instructions": "Usa los botones − / + para construir la misma cantidad de bloques en cada torre (o arrastra hacia arriba). Construye las torres lo más altas que puedan ir por igual; lo que sobra se queda en el montón. Si tomas más bloques de los que hay, las torres se ponen rojas. Luego pulsa Comprobar",
     "prompt": "Reparte {n} bloques por igual entre {d} torres — ¿cuántos en cada una?",
     "correct": "¡Bien hecho! {perTower} en cada torre, y {remainder} quedan en el montón",
-    "wrong": "Las torres aún no están tan iguales y altas como pueden — inténtalo de nuevo"
+    "wrong": "Las torres aún no están tan iguales y altas como pueden — inténtalo de nuevo",
+    "seo": {
+      "intro": "Las Torres de División convierten los pasos abstractos de la división larga en un reto de construcción. Un montón de bloques debe apilarse por igual en varias torres. Los alumnos elevan cada torre a la misma altura, dejando los bloques indivisibles en el montón: así el cociente y el resto se vuelven visibles antes de que el algoritmo aparezca en papel.",
+      "howToPlay": [
+        "Lee cuántos bloques hay en el montón y cuántas torres hay que llenar.",
+        "Usa los botones −/+ o arrastra hacia arriba para que todas las torres alcancen la misma altura.",
+        "Continúa hasta que las torres estén tan altas como sea posible por igual.",
+        "Deja los bloques del resto en el montón y pulsa Comprobar."
+      ],
+      "skills": "Las Torres de División construyen el modelo de división quotitiva (¿cuántos grupos iguales caben?) y dan a los subpasos de la división larga un significado concreto. Cada piso de la torre corresponde a un ciclo dividir-multiplicar-restar en el algoritmo formal. Los alumnos que construyen las torres primero cometen muchos menos errores cuando se encuentran con la división larga escrita.",
+      "example": "Montón: 29 bloques, 4 torres. Cada torre crece hasta 7 (4 × 7 = 28), queda 1 bloque en el montón. Las torres muestran 7 por grupo; el montón muestra resto 1. 29 ÷ 4 = 7 resto 1.",
+      "mistakes": "Los alumnos construyen a veces torres de diferente altura. Las torres desiguales se vuelven rojas, reforzando que todos los grupos deben ser iguales: la definición de la división.",
+      "faqs": [
+        { "q": "¿Para qué cursos son las Torres de División?", "a": "Cursos 3–5, que cubren la división con resto y preparan a los alumnos para la división larga de múltiples cifras." },
+        { "q": "¿En qué se diferencia de Reparto Justo?", "a": "Reparto Justo usa el reparto físico de monedas para construir el concepto. Las Torres aplican esa comprensión en una interfaz de construcción de torres que se corresponde paso a paso con el algoritmo de la división larga escrita." },
+        { "q": "¿Cuál es el mayor divisor que usa el juego?", "a": "Los divisores y dividendos escalan con el curso seleccionado. En los niveles superiores el montón puede contener números de tres cifras divididos por divisores de una o dos cifras." }
+      ]
+    }
   },
   "tangram": {
     "title": "Tangram",
@@ -522,6 +1788,32 @@
     "instructions": "Toca una pieza para levantarla y luego toca el contorno de la misma forma para colocarla. Empareja cada pieza con el contorno de la misma forma. Toca una pieza ya colocada para moverla de nuevo. Cuando termines, pulsa Comprobar. Reiniciar devuelve todas las piezas a la bandeja.",
     "prompt": "Arma la figura — cada pieza en su lugar",
     "correct": "¡Excelente! Armaste toda la figura correctamente.",
-    "wrong": "Todavía no. Faltan piezas o están en el lugar equivocado — empareja cada pieza con su contorno e inténtalo de nuevo."
+    "wrong": "Todavía no. Faltan piezas o están en el lugar equivocado — empareja cada pieza con su contorno e inténtalo de nuevo.",
+    "seo": {
+      "intro": "El Tangram digital presenta el puzle clásico de 7 piezas en pantalla: los alumnos tocan cada pieza y la colocan en el contorno correspondiente hasta completar la figura. Reconocer triángulos, cuadrados y rombos en posiciones rotadas desarrolla la percepción espacial de forma lúdica.",
+      "howToPlay": [
+        "Observa la figura completa y los contornos individuales dentro de ella.",
+        "Toca una pieza de la bandeja para seleccionarla y examina su forma.",
+        "Toca el contorno de la figura que encaje con esa pieza para colocarla.",
+        "Repite hasta que todas las piezas estén en su lugar y pulsa Comprobar."
+      ],
+      "skills": "Ensamblar un tangram desarrolla el reconocimiento de formas geométricas en distintas orientaciones, el razonamiento espacial y la perseverancia. Los alumnos de 1.º-4.º aprenden a distinguir triángulos, cuadrados y rombos independientemente de su rotación.",
+      "example": "Un triángulo grande puede caber boca arriba o boca abajo según la figura. Si la pieza no encaja, girarla mentalmente 180 grados y volver a intentarlo ayuda a encontrar la orientación correcta.",
+      "mistakes": "Los alumnos intentan colocar las piezas por color en lugar de por forma, o se bloquean cuando una pieza triangular está girada. Comparar el número de lados y los ángulos de la pieza con el contorno es más fiable que la intuición visual.",
+      "faqs": [
+        {
+          "q": "¿Las piezas hay que girarlas o voltearlas?",
+          "a": "Las piezas pueden aparecer rotadas respecto a su posición en la bandeja. El juego indica el contorno exacto, por lo que basta con hacer coincidir la forma sin necesidad de deducir manualmente la rotación."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Es adecuado para 1.º-4.º: en los cursos inferiores para el reconocimiento básico de formas, y en los superiores para introducir conceptos de congruencia y transformaciones geométricas."
+        },
+        {
+          "q": "¿En qué se diferencia de Imagen espejo, que también implica colocar figuras espacialmente?",
+          "a": "El Tangram consiste en emparejar piezas con contornos individuales dentro de una figura compuesta. Imagen espejo aplica la regla matemática de reflexión: misma distancia a ambos lados de una línea."
+        }
+      ]
+    }
   }
 }

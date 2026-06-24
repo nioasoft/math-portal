@@ -9,6 +9,7 @@ import type { Locale } from '@/i18n/config';
 import type { GameMode3D } from '@/lib/games3d/types';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
 import { buildGameBreadcrumbJsonLd, buildGameFaqJsonLd, buildGameJsonLd } from '@/lib/games3d/seo';
+import { isCompleteGameSeo, type GameSeo } from '@/lib/games3d/gameSeo';
 
 export function generateStaticParams(): Array<{ gameId: string }> {
   return GAME_IDS.map((gameId) => ({ gameId }));
@@ -28,6 +29,12 @@ export async function generateMetadata({
   const games3dT = await getTranslations({ locale, namespace: 'games3d' });
   const title = t('title');
   const description = t('description');
+
+  const seoRaw = (() => {
+    try { return t.raw('seo'); } catch { return undefined; }
+  })();
+  const hasSeo = isCompleteGameSeo(seoRaw);
+
   return {
     title,
     description,
@@ -35,6 +42,7 @@ export async function generateMetadata({
     alternates: generateAlternates(`/play/${gameId}`, locale as Locale),
     openGraph: generateOpenGraphMeta(locale as Locale, title, description, `/play/${gameId}`),
     twitter: generateTwitterMeta(title, description),
+    robots: hasSeo ? undefined : { index: false, follow: true },
   };
 }
 
@@ -53,7 +61,6 @@ export default async function GamePage({
   const metaT = await getTranslations({ locale, namespace: 'meta' });
   const games3dT = await getTranslations({ locale, namespace: 'games3d' });
   const title = t('title');
-  const description = t('description');
   const instructions = t('instructions');
   const topicLabel = games3dT(`topics.${meta.topic}`);
   const relatedGames = getRegisteredGames()
@@ -65,15 +72,20 @@ export default async function GamePage({
       return { id: g.meta.id, title: block?.title ?? g.meta.id };
     });
 
+  const seoRaw = (() => {
+    try { return t.raw('seo'); } catch { return undefined; }
+  })();
+  const gameSeo: GameSeo | null = isCompleteGameSeo(seoRaw) ? seoRaw : null;
+
   const learningResourceJsonLd = buildGameJsonLd({
     locale: locale as Locale,
     gameId,
     meta,
     title,
-    description,
+    description: t('description'),
     topicLabel,
   });
-  const faqJsonLd = buildGameFaqJsonLd({ locale: locale as Locale, meta, topicLabel });
+  const faqJsonLd = gameSeo ? buildGameFaqJsonLd({ faqs: gameSeo.faqs }) : null;
   const breadcrumbJsonLd = buildGameBreadcrumbJsonLd({
     locale: locale as Locale,
     title,
@@ -97,10 +109,12 @@ export default async function GamePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(learningResourceJsonLd) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
@@ -118,15 +132,16 @@ export default async function GamePage({
           { label: title },
         ]}
       />
-      <GameSeoContent
-        locale={locale}
-        meta={meta}
-        title={title}
-        description={description}
-        instructions={instructions}
-        topicLabel={topicLabel}
-        relatedGames={relatedGames}
-      />
+      {gameSeo && (
+        <GameSeoContent
+          locale={locale}
+          meta={meta}
+          title={title}
+          topicLabel={topicLabel}
+          relatedGames={relatedGames}
+          seo={gameSeo}
+        />
+      )}
     </>
   );
 }

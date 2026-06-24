@@ -89,7 +89,33 @@
     "description": "Build a cube array to solve a multiplication fact",
     "instructions": "Drag to build, or use the − / + buttons to add rows and columns, then press Check",
     "prompt": "Build an array of {rows} rows × {cols} columns",
-    "correct": "{rows} × {cols} = {product}!"
+    "correct": "{rows} × {cols} = {product}!",
+    "seo": {
+      "intro": "Multiplication Arrays has students construct a 3-D cube grid by choosing the number of rows and columns, then pressing Check to confirm the product. Unlike the existing Multiplication Array game that presents a pre-built fruit grid, here students actively build the rectangle themselves — making the equation and its visual proof one action.",
+      "howToPlay": [
+        "Read the target multiplication fact shown (e.g. 3 rows × 4 columns).",
+        "Drag or use −/+ buttons to set the number of rows and columns.",
+        "Watch the cube grid grow to fill the rectangle you have specified.",
+        "Press Check to confirm that rows × columns equals the stated product."
+      ],
+      "skills": "Building the array trains students to see multiplication as a rectangular area — rows times columns — rather than a sequence of additions. Choosing both dimensions themselves reinforces that either factor can be rows or columns, concretising the commutative property before formal proof.",
+      "example": "For 4×6 the student sets 4 rows and 6 columns, filling a 24-cube rectangle. Rotating the view to see 6 rows of 4 makes 4×6=6×4 immediately obvious without any teacher explanation.",
+      "mistakes": "Students sometimes confuse rows and columns, placing 6 rows and 4 columns for a 4×6 prompt. The game accepts either orientation — the product is the same — helping them discover commutativity rather than treating the order as a rule to memorise.",
+      "faqs": [
+        {
+          "q": "How does building the array differ from the Multiplication Array (fruit grid) game?",
+          "a": "The fruit grid presents a ready-made array and asks for the count; this game gives the factors and asks students to construct the rectangle themselves, making the connection from equation to shape active rather than observational."
+        },
+        {
+          "q": "Which grades is Multiplication Arrays for?",
+          "a": "Grades 3–4, where students move from repeated addition to the area model and need to internalise both factors of a product before formal times-table fluency."
+        },
+        {
+          "q": "Does the game cover all times tables?",
+          "a": "It covers the multiplication facts students encounter in grades 3–4, with arrays that can grow large enough to represent products up to 100."
+        }
+      ]
+    }
   },
   "measureFill": {
     "title": "Fill the Container",
@@ -98,14 +124,66 @@
     "prompt": "Fill to {target} ml",
     "correct": "Great! Filled to {target} ml",
     "wrong": "Almost! Get closer to the target mark",
-    "unit": "ml"
+    "unit": "ml",
+    "seo": {
+      "intro": "Fill the Container turns reading a volume into a hands-on pouring task. Students drag to fill a jar to a target millilitre mark, learning that capacity is measured continuously along a scale rather than as a whole-number count. The live liquid level gives instant feedback on estimation accuracy.",
+      "howToPlay": [
+        "Read the target volume shown above the container.",
+        "Drag upward to pour liquid in, watching the level rise against the marked scale.",
+        "Slow down as you approach the target mark — the last few millilitres matter.",
+        "Press Check when the liquid level lines up with the target graduation."
+      ],
+      "skills": "Practising volume measurement builds the understanding that capacity is a continuous quantity read from a scale, not a count of objects. Students learn to read intermediate graduations and develop the precision needed before moving to multi-step capacity problems in grades 3–4.",
+      "example": "The target is 350 ml. The jar's scale shows marks every 50 ml. Students pour to the 300 mark, then carefully add the remaining 50 ml to reach 350 — learning to use major markings as stepping stones to an exact reading.",
+      "mistakes": "Students often overshoot the target and stop only when the level clearly passes the mark. The game encourages slower, more deliberate pouring near the target, building the habit of approaching a measured value from below rather than correcting an overfill.",
+      "faqs": [
+        {
+          "q": "How does dragging to fill the container teach volume differently from writing an answer?",
+          "a": "Pouring links the abstract number to a physical level — students see the relationship between the digit and the height of liquid, making millilitres feel real rather than arbitrary."
+        },
+        {
+          "q": "Which grades is Fill the Container designed for?",
+          "a": "Grades 3–4, where the curriculum introduces standard capacity units and reading graduated scales in everyday contexts."
+        },
+        {
+          "q": "How is this different from the Ruler Measure game?",
+          "a": "Fill the Container measures volume (ml) by reading a vertical liquid scale; Ruler Measure measures length (cm) by positioning two flags on a horizontal ruler. Both practise scale-reading but for different measurement attributes."
+        }
+      ]
+    }
   },
   "fractionBuild": {
     "title": "Fraction Builder",
     "description": "Fill parts of the pie to match the fraction",
     "instructions": "Tap slices to fill them, then press Check",
     "prompt": "Fill {num}/{den} of the pizza",
-    "correct": "Great! You filled {num}/{den}"
+    "correct": "Great! You filled {num}/{den}",
+    "seo": {
+      "intro": "Fraction Builder turns an abstract fraction into a pie you fill with your own hands. You read a target such as 3/4, then shade slices until the pie matches — so the symbol stops being two numbers and becomes a visible amount.",
+      "howToPlay": [
+        "Read the target fraction shown above the pie.",
+        "Tap or drag slices to shade them, counting up to the numerator.",
+        "Notice the denominator decides how many equal slices the whole is cut into.",
+        "Press Check to confirm the shaded part matches the target fraction."
+      ],
+      "skills": "It builds the core idea that the denominator names the size of each equal part while the numerator counts how many you take — the foundation students need before comparing or adding fractions.",
+      "example": "For 3/4 the pie is cut into 4 equal slices and you shade 3. Seeing the single empty slice makes it obvious that 3/4 is one slice short of a whole, not just 'three and four'.",
+      "mistakes": "Many students read 3/4 as 'three of four separate things' and miss that the parts must be equal. Building the pie forces equal slices and corrects the most common early fraction error.",
+      "faqs": [
+        {
+          "q": "Which grades is Fraction Builder for?",
+          "a": "It fits grades 3-4, where students first meet fractions as equal parts of one whole."
+        },
+        {
+          "q": "Do students need multiplication before this game?",
+          "a": "No. Fraction Builder only needs counting and the idea of equal sharing, so it works as a first introduction to fractions."
+        },
+        {
+          "q": "How is this different from the Fraction Number Line game?",
+          "a": "Fraction Builder shows a fraction as part of one whole (a pie); Fraction Number Line places the same fraction as a point between 0 and 1 — two complementary models."
+        }
+      ]
+    }
   },
   "areaPerimeter": {
     "title": "Area & Perimeter",
@@ -115,7 +193,33 @@
     "correct": "Great! {kindLabel} = {target}",
     "wrong": "Almost! Resize the garden and try again",
     "kindArea": "Area",
-    "kindPerimeter": "Perimeter"
+    "kindPerimeter": "Perimeter",
+    "seo": {
+      "intro": "Area and Perimeter presents a garden you can resize by dragging its edges. Sometimes the challenge asks for a specific area, sometimes a specific perimeter — and the key discovery is that two rectangles with the same area can have completely different perimeters, and vice versa.",
+      "howToPlay": [
+        "Read whether the target is an area (square units) or a perimeter (linear units).",
+        "Drag the garden's edge or use the width and height −/+ buttons to resize it.",
+        "Watch the live readouts: area (length × width) and perimeter (2 × length + 2 × width) update together.",
+        "Press Check when the correct measurement matches the target."
+      ],
+      "skills": "Distinguishing area from perimeter is one of the most persistent confusions in primary geometry. Working with both measurements on the same shape — and seeing them change independently as you resize — builds the conceptual separation that formulas alone cannot.",
+      "example": "A 3 × 4 rectangle has area 12 and perimeter 14. A 2 × 6 rectangle also has area 12 but perimeter 16. Resizing between them on the same screen makes the contrast immediate and memorable.",
+      "mistakes": "Most students add all four side lengths for area (confusing it with perimeter) or multiply length and width for perimeter. Watching both numbers change simultaneously as the garden grows corrects both errors at once.",
+      "faqs": [
+        {
+          "q": "Can the same target area be reached with different rectangles?",
+          "a": "Yes. Many area targets have more than one solution (for example area 12 works for 2×6, 3×4, or 1×12). The game accepts any valid rectangle, making the task open-ended by design."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It suits grades 3-4, when students learn the formulas for area and perimeter of rectangles and need to see them as separate measurements."
+        },
+        {
+          "q": "How is this different from the Geoboard game, which also measures area?",
+          "a": "Area and Perimeter constrains the shape to a rectangle and focuses on comparing area vs. perimeter of the same shape. Geoboard lets students build any polygon and targets area alone — more open, different skill."
+        }
+      ]
+    }
   },
   "tenFrame": {
     "title": "Ten Frame Fill",
@@ -123,7 +227,33 @@
     "instructions": "Drag across the holes to fill marbles, or use the − / + buttons, then press Check",
     "prompt": "Place {target} marbles",
     "correct": "Great! You placed {target} marbles",
-    "wrong": "Almost! Count the marbles again and fix it"
+    "wrong": "Almost! Count the marbles again and fix it",
+    "seo": {
+      "intro": "Ten Frame Fill places students in front of a 2×5 grid of holes and asks them to fill the correct number of marbles. The fixed ten-slot frame anchors every number from 1 to 10 to its visual distance from ten, making the structure of small numbers concrete and automatic.",
+      "howToPlay": [
+        "Read the target number shown above the ten-frame.",
+        "Drag across the holes or use −/+ to add or remove marbles.",
+        "Notice how many slots remain empty — that many are needed to reach ten.",
+        "When the filled slots match the target, press Check."
+      ],
+      "skills": "The ten-frame builds the 'friend of ten' concept: every number from 1–9 is understood as a certain number of marbles plus a certain number of empty holes. This relationship to ten accelerates mental addition (7+5=10+2) and subtraction far beyond what counting-on achieves.",
+      "example": "Placing 7 marbles fills the top row completely (5) and 2 slots in the bottom row, leaving 3 empty. The student immediately sees 7=5+2 and 10−7=3, without counting.",
+      "mistakes": "Students who simply count to the target number miss the ten-frame's key lesson: the relationship between the number and ten. Teachers can prompt by asking 'how many are empty?' alongside 'how many are filled?' to activate the complementary thinking the frame is designed for.",
+      "faqs": [
+        {
+          "q": "How does Ten Frame Fill differ from Number Bond Splitter?",
+          "a": "Ten Frame Fill always splits a number relative to ten — filled vs. empty slots in a fixed 10-cell grid. Number Bond Splitter splits any small number into any two arbitrary parts, training flexible decomposition without anchoring to ten."
+        },
+        {
+          "q": "Which grades is Ten Frame Fill for?",
+          "a": "Grades 1–2, where students are building mental images of numbers 1–10 and their relationships to ten as the foundation for addition and subtraction facts."
+        },
+        {
+          "q": "Can numbers larger than 10 appear in the game?",
+          "a": "The standard game covers 1–10 to match the ten-frame structure. Some rounds may use a double ten-frame to show numbers 11–20, helping students see teen numbers as ten plus some ones."
+        }
+      ]
+    }
   },
   "placeValue": {
     "title": "Place Value Builder",
@@ -131,7 +261,33 @@
     "instructions": "Add boxes to each place with the − / + buttons (hundreds, tens, ones), or drag upward over a column to add. When a column reaches 10, ten small boxes bundle into one bigger box. Press Check to grade",
     "prompt": "Build the number {target}",
     "correct": "Great! You built {target}",
-    "wrong": "Almost! Check the digits and fix the number"
+    "wrong": "Almost! Check the digits and fix the number",
+    "seo": {
+      "intro": "Place Value Builder sets students in a warehouse where they stack physical blocks into hundreds, tens, and ones columns to construct a target number. When any column reaches ten blocks, they automatically bundle into one larger unit — making the base-ten trading rule an observable event rather than a memorised procedure.",
+      "howToPlay": [
+        "Read the target number shown above the warehouse columns.",
+        "Use −/+ or drag upward on each column to add hundreds, tens, or ones blocks.",
+        "Watch ten ones bundle into a ten-rod and ten rods bundle into a hundred-flat automatically.",
+        "When all three columns match the digits of the target number, press Check."
+      ],
+      "skills": "Place Value Builder develops the understanding that each digit's position determines its value: a 3 in the hundreds column is worth 300, not 3. Students practise composing multi-digit numbers from their constituent parts and see regrouping as a natural consequence of the base-ten system.",
+      "example": "To build 234: add 2 hundreds-flats, 3 ten-rods, and 4 ones-cubes. The warehouse shows 200+30+4 stacked separately, then Check confirms the combined value is 234.",
+      "mistakes": "Students often enter the digit, not the value — placing 2 ones when asked for 234 because the digit '4' is the one they see last. The warehouse's colour-coded columns (blue for hundreds, yellow for tens, red for ones) train them to read each digit in its correct column before placing blocks.",
+      "faqs": [
+        {
+          "q": "How does Place Value Builder differ from Exploding Dots?",
+          "a": "Exploding Dots focuses on the moment of regrouping — ten dots exploding into one in the next column — to make carrying visceral. Place Value Builder focuses on building a static number correctly from its digits; regrouping is a side-effect, not the main event."
+        },
+        {
+          "q": "Which grades is Place Value Builder for?",
+          "a": "Grades 2–4, spanning two-digit numbers in grade 2 through three-digit numbers and early four-digit numbers in grades 3 and 4."
+        },
+        {
+          "q": "Can the same number be built in more than one way?",
+          "a": "No. The target is a specific digit decomposition (e.g. 2 hundreds, 3 tens, 4 ones for 234). Students must match the standard form, training canonical place-value representation."
+        }
+      ]
+    }
   },
   "clockBuilder": {
     "title": "Clock Time Builder",
@@ -139,7 +295,33 @@
     "instructions": "Drag the minute hand around the clock (the hour hand follows proportionally), or use the hour ±1 and minute ±5 buttons, then press Check",
     "prompt": "Set the clock to {time}",
     "correct": "Great! You set the clock to {time}",
-    "wrong": "Almost! Check the hour and the minutes and fix it"
+    "wrong": "Almost! Check the hour and the minutes and fix it",
+    "seo": {
+      "intro": "Clock Time Builder bridges digital and analogue time by asking students to drag clock hands to match a displayed digital time. As the minute hand moves, the hour hand follows proportionally — so students see the relationship between the two hands in real time rather than memorising isolated positions.",
+      "howToPlay": [
+        "Read the digital time displayed above the clock face.",
+        "Drag the minute hand to the correct minute position, watching the hour hand follow.",
+        "Fine-tune the hour and minute with the ±1 and ±5 buttons if needed.",
+        "Press Check once both hands point to the right positions."
+      ],
+      "skills": "Setting analogue hands to match a digital time builds two skills simultaneously: reading the minute scale in 5-minute steps and understanding that the hour hand moves continuously across the dial rather than jumping from number to number. Both skills are required for telling time fluently in grades 2–3.",
+      "example": "For 3:45, the minute hand points to the 9 (45 minutes) and the hour hand sits three-quarters of the way between 3 and 4. Moving the minute hand to 45 makes the hour hand shift visibly — showing why the hour reading changes as minutes advance.",
+      "mistakes": "Students often set the hour hand to the exact hour number even when the time is past the half-hour. Seeing the hour hand land between two numbers (not on one) corrects the assumption that analogue and digital hours always align at the same position.",
+      "faqs": [
+        {
+          "q": "What does dragging the minute hand show that a static clock diagram does not?",
+          "a": "The live proportional movement of the hour hand demonstrates that both hands move continuously and are linked — a key insight students miss when they only practise reading static images."
+        },
+        {
+          "q": "Which grades is Clock Time Builder designed for?",
+          "a": "Grades 2–3, where the curriculum covers telling time to the nearest 5 minutes and reading both analogue and digital formats."
+        },
+        {
+          "q": "How is this different from the Ruler Measure or Weight Balance games?",
+          "a": "Clock Time Builder measures time using a circular dial with two moving hands; the other measurement games use linear scales or pan balances. All four games teach reading a standard measurement tool, but each targets a different attribute and unit."
+        }
+      ]
+    }
   },
   "canary": {
     "title": "Tap the Cube",
@@ -151,7 +333,33 @@
     "instructions": "Drag the bead along the tape to the target fraction (it snaps to the nearest tick), or use the numerator ±1 and denominator ±1 buttons. The denominator subdivides the line live. Then press Check",
     "prompt": "Place {num}/{den} on the line",
     "correct": "Great! You placed {num}/{den} correctly",
-    "wrong": "Almost! Drag the bead to the right spot and fix it"
+    "wrong": "Almost! Drag the bead to the right spot and fix it",
+    "seo": {
+      "intro": "Fraction Number Line moves the fraction off the pie and onto a ruler between 0 and 1. By dragging a bead to the exact position, students discover that a fraction is a distance, not just a count of shaded pieces.",
+      "howToPlay": [
+        "Read the target fraction displayed above the number line.",
+        "Use the denominator ±1 buttons to subdivide the line into the right number of equal intervals.",
+        "Drag the bead to the correct tick, or fine-tune with the numerator ±1 buttons.",
+        "Press Check when the bead sits on the target position."
+      ],
+      "skills": "Placing fractions on a number line prepares students for comparing fractions by size, finding equivalent fractions, and eventually understanding fractions greater than 1 — all of which depend on seeing fractions as distances rather than parts of a shape.",
+      "example": "For 2/3 the line is divided into 3 equal intervals and the bead belongs on the second tick. Changing the denominator to 6 shows immediately that 4/6 lands on the same point, making equivalent fractions visible without any calculation.",
+      "mistakes": "Students often place the bead at the tick that matches the numerator without accounting for the denominator. The live subdivision makes clear that the denominator controls how large each step is — both numbers are needed together.",
+      "faqs": [
+        {
+          "q": "What does the number line teach that a pie diagram does not?",
+          "a": "The number line shows a fraction as a position between two whole numbers, which is the model students need for ordering, adding, and later understanding decimals."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It suits grades 3-4, after students have met fractions as parts of a whole and are ready to see them as points on a line."
+        },
+        {
+          "q": "What happens when I change the denominator mid-game?",
+          "a": "The line resubdivides in real time, so the tick marks shift and the bead shows its position relative to the new scale — a live demonstration of how the denominator sets step size."
+        }
+      ]
+    }
   },
   "algebraBalance": {
     "title": "Algebra Balance",
@@ -159,7 +367,24 @@
     "instructions": "The scale starts balanced. Remove an equal number of crystals from both sides (Left −/+, Right −/+) until the ? stands alone and the beam is level again. Removing unequally tips the heavier side down. Then press Check",
     "prompt": "Solve: ? + {b} = {c}",
     "correct": "Great! ? = {x}",
-    "wrong": "Almost! Remove an equal number from both sides until the ? stands alone and the scale is balanced"
+    "wrong": "Almost! Remove an equal number from both sides until the ? stands alone and the scale is balanced",
+    "seo": {
+      "intro": "Algebra Balance bridges arithmetic and algebra by making an equation visible. The scale starts balanced with crystals on both sides and an unknown crystal marked with a question mark. Students remove equal amounts from each side until the unknown stands alone — performing the inverse operation physically rather than symbolically.",
+      "howToPlay": [
+        "Look at the balanced scale: one side has the unknown (?) plus some crystals, the other side has only crystals.",
+        "Use the Left −/+ and Right −/+ buttons to remove the same number of crystals from both sides.",
+        "Keep removing equal amounts until the ? stands alone on one side.",
+        "When the beam is level with ? isolated, press Check to confirm the solution."
+      ],
+      "skills": "Algebra Balance teaches the central principle of equation solving: whatever you do to one side, you must do to the other. This hands-on inverse-operation experience prepares students for formal algebra far better than memorizing rules about moving terms across the equals sign.",
+      "example": "The scale shows ? + 4 = 9. Remove 4 crystals from each side: left becomes ?, right becomes 5. The beam levels and ? = 5. Students feel the logic rather than guessing.",
+      "mistakes": "Beginners often remove crystals only from one side to clear the unknown. When they do this the beam tips immediately, providing instant corrective feedback without any explanation needed.",
+      "faqs": [
+        { "q": "What equation type does Algebra Balance practise?", "a": "It covers equations of the form ? + b = c, targeting grades 5–6 where students first encounter formal unknowns and inverse operations." },
+        { "q": "How is this different from Balance Scale?", "a": "Balance Scale asks students to match a given total using numbered weights — it practises arithmetic addition. Algebra Balance starts with equality already established and asks students to isolate an unknown by inverse removal — it practises algebraic thinking." },
+        { "q": "Do students need prior algebra knowledge?", "a": "No prior algebra knowledge is required. The concrete scale model lets students discover the equal-removal principle themselves before meeting formal notation." }
+      ]
+    }
   },
   "balanceScale": {
     "title": "Balance Scale",
@@ -167,7 +392,24 @@
     "instructions": "Read the weights on the cubes in the left pan and add them up. Add numbered weights to the right pan with the plus and minus buttons (1, 2, 5, 10) until the beam is level — when it is level, both sides are equal. Then press Check",
     "prompt": "Balance the scale",
     "correct": "Great! Both sides equal {total}",
-    "wrong": "Almost! Add or remove weights on the right until the beam is level"
+    "wrong": "Almost! Add or remove weights on the right until the beam is level",
+    "seo": {
+      "intro": "Balance Scale shows what an equation means before students ever write one. The left pan holds mystery cubes; students add numbered weights (1, 2, 5, 10) to the right pan until the beam is exactly level. Because the two sides must be physically equal, the idea that both sides of an equation share the same value becomes concrete and undeniable.",
+      "howToPlay": [
+        "Read the numbered cubes stacked in the left pan and add up their total.",
+        "Use the +/− buttons to add or remove weights (1, 2, 5, 10) in the right pan.",
+        "Adjust until the beam is perfectly level — both pans hold the same total.",
+        "Press Check once the scale is balanced."
+      ],
+      "skills": "Balance Scale builds the foundational understanding of equality — that both sides of an equals sign must hold the same value. Students practice mental addition and decomposition while the visual feedback of a levelling beam makes each correct answer immediately satisfying.",
+      "example": "The left pan holds cubes worth 3 + 7 + 5 = 15. Students add weights to the right: two 5s and one 10 give 20 — too heavy. Swap one 5 for nothing and add a 1 and a 2 to reach 15. The beam levels.",
+      "mistakes": "Students often overshoot and keep adding weights when the beam has already tipped past level. Learning to remove weights (decrease) is as important as adding, and the game requires both directions of adjustment.",
+      "faqs": [
+        { "q": "Which grade range is Balance Scale aimed at?", "a": "Grades 2–5, where students practise addition, mental arithmetic, and early equation concepts with increasing number sizes." },
+        { "q": "How is this different from Algebra Balance?", "a": "Balance Scale focuses on arithmetic: students calculate a total and replicate it with weights. Algebra Balance already starts balanced and challenges students to isolate an unknown by removing equal amounts — that is algebraic thinking, not arithmetic matching." },
+        { "q": "Can the right pan have multiple solutions?", "a": "Yes. There are many weight combinations that reach the same total, and the game accepts any correct combination — encouraging students to explore decomposition rather than find one fixed answer." }
+      ]
+    }
   },
   "moneyShop": {
     "title": "Money Shop",
@@ -175,7 +417,33 @@
     "instructions": "Drag up over the tray to add a ₪1 coin, or use each coin and bill's − / + buttons (₪1, ₪2, ₪5, ₪10, ₪20, ₪50). Add coins and bills until the tray reaches the amount, then press Check",
     "prompt": "Pay ₪{amount}",
     "correct": "Great! You paid exactly ₪{amount}",
-    "wrong": "Almost! Check the amount on the tray and fix it"
+    "wrong": "Almost! Check the amount on the tray and fix it",
+    "seo": {
+      "intro": "Money Shop places students inside a market stall where they must pay exact amounts using coins and bills. They drag real-looking currency onto a tray, watching the running total until it matches the price — turning abstract coin values into a lived shopping transaction.",
+      "howToPlay": [
+        "Read the price shown on the shop sign.",
+        "Drag coins and bills onto the tray or use the −/+ buttons to add each denomination.",
+        "Watch the tray total rise as you add each piece of currency.",
+        "When the tray matches the price exactly, press Check to complete the purchase."
+      ],
+      "skills": "Money Shop builds fluency with coin and bill denominations and multi-denomination addition. Students learn to choose the fewest coins needed for a price and to give change by finding the difference between the amount tendered and the price.",
+      "example": "To pay ₪17, a student might place one ₪10 bill, one ₪5 coin, and two ₪1 coins. They see 10+5+1+1=17 on the tray, confirming the combination before pressing Check.",
+      "mistakes": "Students often stack too many small coins rather than choosing efficient combinations. The tray total provides immediate feedback, encouraging them to swap for larger denominations when the total overshoots the price.",
+      "faqs": [
+        {
+          "q": "How does the game teach making change, not just paying exact amounts?",
+          "a": "Some rounds show an amount already on the tray and ask the student to adjust it — adding or removing coins to reach the exact price, practising both overpaying and correcting."
+        },
+        {
+          "q": "Which grades is Money Shop for?",
+          "a": "Grades 2–4, covering early coin recognition through multi-step change calculations as the price complexity increases."
+        },
+        {
+          "q": "Does the game use real Israeli currency denominations?",
+          "a": "Yes. The coins and bills are ₪1, ₪2, ₪5, ₪10, ₪20, and ₪50 — the denominations students encounter in daily life in Israel."
+        }
+      ]
+    }
   },
   "additionMine": {
     "title": "Addition Mine",
@@ -183,7 +451,24 @@
     "instructions": "Build the sum using each digit's − / + buttons (hundreds, tens, ones), or drag up over a column to add a crystal. When a column fills past 9, an ore cart rides the rail to carry the group to the next place. Press Check to check",
     "prompt": "Add: {a} + {b}",
     "correct": "Great! The correct sum is {total}",
-    "wrong": "Almost! Check the digits and fix the sum"
+    "wrong": "Almost! Check the digits and fix the sum",
+    "seo": {
+      "intro": "Addition Mine puts place-value columns right in front of you. Students build a target sum by filling a ones column, tens column, and hundreds column with ore crystals. When a column overflows ten, an ore cart carries the group to the next place — so regrouping becomes visible instead of abstract.",
+      "howToPlay": [
+        "Read the two numbers shown at the top of the mine shaft.",
+        "Use the −/+ buttons (or drag up) to add ore crystals to the ones, tens, and hundreds columns.",
+        "When a column reaches ten crystals, watch the cart carry them to the next column — that is regrouping.",
+        "Keep adding until the total matches the target sum, then press Check."
+      ],
+      "skills": "Addition Mine builds the concrete understanding of regrouping (carrying) that underpins column addition. By physically filling columns and watching ten units bundle into one at the next place, students stop confusing digit positions and start seeing why the algorithm works.",
+      "example": "Adding 47 + 36: fill 7 ones and 6 ones — the cart carries ten to the tens column, leaving 3 ones. Then add 4 tens and 3 tens plus the carried one to get 8 tens. Result: 83.",
+      "mistakes": "Students often add all the digits without considering place value, writing 47 + 36 = 713 instead of 83. Watching the cart move ten crystals physically into the next column corrects this column-blindness before it becomes a habit.",
+      "faqs": [
+        { "q": "Which grades is Addition Mine designed for?", "a": "It suits grades 2–4, covering 2-digit and 3-digit addition with regrouping — the core progression in early elementary arithmetic." },
+        { "q": "Does the game always require regrouping?", "a": "No. Some problems have no carrying; others require carrying once or twice. The mine shaft only shows the cart animation when a column actually overflows ten." },
+        { "q": "How is this different from Balance Scale?", "a": "Addition Mine builds a sum step by step using place-value columns and regrouping. Balance Scale requires students to find a total and match it by selecting weights — the emphasis is on equality rather than column arithmetic." }
+      ]
+    }
   },
   "subtractionBridge": {
     "title": "Subtraction Bridge",
@@ -191,7 +476,33 @@
     "instructions": "Remove stones with the − / + buttons for each digit (hundreds, tens, ones), or drag down over a column to remove a stone. When a column is too small, press − to break a ten-stone from the next digit into ten little stones (the bridge breaks). Then press Check",
     "prompt": "Subtract: {a} − {b}",
     "correct": "Great! The difference is {diff}",
-    "wrong": "Almost! Check the digits and fix the difference"
+    "wrong": "Almost! Check the digits and fix the difference",
+    "seo": {
+      "intro": "Subtraction Bridge asks students to dismantle a stone bridge block by block, column by column, to find the difference between two numbers. When the ones column has fewer stones than needed, a ten-stone from the next column breaks apart into ten small stones — making the borrowing (regrouping) step a physical demolition rather than a pencil rule.",
+      "howToPlay": [
+        "Read the subtraction problem shown above the bridge.",
+        "Remove stones from the ones, tens, or hundreds column using −/+ or by dragging down.",
+        "When a column runs out before the subtrahend digit, press − to break a ten-stone from the next column into ten smaller stones.",
+        "Once all columns show the correct difference, press Check."
+      ],
+      "skills": "Subtraction Bridge concretises borrowing (regrouping) in multi-digit subtraction: the single most confusing written-algorithm step. Students who see a ten literally break into ten ones understand why the digit in the next column decreases by 1, preventing the most persistent subtraction error in primary school.",
+      "example": "Subtracting 47 from 83: the ones column has 3 but needs 7. Press − to break a ten-stone: the tens column goes from 8 to 7, and the ones go from 3 to 13. Now 13−7=6 and 7−4=3, giving 36.",
+      "mistakes": "The classic error is subtracting the smaller digit from the larger regardless of which is on top (e.g. computing 83−47 as 40+4=44). The bridge mechanic forces the student to actually remove the correct quantity, making the direction of subtraction unambiguous.",
+      "faqs": [
+        {
+          "q": "How does the bridge mechanic teach borrowing without the abstract written rule?",
+          "a": "When a column has too few stones, pressing − physically breaks a ten-block into ten ones right in front of the student. They see the tens digit decrease and the ones pool increase — the written borrow rule is a shorthand for that event."
+        },
+        {
+          "q": "Which grades is Subtraction Bridge for?",
+          "a": "Grades 2–4, from two-digit subtraction with borrowing in grade 2 through three-digit problems with double borrowing in grades 3 and 4."
+        },
+        {
+          "q": "What happens if students need to borrow from the hundreds into the tens?",
+          "a": "The game supports cascading borrows: if the tens column also runs out, pressing − breaks a hundred-stone into ten tens, showing a two-step borrow visually."
+        }
+      ]
+    }
   },
   "volumeBuilder": {
     "title": "Volume Builder",
@@ -207,7 +518,33 @@
     "instructions": "Line up the left flag with the object's left end and the right flag with its right end, using the left ±1 and right ±1 buttons (or drag). Note: the object doesn't always start at 0, so length = right reading − left reading. Then press Check",
     "prompt": "Measure the object's length",
     "correct": "Great! The object is {length} cm long",
-    "wrong": "Almost! Line each flag up with the matching end of the object and fix it"
+    "wrong": "Almost! Line each flag up with the matching end of the object and fix it",
+    "seo": {
+      "intro": "Ruler Measure places an object anywhere along a ruler and asks students to position two flags at its ends. Because the object does not always start at zero, students must subtract the two readings to find the length — practising the real-world skill of measuring from an arbitrary starting point.",
+      "howToPlay": [
+        "Look at the object resting on the ruler and find where its left end sits.",
+        "Drag or press the left-flag buttons to align the left flag with the object's left end.",
+        "Use the right-flag buttons (or drag) to align the right flag with the object's right end.",
+        "Subtract: length = right reading minus left reading, then press Check."
+      ],
+      "skills": "Measuring from a non-zero start teaches that length is a difference between two positions, not a single reading. This understanding is essential for using real rulers, tape measures, and number lines — and prevents the common error of always assuming the object begins at zero.",
+      "example": "The object's left end sits at 3 cm and its right end at 11 cm. The length is 11 − 3 = 8 cm. Students who only ever measure from zero would read 11 and write the wrong answer; this game forces the subtraction step every time.",
+      "mistakes": "The most common error is reading only the right flag's position and ignoring the left flag's offset. Placing both flags independently before calculating makes the subtraction unavoidable and builds correct measurement habits for grades 2–4.",
+      "faqs": [
+        {
+          "q": "Why does the object not always start at zero on the ruler?",
+          "a": "Real-world measuring rarely starts at zero — tape measures, broken rulers, and offset objects are common. Practising non-zero starts prevents the habit of relying on a perfect alignment and builds genuine measurement skill."
+        },
+        {
+          "q": "Which grades is Ruler Measure designed for?",
+          "a": "Grades 2–4, covering the progression from simple centimetre counting to reading a ruler at any position and calculating the difference."
+        },
+        {
+          "q": "How is this different from the Fill the Container game?",
+          "a": "Ruler Measure works with length in centimetres using a horizontal ruler and two position flags; Fill the Container works with volume in millilitres using a vertical liquid scale. Both practise reading a graduated scale but for different measurement attributes."
+        }
+      ]
+    }
   },
   "decimalBuilder": {
     "title": "Decimal Builder",
@@ -215,7 +552,34 @@
     "instructions": "Fill the ones, tenths and hundredths jars with the − / + buttons (each jar's sand level shows that digit), then press Check",
     "prompt": "Build the number {target}",
     "correct": "Great! You built {target}",
-    "wrong": "Almost! Check the ones, tenths and hundredths and fix the number"
+    "wrong": "Almost! Check the ones, tenths and hundredths and fix the number",
+    "seo": {
+      "intro": "Decimal Builder puts students in a lab where three sand jars represent ones, tenths, and hundredths. They fill each jar to the correct level to construct a target decimal, turning abstract place-value notation into a visible, physical quantity they can read at a glance.",
+      "howToPlay": [
+        "Read the target decimal shown above the jars.",
+        "Use the ones jar's +/- buttons to set the digit before the decimal point.",
+        "Use the tenths jar to set the first decimal digit, and the hundredths jar for the second.",
+        "The sand level in each jar shows the current digit — adjust until all three match the target.",
+        "Press Check to confirm your number."
+      ],
+      "skills": "Decimal Builder develops decimal place value: students practise reading each digit's column (ones, tenths, hundredths) and translating it into a physical quantity. This is the foundational step before comparing, ordering, or adding decimal numbers.",
+      "example": "For the target 2.35: fill the ones jar to 2, the tenths jar to 3, and the hundredths jar to 5. Seeing three separate jars side by side makes the structure 2 + 0.3 + 0.05 obvious before any arithmetic is attempted.",
+      "mistakes": "Students often treat decimals as whole numbers, entering 35 into the hundredths jar for 0.35. Separate jars with individual levels force them to work one column at a time, breaking the habit of reading across the decimal point without pausing.",
+      "faqs": [
+        {
+          "q": "How do the sand jars show decimal place value differently from the block columns in Place Value Builder?",
+          "a": "Place Value Builder uses stacking blocks for whole-number hundreds, tens, and ones. Decimal Builder uses sand-fill jars for ones, tenths, and hundredths, making the fractional columns visible without blocks."
+        },
+        {
+          "q": "Which grades is Decimal Builder for?",
+          "a": "Grades 4-5, where students first meet tenths and hundredths as named place-value positions."
+        },
+        {
+          "q": "Can students set a digit greater than 9 in any jar?",
+          "a": "No. Each jar is capped at 9, so the game keeps students within standard decimal notation and avoids the carrying step handled separately in Decimal Addition."
+        }
+      ]
+    }
   },
   "decimalNumberLine": {
     "title": "Decimal on a Number Line",
@@ -223,7 +587,34 @@
     "instructions": "Drag the train to the correct position on the line (0 to 1), then press Check",
     "prompt": "Place {decimal} on the line",
     "correct": "Correct! {decimal} is in the right position",
-    "wrong": "Almost! Check the position and try again"
+    "wrong": "Almost! Check the position and try again",
+    "seo": {
+      "intro": "Decimal Number Line asks students to drag a train to the exact position of a decimal between 0 and 1. By placing the number on a ruler rather than in a jar or column, the game teaches students that a decimal is a precise distance along a scale, not just a pattern of digits.",
+      "howToPlay": [
+        "Read the target decimal shown above the number line.",
+        "Estimate where the decimal falls between 0 and 1.",
+        "Drag the train along the line to the estimated position.",
+        "Fine-tune until the train sits at the correct point.",
+        "Press Check to confirm."
+      ],
+      "skills": "Placing decimals on a number line trains students to compare decimal size by position, reinforcing that 0.7 is larger than 0.3 because it sits further right. This spatial sense of magnitude is the basis for ordering decimals and linking them to fractions.",
+      "example": "For 0.6: the line runs from 0 to 1 and the train should land at the sixth tick of ten equal intervals. Comparing it to the fraction 6/10 shows that 0.6 and 6/10 name the same point.",
+      "mistakes": "Students frequently confuse decimal size with digit count: they place 0.35 to the right of 0.9 because 35 looks larger than 9. The number line's fixed scale exposes that error immediately by showing 0.9 is very close to 1 while 0.35 is barely past one third.",
+      "faqs": [
+        {
+          "q": "How does placing a decimal on the line differ from placing a fraction in the Fraction Number Line game?",
+          "a": "Fraction Number Line uses a subdivided ruler with adjustable tick-mark spacing to place fractions like 2/3. Decimal Number Line uses a fixed decimal scale (tenths) to place values like 0.6, building fluency with the decimal notation specifically."
+        },
+        {
+          "q": "Which grades is Decimal Number Line for?",
+          "a": "Grades 3-5: the core task suits grade 3-4 students meeting tenths, and the hundredths targets extend into grade 5."
+        },
+        {
+          "q": "Does the game cover numbers greater than 1?",
+          "a": "No. The line runs from 0 to 1 to keep focus on the decimal part. Ordering and comparing multi-digit decimals is introduced in later activities once the fractional portion is secure."
+        }
+      ]
+    }
   },
   "decimalAddition": {
     "title": "Decimal Addition",
@@ -231,7 +622,34 @@
     "instructions": "Build the sum: set the ones, tenths and hundredths with the − / + buttons, then press Check",
     "prompt": "What is {a} + {b}?",
     "correct": "Correct! {a} + {b} = {result}",
-    "wrong": "Almost! Check each digit separately and remember to carry"
+    "wrong": "Almost! Check each digit separately and remember to carry",
+    "seo": {
+      "intro": "Decimal Addition has students build the sum of two decimal numbers column by column using digit wheels for ones, tenths, and hundredths. The game makes the align-then-add procedure concrete: each column is set independently so carrying across the decimal point becomes visible.",
+      "howToPlay": [
+        "Read the two decimal addends shown on screen.",
+        "Add the hundredths digits first; use the hundredths wheel to set that digit of the sum.",
+        "If the hundredths total is 10 or more, carry 1 to the tenths column.",
+        "Repeat for tenths, then ones, carrying as needed.",
+        "Press Check when all three wheels show the correct sum."
+      ],
+      "skills": "Decimal Addition practises the column-by-column algorithm with decimal numbers: aligning the decimal point, adding like places (hundredths with hundredths, tenths with tenths), and carrying across columns. These are the same skills as whole-number addition, extended to fractional positions.",
+      "example": "For 1.47 + 0.86: hundredths 7+6=13, set 3 and carry 1; tenths 4+8+1=13, set 3 and carry 1; ones 1+0+1=2. Answer 2.33. Each step is done on a separate wheel, so no digit is lost.",
+      "mistakes": "The most common error is ignoring column alignment and adding 1.47 + 0.86 as if they were 147 + 86. Separate wheels for each place prevent that by forcing students to add only the matching column at a time.",
+      "faqs": [
+        {
+          "q": "How does the column-wheel interface teach decimal-point alignment?",
+          "a": "Each wheel is labelled ones, tenths, or hundredths and only accepts its own digit, so students cannot add a tenths digit into the ones column by accident. The structure enforces alignment without a written grid."
+        },
+        {
+          "q": "Which grades is Decimal Addition for?",
+          "a": "Grades 4-5, where students extend column addition to decimals with tenths and hundredths."
+        },
+        {
+          "q": "Does the game cover subtraction of decimals too?",
+          "a": "No. Decimal Addition focuses on the addition algorithm with carrying. Decimal subtraction with borrowing is a separate skill practised in a different activity."
+        }
+      ]
+    }
   },
   "numberBond": {
     "title": "Number Bond Splitter",
@@ -239,7 +657,33 @@
     "instructions": "Two stone platforms float over a chasm. Build the bridge: use left −/+ to set the left part and right −/+ to set the right part (you can also drag on each side). The bridge connects when the two parts add up to exactly span the gap. Then press Check",
     "prompt": "Split {target} into two parts",
     "correct": "Great! The two parts together make {target}",
-    "wrong": "Almost! Make the two parts add up to span the gap exactly, then press Check"
+    "wrong": "Almost! Make the two parts add up to span the gap exactly, then press Check",
+    "seo": {
+      "intro": "Number Bond Splitter presents two floating platforms over a chasm. Students adjust the left and right numbers until they sum to the whole, watching a crystal bridge materialise when the parts are correct. The bridge-over-a-gap metaphor makes part-part-whole relationships tangible at the earliest grade levels.",
+      "howToPlay": [
+        "Read the whole number shown above the chasm.",
+        "Use −/+ buttons or drag on each platform to set the left part.",
+        "Watch the right part update to show what remains as you adjust the left.",
+        "When both parts sum to the whole and the bridge spans the gap, press Check."
+      ],
+      "skills": "Number bonds build automatic decomposition fluency for small numbers (1–20), which is the foundation for mental addition and subtraction. Knowing that 7 splits into 3+4 or 5+2 allows students to add across ten without counting on fingers.",
+      "example": "For the whole 8, a student sets the left part to 5; the right part automatically shows 3. The bridge appears, confirming 5+3=8. Trying 6 and then 2 shows a different valid split, reinforcing that a number has multiple decompositions.",
+      "mistakes": "Young students often fix one part at 1 and count up the other, missing that there are many valid pairs. The interactive drag encourages exploring the whole range of splits rather than stopping at the first correct answer.",
+      "faqs": [
+        {
+          "q": "How does Number Bond Splitter differ from Ten Frame Fill?",
+          "a": "Ten Frame Fill shows a number as filled vs. empty cells in a fixed 10-slot grid, building the relationship to ten. Number Bond Splitter is open-ended: it shows any split of any small number into two arbitrary parts, training flexible decomposition independent of ten."
+        },
+        {
+          "q": "Which grades is Number Bond Splitter for?",
+          "a": "Grades 1–2, where students are learning to decompose numbers within 20 and need fluent part-part-whole thinking before moving on to addition algorithms."
+        },
+        {
+          "q": "Is every split of the whole accepted or only one specific pair?",
+          "a": "Any valid pair that sums to the whole is accepted. The game encourages exploring all decompositions of the target number across multiple plays."
+        }
+      ]
+    }
   },
   "numberLineJump": {
     "title": "Number Line Jump",
@@ -247,7 +691,33 @@
     "instructions": "Set the jump size with − / +, then press → Forward or ← Back to hop the car along the track. You can hop several times until you land exactly on the flag. Then press Check",
     "prompt": "Hop to {target}",
     "correct": "Great! You landed exactly on {target}",
-    "wrong": "Almost! Hop forward or back until you land exactly on the flag"
+    "wrong": "Almost! Hop forward or back until you land exactly on the flag",
+    "seo": {
+      "intro": "Number Line Jump puts a car on a race track number line and asks students to hop it to a target position using jumps of their chosen size. Each forward or backward hop is a visible addition or subtraction, turning the abstract operation into a physical journey along a scaled line.",
+      "howToPlay": [
+        "Read the target number shown by the flag on the track.",
+        "Set the jump size using −/+ buttons.",
+        "Press Forward or Back to hop the car that many spaces at a time.",
+        "Land exactly on the flag, then press Check to finish the round."
+      ],
+      "skills": "Number Line Jump builds flexible mental arithmetic by making addition and subtraction directional: forward for adding, backward for subtracting. Students develop number-line intuition — the sense of distance and direction — which underpins integer operations and later coordinate work.",
+      "example": "To reach 17 from 0 with jumps of 5: three hops forward land on 15, then switch to a jump of 2 for one more hop to reach 17. Students see 5+5+5+2=17 as a path, not an abstract sum.",
+      "mistakes": "Students often choose a jump size that does not divide evenly into the target and overshoot, then struggle to backtrack. The game allows mixed jump sizes in one round, encouraging students to plan a two-step approach rather than a single repeated hop.",
+      "faqs": [
+        {
+          "q": "How does Number Line Jump differ from Skip Count Race?",
+          "a": "Skip Count Race fixes the jump size (2s, 5s, or 10s) and asks students to mark every landing, practising regular intervals. Number Line Jump lets the student choose any jump size and make multiple hops of different sizes to reach a single target — it is more open-ended and covers addition and subtraction together."
+        },
+        {
+          "q": "Which grades is Number Line Jump for?",
+          "a": "Grades 1–4, with simpler targets and larger jumps for younger students and two-digit targets requiring mixed jump sizes for older students."
+        },
+        {
+          "q": "Can the car go backwards to practise subtraction?",
+          "a": "Yes. Pressing the Back button hops the car left along the track, modelling subtraction. Students may need to overshoot a target and hop back to reach it exactly."
+        }
+      ]
+    }
   },
   "explodingDots": {
     "title": "Exploding Dots",
@@ -255,7 +725,24 @@
     "instructions": "Add dots to each box with the − / + buttons (hundreds, tens, ones), or drag up over a box to add. When a box reaches ten dots they explode into one dot in the box to its left. Build the number, then press Check.",
     "prompt": "Build the number {target}",
     "correct": "Great! You built {target}",
-    "wrong": "Almost! Check the boxes and fix the number"
+    "wrong": "Almost! Check the boxes and fix the number",
+    "seo": {
+      "intro": "Exploding Dots turns regrouping into a spectacle. Students place neon dots into ones, tens, and hundreds boxes to represent a target number. When any box reaches ten, those dots explode into one dot in the box to the left — a vivid, rule-free display of why the decimal system works in base ten.",
+      "howToPlay": [
+        "Read the target number displayed above the boxes.",
+        "Use the −/+ buttons or drag upward to add dots to the ones, tens, or hundreds box.",
+        "When a box reaches ten dots, watch them explode into a single dot moving left.",
+        "Adjust until the boxes together represent the target number, then press Check."
+      ],
+      "skills": "Exploding Dots builds deep intuition for base-ten place value. Rather than memorising that ten ones equal one ten, students see it happen as an explosion. This animation-driven understanding of regrouping prepares students for multi-digit addition, subtraction, and eventually number systems in other bases.",
+      "example": "Building 23: add 3 dots to the ones box (stays as 3), then add 2 dots to the tens box (stays as 2). No explosions needed. Now build 33: add 13 ones — at ten, they explode into one ten, leaving 3 ones. Result: 1 ten from explosion plus 2 tens added = 3 tens, 3 ones = 33.",
+      "mistakes": "Students often overfill a box and miss the explosion, ending up with more than ten dots in one place. The game freezes boxes that overflow until students trigger the explosion, reinforcing that ten-in-one-box is always the rule.",
+      "faqs": [
+        { "q": "Which grades does Exploding Dots target?", "a": "Grades 2–3, where students are establishing place-value intuition for 2-digit and 3-digit numbers and beginning to understand the logic of carrying in addition." },
+        { "q": "Is this related to James Tanton's Exploding Dots project?", "a": "The mechanic is inspired by the same base-ten dot model popularised in mathematics education. The game uses the same visual language to make regrouping self-evident." },
+        { "q": "How is this different from Addition Mine?", "a": "Exploding Dots focuses purely on representing a single number and seeing the explosion rule. Addition Mine uses the same columns but in the context of adding two numbers together with the mine-cart carrying mechanic." }
+      ]
+    }
   },
   "factris": {
     "title": "Factris",
@@ -263,7 +750,24 @@
     "instructions": "Change the stack's width with the − / + buttons (or drag right to widen, left to narrow) until the blocks form a full rectangle that exactly fills the glowing shelf. If the width doesn't fit, the top row stays incomplete — that's not a clean rectangle. Then press Check.",
     "prompt": "Arrange {area} blocks to fill the shelf",
     "correct": "Great! {slotW} wide × {height} tall = {area}",
-    "wrong": "Almost! Change the width until the blocks exactly fill the glowing shelf"
+    "wrong": "Almost! Change the width until the blocks exactly fill the glowing shelf",
+    "seo": {
+      "intro": "Factris gives multiplication and factoring a Tetris-style twist. A fixed count of warehouse blocks must be arranged into a perfect rectangle that exactly fills a glowing shelf. Students find a working width — meaning a factor of the total — and the height fills in automatically, making the link between area, arrays, and multiplication facts vivid.",
+      "howToPlay": [
+        "Read the total number of blocks shown in the prompt.",
+        "Use −/+ buttons or drag left/right to change the width of the stack.",
+        "Watch the height adjust so that width × height always equals the total.",
+        "Find a width that fills every cell in the glowing shelf with no gaps or overhang, then press Check."
+      ],
+      "skills": "Factris builds fluency with factors, multiples, and the relationship between multiplication and area. Searching for a width that works is identical to finding a factor pair, so students internalise factor pairs through spatial trial and error rather than rote memorisation.",
+      "example": "The shelf holds 12 blocks. Width 3 gives height 4 — the rectangle fills perfectly. Width 5 leaves 2 orphan blocks in the top row — not a factor. Students quickly learn that 1, 2, 3, 4, 6, and 12 all work; 5, 7, 8, 9, 10, 11 do not.",
+      "mistakes": "Students often try every number linearly instead of reasoning about factors. Noticing that width × height = total and using that to guess smarter widths is the insight the game is designed to surface.",
+      "faqs": [
+        { "q": "Which grades is Factris designed for?", "a": "Grades 3–5, covering factor pairs, multiples, and area models of multiplication — core content in upper primary arithmetic." },
+        { "q": "How is this different from Multiplication Array?", "a": "Multiplication Array shows a pre-built grid of objects and asks students to count rows × columns. Factris gives a total and asks students to find a valid factor pair by reshaping the stack — it adds the search for factors to the array model." },
+        { "q": "Does the game show all factor pairs or just one?", "a": "The game accepts any valid width. Students who try multiple widths naturally discover all factor pairs of the total, turning the session into an implicit factor-pair audit." }
+      ]
+    }
   },
   "skipCount": {
     "title": "Skip Count Race",
@@ -271,7 +775,33 @@
     "instructions": "Tap the tiles the animal lands on at each skip. Mark them all the way to the end, then press Check — the animal will hop across the stones. Tap a tile again to unmark it, or Reset to start over.",
     "prompt": "Mark every {step}-skip up to {target}",
     "correct": "Great! You skip-counted by {step} up to {target}",
-    "wrong": "Almost! Mark exactly every skip — none missing and none extra"
+    "wrong": "Almost! Mark exactly every skip — none missing and none extra",
+    "seo": {
+      "intro": "Skip Count Race sends a safari animal across stepping stones on a track. Students tap each stone the animal lands on when counting by 2s, 5s, or 10s, and the animal dashes across to confirm the sequence. Marking the pattern themselves before seeing the animation makes the regularity of skip counting active and memorable.",
+      "howToPlay": [
+        "Read the skip interval and target shown above the safari track.",
+        "Tap each stone that falls on a multiple of the skip interval.",
+        "Work all the way to the target, marking every landing spot and no others.",
+        "Press Check to watch the animal hop across your marked stones."
+      ],
+      "skills": "Skip counting by 2s, 5s, and 10s is the on-ramp to multiplication tables. Identifying every multiple of a given number trains rhythmic counting and lays the conceptual groundwork for understanding multiplication as repeated addition along a structured sequence.",
+      "example": "Skip-counting by 5s to 30: tap tiles 5, 10, 15, 20, 25, 30. The even spacing of tapped stones reveals the 5× pattern visually before any times-table is introduced.",
+      "mistakes": "Students often miss the first skip (starting at 0 instead of the interval) or mark the target tile but forget the ones before it. The game requires every multiple to be tapped — a missing or extra stone fails the check — reinforcing the complete sequence, not just the final answer.",
+      "faqs": [
+        {
+          "q": "How does Skip Count Race differ from Number Line Jump?",
+          "a": "Skip Count Race fixes the jump size and asks students to mark every landing point in a sequence — practising multiples as a pattern. Number Line Jump is goal-directed: students choose any jump size and hop to a single target, practising flexible addition and subtraction."
+        },
+        {
+          "q": "Which grades is Skip Count Race for?",
+          "a": "Grades 2–3, where students consolidate 2s, 5s, and 10s skip counting as direct preparation for multiplication."
+        },
+        {
+          "q": "Does the game cover skip counts other than 2, 5, and 10?",
+          "a": "The core game uses 2s, 5s, and 10s, which align with the national curriculum for grades 2–3. More intervals may appear in advanced rounds as students progress."
+        }
+      ]
+    }
   },
   "weightBalance": {
     "title": "Weighing Scale",
@@ -279,7 +809,33 @@
     "instructions": "Add gram weights to the right pan with the − / + buttons (1 g, 10 g, 100 g), or drag up to add a 10 g weight, until the beam is level. Then press Check",
     "prompt": "Balance the fruit — {weight} g",
     "correct": "Great! You balanced exactly {weight} g",
-    "wrong": "Almost! The beam is still tilted — check the total weight and fix it"
+    "wrong": "Almost! The beam is still tilted — check the total weight and fix it",
+    "seo": {
+      "intro": "Weighing Scale puts students at a market stall where they must balance fruit on one pan by adding gram weights (1 g, 10 g, 100 g) to the other. The tilting beam provides instant feedback on whether the total is too light or too heavy, turning weight measurement into a concrete physical balancing task.",
+      "howToPlay": [
+        "Read the target weight shown for the fruit in the left pan.",
+        "Use the 100 g, 10 g, and 1 g buttons to add weights to the right pan.",
+        "Watch the beam: tilted left means the right side is too light; tilted right means too heavy.",
+        "Press Check once the beam is perfectly level."
+      ],
+      "skills": "Composing a target weight from 1 g, 10 g, and 100 g denominations builds place-value intuition for three-digit numbers while practising the real measurement skill of choosing the most efficient combination of weights — the same reasoning used in every market and kitchen context for grades 2–3.",
+      "example": "The target is 253 g. Students add two 100 g weights (200 g), five 10 g weights (50 g), and three 1 g weights (3 g) to reach exactly 253 g. The step-by-step decomposition mirrors the place-value structure of the number itself.",
+      "mistakes": "Students often use too many small weights instead of exchanging ten 1 g pieces for a 10 g piece. The limited number of weights on screen encourages the regrouping step — paralleling the carrying concept in written addition.",
+      "faqs": [
+        {
+          "q": "How does choosing gram weights reinforce place value in this game?",
+          "a": "The three denominations (1 g, 10 g, 100 g) map directly to ones, tens, and hundreds. Building a weight like 253 g makes the three-digit structure physical, not abstract."
+        },
+        {
+          "q": "Which grades is Weighing Scale designed for?",
+          "a": "Grades 2–3, where students learn standard mass units (grams), practise three-digit composition, and begin using measurement instruments."
+        },
+        {
+          "q": "How is this different from the Balance Scale game (arithmetic)?",
+          "a": "Weighing Scale (units topic) measures physical mass in grams and builds measurement and place-value skills. Balance Scale (arithmetic topic) practises mental addition by matching a sum with numbered weights — it is about equality and arithmetic, not mass units."
+        }
+      ]
+    }
   },
   "percentBar": {
     "title": "Percent Bar",
@@ -287,7 +843,33 @@
     "instructions": "Use the percent ±5% buttons, or drag up to add fans, to fill the stand to the right percent, then press Check",
     "prompt": "Fill {percent}% of the stand",
     "correct": "Great! You filled {percent}% of the stand",
-    "wrong": "Almost! Check the percent and fix the fill"
+    "wrong": "Almost! Check the percent and fix the fill",
+    "seo": {
+      "intro": "Percent Bar shows a stadium stand divided into 100 equal sections. Students drag or tap to fill exactly the right number of sections, making the abstract idea that percent means parts out of 100 concrete and immediate. Unlike a written fraction, the bar is always the same total length.",
+      "howToPlay": [
+        "Read the target percentage shown above the stand.",
+        "Use the +5% and -5% buttons, or drag upward, to fill fans into the stand.",
+        "Watch the fill level and the live percentage counter update together.",
+        "When the filled portion matches the target, press Check."
+      ],
+      "skills": "Percent Bar anchors the core definition: percent is always out of 100. Filling the same fixed bar to different levels builds the spatial sense that 50% is half, 25% is a quarter, and 75% is three-quarters, before any formula is introduced.",
+      "example": "For 30% the student fills 30 of the 100 sections. Comparing the result to a half-full bar makes it obvious that 30% is less than half, without any calculation.",
+      "mistakes": "Students sometimes confuse the percent value with the number of fans to add rather than the total fill level. The fixed 100-section bar corrects this: reaching 30% always means exactly 30 sections filled, regardless of how many clicks it took.",
+      "faqs": [
+        {
+          "q": "How does filling a bar help students understand percent as parts out of 100?",
+          "a": "The bar is always 100 sections wide, so filling it to 40% literally places 40 out of 100 sections. The visual length makes the fraction-out-of-100 definition self-evident before any rule is stated."
+        },
+        {
+          "q": "Which grades is Percent Bar for?",
+          "a": "Grades 5-6, where students first define percent as a ratio out of 100 and need a visual model before working with percent calculations."
+        },
+        {
+          "q": "How is Percent Bar different from Percent of a Number?",
+          "a": "Percent Bar is a visual model: students shade a fixed bar to see what a percent looks like. Percent of a Number is a calculation game: students compute a specific quantity such as 30% of 80. One builds the concept; the other applies it."
+        }
+      ]
+    }
   },
   "percentOfQuantity": {
     "title": "Percent of a Number",
@@ -295,7 +877,33 @@
     "instructions": "Read the problem on the sign, set your answer with the − / + buttons, then press Check",
     "prompt": "What is {percent}% of {total}?",
     "correct": "Correct! {percent}% of {total} is {result}",
-    "wrong": "Not quite — try calculating again"
+    "wrong": "Not quite — try calculating again",
+    "seo": {
+      "intro": "Percent of a Number presents a sign showing a percentage and a quantity, and students set the numeric answer using buttons. The game trains the two-step mental calculation: convert the percent to a decimal or fraction, then multiply by the whole, making percentage arithmetic fluent and fast.",
+      "howToPlay": [
+        "Read the percentage and the quantity shown on the sign.",
+        "Calculate mentally: convert the percent to a fraction (e.g. 25% = 1/4) or multiply by the decimal form.",
+        "Use the +/- buttons to set your calculated answer.",
+        "Press Check to confirm."
+      ],
+      "skills": "Percent of a Number builds automatic fluency with the percent-of calculation: finding 10%, 25%, 50%, and other friendly percents of a whole number. This is the computational skill that underlies discounts, tips, tax, and every real-world percentage situation.",
+      "example": "For 25% of 80: students recognise 25% as one-quarter, then divide 80 by 4 to get 20. Practicing friendly percents first makes trickier values like 15% or 35% approachable by decomposition.",
+      "mistakes": "A common error is computing the percent value directly (writing 25 instead of 20 for 25% of 80). The game exposes this by requiring the actual quantity, not the percent symbol, training students to complete both steps of the calculation.",
+      "faqs": [
+        {
+          "q": "What two-step calculation does this game practise?",
+          "a": "Students convert the percent to a fraction or decimal, then multiply by the given quantity. Both steps must be done correctly to reach the right answer, building fluency with the full calculation."
+        },
+        {
+          "q": "Which grades is Percent of a Number for?",
+          "a": "Grades 5-6, where students move from understanding what a percent represents to calculating a percent of a given quantity in real-world contexts."
+        },
+        {
+          "q": "How is this different from Percent Discount?",
+          "a": "Percent of a Number asks for the raw percent-of result (what is 30% of 80?). Percent Discount applies that calculation to a shopping context: find the discount amount, then subtract it from the original price to get the sale price."
+        }
+      ]
+    }
   },
   "percentDiscount": {
     "title": "Shop Discount",
@@ -303,7 +911,33 @@
     "instructions": "Read the original price and discount percentage, set the sale price with the − / + buttons, then press Check",
     "prompt": "An item costs ₪{original} with a {discount}% discount. What is the sale price?",
     "correct": "Correct! The sale price is ₪{salePrice}",
-    "wrong": "Not quite — calculate the discount amount then subtract from the original price"
+    "wrong": "Not quite — calculate the discount amount then subtract from the original price",
+    "seo": {
+      "intro": "Shop Discount sets students in a virtual store where they must calculate the final sale price after a percentage discount. By working through a realistic shopping transaction, students practise the two-stage process: compute the discount amount, then subtract it from the original price.",
+      "howToPlay": [
+        "Read the original price and the discount percentage shown in the shop.",
+        "Calculate the discount amount: apply the percentage to the original price.",
+        "Subtract the discount from the original price to find the sale price.",
+        "Use the +/- buttons to enter the sale price, then press Check."
+      ],
+      "skills": "Shop Discount develops the real-world application of percent-of: computing a percentage reduction and applying it. Students learn that finding a discount is a two-step process (percent of a whole, then subtraction), which is the foundation for calculating tax, tips, and commission.",
+      "example": "An item costs 200 with a 25% discount. Students calculate 25% of 200 = 50, then subtract: 200 - 50 = 150. The sale price is 150. Seeing the full workflow in a shopping frame makes each step purposeful.",
+      "mistakes": "Many students enter the discount amount itself (50) rather than the final sale price (150). The game labels the input field as sale price, directing students to complete the subtraction step that distinguishes this game from a plain percent-of calculation.",
+      "faqs": [
+        {
+          "q": "Why does this game ask for the sale price rather than the discount amount?",
+          "a": "Computing the full sale price requires both steps: finding the percent-of and subtracting. Stopping at the discount amount skips the subtraction stage that is needed in every real discount situation."
+        },
+        {
+          "q": "Which grades is Shop Discount for?",
+          "a": "Grades 5-6, where students apply percent calculations to real-world contexts including shopping, tax, and other percentage-based adjustments."
+        },
+        {
+          "q": "How is Shop Discount different from Percent Bar?",
+          "a": "Percent Bar is a visual model that shows what a percentage looks like on a fixed bar of 100 sections. Shop Discount is a two-step calculation problem set in a real context, requiring students to compute a percent-of and then apply it to find a new price."
+        }
+      ]
+    }
   },
   "ratioMixer": {
     "title": "Ratio Mixer",
@@ -311,7 +945,33 @@
     "instructions": "Set the amount of Juice A and Juice B with the − and + buttons (or drag a glass up to fill it, down to empty it) until their ratio matches the target — any equivalent amounts work — then press Check.",
     "prompt": "Mix in the ratio {a}:{b}",
     "correct": "Nice! Equivalent to {a}:{b}",
-    "wrong": "Not the right ratio yet — adjust the amounts and try again"
+    "wrong": "Not the right ratio yet — adjust the amounts and try again",
+    "seo": {
+      "intro": "Ratio Mixer places students at a smoothie bar with two juice glasses. The goal is to pour Juice A and Juice B in a target ratio — and discover that 1:2, 2:4, and 3:6 all produce the same drink. The act of adjusting amounts until the ratio clicks makes equivalence feel concrete rather than symbolic.",
+      "howToPlay": [
+        "Read the target ratio shown above the glasses (for example, 1:2).",
+        "Use the − and + buttons, or drag each glass up or down, to set the amounts of Juice A and Juice B.",
+        "Any pair of amounts that forms an equivalent ratio will be accepted — experiment freely.",
+        "Press Check when your mix matches the target ratio."
+      ],
+      "skills": "Ratio Mixer builds the core understanding that a ratio describes a relationship between two quantities, not a fixed pair of numbers. Students discover that multiplying both parts by the same factor preserves the ratio — the foundation for proportional reasoning in grades 5 and 6.",
+      "example": "For a target of 1:2, pouring 3 units of Juice A and 6 units of Juice B is accepted because 3:6 simplifies to 1:2. Students see that the flavour — the ratio — stays the same regardless of total volume.",
+      "mistakes": "Students often fix one amount and only adjust the other, which rarely keeps the ratio correct. The game teaches that both quantities must scale together, correcting the common belief that only one side of a ratio can change.",
+      "faqs": [
+        {
+          "q": "How does adjusting amounts in Ratio Mixer differ from filling a ratio table in the Ratio Table game?",
+          "a": "Ratio Mixer asks students to find any valid combination by experimenting with two quantities simultaneously. Ratio Table presents a structured grid where students compute a single missing value using a fixed scaling factor."
+        },
+        {
+          "q": "Which grades is Ratio Mixer for?",
+          "a": "Grades 5-6, where students first define ratio as a relationship between two quantities and explore equivalent ratios as part of the proportional reasoning strand."
+        },
+        {
+          "q": "Why does the game accept any equivalent ratio, not just the target numbers?",
+          "a": "Accepting all equivalent forms is the lesson: 2:4 and 3:6 are the same ratio as 1:2. If only one answer were correct, students would guess numbers rather than understand why the ratio is preserved."
+        }
+      ]
+    }
   },
   "ratioRecipe": {
     "title": "Recipe Scaling",
@@ -319,7 +979,34 @@
     "instructions": "Read the original recipe, set the required ingredient amount with the − / + buttons, then press Check",
     "prompt": "Scale the recipe to {servings} servings. How much {ingredient} is needed?",
     "correct": "Correct! You need {amount} of {ingredient}",
-    "wrong": "Almost! Multiply the original amount by the serving ratio"
+    "wrong": "Almost! Multiply the original amount by the serving ratio",
+    "seo": {
+      "intro": "Recipe Scaling shows a kitchen recipe card for a fixed number of servings and asks students to recompute every ingredient for a different serving count. Scaling a recipe by a whole-number factor — say, tripling flour from 200g to 600g — gives ratio multiplication a real-world purpose that abstract drill cannot match.",
+      "howToPlay": [
+        "Read the original recipe: note the number of servings and each ingredient amount.",
+        "Check the target serving count shown above the recipe card.",
+        "Calculate the scaling factor: new servings divided by original servings.",
+        "Multiply the displayed ingredient by that factor and enter your answer with the − / + buttons.",
+        "Press Check to confirm."
+      ],
+      "skills": "Recipe Scaling practises multiplicative scaling: identifying the ratio between two serving counts and applying it to each ingredient. This is the applied core of proportional reasoning — the same skill used in unit conversion, map reading, and percentage problems in grades 5 and 6.",
+      "example": "A recipe for 4 servings needs 200 g of flour. Scaling to 12 servings requires a factor of 3 (12 ÷ 4), so flour becomes 200 × 3 = 600 g. Students must identify the factor first, then apply it — two distinct steps.",
+      "mistakes": "Students often add the serving difference rather than multiply by the factor (e.g. adding 8 to 200 g instead of multiplying by 3). The recipe context makes the error obvious: adding makes the recipe only slightly bigger rather than truly tripled.",
+      "faqs": [
+        {
+          "q": "What does scaling a recipe teach that the mixing mechanic in Ratio Mixer does not?",
+          "a": "Recipe Scaling makes the scaling factor explicit: students must divide the new serving count by the original to find it, then multiply each ingredient. Ratio Mixer focuses on recognising equivalent ratios without computing a named factor."
+        },
+        {
+          "q": "Which grades is Recipe Scaling for?",
+          "a": "Grades 5-6, where students apply proportional reasoning to multi-step real-world problems and practise multiplying by a ratio expressed as a whole number or simple fraction."
+        },
+        {
+          "q": "Does the game ask about one ingredient or all of them?",
+          "a": "Each round focuses on one named ingredient chosen from the recipe. This keeps the calculation to one step per round while still requiring students to identify the correct scaling factor from the serving counts."
+        }
+      ]
+    }
   },
   "ratioTable": {
     "title": "Ratio Table",
@@ -327,7 +1014,33 @@
     "instructions": "Read the table, set the missing value with the − / + buttons, then press Check",
     "prompt": "In the ratio table {a}:{b}, fill in the missing value",
     "correct": "Correct! The missing value is {value}",
-    "wrong": "Almost! Calculate the value using the scaling factor"
+    "wrong": "Almost! Calculate the value using the scaling factor",
+    "seo": {
+      "intro": "Ratio Table presents a grid of equivalent ratios with one value missing. Students read across the rows to find the scaling factor that connects column to column, then fill in the blank. The table format makes the pattern of equivalent ratios visible as a structure, not just isolated pairs.",
+      "howToPlay": [
+        "Read the ratio table: each column shows a pair of values in the same ratio.",
+        "Compare two complete columns to identify the scaling factor between them.",
+        "Apply that factor to the known value in the incomplete column to find the missing value.",
+        "Enter the missing value with the − / + buttons, then press Check."
+      ],
+      "skills": "Working with a ratio table builds the habit of reading relationships across rows, not just within a single pair. This row-based thinking is the direct preparation for setting up and solving proportions, unit rate problems, and function tables in grades 4 through 6.",
+      "example": "In a 3:5 ratio table, the first column shows 3 and 5, the second shows 6 and 10, and the third shows 9 and a blank. The scaling factor from column 1 to column 3 is 3, so the missing value is 5 × 3 = 15.",
+      "mistakes": "Students sometimes add a constant instead of multiplying (for example, adding 3 to each value across rows). The table layout makes this error visible because the pattern breaks in the other row — the structured grid is its own correction tool.",
+      "faqs": [
+        {
+          "q": "How does the table layout help students see the pattern in equivalent ratios?",
+          "a": "Aligning multiple equivalent pairs in columns lets students spot the scaling factor visually: both rows grow by the same multiplier across columns. This structure is harder to see when ratios are presented as isolated pairs."
+        },
+        {
+          "q": "Which grades is Ratio Table for?",
+          "a": "Grades 4-6: grade 4 students use simpler whole-number tables to explore equivalent ratios, while grades 5-6 work with larger factors as part of formal proportional reasoning."
+        },
+        {
+          "q": "How is Ratio Table different from Ratio Mixer and Recipe Scaling?",
+          "a": "Ratio Table focuses on reading and extending a structured grid of equivalent pairs, training pattern recognition across multiple ratios at once. Ratio Mixer asks students to find any valid equivalent by adjusting two quantities freely; Recipe Scaling asks them to apply a single computed factor to a real-world ingredient."
+        }
+      ]
+    }
   },
   "numberSequence": {
     "title": "Number Sequence",
@@ -335,7 +1048,33 @@
     "instructions": "Find the rule of the sequence (add or multiply), set the missing stone with the − / + buttons (or drag up to raise it), then press Check",
     "prompt": "Complete the sequence",
     "correct": "Correct! The missing number is {value}",
-    "wrong": "Almost! Find the rule and try again"
+    "wrong": "Almost! Find the rule and try again",
+    "seo": {
+      "intro": "Number Sequence places a row of numbered stones with one stone missing and asks students to figure out the rule — add the same amount each time, or multiply — then supply the missing value. It bridges visual pattern work toward rule-based arithmetic thinking for grades 3–5.",
+      "howToPlay": [
+        "Read all the visible numbers in the row and look for what changes between each pair.",
+        "Decide whether the rule is additive (each step adds the same amount) or multiplicative (each step multiplies).",
+        "Use the − / + buttons, or drag the missing stone upward, to set the correct value.",
+        "Press Check to confirm your answer."
+      ],
+      "skills": "Finding a rule from a sequence of numbers and applying it trains skip-counting, arithmetic-progression recognition, and early function thinking — skills that feed directly into multiplication tables, input-output tables, and pattern algebra in grades 3–5.",
+      "example": "A sequence shows 3, 6, 9, ?, 15. Each step adds 3, so the missing number is 12. Seeing that the gap between each pair is equal — not just reading the last number — is the reasoning skill Number Sequence develops.",
+      "mistakes": "Students commonly guess by adding one more than the previous term instead of measuring the actual gap. Number Sequence requires checking multiple gaps to confirm the rule, training the habit of verifying before answering.",
+      "faqs": [
+        {
+          "q": "How does the missing-stone mechanic teach rule-finding rather than just answer-guessing?",
+          "a": "The stone appears anywhere in the sequence — not always at the end — so students must establish the rule from the surrounding terms rather than extending a list by one more step."
+        },
+        {
+          "q": "Which grades is Number Sequence for?",
+          "a": "It suits grades 3–5, where students move from visual patterns to numeric rules and begin formalising arithmetic and multiplicative relationships."
+        },
+        {
+          "q": "How is Number Sequence different from Geometric Sequence?",
+          "a": "Number Sequence mixes additive and simple multiplicative rules; Geometric Sequence focuses exclusively on constant-ratio multiplication such as ×2 or ×3 — the next level of difficulty."
+        }
+      ]
+    }
   },
   "geometricSequence": {
     "title": "Geometric Sequence",
@@ -343,7 +1082,33 @@
     "instructions": "Find the rule (×2 or ×3), set the missing stone with the − / + buttons, then press Check",
     "prompt": "Complete the geometric sequence",
     "correct": "Correct! The missing number is {value}",
-    "wrong": "Almost! Look for the multiplier between consecutive terms"
+    "wrong": "Almost! Look for the multiplier between consecutive terms",
+    "seo": {
+      "intro": "Geometric Sequence gives students a row of numbered stones where every term is obtained by multiplying the previous one by a fixed ratio — ×2, ×3, or similar. Identifying that constant multiplier and using it to fill the missing stone is the defining skill of this grade 4–6 game.",
+      "howToPlay": [
+        "Read the visible numbers and divide any term by the one before it to find the common ratio.",
+        "Confirm the ratio holds for every adjacent pair — it must be the same throughout.",
+        "Use the − / + buttons (or drag the stone) to set the missing value.",
+        "Press Check to see whether the ratio is consistent across the whole sequence."
+      ],
+      "skills": "Recognising and applying a constant multiplicative ratio is the foundation of geometric sequences, exponential growth patterns, and percentage calculations. Geometric Sequence builds this fluency before students meet the formal algebra of exponents in grades 4–6.",
+      "example": "A sequence shows 2, 6, 18, ?, 162. Each term is multiplied by 3, so the missing value is 54. The key insight is that dividing any two consecutive terms (18 ÷ 6 = 3) reveals the rule — this game trains that division-as-ratio move.",
+      "mistakes": "Students often try to add a constant difference rather than finding the multiplier, because additive thinking is easier. Geometric Sequence makes the multiplier the only thing that works, forcing students to switch from additive to multiplicative reasoning.",
+      "faqs": [
+        {
+          "q": "Why does the game use division to find the rule rather than just reading a ×2 or ×3 label?",
+          "a": "Deriving the ratio by dividing consecutive terms — rather than being told it — trains the algebraic habit of extracting a rule from data. That reasoning transfers directly to tables, graphs, and later exponential work."
+        },
+        {
+          "q": "Which grades is Geometric Sequence for?",
+          "a": "It targets grades 4–6, where students are fluent in multiplication and ready to see that the same operation applied repeatedly creates exponential growth."
+        },
+        {
+          "q": "How is Geometric Sequence different from Number Sequence?",
+          "a": "Geometric Sequence uses only multiplicative rules (constant ratio); Number Sequence includes additive patterns too. Geometric Sequence is the harder, more focused version of the same idea."
+        }
+      ]
+    }
   },
   "fractionStrip": {
     "title": "Fraction Strips",
@@ -351,7 +1116,33 @@
     "instructions": "The top strip is given. Build the bottom one: set the number of saw-cuts with denominator −/+ and the colored pieces with numerator −/+ (or drag: right = more colored pieces, up = more cuts), so it is the same SIZE as the top strip but with a different number of pieces. The balance levels when the two fractions are equal. Then press Check",
     "prompt": "Build a fraction equal to {num}/{den}",
     "correct": "Great! {rnum}/{rden} equals {num}/{den}",
-    "wrong": "Almost! Build a strip the same size but with a different denominator — the balance will level"
+    "wrong": "Almost! Build a strip the same size but with a different denominator — the balance will level",
+    "seo": {
+      "intro": "Fraction Strips puts two wooden strips side by side and a balance between them. The top strip shows the target fraction; your job is to build a bottom strip that is the exact same length but uses a completely different denominator — the concrete definition of equivalent fractions.",
+      "howToPlay": [
+        "Read the fraction shown on the top strip.",
+        "Use the denominator -/+ buttons to set how many equal sections to cut the bottom strip into.",
+        "Use the numerator -/+ buttons (or drag right/left) to shade the right number of sections.",
+        "The balance levels when the two strips are the same size — then press Check."
+      ],
+      "skills": "Equivalent fractions are the gateway to adding unlike denominators and simplifying fractions. Fraction Strips makes equivalence physical: you feel the balance tip and level as you adjust, so the concept is not abstract arithmetic but a visible, physical equality.",
+      "example": "The top strip shows 1/2. You can balance it with 2/4, or 3/6, or 4/8 — every combination that levels the scale is an equivalent fraction. Seeing several solutions on one screen turns a memorized rule into a felt relationship.",
+      "mistakes": "Students sometimes reproduce the target fraction exactly (same numerator, same denominator) instead of building an equivalent with a different denominator. The game requires a different denominator, so that shortcut is blocked and real search begins.",
+      "faqs": [
+        {
+          "q": "How is Fraction Strips different from the other three fraction games?",
+          "a": "Fraction Strips is the only one focused on equivalent fractions — building a new fraction that equals the target with a different denominator. The other three games are about understanding a single fraction."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It suits grades 3-4, once students understand what a fraction represents and are ready to compare fractions and find equivalent forms."
+        },
+        {
+          "q": "How does the balance help learning?",
+          "a": "The balance gives immediate visual feedback: it tips when the strips are unequal and levels when they match. Students can experiment freely without guessing — the balance shows the truth."
+        }
+      ]
+    }
   },
   "angleBuilder": {
     "title": "Angle Builder",
@@ -359,7 +1150,33 @@
     "instructions": "Rotate the movable laser with the −/+ buttons (15° each) or by dragging it, until the glowing arc shows the target angle, then press Check.",
     "prompt": "Build a {angle}° angle",
     "correct": "Nice! You built a {angle}° angle.",
-    "wrong": "Not yet. Rotate the beam to the target angle and try again."
+    "wrong": "Not yet. Rotate the beam to the target angle and try again.",
+    "seo": {
+      "intro": "Angle Builder puts a protractor into a space-station setting: students rotate a laser beam until the glowing arc matches a target number of degrees. The degree reading updates live, so the abstract symbol '90°' becomes a corner you can see and feel.",
+      "howToPlay": [
+        "Read the target angle shown above the protractor.",
+        "Drag the movable laser beam, or use the −/+ buttons (15° each step), to rotate it toward the target.",
+        "Watch the glowing arc and the live degree counter as the angle opens or closes.",
+        "Press Check when the arc matches the target."
+      ],
+      "skills": "Building angles by degree measure prepares students to classify angles as acute, right, obtuse, or reflex, and to use a real protractor accurately — the core grade 4-5 geometry skill before students encounter triangles and polygon angle sums.",
+      "example": "For a 120° target the beam rotates past the right-angle mark (90°) and continues one-third of the way to a straight angle (180°). Seeing it cross 90° naturally introduces the word 'obtuse' without needing a definition first.",
+      "mistakes": "Students often confuse which arc reading to use when a protractor has two scales. The game shows only one live counter, removing that confusion and letting students focus on the relationship between rotation and degree measure.",
+      "faqs": [
+        {
+          "q": "What angle increments does Angle Builder use?",
+          "a": "Each button press moves the beam 15°, so students practise multiples of 15: 30°, 45°, 60°, 90°, 120°, 135°, 150°, and 180° — the most common angles in the curriculum."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It fits grades 4-5, when students first measure angles with a protractor and classify them by type."
+        },
+        {
+          "q": "How is this different from the Geoboard game, which also involves shape and measurement?",
+          "a": "Angle Builder focuses on a single angle's degree measure. Geoboard creates whole shapes and measures their area in square units — different geometric properties, different tools."
+        }
+      ]
+    }
   },
   "divisionShare": {
     "title": "Fair Share",
@@ -367,7 +1184,24 @@
     "instructions": "Use the − / + buttons to put the same number of coins in every chest (or drag up). Share as many as you can equally; leftovers go in the pouch. Then press Check",
     "prompt": "Share {total} coins equally among {k} chests",
     "correct": "Well done! {perChest} in each chest, with {remainder} left in the pouch",
-    "wrong": "You can share more equally — try again"
+    "wrong": "You can share more equally — try again",
+    "seo": {
+      "intro": "Fair Share (Division Share) models division as equal sharing using coins and treasure chests. Students distribute a pile of coins evenly among a set of chests, placing as many as possible in each, with any that cannot be shared equally dropping into a remainder pouch. The mechanic makes both the quotient and the remainder physically unmistakable.",
+      "howToPlay": [
+        "Read how many coins to share and how many chests to fill.",
+        "Use −/+ buttons (or drag upward) to place the same number of coins in every chest.",
+        "Share as many coins as you can equally; anything left over belongs in the remainder pouch.",
+        "Press Check when every chest holds an equal share and the pouch has the leftover coins."
+      ],
+      "skills": "Division Share builds the partitive division model (sharing into equal groups) and gives remainders a concrete meaning. Students stop treating the remainder as a mistake and start seeing it as simply what is left after fair sharing — a key step before they encounter division with remainders in written form.",
+      "example": "Share 17 coins among 5 chests: 5 × 3 = 15, so 3 coins go in each chest and 2 are left in the pouch. The screen shows 5 full chests and a pouch with 2 coins, making 17 ÷ 5 = 3 remainder 2 undeniable.",
+      "mistakes": "Students frequently try to give every coin away and leave the pouch empty, splitting coins to get an exact share. The game only accepts whole numbers per chest, guiding them toward the concept of remainder as the honest leftover.",
+      "faqs": [
+        { "q": "Which grades is Fair Share designed for?", "a": "Grades 3–4, where students learn division as equal sharing and encounter remainders for the first time in the curriculum." },
+        { "q": "How is this different from Division Towers (Long Division)?", "a": "Fair Share uses physical coin-sharing to build the concept of division and remainders. Division Towers (Long Division) applies that understanding step by step in the formal long-division algorithm, moving from concrete to procedural." },
+        { "q": "Can students choose how many coins go in the pouch?", "a": "The pouch fills automatically with whatever is left after the chests are filled. Students only control how many coins to put in each chest, keeping the focus on finding the largest equal share." }
+      ]
+    }
   },
   "barGraph": {
     "title": "Bar Graph Builder",
@@ -375,7 +1209,33 @@
     "instructions": "Read the height of each bar off the scale on the side, then use the − / + buttons (or drag up) to enter how many more the first category has than the second, and press Check",
     "prompt": "How many more {a} than {b}?",
     "correct": "Correct! The difference is {diff}",
-    "wrong": "Almost! Read each bar's height again and try again"
+    "wrong": "Almost! Read each bar's height again and try again",
+    "seo": {
+      "intro": "Bar Graph Builder teaches students to read quantitative data from a scale and find the difference between two categories. Each round shows a bar chart with labelled bars; students read the height of each bar off the side scale and calculate how many more one category has than the other — a foundational data-literacy skill used in science, social studies, and everyday life. Grades 2–5.",
+      "howToPlay": [
+        "Look at the two bars highlighted in the question.",
+        "Read each bar's height by tracing it across to the numbered scale on the side.",
+        "Subtract the smaller height from the larger to find the difference.",
+        "Use the −/+ buttons (or drag up) to enter the difference, then press Check."
+      ],
+      "skills": "Bar Graph Builder builds the ability to extract precise values from a scale and reason about differences in data, not just raw totals. Students who can read bar graphs accurately can interpret charts in science experiments, news articles, and standardised tests — a skill practised repeatedly from grade 2 through grade 5.",
+      "example": "A bar chart shows 'Dogs' reaching 8 on the scale and 'Cats' reaching 5. The question asks how many more dogs than cats. Students read 8 and 5 from the scale, subtract, and enter 3.",
+      "mistakes": "Students often read bars by eye rather than aligning them with the scale, producing off-by-one errors. The game reinforces returning to the numbered axis for every bar, not estimating height from visual impression alone.",
+      "faqs": [
+        {
+          "q": "How does reading bar heights off a scale differ from just looking at which bar is tallest?",
+          "a": "Visual tallness shows which category is greater but not by how much. Reading the scale gives an exact value, which is needed to calculate differences precisely — the core data skill the game practises."
+        },
+        {
+          "q": "Which grades is Bar Graph Builder for?",
+          "a": "Grades 2–5, matching the curriculum progression from reading simple bar graphs in early primary to interpreting scaled graphs and calculating differences in upper primary."
+        },
+        {
+          "q": "How is this different from Venn Diagram Sort, which also uses data representation?",
+          "a": "Bar Graph Builder works with quantitative data on a numerical scale — students read and compare measured values. Venn Diagram Sort works with categorical logic — students classify items by which properties they share, with no measurement scale involved."
+        }
+      ]
+    }
   },
   "vennSort": {
     "title": "Venn Diagram Sort",
@@ -383,7 +1243,33 @@
     "instructions": "Read the number and two properties, then tap the correct region: left only, right only, both, or neither",
     "prompt": "Classify {value}: ÷{a} and ÷{b}",
     "correct": "Correct! {value} is classified right",
-    "wrong": "Almost! Check if the number is divisible by each property separately"
+    "wrong": "Almost! Check if the number is divisible by each property separately",
+    "seo": {
+      "intro": "Venn Diagram Sort presents a two-circle Venn diagram with a divisibility rule in each circle. Students are given a number and must decide whether it belongs in the left circle only, the right circle only, the overlapping centre (both), or completely outside (neither). Each choice demands evaluating two independent conditions simultaneously — the core skill in set theory and logical classification. Grades 4–6.",
+      "howToPlay": [
+        "Read the two divisibility rules shown in the left and right circles.",
+        "Check whether the given number is divisible by the left rule (divide and check the remainder).",
+        "Check whether it is divisible by the right rule.",
+        "Tap the correct region: left only, right only, both (overlap), or neither (outside)."
+      ],
+      "skills": "Venn Diagram Sort builds propositional logic applied to number theory: evaluating AND, OR, and NOT conditions simultaneously. Students learn to test each condition independently before combining them, the exact reasoning pattern behind set operations, database queries, and programming conditionals — introduced here through divisibility.",
+      "example": "The circles show ÷3 and ÷4. The number 12 divides evenly by both (12÷3=4, 12÷4=3), so it belongs in the overlap. The number 9 divides by 3 but not 4, so it belongs in the left circle only.",
+      "mistakes": "Students often place a number in the overlap if it seems related to both divisors without actually testing each division. The game requires committing to a region by tapping, which forces the habit of checking both conditions separately before deciding.",
+      "faqs": [
+        {
+          "q": "Why does this game test two divisibility conditions at once instead of one at a time?",
+          "a": "Testing one condition builds arithmetic fluency. Testing two simultaneously builds logical classification: students must hold the result of the first test in mind while evaluating the second, then combine them — exactly the AND/OR reasoning used in set theory and later in algebra."
+        },
+        {
+          "q": "Which grades is Venn Diagram Sort for?",
+          "a": "Grades 4–6, where students extend their knowledge of factors and multiples into set classification and encounter Venn diagrams as a formal tool for organising information."
+        },
+        {
+          "q": "How is this different from Bar Graph Builder, which also involves data representation?",
+          "a": "Bar Graph Builder works with quantitative measurement — reading numerical values off a scale and comparing magnitudes. Venn Diagram Sort works with logical classification — deciding which set or intersection a number belongs to, with no measurement involved."
+        }
+      ]
+    }
   },
   "subitize": {
     "title": "Dot Flash",
@@ -391,7 +1277,33 @@
     "instructions": "Watch the dots flash on the table, then they vanish under a cloth. Use the − / + buttons to enter how many dots you saw (press \"Show again\" to see them once more), then press Check",
     "prompt": "How many dots did you see?",
     "correct": "Great! You saw {count} dots",
-    "wrong": "Almost! Take another look and try counting the dots"
+    "wrong": "Almost! Take another look and try counting the dots",
+    "seo": {
+      "intro": "Dot Flash (Subitize) trains the brain's fastest number sense: recognising how many dots appear at a glance without counting. A brief flash of dots on the magician's table vanishes under a cloth; students enter how many they saw. Practising subitising builds the perceptual foundation that makes all later arithmetic feel intuitive.",
+      "howToPlay": [
+        "Watch the dots flash briefly on the magician's table.",
+        "Remember the pattern as the cloth covers them.",
+        "Use −/+ buttons to enter the number of dots you saw.",
+        "Press Check, or Show Again if you need a second look before answering."
+      ],
+      "skills": "Subitising — instant quantity recognition — is the earliest number skill and directly predicts arithmetic fluency. Students who can see 4 as a group without counting move faster to number bonds, addition facts, and eventually mental calculation because small quantities are already automatic.",
+      "example": "Five dots arranged like a die face appear for half a second. A student who subitises recognises the familiar pattern instantly. A student who counts takes longer and may lose the image before finishing — the game trains the perceptual shortcut.",
+      "mistakes": "Students who do not yet subitise will try to count one dot at a time during the flash, often losing track. The game's brief exposure time prevents counting and encourages pattern recognition, gently training the student to see groups rather than individuals.",
+      "faqs": [
+        {
+          "q": "What is subitising and why does this game practise it instead of counting?",
+          "a": "Subitising is recognising a small quantity instantly without counting, the way adults read dice. It develops before formal arithmetic and makes number bonds and addition facts effortless; practising it in isolation accelerates overall numeracy."
+        },
+        {
+          "q": "Which grades is Dot Flash for?",
+          "a": "Grades 1–2, building the perceptual number sense that supports early arithmetic before students move to larger numbers."
+        },
+        {
+          "q": "How many dots can appear in one flash?",
+          "a": "Up to around 8–9 dots, the upper limit of reliable subitising. Larger quantities require grouped arrangements (e.g. two dice faces) that still allow instant recognition."
+        }
+      ]
+    }
   },
   "arrayMultiply": {
     "title": "Multiplication Array",
@@ -399,7 +1311,24 @@
     "instructions": "Count how many fruits are in the array (rows × columns). Use the − / + buttons or drag up to enter the total, press 'Slice' to see it row by row, then press Check",
     "prompt": "How many in total?",
     "correct": "{rows} × {cols} = {product}!",
-    "wrong": "Count again — rows × columns"
+    "wrong": "Count again — rows × columns",
+    "seo": {
+      "intro": "Multiplication Array builds the most important mental model for multiplication: a rectangular grid. Students count a field of fruits arranged in rows and columns, then press Slice to see the array cut row by row — the exact moment a grid turns into repeated addition, and repeated addition turns into one multiplication fact.",
+      "howToPlay": [
+        "Look at the fruit array and count the rows and columns displayed.",
+        "Use −/+ buttons or drag upward to enter your total.",
+        "Press Slice to watch the array cut apart row by row, showing each row's contribution.",
+        "Confirm that rows × columns equals your total, then press Check."
+      ],
+      "skills": "Multiplication Array establishes the commutative property and the area model simultaneously. Seeing that a 3×4 array and a 4×3 array hold the same 12 fruits makes commutativity self-evident, and the rectangular structure prepares students directly for area calculations in geometry.",
+      "example": "A 5-row, 6-column orange grove holds 30 oranges. Pressing Slice shows five groups of 6 peeling away one at a time: 6, 12, 18, 24, 30. Students see multiplication as efficient counting rather than a memorised fact.",
+      "mistakes": "Students sometimes count individual fruits rather than reading rows × columns, and may miss that the same total appears whether they count rows first or columns first. The Slice animation makes the grouping strategy concrete and rewards the correct approach.",
+      "faqs": [
+        { "q": "Which grades is Multiplication Array designed for?", "a": "Grades 2–3, where students first encounter multiplication as repeated addition and need the array model before moving to memorised times tables." },
+        { "q": "How is this different from Factris?", "a": "Multiplication Array presents a fixed grid and asks students to find the total. Factris gives the total and asks students to find which widths form a valid rectangle — it inverts the array model to build factor intuition." },
+        { "q": "Does the game teach the commutative property explicitly?", "a": "Not through labelling, but implicitly: the same array can be counted as rows × columns or columns × rows, and the Slice animation can highlight either direction, sparking natural discussion." }
+      ]
+    }
   },
   "fractionSlice": {
     "title": "Fraction Slicer",
@@ -407,7 +1336,33 @@
     "instructions": "Use the denominator −/+ buttons to set how many equal parts to slice the pizza into, and the numerator −/+ buttons (or drag up/down) to shade that many parts, then press Check",
     "prompt": "Shade {n} out of {d} parts",
     "correct": "Great! You shaded {n} out of {d}",
-    "wrong": "Almost! Slice and shade the right number of parts and fix it"
+    "wrong": "Almost! Slice and shade the right number of parts and fix it",
+    "seo": {
+      "intro": "Fraction Slicer gives students full control: they choose how many equal slices to cut the pizza into, then decide how many to shade. The fraction is not handed to them — it is assembled from scratch, denominator first.",
+      "howToPlay": [
+        "Read the target fraction shown on screen.",
+        "Use the denominator -/+ buttons to cut the pizza into the correct number of equal slices.",
+        "Use the numerator -/+ buttons (or drag up/down) to shade the right number of slices.",
+        "Press Check to confirm that the fraction you built matches the target."
+      ],
+      "skills": "Separating the cutting step (denominator) from the shading step (numerator) reinforces the logical order: first divide the whole into equal parts, then decide how many parts to take. This order is essential before students can work with equivalent fractions or compare unlike denominators.",
+      "example": "For 3/5 you cut into 5 slices first, then shade 3. Changing the denominator to 4 resizes every slice and requires reshading — showing hands-on why the numerator and denominator are linked.",
+      "mistakes": "Students tend to shade by visual size rather than by counting. Forcing them to set the denominator before touching the numerator breaks that habit and builds the discipline of working part-by-part.",
+      "faqs": [
+        {
+          "q": "How is Fraction Slicer different from Fraction Builder?",
+          "a": "In Fraction Slicer the student sets both the number of slices (denominator) and how many to shade (numerator); in Fraction Builder the denominator is fixed and only shading is needed. Slicer introduces the full construction process."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It fits grades 3-4, ideally after students have met the concept of a fraction and are ready to build one from scratch."
+        },
+        {
+          "q": "Can the same target be built with different numbers of slices?",
+          "a": "Yes — for example 2/4 and 1/2 shade the same visual area. That natural discovery opens a discussion about equivalent fractions without any additional instruction."
+        }
+      ]
+    }
   },
   "patternComplete": {
     "title": "Pattern Builder",
@@ -415,7 +1370,33 @@
     "instructions": "Look at how the towers grow and work out the rule. Use the − / + buttons (or drag up) to build the missing tower to the right height, then press Check",
     "prompt": "How many cubes in the missing tower?",
     "correct": "Correct! The missing tower has {value} cubes",
-    "wrong": "Almost! Work out the rule and build again"
+    "wrong": "Almost! Work out the rule and build again",
+    "seo": {
+      "intro": "Pattern Builder shows a row of cube towers that grow or shrink by a fixed rule and asks students to build the missing tower. Finding and applying that rule is the first step toward all sequence work, making this the entry point for pattern thinking in grades 2–4.",
+      "howToPlay": [
+        "Study the heights of the towers from left to right and spot what changes each time.",
+        "Decide on the rule — does each tower add the same number of cubes, or does the height repeat in a cycle?",
+        "Use the − / + buttons (or drag upward) to build the missing tower to the correct height.",
+        "Press Check to see whether your tower fits the pattern."
+      ],
+      "skills": "Identifying a repeating or growing rule and extending it trains students to look for structure in data — the core habit behind arithmetic sequences, function tables, and algebraic thinking introduced from grade 2 onward.",
+      "example": "A row shows towers of 1, 3, 1, 3, 1, ? cubes. The pattern alternates between 1 and 3, so the missing tower is 3. Spotting the alternation before calculating is the key move this game teaches.",
+      "mistakes": "Students often add one extra cube beyond the last tower rather than re-reading the full row for its rule. Pattern Builder forces them to look at the whole sequence, not just the final term, before acting.",
+      "faqs": [
+        {
+          "q": "How does the cube-tower display make the pattern rule visible before any numbers appear?",
+          "a": "The towers are physical heights, so even students who cannot yet read numbers can see a 1-3-1-3 alternation as a visual rhythm. Numbers and rules emerge from the picture, not from prior knowledge."
+        },
+        {
+          "q": "Which grades is Pattern Builder for?",
+          "a": "It is designed for grades 2–4, where the curriculum introduces repeating and growing patterns as the first form of algebraic reasoning."
+        },
+        {
+          "q": "How is Pattern Builder different from Number Sequence?",
+          "a": "Pattern Builder focuses on repeating visual patterns (often alternating heights); Number Sequence focuses on finding an additive or multiplicative rule to extend a strictly numeric sequence — one step harder."
+        }
+      ]
+    }
   },
   "netFold": {
     "title": "Net Folder",
@@ -423,7 +1404,33 @@
     "instructions": "Press \"Fold\" to fold the flat net into a 3D shape (it rotates so you can see every side). Count how many faces the solid has, enter the number with − / + or by dragging up, then press Check",
     "prompt": "How many faces does the solid have?",
     "correct": "Great! The solid has {count} faces",
-    "wrong": "Almost! Fold and rotate the solid, then count its faces again"
+    "wrong": "Almost! Fold and rotate the solid, then count its faces again",
+    "seo": {
+      "intro": "Net Folder shows a flat arrangement of polygons — a net — that animates and folds into a 3D solid on screen. Students rotate the result to inspect every face and count them, building the mental link between a flat drawing and the solid it becomes.",
+      "howToPlay": [
+        "Examine the flat net: count and name the polygon faces before folding.",
+        "Press Fold to watch the net close into a 3D solid.",
+        "Rotate the solid using the on-screen controls to see every face, including hidden ones.",
+        "Enter the total face count with the −/+ buttons and press Check."
+      ],
+      "skills": "Visualising how a 2D net folds into a 3D solid develops spatial reasoning and builds the vocabulary of faces, edges, and vertices. This skill underpins later work on surface area and the classification of prisms, pyramids, and polyhedra in grades 3-5.",
+      "example": "A cross-shaped net of six squares folds into a cube with 6 faces. A T-shaped net of five squares plus a triangle does not close into any standard solid — the game only presents valid nets, so students can focus on counting after folding rather than on net validity.",
+      "mistakes": "Students often miscount faces by counting the same face twice as they rotate, or by missing the base that folds underneath. Systematic rotation — top, front, sides, bottom — and keeping a tally solves both issues.",
+      "faqs": [
+        {
+          "q": "Which 3D solids appear in the game?",
+          "a": "Common curriculum solids: cubes, rectangular prisms, triangular prisms, square pyramids, and triangular pyramids — each with a different net and face count."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It suits grades 3-5, when students study 3D shapes, their properties, and the relationship between nets and solids."
+        },
+        {
+          "q": "How is this different from Shape Sorter, which also involves 3D solids?",
+          "a": "Net Folder is about the connection between a flat net and the 3D shape it becomes. Shape Sorter classifies finished solids by whether they roll. Different properties, different reasoning."
+        }
+      ]
+    }
   },
   "symmetryMirror": {
     "title": "Mirror Image",
@@ -431,7 +1438,33 @@
     "instructions": "The left side is given. Tap or drag on the cells on the right side to fill the cells that mirror it across the line, then press Check. Tap a filled cell again to clear it.",
     "prompt": "Complete the mirror image",
     "correct": "Great! The mirror image is complete.",
-    "wrong": "Not a perfect mirror yet. Check which cells are missing or extra."
+    "wrong": "Not a perfect mirror yet. Check which cells are missing or extra.",
+    "seo": {
+      "intro": "Mirror Image shows one half of a butterfly wing on a grid and asks students to fill in the matching cells on the other side of the mirror line. Completing the reflection turns an abstract symmetry rule — 'each point is the same distance from the line on the other side' — into a cell-by-cell decision.",
+      "howToPlay": [
+        "Look at the filled cells on the left side of the mirror line.",
+        "For each filled cell, find its mirror position on the right: same row, same distance from the line.",
+        "Tap the matching cell on the right to fill it; tap again to clear a mistake.",
+        "Press Check when every mirror cell is filled and no extra cells are shaded."
+      ],
+      "skills": "Identifying and completing lines of symmetry supports spatial reasoning, shape classification, and art-integrated mathematics. In grades 2-4 it is the gateway concept before students extend to rotational symmetry and coordinate reflections in higher grades.",
+      "example": "If a cell sits 2 squares to the left of the mirror line in row 3, its mirror is 2 squares to the right in the same row 3. Working row by row and counting equal distances from the line removes guesswork and builds the habit of measuring symmetry rather than guessing it.",
+      "mistakes": "Students often reflect diagonally rather than horizontally across a vertical line, placing the mirror cell in the wrong row. Counting the row number first, then counting equal distance from the line, corrects this systematically.",
+      "faqs": [
+        {
+          "q": "Is the mirror line always vertical?",
+          "a": "The butterfly wing context uses a vertical mirror line, which is the most common starting point at grades 2-3. Diagonal and horizontal lines may appear at higher difficulty levels."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It fits grades 2-4, from first recognition of symmetry in shapes through accurate cell-by-cell reflection on a grid."
+        },
+        {
+          "q": "How is this different from Tangram, which also involves spatial arrangement of shapes?",
+          "a": "Mirror Image focuses on the rule of reflection: equal distance from a line on each side. Tangram is about fitting pieces into an outline without any reflection rule — pure spatial fitting."
+        }
+      ]
+    }
   },
   "hundredChart": {
     "title": "Multiples Chart",
@@ -439,7 +1472,24 @@
     "instructions": "Tap a tile to colour or clear it, or drag across the tiles to colour several in a row. When you're done, press Check. Reset clears the chart.",
     "prompt": "Colour all the multiples of {n}",
     "correct": "Well done! You coloured every multiple of {n}.",
-    "wrong": "Not yet. Check which tiles are missing or extra and try again."
+    "wrong": "Not yet. Check which tiles are missing or extra and try again.",
+    "seo": {
+      "intro": "Hundred Chart (Multiples Chart) puts a grid of 1 to 30 in front of students and asks them to colour every multiple of a given number. The coloured tiles reveal skip-counting patterns — diagonal stripes, evenly spaced gaps, and visual rhythms that turn abstract multiples into something students can see and remember.",
+      "howToPlay": [
+        "Read the number whose multiples you need to colour.",
+        "Tap individual tiles to colour them, or drag across multiple tiles at once.",
+        "Colour every multiple of that number up to 30 — use skip-counting or your times tables to guide you.",
+        "Press Check when all multiples are coloured and no extra tiles are highlighted."
+      ],
+      "skills": "Hundred Chart builds fluency with skip counting, multiples, and early times-table patterns. Visually spotting the evenly spaced intervals of 2s, 5s, or 7s reinforces the pattern structure of multiplication and lays the groundwork for understanding common multiples and divisibility rules.",
+      "example": "Colouring multiples of 3 up to 30: tiles 3, 6, 9, 12, 15, 18, 21, 24, 27, 30 light up. Students notice every third tile is coloured — the rhythm of 3 becomes visual. Switching to 6 shows every other tile from the 3s is coloured, making 3 and 6 share multiples visible.",
+      "mistakes": "Students often confuse multiples with factors and colour numbers that divide evenly into the target rather than numbers the target divides into. The prompt reminds them to colour numbers you reach by skip-counting, not the divisors of the given number.",
+      "faqs": [
+        { "q": "Which grades is Hundred Chart designed for?", "a": "Grades 2–4, covering skip counting, early multiplication patterns, and multiples — a building block for times-table fluency." },
+        { "q": "Does the chart always go from 1 to 30?", "a": "Yes. The 30-number range is large enough to show two or more full skip-count cycles for every number from 2 to 10, revealing the repeating pattern clearly." },
+        { "q": "Is zero a multiple of every number?", "a": "Mathematically yes, but the chart starts at 1 so students are not prompted to colour zero. The focus is on the positive-integer pattern students see in the grid." }
+      ]
+    }
   },
   "geoboard": {
     "title": "Geoboard",
@@ -447,7 +1497,33 @@
     "instructions": "Tap pegs to place the corners of your shape — the band connects them and closes the loop. Tap the last corner again to undo it. Build any shape whose area matches the target, then press Check.",
     "prompt": "Make a shape with area {area} square units",
     "correct": "Great! You made a shape with area {area}.",
-    "wrong": "Your shape has area {area}, but the target is {target}. Try another shape."
+    "wrong": "Your shape has area {area}, but the target is {target}. Try another shape.",
+    "seo": {
+      "intro": "Geoboard lets students stretch a virtual rubber band over a peg grid to build any shape they like, as long as its area hits the target number of square units. There is no single correct shape — only shapes with the right area — so the game rewards spatial exploration over formula recall.",
+      "howToPlay": [
+        "Read the target area shown above the board.",
+        "Tap pegs to place the corners of your polygon; the band stretches between them and closes into a shape.",
+        "Watch the live area counter as the shape grows; adjust corners by tapping a peg again to undo.",
+        "Press Check when the enclosed area equals the target."
+      ],
+      "skills": "Counting square units inside irregular polygons on a grid develops area intuition that later supports the formula approach. Students discover that many different shapes can share the same area — a spatial insight that the rectangle-formula alone cannot give.",
+      "example": "For area 6 a student might build a 2×3 rectangle, an L-shape, or a triangle with base 4 and height 3. Each works, and comparing them on screen shows that area is a property of the enclosed region, not the shape's outline.",
+      "mistakes": "Students frequently trace the perimeter of the grid squares (counting edges) instead of the enclosed squares (counting area). The game counts enclosed square units precisely, so border-tracing strategies show the wrong answer and prompt recounting.",
+      "faqs": [
+        {
+          "q": "Does the shape have to be a rectangle?",
+          "a": "No. Any closed polygon whose corners sit on pegs is valid, including triangles, L-shapes, and irregular quadrilaterals — as long as the enclosed area matches the target."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It fits grades 3-5, from first encounters with area as square-unit counting through more complex polygon shapes."
+        },
+        {
+          "q": "How is this different from Volume Builder, which also counts unit cells?",
+          "a": "Geoboard works in two dimensions — area in square units on a flat grid. Volume Builder works in three dimensions, counting cubic units to fill a box. Same counting logic, different geometric dimension."
+        }
+      ]
+    }
   },
   "shapeSort": {
     "title": "Solid Sorter",
@@ -457,7 +1533,33 @@
     "correct": "Well done! You sorted every solid correctly.",
     "wrong": "Not yet. Check which solids roll and which don't, then try again.",
     "binRoll": "Rolls",
-    "binFlat": "Doesn't roll"
+    "binFlat": "Doesn't roll",
+    "seo": {
+      "intro": "Solid Sorter presents a set of 3D shapes and asks one focused question: does this solid roll or stay flat? Sorting by the presence of a curved surface turns an abstract property into a physical decision students can reason about with confidence from grade 2.",
+      "howToPlay": [
+        "Look at each 3D solid and decide whether it has any curved surface.",
+        "Tap the solid to pick it up, then tap the correct bin: 'Rolls' for curved surfaces, 'Doesn't roll' for all-flat faces.",
+        "You can move a solid to a different bin before pressing Check.",
+        "Press Check when all solids are sorted."
+      ],
+      "skills": "Classifying solids by surface type builds the foundational 3D shape vocabulary — flat face, curved surface, edge, vertex — that students extend in grades 3-4 to counting faces and distinguishing prisms from pyramids and cylinders from cones.",
+      "example": "A cylinder has two flat faces (the circular ends) and one curved surface (the side), so it rolls. A cube has six flat faces and no curved surface, so it stays put. The cylinder is the most common source of surprise, as students sometimes expect it to behave like a prism.",
+      "mistakes": "Students often try to sort by shape name ('ball', 'box') without examining the surfaces. The game forces surface inspection: only looking at whether any face curves predicts the roll outcome reliably.",
+      "faqs": [
+        {
+          "q": "Which solids appear in the game?",
+          "a": "Common primary-school solids: sphere, cylinder, cone, cube, rectangular prism, triangular prism, and pyramid — covering both curved and flat-only groups."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It fits grades 2-4, from first 3D shape recognition through the formal classification of solids by their properties."
+        },
+        {
+          "q": "How is this different from Net Folder, which also uses 3D solids?",
+          "a": "Solid Sorter classifies finished shapes by a surface property (rolling). Net Folder is about how a flat net folds into a solid. Each game targets a distinct spatial concept."
+        }
+      ]
+    }
   },
   "coordinatePlot": {
     "title": "Plot the Point",
@@ -465,7 +1567,33 @@
     "instructions": "Move the pin with the X and Y buttons, or drag it across the paper, until it reaches the asked coordinates, then press Check.",
     "prompt": "Plot the point at ({x}, {y})",
     "correct": "Nice! The point is at ({x}, {y}).",
-    "wrong": "Not yet. Check the X and Y values and try again."
+    "wrong": "Not yet. Check the X and Y values and try again.",
+    "seo": {
+      "intro": "Plot the Point places a pin on a coordinate grid and asks students to move it to a specific (x, y) pair. Reading and placing ordered pairs becomes a physical act of moving right along the x-axis, then up along the y-axis — the exact two-step procedure they need to remember.",
+      "howToPlay": [
+        "Read the target coordinates shown as (x, y) above the grid.",
+        "Drag the pin or use the X and Y buttons to move it: X controls the horizontal position, Y the vertical.",
+        "Count the grid squares from the origin (0, 0) to confirm the position.",
+        "Press Check when the pin is at the target point."
+      ],
+      "skills": "Plotting ordered pairs is the entry skill for graphing in grades 4-6: maps, data plots, function tables, and geometric transformations all rely on the ability to read (x, y) notation fluently and locate a point without reversing the axes.",
+      "example": "For the point (3, 5) the pin moves 3 squares right and then 5 squares up. If a student accidentally moves 5 right and 3 up, the live grid shows the pin in the wrong place — a clear prompt to re-read the order of the pair.",
+      "mistakes": "The most common error is swapping x and y: moving up first, then right. The game labels the axes and updates the coordinate display as the pin moves, making axis-reversal immediately visible before the student presses Check.",
+      "faqs": [
+        {
+          "q": "Does the grid include negative coordinates?",
+          "a": "The game can present points in any quadrant depending on the difficulty level, so students may encounter negative x or y values as they progress."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It fits grades 4-6, when students are introduced to the coordinate plane and need repeated practice locating points before moving to graphing lines or shapes."
+        },
+        {
+          "q": "How is this different from the Number Line Jump game, which also uses a linear axis?",
+          "a": "Number Line Jump moves along one axis only (a single number line). Plot the Point requires navigating two perpendicular axes simultaneously — a more complex spatial skill."
+        }
+      ]
+    }
   },
   "wordProblemBar": {
     "title": "Bar Model",
@@ -486,7 +1614,33 @@
     "item2": "pencils",
     "item3": "flowers",
     "item4": "stickers",
-    "item5": "cookies"
+    "item5": "cookies",
+    "seo": {
+      "intro": "Bar Model turns a word problem into a visual tape diagram. Students read a problem about combining or removing a quantity, then drag a bar to the length that represents the answer. The diagram makes the part-whole relationship visible before any arithmetic is written — bridging reading comprehension and calculation in one action. Grades 2–4.",
+      "howToPlay": [
+        "Read the word problem and identify the known quantities and the unknown.",
+        "Decide whether you are combining (addition) or finding what remains (subtraction).",
+        "Drag the bar rightward or use −/+ to set its length to match the answer.",
+        "Press Check to confirm your bar model matches the problem's answer."
+      ],
+      "skills": "Bar modelling is a structured visual strategy that converts language in a word problem into a diagram showing parts and wholes. Students who build bar models before calculating are less likely to choose the wrong operation, because the diagram makes the relationship explicit — a core strategy in problem-solving from grade 2 through upper primary.",
+      "example": "Dana had 7 apples and got 5 more. Students drag the bar to length 12, representing the total. The bar diagram shows the two parts (7 and 5) combining into one whole — addition made visual.",
+      "mistakes": "Students often jump to arithmetic before understanding the problem's structure, sometimes subtracting when they should add. Drawing the bar first forces them to decide on the relationship between quantities before calculating, catching operation-choice errors early.",
+      "faqs": [
+        {
+          "q": "How does building a bar model help students who struggle with choosing the right operation in word problems?",
+          "a": "The bar diagram externalises the part-whole relationship: one long bar for the total, shorter segments for the parts. Students see whether the total or a part is missing before picking an operation, removing the guesswork that causes most word-problem errors."
+        },
+        {
+          "q": "Which grades is Bar Model for?",
+          "a": "Grades 2–4, where word problems introduce addition and subtraction in context and students need a visual bridge between reading the problem and writing the calculation."
+        },
+        {
+          "q": "How is this different from Two-Step Problem, which also practises word problems?",
+          "a": "Bar Model uses one operation per problem and centres on building the visual diagram — the focus is on representing the structure. Two-Step Problem requires two sequential operations with no diagram scaffold, testing procedural planning and calculation across a more complex chain."
+        }
+      ]
+    }
   },
   "wordProblemSteps": {
     "title": "Two-Step Problem",
@@ -494,7 +1648,33 @@
     "instructions": "Read the problem on the blueprint, set your answer with the − / + buttons, then press Check",
     "prompt": "Solve the two-step problem",
     "correct": "Correct! The answer is {result}",
-    "wrong": "Almost! Calculate each step separately then the final result"
+    "wrong": "Almost! Calculate each step separately then the final result",
+    "seo": {
+      "intro": "Two-Step Problem presents a word problem that cannot be solved with a single calculation. Students must identify two separate operations in the right order, carry out each step, and use the intermediate result to reach the final answer. The blueprint-style layout keeps the full problem visible while students work through it step by step. Grades 3–5.",
+      "howToPlay": [
+        "Read the full word problem on the blueprint carefully before calculating anything.",
+        "Identify the first operation and calculate the intermediate result.",
+        "Use that intermediate result in the second operation to reach the final answer.",
+        "Set the final answer with the −/+ buttons and press Check."
+      ],
+      "skills": "Solving multi-step word problems requires planning the order of operations, holding an intermediate result in working memory, and applying it in the next step. These are the same executive-function and algebraic-reasoning skills that underpin equation solving, ratio problems, and all applied maths from grade 3 onward.",
+      "example": "A problem states: Omar had 24 pencils, gave 8 to his class, then bought 3 more packs of 5. Step 1: 24 − 8 = 16. Step 2: 16 + (3 × 5) = 31. Students must recognise both steps and execute them in order.",
+      "mistakes": "Students commonly solve only the first operation and submit that as the final answer, or combine all numbers in a single step without regard for order. The game reveals the error immediately, prompting students to re-read the problem and identify what they missed.",
+      "faqs": [
+        {
+          "q": "How does this game build the skill of planning before calculating in multi-step problems?",
+          "a": "The blueprint layout keeps the entire problem on screen while students work, preventing the common habit of calculating as soon as a number appears. Students must read to the end before choosing their first operation, practising the planning step that single-step problems never require."
+        },
+        {
+          "q": "Which grades is Two-Step Problem for?",
+          "a": "Grades 3–5, where the curriculum introduces multi-step word problems and students learn to combine addition, subtraction, multiplication, and division within a single question."
+        },
+        {
+          "q": "How is this different from Bar Model, which also practises word problems?",
+          "a": "Bar Model covers one-operation problems and trains students to represent structure visually before calculating. Two-Step Problem skips the diagram scaffold and challenges students to plan a two-operation sequence independently — the next stage after the visual model is no longer needed."
+        }
+      ]
+    }
   },
   "estimationLand": {
     "title": "Estimation Land",
@@ -504,7 +1684,24 @@
     "correct": "Great! There were {n} items — your estimate is close",
     "wrong": "Not close enough, try again",
     "tooHigh": "Too high",
-    "tooLow": "Too low"
+    "tooLow": "Too low",
+    "seo": {
+      "intro": "Estimation Land trains the skill that calculators cannot replace: judging about how many without counting every item. A field of scattered objects appears on screen alongside a visible reference group of ten. Students use that anchor to gauge the total and dial in an estimate — learning that a close answer, not a perfect one, is the goal.",
+      "howToPlay": [
+        "Look at the field of objects and the reference group of 10 shown on the side.",
+        "Use the reference to ask yourself: how many groups of 10 do I see roughly?",
+        "Dial your estimate up or down with the −/+ buttons or by dragging.",
+        "Press Check — the game accepts any estimate within a tolerance of the true count."
+      ],
+      "skills": "Estimation Land builds number sense and proportional reasoning. Regular practice with benchmarking (using a reference group of 10) trains students to judge quantity quickly and confidently — a skill used in measurement, data reading, mental arithmetic, and everyday decision-making.",
+      "example": "A field contains 43 sunflowers. The reference group of 10 sits clearly to the side. Students spot roughly four groups of that size plus a few extra and enter 40 or 45 — both accepted as close. The exact count appears only after they submit.",
+      "mistakes": "Students often try to count every item individually rather than using the reference group as an anchor. The game rewards quick group-based estimates over slow exact counts, and the too-high/too-low feedback nudges students toward anchored reasoning.",
+      "faqs": [
+        { "q": "Which grades is Estimation Land aimed at?", "a": "Grades 3–5, where students develop number sense alongside formal arithmetic and need practice judging magnitude before rounding and approximation." },
+        { "q": "How close does an estimate need to be to count as correct?", "a": "The tolerance is set so that estimates within about 20% of the true value are accepted, reflecting realistic estimation accuracy rather than demanding near-perfect counting." },
+        { "q": "Does the game count every item or just use random totals?", "a": "Items are counted precisely in the background. The field layout changes each round so students cannot memorise answers — they must estimate fresh every time." }
+      ]
+    }
   },
   "factorTree": {
     "title": "Factor Tree",
@@ -512,7 +1709,33 @@
     "instructions": "The number sits at the top of the tree and splits into two branches. Use the −/+ buttons (or drag right to raise, left to lower) to set the left factor. The right branch shows the partner you get by dividing. When the factor divides the number evenly it turns green; otherwise a red question mark appears. Then press Check",
     "prompt": "Split {n} into a product of two factors",
     "correct": "Great! {a} × {b} = {n}",
-    "wrong": "Almost! Pick a factor that divides {n} evenly (greater than 1 and smaller than the number), then press Check"
+    "wrong": "Almost! Pick a factor that divides {n} evenly (greater than 1 and smaller than the number), then press Check",
+    "seo": {
+      "intro": "Factor Tree challenges students to split a composite number by choosing two factors whose product equals it, building branches downward until every end-leaf is a prime. The visual tree makes the abstract idea of prime factorisation a concrete hands-on process rather than a rote algorithm.",
+      "howToPlay": [
+        "Read the target number shown at the top of the tree.",
+        "Use −/+ or drag to set the left factor; the right factor updates automatically by division.",
+        "Check that the left factor divides the number evenly — it turns green when correct.",
+        "Press Check to confirm the factorisation of the current node."
+      ],
+      "skills": "Factor Tree builds understanding of divisibility, prime numbers, and the Fundamental Theorem of Arithmetic — that every whole number has exactly one prime factorisation. Students develop systematic factor-pair thinking rather than guessing, and connect multiplication to division as inverse operations.",
+      "example": "To factorise 24: choose 4 and 6. Then split 4 into 2×2 and 6 into 2×3. All leaves are prime (2, 2, 2, 3), confirming that 24=2³×3 regardless of which factor pair the student chose first.",
+      "mistakes": "Students often choose 1 as a factor, which is not allowed, or stop splitting when they reach a composite number. The tree highlights non-prime leaves in a different colour, prompting further splitting until every branch ends in a prime.",
+      "faqs": [
+        {
+          "q": "Why does the tree always produce the same prime factors no matter which pair I start with?",
+          "a": "This is the Fundamental Theorem of Arithmetic: every number has a unique prime factorisation. Starting with different factor pairs gives different tree shapes but identical prime leaves — a key discovery the game is designed to surface."
+        },
+        {
+          "q": "Which grades is Factor Tree for?",
+          "a": "Grades 3–5, where students first encounter divisibility rules, prime vs. composite numbers, and need to understand the multiplicative structure of whole numbers."
+        },
+        {
+          "q": "Can a prime number be entered at the top of the tree?",
+          "a": "Primes are not used as roots in this game because they cannot be split further. The game selects composite numbers, so every round has at least one valid factor pair to find."
+        }
+      ]
+    }
   },
   "longDivision": {
     "title": "Division Towers",
@@ -520,7 +1743,24 @@
     "instructions": "Use the − / + buttons to build the same number of blocks in every tower (or drag up). Build the towers as tall as they can go equally; leftovers stay in the pool. If you take more blocks than there are, the towers turn red. Then press Check",
     "prompt": "Share {n} blocks equally into {d} towers — how many in each?",
     "correct": "Well done! {perTower} in each tower, with {remainder} left in the pool",
-    "wrong": "The towers aren't as equal and tall as they can be yet — try again"
+    "wrong": "The towers aren't as equal and tall as they can be yet — try again",
+    "seo": {
+      "intro": "Division Towers (Long Division) turns the abstract steps of long division into a building challenge. A pool of blocks must be stacked equally into several towers. Students raise every tower to the same height, leaving any indivisible remainder blocks in the pool — making the quotient and remainder visible before the algorithm ever appears on paper.",
+      "howToPlay": [
+        "Read how many blocks are in the pool and how many towers to fill.",
+        "Use −/+ buttons or drag upward to grow every tower simultaneously to the same height.",
+        "Keep raising until the towers are as tall as they can go with no blocks left to equally distribute.",
+        "Leave any remainder blocks in the pool, then press Check."
+      ],
+      "skills": "Division Towers builds the quotitive division model (how many equal groups fit?) and gives long-division's sub-steps a concrete meaning: each floor of the tower corresponds to one cycle of divide-multiply-subtract in the formal algorithm. Students who build the towers first make far fewer errors when they meet written long division.",
+      "example": "Pool: 29 blocks, 4 towers. Each tower grows to 7 (4 × 7 = 28), leaving 1 block in the pool. The towers show 7 per group; the pool shows remainder 1. 29 ÷ 4 = 7 remainder 1.",
+      "mistakes": "Students try to make towers of different heights, giving more to some towers than others. The game turns mismatched towers red, reinforcing that all groups must be equal — the definition of division.",
+      "faqs": [
+        { "q": "Which grades is Division Towers aimed at?", "a": "Grades 3–5, covering the concept of division with remainders and preparing students for multi-digit long division in upper primary." },
+        { "q": "How does this differ from Fair Share (Division Share)?", "a": "Both games model division, but Fair Share uses coin-sharing to build intuition and concept. Division Towers uses a tower-building interface that maps step-by-step onto the written long-division algorithm, bridging the concrete model to the formal procedure." },
+        { "q": "What is the largest divisor the game uses?", "a": "Divisors and dividends scale with the selected grade. In upper grade levels the pool can contain three-digit numbers divided by single-digit or two-digit divisors, matching long-division curriculum expectations." }
+      ]
+    }
   },
   "tangram": {
     "title": "Tangram",
@@ -528,6 +1768,66 @@
     "instructions": "Tap a piece to pick it up, then tap the outline of the same shape to place it. Match each piece to the outline with the same shape. Tap a placed piece to move it again. When you're done, press Check. Reset returns every piece to the tray.",
     "prompt": "Build the figure — each piece in its place",
     "correct": "Excellent! You assembled the whole figure correctly.",
-    "wrong": "Not yet. Some pieces are missing or in the wrong place — match each piece to its outline and try again."
+    "wrong": "Not yet. Some pieces are missing or in the wrong place — match each piece to its outline and try again.",
+    "seo": {
+      "intro": "Tangram gives students a set of classic geometric pieces — triangles, a square, and a parallelogram — and a silhouette outline to fill. Each piece must be matched to its correct slot, building shape-recognition, part-whole reasoning, and spatial fitting skills across grades 2-5.",
+      "howToPlay": [
+        "Look at the silhouette outline and identify the individual piece shapes within it.",
+        "Tap a piece from the tray to pick it up, then tap the matching outline region to place it.",
+        "If a piece does not fit a slot, try a different one — each colour and shape has exactly one matching outline.",
+        "Press Check when every outline region is filled."
+      ],
+      "skills": "Matching geometric pieces to an outline develops shape recognition (triangles of different sizes, parallelogram orientation) and spatial decomposition — the ability to see a complex shape as a sum of simpler parts, a foundation for area and fractions of shapes.",
+      "example": "The large silhouette of a running figure contains two large triangles, one medium triangle, two small triangles, a square, and a parallelogram. Identifying the parallelogram's outline slot before placing the square prevents the most common placement error.",
+      "mistakes": "Students often try to force a triangle into a slot that is the right triangle shape but the wrong size, because they focus on shape type rather than shape size. Colour-coded pieces help, but size-checking — 'is this piece big enough?' — must become the first question.",
+      "faqs": [
+        {
+          "q": "Do the pieces need to be rotated or flipped?",
+          "a": "In this version each piece matches one outline exactly without rotation or flipping, keeping the focus on shape recognition rather than spatial transformation."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It suits grades 2-5: younger students match by shape and colour, older students reason about geometry vocabulary — triangle types, parallelogram, square — as they place each piece."
+        },
+        {
+          "q": "How is Tangram different from Mirror Image, which also involves fitting shapes on a grid?",
+          "a": "Tangram is about matching discrete pieces to an outline: shape recognition and part-whole assembly. Mirror Image is about applying a reflection rule to fill individual grid cells. Completely different spatial skills."
+        }
+      ]
+    }
+  },
+  "volumeBuilder": {
+    "title": "Volume Builder",
+    "description": "Build a box of unit cubes that has the given volume",
+    "instructions": "Set the length, width and height with the − / + buttons (or drag: up = longer, right = wider; height uses the buttons). The cubes fill the tank layer by layer. When you are done, press Check",
+    "prompt": "Build a box with volume {volume}",
+    "correct": "Great! The box volume is {volume}",
+    "wrong": "Almost! Change the length, width or height and try again",
+    "seo": {
+      "intro": "Volume Builder fills a transparent tank with unit cubes layer by layer as students set length, width, and height. The target is a specific volume, and the cubes accumulate visually so the abstract formula V = l × w × h becomes a count of real objects being stacked.",
+      "howToPlay": [
+        "Read the target volume shown above the tank.",
+        "Set the length and width by dragging or using the −/+ buttons; the base layer of cubes fills the tank floor.",
+        "Set the height with the height buttons; the tank fills upward layer by layer.",
+        "Press Check when the cube count matches the target volume."
+      ],
+      "skills": "Building volume by adjusting three independent dimensions cements the idea that volume is a product of three lengths (l × w × h) rather than a property of surface. This prepares students for grade 4-6 work on composite volumes, surface area, and the distinction between 2D area and 3D volume.",
+      "example": "For volume 24 a student might set 4 × 3 × 2: four cubes wide, three deep, two layers high. Changing to 6 × 2 × 2 gives the same volume with a different shape — a direct demonstration that volume is independent of the box's proportions.",
+      "mistakes": "Students often confuse volume with surface area, counting the outside faces rather than the total cubes inside. Watching the interior fill cube by cube — and noticing that hidden inner cubes also count — addresses this directly.",
+      "faqs": [
+        {
+          "q": "Can the same volume be reached with different dimensions?",
+          "a": "Yes. Many targets have multiple valid dimension combinations. The game accepts any (l, w, h) whose product equals the target, rewarding exploration of factor triples."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It fits grades 4-6, when students first encounter volume as a measurement of three-dimensional space and learn the formula l × w × h."
+        },
+        {
+          "q": "How is Volume Builder different from Geoboard, which also involves measuring space?",
+          "a": "Geoboard measures 2D area in square units on a flat grid. Volume Builder measures 3D volume in cubic units by filling a box. The step from squares to cubes is exactly the conceptual jump these games bracket."
+        }
+      ]
+    }
   }
 }

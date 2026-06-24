@@ -494,7 +494,34 @@
     "instructions": "Llena los frascos de unidades, décimas y centésimas con los botones − / + (el nivel de arena de cada frasco muestra esa cifra), luego pulsa Comprobar",
     "prompt": "Construye el número {target}",
     "correct": "¡Genial! Construiste {target}",
-    "wrong": "¡Casi! Revisa las unidades, décimas y centésimas y corrige el número"
+    "wrong": "¡Casi! Revisa las unidades, décimas y centésimas y corrige el número",
+    "seo": {
+      "intro": "Constructor de decimales sitúa a los estudiantes en un laboratorio con tres frascos de arena: uno para unidades, otro para décimas y otro para centésimas. Llenan cada frasco al nivel correcto para construir un decimal objetivo, convirtiendo la notación posicional abstracta en una cantidad visible.",
+      "howToPlay": [
+        "Lee el decimal objetivo que aparece sobre los frascos.",
+        "Ajusta el frasco de unidades al dígito que hay antes de la coma decimal.",
+        "Ajusta el frasco de décimas al primer dígito decimal.",
+        "Ajusta el frasco de centésimas al segundo dígito decimal.",
+        "Pulsa Comprobar cuando el nivel de arena en los tres frascos coincida con el número."
+      ],
+      "skills": "Constructor de decimales desarrolla el valor posicional de los dígitos decimales: los estudiantes leen cada dígito en su columna (unidades, décimas, centésimas) y lo traducen a una cantidad física. Es el paso fundamental antes de comparar, ordenar y sumar decimales.",
+      "example": "Para el objetivo 2,35: el frasco de unidades se llena hasta 2, el de décimas hasta 3 y el de centésimas hasta 5. Los tres frascos separados hacen evidente la estructura 2 + 0,3 + 0,05 antes de cualquier cálculo.",
+      "mistakes": "Los estudiantes suelen tratar los decimales como números enteros e introducen 35 en el frasco de centésimas para 0,35. Los frascos separados obligan a trabajar columna a columna, rompiendo el hábito de leer por encima de la coma.",
+      "faqs": [
+        {
+          "q": "¿Cómo muestran los frascos de arena el valor posicional decimal de forma diferente a las columnas de bloques del Constructor de valor posicional?",
+          "a": "El Constructor de valor posicional usa bloques apilables para las columnas de centenas, decenas y unidades de números enteros. Constructor de decimales usa frascos de arena para unidades, décimas y centésimas, haciendo visibles las columnas fraccionarias sin bloques."
+        },
+        {
+          "q": "¿Para qué cursos es Constructor de decimales?",
+          "a": "Cursos 4-5, en los que los estudiantes conocen por primera vez las décimas y centésimas como posiciones de valor posicional."
+        },
+        {
+          "q": "¿Se puede introducir un dígito mayor que 9 en algún frasco?",
+          "a": "No. Cada frasco está limitado a 9, de modo que el juego mantiene la notación decimal estándar sin necesidad de llevar, que se practica por separado en Suma de decimales."
+        }
+      ]
+    }
   },
   "decimalNumberLine": {
     "title": "Decimal en la recta numérica",
@@ -502,7 +529,34 @@
     "instructions": "Arrastra el tren a la posición correcta en la recta (0 a 1) y luego pulsa Comprobar",
     "prompt": "Coloca {decimal} en la recta",
     "correct": "¡Correcto! {decimal} está en la posición correcta",
-    "wrong": "¡Casi! Revisa la posición e inténtalo de nuevo"
+    "wrong": "¡Casi! Revisa la posición e inténtalo de nuevo",
+    "seo": {
+      "intro": "Decimal en la recta numérica pide a los estudiantes arrastrar un tren hasta la posición exacta de un decimal entre 0 y 1. Al colocar el número en una regla, el juego enseña que un decimal es una distancia en una escala, no solo un patrón de dígitos, y desarrolla el sentido espacial de magnitud.",
+      "howToPlay": [
+        "Lee el decimal objetivo que aparece sobre la recta numérica.",
+        "Estima dónde cae el número entre 0 y 1.",
+        "Arrastra el tren a lo largo de la recta hasta la posición estimada.",
+        "Ajusta hasta que el tren se detenga en el punto correcto.",
+        "Pulsa Comprobar."
+      ],
+      "skills": "Colocar decimales en la recta numérica entrena la comparación de magnitudes: 0,7 es mayor que 0,3 porque está más a la derecha. Este sentido espacial de la magnitud es la base para ordenar decimales y vincularlos con fracciones.",
+      "example": "Para 0,6: la recta va de 0 a 1 y el tren debe detenerse en la sexta marca de diez intervalos iguales. Compararlo con la fracción 6/10 muestra que la posición y el nombre de la fracción señalan el mismo punto.",
+      "mistakes": "Los estudiantes confunden frecuentemente el número de dígitos con el valor: colocan 0,35 a la derecha de 0,9 porque 35 parece mayor que 9. La escala fija de la recta expone ese error al mostrar que 0,9 está muy cerca de 1.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia colocar un decimal en la recta de colocar una fracción en el juego Fracción en la recta numérica?",
+          "a": "La Fracción en la recta numérica usa una regla con divisiones ajustables para colocar fracciones como 2/3. Decimal en la recta numérica usa una escala decimal fija (décimas) para colocar valores como 0,6, desarrollando fluidez con la notación decimal específicamente."
+        },
+        {
+          "q": "¿Para qué cursos es este juego?",
+          "a": "Cursos 3-5: las décimas para los cursos 3-4 y los objetivos de centésimas amplían al curso 5."
+        },
+        {
+          "q": "¿El juego cubre números mayores que 1?",
+          "a": "No. La recta va de 0 a 1 para centrar el foco en la parte decimal. Ordenar decimales de varias cifras se introduce en actividades posteriores."
+        }
+      ]
+    }
   },
   "decimalAddition": {
     "title": "Suma de decimales",
@@ -510,7 +564,34 @@
     "instructions": "Construye la suma: ajusta las unidades, décimas y centésimas con los botones − / + y luego pulsa Comprobar",
     "prompt": "¿Cuánto es {a} + {b}?",
     "correct": "¡Correcto! {a} + {b} = {result}",
-    "wrong": "¡Casi! Revisa cada dígito por separado y recuerda la llevada"
+    "wrong": "¡Casi! Revisa cada dígito por separado y recuerda la llevada",
+    "seo": {
+      "intro": "Suma de decimales guía a los estudiantes para construir la suma de dos decimales columna a columna. Ruedas de dígitos separadas para unidades, décimas y centésimas hacen tangible la regla de alinear la coma: cada columna se ajusta de forma independiente y la llevada se vuelve visible.",
+      "howToPlay": [
+        "Lee los dos sumandos decimales que aparecen en pantalla.",
+        "Suma primero los dígitos de centésimas y ajústalos en la rueda de centésimas.",
+        "Si la suma de centésimas es 10 o más, lleva 1 a la columna de décimas.",
+        "Repite con las décimas y luego con las unidades, llevando según sea necesario.",
+        "Pulsa Comprobar cuando las tres ruedas muestren la suma correcta."
+      ],
+      "skills": "Suma de decimales practica el algoritmo de suma por columnas con números decimales: alinear la coma, sumar cifras iguales (centésimas con centésimas, décimas con décimas) y llevar entre columnas. Son las mismas habilidades que la suma de enteros, extendidas a posiciones fraccionarias.",
+      "example": "Para 1,47 + 0,86: centésimas 7+6=13, se pone 3 y se lleva 1; décimas 4+8+1=13, se pone 3 y se lleva 1; unidades 1+0+1=2. Resultado 2,33. Cada paso se realiza en una rueda separada.",
+      "mistakes": "El error más común es ignorar la alineación y sumar 1,47 + 0,86 como si fueran 147 + 86. Las ruedas separadas lo impiden porque cada rueda solo acepta el dígito de su columna.",
+      "faqs": [
+        {
+          "q": "¿Cómo enseñan las ruedas de columna la alineación de la coma decimal?",
+          "a": "Cada rueda está etiquetada como unidades, décimas o centésimas y solo acepta su propio dígito, por lo que el estudiante no puede añadir accidentalmente un dígito de décimas a la columna de unidades. La estructura impone la alineación sin necesidad de una cuadrícula escrita."
+        },
+        {
+          "q": "¿Para qué cursos es Suma de decimales?",
+          "a": "Cursos 4-5, en los que los estudiantes extienden la suma por columnas a decimales con décimas y centésimas."
+        },
+        {
+          "q": "¿El juego también cubre la resta de decimales?",
+          "a": "No. Suma de decimales se centra en el algoritmo de suma con llevada. La resta de decimales con préstamo es una habilidad separada que se practica en otra actividad."
+        }
+      ]
+    }
   },
   "numberBond": {
     "title": "Descomponer el número",

@@ -494,7 +494,34 @@
     "instructions": "Fülle die Gläser für Einer, Zehntel und Hundertstel mit den − / + Tasten (der Sandstand jedes Glases zeigt diese Stelle), dann auf Prüfen drücken",
     "prompt": "Baue die Zahl {target}",
     "correct": "Super! Du hast {target} gebaut",
-    "wrong": "Fast! Prüfe Einer, Zehntel und Hundertstel und korrigiere die Zahl"
+    "wrong": "Fast! Prüfe Einer, Zehntel und Hundertstel und korrigiere die Zahl",
+    "seo": {
+      "intro": "Dezimalzahl-Baumeister versetzt Schülerinnen und Schüler in ein Labor mit drei Sandgläsern für Einer, Zehntel und Hundertstel. Sie befüllen jedes Glas auf den richtigen Stand, um eine Zielzahl zu bauen — so wird abstrakte Stellenwertnotation zu einer sichtbaren, physischen Menge.",
+      "howToPlay": [
+        "Lies die Zielzahl, die über den Gläsern angezeigt wird.",
+        "Stelle das Einerglas auf die Ziffer vor dem Komma ein.",
+        "Stelle das Zehntelglas auf die erste Nachkommastelle ein.",
+        "Stelle das Hundertstelglas auf die zweite Nachkommastelle ein.",
+        "Drücke Prüfen, wenn der Sandstand aller drei Gläser mit der Zahl übereinstimmt."
+      ],
+      "skills": "Dezimalzahl-Baumeister entwickelt das Stellenwertverständnis für Dezimalzahlen: Schüler lesen jede Ziffer in ihrer Stelle (Einer, Zehntel, Hundertstel) und übersetzen sie in eine physische Menge. Das ist die Grundlage vor dem Vergleichen, Ordnen und Addieren von Dezimalzahlen.",
+      "example": "Für die Zielzahl 2,35: das Einerglas wird auf 2 gefüllt, das Zehntelglas auf 3, das Hundertstelglas auf 5. Drei getrennte Gläser machen die Struktur 2 + 0,3 + 0,05 sofort sichtbar.",
+      "mistakes": "Schüler behandeln Dezimalzahlen oft wie ganze Zahlen und tragen 35 in das Hundertstelglas für 0,35 ein. Getrennte Gläser erzwingen die stellenweise Bearbeitung und durchbrechen die Gewohnheit, über das Komma hinwegzulesen.",
+      "faqs": [
+        {
+          "q": "Wie zeigen die Sandgläser den Dezimalstellenwert anders als die Würfelsäulen im Stellenwert-Baumeister?",
+          "a": "Der Stellenwert-Baumeister nutzt stapelbare Würfel für Hunderter-, Zehner- und Einersäulen ganzer Zahlen. Dezimalzahl-Baumeister nutzt Sandgläser für Einer, Zehntel und Hundertstel und macht so die gebrochenen Stellen ohne Würfel sichtbar."
+        },
+        {
+          "q": "Für welche Klassen ist Dezimalzahl-Baumeister geeignet?",
+          "a": "Klassen 4–5, in denen Schüler Zehntel und Hundertstel als Stellenwerte erstmals kennenlernen."
+        },
+        {
+          "q": "Kann man eine Ziffer größer als 9 in ein Glas eingeben?",
+          "a": "Nein. Jedes Glas ist auf 9 begrenzt, sodass das Spiel die standardmäßige Dezimalnotation beibehält. Das Übertragen wird separat in der Dezimaladdition geübt."
+        }
+      ]
+    }
   },
   "decimalNumberLine": {
     "title": "Dezimalzahl am Zahlenstrahl",
@@ -502,7 +529,34 @@
     "instructions": "Ziehe den Zug an die richtige Position auf dem Strahl (0 bis 1) und drücke dann Prüfen",
     "prompt": "Setze {decimal} auf den Strahl",
     "correct": "Richtig! {decimal} liegt an der richtigen Position",
-    "wrong": "Fast! Prüfe die Position und versuche es erneut"
+    "wrong": "Fast! Prüfe die Position und versuche es erneut",
+    "seo": {
+      "intro": "Dezimalzahl am Zahlenstrahl fordert Schüler auf, einen Zug an die genaue Position einer Dezimalzahl zwischen 0 und 1 zu ziehen. Das Platzieren auf dem Lineal zeigt, dass eine Dezimalzahl ein Abstand auf einer Skala ist — kein bloßes Ziffernmuster — und baut räumliches Größengefühl auf.",
+      "howToPlay": [
+        "Lies die Zielzahl, die über dem Zahlenstrahl angezeigt wird.",
+        "Schätze, wo die Zahl zwischen 0 und 1 liegt.",
+        "Ziehe den Zug entlang des Strahls an die geschätzte Position.",
+        "Feinjustiere, bis der Zug auf dem richtigen Punkt steht.",
+        "Drücke Prüfen."
+      ],
+      "skills": "Das Platzieren von Dezimalzahlen am Zahlenstrahl trainiert den Größenvergleich: 0,7 ist größer als 0,3, weil es weiter rechts liegt. Dieses räumliche Größengefühl ist die Grundlage für das Ordnen von Dezimalzahlen und ihre Verknüpfung mit Brüchen.",
+      "example": "Für 0,6: Der Strahl verläuft von 0 bis 1 und der Zug gehört auf den sechsten Strich von zehn gleichen Abschnitten. Der Vergleich mit dem Bruch 6/10 zeigt, dass Position und Bruchname denselben Punkt benennen.",
+      "mistakes": "Schüler verwechseln häufig Ziffernanzahl mit Größe: Sie platzieren 0,35 rechts von 0,9, weil 35 größer wirkt als 9. Die feste Skala des Strahls entlarvt diesen Fehler sofort, da 0,9 sehr nah an 1 liegt.",
+      "faqs": [
+        {
+          "q": "Wie unterscheidet sich das Platzieren einer Dezimalzahl am Strahl vom Brüche-Zahlenstrahl-Spiel?",
+          "a": "Der Brüche-Zahlenstrahl verwendet einen anpassbaren Teilungsabstand, um Brüche wie 2/3 zu platzieren. Dezimalzahl am Zahlenstrahl verwendet eine feste Dezimalskala (Zehntel), um Werte wie 0,6 zu platzieren und Geläufigkeit mit der Dezimalschreibweise zu trainieren."
+        },
+        {
+          "q": "Für welche Klassen ist das Spiel geeignet?",
+          "a": "Klassen 3–5: Zehntel für Klassen 3–4, Hundertstelziele erweitern auf Klasse 5."
+        },
+        {
+          "q": "Deckt das Spiel auch Zahlen größer als 1 ab?",
+          "a": "Nein. Der Strahl verläuft von 0 bis 1, um den Fokus auf den Dezimalteil zu legen. Das Ordnen mehrstelliger Dezimalzahlen folgt in späteren Aktivitäten."
+        }
+      ]
+    }
   },
   "decimalAddition": {
     "title": "Dezimaladdition",
@@ -510,7 +564,34 @@
     "instructions": "Baue die Summe: Stelle Einer, Zehntel und Hundertstel mit den Tasten − / + ein und drücke dann Prüfen",
     "prompt": "Was ist {a} + {b}?",
     "correct": "Richtig! {a} + {b} = {result}",
-    "wrong": "Fast! Prüfe jede Stelle einzeln und denke an den Übergang"
+    "wrong": "Fast! Prüfe jede Stelle einzeln und denke an den Übergang",
+    "seo": {
+      "intro": "Dezimaladdition leitet Schüler durch die spaltenweise Addition zweier Dezimalzahlen. Getrennte Ziffernräder für Einer, Zehntel und Hundertstel machen die Kommaausrichtungsregel greifbar: Jede Stelle wird separat eingestellt und der Übertrag wird sichtbar.",
+      "howToPlay": [
+        "Lies die zwei Summanden auf dem Bildschirm.",
+        "Addiere zuerst die Hunderstellen und stelle sie am Hundertstelrad ein.",
+        "Wenn die Hundertstel 10 oder mehr ergeben, übertrage 1 in die Zehntelstelle.",
+        "Wiederhole für Zehntel, dann Einer, mit Übertrag nach Bedarf.",
+        "Drücke Prüfen, wenn alle drei Räder die richtige Summe anzeigen."
+      ],
+      "skills": "Dezimaladdition übt den spaltenweisen Algorithmus mit Dezimalzahlen: Kommaausrichtung, Addition gleicher Stellen (Hundertstel mit Hundertstel, Zehntel mit Zehntel) und Übertrag zwischen Stellen. Es sind dieselben Fertigkeiten wie bei der Addition ganzer Zahlen, auf gebrochene Stellen ausgeweitet.",
+      "example": "Für 1,47 + 0,86: Hundertstel 7+6=13, stelle 3 ein und übertrage 1; Zehntel 4+8+1=13, stelle 3 ein und übertrage 1; Einer 1+0+1=2. Ergebnis 2,33. Jeder Schritt erfolgt an einem separaten Rad.",
+      "mistakes": "Der häufigste Fehler ist das Ignorieren der Ausrichtung: Schüler addieren 1,47 + 0,86 wie 147 + 86. Getrennte Räder verhindern das, da jedes Rad nur die Ziffer seiner Stelle annimmt.",
+      "faqs": [
+        {
+          "q": "Wie lehren die Stellenräder die Kommaausrichtung beim Dezimalpunkt?",
+          "a": "Jedes Rad ist mit Einer, Zehntel oder Hundertstel beschriftet und nimmt nur die eigene Ziffer an. So kann kein Zehntel versehentlich in die Einerstelle eingetragen werden. Die Struktur erzwingt die Ausrichtung ohne schriftliches Raster."
+        },
+        {
+          "q": "Für welche Klassen ist Dezimaladdition geeignet?",
+          "a": "Klassen 4–5, in denen die Spaltenaddition auf Dezimalzahlen mit Zehntel und Hundertstel ausgeweitet wird."
+        },
+        {
+          "q": "Deckt das Spiel auch die Dezimalsubtraktion ab?",
+          "a": "Nein. Dezimaladdition konzentriert sich auf den Additionsalgorithmus mit Übertrag. Die Dezimalsubtraktion mit Borgen ist eine separate Fähigkeit, die in einer anderen Aktivität geübt wird."
+        }
+      ]
+    }
   },
   "numberBond": {
     "title": "Zahlen zerlegen",

@@ -474,7 +474,34 @@
     "instructions": "Fill the ones, tenths and hundredths jars with the − / + buttons (each jar's sand level shows that digit), then press Check",
     "prompt": "Build the number {target}",
     "correct": "Great! You built {target}",
-    "wrong": "Almost! Check the ones, tenths and hundredths and fix the number"
+    "wrong": "Almost! Check the ones, tenths and hundredths and fix the number",
+    "seo": {
+      "intro": "Decimal Builder puts students in a lab where three sand jars represent ones, tenths, and hundredths. They fill each jar to the correct level to construct a target decimal, turning abstract place-value notation into a visible, physical quantity they can read at a glance.",
+      "howToPlay": [
+        "Read the target decimal shown above the jars.",
+        "Use the ones jar's +/- buttons to set the digit before the decimal point.",
+        "Use the tenths jar to set the first decimal digit, and the hundredths jar for the second.",
+        "The sand level in each jar shows the current digit — adjust until all three match the target.",
+        "Press Check to confirm your number."
+      ],
+      "skills": "Decimal Builder develops decimal place value: students practise reading each digit's column (ones, tenths, hundredths) and translating it into a physical quantity. This is the foundational step before comparing, ordering, or adding decimal numbers.",
+      "example": "For the target 2.35: fill the ones jar to 2, the tenths jar to 3, and the hundredths jar to 5. Seeing three separate jars side by side makes the structure 2 + 0.3 + 0.05 obvious before any arithmetic is attempted.",
+      "mistakes": "Students often treat decimals as whole numbers, entering 35 into the hundredths jar for 0.35. Separate jars with individual levels force them to work one column at a time, breaking the habit of reading across the decimal point without pausing.",
+      "faqs": [
+        {
+          "q": "How do the sand jars show decimal place value differently from the block columns in Place Value Builder?",
+          "a": "Place Value Builder uses stacking blocks for whole-number hundreds, tens, and ones. Decimal Builder uses sand-fill jars for ones, tenths, and hundredths, making the fractional columns visible without blocks."
+        },
+        {
+          "q": "Which grades is Decimal Builder for?",
+          "a": "Grades 4-5, where students first meet tenths and hundredths as named place-value positions."
+        },
+        {
+          "q": "Can students set a digit greater than 9 in any jar?",
+          "a": "No. Each jar is capped at 9, so the game keeps students within standard decimal notation and avoids the carrying step handled separately in Decimal Addition."
+        }
+      ]
+    }
   },
   "decimalNumberLine": {
     "title": "Decimal on a Number Line",
@@ -482,7 +509,34 @@
     "instructions": "Drag the train to the correct position on the line (0 to 1), then press Check",
     "prompt": "Place {decimal} on the line",
     "correct": "Correct! {decimal} is in the right position",
-    "wrong": "Almost! Check the position and try again"
+    "wrong": "Almost! Check the position and try again",
+    "seo": {
+      "intro": "Decimal Number Line asks students to drag a train to the exact position of a decimal between 0 and 1. By placing the number on a ruler rather than in a jar or column, the game teaches students that a decimal is a precise distance along a scale, not just a pattern of digits.",
+      "howToPlay": [
+        "Read the target decimal shown above the number line.",
+        "Estimate where the decimal falls between 0 and 1.",
+        "Drag the train along the line to the estimated position.",
+        "Fine-tune until the train sits at the correct point.",
+        "Press Check to confirm."
+      ],
+      "skills": "Placing decimals on a number line trains students to compare decimal size by position, reinforcing that 0.7 is larger than 0.3 because it sits further right. This spatial sense of magnitude is the basis for ordering decimals and linking them to fractions.",
+      "example": "For 0.6: the line runs from 0 to 1 and the train should land at the sixth tick of ten equal intervals. Comparing it to 0.60 as a fraction (6/10) shows that the position and the fraction name the same point.",
+      "mistakes": "Students frequently confuse decimal size with digit count: they place 0.35 to the right of 0.9 because 35 looks larger than 9. The number line's fixed scale exposes that error immediately by showing 0.9 is very close to 1 while 0.35 is barely past one third.",
+      "faqs": [
+        {
+          "q": "How does placing a decimal on the line differ from placing a fraction in the Fraction Number Line game?",
+          "a": "Fraction Number Line uses a subdivided ruler with adjustable tick-mark spacing to place fractions like 2/3. Decimal Number Line uses a fixed decimal scale (tenths) to place values like 0.6, building fluency with the decimal notation specifically."
+        },
+        {
+          "q": "Which grades is Decimal Number Line for?",
+          "a": "Grades 3-5: the core task suits grade 3-4 students meeting tenths, and the hundredths targets extend into grade 5."
+        },
+        {
+          "q": "Does the game cover numbers greater than 1?",
+          "a": "No. The line runs from 0 to 1 to keep focus on the decimal part. Ordering and comparing multi-digit decimals is introduced in later activities once the fractional portion is secure."
+        }
+      ]
+    }
   },
   "decimalAddition": {
     "title": "Decimal Addition",
@@ -490,7 +544,34 @@
     "instructions": "Build the sum: set the ones, tenths and hundredths with the − / + buttons, then press Check",
     "prompt": "What is {a} + {b}?",
     "correct": "Correct! {a} + {b} = {result}",
-    "wrong": "Almost! Check each digit separately and remember to carry"
+    "wrong": "Almost! Check each digit separately and remember to carry",
+    "seo": {
+      "intro": "Decimal Addition has students build the sum of two decimal numbers column by column using digit wheels for ones, tenths, and hundredths. The game makes the align-then-add procedure concrete: each column is set independently so carrying across the decimal point becomes visible.",
+      "howToPlay": [
+        "Read the two decimal addends shown on screen.",
+        "Add the hundredths digits first; use the hundreds wheel to set that digit of the sum.",
+        "If the hundredths total is 10 or more, carry 1 to the tenths column.",
+        "Repeat for tenths, then ones, carrying as needed.",
+        "Press Check when all three wheels show the correct sum."
+      ],
+      "skills": "Decimal Addition practises the column-by-column algorithm with decimal numbers: aligning the decimal point, adding like places (hundredths with hundredths, tenths with tenths), and carrying across columns. These are the same skills as whole-number addition, extended to fractional positions.",
+      "example": "For 1.47 + 0.86: hundredths 7+6=13, set 3 and carry 1; tenths 4+8+1=13, set 3 and carry 1; ones 1+0+1=2. Answer 2.33. Each step is done on a separate wheel, so no digit is lost.",
+      "mistakes": "The most common error is ignoring column alignment and adding 1.47 + 0.86 as if they were 147 + 86. Separate wheels for each place prevent that by forcing students to add only the matching column at a time.",
+      "faqs": [
+        {
+          "q": "How does the column-wheel interface teach decimal-point alignment?",
+          "a": "Each wheel is labelled ones, tenths, or hundredths and only accepts its own digit, so students cannot add a tenths digit into the ones column by accident. The structure enforces alignment without a written grid."
+        },
+        {
+          "q": "Which grades is Decimal Addition for?",
+          "a": "Grades 4-5, where students extend column addition to decimals with tenths and hundredths."
+        },
+        {
+          "q": "Does the game cover subtraction of decimals too?",
+          "a": "No. Decimal Addition focuses on the addition algorithm with carrying. Decimal subtraction with borrowing is a separate skill practised in a different activity."
+        }
+      ]
+    }
   },
   "numberBond": {
     "title": "Number Bond Splitter",

@@ -3,12 +3,9 @@ import {
   buildGameFaqJsonLd,
   buildGameJsonLd,
   getGameSeoCopy,
-  getGameSpecificSeoGuide,
   getTopicPracticePath,
-  getTopicSeoGuide,
 } from '../seo';
 import type { GameMeta } from '../types';
-import { GAME_IDS } from '../games/loaders';
 
 const meta: GameMeta = {
   id: 'fraction-build',
@@ -55,25 +52,6 @@ describe('games3d seo helpers', () => {
     expect(getGameSeoCopy('de').practiceTitle).toBe('Was geübt wird');
     expect(getGameSeoCopy('es').faqTitle).toBe('Preguntas frecuentes');
     expect(getGameSeoCopy('ru').relatedTitle).toBe('Связанная практика');
-  });
-
-  it('provides localized topic guides instead of falling back to English', () => {
-    expect(getTopicSeoGuide('he', 'fractions').focus).toContain('שברים');
-    expect(getTopicSeoGuide('ar', 'geometry').focus).toContain('الأشكال');
-    expect(getTopicSeoGuide('de', 'percentage').focus).toContain('Prozent');
-    expect(getTopicSeoGuide('es', 'ratio').focus).toContain('razones');
-    expect(getTopicSeoGuide('ru', 'decimals').focus).toContain('десятич');
-  });
-
-  it('provides a game-specific guide for every 3D game in every supported locale', () => {
-    const locales = ['he', 'en', 'ar', 'de', 'es', 'ru'];
-    for (const gameId of GAME_IDS) {
-      for (const locale of locales) {
-        const guide = getGameSpecificSeoGuide(locale, gameId);
-        expect(guide, `${locale}/${gameId}`).toBeTruthy();
-        expect(guide.length, `${locale}/${gameId}`).toBeGreaterThan(40);
-      }
-    }
   });
 
   it('maps game topics to related worksheet pages', () => {

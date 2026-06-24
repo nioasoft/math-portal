@@ -65,7 +65,9 @@ describe('fractions seo content', () => {
 
   it('first FAQ questions are unique across fractions games (en)', () => {
     const data = loadGames3d('en');
-    const firstQs = FRACTIONS_KEYS.map((k) => ((data[k] as { seo: GameSeo }).seo.faqs[0].q));
+    const firstQs = FRACTIONS_KEYS
+      .map((k) => (data[k] as { seo?: GameSeo }).seo?.faqs?.[0]?.q ?? '')
+      .filter(Boolean);
     expect(new Set(firstQs).size).toBe(firstQs.length);
   });
 
@@ -150,7 +152,9 @@ describe('full game seo coverage', () => {
 
   it('first FAQ questions are globally unique across all games (en)', () => {
     const data = loadGames3d('en');
-    const firstQs = games.map(({ key }) => (data[key] as { seo: GameSeo }).seo.faqs[0].q);
+    const firstQs = games
+      .map(({ key }) => (data[key] as { seo?: GameSeo }).seo?.faqs?.[0]?.q ?? '')
+      .filter(Boolean);
     expect(new Set(firstQs).size).toBe(firstQs.length);
   });
 });

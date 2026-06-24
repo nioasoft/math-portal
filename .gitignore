@@ -44,3 +44,6 @@ next-env.d.ts
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+# SDD scratch dir (tracked plans live in docs/superpowers/, not here)
+.superpowers/

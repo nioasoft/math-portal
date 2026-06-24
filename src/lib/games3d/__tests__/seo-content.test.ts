@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { isCompleteGameSeo, type GameSeo } from '../gameSeo';
 import { buildGameFaqJsonLd } from '../seo';
+import { getRegisteredGames } from '../games';
 
 const LOCALES = ['he', 'en', 'ar', 'de', 'es', 'ru'] as const;
 
@@ -17,6 +18,37 @@ const BLACKLISTED_WORDS = [
 
 function loadGames3d(locale: string): Record<string, unknown> {
   return JSON.parse(readFileSync(join(process.cwd(), `messages/${locale}/games3d.json`), 'utf8'));
+}
+
+// Module-scope helpers shared across multiple describe blocks.
+function collectSeoStrings(locale: string, gameKey: string): string[] {
+  const data = loadGames3d(locale);
+  const block = data[gameKey] as Record<string, unknown> | undefined;
+  if (!block || typeof block.seo !== 'object' || block.seo === null) return [];
+  const seo = block.seo as {
+    intro: string;
+    howToPlay: string[];
+    skills: string;
+    example: string;
+    mistakes: string;
+    faqs: { q: string; a: string }[];
+  };
+  return [
+    seo.intro,
+    ...seo.howToPlay,
+    seo.skills,
+    seo.example,
+    seo.mistakes,
+    ...seo.faqs.map((f) => f.q),
+    ...seo.faqs.map((f) => f.a),
+  ];
+}
+
+function gamesWithSeo(locale: string): string[] {
+  const data = loadGames3d(locale);
+  return Object.entries(data)
+    .filter(([, v]) => typeof v === 'object' && v !== null && 'seo' in (v as object))
+    .map(([k]) => k);
 }
 
 describe('fractions seo content', () => {
@@ -55,36 +87,6 @@ describe('fractions seo content', () => {
 });
 
 describe('hebrew seo quality', () => {
-  function collectSeoStrings(locale: string, gameKey: string): string[] {
-    const data = loadGames3d(locale);
-    const block = data[gameKey] as Record<string, unknown> | undefined;
-    if (!block || typeof block.seo !== 'object' || block.seo === null) return [];
-    const seo = block.seo as {
-      intro: string;
-      howToPlay: string[];
-      skills: string;
-      example: string;
-      mistakes: string;
-      faqs: { q: string; a: string }[];
-    };
-    return [
-      seo.intro,
-      ...seo.howToPlay,
-      seo.skills,
-      seo.example,
-      seo.mistakes,
-      ...seo.faqs.map((f) => f.q),
-      ...seo.faqs.map((f) => f.a),
-    ];
-  }
-
-  function gamesWithSeo(locale: string): string[] {
-    const data = loadGames3d(locale);
-    return Object.entries(data)
-      .filter(([, v]) => typeof v === 'object' && v !== null && 'seo' in (v as object))
-      .map(([k]) => k);
-  }
-
   function assertNoDashes(locale: string, keys: string[]): void {
     for (const key of keys) {
       const strings = collectSeoStrings(locale, key);
@@ -123,4 +125,58 @@ describe('hebrew seo quality', () => {
       }
     }
   });
+});
+
+describe('full game seo coverage', () => {
+  // Map route id (kebab) -> i18n camel key via meta.i18nKey ('games3d.<key>').
+  const games = getRegisteredGames().map((g) => ({
+    id: g.meta.id,
+    key: g.meta.i18nKey.replace(/^games3d\./, ''),
+  }));
+
+  it('covers all 53 registered games', () => {
+    expect(games).toHaveLength(53);
+  });
+
+  for (const locale of LOCALES) {
+    it(`every registered game has complete seo in ${locale}`, () => {
+      const data = loadGames3d(locale);
+      const missing = games
+        .filter(({ key }) => !isCompleteGameSeo((data[key] as { seo?: unknown })?.seo))
+        .map(({ id }) => id);
+      expect(missing, `${locale} missing/incomplete: ${missing.join(', ')}`).toEqual([]);
+    });
+  }
+
+  it('first FAQ questions are globally unique across all games (en)', () => {
+    const data = loadGames3d('en');
+    const firstQs = games.map(({ key }) => (data[key] as { seo: GameSeo }).seo.faqs[0].q);
+    expect(new Set(firstQs).size).toBe(firstQs.length);
+  });
+});
+
+describe('non-latin script sanity', () => {
+  // For each locale with a non-Latin script, every game's concatenated seo strings
+  // must contain at least one character of that script. This guards against
+  // transliteration/accent-stripping corruption.
+  const scriptChecks: Array<{ locale: (typeof LOCALES)[number]; label: string; regex: RegExp }> = [
+    { locale: 'ru', label: 'Cyrillic', regex: /[Ѐ-ӿ]/ },
+    { locale: 'ar', label: 'Arabic', regex: /[؀-ۿ]/ },
+    { locale: 'he', label: 'Hebrew', regex: /[֐-׿]/ },
+    { locale: 'de', label: 'German-specific (äöüßÄÖÜ)', regex: /[äöüßÄÖÜ]/ },
+    { locale: 'es', label: 'Spanish accent/ñ', regex: /[áéíóúñ¿¡ÁÉÍÓÚÑ]/ },
+  ];
+
+  for (const { locale, label, regex } of scriptChecks) {
+    it(`every game with seo in ${locale} contains ${label} characters`, () => {
+      const keys = gamesWithSeo(locale);
+      for (const key of keys) {
+        const all = collectSeoStrings(locale, key).join(' ');
+        expect(
+          regex.test(all),
+          `[${locale}/${key}] expected ${label} characters but found none — possible transliteration corruption`,
+        ).toBe(true);
+      }
+    });
+  }
 });

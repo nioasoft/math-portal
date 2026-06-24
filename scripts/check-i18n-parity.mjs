@@ -79,8 +79,23 @@ for (const locale of LOCALES) {
   }
 }
 
+// 3. Assert every game block in the reference locale carries a complete seo block.
+const refGames = load(REF, 'games3d');
+const REQUIRED_SEO = ['intro', 'howToPlay', 'skills', 'example', 'mistakes', 'faqs'];
+for (const [key, block] of Object.entries(refGames)) {
+  if (!block || typeof block !== 'object' || !('title' in block) || key === 'canary') continue;
+  const seo = block.seo;
+  const missing = !seo || typeof seo !== 'object'
+    ? REQUIRED_SEO
+    : REQUIRED_SEO.filter((f) => !(f in seo));
+  if (missing.length) {
+    console.error(`SEO_INCOMPLETE games3d.${key}.seo (he) missing: ${missing.join(', ')}`);
+    problems++;
+  }
+}
+
 if (problems === 0) {
-  console.log(`✓ i18n parity OK — ${NAMESPACES.join(', ')} aligned across ${LOCALES.join('/')}; all ${topics.size} used topics labelled in every locale.`);
+  console.log(`✓ i18n parity OK — ${NAMESPACES.join(', ')} aligned across ${LOCALES.join('/')}; all ${topics.size} used topics labelled in every locale; all game seo blocks complete in ${REF}.`);
   process.exit(0);
 } else {
   console.log(`\n✗ ${problems} i18n parity problem(s) found.`);

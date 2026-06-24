@@ -83,7 +83,33 @@
     "description": "Construye un arreglo de cubos para resolver una multiplicación",
     "instructions": "Arrastra para construir, o usa los botones − / + para añadir filas y columnas, luego pulsa Comprobar",
     "prompt": "Construye una matriz de {rows} filas × {cols} columnas",
-    "correct": "{rows} × {cols} = {product}!"
+    "correct": "{rows} × {cols} = {product}!",
+    "seo": {
+      "intro": "En Matrices de Multiplicación los alumnos construyen ellos mismos una cuadrícula de cubos 3D eligiendo el número de filas y columnas y luego pulsan Comprobar. A diferencia del juego de Matriz de Multiplicación existente con el campo de frutas ya hecho, aquí el alumno construye el rectángulo activamente, uniendo ecuación y forma en un solo paso.",
+      "howToPlay": [
+        "Lee la operación de multiplicación indicada (p. ej., 3 filas × 4 columnas).",
+        "Arrastra o usa los botones −/+ para fijar el número de filas y columnas.",
+        "Observa cómo la cuadrícula de cubos crece y se llena.",
+        "Pulsa Comprobar para confirmar que filas × columnas es igual al producto indicado."
+      ],
+      "skills": "Construir la matriz entrena a ver la multiplicación como un área rectangular: filas por columnas. Al elegir ellos mismos las dos dimensiones, los alumnos descubren que el orden de los factores no cambia el producto, convirtiendo la propiedad conmutativa en un hallazgo propio antes de la definición formal.",
+      "example": "Para 4×6, el alumno fija 4 filas y 6 columnas y llena un rectángulo de 24 cubos. Girar la vista a 6 filas y 4 columnas muestra de inmediato que 4×6=6×4 sin ninguna explicación verbal.",
+      "mistakes": "Los alumnos a veces confunden filas y columnas y ponen 6 filas y 4 columnas para una tarea de 4×6. El juego acepta ambas orientaciones porque el producto es idéntico, ayudando a descubrir la propiedad conmutativa en lugar de memorizarla.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia construir la matriz del juego de Matriz de Multiplicación (campo de frutas)?",
+          "a": "El campo de frutas muestra una cuadrícula ya hecha y pide contar el total. Aquí se dan los factores y el alumno construye el rectángulo él mismo: la conexión entre ecuación y forma es activa, no solo observacional."
+        },
+        {
+          "q": "¿Para qué cursos es adecuado Matrices de Multiplicación?",
+          "a": "Cursos 3.°–4.°, en los que los alumnos pasan de la suma repetida al modelo de área y necesitan interiorizar ambos factores de un producto antes de memorizar las tablas."
+        },
+        {
+          "q": "¿Cubre el juego todas las tablas de multiplicar?",
+          "a": "Cubre las operaciones de multiplicación de los cursos 3.°–4.°, con matrices que pueden representar productos de hasta 100."
+        }
+      ]
+    }
   },
   "measureFill": {
     "title": "Llena el recipiente",
@@ -169,7 +195,33 @@
     "instructions": "Arrastra por los huecos para llenar canicas, o usa los botones − / +, luego pulsa Comprobar",
     "prompt": "Coloca {target} canicas",
     "correct": "¡Genial! Colocaste {target} canicas",
-    "wrong": "¡Casi! Cuenta las canicas otra vez y corrige"
+    "wrong": "¡Casi! Cuenta las canicas otra vez y corrige",
+    "seo": {
+      "intro": "El Marco de Diez coloca ante el alumno una cuadrícula 2×5 de huecos y le pide llenar el número correcto de canicas. La cuadrícula fija de diez casillas ancla cada número del 1 al 10 a su distancia respecto al diez, haciendo que la estructura de los números pequeños sea concreta y automática.",
+      "howToPlay": [
+        "Lee el número objetivo que aparece sobre el marco de diez.",
+        "Arrastra sobre los huecos o usa los botones −/+ para añadir o quitar canicas.",
+        "Fíjate en cuántas casillas quedan vacías: eso es lo que falta para llegar al diez.",
+        "Cuando las casillas llenas coincidan con el objetivo, pulsa Comprobar."
+      ],
+      "skills": "El Marco de Diez construye el concepto de amigo del diez: cada número del 1 al 9 se entiende como cierto número de canicas más cierto número de casillas vacías. Esta relación con el diez acelera la suma mental (7+5=10+2) y la resta mucho más allá de lo que logra el conteo progresivo.",
+      "example": "Colocar 7 canicas llena la fila superior completamente (5) y 2 casillas de la fila inferior, dejando 3 vacías. El alumno ve de inmediato que 7=5+2 y que 10-7=3, sin contar.",
+      "mistakes": "Los alumnos que simplemente cuentan hasta el objetivo se pierden la lección clave del Marco de Diez: la relación entre el número y el diez. Preguntar también '¿cuántas están vacías?' junto a '¿cuántas están llenas?' activa el pensamiento complementario para el que está diseñado el marco.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia el Marco de Diez del Divisor de Números?",
+          "a": "El Marco de Diez descompone siempre un número respecto al diez: casillas llenas frente a vacías en una cuadrícula fija de 10. El Divisor de Números es abierto: descompone cualquier número pequeño en dos partes cualesquiera, sin anclarse al diez."
+        },
+        {
+          "q": "¿Para qué cursos es adecuado el Marco de Diez?",
+          "a": "Cursos 1.°–2.°, donde los alumnos construyen imágenes mentales de los números 1–10 y sus relaciones con el diez como base para los datos de suma y resta."
+        },
+        {
+          "q": "¿Aparecen en el juego números mayores de 10?",
+          "a": "El juego básico cubre del 1 al 10. Algunas rondas pueden usar un marco de diez doble para mostrar los números del 11 al 20 y ver que son diez más algunas unidades."
+        }
+      ]
+    }
   },
   "placeValue": {
     "title": "Constructor de valor posicional",
@@ -177,7 +229,33 @@
     "instructions": "Añade cajas a cada posición con los botones − / + (centenas, decenas, unidades), o arrastra hacia arriba sobre una columna para añadir. Cuando una columna llega a 10, diez cajas pequeñas se agrupan en una más grande. Pulsa Comprobar para evaluar",
     "prompt": "Construye el número {target}",
     "correct": "¡Genial! Construiste {target}",
-    "wrong": "¡Casi! Revisa los dígitos y corrige el número"
+    "wrong": "¡Casi! Revisa los dígitos y corrige el número",
+    "seo": {
+      "intro": "El Constructor de Valor Posicional sitúa a los alumnos en un almacén donde apilan bloques físicos en columnas de centenas, decenas y unidades para construir un número objetivo. Cuando una columna alcanza diez bloques, se agrupan automáticamente en una unidad mayor, convirtiendo la regla de canje del sistema decimal en un evento observable.",
+      "howToPlay": [
+        "Lee el número objetivo que aparece sobre las columnas del almacén.",
+        "Usa −/+ o arrastra hacia arriba en cada columna para añadir bloques de centenas, decenas o unidades.",
+        "Observa cómo diez cubos pequeños se agrupan automáticamente en un bloque mayor.",
+        "Cuando las tres columnas coincidan con los dígitos del número objetivo, pulsa Comprobar."
+      ],
+      "skills": "El Constructor de Valor Posicional desarrolla la comprensión de que la posición de un dígito determina su valor: un 3 en la columna de las centenas vale 300, no 3. Los alumnos practican la composición de números multidigitales a partir de sus partes y ven el reagrupamiento como consecuencia natural del sistema decimal.",
+      "example": "Para construir 234: coloca 2 placas de centenas, 3 barras de decenas y 4 cubos de unidades. El almacén muestra 200+30+4 por separado, y Comprobar confirma que el valor combinado es 234.",
+      "mistakes": "Los alumnos suelen introducir el dígito, no el valor: ponen 2 unidades para 234 porque el dígito de unidades es el último que ven. Las columnas codificadas por colores entrenan a leer cada dígito en su columna correcta antes de colocar bloques.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia el Constructor de Valor Posicional del juego de Puntos Explosivos?",
+          "a": "Los Puntos Explosivos se centran en el momento del canje: diez puntos explotan en uno en la columna siguiente. El Constructor de Valor Posicional se centra en construir correctamente un número estático a partir de sus dígitos. El reagrupamiento aquí es un efecto secundario, no el evento principal."
+        },
+        {
+          "q": "¿Para qué cursos es adecuado el Constructor de Valor Posicional?",
+          "a": "Cursos 2.°–4.°, desde números de dos cifras en 2.° hasta números de tres cifras e inicio de cuatro cifras en 3.° y 4.°."
+        },
+        {
+          "q": "¿Puede construirse el mismo número de más de una forma?",
+          "a": "No. El objetivo es una descomposición de dígitos específica (p. ej., 2 centenas, 3 decenas y 4 unidades para 234). Los alumnos deben ajustarse a la forma estándar para practicar la representación canónica del valor posicional."
+        }
+      ]
+    }
   },
   "clockBuilder": {
     "title": "Constructor de la hora",
@@ -281,7 +359,33 @@
     "instructions": "Arrastra hacia arriba sobre la bandeja para añadir una moneda de ₪1, o usa los botones − / + de cada moneda y billete (₪1, ₪2, ₪5, ₪10, ₪20, ₪50). Añade monedas y billetes hasta alcanzar la cantidad y luego pulsa Comprobar",
     "prompt": "Paga ₪{amount}",
     "correct": "¡Genial! Pagaste exactamente ₪{amount}",
-    "wrong": "¡Casi! Revisa la cantidad en la bandeja y corrígela"
+    "wrong": "¡Casi! Revisa la cantidad en la bandeja y corrígela",
+    "seo": {
+      "intro": "En la Tienda de Monedas los alumnos se sitúan en un puesto de mercado y pagan cantidades exactas con monedas y billetes. Arrastran dinero real a la bandeja y ven cómo el total sube hasta coincidir con el precio, convirtiendo el valor abstracto de las monedas en una compra real.",
+      "howToPlay": [
+        "Lee el precio que aparece en el letrero de la tienda.",
+        "Arrastra monedas y billetes a la bandeja o usa los botones −/+ de cada denominación.",
+        "Observa cómo el total de la bandeja sube con cada adición.",
+        "Cuando la bandeja coincida exactamente con el precio, pulsa Comprobar para completar la compra."
+      ],
+      "skills": "La Tienda de Monedas desarrolla la fluidez con las denominaciones de monedas y billetes y la suma de varios valores. Los alumnos aprenden a elegir el menor número de monedas para un precio y a calcular el cambio como diferencia entre el importe entregado y el precio.",
+      "example": "Para pagar ₪17, un alumno puede poner un billete de ₪10, una moneda de ₪5 y dos monedas de ₪1. La bandeja muestra 10+5+1+1=17, confirmando la combinación antes de pulsar Comprobar.",
+      "mistakes": "Los alumnos suelen acumular demasiadas monedas pequeñas en lugar de elegir denominaciones mayores. El total inmediato de la bandeja los anima a cambiar monedas pequeñas por un billete cuando el total supera el precio.",
+      "faqs": [
+        {
+          "q": "¿Cómo enseña el juego a dar cambio, no solo a pagar cantidades exactas?",
+          "a": "En algunas rondas ya hay un importe en la bandeja y el alumno debe ajustarlo: agregar o retirar monedas para llegar exactamente al precio, tal como ocurre al dar cambio en la vida real."
+        },
+        {
+          "q": "¿Para qué cursos es adecuada la Tienda de Monedas?",
+          "a": "Cursos 2.°–4.°, desde el reconocimiento básico de monedas en 2.° hasta cálculos de cambio en múltiples pasos en 4.°."
+        },
+        {
+          "q": "¿Usa el juego las denominaciones reales del séquel israelí?",
+          "a": "Sí. Las monedas y billetes son ₪1, ₪2, ₪5, ₪10, ₪20 y ₪50, las denominaciones con las que los alumnos tratan en su vida diaria en Israel."
+        }
+      ]
+    }
   },
   "additionMine": {
     "title": "Mina de Sumas",
@@ -314,7 +418,33 @@
     "instructions": "Quita piedras con los botones − / + de cada dígito (centenas, decenas, unidades), o arrastra hacia abajo sobre una columna para quitar una piedra. Cuando una columna es demasiado pequeña, pulsa − para romper una piedra-decena del dígito superior en diez piedras pequeñas (el puente se rompe). Luego pulsa Comprobar",
     "prompt": "Resta: {a} − {b}",
     "correct": "¡Genial! La diferencia es {diff}",
-    "wrong": "¡Casi! Revisa los dígitos y corrige la diferencia"
+    "wrong": "¡Casi! Revisa los dígitos y corrige la diferencia",
+    "seo": {
+      "intro": "El Puente de Resta pide desmontar un puente de piedra piedra a piedra, columna a columna, para encontrar la diferencia. Cuando la columna de unidades se queda corta, una piedra-decena de la columna siguiente se rompe en diez piedras pequeñas, convirtiendo el paso del reagrupamiento en una demolición física en lugar de una regla memorizada.",
+      "howToPlay": [
+        "Lee la operación de resta que aparece sobre el puente.",
+        "Retira piedras de las columnas de unidades, decenas o centenas con los botones −/+ o arrastrando hacia abajo.",
+        "Cuando una columna se quede corta, pulsa − para romper una piedra-decena de la columna siguiente en diez piedras pequeñas.",
+        "Cuando todas las columnas muestren la diferencia correcta, pulsa Comprobar."
+      ],
+      "skills": "El Puente de Resta concreta la reagrupación en la resta multidigital: el paso más confuso del algoritmo escrito. Los alumnos que ven una decena romperse literalmente en diez unidades entienden por qué el dígito de la columna siguiente disminuye en 1, evitando el error de resta más frecuente en primaria.",
+      "example": "Restar 47 a 83: la columna de unidades tiene 3 pero necesita 7. Pulsa − para romper una piedra-decena: la columna de decenas baja de 8 a 7 y la de unidades sube de 3 a 13. Ahora 13-7=6 y 7-4=3, dando 36.",
+      "mistakes": "El error típico es restar el dígito menor del mayor independientemente de cuál está arriba (se calcula 83-47 como 40+4=44). El mecanismo del puente obliga a retirar la cantidad correcta, y la dirección de la resta queda inequívoca.",
+      "faqs": [
+        {
+          "q": "¿Cómo enseña el mecanismo del puente el reagrupamiento sin la regla escrita abstracta?",
+          "a": "Cuando una columna tiene pocos bloques, pulsar − rompe una piedra-decena en diez unidades justo delante del alumno. Ve bajar el dígito de la columna siguiente y subir el grupo de unidades. La regla escrita de reagrupamiento es una abreviatura de ese evento."
+        },
+        {
+          "q": "¿Para qué cursos es adecuado el Puente de Resta?",
+          "a": "Cursos 2.°–4.°, desde la resta de dos cifras con reagrupamiento en 2.° hasta problemas de tres cifras con doble reagrupamiento en 3.° y 4.°."
+        },
+        {
+          "q": "¿Qué ocurre si es necesario reagrupar de las centenas a las decenas?",
+          "a": "El juego soporta reagrupamientos en cascada: si la columna de decenas también se queda vacía, pulsar − rompe una piedra-centena en diez decenas, mostrando visualmente un reagrupamiento en dos niveles."
+        }
+      ]
+    }
   },
   "volumeBuilder": {
     "title": "Constructor de volumen",
@@ -388,7 +518,33 @@
     "instructions": "Dos plataformas de piedra flotan sobre un abismo. Construye el puente: usa izquierda −/+ para fijar la parte izquierda y derecha −/+ para la parte derecha (también puedes arrastrar en cada lado). El puente se conecta cuando las dos partes suman exactamente el ancho del hueco. Luego pulsa Comprobar",
     "prompt": "Descompón {target} en dos partes",
     "correct": "¡Genial! Las dos partes juntas suman {target}",
-    "wrong": "¡Casi! Haz que las dos partes sumen exactamente el ancho del hueco, luego pulsa Comprobar"
+    "wrong": "¡Casi! Haz que las dos partes sumen exactamente el ancho del hueco, luego pulsa Comprobar",
+    "seo": {
+      "intro": "En el Divisor de Números dos plataformas de piedra flotan sobre un abismo. Los alumnos ajustan los números izquierdo y derecho hasta que su suma iguale el todo, y un puente de cristal aparece cuando las partes son correctas. La metáfora del puente sobre el abismo hace tangible la relación parte-parte-todo.",
+      "howToPlay": [
+        "Lee el número entero que aparece sobre el abismo.",
+        "Usa los botones −/+ o arrastra en cada plataforma para fijar la parte izquierda.",
+        "Observa cómo la parte derecha se actualiza para mostrar lo que queda.",
+        "Cuando el puente una las dos plataformas, pulsa Comprobar."
+      ],
+      "skills": "Las descomposiciones numéricas construyen la fluidez automática al descomponer números pequeños (1–20), que es la base para la suma y resta mentales. Saber que 7 se descompone en 3+4 o en 5+2 permite al alumno sumar pasando por decenas sin contar con los dedos.",
+      "example": "Para el todo 8, el alumno fija la parte izquierda en 5; la parte derecha muestra automáticamente 3. El puente aparece y confirma 5+3=8. Probar 6 y luego 2 muestra una descomposición diferente y válida.",
+      "mistakes": "Los niños pequeños suelen fijar una parte en 1 y contar la otra, sin percatarse de que existen muchos pares válidos. Arrastrar de forma interactiva anima a explorar todo el rango de descomposiciones en lugar de detenerse en la primera correcta.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia el Divisor de Números del juego Marco de Diez?",
+          "a": "El Marco de Diez muestra un número como celdas llenas y vacías en una cuadrícula fija de 10, construyendo la relación con el diez. El Divisor de Números es abierto: descompone cualquier número pequeño en dos partes cualesquiera, sin anclarse al diez."
+        },
+        {
+          "q": "¿Para qué cursos es adecuado el Divisor de Números?",
+          "a": "Cursos 1.°–2.°, donde los alumnos aprenden a descomponer números hasta el 20 y necesitan dominar con fluidez la relación parte-parte-todo antes de pasar a los algoritmos de suma."
+        },
+        {
+          "q": "¿Acepta el juego cualquier descomposición válida o solo un par específico?",
+          "a": "Se acepta cualquier par cuya suma iguale el todo. El juego anima a explorar todas las descomposiciones del número objetivo a lo largo de varias rondas."
+        }
+      ]
+    }
   },
   "numberLineJump": {
     "title": "Salto en la recta numérica",
@@ -396,7 +552,33 @@
     "instructions": "Ajusta el tamaño del salto con − / +, luego pulsa → Adelante o ← Atrás para que el coche salte por la pista. Puedes saltar varias veces hasta caer justo en la bandera. Después pulsa Comprobar",
     "prompt": "Salta hasta {target}",
     "correct": "¡Genial! Caíste justo en {target}",
-    "wrong": "¡Casi! Salta adelante o atrás hasta caer justo en la bandera"
+    "wrong": "¡Casi! Salta adelante o atrás hasta caer justo en la bandera",
+    "seo": {
+      "intro": "Saltos en la Recta Numérica coloca un coche en una pista de carreras y pide que salte hasta una posición objetivo con saltos del tamaño elegido. Cada salto hacia adelante o hacia atrás es una suma o resta visible, convirtiendo la operación abstracta en un viaje real por una recta graduada.",
+      "howToPlay": [
+        "Lee el número objetivo señalado por la bandera en la pista.",
+        "Fija el tamaño del salto con los botones −/+.",
+        "Pulsa Adelante o Atrás para saltar el coche ese número de casillas cada vez.",
+        "Cae exactamente sobre la bandera y luego pulsa Comprobar."
+      ],
+      "skills": "Saltos en la Recta Numérica desarrolla el cálculo mental flexible haciendo que la suma y la resta tengan una dirección: adelante para sumar, atrás para restar. Los alumnos desarrollan el sentido de distancia y dirección en la recta, lo que prepara para las operaciones con enteros y el trabajo con coordenadas.",
+      "example": "Para llegar al 17 desde 0 con saltos de 5: tres saltos adelante llegan al 15, luego se cambia a salto de 2 para un salto más hasta el 17. Los alumnos ven 5+5+5+2=17 como un camino, no como una suma abstracta.",
+      "mistakes": "Los alumnos eligen a veces un tamaño de salto que no divide exactamente el objetivo y lo sobrepasan, teniendo luego dificultades para volver. El juego permite distintos tamaños de salto en una misma ronda, fomentando un enfoque de dos pasos.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia Saltos en la Recta Numérica de la Carrera de Conteo por Saltos?",
+          "a": "La Carrera de Conteo por Saltos fija el tamaño del salto y pide marcar cada aterrizaje en secuencia, practicando los múltiplos como patrón. Saltos en la Recta Numérica permite elegir tamaños de salto para llegar a un único objetivo, cubriendo suma y resta a la vez."
+        },
+        {
+          "q": "¿Para qué cursos es adecuado Saltos en la Recta Numérica?",
+          "a": "Cursos 1.°–4.°, con objetivos más simples y saltos mayores para los más jóvenes, y objetivos de dos cifras que requieren tamaños de salto mixtos para los cursos superiores."
+        },
+        {
+          "q": "¿Puede el coche saltar hacia atrás para practicar la resta?",
+          "a": "Sí. Pulsando el botón Atrás, el coche salta a la izquierda en la pista, modelando la resta. A veces es necesario sobrepasar el objetivo y volver atrás para caer exactamente sobre él."
+        }
+      ]
+    }
   },
   "explodingDots": {
     "title": "Puntos que explotan",
@@ -454,7 +636,33 @@
     "instructions": "Toca las casillas en las que cae el animal en cada salto. Márcalas todas hasta el final y luego pulsa Comprobar — el animal saltará por las piedras. Toca una casilla otra vez para desmarcarla, o Reiniciar para empezar de nuevo.",
     "prompt": "Marca cada salto de {step} hasta {target}",
     "correct": "¡Genial! Contaste de {step} en {step} hasta {target}",
-    "wrong": "¡Casi! Marca exactamente cada salto — sin que falte ni sobre ninguno"
+    "wrong": "¡Casi! Marca exactamente cada salto — sin que falte ni sobre ninguno",
+    "seo": {
+      "intro": "La Carrera de Conteo por Saltos envía a un animal de safari a través de piedras en una pista. Los alumnos tocan cada piedra donde el animal aterriza al contar de 2 en 2, de 5 en 5 o de 10 en 10, y el animal corre para confirmar. Marcar el patrón ellos mismos antes de ver la animación hace que la regularidad del conteo sea activa y memorable.",
+      "howToPlay": [
+        "Lee el intervalo de salto y el objetivo que aparecen sobre la pista de safari.",
+        "Toca cada piedra que caiga en un múltiplo del intervalo de salto.",
+        "Continúa hasta el objetivo marcando cada aterrizaje, sin que falte ni sobre ninguno.",
+        "Pulsa Comprobar para ver al animal saltar sobre las piedras marcadas."
+      ],
+      "skills": "Contar de 2 en 2, de 5 en 5 y de 10 en 10 es la puerta de entrada a las tablas de multiplicar. Identificar cada múltiplo entrena el conteo rítmico y sienta la base conceptual para entender la multiplicación como suma repetida en una secuencia estructurada.",
+      "example": "Contar de 5 en 5 hasta 30: toca los mosaicos 5, 10, 15, 20, 25, 30. El espaciado uniforme de las piedras marcadas revela el patrón del ×5 visualmente antes de introducir cualquier fila de la tabla.",
+      "mistakes": "Los alumnos suelen olvidar el primer salto (empiezan en 0 en lugar de en el intervalo) o marcan la piedra objetivo pero olvidan las anteriores. El juego requiere que se marque cada múltiplo: una piedra que falta o que sobra falla la comprobación, reforzando la secuencia completa, no solo el resultado final.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia la Carrera de Conteo por Saltos de Saltos en la Recta Numérica?",
+          "a": "La Carrera de Conteo por Saltos fija el tamaño del salto y pide marcar cada aterrizaje en secuencia, practicando múltiplos como patrón. Saltos en la Recta Numérica permite elegir tamaños de salto para llegar a un único objetivo, cubriendo suma y resta a la vez."
+        },
+        {
+          "q": "¿Para qué cursos es adecuada la Carrera de Conteo por Saltos?",
+          "a": "Cursos 2.°–3.°, donde los alumnos consolidan el conteo de 2 en 2, de 5 en 5 y de 10 en 10 como preparación directa para las tablas de multiplicar."
+        },
+        {
+          "q": "¿Cubre el juego intervalos distintos de 2, 5 y 10?",
+          "a": "El juego básico usa 2, 5 y 10 conforme al plan de estudios de los cursos 2.°–3.°. En rondas avanzadas pueden aparecer más intervalos a medida que el alumno progresa."
+        }
+      ]
+    }
   },
   "weightBalance": {
     "title": "Balanza",
@@ -643,7 +851,33 @@
     "instructions": "Observa cómo los puntos destellan en la mesa y luego desaparecen bajo un paño. Usa los botones − / + para introducir cuántos puntos viste (pulsa \"Mostrar otra vez\" para verlos de nuevo) y pulsa Comprobar",
     "prompt": "¿Cuántos puntos viste?",
     "correct": "¡Genial! Viste {count} puntos",
-    "wrong": "¡Casi! Echa otro vistazo e intenta contar los puntos"
+    "wrong": "¡Casi! Echa otro vistazo e intenta contar los puntos",
+    "seo": {
+      "intro": "El Destello de Puntos entrena el sentido numérico más rápido del cerebro: reconocer cuántos puntos aparecen de un vistazo sin contar. Los puntos destellan brevemente en la mesa del mago y desaparecen; los alumnos introducen cuántos vieron. Practicar la subitización sienta la base perceptiva que hace que toda la aritmética posterior sea intuitiva.",
+      "howToPlay": [
+        "Observa los puntos que destellan brevemente en la mesa del mago.",
+        "Recuerda el patrón cuando el paño los cubre.",
+        "Introduce el número de puntos que viste con los botones −/+.",
+        "Pulsa Comprobar o Mostrar de nuevo si quieres otra ojeada antes de responder."
+      ],
+      "skills": "La subitización, el reconocimiento instantáneo de cantidades, es la habilidad numérica más temprana y predice directamente la fluidez aritmética. El alumno que ve 4 como un grupo sin contar avanza más rápido hacia las descomposiciones numéricas, los datos de suma y, finalmente, el cálculo mental, porque las cantidades pequeñas ya son automáticas.",
+      "example": "Aparecen cinco puntos dispuestos como la cara de un dado durante medio segundo. El alumno que subitiza reconoce el patrón familiar al instante. El que intenta contar pierde la imagen antes de terminar. El juego entrena el atajo perceptivo.",
+      "mistakes": "Los alumnos que aún no subitizan intentarán contar punto por punto durante el destello, perdiendo a menudo la cuenta. El tiempo de exposición limitado impide el conteo y fomenta el reconocimiento de patrones, entrenando al alumno a ver grupos, no objetos individuales.",
+      "faqs": [
+        {
+          "q": "¿Qué es la subitización y por qué la entrena el juego en lugar del conteo?",
+          "a": "La subitización es reconocer una cantidad pequeña al instante sin contar, igual que los adultos leen los dados. Se desarrolla antes de la aritmética formal y hace que las descomposiciones numéricas y los datos de suma sean automáticos; practicarla directamente acelera la fluidez numérica general."
+        },
+        {
+          "q": "¿Para qué cursos es adecuado el Destello de Puntos?",
+          "a": "Cursos 1.°–2.°, para construir el sentido numérico perceptivo que apoya la aritmética temprana antes de pasar a números mayores."
+        },
+        {
+          "q": "¿Cuántos puntos pueden aparecer en un destello?",
+          "a": "Hasta unos 8–9 puntos, el límite superior de la subitización fiable. Las cantidades mayores se presentan en disposiciones agrupadas (p. ej., dos caras de dado) que aún permiten el reconocimiento instantáneo."
+        }
+      ]
+    }
   },
   "arrayMultiply": {
     "title": "Matriz de Multiplicación",
@@ -971,7 +1205,33 @@
     "instructions": "El número está en la cima del árbol y se divide en dos ramas. Usa los botones −/+ (o arrastra a la derecha para subir y a la izquierda para bajar) para fijar el factor izquierdo. La rama derecha muestra el compañero que resulta al dividir. Cuando el factor divide al número de forma exacta se vuelve verde; si no, aparece un signo de interrogación rojo. Luego pulsa Comprobar",
     "prompt": "Descompón {n} en un producto de dos factores",
     "correct": "¡Genial! {a} × {b} = {n}",
-    "wrong": "¡Casi! Elige un factor que divida {n} de forma exacta (mayor que 1 y menor que el número), luego pulsa Comprobar"
+    "wrong": "¡Casi! Elige un factor que divida {n} de forma exacta (mayor que 1 y menor que el número), luego pulsa Comprobar",
+    "seo": {
+      "intro": "El Árbol de Factores pide descomponer un número compuesto eligiendo dos factores cuyo producto lo iguale, y construir ramas hacia abajo hasta que cada hoja sea un número primo. El árbol visual convierte la idea abstracta de la factorización en primos en un proceso concreto y manejable.",
+      "howToPlay": [
+        "Lee el número que aparece en la cima del árbol.",
+        "Usa −/+ o arrastra para fijar el factor izquierdo; el factor derecho se actualiza automáticamente.",
+        "Comprueba que el factor izquierdo divide al número exactamente: se pondrá verde cuando sea correcto.",
+        "Pulsa Comprobar para confirmar la descomposición del nodo actual."
+      ],
+      "skills": "El Árbol de Factores desarrolla la comprensión de la divisibilidad, los números primos y el Teorema Fundamental de la Aritmética: todo número natural tiene una única descomposición en factores primos. Los alumnos desarrollan el pensamiento sistemático de pares de factores y conectan la multiplicación con la división como operaciones inversas.",
+      "example": "Para factorizar 24: elige 4 y 6. Divide 4 en 2×2 y 6 en 2×3. Todas las hojas son primas (2, 2, 2, 3) y confirman que 24=2³×3, independientemente del par de factores elegido inicialmente.",
+      "mistakes": "Los alumnos eligen a menudo 1 como factor, lo que no está permitido, o se detienen en un nodo compuesto. El árbol resalta en color diferente las hojas no primas y pide seguir dividiendo hasta que cada rama termine en un primo.",
+      "faqs": [
+        {
+          "q": "¿Por qué el árbol siempre produce los mismos factores primos sin importar con qué par se empiece?",
+          "a": "Es el Teorema Fundamental de la Aritmética: cada número tiene una única descomposición en primos. Distintos pares de factores producen árboles con formas distintas pero hojas primas idénticas, un descubrimiento que el juego está diseñado para provocar."
+        },
+        {
+          "q": "¿Para qué cursos es adecuado el Árbol de Factores?",
+          "a": "Cursos 3.°–5.°, donde los alumnos se encuentran por primera vez con reglas de divisibilidad, números primos y compuestos, y necesitan entender la estructura multiplicativa de los números enteros."
+        },
+        {
+          "q": "¿Puede introducirse un número primo como raíz del árbol?",
+          "a": "No. El juego selecciona únicamente números compuestos porque los primos no pueden dividirse más. Así se garantiza que haya al menos un par de factores válido en cada ronda."
+        }
+      ]
+    }
   },
   "longDivision": {
     "title": "Torres de división",

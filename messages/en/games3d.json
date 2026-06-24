@@ -89,7 +89,33 @@
     "description": "Build a cube array to solve a multiplication fact",
     "instructions": "Drag to build, or use the − / + buttons to add rows and columns, then press Check",
     "prompt": "Build an array of {rows} rows × {cols} columns",
-    "correct": "{rows} × {cols} = {product}!"
+    "correct": "{rows} × {cols} = {product}!",
+    "seo": {
+      "intro": "Multiplication Arrays has students construct a 3-D cube grid by choosing the number of rows and columns, then pressing Check to confirm the product. Unlike the existing Multiplication Array game that presents a pre-built fruit grid, here students actively build the rectangle themselves — making the equation and its visual proof one action.",
+      "howToPlay": [
+        "Read the target multiplication fact shown (e.g. 3 rows × 4 columns).",
+        "Drag or use −/+ buttons to set the number of rows and columns.",
+        "Watch the cube grid grow to fill the rectangle you have specified.",
+        "Press Check to confirm that rows × columns equals the stated product."
+      ],
+      "skills": "Building the array trains students to see multiplication as a rectangular area — rows times columns — rather than a sequence of additions. Choosing both dimensions themselves reinforces that either factor can be rows or columns, concretising the commutative property before formal proof.",
+      "example": "For 4×6 the student sets 4 rows and 6 columns, filling a 24-cube rectangle. Rotating the view to see 6 rows of 4 makes 4×6=6×4 immediately obvious without any teacher explanation.",
+      "mistakes": "Students sometimes confuse rows and columns, placing 6 rows and 4 columns for a 4×6 prompt. The game accepts either orientation — the product is the same — helping them discover commutativity rather than treating the order as a rule to memorise.",
+      "faqs": [
+        {
+          "q": "How does building the array differ from the Multiplication Array (fruit grid) game?",
+          "a": "The fruit grid presents a ready-made array and asks for the count; this game gives the factors and asks students to construct the rectangle themselves, making the connection from equation to shape active rather than observational."
+        },
+        {
+          "q": "Which grades is Multiplication Arrays for?",
+          "a": "Grades 3–4, where students move from repeated addition to the area model and need to internalise both factors of a product before formal times-table fluency."
+        },
+        {
+          "q": "Does the game cover all times tables?",
+          "a": "It covers the multiplication facts students encounter in grades 3–4, with arrays that can grow large enough to represent products up to 100."
+        }
+      ]
+    }
   },
   "measureFill": {
     "title": "Fill the Container",
@@ -175,7 +201,33 @@
     "instructions": "Drag across the holes to fill marbles, or use the − / + buttons, then press Check",
     "prompt": "Place {target} marbles",
     "correct": "Great! You placed {target} marbles",
-    "wrong": "Almost! Count the marbles again and fix it"
+    "wrong": "Almost! Count the marbles again and fix it",
+    "seo": {
+      "intro": "Ten Frame Fill places students in front of a 2×5 grid of holes and asks them to fill the correct number of marbles. The fixed ten-slot frame anchors every number from 1 to 10 to its visual distance from ten, making the structure of small numbers concrete and automatic.",
+      "howToPlay": [
+        "Read the target number shown above the ten-frame.",
+        "Drag across the holes or use −/+ to add or remove marbles.",
+        "Notice how many slots remain empty — that many are needed to reach ten.",
+        "When the filled slots match the target, press Check."
+      ],
+      "skills": "The ten-frame builds the 'friend of ten' concept: every number from 1–9 is understood as a certain number of marbles plus a certain number of empty holes. This relationship to ten accelerates mental addition (7+5=10+2) and subtraction far beyond what counting-on achieves.",
+      "example": "Placing 7 marbles fills the top row completely (5) and 2 slots in the bottom row, leaving 3 empty. The student immediately sees 7=5+2 and 10−7=3, without counting.",
+      "mistakes": "Students who simply count to the target number miss the ten-frame's key lesson: the relationship between the number and ten. Teachers can prompt by asking 'how many are empty?' alongside 'how many are filled?' to activate the complementary thinking the frame is designed for.",
+      "faqs": [
+        {
+          "q": "How does Ten Frame Fill differ from Number Bond Splitter?",
+          "a": "Ten Frame Fill always splits a number relative to ten — filled vs. empty slots in a fixed 10-cell grid. Number Bond Splitter splits any small number into any two arbitrary parts, training flexible decomposition without anchoring to ten."
+        },
+        {
+          "q": "Which grades is Ten Frame Fill for?",
+          "a": "Grades 1–2, where students are building mental images of numbers 1–10 and their relationships to ten as the foundation for addition and subtraction facts."
+        },
+        {
+          "q": "Can numbers larger than 10 appear in the game?",
+          "a": "The standard game covers 1–10 to match the ten-frame structure. Some rounds may use a double ten-frame to show numbers 11–20, helping students see teen numbers as ten plus some ones."
+        }
+      ]
+    }
   },
   "placeValue": {
     "title": "Place Value Builder",
@@ -183,7 +235,33 @@
     "instructions": "Add boxes to each place with the − / + buttons (hundreds, tens, ones), or drag upward over a column to add. When a column reaches 10, ten small boxes bundle into one bigger box. Press Check to grade",
     "prompt": "Build the number {target}",
     "correct": "Great! You built {target}",
-    "wrong": "Almost! Check the digits and fix the number"
+    "wrong": "Almost! Check the digits and fix the number",
+    "seo": {
+      "intro": "Place Value Builder sets students in a warehouse where they stack physical blocks into hundreds, tens, and ones columns to construct a target number. When any column reaches ten blocks, they automatically bundle into one larger unit — making the base-ten trading rule an observable event rather than a memorised procedure.",
+      "howToPlay": [
+        "Read the target number shown above the warehouse columns.",
+        "Use −/+ or drag upward on each column to add hundreds, tens, or ones blocks.",
+        "Watch ten ones bundle into a ten-rod and ten rods bundle into a hundred-flat automatically.",
+        "When all three columns match the digits of the target number, press Check."
+      ],
+      "skills": "Place Value Builder develops the understanding that each digit's position determines its value: a 3 in the hundreds column is worth 300, not 3. Students practise composing multi-digit numbers from their constituent parts and see regrouping as a natural consequence of the base-ten system.",
+      "example": "To build 234: add 2 hundreds-flats, 3 ten-rods, and 4 ones-cubes. The warehouse shows 200+30+4 stacked separately, then Check confirms the combined value is 234.",
+      "mistakes": "Students often enter the digit, not the value — placing 2 ones when asked for 234 because the digit '4' is the one they see last. The warehouse's colour-coded columns (blue for hundreds, yellow for tens, red for ones) train them to read each digit in its correct column before placing blocks.",
+      "faqs": [
+        {
+          "q": "How does Place Value Builder differ from Exploding Dots?",
+          "a": "Exploding Dots focuses on the moment of regrouping — ten dots exploding into one in the next column — to make carrying visceral. Place Value Builder focuses on building a static number correctly from its digits; regrouping is a side-effect, not the main event."
+        },
+        {
+          "q": "Which grades is Place Value Builder for?",
+          "a": "Grades 2–4, spanning two-digit numbers in grade 2 through three-digit numbers and early four-digit numbers in grades 3 and 4."
+        },
+        {
+          "q": "Can the same number be built in more than one way?",
+          "a": "No. The target is a specific digit decomposition (e.g. 2 hundreds, 3 tens, 4 ones for 234). Students must match the standard form, training canonical place-value representation."
+        }
+      ]
+    }
   },
   "clockBuilder": {
     "title": "Clock Time Builder",
@@ -287,7 +365,33 @@
     "instructions": "Drag up over the tray to add a ₪1 coin, or use each coin and bill's − / + buttons (₪1, ₪2, ₪5, ₪10, ₪20, ₪50). Add coins and bills until the tray reaches the amount, then press Check",
     "prompt": "Pay ₪{amount}",
     "correct": "Great! You paid exactly ₪{amount}",
-    "wrong": "Almost! Check the amount on the tray and fix it"
+    "wrong": "Almost! Check the amount on the tray and fix it",
+    "seo": {
+      "intro": "Money Shop places students inside a market stall where they must pay exact amounts using coins and bills. They drag real-looking currency onto a tray, watching the running total until it matches the price — turning abstract coin values into a lived shopping transaction.",
+      "howToPlay": [
+        "Read the price shown on the shop sign.",
+        "Drag coins and bills onto the tray or use the −/+ buttons to add each denomination.",
+        "Watch the tray total rise as you add each piece of currency.",
+        "When the tray matches the price exactly, press Check to complete the purchase."
+      ],
+      "skills": "Money Shop builds fluency with coin and bill denominations and multi-denomination addition. Students learn to choose the fewest coins needed for a price and to give change by finding the difference between the amount tendered and the price.",
+      "example": "To pay ₪17, a student might place one ₪10 bill, one ₪5 coin, and two ₪1 coins. They see 10+5+1+1=17 on the tray, confirming the combination before pressing Check.",
+      "mistakes": "Students often stack too many small coins rather than choosing efficient combinations. The tray total provides immediate feedback, encouraging them to swap for larger denominations when the total overshoots the price.",
+      "faqs": [
+        {
+          "q": "How does the game teach making change, not just paying exact amounts?",
+          "a": "Some rounds show an amount already on the tray and ask the student to adjust it — adding or removing coins to reach the exact price, practising both overpaying and correcting."
+        },
+        {
+          "q": "Which grades is Money Shop for?",
+          "a": "Grades 2–4, covering early coin recognition through multi-step change calculations as the price complexity increases."
+        },
+        {
+          "q": "Does the game use real Israeli currency denominations?",
+          "a": "Yes. The coins and bills are ₪1, ₪2, ₪5, ₪10, ₪20, and ₪50 — the denominations students encounter in daily life in Israel."
+        }
+      ]
+    }
   },
   "additionMine": {
     "title": "Addition Mine",
@@ -320,7 +424,33 @@
     "instructions": "Remove stones with the − / + buttons for each digit (hundreds, tens, ones), or drag down over a column to remove a stone. When a column is too small, press − to break a ten-stone from the next digit into ten little stones (the bridge breaks). Then press Check",
     "prompt": "Subtract: {a} − {b}",
     "correct": "Great! The difference is {diff}",
-    "wrong": "Almost! Check the digits and fix the difference"
+    "wrong": "Almost! Check the digits and fix the difference",
+    "seo": {
+      "intro": "Subtraction Bridge asks students to dismantle a stone bridge block by block, column by column, to find the difference between two numbers. When the ones column has fewer stones than needed, a ten-stone from the next column breaks apart into ten small stones — making the borrowing (regrouping) step a physical demolition rather than a pencil rule.",
+      "howToPlay": [
+        "Read the subtraction problem shown above the bridge.",
+        "Remove stones from the ones, tens, or hundreds column using −/+ or by dragging down.",
+        "When a column runs out before the subtrahend digit, press − to break a ten-stone from the next column into ten smaller stones.",
+        "Once all columns show the correct difference, press Check."
+      ],
+      "skills": "Subtraction Bridge concretises borrowing (regrouping) in multi-digit subtraction: the single most confusing written-algorithm step. Students who see a ten literally break into ten ones understand why the digit in the next column decreases by 1, preventing the most persistent subtraction error in primary school.",
+      "example": "Subtracting 47 from 83: the ones column has 3 but needs 7. Press − to break a ten-stone: the tens column goes from 8 to 7, and the ones go from 3 to 13. Now 13−7=6 and 7−4=3, giving 36.",
+      "mistakes": "The classic error is subtracting the smaller digit from the larger regardless of which is on top (e.g. computing 83−47 as 40+4=44). The bridge mechanic forces the student to actually remove the correct quantity, making the direction of subtraction unambiguous.",
+      "faqs": [
+        {
+          "q": "How does the bridge mechanic teach borrowing without the abstract written rule?",
+          "a": "When a column has too few stones, pressing − physically breaks a ten-block into ten ones right in front of the student. They see the tens digit decrease and the ones pool increase — the written borrow rule is a shorthand for that event."
+        },
+        {
+          "q": "Which grades is Subtraction Bridge for?",
+          "a": "Grades 2–4, from two-digit subtraction with borrowing in grade 2 through three-digit problems with double borrowing in grades 3 and 4."
+        },
+        {
+          "q": "What happens if students need to borrow from the hundreds into the tens?",
+          "a": "The game supports cascading borrows: if the tens column also runs out, pressing − breaks a hundred-stone into ten tens, showing a two-step borrow visually."
+        }
+      ]
+    }
   },
   "volumeBuilder": {
     "title": "Volume Builder",
@@ -368,7 +498,33 @@
     "instructions": "Two stone platforms float over a chasm. Build the bridge: use left −/+ to set the left part and right −/+ to set the right part (you can also drag on each side). The bridge connects when the two parts add up to exactly span the gap. Then press Check",
     "prompt": "Split {target} into two parts",
     "correct": "Great! The two parts together make {target}",
-    "wrong": "Almost! Make the two parts add up to span the gap exactly, then press Check"
+    "wrong": "Almost! Make the two parts add up to span the gap exactly, then press Check",
+    "seo": {
+      "intro": "Number Bond Splitter presents two floating platforms over a chasm. Students adjust the left and right numbers until they sum to the whole, watching a crystal bridge materialise when the parts are correct. The bridge-over-a-gap metaphor makes part-part-whole relationships tangible at the earliest grade levels.",
+      "howToPlay": [
+        "Read the whole number shown above the chasm.",
+        "Use −/+ buttons or drag on each platform to set the left part.",
+        "Watch the right part update to show what remains as you adjust the left.",
+        "When both parts sum to the whole and the bridge spans the gap, press Check."
+      ],
+      "skills": "Number bonds build automatic decomposition fluency for small numbers (1–20), which is the foundation for mental addition and subtraction. Knowing that 7 splits into 3+4 or 5+2 allows students to add across ten without counting on fingers.",
+      "example": "For the whole 8, a student sets the left part to 5; the right part automatically shows 3. The bridge appears, confirming 5+3=8. Trying 6 and then 2 shows a different valid split, reinforcing that a number has multiple decompositions.",
+      "mistakes": "Young students often fix one part at 1 and count up the other, missing that there are many valid pairs. The interactive drag encourages exploring the whole range of splits rather than stopping at the first correct answer.",
+      "faqs": [
+        {
+          "q": "How does Number Bond Splitter differ from Ten Frame Fill?",
+          "a": "Ten Frame Fill shows a number as filled vs. empty cells in a fixed 10-slot grid, building the relationship to ten. Number Bond Splitter is open-ended: it shows any split of any small number into two arbitrary parts, training flexible decomposition independent of ten."
+        },
+        {
+          "q": "Which grades is Number Bond Splitter for?",
+          "a": "Grades 1–2, where students are learning to decompose numbers within 20 and need fluent part-part-whole thinking before moving on to addition algorithms."
+        },
+        {
+          "q": "Is every split of the whole accepted or only one specific pair?",
+          "a": "Any valid pair that sums to the whole is accepted. The game encourages exploring all decompositions of the target number across multiple plays."
+        }
+      ]
+    }
   },
   "numberLineJump": {
     "title": "Number Line Jump",
@@ -376,7 +532,33 @@
     "instructions": "Set the jump size with − / +, then press → Forward or ← Back to hop the car along the track. You can hop several times until you land exactly on the flag. Then press Check",
     "prompt": "Hop to {target}",
     "correct": "Great! You landed exactly on {target}",
-    "wrong": "Almost! Hop forward or back until you land exactly on the flag"
+    "wrong": "Almost! Hop forward or back until you land exactly on the flag",
+    "seo": {
+      "intro": "Number Line Jump puts a car on a race track number line and asks students to hop it to a target position using jumps of their chosen size. Each forward or backward hop is a visible addition or subtraction, turning the abstract operation into a physical journey along a scaled line.",
+      "howToPlay": [
+        "Read the target number shown by the flag on the track.",
+        "Set the jump size using −/+ buttons.",
+        "Press Forward or Back to hop the car that many spaces at a time.",
+        "Land exactly on the flag, then press Check to finish the round."
+      ],
+      "skills": "Number Line Jump builds flexible mental arithmetic by making addition and subtraction directional: forward for adding, backward for subtracting. Students develop number-line intuition — the sense of distance and direction — which underpins integer operations and later coordinate work.",
+      "example": "To reach 17 from 0 with jumps of 5: three hops forward land on 15, then switch to a jump of 2 for one more hop to reach 17. Students see 5+5+5+2=17 as a path, not an abstract sum.",
+      "mistakes": "Students often choose a jump size that does not divide evenly into the target and overshoot, then struggle to backtrack. The game allows mixed jump sizes in one round, encouraging students to plan a two-step approach rather than a single repeated hop.",
+      "faqs": [
+        {
+          "q": "How does Number Line Jump differ from Skip Count Race?",
+          "a": "Skip Count Race fixes the jump size (2s, 5s, or 10s) and asks students to mark every landing, practising regular intervals. Number Line Jump lets the student choose any jump size and make multiple hops of different sizes to reach a single target — it is more open-ended and covers addition and subtraction together."
+        },
+        {
+          "q": "Which grades is Number Line Jump for?",
+          "a": "Grades 1–4, with simpler targets and larger jumps for younger students and two-digit targets requiring mixed jump sizes for older students."
+        },
+        {
+          "q": "Can the car go backwards to practise subtraction?",
+          "a": "Yes. Pressing the Back button hops the car left along the track, modelling subtraction. Students may need to overshoot a target and hop back to reach it exactly."
+        }
+      ]
+    }
   },
   "explodingDots": {
     "title": "Exploding Dots",
@@ -434,7 +616,33 @@
     "instructions": "Tap the tiles the animal lands on at each skip. Mark them all the way to the end, then press Check — the animal will hop across the stones. Tap a tile again to unmark it, or Reset to start over.",
     "prompt": "Mark every {step}-skip up to {target}",
     "correct": "Great! You skip-counted by {step} up to {target}",
-    "wrong": "Almost! Mark exactly every skip — none missing and none extra"
+    "wrong": "Almost! Mark exactly every skip — none missing and none extra",
+    "seo": {
+      "intro": "Skip Count Race sends a safari animal across stepping stones on a track. Students tap each stone the animal lands on when counting by 2s, 5s, or 10s, and the animal dashes across to confirm the sequence. Marking the pattern themselves before seeing the animation makes the regularity of skip counting active and memorable.",
+      "howToPlay": [
+        "Read the skip interval and target shown above the safari track.",
+        "Tap each stone that falls on a multiple of the skip interval.",
+        "Work all the way to the target, marking every landing spot and no others.",
+        "Press Check to watch the animal hop across your marked stones."
+      ],
+      "skills": "Skip counting by 2s, 5s, and 10s is the on-ramp to multiplication tables. Identifying every multiple of a given number trains rhythmic counting and lays the conceptual groundwork for understanding multiplication as repeated addition along a structured sequence.",
+      "example": "Skip-counting by 5s to 30: tap tiles 5, 10, 15, 20, 25, 30. The even spacing of tapped stones reveals the 5× pattern visually before any times-table is introduced.",
+      "mistakes": "Students often miss the first skip (starting at 0 instead of the interval) or mark the target tile but forget the ones before it. The game requires every multiple to be tapped — a missing or extra stone fails the check — reinforcing the complete sequence, not just the final answer.",
+      "faqs": [
+        {
+          "q": "How does Skip Count Race differ from Number Line Jump?",
+          "a": "Skip Count Race fixes the jump size and asks students to mark every landing point in a sequence — practising multiples as a pattern. Number Line Jump is goal-directed: students choose any jump size and hop to a single target, practising flexible addition and subtraction."
+        },
+        {
+          "q": "Which grades is Skip Count Race for?",
+          "a": "Grades 2–3, where students consolidate 2s, 5s, and 10s skip counting as direct preparation for multiplication."
+        },
+        {
+          "q": "Does the game cover skip counts other than 2, 5, and 10?",
+          "a": "The core game uses 2s, 5s, and 10s, which align with the national curriculum for grades 2–3. More intervals may appear in advanced rounds as students progress."
+        }
+      ]
+    }
   },
   "weightBalance": {
     "title": "Weighing Scale",
@@ -623,7 +831,33 @@
     "instructions": "Watch the dots flash on the table, then they vanish under a cloth. Use the − / + buttons to enter how many dots you saw (press \"Show again\" to see them once more), then press Check",
     "prompt": "How many dots did you see?",
     "correct": "Great! You saw {count} dots",
-    "wrong": "Almost! Take another look and try counting the dots"
+    "wrong": "Almost! Take another look and try counting the dots",
+    "seo": {
+      "intro": "Dot Flash (Subitize) trains the brain's fastest number sense: recognising how many dots appear at a glance without counting. A brief flash of dots on the magician's table vanishes under a cloth; students enter how many they saw. Practising subitising builds the perceptual foundation that makes all later arithmetic feel intuitive.",
+      "howToPlay": [
+        "Watch the dots flash briefly on the magician's table.",
+        "Remember the pattern as the cloth covers them.",
+        "Use −/+ buttons to enter the number of dots you saw.",
+        "Press Check, or Show Again if you need a second look before answering."
+      ],
+      "skills": "Subitising — instant quantity recognition — is the earliest number skill and directly predicts arithmetic fluency. Students who can see 4 as a group without counting move faster to number bonds, addition facts, and eventually mental calculation because small quantities are already automatic.",
+      "example": "Five dots arranged like a die face appear for half a second. A student who subitises recognises the familiar pattern instantly. A student who counts takes longer and may lose the image before finishing — the game trains the perceptual shortcut.",
+      "mistakes": "Students who do not yet subitise will try to count one dot at a time during the flash, often losing track. The game's brief exposure time prevents counting and encourages pattern recognition, gently training the student to see groups rather than individuals.",
+      "faqs": [
+        {
+          "q": "What is subitising and why does this game practise it instead of counting?",
+          "a": "Subitising is recognising a small quantity instantly without counting, the way adults read dice. It develops before formal arithmetic and makes number bonds and addition facts effortless; practising it in isolation accelerates overall numeracy."
+        },
+        {
+          "q": "Which grades is Dot Flash for?",
+          "a": "Grades 1–2, building the perceptual number sense that supports early arithmetic before students move to larger numbers."
+        },
+        {
+          "q": "How many dots can appear in one flash?",
+          "a": "Up to around 8–9 dots, the upper limit of reliable subitising. Larger quantities require grouped arrangements (e.g. two dice faces) that still allow instant recognition."
+        }
+      ]
+    }
   },
   "arrayMultiply": {
     "title": "Multiplication Array",
@@ -951,7 +1185,33 @@
     "instructions": "The number sits at the top of the tree and splits into two branches. Use the −/+ buttons (or drag right to raise, left to lower) to set the left factor. The right branch shows the partner you get by dividing. When the factor divides the number evenly it turns green; otherwise a red question mark appears. Then press Check",
     "prompt": "Split {n} into a product of two factors",
     "correct": "Great! {a} × {b} = {n}",
-    "wrong": "Almost! Pick a factor that divides {n} evenly (greater than 1 and smaller than the number), then press Check"
+    "wrong": "Almost! Pick a factor that divides {n} evenly (greater than 1 and smaller than the number), then press Check",
+    "seo": {
+      "intro": "Factor Tree challenges students to split a composite number by choosing two factors whose product equals it, building branches downward until every end-leaf is a prime. The visual tree makes the abstract idea of prime factorisation a concrete hands-on process rather than a rote algorithm.",
+      "howToPlay": [
+        "Read the target number shown at the top of the tree.",
+        "Use −/+ or drag to set the left factor; the right factor updates automatically by division.",
+        "Check that the left factor divides the number evenly — it turns green when correct.",
+        "Press Check to confirm the factorisation of the current node."
+      ],
+      "skills": "Factor Tree builds understanding of divisibility, prime numbers, and the Fundamental Theorem of Arithmetic — that every whole number has exactly one prime factorisation. Students develop systematic factor-pair thinking rather than guessing, and connect multiplication to division as inverse operations.",
+      "example": "To factorise 24: choose 4 and 6. Then split 4 into 2×2 and 6 into 2×3. All leaves are prime (2, 2, 2, 3), confirming that 24=2³×3 regardless of which factor pair the student chose first.",
+      "mistakes": "Students often choose 1 as a factor, which is not allowed, or stop splitting when they reach a composite number. The tree highlights non-prime leaves in a different colour, prompting further splitting until every branch ends in a prime.",
+      "faqs": [
+        {
+          "q": "Why does the tree always produce the same prime factors no matter which pair I start with?",
+          "a": "This is the Fundamental Theorem of Arithmetic: every number has a unique prime factorisation. Starting with different factor pairs gives different tree shapes but identical prime leaves — a key discovery the game is designed to surface."
+        },
+        {
+          "q": "Which grades is Factor Tree for?",
+          "a": "Grades 3–5, where students first encounter divisibility rules, prime vs. composite numbers, and need to understand the multiplicative structure of whole numbers."
+        },
+        {
+          "q": "Can a prime number be entered at the top of the tree?",
+          "a": "Primes are not used as roots in this game because they cannot be split further. The game selects composite numbers, so every round has at least one valid factor pair to find."
+        }
+      ]
+    }
   },
   "longDivision": {
     "title": "Division Towers",

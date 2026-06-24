@@ -83,7 +83,33 @@
     "description": "Baue ein Würfelfeld, um eine Multiplikation zu lösen",
     "instructions": "Ziehe zum Bauen oder nutze die − / + Tasten für Reihen und Spalten, dann drücke Prüfen",
     "prompt": "Baue ein Feld aus {rows} Reihen × {cols} Spalten",
-    "correct": "{rows} × {cols} = {product}!"
+    "correct": "{rows} × {cols} = {product}!",
+    "seo": {
+      "intro": "Bei Multiplikationsfelder bauen die Lernenden selbst ein dreidimensionales Würfelgitter, indem sie Zeilen und Spalten wählen und anschließend Prüfen drücken. Im Gegensatz zum vorhandenen Malfeld-Spiel mit fertigem Obstgitter baut der Lernende hier das Rechteck selbst — und verknüpft Gleichung und Form in einem einzigen Schritt.",
+      "howToPlay": [
+        "Lies die angezeigte Multiplikationsaufgabe (z. B. 3 Reihen × 4 Spalten).",
+        "Ziehe oder nutze −/+-Tasten, um die Anzahl der Reihen und Spalten einzustellen.",
+        "Beobachte, wie das Würfelgitter wächst und sich füllt.",
+        "Drücke Prüfen, um zu bestätigen, dass Reihen × Spalten dem angegebenen Produkt entsprechen."
+      ],
+      "skills": "Das Bauen des Feldes trainiert, Multiplikation als rechteckige Fläche zu sehen: Reihen mal Spalten. Indem sie beide Maße selbst wählen, entdecken die Lernenden, dass die Reihenfolge der Faktoren das Produkt nicht ändert — das Kommutativgesetz wird zur eigenen Erkenntnis, nicht zur auswendig gelernten Regel.",
+      "example": "Für 4×6 stellt das Kind 4 Reihen und 6 Spalten ein und füllt ein Rechteck mit 24 Würfeln. Die Ansicht auf 6 Reihen und 4 Spalten zu drehen zeigt sofort, dass 4×6=6×4 gilt — ohne jede Erklärung.",
+      "mistakes": "Schülerinnen und Schüler vertauschen manchmal Reihen und Spalten und legen 6 Reihen und 4 Spalten für eine 4×6-Aufgabe ein. Das Spiel akzeptiert beide Ausrichtungen, weil das Produkt identisch ist — und hilft so, das Kommutativgesetz zu entdecken statt es zu pauken.",
+      "faqs": [
+        {
+          "q": "Worin unterscheidet sich das Bauen des Feldes vom Malfeld-Spiel (Obstgitter)?",
+          "a": "Das Obstgitter zeigt ein fertiges Feld und fragt nach der Gesamtzahl. Hier erhalten die Lernenden die Faktoren und bauen das Rechteck selbst — die Verbindung zwischen Gleichung und Form ist aktiv, nicht nur beobachtend."
+        },
+        {
+          "q": "Für welche Klassen ist Multiplikationsfelder geeignet?",
+          "a": "Klassen 3–4, in denen die Lernenden vom wiederholten Addieren zum Flächenmodell wechseln und beide Faktoren eines Produkts verinnerlichen müssen, bevor sie Einmaleins-Fakten auswendig lernen."
+        },
+        {
+          "q": "Deckt das Spiel alle Einmaleinsfakten ab?",
+          "a": "Es deckt die Multiplikationsaufgaben der Klassen 3–4 ab, mit Feldern, die Produkte bis zu 100 darstellen können."
+        }
+      ]
+    }
   },
   "measureFill": {
     "title": "Behälter füllen",
@@ -169,7 +195,33 @@
     "instructions": "Ziehe über die Löcher, um Murmeln zu füllen, oder nutze die − / + Tasten, dann drücke Prüfen",
     "prompt": "Lege {target} Murmeln",
     "correct": "Super! Du hast {target} Murmeln gelegt",
-    "wrong": "Fast! Zähle die Murmeln noch einmal und korrigiere"
+    "wrong": "Fast! Zähle die Murmeln noch einmal und korrigiere",
+    "seo": {
+      "intro": "Zehnrahmen-Füller stellt den Lernenden ein 2×5-Raster mit Löchern vor und bittet sie, die richtige Anzahl Murmeln einzulegen. Das feste Zehn-Felder-Raster verankert jede Zahl von 1 bis 10 an ihrem Abstand zu zehn — das macht die Struktur kleiner Zahlen konkret und automatisch.",
+      "howToPlay": [
+        "Lies die Zielzahl über dem Zehnrahmen.",
+        "Ziehe über die Löcher oder nutze −/+-Tasten, um Murmeln hinzuzufügen oder zu entfernen.",
+        "Beachte, wie viele Felder leer bleiben — so viele fehlen noch bis zur Zehn.",
+        "Wenn die gefüllten Felder der Zielzahl entsprechen, drücke Prüfen."
+      ],
+      "skills": "Der Zehnrahmen baut den Zehn-Freund-Gedanken auf: Jede Zahl von 1 bis 9 wird als eine bestimmte Anzahl Murmeln plus eine bestimmte Anzahl leerer Felder verstanden. Diese Beziehung zur Zehn beschleunigt das mentale Addieren (7+5=10+2) und Subtrahieren weit über das hinaus, was bloßes Weiterzählen erreicht.",
+      "example": "7 Murmeln einlegen füllt die obere Reihe vollständig (5) und 2 Felder in der unteren Reihe, lässt 3 leer. Das Kind sieht sofort 7=5+2 und 10−7=3, ohne zu zählen.",
+      "mistakes": "Lernende, die einfach bis zum Ziel zählen, verpassen die wichtigste Lektion des Zehnrahmens: die Beziehung zwischen der Zahl und der Zehn. Es hilft zu fragen: 'Wie viele sind leer?' neben 'Wie viele sind gefüllt?', um das ergänzende Denken zu aktivieren, für das der Rahmen konzipiert wurde.",
+      "faqs": [
+        {
+          "q": "Worin unterscheidet sich Zehnrahmen-Füller vom Zahlzerteiler?",
+          "a": "Der Zehnrahmen zerlegt eine Zahl immer in Bezug auf zehn: gefüllte versus leere Felder in einem festen 10-Zellen-Raster. Zahlzerteiler ist offen: Er zerlegt jede kleine Zahl in zwei beliebige Teile, ohne an die Zehn gebunden zu sein."
+        },
+        {
+          "q": "Für welche Klassen ist Zehnrahmen-Füller geeignet?",
+          "a": "Klassen 1–2, in denen die Lernenden mentale Bilder der Zahlen 1–10 und ihre Beziehungen zur Zehn aufbauen — die Grundlage für Addition- und Subtraktionsfakten."
+        },
+        {
+          "q": "Erscheinen im Spiel auch Zahlen größer als 10?",
+          "a": "Das Basisspiel deckt 1–10 ab. Manche Runden nutzen einen Doppel-Zehnrahmen für die Zahlen 11–20 und zeigen, dass Teenagerzahlen aus zehn und einigen Einern bestehen."
+        }
+      ]
+    }
   },
   "placeValue": {
     "title": "Stellenwert-Baumeister",
@@ -177,7 +229,33 @@
     "instructions": "Füge mit den − / + Tasten Kisten zu jeder Stelle hinzu (Hunderter, Zehner, Einer) oder ziehe über einer Spalte nach oben, um hinzuzufügen. Erreicht eine Spalte 10, werden zehn kleine Kisten zu einer größeren gebündelt. Drücke Prüfen zum Bewerten",
     "prompt": "Baue die Zahl {target}",
     "correct": "Super! Du hast {target} gebaut",
-    "wrong": "Fast! Prüfe die Ziffern und korrigiere die Zahl"
+    "wrong": "Fast! Prüfe die Ziffern und korrigiere die Zahl",
+    "seo": {
+      "intro": "Stellenwert-Builder versetzt die Lernenden in ein Lager, wo sie physische Blöcke in Hunderte-, Zehner- und Einer-Spalten stapeln, um eine Zielzahl zu bauen. Wenn eine Spalte zehn Blöcke erreicht, bündeln sie sich automatisch zu einer größeren Einheit — so wird die Tausch-Regel des Zehnersystems zum sichtbaren Ereignis.",
+      "howToPlay": [
+        "Lies die Zielzahl über den Lagerspalten.",
+        "Nutze −/+ oder ziehe nach oben auf jede Spalte, um Hunderte-, Zehner- oder Einer-Blöcke hinzuzufügen.",
+        "Beobachte, wie zehn kleine Würfel automatisch zu einem großen bündeln.",
+        "Sobald alle drei Spalten den Ziffern der Zielzahl entsprechen, drücke Prüfen."
+      ],
+      "skills": "Stellenwert-Builder entwickelt das Verständnis dafür, dass die Position einer Ziffer ihren Wert bestimmt: eine 3 in der Hunderterstelle steht für 300, nicht 3. Die Lernenden üben, mehrstellige Zahlen aus ihren Bestandteilen zusammenzusetzen, und erleben Bündelung als natürliche Folge des Zehnersystems.",
+      "example": "Um 234 zu bauen: 2 Hunderter-Platten, 3 Zehner-Stäbe und 4 Einer-Würfel. Das Lager zeigt 200+30+4 getrennt, und Prüfen bestätigt, dass der Gesamtwert 234 ergibt.",
+      "mistakes": "Lernende geben häufig die Ziffer selbst ein, nicht den Wert — sie legen 2 Einer für 234 ein, weil sie die Einerstelle zuletzt lesen. Die farbcodierten Spalten (blau für Hunderte, gelb für Zehner, rot für Einer) trainieren, jede Ziffer in ihrer richtigen Spalte zu lesen, bevor Blöcke gesetzt werden.",
+      "faqs": [
+        {
+          "q": "Wie unterscheidet sich Stellenwert-Builder vom Exploding-Dots-Spiel?",
+          "a": "Exploding Dots konzentriert sich auf den Bündelungsmoment: Zehn Punkte explodieren in der nächsten Spalte zu einem. Stellenwert-Builder konzentriert sich darauf, eine statische Zahl aus ihren Ziffern korrekt aufzubauen. Das Bündeln ist hier ein Nebeneffekt, nicht das Hauptereignis."
+        },
+        {
+          "q": "Für welche Klassen ist Stellenwert-Builder geeignet?",
+          "a": "Klassen 2–4, von zweistelligen Zahlen in Klasse 2 bis dreistelligen Zahlen und ersten vierstelligen Zahlen in den Klassen 3 und 4."
+        },
+        {
+          "q": "Kann dieselbe Zahl auf mehrere Arten aufgebaut werden?",
+          "a": "Nein. Das Ziel ist eine bestimmte Ziffernzerlegung (z. B. 2 Hunderte, 3 Zehner, 4 Einer für 234). Die Lernenden müssen der Standardform entsprechen, um das kanonische Stellenwert-Denken zu üben."
+        }
+      ]
+    }
   },
   "clockBuilder": {
     "title": "Uhrzeit-Baumeister",
@@ -281,7 +359,33 @@
     "instructions": "Ziehe über dem Tablett nach oben, um eine ₪1-Münze hinzuzufügen, oder nutze die − / + Tasten jeder Münze und jedes Scheins (₪1, ₪2, ₪5, ₪10, ₪20, ₪50). Lege Münzen und Scheine, bis der Betrag erreicht ist, und drücke dann Prüfen",
     "prompt": "Zahle ₪{amount}",
     "correct": "Toll! Du hast genau ₪{amount} bezahlt",
-    "wrong": "Fast! Prüfe den Betrag auf dem Tablett und korrigiere ihn"
+    "wrong": "Fast! Prüfe den Betrag auf dem Tablett und korrigiere ihn",
+    "seo": {
+      "intro": "Im Geldladen stehen die Schülerinnen und Schüler an einem Marktstand und bezahlen genaue Beträge mit Münzen und Scheinen. Sie ziehen echtes Geld auf das Tablett und beobachten, wie die laufende Summe steigt, bis sie dem Preis entspricht — so werden abstrakte Münzwerte zu einer echten Einkaufssituation.",
+      "howToPlay": [
+        "Lies den Preis auf dem Ladenschild.",
+        "Ziehe Münzen und Scheine auf das Tablett oder nutze die −/+-Tasten für jede Währungseinheit.",
+        "Beobachte, wie der Gesamtbetrag mit jeder Zugabe steigt.",
+        "Sobald das Tablett genau dem Preis entspricht, drücke Prüfen."
+      ],
+      "skills": "Der Geldladen fördert die Sicherheit im Umgang mit Münz- und Scheinstückelungen sowie das Addieren mehrerer Beträge. Die Schülerinnen und Schüler lernen, möglichst wenige Münzen zu verwenden, und üben das Herausgeben von Wechselgeld als Differenz zwischen gezahltem Betrag und Preis.",
+      "example": "Um ₪17 zu bezahlen, legt ein Kind einen ₪10-Schein, eine ₪5-Münze und zwei ₪1-Münzen. Das Tablett zeigt 10+5+1+1=17 und bestätigt die Kombination vor dem Drücken von Prüfen.",
+      "mistakes": "Häufig werden zu viele kleine Münzen gestapelt, anstatt größere Einheiten zu wählen. Der sofortige Gesamtbetrag auf dem Tablett motiviert dazu, kleine Münzen durch einen größeren Schein zu ersetzen, wenn der Betrag den Preis überschreitet.",
+      "faqs": [
+        {
+          "q": "Wie übt das Spiel Wechselgeld geben, nicht nur exaktes Bezahlen?",
+          "a": "In manchen Runden liegt bereits ein Betrag auf dem Tablett, und der Schüler muss ihn anpassen — Münzen hinzufügen oder entfernen, um genau den Preis zu erreichen, genau wie beim Herausgeben von Wechselgeld im Alltag."
+        },
+        {
+          "q": "Für welche Klassen ist der Geldladen geeignet?",
+          "a": "Klassen 2–4, von der grundlegenden Münzkenntnis in Klasse 2 bis zu mehrstufigen Wechselgeldberechnungen in Klasse 4."
+        },
+        {
+          "q": "Verwendet das Spiel echte israelische Währungseinheiten?",
+          "a": "Ja. Die Münzen und Scheine sind ₪1, ₪2, ₪5, ₪10, ₪20 und ₪50 — die Einheiten, mit denen die Schülerinnen und Schüler im Alltag in Israel umgehen."
+        }
+      ]
+    }
   },
   "additionMine": {
     "title": "Additions-Mine",
@@ -314,7 +418,33 @@
     "instructions": "Entferne Steine mit den − / + Tasten für jede Stelle (Hunderter, Zehner, Einer) oder ziehe über einer Spalte nach unten, um einen Stein zu entfernen. Wenn eine Spalte zu klein ist, drücke −, um einen Zehner-Stein der nächsthöheren Stelle in zehn kleine Steine zu zerbrechen (die Brücke bricht). Dann drücke Prüfen",
     "prompt": "Subtrahiere: {a} − {b}",
     "correct": "Super! Die Differenz ist {diff}",
-    "wrong": "Fast! Prüfe die Ziffern und korrigiere die Differenz"
+    "wrong": "Fast! Prüfe die Ziffern und korrigiere die Differenz",
+    "seo": {
+      "intro": "Die Subtraktionsbrücke fordert auf, eine Steinbrücke Stein für Stein, Spalte für Spalte abzutragen, um die Differenz zu finden. Wenn die Einerspalte zu klein wird, zerbricht ein Zehnerstück aus der nächsten Spalte in zehn kleine Steine — so wird der Übertragsschritt zum begreifbaren Abbruchvorgang statt zur auswendig gelernten Regel.",
+      "howToPlay": [
+        "Lies die Subtraktionsaufgabe über der Brücke.",
+        "Entferne Steine aus den Einer-, Zehner- oder Hunderter-Spalten mit −/+ oder durch Ziehen nach unten.",
+        "Wenn eine Spalte zu klein wird, drücke −, um einen Zehnerstück aus der nächsten Spalte in zehn kleine Steine zu zerlegen.",
+        "Sobald alle Spalten die richtige Differenz zeigen, drücke Prüfen."
+      ],
+      "skills": "Die Subtraktionsbrücke festigt das Verständnis des Übertrags beim mehrstelligen Subtrahieren — der verwirrendste Schritt im schriftlichen Algorithmus. Wer sieht, wie eine Zehn buchstäblich in zehn Einer zerbricht, versteht, warum die Ziffer in der nächsten Spalte um 1 sinkt, und vermeidet den häufigsten Subtraktionsfehler in der Grundschule.",
+      "example": "47 von 83 subtrahieren: Die Einerspalte enthält 3, braucht aber 7. Drücke −, um einen Zehnerstein zu zerbrechen: Die Zehnerspalte fällt von 8 auf 7, die Einerspalte steigt von 3 auf 13. Jetzt ist 13−7=6 und 7−4=3, also 36.",
+      "mistakes": "Der typische Fehler ist, die kleinere von der größeren Ziffer zu subtrahieren, unabhängig davon, welche oben steht (83−47 wird als 40+4=44 berechnet). Der Brücken-Mechanismus zwingt dazu, die richtige Menge zu entfernen, und die Richtung der Subtraktion wird eindeutig.",
+      "faqs": [
+        {
+          "q": "Wie lehrt der Brücken-Mechanismus den Übertrag ohne die abstrakte schriftliche Regel?",
+          "a": "Wenn eine Spalte zu wenig hat, zerbrechen durch Drücken von − zehn Stücke direkt vor dem Lernenden in zehn Einersteine. Er sieht die Ziffer in der nächsten Spalte sinken und den Einerpool steigen. Die schriftliche Übertragsregel ist eine Kurzform dieses Vorgangs."
+        },
+        {
+          "q": "Für welche Klassen ist die Subtraktionsbrücke geeignet?",
+          "a": "Klassen 2–4, von zweistelliger Subtraktion mit Übertrag in Klasse 2 bis dreistelligen Aufgaben mit doppeltem Übertrag in den Klassen 3 und 4."
+        },
+        {
+          "q": "Was passiert, wenn aus den Hunderten in die Zehner ausgeliehen werden muss?",
+          "a": "Das Spiel unterstützt kaskadierende Überträge: Wenn auch die Zehnerspalte leer läuft, zerbrechen durch Drücken von − ein Hunderterstück in zehn Zehner — visuell dargestellt als zweistufiger Übertrag."
+        }
+      ]
+    }
   },
   "volumeBuilder": {
     "title": "Volumen-Baumeister",
@@ -388,7 +518,33 @@
     "instructions": "Zwei Steinplattformen schweben über einer Schlucht. Baue die Brücke: Mit links −/+ stellst du den linken Teil ein und mit rechts −/+ den rechten Teil (du kannst auch auf jeder Seite ziehen). Die Brücke verbindet sich, wenn beide Teile zusammen genau die Lücke überspannen. Dann drücke Prüfen",
     "prompt": "Zerlege {target} in zwei Teile",
     "correct": "Super! Die beiden Teile ergeben zusammen {target}",
-    "wrong": "Fast! Lass die beiden Teile zusammen genau die Lücke überspannen, dann drücke Prüfen"
+    "wrong": "Fast! Lass die beiden Teile zusammen genau die Lücke überspannen, dann drücke Prüfen",
+    "seo": {
+      "intro": "Beim Zahlzerteiler schweben zwei Steinplattformen über einer Schlucht. Die Lernenden stellen die linke und rechte Zahl so ein, dass ihre Summe der Ganzen entspricht, und eine Kristallbrücke erscheint, sobald die Teile stimmen. Die Brücken-über-Schlucht-Metapher macht die Teil-Teil-Ganzes-Beziehung greifbar.",
+      "howToPlay": [
+        "Lies die ganze Zahl, die über der Schlucht angezeigt wird.",
+        "Stelle mit −/+-Tasten oder Ziehen auf jeder Plattform den linken Teil ein.",
+        "Beobachte, wie der rechte Teil sich aktualisiert und zeigt, was noch fehlt.",
+        "Sobald die Brücke die Plattformen verbindet, drücke Prüfen."
+      ],
+      "skills": "Zahlzerlegungen bauen automatische Zerlegungsflüssigkeit für kleine Zahlen (1–20) auf — die Grundlage für mentales Addieren und Subtrahieren. Wer weiß, dass 7 sich in 3+4 oder 5+2 zerlegen lässt, kann über Zehner addieren ohne Finger abzuzählen.",
+      "example": "Für die Ganze 8 stellt das Kind den linken Teil auf 5; der rechte Teil zeigt automatisch 3. Die Brücke erscheint und bestätigt 5+3=8. Ein Versuch mit 6 und 2 zeigt eine andere gültige Zerlegung.",
+      "mistakes": "Kleine Kinder fixieren einen Teil auf 1 und zählen den anderen hoch, und verpassen dabei, dass viele gültige Paare existieren. Das interaktive Ziehen regt zum Erkunden des gesamten Zerlegungsbereichs an, statt beim ersten richtigen Ergebnis aufzuhören.",
+      "faqs": [
+        {
+          "q": "Worin unterscheidet sich Zahlzerteiler vom Zehnrahmen-Spiel?",
+          "a": "Der Zehnrahmen zeigt eine Zahl als gefüllte und leere Felder in einem festen 10-Zellen-Raster und baut die Beziehung zur Zehn auf. Zahlzerteiler ist offen: Er zerlegt jede kleine Zahl in zwei beliebige Teile, ohne an die Zehn gebunden zu sein."
+        },
+        {
+          "q": "Für welche Klassen ist Zahlzerteiler geeignet?",
+          "a": "Klassen 1–2, in denen die Lernenden Zahlen bis 20 zerlegen und die Teil-Teil-Ganzes-Beziehung flüssig beherrschen müssen, bevor Additionsalgorithmen eingeführt werden."
+        },
+        {
+          "q": "Akzeptiert das Spiel jede gültige Zerlegung oder nur ein bestimmtes Paar?",
+          "a": "Jedes Paar, das in der Summe der Ganzen entspricht, wird akzeptiert. Das Spiel regt dazu an, über mehrere Runden alle Zerlegungen der Zielzahl zu erkunden."
+        }
+      ]
+    }
   },
   "numberLineJump": {
     "title": "Sprung auf dem Zahlenstrahl",
@@ -396,7 +552,33 @@
     "instructions": "Stelle die Sprungweite mit − / + ein, dann drücke → Vorwärts oder ← Zurück, um das Auto über die Strecke zu hüpfen. Du kannst mehrmals hüpfen, bis du genau auf der Flagge landest. Dann drücke Prüfen",
     "prompt": "Springe zu {target}",
     "correct": "Super! Du bist genau auf {target} gelandet",
-    "wrong": "Fast! Hüpfe vor oder zurück, bis du genau auf der Flagge landest"
+    "wrong": "Fast! Hüpfe vor oder zurück, bis du genau auf der Flagge landest",
+    "seo": {
+      "intro": "Zahlenstrahl-Sprünge setzt ein Auto auf eine Rennstrecke und lässt es mit selbst gewählten Sprüngen zu einer Zielposition hüpfen. Jeder Sprung vor- oder rückwärts ist eine sichtbare Addition oder Subtraktion — die abstrakte Operation wird zu einer echten Reise auf einem skalierten Strahl.",
+      "howToPlay": [
+        "Lies die Zielzahl, die von der Flagge auf der Strecke markiert wird.",
+        "Stelle die Sprungweite mit −/+-Tasten ein.",
+        "Drücke Vorwärts oder Rückwärts, um das Auto um diese Anzahl Felder zu bewegen.",
+        "Lande genau auf der Flagge und drücke dann Prüfen."
+      ],
+      "skills": "Zahlenstrahl-Sprünge fördert flexibles mentales Rechnen, indem Addieren und Subtrahieren eine Richtung bekommen: vorwärts für Plus, rückwärts für Minus. Die Lernenden entwickeln ein Gefühl für Abstände und Richtungen auf dem Strahl, was später für Ganzzahloperationen und Koordinatenarbeit hilfreich ist.",
+      "example": "Um von 0 mit Sprüngen der Weite 5 die Zahl 17 zu erreichen: drei Sprünge vorwärts landen auf 15, dann wechsle zu Sprungweite 2 für einen weiteren Sprung auf 17. Die Lernenden sehen 5+5+5+2=17 als Weg, nicht als abstrakte Summe.",
+      "mistakes": "Lernende wählen manchmal eine Sprungweite, die die Zielzahl nicht teilt, und überschießen — dann fällt der Rückweg schwer. Das Spiel erlaubt verschiedene Sprungweiten in einer Runde und regt zu einem zweistufigen Vorgehen an.",
+      "faqs": [
+        {
+          "q": "Wie unterscheidet sich Zahlenstrahl-Sprünge vom Zählsprung-Rennen?",
+          "a": "Das Zählsprung-Rennen legt die Sprungweite fest und fordert, jede Landung in einer Reihe zu markieren — das übt Vielfache als Muster. Zahlenstrahl-Sprünge lässt beliebige Sprungweiten zu, um ein einzelnes Ziel zu erreichen, und deckt Addition und Subtraktion gemeinsam ab."
+        },
+        {
+          "q": "Für welche Klassen ist Zahlenstrahl-Sprünge geeignet?",
+          "a": "Klassen 1–4, mit einfacheren Zielen und größeren Sprüngen für Jüngere sowie zweistelligen Zielen, die gemischte Sprungweiten erfordern, für ältere Lernende."
+        },
+        {
+          "q": "Kann das Auto rückwärts hüpfen, um Subtraktion zu üben?",
+          "a": "Ja. Mit der Rückwärts-Taste hüpft das Auto nach links auf der Strecke — das modelliert Subtraktion. Manchmal ist es nötig, das Ziel zu überschießen und dann zurückzuhüpfen, um genau darauf zu landen."
+        }
+      ]
+    }
   },
   "explodingDots": {
     "title": "Explodierende Punkte",
@@ -454,7 +636,33 @@
     "instructions": "Tippe auf die Felder, auf denen das Tier bei jedem Sprung landet. Markiere alle bis zum Ende und drücke dann Prüfen — das Tier hüpft über die Steine. Tippe ein Feld erneut an, um die Markierung zu entfernen, oder Zurücksetzen für einen Neustart.",
     "prompt": "Markiere jeden {step}er-Sprung bis {target}",
     "correct": "Super! Du hast in {step}er-Schritten bis {target} gezählt",
-    "wrong": "Fast! Markiere genau jeden Sprung — keinen weglassen und keinen zu viel"
+    "wrong": "Fast! Markiere genau jeden Sprung — keinen weglassen und keinen zu viel",
+    "seo": {
+      "intro": "Das Zählsprung-Rennen schickt ein Safaritier über Trittsteinen auf einer Strecke. Die Lernenden tippen auf jeden Stein, auf dem das Tier beim Zählen in 2er-, 5er- oder 10er-Schritten landet, und das Tier prescht zur Bestätigung los. Das eigene Markieren des Musters vor der Animation macht die Regelmäßigkeit des Zählens erlebbar.",
+      "howToPlay": [
+        "Lies die Schrittweite und das Ziel über der Safaristrecke.",
+        "Tippe auf jeden Stein, der auf einem Vielfachen der Schrittweite liegt.",
+        "Markiere alle Steine bis zum Ziel — keine auslassen und keinen zu viel.",
+        "Drücke Prüfen, um das Tier über die markierten Steine hüpfen zu sehen."
+      ],
+      "skills": "Zählen in 2er-, 5er- und 10er-Schritten ist der Einstieg in die Einmaleins-Tabellen. Das Erkennen jedes Vielfachen trainiert rhythmisches Zählen und legt das konzeptuelle Fundament für das Verständnis von Multiplikation als wiederholte Addition in einer strukturierten Folge.",
+      "example": "Zählen in 5er-Schritten bis 30: Tippe auf 5, 10, 15, 20, 25, 30. Die gleichmäßigen Abstände der markierten Steine machen das 5er-Muster visuell erkennbar, bevor eine einzige Einmaleins-Reihe eingeführt wird.",
+      "mistakes": "Lernende lassen häufig den ersten Schritt aus (starten bei 0 statt bei der Schrittweite) oder markieren den Zielstein, vergessen aber die Steine davor. Das Spiel fordert jeden Vielfachen: Ein fehlender oder überschüssiger Stein schlägt fehl und stärkt die vollständige Reihe, nicht nur das Endergebnis.",
+      "faqs": [
+        {
+          "q": "Wie unterscheidet sich das Zählsprung-Rennen von Zahlenstrahl-Sprüngen?",
+          "a": "Das Zählsprung-Rennen legt die Schrittweite fest und fordert, jede Landung in einer Reihe zu markieren — das übt Vielfache als Muster. Zahlenstrahl-Sprünge erlaubt beliebige Schrittweiten, um ein einzelnes Ziel zu erreichen, und umfasst Addition und Subtraktion gemeinsam."
+        },
+        {
+          "q": "Für welche Klassen ist das Zählsprung-Rennen geeignet?",
+          "a": "Klassen 2–3, in denen die Lernenden das Zählen in 2er-, 5er- und 10er-Schritten als direkte Vorbereitung auf das Einmaleins festigen."
+        },
+        {
+          "q": "Behandelt das Spiel auch andere Schrittweiten als 2, 5 und 10?",
+          "a": "Das Basisspiel verwendet 2, 5 und 10 entsprechend dem Lehrplan für Klassen 2–3. In fortgeschrittenen Runden können weitere Intervalle auftreten, wenn die Lernenden Fortschritte machen."
+        }
+      ]
+    }
   },
   "weightBalance": {
     "title": "Waage",
@@ -643,7 +851,33 @@
     "instructions": "Sieh zu, wie die Punkte auf dem Tisch aufblitzen und dann unter einem Tuch verschwinden. Gib mit den Tasten − / + ein, wie viele Punkte du gesehen hast (drücke \"Nochmal zeigen\", um sie erneut zu sehen), und drücke dann Prüfen",
     "prompt": "Wie viele Punkte hast du gesehen?",
     "correct": "Super! Du hast {count} Punkte gesehen",
-    "wrong": "Fast! Schau noch einmal und versuche, die Punkte zu zählen"
+    "wrong": "Fast! Schau noch einmal und versuche, die Punkte zu zählen",
+    "seo": {
+      "intro": "Punkte-Blitz trainiert den schnellsten Zahlensinn des Gehirns: das simultane Erfassen, wie viele Punkte erscheinen, ohne zu zählen. Punkte blinken kurz auf dem Tisch des Zauberers auf und verschwinden; die Lernenden geben die Anzahl ein. Das Üben von Subitisierung legt das wahrnehmungsbasierte Fundament, das alle späteren Rechenoperationen intuitiv werden lässt.",
+      "howToPlay": [
+        "Beobachte, wie die Punkte kurz auf dem Tisch des Zauberers aufblinken.",
+        "Merke dir das Muster, wenn das Tuch es bedeckt.",
+        "Gib mit −/+-Tasten ein, wie viele Punkte du gesehen hast.",
+        "Drücke Prüfen oder Nochmal zeigen, wenn du vor der Antwort noch einmal schauen möchtest."
+      ],
+      "skills": "Subitisierung — das augenblickliche Erkennen von Mengen — ist die früheste Zahlenfertigkeit und sagt Rechenflüssigkeit direkt voraus. Wer 4 als Gruppe sieht ohne zu zählen, schreitet schneller zu Zahlenbindungen, Additionsfakten und letztlich zum mentalen Rechnen vor, weil kleine Mengen bereits automatisiert sind.",
+      "example": "Fünf Punkte im Muster einer Würfelseite erscheinen eine halbe Sekunde lang. Wer subitisiert, erkennt das vertraute Muster sofort. Wer zählt, verliert das Bild, bevor er fertig ist. Das Spiel trainiert die wahrnehmungsbasierte Abkürzung.",
+      "mistakes": "Lernende, die noch nicht subitisieren, versuchen während des Aufblinkens Punkt für Punkt zu zählen und verlieren dabei häufig den Faden. Die kurze Expositionszeit verhindert das Zählen und fördert das Mustererkennen — der Lernende wird trainiert, Gruppen statt Einzelobjekte zu sehen.",
+      "faqs": [
+        {
+          "q": "Was ist Subitisierung, und warum übt das Spiel sie statt des Zählens?",
+          "a": "Subitisierung ist das sofortige Erkennen einer kleinen Menge ohne Zählen, so wie Erwachsene Würfelflächen lesen. Sie entwickelt sich vor dem formalen Rechnen und macht Zahlenbindungen und Additionsfakten mühelos; das direkte Üben beschleunigt die allgemeine Zahlenkompetenz."
+        },
+        {
+          "q": "Für welche Klassen ist Punkte-Blitz geeignet?",
+          "a": "Klassen 1–2, um den wahrnehmungsbasierten Zahlensinn aufzubauen, der das frühe Rechnen trägt, bevor zu größeren Zahlen übergegangen wird."
+        },
+        {
+          "q": "Wie viele Punkte können in einem Blitz erscheinen?",
+          "a": "Bis zu etwa 8–9 Punkte — die Obergrenze zuverlässiger Subitisierung. Größere Mengen werden in gruppierten Anordnungen (z. B. zwei Würfelflächen) präsentiert, die dennoch sofortiges Erkennen ermöglichen."
+        }
+      ]
+    }
   },
   "arrayMultiply": {
     "title": "Multiplikations-Feld",
@@ -971,7 +1205,33 @@
     "instructions": "Die Zahl steht an der Spitze des Baums und teilt sich in zwei Äste. Stelle mit den −/+ Tasten (oder ziehe nach rechts zum Erhöhen, nach links zum Verringern) den linken Faktor ein. Der rechte Ast zeigt den Partner, der sich durch Teilen ergibt. Teilt der Faktor die Zahl genau auf, wird er grün; sonst erscheint ein rotes Fragezeichen. Dann drücke Prüfen",
     "prompt": "Zerlege {n} in ein Produkt zweier Faktoren",
     "correct": "Super! {a} × {b} = {n}",
-    "wrong": "Fast! Wähle einen Faktor, der {n} genau teilt (größer als 1 und kleiner als die Zahl), dann drücke Prüfen"
+    "wrong": "Fast! Wähle einen Faktor, der {n} genau teilt (größer als 1 und kleiner als die Zahl), dann drücke Prüfen",
+    "seo": {
+      "intro": "Der Faktorenbaum fordert auf, eine zusammengesetzte Zahl zu zerlegen, indem zwei Faktoren gewählt werden, deren Produkt ihr entspricht, und dann Äste nach unten zu bauen, bis jedes Blatt eine Primzahl ist. Der visuelle Baum macht aus der abstrakten Idee der Primfaktorzerlegung einen greifbaren, handlungsorientierten Prozess.",
+      "howToPlay": [
+        "Lies die Zahl oben im Baum.",
+        "Stelle mit −/+ oder Ziehen den linken Faktor ein; der rechte aktualisiert sich automatisch.",
+        "Prüfe, ob der linke Faktor die Zahl genau teilt — er wird grün, wenn es stimmt.",
+        "Drücke Prüfen, um die Zerlegung des aktuellen Knotens zu bestätigen."
+      ],
+      "skills": "Der Faktorenbaum baut das Verständnis für Teilbarkeit, Primzahlen und den Fundamentalsatz der Arithmetik auf: Jede natürliche Zahl hat genau eine Primfaktorzerlegung. Die Lernenden entwickeln systematisches Faktorpaar-Denken und verbinden Multiplikation und Division als Umkehroperationen.",
+      "example": "Für 24: Wähle 4 und 6. Zerlege 4 in 2×2 und 6 in 2×3. Alle Blätter sind prim (2, 2, 2, 3) und bestätigen 24=2³×3 — unabhängig davon, welches Faktorpaar zuerst gewählt wurde.",
+      "mistakes": "Lernende wählen häufig 1 als Faktor, was nicht erlaubt ist, oder hören bei einer zusammengesetzten Zahl auf. Der Baum hebt nicht-primäre Blätter farblich hervor und fordert weiteres Aufteilen, bis jeder Ast mit einer Primzahl endet.",
+      "faqs": [
+        {
+          "q": "Warum liefert der Baum immer dieselben Primfaktoren, egal mit welchem Paar man beginnt?",
+          "a": "Das ist der Fundamentalsatz der Arithmetik: Jede Zahl hat eine eindeutige Primfaktorzerlegung. Verschiedene Faktorpaare ergeben unterschiedliche Baumformen, aber identische Primblätter — eine Entdeckung, die das Spiel bewusst herbeiführt."
+        },
+        {
+          "q": "Für welche Klassen ist der Faktorenbaum geeignet?",
+          "a": "Klassen 3–5, in denen Teilbarkeitsregeln, Prim- und zusammengesetzte Zahlen eingeführt werden und die multiplikative Struktur ganzer Zahlen verstanden werden muss."
+        },
+        {
+          "q": "Kann eine Primzahl als Wurzel des Baums eingegeben werden?",
+          "a": "Nein. Das Spiel wählt nur zusammengesetzte Zahlen, weil Primzahlen nicht weiter aufgeteilt werden können. So gibt es in jeder Runde mindestens ein gültiges Faktorpaar."
+        }
+      ]
+    }
   },
   "longDivision": {
     "title": "Teilertürme",

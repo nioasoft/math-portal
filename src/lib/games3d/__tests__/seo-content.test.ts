@@ -54,9 +54,15 @@ describe('fractions seo content', () => {
   });
 });
 
+// camelCase i18n keys for the geometry games added in this task's scope.
+const GEOMETRY_KEYS = [
+  'areaPerimeter', 'angleBuilder', 'shapeSort', 'netFold',
+  'symmetryMirror', 'geoboard', 'coordinatePlot', 'tangram', 'volumeBuilder',
+];
+
 describe('hebrew seo quality', () => {
-  function collectHeStrings(gameKey: string): string[] {
-    const data = loadGames3d('he');
+  function collectSeoStrings(locale: string, gameKey: string): string[] {
+    const data = loadGames3d(locale);
     const block = data[gameKey] as Record<string, unknown> | undefined;
     if (!block || typeof block.seo !== 'object' || block.seo === null) return [];
     const seo = block.seo as {
@@ -78,29 +84,44 @@ describe('hebrew seo quality', () => {
     ];
   }
 
-  it('no em-dashes or en-dashes in any fractions game Hebrew seo string', () => {
-    for (const key of FRACTIONS_KEYS) {
-      const strings = collectHeStrings(key);
+  function gamesWithSeo(locale: string): string[] {
+    const data = loadGames3d(locale);
+    return Object.entries(data)
+      .filter(([, v]) => typeof v === 'object' && v !== null && 'seo' in (v as object))
+      .map(([k]) => k);
+  }
+
+  function assertNoDashes(locale: string, keys: string[]): void {
+    for (const key of keys) {
+      const strings = collectSeoStrings(locale, key);
       for (const str of strings) {
         const emIdx = str.indexOf('—');
         const enIdx = str.indexOf('–');
         if (emIdx !== -1) {
           throw new Error(
-            `[${key}] em-dash (—) found in: "${str.slice(Math.max(0, emIdx - 20), emIdx + 20)}"`
+            `[${locale}/${key}] em-dash (—) found in: "${str.slice(Math.max(0, emIdx - 20), emIdx + 20)}"`
           );
         }
         if (enIdx !== -1) {
           throw new Error(
-            `[${key}] en-dash (–) found in: "${str.slice(Math.max(0, enIdx - 20), enIdx + 20)}"`
+            `[${locale}/${key}] en-dash (–) found in: "${str.slice(Math.max(0, enIdx - 20), enIdx + 20)}"`
           );
         }
       }
     }
+  }
+
+  it('no em-dashes or en-dashes in any fractions game Hebrew seo string', () => {
+    assertNoDashes('he', gamesWithSeo('he').filter((k) => FRACTIONS_KEYS.includes(k)));
+  });
+
+  it('no em-dashes or en-dashes in any geometry game Arabic seo string', () => {
+    assertNoDashes('ar', gamesWithSeo('ar').filter((k) => GEOMETRY_KEYS.includes(k)));
   });
 
   it('no blacklisted AI-ish Hebrew words in any fractions game Hebrew seo string', () => {
     for (const key of FRACTIONS_KEYS) {
-      const strings = collectHeStrings(key);
+      const strings = collectSeoStrings('he', key);
       for (const str of strings) {
         for (const word of BLACKLISTED_WORDS) {
           if (str.includes(word)) {

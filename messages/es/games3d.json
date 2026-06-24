@@ -1229,7 +1229,33 @@
     "instructions": "Lee la altura de cada barra en la escala del lado, luego usa los botones − / + (o arrastra hacia arriba) para introducir cuántas más tiene la primera categoría que la segunda, y pulsa Comprobar",
     "prompt": "¿Cuántas {a} más que {b}?",
     "correct": "¡Correcto! La diferencia es {diff}",
-    "wrong": "¡Casi! Lee de nuevo la altura de cada barra e inténtalo otra vez"
+    "wrong": "¡Casi! Lee de nuevo la altura de cada barra e inténtalo otra vez",
+    "seo": {
+      "intro": "El Constructor de gráfico de barras enseña a los alumnos a leer datos cuantitativos de una escala y hallar la diferencia entre dos categorías. Cada ronda muestra un gráfico de barras con etiquetas; los alumnos leen la altura de cada barra en la escala lateral y calculan cuántas más tiene una categoría. Cursos 2.º–5.º.",
+      "howToPlay": [
+        "Observa las dos barras mencionadas en la pregunta.",
+        "Sigue horizontalmente desde la cima de cada barra hasta la escala numerada del lateral y lee la altura.",
+        "Resta la altura menor de la mayor para obtener la diferencia.",
+        "Introduce la diferencia con −/+ o arrastrando, luego pulsa Comprobar."
+      ],
+      "skills": "El gráfico de barras desarrolla la capacidad de extraer valores precisos de una escala y razonar sobre diferencias en los datos, no solo totales. Los alumnos que leen gráficos con precisión pueden interpretar diagramas en ciencias, noticias y pruebas estandarizadas, una habilidad que se practica de 2.º a 5.º.",
+      "example": "Un gráfico muestra «Perros» en la altura 8 y «Gatos» en la altura 5. La pregunta: ¿Cuántos perros más que gatos? Los alumnos leen 8 y 5 de la escala, restan e introducen 3.",
+      "mistakes": "Los alumnos estiman la altura de las barras a ojo en lugar de alinearlas con la escala, lo que produce errores de una unidad. El juego refuerza el hábito de volver al eje numerado para cada barra.",
+      "faqs": [
+        {
+          "q": "¿En qué se diferencia leer la altura de una barra en la escala de simplemente mirar cuál es la más alta?",
+          "a": "La observación visual muestra qué categoría es mayor, pero no en cuánto. Leer la escala da un valor exacto, necesario para calcular diferencias con precisión, la competencia clave que practica el juego."
+        },
+        {
+          "q": "¿Para qué cursos está diseñado el Constructor de gráfico de barras?",
+          "a": "Cursos 2.º–5.º, siguiendo la progresión curricular desde gráficos de barras simples en primaria hasta la interpretación de gráficos con escala y el cálculo de diferencias en cursos superiores."
+        },
+        {
+          "q": "¿Cómo se diferencia del Diagrama de Venn, que también usa representación de datos?",
+          "a": "El gráfico de barras trabaja con datos cuantitativos en una escala numérica: los alumnos leen valores medidos y comparan magnitudes. El diagrama de Venn trabaja con clasificación lógica: los alumnos deciden a qué conjunto pertenece un elemento, sin escala de medida."
+        }
+      ]
+    }
   },
   "vennSort": {
     "title": "Orden con diagrama de Venn",
@@ -1237,7 +1263,33 @@
     "instructions": "Lee el número y las dos propiedades, luego pulsa la región correcta: solo izquierda, solo derecha, ambos o ninguno",
     "prompt": "Clasifica {value}: ÷{a} y ÷{b}",
     "correct": "¡Correcto! {value} está bien clasificado",
-    "wrong": "¡Casi! Comprueba si el número es divisible por cada propiedad por separado"
+    "wrong": "¡Casi! Comprueba si el número es divisible por cada propiedad por separado",
+    "seo": {
+      "intro": "El Diagrama de Venn presenta dos círculos, cada uno con una regla de divisibilidad. Se da un número al alumno y debe decidir dónde pertenece: solo círculo izquierdo, solo derecho, la zona de intersección (ambos) o completamente fuera (ninguno). Cada elección requiere evaluar dos condiciones independientes a la vez, la competencia fundamental de la teoría de conjuntos. Cursos 4.º–6.º.",
+      "howToPlay": [
+        "Lee las dos reglas de divisibilidad en el círculo izquierdo y el derecho.",
+        "Comprueba si el número dado es divisible por la regla izquierda.",
+        "Comprueba si es divisible por la regla derecha.",
+        "Pulsa la región correcta: solo izquierda, solo derecha, ambos (intersección) o ninguno (fuera)."
+      ],
+      "skills": "El diagrama de Venn desarrolla el pensamiento lógico proposicional: evaluar condiciones AND y OR simultáneamente. Los alumnos aprenden a comprobar cada condición por separado antes de combinarlas, exactamente el patrón de razonamiento que subyace a las operaciones de conjuntos, consultas de bases de datos y condicionales de programación.",
+      "example": "Los círculos muestran ÷3 y ÷4. El número 12 es divisible por ambos (12÷3=4, 12÷4=3), así que pertenece a la intersección. El número 9 es divisible por 3 pero no por 4, así que va al círculo izquierdo.",
+      "mistakes": "Los alumnos a menudo colocan un número en la intersección porque parece relacionado con ambos divisores sin verificar realmente cada división. Pulsar una región específica obliga a comprobar ambas condiciones antes de decidir.",
+      "faqs": [
+        {
+          "q": "¿Por qué el juego prueba dos condiciones de divisibilidad a la vez en lugar de una por una?",
+          "a": "Probar una condición desarrolla la fluidez aritmética. Probar dos al mismo tiempo desarrolla la clasificación lógica: el resultado del primer test debe mantenerse en mente mientras se evalúa el segundo y luego combinarse, exactamente la lógica AND/OR de la teoría de conjuntos y el álgebra posterior."
+        },
+        {
+          "q": "¿Para qué cursos está diseñado el Diagrama de Venn?",
+          "a": "Cursos 4.º–6.º, donde el conocimiento de factores y múltiplos se extiende a la clasificación de conjuntos y los alumnos conocen el diagrama de Venn como herramienta formal para organizar información."
+        },
+        {
+          "q": "¿Cómo se diferencia del gráfico de barras, que también trabaja con representación de datos?",
+          "a": "El gráfico de barras trabaja con medición cuantitativa: leer valores numéricos y comparar magnitudes. El diagrama de Venn trabaja con clasificación lógica: determinar a qué conjunto pertenece un número, sin medición."
+        }
+      ]
+    }
   },
   "subitize": {
     "title": "Destello de puntos",
@@ -1582,7 +1634,33 @@
     "item2": "lápices",
     "item3": "flores",
     "item4": "pegatinas",
-    "item5": "galletas"
+    "item5": "galletas",
+    "seo": {
+      "intro": "El Modelo de barras convierte un problema verbal en un diagrama de tiras visual. Los alumnos leen un problema sobre combinar o quitar una cantidad y luego arrastran una barra a la longitud que representa la respuesta. El diagrama hace visible la relación parte-todo antes de escribir cualquier operación. Cursos 2.º–4.º.",
+      "howToPlay": [
+        "Lee el problema verbal e identifica las cantidades conocidas y la incógnita.",
+        "Decide: ¿estás sumando (obtuvo más) o hallando lo que queda (regaló)?",
+        "Arrastra la barra hacia la derecha o usa −/+ para ajustar su longitud a la respuesta.",
+        "Pulsa Comprobar para confirmar que tu modelo de barras coincide con la respuesta del problema."
+      ],
+      "skills": "El modelado con barras es una estrategia visual estructurada que convierte el lenguaje de un problema verbal en un diagrama de partes y todo. Los alumnos que construyen el modelo antes de calcular eligen la operación correcta con mayor frecuencia, porque el diagrama hace explícita la relación entre las cantidades, una estrategia de resolución de problemas de 2.º a los cursos superiores.",
+      "example": "Dana tenía 7 manzanas y obtuvo 5 más. El alumno arrastra la barra hasta la longitud 12, que representa el total. El modelo de barras muestra las dos partes (7 y 5) uniéndose en un todo.",
+      "mistakes": "Los alumnos saltan a la operación antes de entender la estructura del problema, y a veces restan cuando deberían sumar. Construir la barra primero les obliga a decidir la relación entre las cantidades antes de calcular, detectando errores en la elección de operación tempranamente.",
+      "faqs": [
+        {
+          "q": "¿Cómo ayuda construir un modelo de barras a los alumnos que tienen dificultades para elegir la operación correcta en problemas verbales?",
+          "a": "El modelo de barras visualiza la relación parte-todo: una barra larga para el total, segmentos más cortos para las partes. Los alumnos ven si el total o una parte es la incógnita antes de elegir la operación, eliminando la adivinanza que causa la mayoría de los errores en problemas verbales."
+        },
+        {
+          "q": "¿Para qué cursos está diseñado el Modelo de barras?",
+          "a": "Cursos 2.º–4.º, donde los problemas verbales introducen la suma y la resta en contexto y los alumnos necesitan un puente visual entre leer el problema y escribir la operación."
+        },
+        {
+          "q": "¿Cómo se diferencia del Problema en dos pasos, que también practica problemas verbales?",
+          "a": "El modelo de barras abarca una operación y se centra en construir el diagrama visual. El Problema en dos pasos requiere dos operaciones consecutivas sin apoyo visual, poniendo a prueba la planificación y el cálculo en una cadena más larga."
+        }
+      ]
+    }
   },
   "wordProblemSteps": {
     "title": "Problema en dos pasos",
@@ -1590,7 +1668,33 @@
     "instructions": "Lee el problema en el plano, ajusta tu respuesta con los botones − / + y luego pulsa Comprobar",
     "prompt": "Resuelve el problema en dos pasos",
     "correct": "¡Correcto! La respuesta es {result}",
-    "wrong": "¡Casi! Calcula cada paso por separado y luego el resultado final"
+    "wrong": "¡Casi! Calcula cada paso por separado y luego el resultado final",
+    "seo": {
+      "intro": "El Problema en dos pasos presenta un problema verbal que no puede resolverse con una sola operación. Los alumnos deben identificar dos operaciones en el orden correcto, ejecutar cada paso y usar el resultado intermedio para llegar a la respuesta final. El diseño de plano mantiene el problema completo en pantalla mientras se trabaja. Cursos 3.º–5.º.",
+      "howToPlay": [
+        "Lee el problema verbal completo en el plano antes de calcular nada.",
+        "Identifica la primera operación y calcula el resultado intermedio.",
+        "Usa ese resultado intermedio en la segunda operación para obtener la respuesta final.",
+        "Ajusta la respuesta final con −/+ y pulsa Comprobar."
+      ],
+      "skills": "Resolver problemas verbales de varios pasos requiere planificar el orden de las operaciones, mantener un resultado intermedio en la memoria de trabajo y aplicarlo en el siguiente paso. Estas son las mismas competencias de función ejecutiva y razonamiento algebraico que subyacen a la resolución de ecuaciones, problemas de razón y toda la matemática aplicada a partir de 3.º.",
+      "example": "El problema: Omar tenía 24 lápices, dio 8 a su clase y luego compró 3 cajas de 5. Paso 1: 24-8=16. Paso 2: 16+(3×5)=31. Hay que reconocer ambos pasos y ejecutarlos en orden.",
+      "mistakes": "Los alumnos suelen entregar solo el resultado del primer paso como respuesta final, o combinan todos los números en un único paso sin respetar el orden. El juego muestra el error de inmediato e invita a releer el problema para identificar lo que se pasó por alto.",
+      "faqs": [
+        {
+          "q": "¿Cómo fomenta el juego el hábito de planificar antes de calcular en problemas de varios pasos?",
+          "a": "El diseño de plano mantiene el problema completo en pantalla mientras los alumnos trabajan, evitando el hábito de calcular en cuanto aparece un número. Hay que leer hasta el final antes de elegir la primera operación, practicando el paso de planificación que los problemas de un solo paso nunca requieren."
+        },
+        {
+          "q": "¿Para qué cursos está diseñado el Problema en dos pasos?",
+          "a": "Cursos 3.º–5.º, donde el currículo introduce los problemas verbales de varios pasos y los alumnos aprenden a combinar suma, resta, multiplicación y división en una sola pregunta."
+        },
+        {
+          "q": "¿Cómo se diferencia del Modelo de barras, que también practica problemas verbales?",
+          "a": "El modelo de barras abarca una operación y entrena la representación visual de la estructura antes de calcular. El Problema en dos pasos prescinde del apoyo visual y desafía a los alumnos a planificar de forma independiente una cadena de dos operaciones, el siguiente nivel cuando el modelo ya no es necesario."
+        }
+      ]
+    }
   },
   "estimationLand": {
     "title": "Tierra de la Estimación",

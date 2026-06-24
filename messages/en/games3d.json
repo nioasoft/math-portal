@@ -1209,7 +1209,33 @@
     "instructions": "Read the height of each bar off the scale on the side, then use the − / + buttons (or drag up) to enter how many more the first category has than the second, and press Check",
     "prompt": "How many more {a} than {b}?",
     "correct": "Correct! The difference is {diff}",
-    "wrong": "Almost! Read each bar's height again and try again"
+    "wrong": "Almost! Read each bar's height again and try again",
+    "seo": {
+      "intro": "Bar Graph Builder teaches students to read quantitative data from a scale and find the difference between two categories. Each round shows a bar chart with labelled bars; students read the height of each bar off the side scale and calculate how many more one category has than the other — a foundational data-literacy skill used in science, social studies, and everyday life. Grades 2–5.",
+      "howToPlay": [
+        "Look at the two bars highlighted in the question.",
+        "Read each bar's height by tracing it across to the numbered scale on the side.",
+        "Subtract the smaller height from the larger to find the difference.",
+        "Use the −/+ buttons (or drag up) to enter the difference, then press Check."
+      ],
+      "skills": "Bar Graph Builder builds the ability to extract precise values from a scale and reason about differences in data, not just raw totals. Students who can read bar graphs accurately can interpret charts in science experiments, news articles, and standardised tests — a skill practised repeatedly from grade 2 through grade 5.",
+      "example": "A bar chart shows 'Dogs' reaching 8 on the scale and 'Cats' reaching 5. The question asks how many more dogs than cats. Students read 8 and 5 from the scale, subtract, and enter 3.",
+      "mistakes": "Students often read bars by eye rather than aligning them with the scale, producing off-by-one errors. The game reinforces returning to the numbered axis for every bar, not estimating height from visual impression alone.",
+      "faqs": [
+        {
+          "q": "How does reading bar heights off a scale differ from just looking at which bar is tallest?",
+          "a": "Visual tallness shows which category is greater but not by how much. Reading the scale gives an exact value, which is needed to calculate differences precisely — the core data skill the game practises."
+        },
+        {
+          "q": "Which grades is Bar Graph Builder for?",
+          "a": "Grades 2–5, matching the curriculum progression from reading simple bar graphs in early primary to interpreting scaled graphs and calculating differences in upper primary."
+        },
+        {
+          "q": "How is this different from Venn Diagram Sort, which also uses data representation?",
+          "a": "Bar Graph Builder works with quantitative data on a numerical scale — students read and compare measured values. Venn Diagram Sort works with categorical logic — students classify items by which properties they share, with no measurement scale involved."
+        }
+      ]
+    }
   },
   "vennSort": {
     "title": "Venn Diagram Sort",
@@ -1217,7 +1243,33 @@
     "instructions": "Read the number and two properties, then tap the correct region: left only, right only, both, or neither",
     "prompt": "Classify {value}: ÷{a} and ÷{b}",
     "correct": "Correct! {value} is classified right",
-    "wrong": "Almost! Check if the number is divisible by each property separately"
+    "wrong": "Almost! Check if the number is divisible by each property separately",
+    "seo": {
+      "intro": "Venn Diagram Sort presents a two-circle Venn diagram with a divisibility rule in each circle. Students are given a number and must decide whether it belongs in the left circle only, the right circle only, the overlapping centre (both), or completely outside (neither). Each choice demands evaluating two independent conditions simultaneously — the core skill in set theory and logical classification. Grades 4–6.",
+      "howToPlay": [
+        "Read the two divisibility rules shown in the left and right circles.",
+        "Check whether the given number is divisible by the left rule (divide and check the remainder).",
+        "Check whether it is divisible by the right rule.",
+        "Tap the correct region: left only, right only, both (overlap), or neither (outside)."
+      ],
+      "skills": "Venn Diagram Sort builds propositional logic applied to number theory: evaluating AND, OR, and NOT conditions simultaneously. Students learn to test each condition independently before combining them, the exact reasoning pattern behind set operations, database queries, and programming conditionals — introduced here through divisibility.",
+      "example": "The circles show ÷3 and ÷4. The number 12 divides evenly by both (12÷3=4, 12÷4=3), so it belongs in the overlap. The number 9 divides by 3 but not 4, so it belongs in the left circle only.",
+      "mistakes": "Students often place a number in the overlap if it seems related to both divisors without actually testing each division. The game requires committing to a region by tapping, which forces the habit of checking both conditions separately before deciding.",
+      "faqs": [
+        {
+          "q": "Why does this game test two divisibility conditions at once instead of one at a time?",
+          "a": "Testing one condition builds arithmetic fluency. Testing two simultaneously builds logical classification: students must hold the result of the first test in mind while evaluating the second, then combine them — exactly the AND/OR reasoning used in set theory and later in algebra."
+        },
+        {
+          "q": "Which grades is Venn Diagram Sort for?",
+          "a": "Grades 4–6, where students extend their knowledge of factors and multiples into set classification and encounter Venn diagrams as a formal tool for organising information."
+        },
+        {
+          "q": "How is this different from Bar Graph Builder, which also involves data representation?",
+          "a": "Bar Graph Builder works with quantitative measurement — reading numerical values off a scale and comparing magnitudes. Venn Diagram Sort works with logical classification — deciding which set or intersection a number belongs to, with no measurement involved."
+        }
+      ]
+    }
   },
   "subitize": {
     "title": "Dot Flash",
@@ -1562,7 +1614,33 @@
     "item2": "pencils",
     "item3": "flowers",
     "item4": "stickers",
-    "item5": "cookies"
+    "item5": "cookies",
+    "seo": {
+      "intro": "Bar Model turns a word problem into a visual tape diagram. Students read a problem about combining or removing a quantity, then drag a bar to the length that represents the answer. The diagram makes the part-whole relationship visible before any arithmetic is written — bridging reading comprehension and calculation in one action. Grades 2–4.",
+      "howToPlay": [
+        "Read the word problem and identify the known quantities and the unknown.",
+        "Decide whether you are combining (addition) or finding what remains (subtraction).",
+        "Drag the bar rightward or use −/+ to set its length to match the answer.",
+        "Press Check to confirm your bar model matches the problem's answer."
+      ],
+      "skills": "Bar modelling is a structured visual strategy that converts language in a word problem into a diagram showing parts and wholes. Students who build bar models before calculating are less likely to choose the wrong operation, because the diagram makes the relationship explicit — a core strategy in problem-solving from grade 2 through upper primary.",
+      "example": "Dana had 7 apples and got 5 more. Students drag the bar to length 12, representing the total. The bar diagram shows the two parts (7 and 5) combining into one whole — addition made visual.",
+      "mistakes": "Students often jump to arithmetic before understanding the problem's structure, sometimes subtracting when they should add. Drawing the bar first forces them to decide on the relationship between quantities before calculating, catching operation-choice errors early.",
+      "faqs": [
+        {
+          "q": "How does building a bar model help students who struggle with choosing the right operation in word problems?",
+          "a": "The bar diagram externalises the part-whole relationship: one long bar for the total, shorter segments for the parts. Students see whether the total or a part is missing before picking an operation, removing the guesswork that causes most word-problem errors."
+        },
+        {
+          "q": "Which grades is Bar Model for?",
+          "a": "Grades 2–4, where word problems introduce addition and subtraction in context and students need a visual bridge between reading the problem and writing the calculation."
+        },
+        {
+          "q": "How is this different from Two-Step Problem, which also practises word problems?",
+          "a": "Bar Model uses one operation per problem and centres on building the visual diagram — the focus is on representing the structure. Two-Step Problem requires two sequential operations with no diagram scaffold, testing procedural planning and calculation across a more complex chain."
+        }
+      ]
+    }
   },
   "wordProblemSteps": {
     "title": "Two-Step Problem",
@@ -1570,7 +1648,33 @@
     "instructions": "Read the problem on the blueprint, set your answer with the − / + buttons, then press Check",
     "prompt": "Solve the two-step problem",
     "correct": "Correct! The answer is {result}",
-    "wrong": "Almost! Calculate each step separately then the final result"
+    "wrong": "Almost! Calculate each step separately then the final result",
+    "seo": {
+      "intro": "Two-Step Problem presents a word problem that cannot be solved with a single calculation. Students must identify two separate operations in the right order, carry out each step, and use the intermediate result to reach the final answer. The blueprint-style layout keeps the full problem visible while students work through it step by step. Grades 3–5.",
+      "howToPlay": [
+        "Read the full word problem on the blueprint carefully before calculating anything.",
+        "Identify the first operation and calculate the intermediate result.",
+        "Use that intermediate result in the second operation to reach the final answer.",
+        "Set the final answer with the −/+ buttons and press Check."
+      ],
+      "skills": "Solving multi-step word problems requires planning the order of operations, holding an intermediate result in working memory, and applying it in the next step. These are the same executive-function and algebraic-reasoning skills that underpin equation solving, ratio problems, and all applied maths from grade 3 onward.",
+      "example": "A problem states: Omar had 24 pencils, gave 8 to his class, then bought 3 more packs of 5. Step 1: 24 − 8 = 16. Step 2: 16 + (3 × 5) = 31. Students must recognise both steps and execute them in order.",
+      "mistakes": "Students commonly solve only the first operation and submit that as the final answer, or combine all numbers in a single step without regard for order. The game reveals the error immediately, prompting students to re-read the problem and identify what they missed.",
+      "faqs": [
+        {
+          "q": "How does this game build the skill of planning before calculating in multi-step problems?",
+          "a": "The blueprint layout keeps the entire problem on screen while students work, preventing the common habit of calculating as soon as a number appears. Students must read to the end before choosing their first operation, practising the planning step that single-step problems never require."
+        },
+        {
+          "q": "Which grades is Two-Step Problem for?",
+          "a": "Grades 3–5, where the curriculum introduces multi-step word problems and students learn to combine addition, subtraction, multiplication, and division within a single question."
+        },
+        {
+          "q": "How is this different from Bar Model, which also practises word problems?",
+          "a": "Bar Model covers one-operation problems and trains students to represent structure visually before calculating. Two-Step Problem skips the diagram scaffold and challenges students to plan a two-operation sequence independently — the next stage after the visual model is no longer needed."
+        }
+      ]
+    }
   },
   "estimationLand": {
     "title": "Estimation Land",

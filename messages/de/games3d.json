@@ -1229,7 +1229,33 @@
     "instructions": "Lies die Höhe jedes Balkens an der Skala an der Seite ab, gib dann mit den Tasten − / + (oder durch Ziehen nach oben) ein, wie viel mehr die erste Kategorie als die zweite hat, und drücke Prüfen",
     "prompt": "Wie viel mehr {a} als {b}?",
     "correct": "Richtig! Der Unterschied ist {diff}",
-    "wrong": "Fast! Lies die Höhe jedes Balkens noch einmal und versuche es erneut"
+    "wrong": "Fast! Lies die Höhe jedes Balkens noch einmal und versuche es erneut",
+    "seo": {
+      "intro": "Der Balkendiagramm-Baumeister lehrt Schüler, quantitative Daten von einer Skala abzulesen und den Unterschied zwischen zwei Kategorien zu berechnen. In jeder Runde erscheint ein Balkendiagramm mit beschrifteten Balken; die Schüler lesen die Höhe jedes Balkens von der seitlichen Skala ab und berechnen, wie viel mehr eine Kategorie hat. Klassen 2–5.",
+      "howToPlay": [
+        "Betrachte die zwei Balken, nach denen die Frage fragt.",
+        "Verfolge jeden Balken waagerecht zur nummerierten Skala am Rand und lies die Höhe ab.",
+        "Ziehe die kleinere Höhe von der größeren ab, um den Unterschied zu ermitteln.",
+        "Gib den Unterschied mit −/+ oder durch Ziehen ein und drücke Prüfen."
+      ],
+      "skills": "Der Balkendiagramm-Baumeister entwickelt die Fähigkeit, präzise Werte aus einer Skala zu entnehmen und Unterschiede in Daten zu erkennen — nicht nur Gesamtwerte. Schüler, die Balkendiagramme genau lesen, können Diagramme in Naturwissenschaften, Nachrichten und standardisierten Tests interpretieren, eine Fertigkeit, die von Klasse 2 bis 5 geübt wird.",
+      "example": "Ein Diagramm zeigt 'Hunde' bei der Höhe 8 und 'Katzen' bei der Höhe 5. Die Frage: Wie viel mehr Hunde als Katzen? Die Schüler lesen 8 und 5 von der Skala ab, subtrahieren und geben 3 ein.",
+      "mistakes": "Schüler schätzen Balkenhöhen mit dem Auge, anstatt sie an der Skala auszurichten, was zu Einzel-Einheit-Fehlern führt. Das Spiel stärkt die Gewohnheit, für jeden Balken zur nummerierten Achse zurückzukehren.",
+      "faqs": [
+        {
+          "q": "Wie unterscheidet sich das Ablesen der Balkenhöhe von der Skala vom bloßen Betrachten des höchsten Balkens?",
+          "a": "Visuelles Betrachten zeigt, welche Kategorie größer ist, nicht aber um wie viel. Das Ablesen der Skala liefert einen genauen Wert, der zur präzisen Berechnung von Unterschieden benötigt wird — die Kernkompetenz, die das Spiel übt."
+        },
+        {
+          "q": "Für welche Klassen ist der Balkendiagramm-Baumeister geeignet?",
+          "a": "Klassen 2–5, entsprechend der Lehrplanprogression von einfachen Balkendiagrammen in der Unterstufe bis zur Interpretation skalierter Diagramme und der Berechnung von Unterschieden in der Oberstufe."
+        },
+        {
+          "q": "Wie unterscheidet sich das von der Venn-Diagramm-Sortierung, die ebenfalls Datendarstellung beinhaltet?",
+          "a": "Der Balkendiagramm-Baumeister arbeitet mit quantitativen Daten auf einer numerischen Skala — Schüler lesen Messwerte ab und vergleichen Größen. Die Venn-Diagramm-Sortierung arbeitet mit logischer Klassifikation — Schüler entscheiden, zu welcher Menge ein Element gehört, ohne Messskala."
+        }
+      ]
+    }
   },
   "vennSort": {
     "title": "Venn-Diagramm-Sortierung",
@@ -1237,7 +1263,33 @@
     "instructions": "Lies die Zahl und die zwei Eigenschaften, tippe dann auf die richtige Region: nur links, nur rechts, beides oder keines",
     "prompt": "Klassifiziere {value}: ÷{a} und ÷{b}",
     "correct": "Richtig! {value} ist richtig eingeordnet",
-    "wrong": "Fast! Prüfe, ob die Zahl durch jede Eigenschaft einzeln teilbar ist"
+    "wrong": "Fast! Prüfe, ob die Zahl durch jede Eigenschaft einzeln teilbar ist",
+    "seo": {
+      "intro": "Die Venn-Diagramm-Sortierung zeigt zwei Kreise, jeweils mit einer Teilbarkeitsregel. Schüler erhalten eine Zahl und entscheiden, wohin sie gehört: nur linker Kreis, nur rechter Kreis, die überlappende Mitte (beide) oder ganz außen (keiner). Jede Wahl erfordert das gleichzeitige Auswerten zweier unabhängiger Bedingungen — die Kernkompetenz der Mengentheorie. Klassen 4–6.",
+      "howToPlay": [
+        "Lies die zwei Teilbarkeitsregeln im linken und rechten Kreis.",
+        "Prüfe, ob die gegebene Zahl durch die linke Regel teilbar ist.",
+        "Prüfe, ob sie durch die rechte Regel teilbar ist.",
+        "Tippe auf die richtige Region: nur links, nur rechts, beide (Überschneidung) oder keiner (außen)."
+      ],
+      "skills": "Die Venn-Diagramm-Sortierung entwickelt propositionalslogisches Denken: gleichzeitiges Auswerten von AND- und OR-Bedingungen. Schüler lernen, jede Bedingung separat zu prüfen, bevor sie kombiniert werden — genau das Denkmuster, das Mengenoperationen, Datenbankabfragen und Programmierbedingungen zugrunde liegt.",
+      "example": "Die Kreise zeigen ÷3 und ÷4. Die Zahl 12 ist durch beide teilbar (12÷3=4, 12÷4=3), gehört also in die Überschneidung. Die Zahl 9 ist durch 3, aber nicht durch 4 teilbar, also nur in den linken Kreis.",
+      "mistakes": "Schüler ordnen eine Zahl oft der Überschneidung zu, weil sie mit beiden Teilern verbunden scheint, ohne die Division tatsächlich zu prüfen. Das Antippen einer bestimmten Region zwingt dazu, beide Bedingungen vor der Entscheidung zu prüfen.",
+      "faqs": [
+        {
+          "q": "Warum prüft das Spiel zwei Teilbarkeitsbedingungen gleichzeitig statt nacheinander?",
+          "a": "Das Prüfen einer Bedingung baut Rechenflüssigkeit auf. Das gleichzeitige Prüfen zweier Bedingungen baut logische Klassifikation auf: das Ergebnis des ersten Tests muss beim zweiten im Gedächtnis behalten und dann kombiniert werden — genau die AND/OR-Logik der Mengenlehre und später der Algebra."
+        },
+        {
+          "q": "Für welche Klassen ist die Venn-Diagramm-Sortierung geeignet?",
+          "a": "Klassen 4–6, wo das Wissen über Faktoren und Vielfache zur Mengenklassifikation erweitert wird und Schüler das Venn-Diagramm als formales Werkzeug kennenlernen."
+        },
+        {
+          "q": "Wie unterscheidet sich das vom Balkendiagramm-Baumeister, der ebenfalls Daten beinhaltet?",
+          "a": "Der Balkendiagramm-Baumeister arbeitet mit quantitativer Messung: Ablesen numerischer Werte und Vergleichen von Größen. Die Venn-Diagramm-Sortierung arbeitet mit logischer Klassifikation: Bestimmen, zu welcher Menge eine Zahl gehört, ohne Messung."
+        }
+      ]
+    }
   },
   "subitize": {
     "title": "Punkteblitz",
@@ -1582,7 +1634,33 @@
     "item2": "Stifte",
     "item3": "Blumen",
     "item4": "Sticker",
-    "item5": "Kekse"
+    "item5": "Kekse",
+    "seo": {
+      "intro": "Das Balkenmodell verwandelt eine Textaufgabe in ein visuelles Streifendiagramm. Schüler lesen eine Aufgabe über das Kombinieren oder Wegnehmen einer Menge und ziehen dann einen Balken auf die Länge, die die Antwort darstellt. Das Diagramm macht die Teil-Ganzes-Beziehung sichtbar, bevor eine Rechnung aufgeschrieben wird. Klassen 2–4.",
+      "howToPlay": [
+        "Lies die Textaufgabe und identifiziere die bekannten Mengen und die Unbekannte.",
+        "Entscheide: Addierst du (bekam mehr) oder findest du, was übrig bleibt (gab ab)?",
+        "Ziehe den Balken nach rechts oder nutze −/+, um seine Länge auf die Antwort einzustellen.",
+        "Drücke Prüfen, um zu bestätigen, dass dein Balkenmodell der Antwort der Aufgabe entspricht."
+      ],
+      "skills": "Das Balkenmodellieren ist eine strukturierte visuelle Strategie, die die Sprache einer Textaufgabe in ein Diagramm aus Teilen und Ganzem umwandelt. Schüler, die zuerst ein Modell erstellen, wählen die richtige Operation häufiger, weil das Diagramm die Beziehung zwischen den Mengen explizit macht — eine Problemlösungsstrategie von Klasse 2 bis in die Oberstufe.",
+      "example": "Dana hatte 7 Äpfel und bekam 5 weitere. Der Schüler zieht den Balken auf Länge 12, die Gesamtzahl. Das Balkenmodell zeigt die zwei Teile (7 und 5), die sich zu einem Ganzen verbinden.",
+      "mistakes": "Schüler springen zur Rechnung, bevor sie die Struktur der Aufgabe verstanden haben, und subtrahieren manchmal statt zu addieren. Das erste Aufbauen des Balkens zwingt dazu, die Beziehung zwischen den Mengen vor dem Rechnen zu klären, und erkennt Fehler bei der Operationswahl frühzeitig.",
+      "faqs": [
+        {
+          "q": "Wie hilft das Erstellen eines Balkenmodells Schülern, die Schwierigkeiten haben, die richtige Operation in Textaufgaben zu wählen?",
+          "a": "Das Balkenmodell veranschaulicht die Teil-Ganzes-Beziehung: ein langer Balken für die Gesamtzahl, kürzere Abschnitte für die Teile. Schüler sehen, ob Gesamtzahl oder Teil unbekannt ist, bevor sie eine Operation wählen, und eliminieren das Raten, das die meisten Textaufgaben-Fehler verursacht."
+        },
+        {
+          "q": "Für welche Klassen ist das Balkenmodell geeignet?",
+          "a": "Klassen 2–4, wo Textaufgaben Addition und Subtraktion im Kontext einführen und Schüler eine visuelle Brücke zwischen dem Lesen der Aufgabe und dem Aufschreiben der Rechnung benötigen."
+        },
+        {
+          "q": "Wie unterscheidet sich das von der Zweistufigen Aufgabe, die ebenfalls Textaufgaben übt?",
+          "a": "Das Balkenmodell umfasst eine Operation und konzentriert sich auf das Erstellen des visuellen Diagramms. Die Zweistufige Aufgabe erfordert zwei aufeinanderfolgende Operationen ohne visuelle Unterstützung und testet Planung und Berechnung über eine längere Kette."
+        }
+      ]
+    }
   },
   "wordProblemSteps": {
     "title": "Zweistufige Aufgabe",
@@ -1590,7 +1668,33 @@
     "instructions": "Lies die Aufgabe auf dem Bauplan, stelle deine Antwort mit den Tasten − / + ein und drücke dann Prüfen",
     "prompt": "Löse die zweistufige Aufgabe",
     "correct": "Richtig! Die Antwort ist {result}",
-    "wrong": "Fast! Berechne jeden Schritt einzeln, dann das Endergebnis"
+    "wrong": "Fast! Berechne jeden Schritt einzeln, dann das Endergebnis",
+    "seo": {
+      "intro": "Die Zweistufige Aufgabe präsentiert eine Textaufgabe, die nicht mit einer einzigen Rechnung gelöst werden kann. Schüler müssen zwei Operationen in der richtigen Reihenfolge identifizieren, jeden Schritt ausführen und das Zwischenergebnis für die endgültige Antwort verwenden. Das Bauplan-Layout hält die vollständige Aufgabe während der Arbeit auf dem Bildschirm. Klassen 3–5.",
+      "howToPlay": [
+        "Lies die vollständige Textaufgabe auf dem Bauplan, bevor du etwas berechnest.",
+        "Identifiziere die erste Operation und berechne das Zwischenergebnis.",
+        "Verwende das Zwischenergebnis in der zweiten Operation, um die endgültige Antwort zu erhalten.",
+        "Stelle die endgültige Antwort mit −/+ ein und drücke Prüfen."
+      ],
+      "skills": "Das Lösen mehrstufiger Textaufgaben erfordert die Planung der Operationsreihenfolge, das Behalten eines Zwischenergebnisses im Arbeitsgedächtnis und dessen Anwendung im nächsten Schritt. Dies sind dieselben Exekutivfunktions- und algebraischen Denk-Kompetenzen, die dem Lösen von Gleichungen, Verhältnisaufgaben und aller angewandten Mathematik ab Klasse 3 zugrunde liegen.",
+      "example": "Die Aufgabe: Omar hatte 24 Stifte, gab 8 an seine Klasse und kaufte dann 3 Packungen à 5. Schritt 1: 24-8=16. Schritt 2: 16+(3×5)=31. Beide Schritte müssen erkannt und der Reihe nach ausgeführt werden.",
+      "mistakes": "Schüler reichen oft nur das Ergebnis des ersten Schritts als Endantwort ein oder kombinieren alle Zahlen in einem einzigen Schritt. Das Spiel zeigt den Fehler sofort und lädt dazu ein, die Aufgabe erneut zu lesen und zu identifizieren, was übersehen wurde.",
+      "faqs": [
+        {
+          "q": "Wie fördert das Spiel die Gewohnheit, bei mehrstufigen Aufgaben vor dem Rechnen zu planen?",
+          "a": "Das Bauplan-Layout hält die vollständige Aufgabe auf dem Bildschirm, während die Schüler arbeiten, und verhindert die Gewohnheit, zu rechnen, sobald eine Zahl erscheint. Die Aufgabe muss bis zum Ende gelesen werden, bevor die erste Operation gewählt wird, und übt den Planungsschritt, den einstufige Aufgaben nie erfordern."
+        },
+        {
+          "q": "Für welche Klassen ist die Zweistufige Aufgabe geeignet?",
+          "a": "Klassen 3–5, wo der Lehrplan mehrstufige Textaufgaben einführt und Schüler lernen, Addition, Subtraktion, Multiplikation und Division innerhalb einer Frage zu kombinieren."
+        },
+        {
+          "q": "Wie unterscheidet sich das vom Balkenmodell, das ebenfalls Textaufgaben übt?",
+          "a": "Das Balkenmodell behandelt einstufige Aufgaben und trainiert das visuelle Darstellen der Struktur vor dem Rechnen. Die Zweistufige Aufgabe verzichtet auf das visuelle Hilfsmittel und fordert die selbstständige Planung einer Zwei-Operationen-Kette — die nächste Stufe, wenn das Modell nicht mehr benötigt wird."
+        }
+      ]
+    }
   },
   "estimationLand": {
     "title": "Schätzland",

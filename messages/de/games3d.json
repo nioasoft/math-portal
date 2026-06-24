@@ -118,7 +118,33 @@
     "prompt": "Fülle bis {target} ml",
     "correct": "Super! Bis {target} ml gefüllt",
     "wrong": "Fast! Komm näher an die Zielmarke",
-    "unit": "ml"
+    "unit": "ml",
+    "seo": {
+      "intro": "\"Behälter füllen\" verwandelt das Messen von Volumen in eine Eingießaufgabe zum Anfassen. Die Schüler ziehen, um ein Glas bis zu einer Milliliter-Marke zu füllen, und entdecken, dass Fassungsvermögen eine kontinuierliche Größe ist, die von einer Skala abgelesen wird, nicht eine Anzahl von Gegenständen. Der Live-Füllstand liefert sofortiges Feedback zur Schätzgenauigkeit.",
+      "howToPlay": [
+        "Lies das Zielvolumen ab, das über dem Behälter angezeigt wird.",
+        "Ziehe nach oben, um Flüssigkeit einzufüllen, und beobachte, wie der Pegel an der Skala steigt.",
+        "Verlangsame dich, wenn du die Zielmarke annäherst — die letzten Milliliter entscheiden.",
+        "Drücke Prüfen, wenn der Flüssigkeitsstand genau auf dem Zielstrich liegt."
+      ],
+      "skills": "Das Üben des Volumenmes­sens festigt das Verständnis, dass Fassungsvermögen eine kontinuierliche Größe ist, die von einer Skala abgelesen wird, nicht eine Zählung von Objekten. Schüler lernen, Zwischenteilstriche zu lesen und entwickeln die nötige Genauigkeit, bevor sie in den Klassen 3–4 zu mehrstufigen Aufgaben übergehen.",
+      "example": "Das Ziel ist 350 ml. Die Skala des Glases zeigt Markierungen alle 50 ml. Die Schüler gießen bis zur 300-Marke und fügen dann vorsichtig 50 ml hinzu, um 350 zu erreichen — sie nutzen die Hauptmarkierungen als Sprungsteine zur genauen Ablesung.",
+      "mistakes": "Schüler überschießen das Ziel oft und halten erst an, wenn der Pegel die Marke deutlich überschritten hat. Das Spiel fördert langsameres, sorgfältigeres Eingießen nahe dem Ziel und baut die Gewohnheit auf, sich einem Messwert von unten zu nähern statt eine Überfüllung zu korrigieren.",
+      "faqs": [
+        {
+          "q": "Was lehrt das Ziehen zum Füllen des Behälters beim Volumen, was das Aufschreiben einer Antwort nicht lehrt?",
+          "a": "Das Eingießen verbindet die abstrakte Zahl mit dem tatsächlichen Flüssigkeitsstand — Milliliter fühlen sich wie eine echte Menge an, nicht wie eine willkürliche Zahl."
+        },
+        {
+          "q": "Für welche Klassen ist 'Behälter füllen' gedacht?",
+          "a": "Klassen 3–4, in denen der Lehrplan Standardkapazitätseinheiten und das Ablesen von Messskalen in Alltagszusammenhängen einführt."
+        },
+        {
+          "q": "Wie unterscheidet sich das vom Lineal-Spiel?",
+          "a": "'Behälter füllen' misst das Volumen (ml) an einer vertikalen Flüssigkeitsskala; 'Mit dem Lineal messen' misst die Länge (cm) mit zwei Fahnen auf einem horizontalen Lineal. Beide üben das Ablesen einer Skala, aber für verschiedene Messeigenschaften."
+        }
+      ]
+    }
   },
   "fractionBuild": {
     "title": "Bruch-Baumeister",
@@ -263,7 +289,33 @@
     "instructions": "Ziehe den Minutenzeiger um die Uhr (der Stundenzeiger folgt proportional) oder nutze die Tasten Stunde ±1 und Minute ±5, dann drücke Prüfen",
     "prompt": "Stelle die Uhr auf {time}",
     "correct": "Super! Du hast die Uhr auf {time} gestellt",
-    "wrong": "Fast! Prüfe die Stunde und die Minuten und korrigiere"
+    "wrong": "Fast! Prüfe die Stunde und die Minuten und korrigiere",
+    "seo": {
+      "intro": "'Uhrzeit-Baumeister' verbindet digitale und analoge Uhrzeit, indem Schüler den Minutenzeiger auf eine angezeigte digitale Zeit ziehen. Der Stundenzeiger folgt dabei proportional in Echtzeit — so sehen die Schüler den Zusammenhang zwischen beiden Zeigern, anstatt isolierte Positionen auswendig zu lernen.",
+      "howToPlay": [
+        "Lies die digitale Uhrzeit ab, die über dem Zifferblatt angezeigt wird.",
+        "Ziehe den Minutenzeiger auf die richtige Minutenposition und beobachte, wie der Stundenzeiger folgt.",
+        "Feinjustiere Stunden und Minuten mit den ±1- und ±5-Tasten, falls nötig.",
+        "Drücke Prüfen, sobald beide Zeiger auf die richtige Position weisen."
+      ],
+      "skills": "Das Einstellen der analogen Zeiger auf eine digitale Uhrzeit schult zwei Fähigkeiten gleichzeitig: die Minutenskala in 5-Minuten-Schritten ablesen und verstehen, dass der Stundenzeiger sich stetig über das Zifferblatt bewegt und nicht von Zahl zu Zahl springt. Beide Fähigkeiten sind in Klasse 2–3 für das flüssige Ablesen der Uhr erforderlich.",
+      "example": "Für 3:45 zeigt der Minutenzeiger auf die 9 (45 Minuten), während der Stundenzeiger drei Viertel des Weges zwischen 3 und 4 steht. Das Bewegen des Minutenzeigers auf 45 zeigt deutlich, warum sich die Stundenangabe mit fortschreitenden Minuten verändert.",
+      "mistakes": "Schüler stellen den Stundenzeiger oft genau auf die Stundenzahl, selbst wenn die Zeit die halbe Stunde überschritten hat. Zu sehen, dass der Stundenzeiger zwischen zwei Ziffern steht (nicht auf einer), korrigiert die Annahme, dass Analog- und Digitalstunde immer an derselben Position übereinstimmen.",
+      "faqs": [
+        {
+          "q": "Was zeigt das Ziehen des Minutenzeigers, was ein statisches Uhrbild nicht zeigt?",
+          "a": "Die lebendige proportionale Bewegung des Stundenzeigers zeigt, dass beide Zeiger sich kontinuierlich bewegen und miteinander verbunden sind — eine wichtige Erkenntnis, die Schüler verpassen, wenn sie nur mit statischen Abbildungen üben."
+        },
+        {
+          "q": "Für welche Klassen ist 'Uhrzeit-Baumeister' gedacht?",
+          "a": "Klassen 2–3, in denen der Lehrplan das Ablesen der Uhrzeit auf 5 Minuten genau und das Lesen beider Formate (analog und digital) umfasst."
+        },
+        {
+          "q": "Wie unterscheidet sich das von den Spielen 'Mit dem Lineal messen' und 'Waage'?",
+          "a": "'Uhrzeit-Baumeister' misst Zeit mit einem runden Zifferblatt und zwei beweglichen Zeigern; die anderen Messspiele nutzen lineare Skalen oder Balkenwaagen. Alle vier Spiele lehren das Ablesen eines Standardmessinstruments, aber jeweils für eine andere Eigenschaft und Einheit."
+        }
+      ]
+    }
   },
   "canary": {
     "title": "Tippe auf den Würfel",
@@ -486,7 +538,33 @@
     "instructions": "Richte die linke Fahne am linken Ende des Objekts aus und die rechte Fahne an seinem rechten Ende, mit den Tasten Links ±1 und Rechts ±1 (oder durch Ziehen). Achtung: Das Objekt beginnt nicht immer bei 0, daher gilt Länge = rechter Wert − linker Wert. Dann auf Prüfen drücken",
     "prompt": "Miss die Länge des Objekts",
     "correct": "Super! Das Objekt ist {length} cm lang",
-    "wrong": "Fast! Richte jede Fahne am passenden Ende des Objekts aus und korrigiere"
+    "wrong": "Fast! Richte jede Fahne am passenden Ende des Objekts aus und korrigiere",
+    "seo": {
+      "intro": "'Mit dem Lineal messen' legt ein Objekt an beliebiger Stelle auf einem Lineal ab und fordert die Schüler auf, zwei Fahnen an seinen Enden zu positionieren. Da das Objekt nicht immer bei null beginnt, müssen die Schüler beide Ablesungen subtrahieren, um die Länge zu ermitteln — genau wie beim echten Messen im Alltag.",
+      "howToPlay": [
+        "Schau auf das Objekt auf dem Lineal und finde heraus, wo sein linkes Ende liegt.",
+        "Ziehe oder drücke die linke Fahnen-Tasten, um die linke Fahne am linken Ende des Objekts auszurichten.",
+        "Nutze die rechten Fahnen-Tasten (oder ziehe), um die rechte Fahne am rechten Ende auszurichten.",
+        "Berechne: Länge = rechter Wert minus linker Wert, dann Prüfen drücken."
+      ],
+      "skills": "Das Messen ab einem Nicht-Null-Start lehrt, dass Länge eine Differenz zwischen zwei Positionen ist, keine einzelne Ablesung. Dieses Verständnis ist grundlegend für die Verwendung echter Lineale und Maßbänder und verhindert den häufigen Fehler, immer davon auszugehen, dass das Objekt bei null beginnt. Geeignet für Klassen 2–4.",
+      "example": "Das linke Ende des Objekts liegt bei 3 cm, das rechte bei 11 cm. Die Länge beträgt 11 − 3 = 8 cm. Wer immer ab null misst, würde 11 aufschreiben und eine falsche Antwort erhalten; dieses Spiel erzwingt den Subtraktionsschritt jedes Mal.",
+      "mistakes": "Der häufigste Fehler ist, nur die Position der rechten Fahne abzulesen und den Versatz der linken Fahne zu ignorieren. Beide Fahnen unabhängig voneinander zu setzen, bevor gerechnet wird, macht die Subtraktion unausweichlich und baut korrekte Messgewohnheiten auf.",
+      "faqs": [
+        {
+          "q": "Warum beginnt das Objekt nicht immer bei null auf dem Lineal?",
+          "a": "Im echten Leben beginnt eine Messung selten bei null — Maßbänder, zerbrochene Lineale und versetzte Objekte sind alltäglich. Das Üben mit einem Nicht-Null-Startpunkt verhindert das Verlassen auf eine perfekte Ausrichtung und baut echte Messfähigkeiten auf."
+        },
+        {
+          "q": "Für welche Klassen ist 'Mit dem Lineal messen' gedacht?",
+          "a": "Klassen 2–4, vom einfachen Zählen von Zentimetern bis zum Ablesen des Lineals an beliebiger Position und zur Berechnung der Differenz."
+        },
+        {
+          "q": "Wie unterscheidet sich das vom Spiel 'Behälter füllen'?",
+          "a": "'Mit dem Lineal messen' arbeitet mit Längen in Zentimetern, einem horizontalen Lineal und zwei Positionsfahnen; 'Behälter füllen' arbeitet mit Volumen in Millilitern und einer vertikalen Flüssigkeitsskala. Beide üben das Ablesen einer graduierten Skala, aber für verschiedene Messeigenschaften."
+        }
+      ]
+    }
   },
   "decimalBuilder": {
     "title": "Dezimalzahl-Baumeister",
@@ -751,7 +829,33 @@
     "instructions": "Lege mit den − / + Tasten Grammgewichte auf die rechte Schale (1 g, 10 g, 100 g) oder ziehe nach oben, um ein 10-g-Gewicht hinzuzufügen, bis der Balken waagerecht ist. Drücke dann Prüfen",
     "prompt": "Wiege die Frucht aus — {weight} g",
     "correct": "Super! Du hast genau {weight} g ausgewogen",
-    "wrong": "Fast! Der Balken ist noch geneigt – prüfe das Gesamtgewicht und korrigiere es"
+    "wrong": "Fast! Der Balken ist noch geneigt – prüfe das Gesamtgewicht und korrigiere es",
+    "seo": {
+      "intro": "'Waage' versetzt Schüler an einen Marktstand, wo sie Früchte in einer Schale mit Grammgewichten (1 g, 10 g, 100 g) in der anderen auswiegen müssen. Der neigende Balken liefert sofortiges Feedback, ob das Gesamtgewicht zu leicht oder zu schwer ist, und macht Gewichtsmessen zu einer konkreten Gleichgewichtsaufgabe.",
+      "howToPlay": [
+        "Lies das Zielgewicht der Frucht in der linken Schale ab.",
+        "Nutze die Tasten 100 g, 10 g und 1 g, um Gewichte auf die rechte Schale zu legen.",
+        "Beachte den Balken: Links geneigt bedeutet, die rechte Schale ist zu leicht; rechts geneigt ist sie zu schwer.",
+        "Drücke Prüfen, sobald der Balken vollkommen waagerecht ist."
+      ],
+      "skills": "Das Zusammensetzen eines Zielgewichts aus 1-g-, 10-g- und 100-g-Gewichten schult das Stellenwertverständnis für dreistellige Zahlen und übt gleichzeitig die reale Messfähigkeit, die effizienteste Gewichtskombination zu wählen — dieselbe Überlegung, die an jedem Marktstand und in jeder Küche angewendet wird. Geeignet für Klassen 2–3.",
+      "example": "Das Zielgewicht ist 253 g. Die Schüler legen zwei 100-g-Gewichte (200 g), fünf 10-g-Gewichte (50 g) und drei 1-g-Gewichte (3 g) auf und erreichen genau 253 g. Die schrittweise Zerlegung spiegelt die Stellenwertstruktur der Zahl selbst wider.",
+      "mistakes": "Schüler verwenden häufig zu viele kleine Gewichte, statt zehn 1-g-Stücke gegen ein 10-g-Stück zu tauschen. Die begrenzte Anzahl von Gewichten auf dem Bildschirm fördert diesen Bündelungsschritt — analog zum Übertrag beim schriftlichen Addieren.",
+      "faqs": [
+        {
+          "q": "Wie stärkt die Auswahl von Grammgewichten das Stellenwertverständnis in diesem Spiel?",
+          "a": "Die drei Einheiten (1 g, 10 g, 100 g) entsprechen Einern, Zehnern und Hundertern. Ein Gewicht von 253 g aufzubauen macht die dreistellige Struktur greifbar, nicht abstrakt."
+        },
+        {
+          "q": "Für welche Klassen ist die 'Waage' gedacht?",
+          "a": "Klassen 2–3, in denen Schüler Standardmasseeinheiten (Gramm) kennenlernen, dreistellige Zahlen zusammensetzen und Messinstrumente einsetzen."
+        },
+        {
+          "q": "Wie unterscheidet sich das vom Spiel 'Balkenwaage' (Arithmetik)?",
+          "a": "Die 'Waage' (Thema: Maßeinheiten) misst physische Masse in Gramm und schult Mess- und Stellenwertfähigkeiten. Die 'Balkenwaage' (Thema: Arithmetik) übt Kopfrechnen, indem eine Summe durch nummerierte Gewichte nachgebildet wird — es geht um Gleichheit und Rechnen, nicht um Masseeinheiten."
+        }
+      ]
+    }
   },
   "percentBar": {
     "title": "Prozentbalken",

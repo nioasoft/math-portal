@@ -124,7 +124,33 @@
     "prompt": "Fill to {target} ml",
     "correct": "Great! Filled to {target} ml",
     "wrong": "Almost! Get closer to the target mark",
-    "unit": "ml"
+    "unit": "ml",
+    "seo": {
+      "intro": "Fill the Container turns reading a volume into a hands-on pouring task. Students drag to fill a jar to a target millilitre mark, learning that capacity is measured continuously along a scale rather than as a whole-number count. The live liquid level gives instant feedback on estimation accuracy.",
+      "howToPlay": [
+        "Read the target volume shown above the container.",
+        "Drag upward to pour liquid in, watching the level rise against the marked scale.",
+        "Slow down as you approach the target mark — the last few millilitres matter.",
+        "Press Check when the liquid level lines up with the target graduation."
+      ],
+      "skills": "Practising volume measurement builds the understanding that capacity is a continuous quantity read from a scale, not a count of objects. Students learn to read intermediate graduations and develop the precision needed before moving to multi-step capacity problems in grades 3–4.",
+      "example": "The target is 350 ml. The jar's scale shows marks every 50 ml. Students pour to the 300 mark, then carefully add the remaining 50 ml to reach 350 — learning to use major markings as stepping stones to an exact reading.",
+      "mistakes": "Students often overshoot the target and stop only when the level clearly passes the mark. The game encourages slower, more deliberate pouring near the target, building the habit of approaching a measured value from below rather than correcting an overfill.",
+      "faqs": [
+        {
+          "q": "How does dragging to fill the container teach volume differently from writing an answer?",
+          "a": "Pouring links the abstract number to a physical level — students see the relationship between the digit and the height of liquid, making millilitres feel real rather than arbitrary."
+        },
+        {
+          "q": "Which grades is Fill the Container designed for?",
+          "a": "Grades 3–4, where the curriculum introduces standard capacity units and reading graduated scales in everyday contexts."
+        },
+        {
+          "q": "How is this different from the Ruler Measure game?",
+          "a": "Fill the Container measures volume (ml) by reading a vertical liquid scale; Ruler Measure measures length (cm) by positioning two flags on a horizontal ruler. Both practise scale-reading but for different measurement attributes."
+        }
+      ]
+    }
   },
   "fractionBuild": {
     "title": "Fraction Builder",
@@ -269,7 +295,33 @@
     "instructions": "Drag the minute hand around the clock (the hour hand follows proportionally), or use the hour ±1 and minute ±5 buttons, then press Check",
     "prompt": "Set the clock to {time}",
     "correct": "Great! You set the clock to {time}",
-    "wrong": "Almost! Check the hour and the minutes and fix it"
+    "wrong": "Almost! Check the hour and the minutes and fix it",
+    "seo": {
+      "intro": "Clock Time Builder bridges digital and analogue time by asking students to drag clock hands to match a displayed digital time. As the minute hand moves, the hour hand follows proportionally — so students see the relationship between the two hands in real time rather than memorising isolated positions.",
+      "howToPlay": [
+        "Read the digital time displayed above the clock face.",
+        "Drag the minute hand to the correct minute position, watching the hour hand follow.",
+        "Fine-tune the hour and minute with the ±1 and ±5 buttons if needed.",
+        "Press Check once both hands point to the right positions."
+      ],
+      "skills": "Setting analogue hands to match a digital time builds two skills simultaneously: reading the minute scale in 5-minute steps and understanding that the hour hand moves continuously across the dial rather than jumping from number to number. Both skills are required for telling time fluently in grades 2–3.",
+      "example": "For 3:45, the minute hand points to the 9 (45 minutes) and the hour hand sits three-quarters of the way between 3 and 4. Moving the minute hand to 45 makes the hour hand shift visibly — showing why the hour reading changes as minutes advance.",
+      "mistakes": "Students often set the hour hand to the exact hour number even when the time is past the half-hour. Seeing the hour hand land between two numbers (not on one) corrects the assumption that analogue and digital hours always align at the same position.",
+      "faqs": [
+        {
+          "q": "What does dragging the minute hand show that a static clock diagram does not?",
+          "a": "The live proportional movement of the hour hand demonstrates that both hands move continuously and are linked — a key insight students miss when they only practise reading static images."
+        },
+        {
+          "q": "Which grades is Clock Time Builder designed for?",
+          "a": "Grades 2–3, where the curriculum covers telling time to the nearest 5 minutes and reading both analogue and digital formats."
+        },
+        {
+          "q": "How is this different from the Ruler Measure or Weight Balance games?",
+          "a": "Clock Time Builder measures time using a circular dial with two moving hands; the other measurement games use linear scales or pan balances. All four games teach reading a standard measurement tool, but each targets a different attribute and unit."
+        }
+      ]
+    }
   },
   "canary": {
     "title": "Tap the Cube",
@@ -466,7 +518,33 @@
     "instructions": "Line up the left flag with the object's left end and the right flag with its right end, using the left ±1 and right ±1 buttons (or drag). Note: the object doesn't always start at 0, so length = right reading − left reading. Then press Check",
     "prompt": "Measure the object's length",
     "correct": "Great! The object is {length} cm long",
-    "wrong": "Almost! Line each flag up with the matching end of the object and fix it"
+    "wrong": "Almost! Line each flag up with the matching end of the object and fix it",
+    "seo": {
+      "intro": "Ruler Measure places an object anywhere along a ruler and asks students to position two flags at its ends. Because the object does not always start at zero, students must subtract the two readings to find the length — practising the real-world skill of measuring from an arbitrary starting point.",
+      "howToPlay": [
+        "Look at the object resting on the ruler and find where its left end sits.",
+        "Drag or press the left-flag buttons to align the left flag with the object's left end.",
+        "Use the right-flag buttons (or drag) to align the right flag with the object's right end.",
+        "Subtract: length = right reading minus left reading, then press Check."
+      ],
+      "skills": "Measuring from a non-zero start teaches that length is a difference between two positions, not a single reading. This understanding is essential for using real rulers, tape measures, and number lines — and prevents the common error of always assuming the object begins at zero.",
+      "example": "The object's left end sits at 3 cm and its right end at 11 cm. The length is 11 − 3 = 8 cm. Students who only ever measure from zero would read 11 and write the wrong answer; this game forces the subtraction step every time.",
+      "mistakes": "The most common error is reading only the right flag's position and ignoring the left flag's offset. Placing both flags independently before calculating makes the subtraction unavoidable and builds correct measurement habits for grades 2–4.",
+      "faqs": [
+        {
+          "q": "Why does the object not always start at zero on the ruler?",
+          "a": "Real-world measuring rarely starts at zero — tape measures, broken rulers, and offset objects are common. Practising non-zero starts prevents the habit of relying on a perfect alignment and builds genuine measurement skill."
+        },
+        {
+          "q": "Which grades is Ruler Measure designed for?",
+          "a": "Grades 2–4, covering the progression from simple centimetre counting to reading a ruler at any position and calculating the difference."
+        },
+        {
+          "q": "How is this different from the Fill the Container game?",
+          "a": "Ruler Measure works with length in centimetres using a horizontal ruler and two position flags; Fill the Container works with volume in millilitres using a vertical liquid scale. Both practise reading a graduated scale but for different measurement attributes."
+        }
+      ]
+    }
   },
   "decimalBuilder": {
     "title": "Decimal Builder",
@@ -731,7 +809,33 @@
     "instructions": "Add gram weights to the right pan with the − / + buttons (1 g, 10 g, 100 g), or drag up to add a 10 g weight, until the beam is level. Then press Check",
     "prompt": "Balance the fruit — {weight} g",
     "correct": "Great! You balanced exactly {weight} g",
-    "wrong": "Almost! The beam is still tilted — check the total weight and fix it"
+    "wrong": "Almost! The beam is still tilted — check the total weight and fix it",
+    "seo": {
+      "intro": "Weighing Scale puts students at a market stall where they must balance fruit on one pan by adding gram weights (1 g, 10 g, 100 g) to the other. The tilting beam provides instant feedback on whether the total is too light or too heavy, turning weight measurement into a concrete physical balancing task.",
+      "howToPlay": [
+        "Read the target weight shown for the fruit in the left pan.",
+        "Use the 100 g, 10 g, and 1 g buttons to add weights to the right pan.",
+        "Watch the beam: tilted left means the right side is too light; tilted right means too heavy.",
+        "Press Check once the beam is perfectly level."
+      ],
+      "skills": "Composing a target weight from 1 g, 10 g, and 100 g denominations builds place-value intuition for three-digit numbers while practising the real measurement skill of choosing the most efficient combination of weights — the same reasoning used in every market and kitchen context for grades 2–3.",
+      "example": "The target is 253 g. Students add two 100 g weights (200 g), five 10 g weights (50 g), and three 1 g weights (3 g) to reach exactly 253 g. The step-by-step decomposition mirrors the place-value structure of the number itself.",
+      "mistakes": "Students often use too many small weights instead of exchanging ten 1 g pieces for a 10 g piece. The limited number of weights on screen encourages the regrouping step — paralleling the carrying concept in written addition.",
+      "faqs": [
+        {
+          "q": "How does choosing gram weights reinforce place value in this game?",
+          "a": "The three denominations (1 g, 10 g, 100 g) map directly to ones, tens, and hundreds. Building a weight like 253 g makes the three-digit structure physical, not abstract."
+        },
+        {
+          "q": "Which grades is Weighing Scale designed for?",
+          "a": "Grades 2–3, where students learn standard mass units (grams), practise three-digit composition, and begin using measurement instruments."
+        },
+        {
+          "q": "How is this different from the Balance Scale game (arithmetic)?",
+          "a": "Weighing Scale (units topic) measures physical mass in grams and builds measurement and place-value skills. Balance Scale (arithmetic topic) practises mental addition by matching a sum with numbered weights — it is about equality and arithmetic, not mass units."
+        }
+      ]
+    }
   },
   "percentBar": {
     "title": "Percent Bar",

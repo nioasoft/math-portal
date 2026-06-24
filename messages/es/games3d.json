@@ -118,7 +118,33 @@
     "prompt": "Llena hasta {target} ml",
     "correct": "¡Genial! Llenado hasta {target} ml",
     "wrong": "¡Casi! Acércate más a la marca objetivo",
-    "unit": "ml"
+    "unit": "ml",
+    "seo": {
+      "intro": "«Llena el recipiente» convierte la medición de volumen en una tarea de vertido interactiva. Los alumnos arrastran para llenar un tarro hasta una marca de mililitros determinada y descubren que la capacidad es una cantidad continua que se lee en una escala, no un recuento de objetos. El nivel del líquido en tiempo real ofrece retroalimentación inmediata sobre la precisión al estimar.",
+      "howToPlay": [
+        "Lee el volumen objetivo que aparece encima del recipiente.",
+        "Arrastra hacia arriba para verter líquido y observa cómo sube el nivel en la escala.",
+        "Ve más despacio al acercarte a la marca objetivo: los últimos mililitros son decisivos.",
+        "Pulsa Comprobar cuando el nivel del líquido coincida con la graduación objetivo."
+      ],
+      "skills": "Practicar la medición de volumen consolida la comprensión de que la capacidad es una cantidad continua que se lee en una escala, no un conteo de objetos. Los alumnos aprenden a leer graduaciones intermedias y desarrollan la precisión necesaria antes de pasar a problemas de capacidad de varios pasos en 3.° y 4.° de primaria.",
+      "example": "El objetivo es 350 ml. La escala del tarro tiene marcas cada 50 ml. Los alumnos vierten hasta la marca de 300 y añaden con cuidado 50 ml más para llegar a 350, usando las marcas principales como puntos de apoyo para una lectura exacta.",
+      "mistakes": "Los alumnos suelen sobrepasar el objetivo y no se detienen hasta que el nivel está claramente por encima de la marca. El juego fomenta un vertido más lento y cuidadoso cerca del objetivo, construyendo el hábito de acercarse al valor medido desde abajo en lugar de corregir un exceso.",
+      "faqs": [
+        {
+          "q": "¿Qué enseña arrastrar para llenar el recipiente que no enseña escribir la respuesta?",
+          "a": "El vertido relaciona el número abstracto con el nivel real del líquido: los mililitros dejan de ser una cifra arbitraria y se convierten en una cantidad real y tangible."
+        },
+        {
+          "q": "¿Para qué cursos está pensado «Llena el recipiente»?",
+          "a": "3.° y 4.° de primaria, donde el currículo introduce las unidades de capacidad estándar y la lectura de escalas graduadas en contextos cotidianos."
+        },
+        {
+          "q": "¿En qué se diferencia del juego «Medir con la regla»?",
+          "a": "«Llena el recipiente» mide el volumen (ml) con una escala de líquido vertical; «Medir con la regla» mide la longitud (cm) con dos banderas en una regla horizontal. Ambos practican la lectura de una escala, pero para atributos de medición distintos."
+        }
+      ]
+    }
   },
   "fractionBuild": {
     "title": "Constructor de fracciones",
@@ -263,7 +289,33 @@
     "instructions": "Arrastra el minutero alrededor del reloj (la manecilla de la hora lo sigue proporcionalmente), o usa los botones hora ±1 y minuto ±5, luego pulsa Comprobar",
     "prompt": "Pon el reloj en {time}",
     "correct": "¡Genial! Pusiste el reloj en {time}",
-    "wrong": "¡Casi! Revisa la hora y los minutos y corrige"
+    "wrong": "¡Casi! Revisa la hora y los minutos y corrige",
+    "seo": {
+      "intro": "«Constructor de la hora» une la hora digital y la analógica haciendo que los alumnos arrastren el minutero hasta la hora digital mostrada. El horario sigue de forma proporcional en tiempo real, de modo que los alumnos ven la relación entre ambas manecillas en lugar de memorizar posiciones aisladas.",
+      "howToPlay": [
+        "Lee la hora digital que aparece encima de la esfera del reloj.",
+        "Arrastra el minutero hasta la posición correcta de los minutos y observa cómo el horario lo sigue.",
+        "Ajusta la hora y los minutos con los botones ±1 y ±5 si es necesario.",
+        "Pulsa Comprobar cuando ambas manecillas apunten a la posición correcta."
+      ],
+      "skills": "Ajustar las manecillas analógicas a una hora digital desarrolla dos habilidades a la vez: leer la escala de minutos en pasos de 5 minutos y comprender que el horario se mueve de forma continua por la esfera en lugar de saltar de número en número. Ambas habilidades son necesarias para leer el reloj con fluidez en 2.° y 3.° de primaria.",
+      "example": "Para las 3:45, el minutero apunta al 9 (45 minutos) y el horario está tres cuartos del camino entre el 3 y el 4. Mover el minutero a 45 muestra claramente por qué la lectura de la hora cambia a medida que avanzan los minutos.",
+      "mistakes": "Los alumnos suelen colocar el horario justo en el número de la hora, incluso cuando el tiempo supera la media hora. Ver el horario entre dos números (no sobre uno) corrige la suposición de que el reloj analógico y el digital siempre coinciden en la misma posición.",
+      "faqs": [
+        {
+          "q": "¿Qué muestra arrastrar el minutero que no muestra un dibujo estático del reloj?",
+          "a": "El movimiento proporcional en tiempo real del horario demuestra que ambas manecillas se mueven de forma continua y están vinculadas: algo que los alumnos no perciben cuando solo practican con imágenes estáticas."
+        },
+        {
+          "q": "¿Para qué cursos está pensado «Constructor de la hora»?",
+          "a": "2.° y 3.° de primaria, donde el currículo incluye leer la hora con precisión de 5 minutos y en ambos formatos, analógico y digital."
+        },
+        {
+          "q": "¿En qué se diferencia de los juegos «Medir con la regla» y «Balanza»?",
+          "a": "«Constructor de la hora» mide el tiempo con una esfera circular y dos manecillas móviles; los otros juegos de medición usan escalas lineales o balanzas. Los cuatro juegos enseñan a leer un instrumento de medida estándar, pero cada uno para un atributo y una unidad distintos."
+        }
+      ]
+    }
   },
   "canary": {
     "title": "Toca el cubo",
@@ -486,7 +538,33 @@
     "instructions": "Alinea la bandera izquierda con el extremo izquierdo del objeto y la bandera derecha con su extremo derecho, con los botones Izquierda ±1 y Derecha ±1 (o arrastrando). Atención: el objeto no siempre empieza en 0, así que longitud = lectura derecha − lectura izquierda. Luego pulsa Comprobar",
     "prompt": "Mide la longitud del objeto",
     "correct": "¡Genial! El objeto mide {length} cm",
-    "wrong": "¡Casi! Alinea cada bandera con el extremo correspondiente del objeto y corrige"
+    "wrong": "¡Casi! Alinea cada bandera con el extremo correspondiente del objeto y corrige",
+    "seo": {
+      "intro": "«Medir con la regla» coloca un objeto en cualquier posición de una regla y pide al alumno que sitúe dos banderas en sus extremos. Como el objeto no siempre empieza en cero, el alumno debe restar las dos lecturas para encontrar la longitud, igual que al medir de verdad en la vida real.",
+      "howToPlay": [
+        "Mira el objeto sobre la regla y localiza dónde está su extremo izquierdo.",
+        "Arrastra o pulsa los botones de la bandera izquierda para alinearla con el extremo izquierdo del objeto.",
+        "Usa los botones de la bandera derecha (o arrastra) para alinearla con el extremo derecho.",
+        "Calcula: longitud = lectura derecha menos lectura izquierda, y luego pulsa Comprobar."
+      ],
+      "skills": "Medir desde un punto que no es cero enseña que la longitud es una diferencia entre dos posiciones, no una sola lectura. Esta comprensión es esencial para usar reglas y cintas métricas reales, y evita el error frecuente de suponer que el objeto siempre empieza en cero. Adecuado para 2.° a 4.° de primaria.",
+      "example": "El extremo izquierdo del objeto está en 3 cm y el derecho en 11 cm. La longitud es 11 − 3 = 8 cm. Quien mida siempre desde cero escribiría 11 y obtendría una respuesta incorrecta; este juego impone el paso de la resta cada vez.",
+      "mistakes": "El error más frecuente es leer solo la posición de la bandera derecha e ignorar el desplazamiento de la bandera izquierda. Colocar las dos banderas de forma independiente antes de calcular hace inevitable la resta y consolida hábitos de medición correctos.",
+      "faqs": [
+        {
+          "q": "¿Por qué el objeto no siempre empieza en cero en la regla?",
+          "a": "En la vida real, las mediciones raramente empiezan en cero: cintas métricas, reglas rotas y objetos desplazados son habituales. Practicar con un punto de inicio distinto de cero evita depender de una alineación perfecta y desarrolla la habilidad de medir de verdad."
+        },
+        {
+          "q": "¿Para qué cursos está pensado «Medir con la regla»?",
+          "a": "2.° a 4.° de primaria, que cubre la progresión desde contar centímetros sencillos hasta leer la regla en cualquier posición y calcular la diferencia."
+        },
+        {
+          "q": "¿En qué se diferencia del juego «Llena el recipiente»?",
+          "a": "«Medir con la regla» trabaja con longitudes en centímetros, una regla horizontal y dos banderas de posición; «Llena el recipiente» trabaja con volumen en mililitros y una escala de líquido vertical. Ambos practican la lectura de una escala graduada, pero para atributos de medición distintos."
+        }
+      ]
+    }
   },
   "decimalBuilder": {
     "title": "Constructor de decimales",
@@ -751,7 +829,33 @@
     "instructions": "Añade pesas de gramos al platillo derecho con los botones − / + (1 g, 10 g, 100 g), o arrastra hacia arriba para añadir una pesa de 10 g, hasta que el brazo quede nivelado. Luego pulsa Comprobar",
     "prompt": "Equilibra la fruta — {weight} g",
     "correct": "¡Genial! Equilibraste exactamente {weight} g",
-    "wrong": "¡Casi! El brazo sigue inclinado: revisa el peso total y corrígelo"
+    "wrong": "¡Casi! El brazo sigue inclinado: revisa el peso total y corrígelo",
+    "seo": {
+      "intro": "«Balanza» sitúa a los alumnos en un puesto de mercado donde deben equilibrar fruta en un platillo añadiendo pesas de gramos (1 g, 10 g, 100 g) al otro platillo. El brazo inclinado ofrece retroalimentación inmediata sobre si el total es demasiado ligero o demasiado pesado, convirtiendo la medición del peso en una tarea concreta de equilibrio.",
+      "howToPlay": [
+        "Lee el peso objetivo de la fruta en el platillo izquierdo.",
+        "Usa los botones 100 g, 10 g y 1 g para añadir pesas al platillo derecho.",
+        "Observa el brazo: inclinado a la izquierda significa que el platillo derecho pesa poco; a la derecha, que pesa demasiado.",
+        "Pulsa Comprobar cuando el brazo esté perfectamente nivelado."
+      ],
+      "skills": "Componer un peso objetivo con pesas de 1 g, 10 g y 100 g construye la intuición del valor posicional para números de tres cifras y practica la habilidad de medición real de elegir la combinación de pesas más eficiente, el mismo razonamiento que se usa en cualquier mercado o cocina. Adecuado para 2.° y 3.° de primaria.",
+      "example": "El objetivo es 253 g. Los alumnos añaden dos pesas de 100 g (200 g), cinco de 10 g (50 g) y tres de 1 g (3 g) para llegar exactamente a 253 g. La descomposición paso a paso refleja la estructura de valor posicional del propio número.",
+      "mistakes": "Los alumnos suelen usar demasiadas pesas pequeñas en lugar de canjear diez piezas de 1 g por una de 10 g. El número limitado de pesas en pantalla fomenta la reagrupación, lo que es paralelo al concepto de llevada en la suma escrita.",
+      "faqs": [
+        {
+          "q": "¿Cómo refuerza elegir pesas de gramos el valor posicional en este juego?",
+          "a": "Las tres denominaciones (1 g, 10 g, 100 g) se corresponden con unidades, decenas y centenas. Construir un peso de 253 g hace que la estructura de tres cifras sea tangible, no abstracta."
+        },
+        {
+          "q": "¿Para qué cursos está pensada la «Balanza»?",
+          "a": "2.° y 3.° de primaria, donde los alumnos aprenden las unidades de masa estándar (gramos), practican la composición de números de tres cifras y comienzan a usar instrumentos de medición."
+        },
+        {
+          "q": "¿En qué se diferencia del juego «Balanza aritmética»?",
+          "a": "«Balanza» (tema: medidas) mide masa física en gramos y desarrolla habilidades de medición y valor posicional. «Balanza aritmética» (tema: aritmética) practica la suma mental haciendo coincidir una cantidad con pesas numeradas: trata sobre igualdad y cálculo, no sobre unidades de masa."
+        }
+      ]
+    }
   },
   "percentBar": {
     "title": "Barra de porcentaje",

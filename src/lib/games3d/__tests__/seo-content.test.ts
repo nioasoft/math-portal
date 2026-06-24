@@ -54,12 +54,6 @@ describe('fractions seo content', () => {
   });
 });
 
-// camelCase i18n keys for the geometry games added in this task's scope.
-const GEOMETRY_KEYS = [
-  'areaPerimeter', 'angleBuilder', 'shapeSort', 'netFold',
-  'symmetryMirror', 'geoboard', 'coordinatePlot', 'tangram', 'volumeBuilder',
-];
-
 describe('hebrew seo quality', () => {
   function collectSeoStrings(locale: string, gameKey: string): string[] {
     const data = loadGames3d(locale);
@@ -111,16 +105,14 @@ describe('hebrew seo quality', () => {
     }
   }
 
-  it('no em-dashes or en-dashes in any fractions game Hebrew seo string', () => {
-    assertNoDashes('he', gamesWithSeo('he').filter((k) => FRACTIONS_KEYS.includes(k)));
+  it('no em-dashes or en-dashes in he or ar seo strings (any game)', () => {
+    for (const locale of ['he', 'ar'] as const) {
+      assertNoDashes(locale, gamesWithSeo(locale));
+    }
   });
 
-  it('no em-dashes or en-dashes in any geometry game Arabic seo string', () => {
-    assertNoDashes('ar', gamesWithSeo('ar').filter((k) => GEOMETRY_KEYS.includes(k)));
-  });
-
-  it('no blacklisted AI-ish Hebrew words in any fractions game Hebrew seo string', () => {
-    for (const key of FRACTIONS_KEYS) {
+  it('no blacklisted AI-ish Hebrew words in any he seo string (any game)', () => {
+    for (const key of gamesWithSeo('he')) {
       const strings = collectSeoStrings('he', key);
       for (const str of strings) {
         for (const word of BLACKLISTED_WORDS) {

@@ -520,7 +520,7 @@
         "Press Check to confirm."
       ],
       "skills": "Placing decimals on a number line trains students to compare decimal size by position, reinforcing that 0.7 is larger than 0.3 because it sits further right. This spatial sense of magnitude is the basis for ordering decimals and linking them to fractions.",
-      "example": "For 0.6: the line runs from 0 to 1 and the train should land at the sixth tick of ten equal intervals. Comparing it to 0.60 as a fraction (6/10) shows that the position and the fraction name the same point.",
+      "example": "For 0.6: the line runs from 0 to 1 and the train should land at the sixth tick of ten equal intervals. Comparing it to the fraction 6/10 shows that 0.6 and 6/10 name the same point.",
       "mistakes": "Students frequently confuse decimal size with digit count: they place 0.35 to the right of 0.9 because 35 looks larger than 9. The number line's fixed scale exposes that error immediately by showing 0.9 is very close to 1 while 0.35 is barely past one third.",
       "faqs": [
         {
@@ -549,7 +549,7 @@
       "intro": "Decimal Addition has students build the sum of two decimal numbers column by column using digit wheels for ones, tenths, and hundredths. The game makes the align-then-add procedure concrete: each column is set independently so carrying across the decimal point becomes visible.",
       "howToPlay": [
         "Read the two decimal addends shown on screen.",
-        "Add the hundredths digits first; use the hundreds wheel to set that digit of the sum.",
+        "Add the hundredths digits first; use the hundredths wheel to set that digit of the sum.",
         "If the hundredths total is 10 or more, carry 1 to the tenths column.",
         "Repeat for tenths, then ones, carrying as needed.",
         "Press Check when all three wheels show the correct sum."

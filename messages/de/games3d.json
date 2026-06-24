@@ -569,7 +569,7 @@
       "intro": "Dezimaladdition leitet Schüler durch die spaltenweise Addition zweier Dezimalzahlen. Getrennte Ziffernräder für Einer, Zehntel und Hundertstel machen die Kommaausrichtungsregel greifbar: Jede Stelle wird separat eingestellt und der Übertrag wird sichtbar.",
       "howToPlay": [
         "Lies die zwei Summanden auf dem Bildschirm.",
-        "Addiere zuerst die Hunderstellen und stelle sie am Hundertstelrad ein.",
+        "Addiere zuerst die Hundertstel und stelle sie am Hundertstelrad ein.",
         "Wenn die Hundertstel 10 oder mehr ergeben, übertrage 1 in die Zehntelstelle.",
         "Wiederhole für Zehntel, dann Einer, mit Übertrag nach Bedarf.",
         "Drücke Prüfen, wenn alle drei Räder die richtige Summe anzeigen."

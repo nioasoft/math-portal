@@ -127,7 +127,7 @@
         "Verlangsame dich, wenn du die Zielmarke annäherst — die letzten Milliliter entscheiden.",
         "Drücke Prüfen, wenn der Flüssigkeitsstand genau auf dem Zielstrich liegt."
       ],
-      "skills": "Das Üben des Volumenmes­sens festigt das Verständnis, dass Fassungsvermögen eine kontinuierliche Größe ist, die von einer Skala abgelesen wird, nicht eine Zählung von Objekten. Schüler lernen, Zwischenteilstriche zu lesen und entwickeln die nötige Genauigkeit, bevor sie in den Klassen 3–4 zu mehrstufigen Aufgaben übergehen.",
+      "skills": "Das Üben des Volumenmessens festigt das Verständnis, dass Fassungsvermögen eine kontinuierliche Größe ist, die von einer Skala abgelesen wird, nicht eine Zählung von Objekten. Schüler lernen, Zwischenteilstriche zu lesen und entwickeln die nötige Genauigkeit, bevor sie in den Klassen 3–4 zu mehrstufigen Aufgaben übergehen.",
       "example": "Das Ziel ist 350 ml. Die Skala des Glases zeigt Markierungen alle 50 ml. Die Schüler gießen bis zur 300-Marke und fügen dann vorsichtig 50 ml hinzu, um 350 zu erreichen — sie nutzen die Hauptmarkierungen als Sprungsteine zur genauen Ablesung.",
       "mistakes": "Schüler überschießen das Ziel oft und halten erst an, wenn der Pegel die Marke deutlich überschritten hat. Das Spiel fördert langsameres, sorgfältigeres Eingießen nahe dem Ziel und baut die Gewohnheit auf, sich einem Messwert von unten zu nähern statt eine Überfüllung zu korrigieren.",
       "faqs": [
@@ -1044,7 +1044,7 @@
         "Gib den fehlenden Wert mit den Tasten − / + ein und drücke Prüfen."
       ],
       "skills": "Das Arbeiten mit einer Verhältnistabelle schult die Gewohnheit, Beziehungen über Zeilen hinweg zu lesen statt nur innerhalb eines einzelnen Paares. Dieses zeilenbasierte Denken bereitet direkt auf das Lösen von Proportionen, Einheitsraten und Funktionstabellen in den Klassen 4 bis 6 vor.",
-      "example": "In einer 3:5-Verhältnistabelle zeigt die erste Spalte 3 und 5, die zweite 6 und 10, die dritte 9 und einen Leerstellen. Der Skalierungsfaktor von Spalte 1 zu Spalte 3 ist 3, also ist der fehlende Wert 5 × 3 = 15.",
+      "example": "In einer 3:5-Verhältnistabelle zeigt die erste Spalte 3 und 5, die zweite 6 und 10, die dritte 9 und eine Leerstelle. Der Skalierungsfaktor von Spalte 1 zu Spalte 3 ist 3, also ist der fehlende Wert 5 × 3 = 15.",
       "mistakes": "Schüler addieren manchmal eine Konstante zu jedem Wert über die Zeilen hinweg statt zu multiplizieren. Das Tabellenlayout macht diesen Fehler sichtbar, weil das Muster in der anderen Zeile zusammenbricht — das strukturierte Raster korrigiert sich selbst.",
       "faqs": [
         {
@@ -1392,7 +1392,7 @@
     "correct": "Richtig! Der fehlende Turm hat {value} Würfel",
     "wrong": "Fast! Finde die Regel heraus und baue noch einmal",
     "seo": {
-      "intro": "Muster bauen zeigt eine Reihe von Würfeltürmen, die nach einer festen Regel wachsen oder schrumpfen, und bittet die Schüler, den fehlenden Turm zu bauen. Das Finden und Anwenden dieser Regel ist der erste Schritt zu jeder Folgenarbeit und macht dies zum Einstiegspunkt für Musterd enken in den Klassen 2–4.",
+      "intro": "Muster bauen zeigt eine Reihe von Würfeltürmen, die nach einer festen Regel wachsen oder schrumpfen, und bittet die Schüler, den fehlenden Turm zu bauen. Das Finden und Anwenden dieser Regel ist der erste Schritt zu jeder Folgenarbeit und macht dies zum Einstiegspunkt für Musterdenken in den Klassen 2–4.",
       "howToPlay": [
         "Studiere die Höhen der Türme von links nach rechts und erkenne, was sich jedes Mal ändert.",
         "Entscheide die Regel — fügt jeder Turm dieselbe Anzahl Würfel hinzu oder wiederholt sich die Höhe in einem Zyklus?",

@@ -38,11 +38,16 @@ describe('games3d seo helpers', () => {
     expect(jsonLd.teaches).toBe('Fractions');
   });
 
-  it('builds FAQ JSON-LD with localized Hebrew text', () => {
-    const jsonLd = buildGameFaqJsonLd({ locale: 'he', meta, topicLabel: 'שברים' });
+  it('builds FAQ JSON-LD from a per-game faq list', () => {
+    const faqs = [
+      { q: 'שאלה 1?', a: 'תשובה 1.' },
+      { q: 'שאלה 2?', a: 'תשובה 2.' },
+      { q: 'שאלה 3?', a: 'תשובה 3.' },
+    ];
+    const jsonLd = buildGameFaqJsonLd({ faqs });
     expect(jsonLd['@type']).toBe('FAQPage');
     expect(jsonLd.mainEntity).toHaveLength(3);
-    expect(jsonLd.mainEntity[0].acceptedAnswer.text).toContain('כיתות 2-4');
+    expect(jsonLd.mainEntity[0].acceptedAnswer.text).toBe('תשובה 1.');
   });
 
   it('provides localized SEO copy for every supported locale', () => {

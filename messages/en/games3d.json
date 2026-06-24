@@ -105,7 +105,33 @@
     "description": "Fill parts of the pie to match the fraction",
     "instructions": "Tap slices to fill them, then press Check",
     "prompt": "Fill {num}/{den} of the pizza",
-    "correct": "Great! You filled {num}/{den}"
+    "correct": "Great! You filled {num}/{den}",
+    "seo": {
+      "intro": "Fraction Builder turns an abstract fraction into a pie you fill with your own hands. You read a target such as 3/4, then shade slices until the pie matches — so the symbol stops being two numbers and becomes a visible amount.",
+      "howToPlay": [
+        "Read the target fraction shown above the pie.",
+        "Tap or drag slices to shade them, counting up to the numerator.",
+        "Notice the denominator decides how many equal slices the whole is cut into.",
+        "Press Check to confirm the shaded part matches the target fraction."
+      ],
+      "skills": "It builds the core idea that the denominator names the size of each equal part while the numerator counts how many you take — the foundation students need before comparing or adding fractions.",
+      "example": "For 3/4 the pie is cut into 4 equal slices and you shade 3. Seeing the single empty slice makes it obvious that 3/4 is one slice short of a whole, not just 'three and four'.",
+      "mistakes": "Many students read 3/4 as 'three of four separate things' and miss that the parts must be equal. Building the pie forces equal slices and corrects the most common early fraction error.",
+      "faqs": [
+        {
+          "q": "Which grades is Fraction Builder for?",
+          "a": "It fits grades 3-4, where students first meet fractions as equal parts of one whole."
+        },
+        {
+          "q": "Do students need multiplication before this game?",
+          "a": "No. Fraction Builder only needs counting and the idea of equal sharing, so it works as a first introduction to fractions."
+        },
+        {
+          "q": "How is this different from the Fraction Number Line game?",
+          "a": "Fraction Builder shows a fraction as part of one whole (a pie); Fraction Number Line places the same fraction as a point between 0 and 1 — two complementary models."
+        }
+      ]
+    }
   },
   "areaPerimeter": {
     "title": "Area & Perimeter",
@@ -151,7 +177,33 @@
     "instructions": "Drag the bead along the tape to the target fraction (it snaps to the nearest tick), or use the numerator ±1 and denominator ±1 buttons. The denominator subdivides the line live. Then press Check",
     "prompt": "Place {num}/{den} on the line",
     "correct": "Great! You placed {num}/{den} correctly",
-    "wrong": "Almost! Drag the bead to the right spot and fix it"
+    "wrong": "Almost! Drag the bead to the right spot and fix it",
+    "seo": {
+      "intro": "Fraction Number Line moves the fraction off the pie and onto a ruler between 0 and 1. By dragging a bead to the exact position, students discover that a fraction is a distance, not just a count of shaded pieces.",
+      "howToPlay": [
+        "Read the target fraction displayed above the number line.",
+        "Use the denominator ±1 buttons to subdivide the line into the right number of equal intervals.",
+        "Drag the bead to the correct tick, or fine-tune with the numerator ±1 buttons.",
+        "Press Check when the bead sits on the target position."
+      ],
+      "skills": "Placing fractions on a number line prepares students for comparing fractions by size, finding equivalent fractions, and eventually understanding fractions greater than 1 — all of which depend on seeing fractions as distances rather than parts of a shape.",
+      "example": "For 2/3 the line is divided into 3 equal intervals and the bead belongs on the second tick. Changing the denominator to 6 shows immediately that 4/6 lands on the same point, making equivalent fractions visible without any calculation.",
+      "mistakes": "Students often place the bead at the tick that matches the numerator without accounting for the denominator. The live subdivision makes clear that the denominator controls how large each step is — both numbers are needed together.",
+      "faqs": [
+        {
+          "q": "What does the number line teach that a pie diagram does not?",
+          "a": "The number line shows a fraction as a position between two whole numbers, which is the model students need for ordering, adding, and later understanding decimals."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It suits grades 3-4, after students have met fractions as parts of a whole and are ready to see them as points on a line."
+        },
+        {
+          "q": "What happens when I change the denominator mid-game?",
+          "a": "The line resubdivides in real time, so the tick marks shift and the bead shows its position relative to the new scale — a live demonstration of how the denominator sets step size."
+        }
+      ]
+    }
   },
   "algebraBalance": {
     "title": "Algebra Balance",
@@ -351,7 +403,33 @@
     "instructions": "The top strip is given. Build the bottom one: set the number of saw-cuts with denominator −/+ and the colored pieces with numerator −/+ (or drag: right = more colored pieces, up = more cuts), so it is the same SIZE as the top strip but with a different number of pieces. The balance levels when the two fractions are equal. Then press Check",
     "prompt": "Build a fraction equal to {num}/{den}",
     "correct": "Great! {rnum}/{rden} equals {num}/{den}",
-    "wrong": "Almost! Build a strip the same size but with a different denominator — the balance will level"
+    "wrong": "Almost! Build a strip the same size but with a different denominator — the balance will level",
+    "seo": {
+      "intro": "Fraction Strips puts two wooden strips side by side and a balance between them. The top strip shows the target fraction; your job is to build a bottom strip that is the exact same length but uses a completely different denominator — the concrete definition of equivalent fractions.",
+      "howToPlay": [
+        "Read the fraction shown on the top strip.",
+        "Use the denominator -/+ buttons to set how many equal sections to cut the bottom strip into.",
+        "Use the numerator -/+ buttons (or drag right/left) to shade the right number of sections.",
+        "The balance levels when the two strips are the same size — then press Check."
+      ],
+      "skills": "Equivalent fractions are the gateway to adding unlike denominators and simplifying fractions. Fraction Strips makes equivalence physical: you feel the balance tip and level as you adjust, so the concept is not abstract arithmetic but a visible, physical equality.",
+      "example": "The top strip shows 1/2. You can balance it with 2/4, or 3/6, or 4/8 — every combination that levels the scale is an equivalent fraction. Seeing several solutions on one screen turns a memorized rule into a felt relationship.",
+      "mistakes": "Students sometimes reproduce the target fraction exactly (same numerator, same denominator) instead of building an equivalent with a different denominator. The game requires a different denominator, so that shortcut is blocked and real search begins.",
+      "faqs": [
+        {
+          "q": "How is Fraction Strips different from the other three fraction games?",
+          "a": "Fraction Strips is the only one focused on equivalent fractions — building a new fraction that equals the target with a different denominator. The other three games are about understanding a single fraction."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It suits grades 3-4, once students understand what a fraction represents and are ready to compare fractions and find equivalent forms."
+        },
+        {
+          "q": "How does the balance help learning?",
+          "a": "The balance gives immediate visual feedback: it tips when the strips are unequal and levels when they match. Students can experiment freely without guessing — the balance shows the truth."
+        }
+      ]
+    }
   },
   "angleBuilder": {
     "title": "Angle Builder",
@@ -407,7 +485,33 @@
     "instructions": "Use the denominator −/+ buttons to set how many equal parts to slice the pizza into, and the numerator −/+ buttons (or drag up/down) to shade that many parts, then press Check",
     "prompt": "Shade {n} out of {d} parts",
     "correct": "Great! You shaded {n} out of {d}",
-    "wrong": "Almost! Slice and shade the right number of parts and fix it"
+    "wrong": "Almost! Slice and shade the right number of parts and fix it",
+    "seo": {
+      "intro": "Fraction Slicer gives students full control: they choose how many equal slices to cut the pizza into, then decide how many to shade. The fraction is not handed to them — it is assembled from scratch, denominator first.",
+      "howToPlay": [
+        "Read the target fraction shown on screen.",
+        "Use the denominator -/+ buttons to cut the pizza into the correct number of equal slices.",
+        "Use the numerator -/+ buttons (or drag up/down) to shade the right number of slices.",
+        "Press Check to confirm that the fraction you built matches the target."
+      ],
+      "skills": "Separating the cutting step (denominator) from the shading step (numerator) reinforces the logical order: first divide the whole into equal parts, then decide how many parts to take. This order is essential before students can work with equivalent fractions or compare unlike denominators.",
+      "example": "For 3/5 you cut into 5 slices first, then shade 3. Changing the denominator to 4 resizes every slice and requires reshading — showing hands-on why the numerator and denominator are linked.",
+      "mistakes": "Students tend to shade by visual size rather than by counting. Forcing them to set the denominator before touching the numerator breaks that habit and builds the discipline of working part-by-part.",
+      "faqs": [
+        {
+          "q": "How is Fraction Slicer different from Fraction Builder?",
+          "a": "In Fraction Slicer the student sets both the number of slices (denominator) and how many to shade (numerator); in Fraction Builder the denominator is fixed and only shading is needed. Slicer introduces the full construction process."
+        },
+        {
+          "q": "Which grades is this game for?",
+          "a": "It fits grades 3-4, ideally after students have met the concept of a fraction and are ready to build one from scratch."
+        },
+        {
+          "q": "Can the same target be built with different numbers of slices?",
+          "a": "Yes — for example 2/4 and 1/2 shade the same visual area. That natural discovery opens a discussion about equivalent fractions without any additional instruction."
+        }
+      ]
+    }
   },
   "patternComplete": {
     "title": "Pattern Builder",

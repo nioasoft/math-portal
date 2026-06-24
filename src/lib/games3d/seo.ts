@@ -1,6 +1,7 @@
 import type { GameMeta } from './types';
 import { BASE_URL, getLocalizedUrl } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
+import type { GameFaq } from './gameSeo';
 
 export const topicPracticePath: Record<string, string> = {
   arithmetic: '/worksheet/math',
@@ -692,48 +693,20 @@ export function buildGameJsonLd(args: {
   };
 }
 
-export function buildGameFaqJsonLd(args: {
-  locale: Locale;
-  meta: GameMeta;
-  topicLabel: string;
-}) {
-  const copy = getGameSeoCopy(args.locale);
-  const values = {
-    from: args.meta.gradeRange[0],
-    to: args.meta.gradeRange[1],
-    topic: args.topicLabel,
-  };
-
+/** Build FAQPage JSON-LD from a game's own FAQ list (unique per game). */
+export function buildGameFaqJsonLd(args: { faqs: GameFaq[] }) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: copy.faqGameQuestion,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: interpolate(copy.faqGameAnswer, values),
-        },
+    mainEntity: args.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a,
       },
-      {
-        '@type': 'Question',
-        name: copy.faqCostQuestion,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: copy.faqCostAnswer,
-        },
-      },
-      {
-        '@type': 'Question',
-        name: copy.faqUseQuestion,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: copy.faqUseAnswer,
-        },
-      },
-    ],
-  };
+    })),
+  } as const;
 }
 
 export function buildGameBreadcrumbJsonLd(args: {

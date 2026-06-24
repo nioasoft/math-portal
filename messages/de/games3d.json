@@ -964,7 +964,33 @@
     "instructions": "Finde die Regel der Folge (addieren oder multiplizieren), stelle den fehlenden Stein mit den Tasten − / + ein (oder ziehe nach oben zum Erhöhen) und drücke dann Prüfen",
     "prompt": "Vervollständige die Folge",
     "correct": "Richtig! Die fehlende Zahl ist {value}",
-    "wrong": "Fast! Finde die Regel und versuch es noch einmal"
+    "wrong": "Fast! Finde die Regel und versuch es noch einmal",
+    "seo": {
+      "intro": "Zahlenfolge legt eine Reihe nummerierter Steine mit einem fehlenden Stein vor und fordert die Schüler auf, die Regel herauszufinden — jedes Mal dieselbe Menge addieren oder multiplizieren — und dann den fehlenden Wert anzugeben. Sie überbrückt visuelle Musterarbeit hin zum regelbasierten arithmetischen Denken für die Klassen 3–5.",
+      "howToPlay": [
+        "Lies alle sichtbaren Zahlen in der Reihe und suche, was sich zwischen jedem Paar ändert.",
+        "Entscheide, ob die Regel additiv ist (jeder Schritt addiert denselben Betrag) oder multiplikativ (jeder Schritt multipliziert).",
+        "Verwende die − / + Tasten oder ziehe den fehlenden Stein nach oben, um den richtigen Wert einzustellen.",
+        "Drücke Prüfen, um deine Antwort zu bestätigen."
+      ],
+      "skills": "Das Herausfinden einer Regel aus einer Zahlenfolge und ihre Anwendung trainiert das Zählen in Schritten, das Erkennen arithmetischer Progressionen und frühes Funktionsdenken — Fähigkeiten, die direkt in Einmaleins, Ein-Ausgabe-Tabellen und Musteralgebra in den Klassen 3–5 einfließen.",
+      "example": "Eine Folge zeigt 3, 6, 9, ?, 15. Jeder Schritt addiert 3, also ist die fehlende Zahl 12. Zu sehen, dass der Abstand zwischen jedem Paar gleich ist — nicht nur die letzte Zahl zu lesen — ist die Denkkompetenz, die Zahlenfolge entwickelt.",
+      "mistakes": "Schüler raten oft, indem sie eins mehr als den vorherigen Term addieren, anstatt den tatsächlichen Abstand zu messen. Zahlenfolge erfordert das Überprüfen mehrerer Abstände zur Bestätigung der Regel und trainiert die Gewohnheit, vor dem Antworten zu überprüfen.",
+      "faqs": [
+        {
+          "q": "Wie lehrt die Mechanik des fehlenden Steins das Finden von Regeln statt nur das Raten von Antworten?",
+          "a": "Der Stein erscheint überall in der Folge, nicht immer am Ende, sodass die Schüler die Regel aus den umgebenden Termen ableiten müssen, anstatt eine Liste um einen weiteren Schritt zu verlängern."
+        },
+        {
+          "q": "Für welche Klassen ist Zahlenfolge geeignet?",
+          "a": "Sie eignet sich für die Klassen 3–5, in denen Schüler von visuellen Mustern zu numerischen Regeln übergehen und beginnen, arithmetische und multiplikative Beziehungen zu formalisieren."
+        },
+        {
+          "q": "Wie unterscheidet sich Zahlenfolge von Geometrische Folge?",
+          "a": "Zahlenfolge mischt additive und einfache multiplikative Regeln; Geometrische Folge konzentriert sich ausschließlich auf die Multiplikation mit konstantem Verhältnis wie ×2 oder ×3 — die nächste Schwierigkeitsstufe."
+        }
+      ]
+    }
   },
   "geometricSequence": {
     "title": "Geometrische Folge",
@@ -972,7 +998,33 @@
     "instructions": "Finde die Regel (×2 oder ×3), stelle den fehlenden Stein mit den Tasten − / + ein und drücke dann Prüfen",
     "prompt": "Vervollständige die geometrische Folge",
     "correct": "Richtig! Die fehlende Zahl ist {value}",
-    "wrong": "Fast! Suche den Multiplikator zwischen aufeinanderfolgenden Gliedern"
+    "wrong": "Fast! Suche den Multiplikator zwischen aufeinanderfolgenden Gliedern",
+    "seo": {
+      "intro": "Geometrische Folge gibt Schülern eine Reihe nummerierter Steine, bei der jedes Glied durch Multiplikation des vorherigen mit einem festen Verhältnis entsteht — ×2, ×3 oder ähnlich. Diesen konstanten Multiplikator zu identifizieren und damit den fehlenden Stein zu füllen ist die bestimmende Fähigkeit dieses Spiels für Klassen 4–6.",
+      "howToPlay": [
+        "Lies die sichtbaren Zahlen und dividiere ein Glied durch das vorherige, um das gemeinsame Verhältnis zu finden.",
+        "Bestätige, dass das Verhältnis für jedes benachbarte Paar gilt — es muss durchgehend gleich sein.",
+        "Verwende die − / + Tasten (oder ziehe den Stein), um den fehlenden Wert einzustellen.",
+        "Drücke Prüfen, um zu sehen, ob das Verhältnis über die gesamte Folge konsistent ist."
+      ],
+      "skills": "Das Erkennen und Anwenden eines konstanten multiplikativen Verhältnisses ist die Grundlage geometrischer Folgen, exponentieller Wachstumsmuster und Prozentberechnungen. Geometrische Folge baut diese Flüssigkeit auf, bevor Schüler die formale Algebra der Potenzen in den Klassen 4–6 kennenlernen.",
+      "example": "Eine Folge zeigt 2, 6, 18, ?, 162. Jedes Glied wird mit 3 multipliziert, also ist der fehlende Wert 54. Die Schlüsselerkenntnis ist, dass die Division zweier aufeinanderfolgender Glieder (18 ÷ 6 = 3) die Regel enthüllt — dieses Spiel trainiert diesen Division-als-Verhältnis-Schritt.",
+      "mistakes": "Schüler versuchen oft, eine konstante Differenz zu addieren, weil additives Denken einfacher ist. Geometrische Folge macht den Multiplikator zum einzigen, was funktioniert, und zwingt Schüler, vom additiven zum multiplikativen Denken zu wechseln.",
+      "faqs": [
+        {
+          "q": "Warum verwendet das Spiel Division, um die Regel zu finden, statt einfach eine ×2 oder ×3 Beschriftung zu lesen?",
+          "a": "Das Ableiten des Verhältnisses durch Division aufeinanderfolgender Glieder — statt es mitzuteilen — trainiert die algebraische Gewohnheit, eine Regel aus Daten zu extrahieren. Dieses Denken überträgt sich direkt auf Tabellen, Graphen und spätere Potenzarbeit."
+        },
+        {
+          "q": "Für welche Klassen ist Geometrische Folge geeignet?",
+          "a": "Sie zielt auf die Klassen 4–6, in denen Schüler sicher in der Multiplikation sind und bereit sind zu sehen, dass dieselbe wiederholt angewendete Operation exponentielles Wachstum erzeugt."
+        },
+        {
+          "q": "Wie unterscheidet sich Geometrische Folge von Zahlenfolge?",
+          "a": "Geometrische Folge verwendet nur multiplikative Regeln (konstantes Verhältnis); Zahlenfolge enthält auch additive Muster. Geometrische Folge ist die schwierigere, fokussiertere Version derselben Idee."
+        }
+      ]
+    }
   },
   "fractionStrip": {
     "title": "Bruchstreifen",
@@ -1182,7 +1234,33 @@
     "instructions": "Schau, wie die Türme wachsen, und finde die Regel heraus. Baue mit den − / + Tasten (oder ziehe nach oben) den fehlenden Turm auf die richtige Höhe und drücke dann Prüfen",
     "prompt": "Wie viele Würfel hat der fehlende Turm?",
     "correct": "Richtig! Der fehlende Turm hat {value} Würfel",
-    "wrong": "Fast! Finde die Regel heraus und baue noch einmal"
+    "wrong": "Fast! Finde die Regel heraus und baue noch einmal",
+    "seo": {
+      "intro": "Muster bauen zeigt eine Reihe von Würfeltürmen, die nach einer festen Regel wachsen oder schrumpfen, und bittet die Schüler, den fehlenden Turm zu bauen. Das Finden und Anwenden dieser Regel ist der erste Schritt zu jeder Folgenarbeit und macht dies zum Einstiegspunkt für Musterd enken in den Klassen 2–4.",
+      "howToPlay": [
+        "Studiere die Höhen der Türme von links nach rechts und erkenne, was sich jedes Mal ändert.",
+        "Entscheide die Regel — fügt jeder Turm dieselbe Anzahl Würfel hinzu oder wiederholt sich die Höhe in einem Zyklus?",
+        "Verwende die − / + Tasten (oder ziehe nach oben), um den fehlenden Turm auf die richtige Höhe zu bauen.",
+        "Drücke Prüfen, um zu sehen, ob dein Turm zum Muster passt."
+      ],
+      "skills": "Das Erkennen einer sich wiederholenden oder wachsenden Regel und ihre Erweiterung trainiert Schüler darin, nach Strukturen in Daten zu suchen — die Kerngewohnheit hinter arithmetischen Folgen, Funktionstabellen und algebraischem Denken, das ab Klasse 2 eingeführt wird.",
+      "example": "Eine Reihe zeigt Türme mit 1, 3, 1, 3, 1, ? Würfeln. Das Muster wechselt zwischen 1 und 3, also ist der fehlende Turm 3. Das Erkennen der Abwechslung vor dem Rechnen ist der Schlüsselschritt, den dieses Spiel lehrt.",
+      "mistakes": "Schüler fügen oft einen Würfel mehr über dem letzten Turm hinzu, statt die gesamte Reihe für ihre Regel neu zu lesen. Muster bauen zwingt sie, die gesamte Folge, nicht nur das letzte Glied, zu betrachten, bevor sie handeln.",
+      "faqs": [
+        {
+          "q": "Wie macht die Würfelturm-Anzeige die Musterregel sichtbar, bevor irgendwelche Zahlen erscheinen?",
+          "a": "Die Türme sind physische Höhen, sodass auch Schüler, die noch keine Zahlen lesen können, einen 1-3-1-3-Wechsel als visuellen Rhythmus sehen. Zahlen und Regeln entstehen aus dem Bild, nicht aus Vorwissen."
+        },
+        {
+          "q": "Für welche Klassen ist Muster bauen geeignet?",
+          "a": "Es ist für die Klassen 2–4 konzipiert, in denen der Lehrplan sich wiederholende und wachsende Muster als erste Form algebraischen Denkens einführt."
+        },
+        {
+          "q": "Wie unterscheidet sich Muster bauen von Zahlenfolge?",
+          "a": "Muster bauen konzentriert sich auf sich wiederholende visuelle Muster (oft abwechselnde Höhen); Zahlenfolge konzentriert sich auf das Finden einer additiven oder multiplikativen Regel zur Erweiterung einer streng numerischen Folge — einen Schritt schwieriger."
+        }
+      ]
+    }
   },
   "netFold": {
     "title": "Netz-Falter",

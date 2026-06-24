@@ -944,7 +944,33 @@
     "instructions": "Find the rule of the sequence (add or multiply), set the missing stone with the − / + buttons (or drag up to raise it), then press Check",
     "prompt": "Complete the sequence",
     "correct": "Correct! The missing number is {value}",
-    "wrong": "Almost! Find the rule and try again"
+    "wrong": "Almost! Find the rule and try again",
+    "seo": {
+      "intro": "Number Sequence places a row of numbered stones with one stone missing and asks students to figure out the rule — add the same amount each time, or multiply — then supply the missing value. It bridges visual pattern work toward rule-based arithmetic thinking for grades 3–5.",
+      "howToPlay": [
+        "Read all the visible numbers in the row and look for what changes between each pair.",
+        "Decide whether the rule is additive (each step adds the same amount) or multiplicative (each step multiplies).",
+        "Use the − / + buttons, or drag the missing stone upward, to set the correct value.",
+        "Press Check to confirm your answer."
+      ],
+      "skills": "Finding a rule from a sequence of numbers and applying it trains skip-counting, arithmetic-progression recognition, and early function thinking — skills that feed directly into multiplication tables, input-output tables, and pattern algebra in grades 3–5.",
+      "example": "A sequence shows 3, 6, 9, ?, 15. Each step adds 3, so the missing number is 12. Seeing that the gap between each pair is equal — not just reading the last number — is the reasoning skill Number Sequence develops.",
+      "mistakes": "Students commonly guess by adding one more than the previous term instead of measuring the actual gap. Number Sequence requires checking multiple gaps to confirm the rule, training the habit of verifying before answering.",
+      "faqs": [
+        {
+          "q": "How does the missing-stone mechanic teach rule-finding rather than just answer-guessing?",
+          "a": "The stone appears anywhere in the sequence — not always at the end — so students must establish the rule from the surrounding terms rather than extending a list by one more step."
+        },
+        {
+          "q": "Which grades is Number Sequence for?",
+          "a": "It suits grades 3–5, where students move from visual patterns to numeric rules and begin formalising arithmetic and multiplicative relationships."
+        },
+        {
+          "q": "How is Number Sequence different from Geometric Sequence?",
+          "a": "Number Sequence mixes additive and simple multiplicative rules; Geometric Sequence focuses exclusively on constant-ratio multiplication such as ×2 or ×3 — the next level of difficulty."
+        }
+      ]
+    }
   },
   "geometricSequence": {
     "title": "Geometric Sequence",
@@ -952,7 +978,33 @@
     "instructions": "Find the rule (×2 or ×3), set the missing stone with the − / + buttons, then press Check",
     "prompt": "Complete the geometric sequence",
     "correct": "Correct! The missing number is {value}",
-    "wrong": "Almost! Look for the multiplier between consecutive terms"
+    "wrong": "Almost! Look for the multiplier between consecutive terms",
+    "seo": {
+      "intro": "Geometric Sequence gives students a row of numbered stones where every term is obtained by multiplying the previous one by a fixed ratio — ×2, ×3, or similar. Identifying that constant multiplier and using it to fill the missing stone is the defining skill of this grade 4–6 game.",
+      "howToPlay": [
+        "Read the visible numbers and divide any term by the one before it to find the common ratio.",
+        "Confirm the ratio holds for every adjacent pair — it must be the same throughout.",
+        "Use the − / + buttons (or drag the stone) to set the missing value.",
+        "Press Check to see whether the ratio is consistent across the whole sequence."
+      ],
+      "skills": "Recognising and applying a constant multiplicative ratio is the foundation of geometric sequences, exponential growth patterns, and percentage calculations. Geometric Sequence builds this fluency before students meet the formal algebra of exponents in grades 4–6.",
+      "example": "A sequence shows 2, 6, 18, ?, 162. Each term is multiplied by 3, so the missing value is 54. The key insight is that dividing any two consecutive terms (18 ÷ 6 = 3) reveals the rule — this game trains that division-as-ratio move.",
+      "mistakes": "Students often try to add a constant difference rather than finding the multiplier, because additive thinking is easier. Geometric Sequence makes the multiplier the only thing that works, forcing students to switch from additive to multiplicative reasoning.",
+      "faqs": [
+        {
+          "q": "Why does the game use division to find the rule rather than just reading a ×2 or ×3 label?",
+          "a": "Deriving the ratio by dividing consecutive terms — rather than being told it — trains the algebraic habit of extracting a rule from data. That reasoning transfers directly to tables, graphs, and later exponential work."
+        },
+        {
+          "q": "Which grades is Geometric Sequence for?",
+          "a": "It targets grades 4–6, where students are fluent in multiplication and ready to see that the same operation applied repeatedly creates exponential growth."
+        },
+        {
+          "q": "How is Geometric Sequence different from Number Sequence?",
+          "a": "Geometric Sequence uses only multiplicative rules (constant ratio); Number Sequence includes additive patterns too. Geometric Sequence is the harder, more focused version of the same idea."
+        }
+      ]
+    }
   },
   "fractionStrip": {
     "title": "Fraction Strips",
@@ -1162,7 +1214,33 @@
     "instructions": "Look at how the towers grow and work out the rule. Use the − / + buttons (or drag up) to build the missing tower to the right height, then press Check",
     "prompt": "How many cubes in the missing tower?",
     "correct": "Correct! The missing tower has {value} cubes",
-    "wrong": "Almost! Work out the rule and build again"
+    "wrong": "Almost! Work out the rule and build again",
+    "seo": {
+      "intro": "Pattern Builder shows a row of cube towers that grow or shrink by a fixed rule and asks students to build the missing tower. Finding and applying that rule is the first step toward all sequence work, making this the entry point for pattern thinking in grades 2–4.",
+      "howToPlay": [
+        "Study the heights of the towers from left to right and spot what changes each time.",
+        "Decide on the rule — does each tower add the same number of cubes, or does the height repeat in a cycle?",
+        "Use the − / + buttons (or drag upward) to build the missing tower to the correct height.",
+        "Press Check to see whether your tower fits the pattern."
+      ],
+      "skills": "Identifying a repeating or growing rule and extending it trains students to look for structure in data — the core habit behind arithmetic sequences, function tables, and algebraic thinking introduced from grade 2 onward.",
+      "example": "A row shows towers of 1, 3, 1, 3, 1, ? cubes. The pattern alternates between 1 and 3, so the missing tower is 3. Spotting the alternation before calculating is the key move this game teaches.",
+      "mistakes": "Students often add one extra cube beyond the last tower rather than re-reading the full row for its rule. Pattern Builder forces them to look at the whole sequence, not just the final term, before acting.",
+      "faqs": [
+        {
+          "q": "How does the cube-tower display make the pattern rule visible before any numbers appear?",
+          "a": "The towers are physical heights, so even students who cannot yet read numbers can see a 1-3-1-3 alternation as a visual rhythm. Numbers and rules emerge from the picture, not from prior knowledge."
+        },
+        {
+          "q": "Which grades is Pattern Builder for?",
+          "a": "It is designed for grades 2–4, where the curriculum introduces repeating and growing patterns as the first form of algebraic reasoning."
+        },
+        {
+          "q": "How is Pattern Builder different from Number Sequence?",
+          "a": "Pattern Builder focuses on repeating visual patterns (often alternating heights); Number Sequence focuses on finding an additive or multiplicative rule to extend a strictly numeric sequence — one step harder."
+        }
+      ]
+    }
   },
   "netFold": {
     "title": "Net Folder",

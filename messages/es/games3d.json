@@ -964,7 +964,33 @@
     "instructions": "Descubre la regla de la secuencia (sumar o multiplicar), ajusta la piedra que falta con los botones − / + (o arrastra hacia arriba para aumentarla) y luego pulsa Comprobar",
     "prompt": "Completa la secuencia",
     "correct": "¡Correcto! El número que falta es {value}",
-    "wrong": "¡Casi! Descubre la regla e inténtalo de nuevo"
+    "wrong": "¡Casi! Descubre la regla e inténtalo de nuevo",
+    "seo": {
+      "intro": "Secuencia numérica coloca una fila de piedras numeradas con una piedra que falta y pide a los alumnos descubrir la regla, sumar la misma cantidad cada vez o multiplicar, y luego proporcionar el valor que falta. Sirve de puente entre el trabajo con patrones visuales y el pensamiento aritmético basado en reglas para los cursos 3.º a 5.º.",
+      "howToPlay": [
+        "Lee todos los números visibles de la fila y busca qué cambia entre cada par.",
+        "Decide si la regla es aditiva (cada paso suma la misma cantidad) o multiplicativa (cada paso multiplica).",
+        "Usa los botones − / +, o arrastra la piedra que falta hacia arriba, para establecer el valor correcto.",
+        "Pulsa Comprobar para confirmar tu respuesta."
+      ],
+      "skills": "Encontrar una regla a partir de una secuencia de números y aplicarla entrena el conteo salteado, el reconocimiento de progresiones aritméticas y el pensamiento funcional temprano, habilidades que alimentan directamente las tablas de multiplicar, las tablas de entrada-salida y el álgebra de patrones en los cursos 3.º a 5.º.",
+      "example": "Una secuencia muestra 3, 6, 9, ?, 15. Cada paso suma 3, así que el número que falta es 12. Ver que la diferencia entre cada par es igual, no solo leer el último número, es la habilidad de razonamiento que desarrolla Secuencia numérica.",
+      "mistakes": "Los alumnos suelen adivinar sumando uno más que el término anterior en vez de medir la diferencia real. Secuencia numérica exige comprobar múltiples diferencias para confirmar la regla, entrenando el hábito de verificar antes de responder.",
+      "faqs": [
+        {
+          "q": "¿Cómo enseña la mecánica de la piedra que falta a encontrar la regla en vez de solo adivinar la respuesta?",
+          "a": "La piedra puede aparecer en cualquier lugar de la secuencia, no siempre al final, así que los alumnos deben establecer la regla a partir de los términos circundantes en vez de extender una lista un paso más."
+        },
+        {
+          "q": "¿Para qué cursos es Secuencia numérica?",
+          "a": "Es adecuada para los cursos 3.º a 5.º, donde los alumnos pasan de los patrones visuales a las reglas numéricas y comienzan a formalizar las relaciones aritméticas y multiplicativas."
+        },
+        {
+          "q": "¿En qué se diferencia Secuencia numérica de Secuencia geométrica?",
+          "a": "Secuencia numérica mezcla reglas aditivas y multiplicativas simples; Secuencia geométrica se centra exclusivamente en la multiplicación de razón constante como ×2 o ×3, el siguiente nivel de dificultad."
+        }
+      ]
+    }
   },
   "geometricSequence": {
     "title": "Secuencia geométrica",
@@ -972,7 +998,33 @@
     "instructions": "Descubre la regla (×2 o ×3), ajusta la piedra que falta con los botones − / + y luego pulsa Comprobar",
     "prompt": "Completa la secuencia geométrica",
     "correct": "¡Correcto! El número que falta es {value}",
-    "wrong": "¡Casi! Busca el multiplicador entre términos consecutivos"
+    "wrong": "¡Casi! Busca el multiplicador entre términos consecutivos",
+    "seo": {
+      "intro": "Secuencia geométrica da a los alumnos una fila de piedras numeradas donde cada término se obtiene multiplicando el anterior por una razón fija, ×2, ×3 o similar. Identificar ese multiplicador constante y usarlo para rellenar la piedra que falta es la habilidad definitoria de este juego para los cursos 4.º a 6.º.",
+      "howToPlay": [
+        "Lee los números visibles y divide cualquier término por el anterior para encontrar la razón común.",
+        "Confirma que la razón se cumple para cada par adyacente: debe ser la misma a lo largo de toda la secuencia.",
+        "Usa los botones − / + (o arrastra la piedra) para establecer el valor que falta.",
+        "Pulsa Comprobar para ver si la razón es consistente a lo largo de toda la secuencia."
+      ],
+      "skills": "Reconocer y aplicar una razón multiplicativa constante es la base de las sucesiones geométricas, los patrones de crecimiento exponencial y los cálculos de porcentajes. Secuencia geométrica desarrolla esta fluidez antes de que los alumnos conozcan el álgebra formal de las potencias en los cursos 4.º a 6.º.",
+      "example": "Una secuencia muestra 2, 6, 18, ?, 162. Cada término se multiplica por 3, así que el valor que falta es 54. La clave es que dividir dos términos consecutivos (18 ÷ 6 = 3) revela la regla; este juego entrena ese movimiento de división como razón.",
+      "mistakes": "Los alumnos suelen intentar añadir una diferencia constante en vez de encontrar el multiplicador, porque el pensamiento aditivo es más fácil. Secuencia geométrica hace que el multiplicador sea lo único que funciona, obligando a los alumnos a pasar del pensamiento aditivo al multiplicativo.",
+      "faqs": [
+        {
+          "q": "¿Por qué el juego usa la división para encontrar la regla en vez de simplemente leer una etiqueta ×2 o ×3?",
+          "a": "Derivar la razón dividiendo términos consecutivos, en vez de que te la digan, entrena el hábito algebraico de extraer una regla de los datos. Ese razonamiento se transfiere directamente a tablas, gráficas y trabajo exponencial posterior."
+        },
+        {
+          "q": "¿Para qué cursos es Secuencia geométrica?",
+          "a": "Va dirigida a los cursos 4.º a 6.º, donde los alumnos son fluidos en multiplicación y están listos para ver que la misma operación aplicada repetidamente crea crecimiento exponencial."
+        },
+        {
+          "q": "¿En qué se diferencia Secuencia geométrica de Secuencia numérica?",
+          "a": "Secuencia geométrica usa únicamente reglas multiplicativas (razón constante); Secuencia numérica incluye también patrones aditivos. Secuencia geométrica es la versión más difícil y enfocada de la misma idea."
+        }
+      ]
+    }
   },
   "fractionStrip": {
     "title": "Tiras de fracciones",
@@ -1182,7 +1234,33 @@
     "instructions": "Observa cómo crecen las torres y descubre la regla. Usa los botones − / + (o arrastra hacia arriba) para construir la torre que falta a la altura correcta, y luego pulsa Comprobar",
     "prompt": "¿Cuántos cubos tiene la torre que falta?",
     "correct": "¡Correcto! La torre que falta tiene {value} cubos",
-    "wrong": "¡Casi! Descubre la regla y construye de nuevo"
+    "wrong": "¡Casi! Descubre la regla y construye de nuevo",
+    "seo": {
+      "intro": "Constructor de patrones muestra una fila de torres de cubos que crecen o decrecen según una regla fija y pide a los alumnos construir la torre que falta. Encontrar y aplicar esa regla es el primer paso hacia todo trabajo con secuencias, lo que convierte este juego en el punto de entrada al pensamiento de patrones en los cursos 2.º a 4.º.",
+      "howToPlay": [
+        "Estudia las alturas de las torres de izquierda a derecha e identifica qué cambia cada vez.",
+        "Decide la regla: ¿cada torre añade el mismo número de cubos o la altura se repite en un ciclo?",
+        "Usa los botones − / + (o arrastra hacia arriba) para construir la torre que falta a la altura correcta.",
+        "Pulsa Comprobar para ver si tu torre encaja en el patrón."
+      ],
+      "skills": "Identificar una regla que se repite o crece y extenderla entrena a los alumnos para buscar estructura en los datos, el hábito central detrás de las sucesiones aritméticas, las tablas de funciones y el pensamiento algebraico introducido desde el 2.º curso.",
+      "example": "Una fila muestra torres de 1, 3, 1, 3, 1, ? cubos. El patrón alterna entre 1 y 3, así que la torre que falta es 3. Detectar la alternancia antes de calcular es el movimiento clave que enseña este juego.",
+      "mistakes": "Los alumnos suelen añadir un cubo más sobre la última torre en vez de releer toda la fila para encontrar su regla. Constructor de patrones los obliga a mirar toda la secuencia, no solo el último término, antes de actuar.",
+      "faqs": [
+        {
+          "q": "¿Cómo hace visible la regla del patrón la pantalla de torres de cubos antes de que aparezca ningún número?",
+          "a": "Las torres son alturas físicas, así que incluso los alumnos que todavía no pueden leer números ven una alternancia 1-3-1-3 como un ritmo visual. Los números y las reglas emergen del dibujo, no del conocimiento previo."
+        },
+        {
+          "q": "¿Para qué cursos es Constructor de patrones?",
+          "a": "Está diseñado para los cursos 2.º a 4.º, donde el currículo introduce los patrones que se repiten y crecen como primera forma de razonamiento algebraico."
+        },
+        {
+          "q": "¿En qué se diferencia Constructor de patrones de Secuencia numérica?",
+          "a": "Constructor de patrones se centra en patrones visuales repetitivos (a menudo alturas alternas); Secuencia numérica se centra en encontrar una regla aditiva o multiplicativa para extender una secuencia estrictamente numérica, un paso más difícil."
+        }
+      ]
+    }
   },
   "netFold": {
     "title": "Plegador de redes",

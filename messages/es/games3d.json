@@ -231,7 +231,24 @@
     "instructions": "La balanza empieza equilibrada. Quita el mismo número de cristales de ambos lados (Izquierda −/+, Derecha −/+) hasta que la ? quede sola y la barra vuelva a estar nivelada. Quitar de forma desigual baja el lado más pesado. Luego pulsa Comprobar",
     "prompt": "Resuelve: ? + {b} = {c}",
     "correct": "¡Genial! ? = {x}",
-    "wrong": "¡Casi! Quita el mismo número de ambos lados hasta que la ? quede sola y la balanza esté equilibrada"
+    "wrong": "¡Casi! Quita el mismo número de ambos lados hasta que la ? quede sola y la balanza esté equilibrada",
+    "seo": {
+      "intro": "La Balanza de Álgebra hace visible una ecuación. La balanza comienza equilibrada: cristales en ambos lados y un signo de interrogación en uno de ellos. Los alumnos retiran cantidades iguales de ambos lados hasta que la incógnita queda sola, revelando el principio de la operación inversa por sí solo.",
+      "howToPlay": [
+        "Observa la balanza: un lado tiene la incógnita (?) más cristales, el otro solo cristales.",
+        "Usa los botones −/+ de ambos lados para retirar el mismo número de cristales de cada lado.",
+        "Continúa hasta que la incógnita quede sola.",
+        "Cuando la barra esté nivelada y la ? esté sola, pulsa Comprobar."
+      ],
+      "skills": "La Balanza de Álgebra enseña el principio central de resolver ecuaciones: lo que haces a un lado, debes hacerlo al otro. Esta experiencia táctil de la operación inversa prepara para el álgebra formal mucho mejor que memorizar reglas sobre mover términos al otro lado del signo igual.",
+      "example": "La balanza muestra ? + 4 = 9. Retira 4 cristales de cada lado: la izquierda queda ?, la derecha queda 5. La barra se nivela y ? = 5. Los alumnos sienten la lógica en lugar de adivinar.",
+      "mistakes": "Los principiantes a veces retiran cristales de un solo lado. La barra se inclina de inmediato, proporcionando retroalimentación correctiva instantánea sin necesidad de explicación.",
+      "faqs": [
+        { "q": "¿Qué tipo de ecuaciones practica la Balanza de Álgebra?", "a": "Ecuaciones de la forma ? + b = c, para los cursos 5–6 donde los alumnos encuentran por primera vez incógnitas y operaciones inversas." },
+        { "q": "¿En qué se diferencia de la Balanza normal?", "a": "La Balanza se centra en la aritmética: calcular una suma y replicarla con pesas. La Balanza de Álgebra comienza ya equilibrada y pide aislar una incógnita por eliminación igual, que es pensamiento algebraico." },
+        { "q": "¿Se necesitan conocimientos previos de álgebra?", "a": "No. El modelo concreto de la balanza permite a los alumnos descubrir por sí mismos el principio de la eliminación igual antes de encontrar la notación formal." }
+      ]
+    }
   },
   "balanceScale": {
     "title": "Balanza",
@@ -239,7 +256,24 @@
     "instructions": "Lee las pesas de los cubos del plato izquierdo y súmalas. Añade pesas numeradas al plato derecho con los botones de más y menos (1, 2, 5, 10) hasta que la barra quede nivelada: cuando está nivelada, ambos lados son iguales. Luego pulsa Comprobar",
     "prompt": "Equilibra la balanza",
     "correct": "¡Genial! Ambos lados suman {total}",
-    "wrong": "¡Casi! Añade o quita pesas en la derecha hasta que la barra quede nivelada"
+    "wrong": "¡Casi! Añade o quita pesas en la derecha hasta que la barra quede nivelada",
+    "seo": {
+      "intro": "La Balanza muestra qué significa una ecuación antes de que los alumnos escriban una. El plato izquierdo sostiene cubos numerados; los alumnos añaden pesas (1, 2, 5, 10) al plato derecho hasta que la barra quede exactamente nivelada. Como ambos lados deben ser físicamente iguales, la idea de que los dos miembros de una ecuación comparten el mismo valor se vuelve concreta e indiscutible.",
+      "howToPlay": [
+        "Lee los cubos numerados del plato izquierdo y suma sus valores.",
+        "Usa los botones +/− para añadir o quitar pesas (1, 2, 5, 10) en el plato derecho.",
+        "Ajusta hasta que la barra esté perfectamente nivelada y ambos platos pesen lo mismo.",
+        "Pulsa Comprobar cuando la balanza esté equilibrada."
+      ],
+      "skills": "La Balanza construye la comprensión fundamental de la igualdad: ambos lados del signo igual deben tener el mismo valor. Los alumnos practican la suma mental y la descomposición mientras la retroalimentación visual de una barra que se nivela hace cada respuesta correcta inmediatamente satisfactoria.",
+      "example": "Plato izquierdo: cubos con valores 3, 7 y 5. Suma: 15. Dos cincos y un diez dan 20, demasiado. Reajustar a 10 y 5 da 15. La barra se nivela.",
+      "mistakes": "Los alumnos a veces se pasan y siguen añadiendo pesas cuando la barra ya se ha inclinado demasiado. Aprender a quitar pesas es tan importante como añadirlas, y el juego requiere ambas direcciones de ajuste.",
+      "faqs": [
+        { "q": "¿Para qué rango de cursos es la Balanza?", "a": "Cursos 2–5, donde los alumnos practican la suma, el cálculo mental y los conceptos de ecuación con números cada vez mayores." },
+        { "q": "¿En qué se diferencia de la Balanza de Álgebra?", "a": "La Balanza se centra en la aritmética: calcular una suma y replicarla. La Balanza de Álgebra comienza equilibrada y pide aislar una incógnita por eliminación igual, que es pensamiento algebraico." },
+        { "q": "¿Hay más de una solución para el plato derecho?", "a": "Sí. Muchas combinaciones de pesas alcanzan la misma suma, y el juego acepta cualquier combinación correcta, fomentando explorar distintas descomposiciones." }
+      ]
+    }
   },
   "moneyShop": {
     "title": "Tienda de Monedas",
@@ -255,7 +289,24 @@
     "instructions": "Construye la suma usando los botones − / + de cada cifra (centenas, decenas, unidades), o arrastra hacia arriba sobre una columna para añadir un cristal. Cuando una columna se llena más allá de 9, una vagoneta de mineral recorre el riel para llevar el grupo a la siguiente posición. Pulsa Comprobar para comprobar",
     "prompt": "Suma: {a} + {b}",
     "correct": "¡Genial! La suma correcta es {total}",
-    "wrong": "¡Casi! Revisa las cifras y corrige la suma"
+    "wrong": "¡Casi! Revisa las cifras y corrige la suma",
+    "seo": {
+      "intro": "La Mina de Sumas coloca las columnas de valor posicional justo ante los ojos. Los alumnos llenan columnas de unidades, decenas y centenas con cristales de mineral para construir una suma objetivo. Cuando una columna supera diez, una vagoneta lleva el grupo a la columna siguiente, haciendo la reagrupación visible en lugar de abstracta.",
+      "howToPlay": [
+        "Lee los dos números que aparecen en la parte superior del pozo de la mina.",
+        "Usa los botones −/+ o arrastra hacia arriba para añadir cristales a las columnas de unidades, decenas y centenas.",
+        "Cuando una columna alcanza diez cristales, observa la vagoneta transportarlos a la columna siguiente.",
+        "Continúa hasta que la suma coincida con el objetivo y pulsa Comprobar."
+      ],
+      "skills": "La Mina de Sumas construye la comprensión concreta de la reagrupación (llevada) que sustenta la suma en columnas. Llenar columnas y ver cómo diez unidades se agrupan en una de la siguiente posición muestra a los alumnos por qué funciona el algoritmo antes de memorizarlo.",
+      "example": "47 + 36: 7 unidades y 6 unidades dan 13. La vagoneta lleva diez, quedan 3 unidades. 4 decenas y 3 decenas más la llevada dan 8 decenas. Resultado: 83.",
+      "mistakes": "Los alumnos suelen sumar todas las cifras sin considerar el valor posicional y escriben 47 + 36 = 713 en lugar de 83. La vagoneta corrige esta confusión de columnas antes de que se convierta en hábito.",
+      "faqs": [
+        { "q": "¿Para qué cursos es la Mina de Sumas?", "a": "Para los cursos 2–4, que se centran en la suma de dos y tres cifras con reagrupación, el núcleo de la aritmética en primaria." },
+        { "q": "¿Hay siempre reagrupación?", "a": "No. Algunos problemas no tienen llevada; otros requieren una o dos. La vagoneta aparece solo cuando una columna supera realmente diez." },
+        { "q": "¿En qué se diferencia de la Balanza?", "a": "La Mina construye una suma cifra a cifra con reagrupación. La Balanza pide encontrar un total y replicarlo con pesas, poniendo el énfasis en la igualdad, no en la suma en columnas." }
+      ]
+    }
   },
   "subtractionBridge": {
     "title": "Puente de la Resta",
@@ -353,7 +404,24 @@
     "instructions": "Añade puntos a cada caja con los botones − / + (centenas, decenas, unidades), o arrastra hacia arriba sobre una caja para añadir. Cuando una caja llega a diez puntos, explotan en un punto en la caja de su izquierda. Construye el número y pulsa Comprobar.",
     "prompt": "Construye el número {target}",
     "correct": "¡Genial! Construiste {target}",
-    "wrong": "¡Casi! Revisa las cajas y corrige el número"
+    "wrong": "¡Casi! Revisa las cajas y corrige el número",
+    "seo": {
+      "intro": "Puntos que Explotan convierte la reagrupación en un espectáculo. Los alumnos colocan puntos de neón en cajas de unidades, decenas y centenas para representar un número objetivo. Cuando una caja alcanza diez puntos, explotan en un punto que se mueve a la izquierda, haciendo que la regla de la base diez ocurra ante los ojos en lugar de aprenderse.",
+      "howToPlay": [
+        "Lee el número objetivo que aparece encima de las cajas.",
+        "Usa los botones −/+ o arrastra hacia arriba para añadir puntos a la caja de unidades, decenas o centenas.",
+        "Cuando una caja alcanza diez puntos, observa la explosión que los mueve a la izquierda.",
+        "Ajusta hasta que las cajas representen juntas el número objetivo y pulsa Comprobar."
+      ],
+      "skills": "Puntos que Explotan construye una intuición profunda del valor posicional en base diez. En lugar de memorizar que diez unidades equivalen a una decena, los alumnos lo ven como una explosión. Este entendimiento basado en animación prepara para la suma y resta de múltiples cifras y futuros sistemas de numeración en otras bases.",
+      "example": "Construir 23: añade 3 a unidades, 2 a decenas. Sin explosiones. Construir 33: añade 13 a unidades — al llegar a diez la caja explota, quedan 3 unidades y surge una decena. Resultado: 3 decenas y 3 unidades = 33.",
+      "mistakes": "Los alumnos a veces llenan demasiado una caja y se pierden la explosión. El juego congela las cajas llenas hasta que se activa la explosión, reforzando que diez en una caja es siempre el límite.",
+      "faqs": [
+        { "q": "¿Para qué cursos son los Puntos que Explotan?", "a": "Cursos 2–3, donde los alumnos construyen la intuición del valor posicional para números de dos y tres cifras y comienzan a entender la lógica de la llevada en la suma." },
+        { "q": "¿Está relacionado con el proyecto Exploding Dots de James Tanton?", "a": "La mecánica está inspirada en el mismo modelo de puntos en base diez popularizado en la educación matemática. El juego usa el mismo lenguaje visual para hacer la reagrupación autoexplicativa." },
+        { "q": "¿En qué se diferencia de la Mina de Sumas?", "a": "Puntos que Explotan se centra en representar un solo número y ver la regla de la explosión. La Mina de Sumas usa las mismas columnas pero en el contexto de sumar dos números con la mecánica de la vagoneta." }
+      ]
+    }
   },
   "factris": {
     "title": "Factris",
@@ -361,7 +429,24 @@
     "instructions": "Cambia el ancho de la pila con los botones − / + (o arrastra a la derecha para ensanchar, a la izquierda para estrechar) hasta que los bloques formen un rectángulo completo que llene exactamente el estante luminoso. Si el ancho no encaja, la fila superior queda incompleta: no es un rectángulo limpio. Luego pulsa Comprobar.",
     "prompt": "Organiza {area} bloques para llenar el estante",
     "correct": "¡Genial! {slotW} de ancho × {height} de alto = {area}",
-    "wrong": "¡Casi! Cambia el ancho hasta que los bloques llenen exactamente el estante luminoso"
+    "wrong": "¡Casi! Cambia el ancho hasta que los bloques llenen exactamente el estante luminoso",
+    "seo": {
+      "intro": "Factris le da un giro estilo Tetris a la multiplicación y la factorización. Un número fijo de bloques de almacén debe organizarse en un rectángulo perfecto que llene exactamente un estante luminoso. Los alumnos encuentran un ancho válido, es decir, un factor del total, y la altura se ajusta automáticamente, haciendo visible el vínculo entre área, matrices y hechos de multiplicación.",
+      "howToPlay": [
+        "Lee el número total de bloques indicado en el enunciado.",
+        "Usa los botones −/+ o arrastra izquierda/derecha para cambiar el ancho de la pila.",
+        "Observa cómo la altura se ajusta para que ancho × altura siempre iguale el total.",
+        "Encuentra un ancho que llene cada celda del estante luminoso sin huecos ni saliente y pulsa Comprobar."
+      ],
+      "skills": "Factris construye fluidez con factores, múltiplos y la relación entre multiplicación y área. Buscar un ancho que funcione es idéntico a encontrar un par de factores, por lo que los alumnos interiorizan los pares de factores mediante ensayo y error espacial en lugar de memorización.",
+      "example": "El estante cabe 12 bloques. Ancho 3 da altura 4: el rectángulo llena. Ancho 5 deja 2 bloques sobrantes en la fila superior: no es factor. Los alumnos pronto comprenden que 1, 2, 3, 4, 6, 12 funcionan; 5, 7, 8, 9, 10, 11 no.",
+      "mistakes": "Los alumnos a veces prueban todos los números en orden en lugar de razonar sobre los factores. Darse cuenta de que ancho × altura = total es la intuición que el juego está diseñado para despertar.",
+      "faqs": [
+        { "q": "¿Para qué cursos es Factris?", "a": "Cursos 3–5, que cubren pares de factores, múltiplos y el modelo de área de la multiplicación." },
+        { "q": "¿En qué se diferencia de la Matriz de Multiplicación?", "a": "La Matriz muestra una cuadrícula hecha y pide encontrar el total. Factris da el total y pide encontrar qué anchos forman un rectángulo válido, invirtiendo el modelo de matriz para construir intuición de factores." },
+        { "q": "¿Muestra el juego todos los pares de factores?", "a": "El juego acepta cualquier ancho válido. Los alumnos que prueban varios anchos descubren naturalmente todos los pares de factores del total." }
+      ]
+    }
   },
   "skipCount": {
     "title": "Carrera de conteo salteado",
@@ -517,7 +602,24 @@
     "instructions": "Usa los botones − / + para poner la misma cantidad de monedas en cada cofre (o arrastra hacia arriba). Reparte todo lo que puedas por igual; lo que sobra va a la bolsa. Luego pulsa Comprobar",
     "prompt": "Reparte {total} monedas por igual entre {k} cofres",
     "correct": "¡Bien hecho! {perChest} en cada cofre, y {remainder} quedan en la bolsa",
-    "wrong": "Puedes repartir más por igual — inténtalo de nuevo"
+    "wrong": "Puedes repartir más por igual — inténtalo de nuevo",
+    "seo": {
+      "intro": "Reparto Justo modela la división como reparto igualitario. Los alumnos distribuyen una pila de monedas entre cofres del tesoro poniendo el mismo número en cada uno, y las monedas que no pueden repartirse igualmente van a la bolsa del resto. Así el cociente y el resto se vuelven físicamente inequívocos.",
+      "howToPlay": [
+        "Lee cuántas monedas hay que repartir y cuántos cofres hay que llenar.",
+        "Usa los botones −/+ (o arrastra hacia arriba) para poner el mismo número de monedas en cada cofre.",
+        "Reparte tantas monedas como sea posible por igual; las que sobran pertenecen a la bolsa del resto.",
+        "Pulsa Comprobar cuando cada cofre tenga una parte igual y la bolsa tenga las monedas sobrantes."
+      ],
+      "skills": "Reparto Justo construye el modelo de división partitiva (repartir en grupos iguales) y da al resto un significado concreto. Los alumnos dejan de ver el resto como un error y empiezan a verlo como lo que queda después de un reparto justo — un paso clave antes de la división escrita.",
+      "example": "Repartir 17 monedas entre 5 cofres: 5 × 3 = 15, así que 3 monedas en cada cofre y 2 en la bolsa. La pantalla muestra 5 cofres llenos y una bolsa con 2 monedas: 17 ÷ 5 = 3 resto 2.",
+      "mistakes": "Los alumnos a veces intentan repartir todas las monedas y dejan la bolsa vacía fraccionando las monedas. El juego solo acepta números enteros por cofre, guiando hacia el concepto de resto.",
+      "faqs": [
+        { "q": "¿Para qué cursos es Reparto Justo?", "a": "Cursos 3–4, donde los alumnos aprenden la división como reparto igualitario y encuentran por primera vez los restos en el currículo." },
+        { "q": "¿En qué se diferencia de las Torres de División?", "a": "Reparto Justo usa el reparto físico de monedas para construir el concepto. Las Torres de División aplica esa comprensión paso a paso en el algoritmo formal de la división larga escrita." },
+        { "q": "¿Elige el alumno cuántas monedas van a la bolsa?", "a": "La bolsa se llena automáticamente con lo que queda después de llenar los cofres. Los alumnos solo controlan cuántas monedas poner en cada cofre, manteniendo el foco en encontrar la mayor parte igual." }
+      ]
+    }
   },
   "barGraph": {
     "title": "Constructor de gráfico de barras",
@@ -549,7 +651,24 @@
     "instructions": "Cuenta cuántas frutas hay en la matriz (filas × columnas). Usa los botones − / + o arrastra hacia arriba para introducir el total, pulsa 'Cortar' para verlo fila por fila y luego pulsa Comprobar",
     "prompt": "¿Cuántas hay en total?",
     "correct": "{rows} × {cols} = {product}!",
-    "wrong": "Cuenta de nuevo — filas × columnas"
+    "wrong": "Cuenta de nuevo — filas × columnas",
+    "seo": {
+      "intro": "La Matriz de Multiplicación construye el modelo mental más importante para la multiplicación: una cuadrícula rectangular. Los alumnos cuentan un campo de frutas dispuestas en filas y columnas, luego pulsan Cortar para ver la matriz dividida fila por fila — el momento en que una cuadrícula se convierte en suma repetida y la suma repetida se convierte en un hecho de multiplicación.",
+      "howToPlay": [
+        "Observa la matriz de frutas y cuenta las filas y columnas que se muestran.",
+        "Usa los botones −/+ o arrastra hacia arriba para introducir el total.",
+        "Pulsa Cortar para ver cómo la matriz se divide fila por fila.",
+        "Confirma que filas × columnas = total y pulsa Comprobar."
+      ],
+      "skills": "La Matriz de Multiplicación establece la propiedad conmutativa y el modelo de área simultáneamente. Ver que una matriz de 3×4 y una de 4×3 contienen las mismas 12 frutas hace la conmutatividad evidente y prepara directamente para los cálculos de área en geometría.",
+      "example": "Un huerto de 5 filas y 6 columnas tiene 30 naranjas. Al pulsar Cortar se ven 5 grupos de 6 despegándose uno a uno: 6, 12, 18, 24, 30. La multiplicación se convierte en contar de forma eficiente en lugar de un hecho memorizado.",
+      "mistakes": "Los alumnos a veces cuentan frutas individuales en lugar de usar filas × columnas. La animación de corte muestra la estrategia de agrupación y premia el enfoque correcto.",
+      "faqs": [
+        { "q": "¿Para qué cursos es la Matriz de Multiplicación?", "a": "Cursos 2–3, donde los alumnos conocen por primera vez la multiplicación como suma repetida y necesitan el modelo de matriz antes de memorizar las tablas." },
+        { "q": "¿En qué se diferencia de Factris?", "a": "La Matriz muestra una cuadrícula ya hecha y pide encontrar el total. Factris da el total y pide encontrar qué anchos forman un rectángulo válido, invirtiendo el modelo." },
+        { "q": "¿El juego enseña la propiedad conmutativa explícitamente?", "a": "No con etiqueta, pero sí implícitamente: la misma matriz puede contarse por filas o por columnas, y la animación de corte puede destacar ambas direcciones, provocando una discusión natural." }
+      ]
+    }
   },
   "fractionSlice": {
     "title": "Cortador de fracciones",
@@ -667,7 +786,24 @@
     "instructions": "Toca una casilla para colorearla o borrarla, o arrastra sobre las casillas para colorear varias seguidas. Cuando termines, pulsa Comprobar. Reiniciar borra la tabla.",
     "prompt": "Colorea todos los múltiplos de {n}",
     "correct": "¡Muy bien! Coloreaste todos los múltiplos de {n}.",
-    "wrong": "Todavía no. Mira qué casillas faltan o sobran e inténtalo otra vez."
+    "wrong": "Todavía no. Mira qué casillas faltan o sobran e inténtalo otra vez.",
+    "seo": {
+      "intro": "La Tabla de Múltiplos presenta una cuadrícula del 1 al 30 y pide colorear todos los múltiplos de un número dado. Las casillas coloreadas revelan patrones de conteo salteado: espacios iguales y ritmos visuales que convierten los múltiplos abstractos en algo que se ve y se recuerda.",
+      "howToPlay": [
+        "Lee el número cuyos múltiplos hay que colorear.",
+        "Toca casillas individuales para colorearlas o arrastra sobre varias a la vez.",
+        "Colorea todos los múltiplos de ese número hasta 30 usando el conteo salteado o las tablas.",
+        "Pulsa Comprobar cuando todos los múltiplos estén coloreados y no haya casillas de más."
+      ],
+      "skills": "La Tabla de Múltiplos construye fluidez en el conteo salteado, los múltiplos y los primeros patrones de las tablas de multiplicar. Reconocer visualmente los intervalos iguales del 2, el 5 o el 7 refuerza la estructura de patrón de la multiplicación y sienta las bases para los mínimos comunes múltiplos y las reglas de divisibilidad.",
+      "example": "Colorear los múltiplos de 3 hasta 30: se iluminan las casillas 3, 6, 9, 12, 15, 18, 21, 24, 27, 30. Los alumnos notan que cada tercera casilla está coloreada. Al cambiar al 6 se ve que cada segunda casilla de los 3 está coloreada, haciendo visible el múltiplo común.",
+      "mistakes": "Los alumnos a veces confunden múltiplos con divisores y colorean números que dividen al objetivo en lugar de números a los que se llega contando de ese número en ese número. El enunciado recuerda que hay que colorear los números a los que se llega saltando, no los divisores del número dado.",
+      "faqs": [
+        { "q": "¿Para qué cursos es la Tabla de Múltiplos?", "a": "Cursos 2–4, que cubren el conteo salteado, los primeros patrones de multiplicación y los múltiplos como base para la fluidez en las tablas." },
+        { "q": "¿La tabla va siempre del 1 al 30?", "a": "Sí. El rango de 30 números es suficientemente grande para mostrar dos o más ciclos completos de conteo salteado para cada número del 2 al 10, revelando claramente el patrón repetitivo." },
+        { "q": "¿Es el cero múltiplo de todos los números?", "a": "Matemáticamente sí, pero la tabla empieza en 1, por lo que no se pide a los alumnos colorear el cero. El enfoque está en el patrón de los números enteros positivos." }
+      ]
+    }
   },
   "geoboard": {
     "title": "Geoplano",
@@ -810,7 +946,24 @@
     "correct": "¡Genial! Había {n} objetos — tu estimación es cercana",
     "wrong": "No es lo bastante cercano, inténtalo de nuevo",
     "tooHigh": "Demasiado alto",
-    "tooLow": "Demasiado bajo"
+    "tooLow": "Demasiado bajo",
+    "seo": {
+      "intro": "La Tierra de la Estimación entrena la habilidad que ninguna calculadora puede reemplazar: juzgar cuántos hay aproximadamente sin contar cada objeto. Un campo de objetos esparcidos aparece en pantalla junto a un grupo de referencia visible de diez. Los alumnos usan ese punto de anclaje para estimar el total y ajustar su respuesta.",
+      "howToPlay": [
+        "Observa el campo y el grupo de referencia de 10 que aparece al lado.",
+        "Pregúntate: ¿cuántos grupos de 10 veo aproximadamente?",
+        "Ajusta tu estimación con los botones −/+ o arrastrando.",
+        "Pulsa Comprobar; el juego acepta cualquier estimación dentro de una tolerancia del recuento real."
+      ],
+      "skills": "La Tierra de la Estimación construye sentido numérico y razonamiento proporcional. Practicar regularmente con una referencia de 10 entrena a juzgar cantidades con rapidez y confianza: una habilidad usada en la medición, la lectura de datos, el cálculo mental y la toma de decisiones cotidianas.",
+      "example": "Un campo contiene 43 girasoles. El grupo de referencia de 10 está claramente visible al lado. Los alumnos distinguen unos cuatro grupos de ese tamaño más unos pocos e introducen 40 o 45. Ambos son aceptados. El recuento exacto aparece solo después de enviar.",
+      "mistakes": "Los alumnos a veces intentan contar cada objeto individualmente en lugar de usar el grupo de referencia como ancla. El juego recompensa las estimaciones rápidas basadas en grupos, y la retroalimentación demasiado alto/bajo orienta hacia el razonamiento anclado.",
+      "faqs": [
+        { "q": "¿Para qué cursos es la Tierra de la Estimación?", "a": "Cursos 3–5, donde los alumnos desarrollan sentido numérico junto con la aritmética formal y necesitan practicar el juicio de magnitudes antes del redondeo y la aproximación." },
+        { "q": "¿Qué tan cerca debe estar una estimación para ser aceptada?", "a": "La tolerancia está fijada para que las estimaciones dentro del 20% del valor real sean aceptadas, lo que refleja una precisión de estimación realista." },
+        { "q": "¿Cambia la disposición de los objetos cada ronda?", "a": "Sí. La disposición del campo cambia cada ronda para que no puedan memorizarse las respuestas. Los alumnos deben estimar de nuevo cada vez." }
+      ]
+    }
   },
   "factorTree": {
     "title": "Árbol de factores",
@@ -826,7 +979,24 @@
     "instructions": "Usa los botones − / + para construir la misma cantidad de bloques en cada torre (o arrastra hacia arriba). Construye las torres lo más altas que puedan ir por igual; lo que sobra se queda en el montón. Si tomas más bloques de los que hay, las torres se ponen rojas. Luego pulsa Comprobar",
     "prompt": "Reparte {n} bloques por igual entre {d} torres — ¿cuántos en cada una?",
     "correct": "¡Bien hecho! {perTower} en cada torre, y {remainder} quedan en el montón",
-    "wrong": "Las torres aún no están tan iguales y altas como pueden — inténtalo de nuevo"
+    "wrong": "Las torres aún no están tan iguales y altas como pueden — inténtalo de nuevo",
+    "seo": {
+      "intro": "Las Torres de División convierten los pasos abstractos de la división larga en un reto de construcción. Un montón de bloques debe apilarse por igual en varias torres. Los alumnos elevan cada torre a la misma altura, dejando los bloques indivisibles en el montón: así el cociente y el resto se vuelven visibles antes de que el algoritmo aparezca en papel.",
+      "howToPlay": [
+        "Lee cuántos bloques hay en el montón y cuántas torres hay que llenar.",
+        "Usa los botones −/+ o arrastra hacia arriba para que todas las torres alcancen la misma altura.",
+        "Continúa hasta que las torres estén tan altas como sea posible por igual.",
+        "Deja los bloques del resto en el montón y pulsa Comprobar."
+      ],
+      "skills": "Las Torres de División construyen el modelo de división quotitiva (¿cuántos grupos iguales caben?) y dan a los subpasos de la división larga un significado concreto. Cada piso de la torre corresponde a un ciclo dividir-multiplicar-restar en el algoritmo formal. Los alumnos que construyen las torres primero cometen muchos menos errores cuando se encuentran con la división larga escrita.",
+      "example": "Montón: 29 bloques, 4 torres. Cada torre crece hasta 7 (4 × 7 = 28), queda 1 bloque en el montón. Las torres muestran 7 por grupo; el montón muestra resto 1. 29 ÷ 4 = 7 resto 1.",
+      "mistakes": "Los alumnos construyen a veces torres de diferente altura. Las torres desiguales se vuelven rojas, reforzando que todos los grupos deben ser iguales: la definición de la división.",
+      "faqs": [
+        { "q": "¿Para qué cursos son las Torres de División?", "a": "Cursos 3–5, que cubren la división con resto y preparan a los alumnos para la división larga de múltiples cifras." },
+        { "q": "¿En qué se diferencia de Reparto Justo?", "a": "Reparto Justo usa el reparto físico de monedas para construir el concepto. Las Torres aplican esa comprensión en una interfaz de construcción de torres que se corresponde paso a paso con el algoritmo de la división larga escrita." },
+        { "q": "¿Cuál es el mayor divisor que usa el juego?", "a": "Los divisores y dividendos escalan con el curso seleccionado. En los niveles superiores el montón puede contener números de tres cifras divididos por divisores de una o dos cifras." }
+      ]
+    }
   },
   "tangram": {
     "title": "Tangram",

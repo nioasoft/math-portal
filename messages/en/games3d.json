@@ -237,7 +237,24 @@
     "instructions": "The scale starts balanced. Remove an equal number of crystals from both sides (Left −/+, Right −/+) until the ? stands alone and the beam is level again. Removing unequally tips the heavier side down. Then press Check",
     "prompt": "Solve: ? + {b} = {c}",
     "correct": "Great! ? = {x}",
-    "wrong": "Almost! Remove an equal number from both sides until the ? stands alone and the scale is balanced"
+    "wrong": "Almost! Remove an equal number from both sides until the ? stands alone and the scale is balanced",
+    "seo": {
+      "intro": "Algebra Balance bridges arithmetic and algebra by making an equation visible. The scale starts balanced with crystals on both sides and an unknown crystal marked with a question mark. Students remove equal amounts from each side until the unknown stands alone — performing the inverse operation physically rather than symbolically.",
+      "howToPlay": [
+        "Look at the balanced scale: one side has the unknown (?) plus some crystals, the other side has only crystals.",
+        "Use the Left −/+ and Right −/+ buttons to remove the same number of crystals from both sides.",
+        "Keep removing equal amounts until the ? stands alone on one side.",
+        "When the beam is level with ? isolated, press Check to confirm the solution."
+      ],
+      "skills": "Algebra Balance teaches the central principle of equation solving: whatever you do to one side, you must do to the other. This hands-on inverse-operation experience prepares students for formal algebra far better than memorizing rules about moving terms across the equals sign.",
+      "example": "The scale shows ? + 4 = 9. Remove 4 crystals from each side: left becomes ?, right becomes 5. The beam levels and ? = 5. Students feel the logic rather than guessing.",
+      "mistakes": "Beginners often remove crystals only from one side to clear the unknown. When they do this the beam tips immediately, providing instant corrective feedback without any explanation needed.",
+      "faqs": [
+        { "q": "What equation type does Algebra Balance practise?", "a": "It covers equations of the form ? + b = c, targeting grades 5–6 where students first encounter formal unknowns and inverse operations." },
+        { "q": "How is this different from Balance Scale?", "a": "Balance Scale asks students to match a given total using numbered weights — it practises arithmetic addition. Algebra Balance starts with equality already established and asks students to isolate an unknown by inverse removal — it practises algebraic thinking." },
+        { "q": "Do students need prior algebra knowledge?", "a": "No prior algebra knowledge is required. The concrete scale model lets students discover the equal-removal principle themselves before meeting formal notation." }
+      ]
+    }
   },
   "balanceScale": {
     "title": "Balance Scale",
@@ -245,7 +262,24 @@
     "instructions": "Read the weights on the cubes in the left pan and add them up. Add numbered weights to the right pan with the plus and minus buttons (1, 2, 5, 10) until the beam is level — when it is level, both sides are equal. Then press Check",
     "prompt": "Balance the scale",
     "correct": "Great! Both sides equal {total}",
-    "wrong": "Almost! Add or remove weights on the right until the beam is level"
+    "wrong": "Almost! Add or remove weights on the right until the beam is level",
+    "seo": {
+      "intro": "Balance Scale shows what an equation means before students ever write one. The left pan holds mystery cubes; students add numbered weights (1, 2, 5, 10) to the right pan until the beam is exactly level. Because the two sides must be physically equal, the idea that both sides of an equation share the same value becomes concrete and undeniable.",
+      "howToPlay": [
+        "Read the numbered cubes stacked in the left pan and add up their total.",
+        "Use the +/− buttons to add or remove weights (1, 2, 5, 10) in the right pan.",
+        "Adjust until the beam is perfectly level — both pans hold the same total.",
+        "Press Check once the scale is balanced."
+      ],
+      "skills": "Balance Scale builds the foundational understanding of equality — that both sides of an equals sign must hold the same value. Students practice mental addition and decomposition while the visual feedback of a levelling beam makes each correct answer immediately satisfying.",
+      "example": "The left pan holds cubes worth 3 + 7 + 5 = 15. Students add weights to the right: two 5s and one 10 give 20 — too heavy. Swap one 5 for nothing and add a 1 and a 2 to reach 15. The beam levels.",
+      "mistakes": "Students often overshoot and keep adding weights when the beam has already tipped past level. Learning to remove weights (decrease) is as important as adding, and the game requires both directions of adjustment.",
+      "faqs": [
+        { "q": "Which grade range is Balance Scale aimed at?", "a": "Grades 2–5, where students practise addition, mental arithmetic, and early equation concepts with increasing number sizes." },
+        { "q": "How is this different from Algebra Balance?", "a": "Balance Scale focuses on arithmetic: students calculate a total and replicate it with weights. Algebra Balance already starts balanced and challenges students to isolate an unknown by removing equal amounts — that is algebraic thinking, not arithmetic matching." },
+        { "q": "Can the right pan have multiple solutions?", "a": "Yes. There are many weight combinations that reach the same total, and the game accepts any correct combination — encouraging students to explore decomposition rather than find one fixed answer." }
+      ]
+    }
   },
   "moneyShop": {
     "title": "Money Shop",
@@ -261,7 +295,24 @@
     "instructions": "Build the sum using each digit's − / + buttons (hundreds, tens, ones), or drag up over a column to add a crystal. When a column fills past 9, an ore cart rides the rail to carry the group to the next place. Press Check to check",
     "prompt": "Add: {a} + {b}",
     "correct": "Great! The correct sum is {total}",
-    "wrong": "Almost! Check the digits and fix the sum"
+    "wrong": "Almost! Check the digits and fix the sum",
+    "seo": {
+      "intro": "Addition Mine puts place-value columns right in front of you. Students build a target sum by filling a ones column, tens column, and hundreds column with ore crystals. When a column overflows ten, an ore cart carries the group to the next place — so regrouping becomes visible instead of abstract.",
+      "howToPlay": [
+        "Read the two numbers shown at the top of the mine shaft.",
+        "Use the −/+ buttons (or drag up) to add ore crystals to the ones, tens, and hundreds columns.",
+        "When a column reaches ten crystals, watch the cart carry them to the next column — that is regrouping.",
+        "Keep adding until the total matches the target sum, then press Check."
+      ],
+      "skills": "Addition Mine builds the concrete understanding of regrouping (carrying) that underpins column addition. By physically filling columns and watching ten units bundle into one at the next place, students stop confusing digit positions and start seeing why the algorithm works.",
+      "example": "Adding 47 + 36: fill 7 ones and 6 ones — the cart carries ten to the tens column, leaving 3 ones. Then add 4 tens and 3 tens plus the carried one to get 8 tens. Result: 83.",
+      "mistakes": "Students often add all the digits without considering place value, writing 47 + 36 = 713 instead of 83. Watching the cart move ten crystals physically into the next column corrects this column-blindness before it becomes a habit.",
+      "faqs": [
+        { "q": "Which grades is Addition Mine designed for?", "a": "It suits grades 2–4, covering 2-digit and 3-digit addition with regrouping — the core progression in early elementary arithmetic." },
+        { "q": "Does the game always require regrouping?", "a": "No. Some problems have no carrying; others require carrying once or twice. The mine shaft only shows the cart animation when a column actually overflows ten." },
+        { "q": "How is this different from Balance Scale?", "a": "Addition Mine builds a sum step by step using place-value columns and regrouping. Balance Scale requires students to find a total and match it by selecting weights — the emphasis is on equality rather than column arithmetic." }
+      ]
+    }
   },
   "subtractionBridge": {
     "title": "Subtraction Bridge",
@@ -333,7 +384,24 @@
     "instructions": "Add dots to each box with the − / + buttons (hundreds, tens, ones), or drag up over a box to add. When a box reaches ten dots they explode into one dot in the box to its left. Build the number, then press Check.",
     "prompt": "Build the number {target}",
     "correct": "Great! You built {target}",
-    "wrong": "Almost! Check the boxes and fix the number"
+    "wrong": "Almost! Check the boxes and fix the number",
+    "seo": {
+      "intro": "Exploding Dots turns regrouping into a spectacle. Students place neon dots into ones, tens, and hundreds boxes to represent a target number. When any box reaches ten, those dots explode into one dot in the box to the left — a vivid, rule-free display of why the decimal system works in base ten.",
+      "howToPlay": [
+        "Read the target number displayed above the boxes.",
+        "Use the −/+ buttons or drag upward to add dots to the ones, tens, or hundreds box.",
+        "When a box reaches ten dots, watch them explode into a single dot moving left.",
+        "Adjust until the boxes together represent the target number, then press Check."
+      ],
+      "skills": "Exploding Dots builds deep intuition for base-ten place value. Rather than memorising that ten ones equal one ten, students see it happen as an explosion. This animation-driven understanding of regrouping prepares students for multi-digit addition, subtraction, and eventually number systems in other bases.",
+      "example": "Building 23: add 3 dots to the ones box (stays as 3), then add 2 dots to the tens box (stays as 2). No explosions needed. Now build 33: add 13 ones — at ten, they explode into one ten, leaving 3 ones. Result: 1 ten from explosion plus 2 tens added = 3 tens, 3 ones = 33.",
+      "mistakes": "Students often overfill a box and miss the explosion, ending up with more than ten dots in one place. The game freezes boxes that overflow until students trigger the explosion, reinforcing that ten-in-one-box is always the rule.",
+      "faqs": [
+        { "q": "Which grades does Exploding Dots target?", "a": "Grades 2–3, where students are establishing place-value intuition for 2-digit and 3-digit numbers and beginning to understand the logic of carrying in addition." },
+        { "q": "Is this related to James Tanton's Exploding Dots project?", "a": "The mechanic is inspired by the same base-ten dot model popularised in mathematics education. The game uses the same visual language to make regrouping self-evident." },
+        { "q": "How is this different from Addition Mine?", "a": "Exploding Dots focuses purely on representing a single number and seeing the explosion rule. Addition Mine uses the same columns but in the context of adding two numbers together with the mine-cart carrying mechanic." }
+      ]
+    }
   },
   "factris": {
     "title": "Factris",
@@ -341,7 +409,24 @@
     "instructions": "Change the stack's width with the − / + buttons (or drag right to widen, left to narrow) until the blocks form a full rectangle that exactly fills the glowing shelf. If the width doesn't fit, the top row stays incomplete — that's not a clean rectangle. Then press Check.",
     "prompt": "Arrange {area} blocks to fill the shelf",
     "correct": "Great! {slotW} wide × {height} tall = {area}",
-    "wrong": "Almost! Change the width until the blocks exactly fill the glowing shelf"
+    "wrong": "Almost! Change the width until the blocks exactly fill the glowing shelf",
+    "seo": {
+      "intro": "Factris gives multiplication and factoring a Tetris-style twist. A fixed count of warehouse blocks must be arranged into a perfect rectangle that exactly fills a glowing shelf. Students find a working width — meaning a factor of the total — and the height fills in automatically, making the link between area, arrays, and multiplication facts vivid.",
+      "howToPlay": [
+        "Read the total number of blocks shown in the prompt.",
+        "Use −/+ buttons or drag left/right to change the width of the stack.",
+        "Watch the height adjust so that width × height always equals the total.",
+        "Find a width that fills every cell in the glowing shelf with no gaps or overhang, then press Check."
+      ],
+      "skills": "Factris builds fluency with factors, multiples, and the relationship between multiplication and area. Searching for a width that works is identical to finding a factor pair, so students internalise factor pairs through spatial trial and error rather than rote memorisation.",
+      "example": "The shelf holds 12 blocks. Width 3 gives height 4 — the rectangle fills perfectly. Width 5 leaves 2 orphan blocks in the top row — not a factor. Students quickly learn that 1, 2, 3, 4, 6, and 12 all work; 5, 7, 8, 9, 10, 11 do not.",
+      "mistakes": "Students often try every number linearly instead of reasoning about factors. Noticing that width × height = total and using that to guess smarter widths is the insight the game is designed to surface.",
+      "faqs": [
+        { "q": "Which grades is Factris designed for?", "a": "Grades 3–5, covering factor pairs, multiples, and area models of multiplication — core content in upper primary arithmetic." },
+        { "q": "How is this different from Multiplication Array?", "a": "Multiplication Array shows a pre-built grid of objects and asks students to count rows × columns. Factris gives a total and asks students to find a valid factor pair by reshaping the stack — it adds the search for factors to the array model." },
+        { "q": "Does the game show all factor pairs or just one?", "a": "The game accepts any valid width. Students who try multiple widths naturally discover all factor pairs of the total, turning the session into an implicit factor-pair audit." }
+      ]
+    }
   },
   "skipCount": {
     "title": "Skip Count Race",
@@ -497,7 +582,24 @@
     "instructions": "Use the − / + buttons to put the same number of coins in every chest (or drag up). Share as many as you can equally; leftovers go in the pouch. Then press Check",
     "prompt": "Share {total} coins equally among {k} chests",
     "correct": "Well done! {perChest} in each chest, with {remainder} left in the pouch",
-    "wrong": "You can share more equally — try again"
+    "wrong": "You can share more equally — try again",
+    "seo": {
+      "intro": "Fair Share (Division Share) models division as equal sharing using coins and treasure chests. Students distribute a pile of coins evenly among a set of chests, placing as many as possible in each, with any that cannot be shared equally dropping into a remainder pouch. The mechanic makes both the quotient and the remainder physically unmistakable.",
+      "howToPlay": [
+        "Read how many coins to share and how many chests to fill.",
+        "Use −/+ buttons (or drag upward) to place the same number of coins in every chest.",
+        "Share as many coins as you can equally; anything left over belongs in the remainder pouch.",
+        "Press Check when every chest holds an equal share and the pouch has the leftover coins."
+      ],
+      "skills": "Division Share builds the partitive division model (sharing into equal groups) and gives remainders a concrete meaning. Students stop treating the remainder as a mistake and start seeing it as simply what is left after fair sharing — a key step before they encounter division with remainders in written form.",
+      "example": "Share 17 coins among 5 chests: 5 × 3 = 15, so 3 coins go in each chest and 2 are left in the pouch. The screen shows 5 full chests and a pouch with 2 coins, making 17 ÷ 5 = 3 remainder 2 undeniable.",
+      "mistakes": "Students frequently try to give every coin away and leave the pouch empty, splitting coins to get an exact share. The game only accepts whole numbers per chest, guiding them toward the concept of remainder as the honest leftover.",
+      "faqs": [
+        { "q": "Which grades is Fair Share designed for?", "a": "Grades 3–4, where students learn division as equal sharing and encounter remainders for the first time in the curriculum." },
+        { "q": "How is this different from Division Towers (Long Division)?", "a": "Fair Share uses physical coin-sharing to build the concept of division and remainders. Division Towers (Long Division) applies that understanding step by step in the formal long-division algorithm, moving from concrete to procedural." },
+        { "q": "Can students choose how many coins go in the pouch?", "a": "The pouch fills automatically with whatever is left after the chests are filled. Students only control how many coins to put in each chest, keeping the focus on finding the largest equal share." }
+      ]
+    }
   },
   "barGraph": {
     "title": "Bar Graph Builder",
@@ -529,7 +631,24 @@
     "instructions": "Count how many fruits are in the array (rows × columns). Use the − / + buttons or drag up to enter the total, press 'Slice' to see it row by row, then press Check",
     "prompt": "How many in total?",
     "correct": "{rows} × {cols} = {product}!",
-    "wrong": "Count again — rows × columns"
+    "wrong": "Count again — rows × columns",
+    "seo": {
+      "intro": "Multiplication Array builds the most important mental model for multiplication: a rectangular grid. Students count a field of fruits arranged in rows and columns, then press Slice to see the array cut row by row — the exact moment a grid turns into repeated addition, and repeated addition turns into one multiplication fact.",
+      "howToPlay": [
+        "Look at the fruit array and count the rows and columns displayed.",
+        "Use −/+ buttons or drag upward to enter your total.",
+        "Press Slice to watch the array cut apart row by row, showing each row's contribution.",
+        "Confirm that rows × columns equals your total, then press Check."
+      ],
+      "skills": "Multiplication Array establishes the commutative property and the area model simultaneously. Seeing that a 3×4 array and a 4×3 array hold the same 12 fruits makes commutativity self-evident, and the rectangular structure prepares students directly for area calculations in geometry.",
+      "example": "A 5-row, 6-column orange grove holds 30 oranges. Pressing Slice shows five groups of 6 peeling away one at a time: 6, 12, 18, 24, 30. Students see multiplication as efficient counting rather than a memorised fact.",
+      "mistakes": "Students sometimes count individual fruits rather than reading rows × columns, and may miss that the same total appears whether they count rows first or columns first. The Slice animation makes the grouping strategy concrete and rewards the correct approach.",
+      "faqs": [
+        { "q": "Which grades is Multiplication Array designed for?", "a": "Grades 2–3, where students first encounter multiplication as repeated addition and need the array model before moving to memorised times tables." },
+        { "q": "How is this different from Factris?", "a": "Multiplication Array presents a fixed grid and asks students to find the total. Factris gives the total and asks students to find which widths form a valid rectangle — it inverts the array model to build factor intuition." },
+        { "q": "Does the game teach the commutative property explicitly?", "a": "Not through labelling, but implicitly: the same array can be counted as rows × columns or columns × rows, and the Slice animation can highlight either direction, sparking natural discussion." }
+      ]
+    }
   },
   "fractionSlice": {
     "title": "Fraction Slicer",
@@ -647,7 +766,24 @@
     "instructions": "Tap a tile to colour or clear it, or drag across the tiles to colour several in a row. When you're done, press Check. Reset clears the chart.",
     "prompt": "Colour all the multiples of {n}",
     "correct": "Well done! You coloured every multiple of {n}.",
-    "wrong": "Not yet. Check which tiles are missing or extra and try again."
+    "wrong": "Not yet. Check which tiles are missing or extra and try again.",
+    "seo": {
+      "intro": "Hundred Chart (Multiples Chart) puts a grid of 1 to 30 in front of students and asks them to colour every multiple of a given number. The coloured tiles reveal skip-counting patterns — diagonal stripes, evenly spaced gaps, and visual rhythms that turn abstract multiples into something students can see and remember.",
+      "howToPlay": [
+        "Read the number whose multiples you need to colour.",
+        "Tap individual tiles to colour them, or drag across multiple tiles at once.",
+        "Colour every multiple of that number up to 30 — use skip-counting or your times tables to guide you.",
+        "Press Check when all multiples are coloured and no extra tiles are highlighted."
+      ],
+      "skills": "Hundred Chart builds fluency with skip counting, multiples, and early times-table patterns. Visually spotting the evenly spaced intervals of 2s, 5s, or 7s reinforces the pattern structure of multiplication and lays the groundwork for understanding common multiples and divisibility rules.",
+      "example": "Colouring multiples of 3 up to 30: tiles 3, 6, 9, 12, 15, 18, 21, 24, 27, 30 light up. Students notice every third tile is coloured — the rhythm of 3 becomes visual. Switching to 6 shows every other tile from the 3s is coloured, making 3 and 6 share multiples visible.",
+      "mistakes": "Students often confuse multiples with factors and colour numbers that divide evenly into the target rather than numbers the target divides into. The prompt reminds them to colour numbers you reach by skip-counting, not the divisors of the given number.",
+      "faqs": [
+        { "q": "Which grades is Hundred Chart designed for?", "a": "Grades 2–4, covering skip counting, early multiplication patterns, and multiples — a building block for times-table fluency." },
+        { "q": "Does the chart always go from 1 to 30?", "a": "Yes. The 30-number range is large enough to show two or more full skip-count cycles for every number from 2 to 10, revealing the repeating pattern clearly." },
+        { "q": "Is zero a multiple of every number?", "a": "Mathematically yes, but the chart starts at 1 so students are not prompted to colour zero. The focus is on the positive-integer pattern students see in the grid." }
+      ]
+    }
   },
   "geoboard": {
     "title": "Geoboard",
@@ -790,7 +926,24 @@
     "correct": "Great! There were {n} items — your estimate is close",
     "wrong": "Not close enough, try again",
     "tooHigh": "Too high",
-    "tooLow": "Too low"
+    "tooLow": "Too low",
+    "seo": {
+      "intro": "Estimation Land trains the skill that calculators cannot replace: judging about how many without counting every item. A field of scattered objects appears on screen alongside a visible reference group of ten. Students use that anchor to gauge the total and dial in an estimate — learning that a close answer, not a perfect one, is the goal.",
+      "howToPlay": [
+        "Look at the field of objects and the reference group of 10 shown on the side.",
+        "Use the reference to ask yourself: how many groups of 10 do I see roughly?",
+        "Dial your estimate up or down with the −/+ buttons or by dragging.",
+        "Press Check — the game accepts any estimate within a tolerance of the true count."
+      ],
+      "skills": "Estimation Land builds number sense and proportional reasoning. Regular practice with benchmarking (using a reference group of 10) trains students to judge quantity quickly and confidently — a skill used in measurement, data reading, mental arithmetic, and everyday decision-making.",
+      "example": "A field contains 43 sunflowers. The reference group of 10 sits clearly to the side. Students spot roughly four groups of that size plus a few extra and enter 40 or 45 — both accepted as close. The exact count appears only after they submit.",
+      "mistakes": "Students often try to count every item individually rather than using the reference group as an anchor. The game rewards quick group-based estimates over slow exact counts, and the too-high/too-low feedback nudges students toward anchored reasoning.",
+      "faqs": [
+        { "q": "Which grades is Estimation Land aimed at?", "a": "Grades 3–5, where students develop number sense alongside formal arithmetic and need practice judging magnitude before rounding and approximation." },
+        { "q": "How close does an estimate need to be to count as correct?", "a": "The tolerance is set so that estimates within about 20% of the true value are accepted, reflecting realistic estimation accuracy rather than demanding near-perfect counting." },
+        { "q": "Does the game count every item or just use random totals?", "a": "Items are counted precisely in the background. The field layout changes each round so students cannot memorise answers — they must estimate fresh every time." }
+      ]
+    }
   },
   "factorTree": {
     "title": "Factor Tree",
@@ -806,7 +959,24 @@
     "instructions": "Use the − / + buttons to build the same number of blocks in every tower (or drag up). Build the towers as tall as they can go equally; leftovers stay in the pool. If you take more blocks than there are, the towers turn red. Then press Check",
     "prompt": "Share {n} blocks equally into {d} towers — how many in each?",
     "correct": "Well done! {perTower} in each tower, with {remainder} left in the pool",
-    "wrong": "The towers aren't as equal and tall as they can be yet — try again"
+    "wrong": "The towers aren't as equal and tall as they can be yet — try again",
+    "seo": {
+      "intro": "Division Towers (Long Division) turns the abstract steps of long division into a building challenge. A pool of blocks must be stacked equally into several towers. Students raise every tower to the same height, leaving any indivisible remainder blocks in the pool — making the quotient and remainder visible before the algorithm ever appears on paper.",
+      "howToPlay": [
+        "Read how many blocks are in the pool and how many towers to fill.",
+        "Use −/+ buttons or drag upward to grow every tower simultaneously to the same height.",
+        "Keep raising until the towers are as tall as they can go with no blocks left to equally distribute.",
+        "Leave any remainder blocks in the pool, then press Check."
+      ],
+      "skills": "Division Towers builds the quotitive division model (how many equal groups fit?) and gives long-division's sub-steps a concrete meaning: each floor of the tower corresponds to one cycle of divide-multiply-subtract in the formal algorithm. Students who build the towers first make far fewer errors when they meet written long division.",
+      "example": "Pool: 29 blocks, 4 towers. Each tower grows to 7 (4 × 7 = 28), leaving 1 block in the pool. The towers show 7 per group; the pool shows remainder 1. 29 ÷ 4 = 7 remainder 1.",
+      "mistakes": "Students try to make towers of different heights, giving more to some towers than others. The game turns mismatched towers red, reinforcing that all groups must be equal — the definition of division.",
+      "faqs": [
+        { "q": "Which grades is Division Towers aimed at?", "a": "Grades 3–5, covering the concept of division with remainders and preparing students for multi-digit long division in upper primary." },
+        { "q": "How does this differ from Fair Share (Division Share)?", "a": "Both games model division, but Fair Share uses coin-sharing to build intuition and concept. Division Towers uses a tower-building interface that maps step-by-step onto the written long-division algorithm, bridging the concrete model to the formal procedure." },
+        { "q": "What is the largest divisor the game uses?", "a": "Divisors and dividends scale with the selected grade. In upper grade levels the pool can contain three-digit numbers divided by single-digit or two-digit divisors, matching long-division curriculum expectations." }
+      ]
+    }
   },
   "tangram": {
     "title": "Tangram",

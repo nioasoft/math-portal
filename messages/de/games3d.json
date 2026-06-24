@@ -231,7 +231,24 @@
     "instructions": "Die Waage startet im Gleichgewicht. Entferne von beiden Seiten gleich viele Kristalle (Links −/+, Rechts −/+), bis das ? allein steht und der Balken wieder waagerecht ist. Ungleiches Entfernen senkt die schwerere Seite. Dann auf Prüfen drücken",
     "prompt": "Löse: ? + {b} = {c}",
     "correct": "Super! ? = {x}",
-    "wrong": "Fast! Entferne von beiden Seiten gleich viele, bis das ? allein steht und die Waage im Gleichgewicht ist"
+    "wrong": "Fast! Entferne von beiden Seiten gleich viele, bis das ? allein steht und die Waage im Gleichgewicht ist",
+    "seo": {
+      "intro": "Die Algebra-Waage macht eine Gleichung sichtbar. Die Waage startet im Gleichgewicht: Kristalle auf beiden Seiten, darunter ein Fragezeichen. Schüler entfernen gleich viele Kristalle von beiden Seiten, bis das Fragezeichen allein steht — und das Umkehrprinzip offenbart sich von selbst.",
+      "howToPlay": [
+        "Betrachte die Waage: eine Seite hat ein Fragezeichen plus Kristalle, die andere nur Kristalle.",
+        "Nutze die −/+ Tasten beider Seiten, um gleich viele Kristalle von jeder Seite zu entfernen.",
+        "Fahre fort, bis das Fragezeichen allein steht.",
+        "Wenn der Balken gerade und das Fragezeichen allein ist, drücke Prüfen."
+      ],
+      "skills": "Die Algebra-Waage lehrt das Kernprinzip des Gleichungslösens: was du einer Seite antust, tust du auch der anderen. Diese haptische Erfahrung der Umkehroperation bereitet auf formale Algebra weit besser vor als das Auswendiglernen von Umformungsregeln.",
+      "example": "Die Waage zeigt ? + 4 = 9. Entferne 4 Kristalle von jeder Seite: links wird ?, rechts wird 5. Der Balken nivelliert sich und ? = 5. Schüler spüren die Logik statt zu raten.",
+      "mistakes": "Anfänger entfernen Kristalle manchmal nur von einer Seite. Der Balken kippt sofort und gibt unmittelbares Feedback ohne weiteren Erklärungsbedarf.",
+      "faqs": [
+        { "q": "Welchen Gleichungstyp übt die Algebra-Waage?", "a": "Gleichungen der Form ? + b = c, für Klassen 5–6, wo Schüler erstmals formale Unbekannte und Umkehroperationen begegnen." },
+        { "q": "Wie unterscheidet sich das von der normalen Waage?", "a": "Die Waage fokussiert auf Arithmetik: eine Summe berechnen und mit Gewichten nachbauen. Die Algebra-Waage beginnt bereits im Gleichgewicht und fordert, eine Unbekannte durch gleiche Entnahme zu isolieren — das ist algebraisches Denken." },
+        { "q": "Braucht man Algebra-Vorkenntnisse?", "a": "Nein. Das konkrete Waagen-Modell lässt Schüler das Prinzip der gleichmäßigen Entnahme selbst entdecken, bevor sie auf formale Notation treffen." }
+      ]
+    }
   },
   "balanceScale": {
     "title": "Waage",
@@ -239,7 +256,24 @@
     "instructions": "Lies die Gewichte auf den Würfeln in der linken Schale und addiere sie. Füge der rechten Schale mit den Plus- und Minus-Tasten (1, 2, 5, 10) nummerierte Gewichte hinzu, bis der Balken waagerecht ist — dann sind beide Seiten gleich. Dann auf Prüfen drücken",
     "prompt": "Bring die Waage ins Gleichgewicht",
     "correct": "Super! Beide Seiten ergeben {total}",
-    "wrong": "Fast! Füge rechts Gewichte hinzu oder entferne sie, bis der Balken waagerecht ist"
+    "wrong": "Fast! Füge rechts Gewichte hinzu oder entferne sie, bis der Balken waagerecht ist",
+    "seo": {
+      "intro": "Die Waage zeigt, was eine Gleichung bedeutet, noch bevor Schüler eine aufschreiben. Die linke Schale hält nummerierte Würfel; Schüler fügen Gewichte (1, 2, 5, 10) zur rechten Schale hinzu, bis der Balken exakt waagerecht ist. Weil beide Seiten physisch gleich sein müssen, wird das Gleichheitsprinzip unmittelbar spürbar.",
+      "howToPlay": [
+        "Lies die nummerierten Würfel in der linken Schale und addiere ihre Werte.",
+        "Nutze die +/− Tasten, um Gewichte (1, 2, 5, 10) in der rechten Schale hinzuzufügen oder zu entfernen.",
+        "Justiere, bis der Balken vollkommen waagerecht ist — beide Schalen gleich schwer.",
+        "Drücke Prüfen, sobald die Waage im Gleichgewicht ist."
+      ],
+      "skills": "Die Waage baut das grundlegende Verständnis von Gleichheit auf: beide Seiten eines Gleichheitszeichens müssen den gleichen Wert tragen. Schüler üben mentales Addieren und Zerlegung, während das visuelle Feedback des sich nivellierenden Balkens jede richtige Antwort sofort befriedigend macht.",
+      "example": "Linke Schale: Würfel mit Werten 3, 7 und 5. Summe: 15. Zwei Fünfer und ein Zehner: 20 — zu schwer. Umstellen auf 10 und 5 ergibt 15. Der Balken nivelliert sich.",
+      "mistakes": "Schüler überschreiten manchmal und fügen weiter Gewichte hinzu, wenn der Balken bereits zu weit gekippt ist. Gewichte entfernen (verringern) ist genauso wichtig wie hinzufügen, und das Spiel erfordert beide Richtungen.",
+      "faqs": [
+        { "q": "Für welchen Klassenstufenbereich ist die Waage?", "a": "Klassen 2–5, wo Schüler Addition, mentales Rechnen und frühe Gleichungskonzepte mit zunehmend größeren Zahlen üben." },
+        { "q": "Wie unterscheidet sich das von der Algebra-Waage?", "a": "Die Waage fokussiert auf Arithmetik: Summe berechnen und mit Gewichten replizieren. Die Algebra-Waage beginnt bereits im Gleichgewicht und fordert, eine Unbekannte durch gleiche Entnahme zu isolieren." },
+        { "q": "Gibt es mehrere Lösungen für die rechte Schale?", "a": "Ja. Viele Gewichtskombinationen erreichen dieselbe Summe, und das Spiel akzeptiert jede richtige Kombination — das ermutigt zur Erkundung verschiedener Zerlegungen." }
+      ]
+    }
   },
   "moneyShop": {
     "title": "Geldladen",
@@ -255,7 +289,24 @@
     "instructions": "Baue die Summe mit den − / + Tasten jeder Stelle (Hunderter, Zehner, Einer) oder ziehe über einer Spalte nach oben, um einen Kristall hinzuzufügen. Wenn eine Spalte über 9 voll wird, fährt ein Erzwagen auf der Schiene und bringt das Bündel zur nächsten Stelle. Drücke Prüfen zum Prüfen",
     "prompt": "Addiere: {a} + {b}",
     "correct": "Toll! Die richtige Summe ist {total}",
-    "wrong": "Fast! Prüfe die Ziffern und korrigiere die Summe"
+    "wrong": "Fast! Prüfe die Ziffern und korrigiere die Summe",
+    "seo": {
+      "intro": "Die Additions-Mine stellt Stellenwert-Spalten direkt vor Augen. Schüler füllen Einer-, Zehner- und Hunderter-Spalten mit Erzkristallen, um eine Zielsumme zu bauen. Wenn eine Spalte zehn Kristalle erreicht, fährt ein Erzwagen zur nächsten Spalte — so wird das Übertragen sichtbar statt abstrakt.",
+      "howToPlay": [
+        "Lies die zwei Zahlen oben im Minenschacht.",
+        "Nutze die −/+ Tasten oder ziehe nach oben, um Kristalle in die Einer-, Zehner- und Hunderter-Spalten zu legen.",
+        "Wenn eine Spalte zehn Kristalle erreicht, fährt der Wagen mit dem Bündel zur nächsten Spalte.",
+        "Fülle weiter, bis die Summe dem Ziel entspricht, dann drücke Prüfen."
+      ],
+      "skills": "Die Mine baut ein konkretes Verständnis des Übertragens auf, das dem schriftlichen Addieren zugrunde liegt. Spalten zu füllen und zu sehen, wie zehn Einheiten zu einer in der nächsten Stelle werden, zeigt Schülern, warum der Algorithmus funktioniert.",
+      "example": "47 + 36: 7 Einer und 6 Einer ergeben 13 — der Wagen trägt zehn hinüber, 3 Einer bleiben. 4 Zehner und 3 Zehner plus der übertragene ergibt 8 Zehner. Ergebnis: 83.",
+      "mistakes": "Schüler addieren alle Ziffern oft ohne Stellenwert zu beachten und schreiben 47 + 36 = 713 statt 83. Der Wagen korrigiert diesen Spaltenfehler bevor er zur Gewohnheit wird.",
+      "faqs": [
+        { "q": "Für welche Klassen ist die Additions-Mine?", "a": "Für Klassen 2–4, die zweistellige und dreistellige Addition mit Übertrag üben — der Kern des frühen Grundschul-Kopfrechens." },
+        { "q": "Gibt es immer einen Übertrag?", "a": "Nein. Einige Aufgaben haben keinen Übertrag, andere einen oder zwei. Der Wagen erscheint nur, wenn eine Spalte tatsächlich zehn überschreitet." },
+        { "q": "Wie unterscheidet sich das von der Waage?", "a": "Die Mine baut eine Summe Stelle für Stelle mit Übertrag. Die Waage verlangt, eine Gesamtsumme zu finden und sie durch Gewichte anzupassen — der Fokus liegt auf Gleichheit, nicht auf dem Addieren von Spalten." }
+      ]
+    }
   },
   "subtractionBridge": {
     "title": "Subtraktionsbrücke",
@@ -353,7 +404,24 @@
     "instructions": "Füge mit den − / + Tasten Punkte in jede Box ein (Hunderter, Zehner, Einer) oder ziehe über einer Box nach oben. Erreicht eine Box zehn Punkte, explodieren sie zu einem Punkt in der Box links daneben. Baue die Zahl und drücke Prüfen.",
     "prompt": "Baue die Zahl {target}",
     "correct": "Super! Du hast {target} gebaut",
-    "wrong": "Fast! Prüfe die Boxen und korrigiere die Zahl"
+    "wrong": "Fast! Prüfe die Boxen und korrigiere die Zahl",
+    "seo": {
+      "intro": "Explodierende Punkte machen das Bündeln zu einem Spektakel. Schüler legen Neon-Punkte in Einer-, Zehner- und Hunderter-Boxen, um eine Zielzahl darzustellen. Wenn eine Box zehn Punkte erreicht, explodieren sie zu einem Punkt in der Box links — so wird die Zehnerbasis erlebbar statt nur gelernt.",
+      "howToPlay": [
+        "Lies die Zielzahl über den Boxen.",
+        "Nutze −/+ Tasten oder ziehe nach oben, um Punkte in Einer-, Zehner- oder Hunderter-Box zu legen.",
+        "Wenn eine Box zehn Punkte erreicht, beobachte die Explosion, die sie nach links trägt.",
+        "Justiere, bis die Boxen zusammen die Zielzahl darstellen, dann drücke Prüfen."
+      ],
+      "skills": "Explodierende Punkte bauen tiefes Gespür für den Zehnerwert auf. Statt auswendig zu lernen, dass zehn Einer einen Zehner ergeben, sieht man es als Explosion. Dieses animationsgetriebene Verständnis bereitet auf mehrstellige Addition, Subtraktion und zukünftige Zahlensysteme in anderen Basen vor.",
+      "example": "23 aufbauen: 3 Punkte in Einer, 2 in Zehner. Keine Explosionen. 33 aufbauen: 13 Einer hinzufügen — bei zehn explodiert die Box, 3 Einer bleiben, ein Zehner entsteht. Ergebnis: 3 Zehner und 3 Einer = 33.",
+      "mistakes": "Schüler überfüllen manchmal eine Box und verpassen die Explosion. Das Spiel friert überfüllte Boxen ein, bis die Explosion ausgelöst wird — so wird die Zehn-Grenze verinnerlicht.",
+      "faqs": [
+        { "q": "Für welche Klassen sind Explodierende Punkte?", "a": "Klassen 2–3, wo Schüler Stellenwert-Intuition für zwei- und dreistellige Zahlen aufbauen und die Logik des Übertragens bei der Addition beginnen zu verstehen." },
+        { "q": "Ist das mit James Tantons Exploding-Dots-Projekt verwandt?", "a": "Die Mechanik ist vom selben Zehnerbasis-Punkte-Modell inspiriert, das in der Mathematikdidaktik verbreitet ist. Das Spiel nutzt dieselbe visuelle Sprache, um das Bündeln selbsterklärend zu machen." },
+        { "q": "Wie unterscheidet sich das von der Additions-Mine?", "a": "Explodierende Punkte konzentriert sich auf die Darstellung einer einzelnen Zahl und die Explosionsregel. Die Additions-Mine nutzt dieselben Spalten, aber im Kontext der Addition zweier Zahlen mit dem Wagen-Mechanismus." }
+      ]
+    }
   },
   "factris": {
     "title": "Factris",
@@ -361,7 +429,24 @@
     "instructions": "Ändere die Breite des Stapels mit den − / + Tasten (oder ziehe nach rechts zum Verbreitern, nach links zum Verschmälern), bis die Blöcke ein volles Rechteck bilden, das das leuchtende Regal genau ausfüllt. Passt die Breite nicht, bleibt die oberste Reihe unvollständig — das ist kein sauberes Rechteck. Drücke dann Prüfen.",
     "prompt": "Ordne {area} Blöcke an, um das Regal zu füllen",
     "correct": "Super! {slotW} breit × {height} hoch = {area}",
-    "wrong": "Fast! Ändere die Breite, bis die Blöcke das leuchtende Regal genau ausfüllen"
+    "wrong": "Fast! Ändere die Breite, bis die Blöcke das leuchtende Regal genau ausfüllen",
+    "seo": {
+      "intro": "Factris verleiht dem Multiplizieren und Faktorisieren einen Tetris-ähnlichen Dreh. Eine feste Anzahl von Lagerblöcken muss zu einem perfekten Rechteck geformt werden, das ein leuchtendes Regal exakt ausfüllt. Schüler suchen eine gültige Breite — also einen Teiler der Gesamtzahl — und die Höhe passt sich automatisch an.",
+      "howToPlay": [
+        "Lies die Gesamtanzahl der Blöcke in der Aufgabe.",
+        "Nutze −/+ Tasten oder ziehe links/rechts, um die Breite des Stapels zu ändern.",
+        "Beobachte, wie sich die Höhe anpasst, sodass Breite × Höhe stets der Gesamtzahl entspricht.",
+        "Finde eine Breite, die jede Zelle im leuchtenden Regal ohne Lücken füllt, und drücke Prüfen."
+      ],
+      "skills": "Factris baut Sicherheit mit Faktoren, Vielfachen und dem Zusammenhang zwischen Multiplikation und Fläche auf. Eine gültige Breite zu suchen ist identisch damit, ein Faktorpaar zu finden — Schüler verinnerlichen Faktorpaare durch räumliches Ausprobieren statt durch Auswendiglernen.",
+      "example": "Das Regal fasst 12 Blöcke. Breite 3 ergibt Höhe 4 — das Rechteck ist voll. Breite 5 lässt 2 Blöcke in der obersten Reihe übrig — kein Faktor. Man erkennt schnell: 1, 2, 3, 4, 6, 12 funktionieren; 5, 7, 8, 9, 10, 11 nicht.",
+      "mistakes": "Schüler probieren manchmal alle Zahlen der Reihe nach statt über Faktoren nachzudenken. Die Einsicht, dass Breite × Höhe = Gesamt, ist der Aha-Moment, den das Spiel auslösen soll.",
+      "faqs": [
+        { "q": "Für welche Klassen ist Factris?", "a": "Klassen 3–5, die Faktorpaare, Vielfache und das Flächenmodell der Multiplikation behandeln." },
+        { "q": "Wie unterscheidet sich das von der Multiplikations-Anordnung?", "a": "Die Multiplikations-Anordnung zeigt ein fertiges Gitter und fragt nach dem Gesamtprodukt. Factris gibt das Produkt und fragt nach einer Breite, die ein gültiges Rechteck ergibt — es kehrt das Anordnungsmodell um." },
+        { "q": "Zeigt das Spiel alle Faktorpaare?", "a": "Das Spiel akzeptiert jede gültige Breite. Schüler, die mehrere Breiten ausprobieren, entdecken natürlich alle Faktorpaare der Gesamtzahl." }
+      ]
+    }
   },
   "skipCount": {
     "title": "Skip-Count-Rennen",
@@ -517,7 +602,24 @@
     "instructions": "Lege mit den − / + Tasten dieselbe Anzahl Münzen in jede Truhe (oder ziehe nach oben). Teile so viel wie möglich gleichmäßig auf; der Rest kommt in den Beutel. Dann auf Prüfen tippen",
     "prompt": "Teile {total} Münzen gleichmäßig auf {k} Truhen",
     "correct": "Gut gemacht! {perChest} in jeder Truhe, und {remainder} bleiben im Beutel",
-    "wrong": "Du kannst mehr gleichmäßig verteilen — versuch es noch einmal"
+    "wrong": "Du kannst mehr gleichmäßig verteilen — versuch es noch einmal",
+    "seo": {
+      "intro": "Gerecht Teilen modelliert Division als gleichmäßiges Aufteilen. Schüler verteilen einen Münzstapel auf Schatztruhen — dieselbe Anzahl in jede — und Münzen, die sich nicht gleich teilen lassen, landen im Rest-Beutel. Dadurch werden Quotient und Rest physisch unmissverständlich.",
+      "howToPlay": [
+        "Lies, wie viele Münzen geteilt werden sollen und wie viele Truhen zu füllen sind.",
+        "Nutze −/+ Tasten (oder ziehe nach oben), um gleich viele Münzen in jede Truhe zu legen.",
+        "Teile so viele Münzen wie möglich gleichmäßig auf; der Rest gehört in den Rest-Beutel.",
+        "Drücke Prüfen, wenn jede Truhe gleich viel hat und der Beutel die übrigen Münzen enthält."
+      ],
+      "skills": "Gerecht Teilen baut das partitive Divisionsmodell (Aufteilen in gleiche Gruppen) auf und gibt dem Rest eine konkrete Bedeutung. Schüler hören auf, den Rest als Fehler zu sehen, und beginnen ihn als das zu verstehen, was nach gerechtem Teilen übrig bleibt — ein wesentlicher Schritt vor der schriftlichen Division.",
+      "example": "17 Münzen auf 5 Truhen verteilen: 5 × 3 = 15, also 3 Münzen in jede Truhe und 2 in den Beutel. Der Bildschirm zeigt 5 volle Truhen und einen Beutel mit 2 Münzen: 17 ÷ 5 = 3 Rest 2.",
+      "mistakes": "Schüler versuchen manchmal, alle Münzen aufzuteilen und den Beutel leer zu lassen, indem sie Münzen aufteilen. Das Spiel akzeptiert nur ganze Zahlen pro Truhe und führt so zum Konzept des Rests.",
+      "faqs": [
+        { "q": "Für welche Klassen ist Gerecht Teilen?", "a": "Klassen 3–4, wo Schüler Division als gleichmäßiges Aufteilen lernen und zum ersten Mal Resten begegnen." },
+        { "q": "Wie unterscheidet sich das von Divisions-Türmen?", "a": "Gerecht Teilen nutzt physisches Münzteilen, um das Konzept zu vermitteln. Divisions-Türme wendet dieses Verständnis Schritt für Schritt im formalen schriftlichen Divisionsalgorithmus an." },
+        { "q": "Wählt der Schüler, wie viele Münzen in den Beutel kommen?", "a": "Der Beutel füllt sich automatisch mit dem Rest, nachdem die Truhen gefüllt sind. Schüler steuern nur die Münzanzahl pro Truhe, sodass der Fokus auf dem größten gleichen Teil liegt." }
+      ]
+    }
   },
   "barGraph": {
     "title": "Balkendiagramm-Baumeister",
@@ -549,7 +651,24 @@
     "instructions": "Zähle, wie viele Früchte im Feld sind (Zeilen × Spalten). Nutze die − / + Tasten oder ziehe nach oben, um die Gesamtzahl einzugeben, drücke 'Schneiden', um es Reihe für Reihe zu sehen, und drücke dann Prüfen",
     "prompt": "Wie viele insgesamt?",
     "correct": "{rows} × {cols} = {product}!",
-    "wrong": "Zähle noch einmal — Zeilen × Spalten"
+    "wrong": "Zähle noch einmal — Zeilen × Spalten",
+    "seo": {
+      "intro": "Das Multiplikations-Feld baut das wichtigste mentale Modell für Multiplikation: ein rechteckiges Gitter. Schüler zählen ein Feld mit Früchten, die in Zeilen und Spalten angeordnet sind, und drücken dann Schneiden, um zu sehen, wie das Feld Zeile für Zeile aufgeteilt wird — der Moment, in dem ein Gitter zur wiederholten Addition und dann zu einer Multiplikationstatsache wird.",
+      "howToPlay": [
+        "Betrachte das Früchte-Feld und zähle Zeilen und Spalten.",
+        "Nutze −/+ Tasten oder ziehe nach oben, um die Gesamtzahl einzugeben.",
+        "Drücke Schneiden, um zu sehen, wie das Feld Zeile für Zeile aufgeteilt wird.",
+        "Bestätige, dass Zeilen × Spalten = Gesamtzahl ist, dann drücke Prüfen."
+      ],
+      "skills": "Das Multiplikations-Feld verankert das Kommutativgesetz und das Flächenmodell gleichzeitig. Zu sehen, dass ein 3×4-Feld und ein 4×3-Feld dieselben 12 Früchte enthalten, macht die Kommutativität offensichtlich und bereitet direkt auf Flächenberechnungen vor.",
+      "example": "Eine 5-Zeilen-6-Spalten-Pflanzung hat 30 Orangen. Das Schneiden zeigt 5 Gruppen von je 6: 6, 12, 18, 24, 30. Multiplikation wird zu effizientem Zählen statt zu einer auswendig gelernten Tatsache.",
+      "mistakes": "Schüler zählen manchmal einzelne Früchte, anstatt Zeilen × Spalten zu nutzen. Die Schneid-Animation zeigt die Gruppierstrategie und belohnt den richtigen Ansatz.",
+      "faqs": [
+        { "q": "Für welche Klassen ist das Multiplikations-Feld?", "a": "Klassen 2–3, wo Schüler Multiplikation als wiederholte Addition kennenlernen und das Feld-Modell vor dem Auswendiglernen von Einmaleins brauchen." },
+        { "q": "Wie unterscheidet sich das von Factris?", "a": "Das Multiplikations-Feld zeigt ein fertiges Gitter und fragt nach dem Gesamtprodukt. Factris gibt das Produkt und fragt nach einer Breite, die ein gültiges Rechteck ergibt — es kehrt das Feld-Modell um." },
+        { "q": "Lehrt das Spiel das Kommutativgesetz explizit?", "a": "Nicht durch Benennung, aber implizit: dasselbe Feld kann nach Zeilen oder Spalten gezählt werden, und die Schneid-Animation kann beide Richtungen hervorheben." }
+      ]
+    }
   },
   "fractionSlice": {
     "title": "Bruch-Schneider",
@@ -667,7 +786,24 @@
     "instructions": "Tippe ein Feld an, um es zu färben oder zu leeren, oder ziehe über die Felder, um mehrere hintereinander zu färben. Drücke zum Schluss auf Prüfen. Zurücksetzen leert die Tafel.",
     "prompt": "Färbe alle Vielfachen von {n}",
     "correct": "Gut gemacht! Du hast alle Vielfachen von {n} gefärbt.",
-    "wrong": "Noch nicht. Prüfe, welche Felder fehlen oder zu viel sind, und versuche es erneut."
+    "wrong": "Noch nicht. Prüfe, welche Felder fehlen oder zu viel sind, und versuche es erneut.",
+    "seo": {
+      "intro": "Die Vielfachentafel zeigt ein Raster von 1 bis 30 und bittet, alle Vielfachen einer Zahl einzufärben. Die gefärbten Felder enthüllen Muster des Zählens in Schritten: gleichmäßige Abstände und visuelle Rhythmen, die abstrakte Vielfache zu etwas machen, das man sieht und behält.",
+      "howToPlay": [
+        "Lies die Zahl, deren Vielfache eingefärbt werden sollen.",
+        "Tippe einzelne Felder an oder ziehe über mehrere, um sie gleichzeitig zu färben.",
+        "Färbe alle Vielfachen dieser Zahl bis 30 — nutze Schrittzählen oder das Einmaleins.",
+        "Drücke Prüfen, wenn alle Vielfachen gefärbt sind und kein Extra-Feld leuchtet."
+      ],
+      "skills": "Die Vielfachentafel baut Sicherheit im Schrittzählen, in Vielfachen und frühen Einmaleins-Mustern auf. Das visuelle Erkennen gleichmäßiger Abstände bei 2er, 5er oder 7er Schritten festigt die Musterstruktur der Multiplikation und bereitet auf gemeinsame Vielfache und Teilbarkeitsregeln vor.",
+      "example": "Vielfache von 3 bis 30 färben: Felder 3, 6, 9, 12, 15, 18, 21, 24, 27, 30 leuchten auf. Schüler bemerken: jedes dritte Feld ist gefärbt. Wechsel zu 6 zeigt, dass jedes zweite Feld der 3er-Reihe gefärbt ist.",
+      "mistakes": "Schüler verwechseln manchmal Vielfache und Teiler und färben Zahlen, die die Zielzahl teilen, statt Zahlen, die beim Schrittzählen erreicht werden. Die Aufgabe erinnert: Zahlen färben, die man beim Weiter-Zählen erreicht, nicht die Teiler.",
+      "faqs": [
+        { "q": "Für welche Klassen ist die Vielfachentafel?", "a": "Klassen 2–4, die Schrittzählen, frühe Multiplikationsmuster und Vielfache als Grundlage für das Einmaleins üben." },
+        { "q": "Geht die Tafel immer von 1 bis 30?", "a": "Ja. Der Bereich von 30 Zahlen ist groß genug, um für jede Zahl von 2 bis 10 zwei oder mehr vollständige Schrittzähl-Zyklen zu zeigen." },
+        { "q": "Ist null ein Vielfaches jeder Zahl?", "a": "Mathematisch ja, aber die Tafel beginnt bei 1, sodass Schüler nicht gebeten werden, null einzufärben. Der Fokus liegt auf dem Muster der positiven Zahlen." }
+      ]
+    }
   },
   "geoboard": {
     "title": "Geobrett",
@@ -810,7 +946,24 @@
     "correct": "Super! Es waren {n} Gegenstände — deine Schätzung ist nah dran",
     "wrong": "Noch nicht nah genug, versuch es noch einmal",
     "tooHigh": "Zu hoch",
-    "tooLow": "Zu niedrig"
+    "tooLow": "Zu niedrig",
+    "seo": {
+      "intro": "Schätzland trainiert die Fertigkeit, die kein Taschenrechner ersetzen kann: beurteilen, wie viele es sind, ohne jeden Gegenstand zu zählen. Ein Feld verstreuter Objekte erscheint mit einer sichtbaren Referenzgruppe von zehn. Schüler nutzen diesen Anker, um die Gesamtzahl einzuschätzen.",
+      "howToPlay": [
+        "Sieh dir das Feld und die Referenzgruppe von 10 an der Seite an.",
+        "Frage dich: Wie viele Gruppen von 10 sehe ich ungefähr?",
+        "Stelle deine Schätzung mit den −/+ Tasten oder durch Ziehen ein.",
+        "Drücke Prüfen — das Spiel akzeptiert jede Schätzung innerhalb eines Toleranzbereichs."
+      ],
+      "skills": "Schätzland baut Zahlengefühl und proportionales Denken auf. Regelmäßiges Üben mit einem 10er-Anker trainiert schnelles und sicheres Mengenurteilen — eine Fertigkeit, die beim Messen, Daten lesen, Kopfrechnen und alltäglichen Entscheidungen eingesetzt wird.",
+      "example": "Ein Feld enthält 43 Sonnenblumen. Die Referenzgruppe von 10 ist gut sichtbar. Schüler erkennen etwa vier solcher Gruppen plus ein paar mehr und tippen 40 oder 45 ein — beides akzeptiert. Die genaue Zahl erscheint erst nach dem Absenden.",
+      "mistakes": "Schüler versuchen manchmal, jeden Gegenstand einzeln zu zählen, anstatt die Referenzgruppe als Anker zu nutzen. Das Spiel belohnt schnelle gruppenbasierte Schätzungen, und das Zu-hoch/Zu-niedrig-Feedback lenkt zu ankerbasiertem Denken.",
+      "faqs": [
+        { "q": "Für welche Klassen ist Schätzland?", "a": "Klassen 3–5, die Zahlengefühl neben formaler Arithmetik entwickeln und Mengen beurteilen üben müssen, bevor sie Runden und Näherungsrechnung lernen." },
+        { "q": "Wie nah muss eine Schätzung sein?", "a": "Die Toleranz ist so eingestellt, dass Schätzungen innerhalb von etwa 20 % des wahren Wertes akzeptiert werden." },
+        { "q": "Ändert sich die Anordnung der Gegenstände jede Runde?", "a": "Ja. Das Feldlayout ändert sich jede Runde, sodass Antworten nicht auswendig gelernt werden können." }
+      ]
+    }
   },
   "factorTree": {
     "title": "Faktorbaum",
@@ -826,7 +979,24 @@
     "instructions": "Baue mit den − / + Tasten in jeden Turm dieselbe Anzahl Bausteine (oder ziehe nach oben). Baue die Türme so hoch wie möglich gleichmäßig; der Rest bleibt im Vorrat. Nimmst du mehr Bausteine als vorhanden, werden die Türme rot. Dann auf Prüfen tippen",
     "prompt": "Verteile {n} Bausteine gleichmäßig auf {d} Türme — wie viele in jeden?",
     "correct": "Gut gemacht! {perTower} in jedem Turm, und {remainder} bleiben im Vorrat",
-    "wrong": "Die Türme sind noch nicht so gleich und hoch wie möglich — versuch es noch einmal"
+    "wrong": "Die Türme sind noch nicht so gleich und hoch wie möglich — versuch es noch einmal",
+    "seo": {
+      "intro": "Teilertürme verwandelt die abstrakten Schritte der schriftlichen Division in eine Bauaufgabe. Ein Vorrat an Bausteinen muss gleichmäßig auf mehrere Türme gestapelt werden. Schüler erhöhen jeden Turm auf dieselbe Höhe und lassen unteilbare Reste im Vorrat — so werden Quotient und Rest sichtbar, bevor der Algorithmus auftaucht.",
+      "howToPlay": [
+        "Lies, wie viele Bausteine im Vorrat sind und wie viele Türme gefüllt werden sollen.",
+        "Nutze −/+ Tasten oder ziehe nach oben, um alle Türme auf dieselbe Höhe zu bringen.",
+        "Fahre fort, bis die Türme so hoch wie möglich gleichmäßig stehen.",
+        "Lass Rest-Bausteine im Vorrat und drücke Prüfen."
+      ],
+      "skills": "Teilertürme baut das quotitive Divisionsmodell (wie viele gleiche Gruppen passen hinein?) auf und gibt den Teilschritten der schriftlichen Division eine konkrete Bedeutung. Jedes Stockwerk des Turms entspricht einem Zyklus Teilen-Multiplizieren-Subtrahieren im formalen Algorithmus.",
+      "example": "Vorrat: 29 Bausteine, 4 Türme. Jeder Turm wächst auf 7 (4 × 7 = 28), 1 Baustein bleibt im Vorrat. 29 ÷ 4 = 7 Rest 1.",
+      "mistakes": "Schüler bauen manchmal Türme in unterschiedlichen Höhen. Ungleiche Türme werden rot — das verstärkt, dass alle Gruppen gleich sein müssen: die Definition der Division.",
+      "faqs": [
+        { "q": "Für welche Klassen sind Teilertürme?", "a": "Klassen 3–5, die Division mit Rest üben und auf die mehrstellige schriftliche Division vorbereiten." },
+        { "q": "Wie unterscheidet sich das von Gerecht Teilen?", "a": "Gerecht Teilen nutzt Münzteilen, um den Begriff aufzubauen. Teilertürme wendet dieses Verständnis in einer Turmbau-Oberfläche an, die Schritt für Schritt dem schriftlichen Divisionsalgorithmus entspricht." },
+        { "q": "Welcher maximale Divisor wird im Spiel verwendet?", "a": "Divisoren und Dividenden skalieren mit der gewählten Klassenstufe. In höheren Stufen kann der Vorrat dreistellige Zahlen enthalten, die durch ein- oder zweistellige Divisoren geteilt werden." }
+      ]
+    }
   },
   "tangram": {
     "title": "Tangram",

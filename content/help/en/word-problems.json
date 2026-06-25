@@ -1,36 +1,49 @@
 {
   "slug": "word-problems",
   "title": "Word Problems",
-  "shortDescription": "Word problems are mathematical stories that need to be translated into an equation and solved.",
-  "importance": "Word problems teach how to apply mathematics in reality. They develop reading comprehension and logical thinking.",
+  "shortDescription": "A parent's guide to word problems: how to turn a story into an equation, what the key words really signal, and why the answer should always be sanity-checked.",
+  "importance": "Word problems are where math meets the real world, since they ask a child to read a short story and decide which operation hides inside it. They build reading comprehension, logical thinking, and the habit of planning before calculating, which matters far beyond math class. Many children can compute 15 minus 7 instantly yet freeze when the same sum is wrapped in a sentence about marbles, and that gap is exactly what word problems close. Learning to translate words into numbers prepares kids for budgeting, cooking, schedules, and every situation where math arrives disguised as a question.",
   "howToTeach": [
-    "Teach them to read the problem at least twice",
-    "Ask them to mark the numbers and 'key words'",
-    "Encourage drawing or making a diagram of the problem",
-    "At the end - check if the answer makes sense"
+    "Teach your child to read the whole problem at least twice, once for the story and once to notice exactly what is being asked.",
+    "Have them underline the numbers and circle the key words that hint at the operation, like gave, shared, total, or each.",
+    "Encourage a quick drawing or diagram, because a picture of marbles or rows of chairs often makes the right operation obvious.",
+    "Ask them to say what the question wants before touching any numbers, so they solve the right problem rather than a guessed one.",
+    "Finish every problem by checking whether the answer makes sense in the story, since a child cannot have minus three marbles."
   ],
   "examples": [
     {
-      "problem": "Danny had 15 marbles. He gave 7 marbles to Yossi. How many marbles does Danny have left?",
+      "problem": "Danny had 15 marbles. He gave 7 to Yossi. How many does Danny have left?",
       "solution": "8",
-      "explanation": "Gave = subtraction. 15 - 7 = 8 marbles."
+      "explanation": "The word gave signals taking away, so this is subtraction. 15 minus 7 leaves 8 marbles, and 8 is less than 15, which makes sense."
     },
     {
-      "problem": "Each row has 6 chairs. There are 4 rows. How many chairs are there in total?",
+      "problem": "Each row has 6 chairs and there are 4 rows. How many chairs in total?",
       "solution": "24",
-      "explanation": "Each row × number of rows = multiplication. 6 × 4 = 24 chairs."
+      "explanation": "Equal groups means multiplication: 6 chairs per row times 4 rows. 6 x 4 is 24 chairs, which a drawing of four rows of six confirms."
+    },
+    {
+      "problem": "A bag of 20 candies is shared equally among 5 children. How many does each child get?",
+      "solution": "4",
+      "explanation": "Sharing equally means division. 20 candies divided by 5 children is 20 : 5, which equals 4 candies each."
+    },
+    {
+      "problem": "Maya read 12 pages on Monday and 18 pages on Tuesday. How many pages in all?",
+      "solution": "30",
+      "explanation": "The phrase in all signals combining, so this is addition. 12 plus 18 equals 30 pages read over the two days."
     }
   ],
   "commonMistakes": [
-    "Not reading the entire question to the end",
-    "Confusion with key words (gave = subtraction, received = addition)",
-    "Not checking if the answer makes sense"
+    "Not reading the question all the way to the end, so the child solves only part of the story or answers the wrong thing.",
+    "Misreading the key words, for example treating gave as addition when it means subtraction, or each as adding when it means grouping.",
+    "Jumping straight to numbers without deciding what the question is actually asking for.",
+    "Skipping the final check, so an impossible answer like more candies than the bag started with slips through unnoticed."
   ],
   "parentTips": [
-    "Ask the child to tell you the story in their own words",
-    "Encourage drawing - it helps understanding!",
-    "Ask: 'What are they asking us?' before starting to solve",
-    "After solving, ask: 'Does this make sense?'"
+    "Ask your child to retell the story in their own words first, because if they cannot explain it they cannot yet solve it.",
+    "Encourage drawing every time, since a simple sketch turns a confusing sentence into something the child can count.",
+    "Before any calculating, ask out loud, what are they asking us to find, to lock in the goal.",
+    "After an answer appears, ask, does this make sense, and let the child catch their own mistakes.",
+    "Make up problems from daily life, like splitting snacks or counting change, so word problems feel useful rather than random."
   ],
   "relatedGeneratorHref": "/word-problems",
   "relatedGeneratorTitle": "Word Problems Generator"

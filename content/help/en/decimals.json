@@ -1,35 +1,49 @@
 {
   "slug": "decimals",
   "title": "Decimals",
-  "shortDescription": "Decimals are another way to represent fractions, especially tenths and hundredths.",
-  "importance": "Decimals are everywhere: money (dollars and cents), measurements (meters and centimeters), and scientific calculations.",
+  "shortDescription": "A parent's guide to teaching decimals through money and measurement, lining up the decimal point, and fixing the mistake almost every child makes.",
+  "importance": "Decimals show up everywhere in a child's world, especially money with dollars and cents, and measurements like meters and centimeters. They are really just fractions wearing a different outfit, since one half is the same as 0.5. A child who sees that a decimal and a fraction describe the same value makes a big leap forward. Money is the perfect entry point because every child already understands it, and from there the whole topic feels concrete instead of abstract.",
   "howToTeach": [
-    "Start with money - dollars and cents are decimals!",
-    "Explain that the decimal point separates whole numbers from parts",
-    "Practice reading numbers: 3.45 = three and forty-five hundredths",
-    "In addition and subtraction - always align the decimal points"
+    "Start with money, because dollars and cents are decimals your child already meets every day at the store.",
+    "Explain that the decimal point separates the whole part from the part that is smaller than one whole.",
+    "Practice reading numbers correctly, so 3.45 is read as three and forty-five hundredths, not three point forty-five.",
+    "In addition and subtraction, make the golden rule lining up the decimal points one under the other before doing anything else.",
+    "Show that you can add zeros at the end without changing the value, since 0.5 is exactly the same as 0.50."
   ],
   "examples": [
     {
       "problem": "2.5 + 1.3 = ?",
       "solution": "3.8",
-      "explanation": "Align decimal points: 2.5 + 1.3. Units: 5+3=8. Wholes: 2+1=3. Answer: 3.8"
+      "explanation": "Line up the points. The part after the point: 5 + 3 = 8. The whole part: 2 + 1 = 3. So the answer is 3.8."
     },
     {
       "problem": "5.00 - 2.75 = ?",
       "solution": "2.25",
-      "explanation": "Like calculating with money: 5 dollars minus 2.75 = 2 dollars and 25 cents."
+      "explanation": "Think of it as money: 5 dollars minus 2 dollars and 75 cents leaves 2 dollars and 25 cents, which is 2.25."
+    },
+    {
+      "problem": "Which is bigger, 0.5 or 0.45?",
+      "solution": "0.5",
+      "explanation": "Fill in a zero to compare, so 0.5 becomes 0.50. Now it is clear that 0.50 is bigger than 0.45, just like 50 cents beats 45 cents."
+    },
+    {
+      "problem": "0.3 + 0.7 = ?",
+      "solution": "1",
+      "explanation": "Three tenths plus seven tenths makes ten tenths, and ten tenths is exactly one whole. It is a tidy result that shows how the parts complete a whole."
     }
   ],
   "commonMistakes": [
-    "Not aligning the decimal points",
-    "Treating 0.5 and 0.50 as different numbers",
-    "Forgetting to add zeros for alignment (0.5 = 0.50)"
+    "Not lining up the decimal points in addition and subtraction, so digits get added in the wrong column.",
+    "Thinking that 0.5 and 0.50 are different numbers, even though they are exactly the same value.",
+    "Forgetting to fill in zeros when comparing, which makes it hard to decide which number is larger.",
+    "Reading the number incorrectly, which is a clue that the idea of tenths and hundredths is not yet solid."
   ],
   "parentTips": [
-    "Practice with real money at the store",
-    "Show a ruler with centimeters and millimeters",
-    "Watch the decimal point! It's the most common mistake"
+    "Practice with real money at the store, since handling coins makes decimals concrete and memorable.",
+    "Show a ruler with centimeters and millimeters as another everyday example of parts of a whole.",
+    "Keep an eye on the decimal point, because most decimal mistakes start with lining it up wrong.",
+    "When your child is stuck, translate the problem into dollars and cents and suddenly it makes sense.",
+    "Have your child read numbers out loud, because saying a number correctly usually means they understand it."
   ],
   "relatedGeneratorHref": "/decimals",
   "relatedGeneratorTitle": "Decimals Worksheet Generator"

@@ -1,35 +1,49 @@
 {
   "slug": "series",
   "title": "Arithmetic Sequences",
-  "shortDescription": "Sequences are a series of numbers with a constant pattern. Children learn to identify patterns and continue the sequence.",
-  "importance": "Pattern recognition is a basic thinking skill. Sequences prepare students for algebra and solving complex problems.",
+  "shortDescription": "A parent's guide to teaching children to spot a pattern in a sequence, the difference between an adding sequence and a multiplying one, and how to find the rule.",
+  "importance": "Spotting patterns is one of the most basic thinking skills, far beyond arithmetic. Sequences teach a child to look at a run of numbers, ask what repeats here, and put a rule into words. That is exactly the thinking that will serve them in algebra, in coding, and in problem solving generally. Sequences are also fun, because they hold a moment of discovery, when a child suddenly catches the pattern and feels like a detective who cracked the case. That enjoyment is worth nurturing, since it is a strong engine for learning.",
   "howToTeach": [
-    "Start with simple sequences: 2, 4, 6, 8...",
-    "Encourage the child to find the 'rule' (what do you do to get from one number to the next)",
-    "Practice ascending and descending sequences",
-    "Introduce multiplication sequences only after mastery of addition/subtraction sequences"
+    "Start with simple rising sequences like 2, 4, 6, 8, and let your child feel the rhythm.",
+    "Encourage them to find the rule themselves, asking what you do to get from one number to the next.",
+    "Practice descending sequences too, such as 20, 17, 14, so they do not assume a sequence always goes up.",
+    "Introduce multiplication sequences only after adding and subtracting sequences are solid, otherwise it gets confusing.",
+    "Ask your child to state the rule in words, because anyone who can explain the pattern has truly understood it."
   ],
   "examples": [
     {
       "problem": "3, 6, 9, 12, ?",
       "solution": "15",
-      "explanation": "The rule is +3 each time. 12+3=15."
+      "explanation": "The rule is add 3 each time. So 12 + 3 = 15."
     },
     {
       "problem": "2, 4, 8, 16, ?",
       "solution": "32",
-      "explanation": "The rule is ×2 each time. 16×2=32."
+      "explanation": "Here you do not add, you multiply. The rule is times 2 each time, so 16 × 2 = 32."
+    },
+    {
+      "problem": "20, 17, 14, 11, ?",
+      "solution": "8",
+      "explanation": "This is a descending sequence, and the rule is subtract 3 each time. So 11 - 3 = 8."
+    },
+    {
+      "problem": "1, 4, 9, 16, ?",
+      "solution": "25",
+      "explanation": "A trickier one: these are squares, 1 × 1, 2 × 2, 3 × 3, 4 × 4. The next is 5 × 5 = 25."
     }
   ],
   "commonMistakes": [
-    "Looking for a rule that's too complicated when it's simple",
-    "Confusion between addition and multiplication sequences",
-    "Calculation errors after finding the rule"
+    "Looking for a complicated rule when it is actually simple, and missing the steady amount sitting right in front of them.",
+    "Mixing up an adding sequence with a multiplying one, and trying to add when they should multiply.",
+    "Finding the rule correctly but slipping on the final calculation.",
+    "Assuming a sequence always goes up, and not noticing that the numbers are going down."
   ],
   "parentTips": [
-    "Start with the question: 'What's the difference between the numbers?'",
-    "Encourage the child to explain the pattern in words",
-    "Create your own sequences and let the child find the rule"
+    "Always start with the question, what is the difference between the numbers, since that points to the rule.",
+    "Encourage your child to explain the pattern in their own words.",
+    "Make up your own sequences and let your child find the rule, then swap roles.",
+    "Bring in sequences from life, like house numbers down the street or counting by jumps.",
+    "When a sequence is hard, remind them to start simple, because most sequences are a constant add or subtract."
   ],
   "relatedGeneratorHref": "/series",
   "relatedGeneratorTitle": "Sequences Worksheet Generator"

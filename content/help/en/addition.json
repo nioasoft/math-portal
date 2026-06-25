@@ -1,37 +1,49 @@
 {
   "slug": "addition",
   "title": "Addition",
-  "shortDescription": "Addition is the foundation of all mathematics. Children learn to combine quantities and understand the concept of 'more'.",
-  "importance": "Addition is the first operation children learn and is the basis for all other arithmetic operations. Mastery of addition is needed for shopping, money management, measurements, and more.",
+  "shortDescription": "A parent's guide to teaching addition with hands-on objects, how carrying works in two-digit problems, and the slips that trip up beginners.",
+  "importance": "Addition is the first operation children meet, and it is the foundation for everything that follows, since subtraction, multiplication, and division all lean on it. A child who is confident with addition steps into each new topic on the right foot, while a child who hesitates carries that struggle forward. It also turns up constantly in daily life, working out the total for several items, scoring a game, or counting how many people are coming for dinner. It is worth building real understanding here, not just memorizing answers.",
   "howToTeach": [
-    "Start with tangible objects - blocks, pencils, candies",
-    "Explain that 'addition' is like 'adding' or 'collecting together'",
-    "Practice first with small numbers (up to 10)",
-    "When the child is ready, introduce carrying (regrouping) gradually",
-    "Use a number line as a visual aid"
+    "Start with physical objects like blocks, pencils, or candies so your child can watch the addition actually happen.",
+    "Explain that addition means putting things together, and that the total is always larger than each of the numbers.",
+    "Practice small numbers up to 10 first, and only move on once that feels easy and automatic.",
+    "When your child is ready, introduce carrying gradually, where the units pass 10 and you move a ten over to the next column.",
+    "Use a number line as a visual aid, jumping forward from one spot and counting the steps."
   ],
   "examples": [
     {
       "problem": "7 + 5 = ?",
       "solution": "12",
-      "explanation": "Start from 7, count 5 more: 8, 9, 10, 11, 12. Or: 7 + 3 = 10, plus 2 more = 12."
+      "explanation": "Start at 7 and count on five more: 8, 9, 10, 11, 12. Or use the make-ten trick: 7 + 3 = 10, then add the remaining 2 to get 12."
     },
     {
       "problem": "25 + 38 = ?",
       "solution": "63",
-      "explanation": "Units: 5 + 8 = 13 (write 3, carry 1). Tens: 2 + 3 + 1 = 6. Answer: 63."
+      "explanation": "Units first: 5 + 8 = 13, so write 3 and carry 1. Then tens: 2 + 3 plus the carried 1 makes 6. The answer is 63."
+    },
+    {
+      "problem": "9 + 6 = ?",
+      "solution": "15",
+      "explanation": "A handy trick: complete the 9 up to 10 using 1 from the 6, then 10 plus the remaining 5 gives 15."
+    },
+    {
+      "problem": "40 + 60 = ?",
+      "solution": "100",
+      "explanation": "Adding whole tens is like adding 4 + 6 and then attaching a zero. Since 4 + 6 = 10, the result is 100."
     }
   ],
   "commonMistakes": [
-    "Forgetting to carry - when units exceed 10",
-    "Errors in digit order when writing vertically",
-    "Skipping a number when counting"
+    "Forgetting to carry when the units pass 10, so 25 + 38 comes out as 53 instead of 63.",
+    "Mixing up the order of digits when writing vertically, instead of lining units under units.",
+    "Skipping a number while counting forward, which gives an answer that is one too high or one too low.",
+    "Counting the starting number itself, so 7 + 5 becomes 11 instead of 12."
   ],
   "parentTips": [
-    "Don't rush - give the child time to think",
-    "Encourage using fingers at the beginning - that's okay!",
-    "Turn practice into a game: 'I have 3 apples, you give me 4 more, how many do we have?'",
-    "Celebrate small successes"
+    "Do not rush, and give your child a few seconds to think even when the wait feels long.",
+    "Encourage using fingers at the start, because it is a healthy and legitimate counting tool.",
+    "Turn practice into a game: I have 3 apples and you give me 4 more, how many do we have now?",
+    "Celebrate small wins, since the feeling of progress is the fuel that keeps a child going.",
+    "When there is a mistake, do not correct it right away, just ask are you sure, want to count again?"
   ],
   "relatedGeneratorHref": "/worksheet/math?op=add",
   "relatedGeneratorTitle": "Addition Worksheet Generator"

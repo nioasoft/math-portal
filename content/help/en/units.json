@@ -1,35 +1,49 @@
 {
   "slug": "units",
   "title": "Unit Conversions",
-  "shortDescription": "Unit conversion allows moving between different units of length, weight, and time.",
-  "importance": "Unit conversion is needed in cooking, construction, sports, and travel. It also teaches about the decimal system.",
+  "shortDescription": "A parent's guide to teaching unit conversions, why length works in tens but time works in sixties, and the mistake that flips the direction.",
+  "importance": "Unit conversion is needed in cooking, building, sports, and travel, and it teaches a great deal about the base-ten system. But there is a trap that confuses children: some units work in tens and hundreds, and others do not. Length, weight, and volume are all decimal and friendly, but time runs in sixties, and that is where many children fall down. A child who understands the logic of each scale, rather than just memorizing a table, can convert with confidence and catch their own answers when they come out absurd.",
   "howToTeach": [
-    "Start with basic units and the relationships between them",
-    "Explain that the word 'kilo' = thousand",
-    "Practice multiplying and dividing by 10, 100, 1000",
-    "For time - remember that 60 (not 10) is the important number"
+    "Start with the basic units and the relationships between them: millimeter, centimeter, meter, and kilometer.",
+    "Explain that the word kilo means a thousand, so a kilometer is a thousand meters and a kilogram is a thousand grams.",
+    "Practice multiplying and dividing by 10, 100, and 1000, because that is the heart of every decimal conversion.",
+    "Teach the direction rule: moving to a smaller unit makes the number bigger, and moving to a larger unit makes the number smaller.",
+    "Stress the time exception, since hours and minutes work in sixties rather than tens, which is confusing if you do not point it out."
   ],
   "examples": [
     {
-      "problem": "3 meters = ? cm",
+      "problem": "3 m = ? cm",
       "solution": "300",
-      "explanation": "One meter = 100 cm. 3 meters = 3 × 100 = 300 cm."
+      "explanation": "One meter is 100 cm. We are moving to a smaller unit, so we multiply: 3 × 100 = 300 cm."
     },
     {
       "problem": "2 hours = ? minutes",
       "solution": "120",
-      "explanation": "One hour = 60 minutes. 2 hours = 2 × 60 = 120 minutes."
+      "explanation": "Here time works in sixties, not tens. One hour is 60 minutes, so 2 × 60 = 120 minutes."
+    },
+    {
+      "problem": "2500 g = ? kg",
+      "solution": "2.5",
+      "explanation": "One kilogram is a thousand grams. We are moving to a larger unit, so we divide: 2500 ÷ 1000 = 2.5 kg."
+    },
+    {
+      "problem": "90 minutes = ? hours",
+      "solution": "1.5 hours",
+      "explanation": "Sixties again: 60 minutes make one hour, and the leftover 30 minutes is half an hour. Together that is one and a half hours."
     }
   ],
   "commonMistakes": [
-    "Confusion between units (meter/cm/mm)",
-    "Forgetting that time works in 60s, not 10s",
-    "Multiplying instead of dividing or vice versa"
+    "Mixing up the length units, and being unsure whether meters to centimeters means multiplying by 10 or by 100.",
+    "Forgetting that time runs in sixties rather than tens, and figuring two hours as 100 minutes.",
+    "Multiplying when they should divide or the reverse, because they did not pause to think about which direction they are going.",
+    "Not checking whether the answer makes sense, and ending up with a person 100 meters tall without noticing."
   ],
   "parentTips": [
-    "Show a ruler and meter stick for practical examples",
-    "Practice with a real clock",
-    "Create a conversion chart on the wall"
+    "Show a real ruler and meter stick, and let your child measure objects and convert the results.",
+    "Practice time with a real clock: how many minutes until we leave, how many hours did the drive take.",
+    "Make a colorful conversion chart and hang it on the wall by the homework desk.",
+    "Remind them of the direction rule, where a smaller unit needs more of itself so the number grows.",
+    "Practice the sanity check, because if a strange number pops out, the direction was probably flipped."
   ],
   "relatedGeneratorHref": "/units",
   "relatedGeneratorTitle": "Unit Conversion Worksheet Generator"

@@ -1,35 +1,49 @@
 {
   "slug": "geometry",
   "title": "Geometry",
-  "shortDescription": "Geometry deals with shapes, sizes, and spatial relationships. Children learn to identify shapes and calculate area and perimeter.",
-  "importance": "Geometry develops spatial thinking needed for architecture, design, navigation, and solving engineering problems.",
+  "shortDescription": "A parent's guide to geometry: telling area from perimeter, the formulas for rectangles, triangles, and circles, and the mix-ups that catch most children.",
+  "importance": "Geometry is how children learn to think about shapes, size, and space, and it trains the spatial reasoning later used in design, architecture, navigation, and engineering. It is also the most visible math in daily life, since rooms, windows, gardens, and pizza boxes are all shapes a child can measure and compare. The two big ideas, perimeter as the distance around a shape and area as the space inside it, give kids a way to answer practical questions like how much fence a yard needs or how much carpet covers a floor. Building these ideas with real objects keeps geometry concrete instead of abstract.",
   "howToTeach": [
-    "Start by identifying shapes in the environment - square windows, round clocks",
-    "Explain the difference between area (what's inside) and perimeter (the line around)",
-    "Teach formulas gradually: rectangle, triangle, circle",
-    "Use grid paper for counting before using formulas"
+    "Start by spotting shapes in the home, like square windows, round clock faces, and triangular roof gables, so geometry feels familiar.",
+    "Make the difference between area and perimeter vivid by saying perimeter is the fence around the yard and area is the grass inside it.",
+    "Introduce the formulas gradually, beginning with the rectangle, then the triangle, and only later the circle once the others are solid.",
+    "Use grid paper so the child can count squares to find area before trusting a formula, which proves the formula rather than just stating it.",
+    "Always attach units to answers, reminding the child that perimeter is measured in length while area is measured in squares."
   ],
   "examples": [
     {
-      "problem": "A rectangle with length 5 and width 3. What's the area and perimeter?",
-      "solution": "Area: 15, Perimeter: 16",
-      "explanation": "Area = length × width = 5×3 = 15. Perimeter = 2×(length+width) = 2×(5+3) = 16."
+      "problem": "A rectangle has length 5 and width 3. Find the area and perimeter.",
+      "solution": "Area 15, Perimeter 16",
+      "explanation": "Area is length times width, so 5 x 3 is 15. Perimeter adds all four sides, which is 2 x (5 plus 3), giving 2 x 8 equals 16."
     },
     {
-      "problem": "A triangle with base 8 and height 6. What's the area?",
+      "problem": "A triangle has base 8 and height 6. Find the area.",
       "solution": "24",
-      "explanation": "Triangle area = (base × height) ÷ 2 = (8×6)÷2 = 48÷2 = 24."
+      "explanation": "Triangle area is base times height divided by 2. So 8 x 6 is 48, and 48 divided by 2 is 24."
+    },
+    {
+      "problem": "A square has a side of 7. Find the area and perimeter.",
+      "solution": "Area 49, Perimeter 28",
+      "explanation": "A square has four equal sides. Area is side times side, so 7 x 7 is 49. Perimeter is 4 x 7, which is 28."
+    },
+    {
+      "problem": "A rectangle has area 24 and width 4. Find its length.",
+      "solution": "6",
+      "explanation": "Since area is length times width, work backward by dividing: 24 divided by 4 is 6, so the length is 6."
     }
   ],
   "commonMistakes": [
-    "Confusion between area and perimeter",
-    "Forgetting to divide by 2 for triangle area",
-    "Using the wrong side as the height in triangles"
+    "Confusing area and perimeter, so the child adds the sides when the question asks how much space is inside the shape.",
+    "Forgetting to divide by 2 when finding the area of a triangle and reporting 48 instead of 24.",
+    "Picking the wrong side as the height of a triangle, using a slanted edge instead of the straight up-and-down distance.",
+    "Leaving off the units or mixing them up, writing a perimeter in square units when length units are correct."
   ],
   "parentTips": [
-    "Measure rooms in the house together",
-    "Draw on graph paper and count squares",
-    "Use boxes and Lego for demonstrations"
+    "Measure rooms or furniture in the house together so your child sees area and perimeter solving a real question.",
+    "Draw shapes on graph paper and count the squares inside, which makes the area formula feel earned rather than memorized.",
+    "Use boxes, tiles, and Lego bricks to build shapes the child can hold, turning geometry into something physical.",
+    "Ask whether an answer is a length or a space, because that one question stops most area and perimeter mix-ups.",
+    "Walk around the block or garden and estimate the perimeter, then check it, to connect the idea to the outdoors."
   ],
   "relatedGeneratorHref": "/geometry",
   "relatedGeneratorTitle": "Geometry Worksheet Generator"

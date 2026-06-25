@@ -1,35 +1,49 @@
 {
   "slug": "ratio",
   "title": "Ratio & Proportion",
-  "shortDescription": "Ratio describes the relationship between two quantities. Proportion is an equality between two ratios.",
-  "importance": "Ratio is needed in recipes (doubling quantities), maps (scale), and science. It's preparation for algebra.",
+  "shortDescription": "A parent's guide to teaching ratio and proportion through recipes and maps, finding the missing term, and the common slip of adding instead of multiplying.",
+  "importance": "Ratio turns up in recipes when you scale quantities, in maps when you make sense of a scale, and in science. It is also direct preparation for algebra, because the idea of keeping two sides in balance shows up there again and again. A child who understands ratio learns an important way of thinking, that things can grow together without losing the relationship between them. The best way to teach it is through recipes, where the ratio is concrete: every two eggs for a certain amount of flour, and when you double the batch you double both.",
   "howToTeach": [
-    "Start with concrete examples: 'For every 2 apples there are 3 bananas'",
-    "Explain that an equal ratio is maintained when multiplying or dividing both sides",
-    "Practice finding the missing term in a proportion",
-    "Show the cross-multiplication method"
+    "Start with concrete examples, such as for every 2 apples there are 3 bananas, and show it with real fruit.",
+    "Explain that the ratio stays the same when you multiply or divide both sides by the same number.",
+    "Practice finding the missing term, asking what has to go in place of the question mark to keep the ratio.",
+    "Show the cross-multiplication method once you progress, but only after the basic understanding is in place.",
+    "Always connect it to a recipe or a map, so the ratio is something real rather than an abstract exercise."
   ],
   "examples": [
     {
-      "problem": "2:3 = 6:?",
+      "problem": "2 : 3 = 6 : ?",
       "solution": "9",
-      "explanation": "From 2 to 6 we multiplied by 3. So 3 also needs to be multiplied by 3: 3×3=9."
+      "explanation": "From 2 to 6 we multiplied by 3. To keep the ratio, the 3 must also be multiplied by 3, so 3 × 3 = 9."
     },
     {
-      "problem": "4:5 = ?:15",
+      "problem": "4 : 5 = ? : 15",
       "solution": "12",
-      "explanation": "From 5 to 15 we multiplied by 3. So 4 also needs to be multiplied by 3: 4×3=12."
+      "explanation": "From 5 to 15 we multiplied by 3. So the 4 must also be multiplied by 3, giving 4 × 3 = 12."
+    },
+    {
+      "problem": "A recipe for 4 people needs 2 eggs. How many eggs for 8 people?",
+      "solution": "4",
+      "explanation": "From 4 people to 8 we multiplied by 2, so the eggs double too. 2 × 2 = 4 eggs."
+    },
+    {
+      "problem": "On a map, 1 cm stands for 100 m. How far do 3 cm stand for?",
+      "solution": "300 m",
+      "explanation": "From 1 to 3 we multiplied by 3, so the real distance multiplies by 3 as well. 100 × 3 = 300 m."
     }
   ],
   "commonMistakes": [
-    "Adding instead of multiplying",
-    "Forgetting to do the same operation to both sides",
-    "Errors in identifying which number changed"
+    "Adding instead of multiplying, so for a ratio that doubles, the child adds a fixed number to both sides.",
+    "Changing only one side, and forgetting that the ratio stays the same only when both sides change together.",
+    "Mixing up which number changed, and not working out how many times the ratio grew.",
+    "Reaching for a complicated method when the ratio is simple and clear."
   ],
   "parentTips": [
-    "Practice with recipes: 'If we need 2 eggs for 4 people, how many for 8?'",
-    "Use cards or objects to demonstrate ratios",
-    "Emphasize that the ratio stays constant!"
+    "Practice with recipes: if you need 2 eggs for 4 people, how many for 8, and how many for 6?",
+    "Use objects or cards to show a ratio in a concrete, hands-on way.",
+    "Stress the principle that the ratio stays fixed while the quantities grow together.",
+    "Connect it to maps, since a scale is a great ratio that children enjoy.",
+    "Remind them to check: if we multiplied one side by three, the other side must be multiplied by three too."
   ],
   "relatedGeneratorHref": "/ratio",
   "relatedGeneratorTitle": "Ratio Worksheet Generator"

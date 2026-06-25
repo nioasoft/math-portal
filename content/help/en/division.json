@@ -1,35 +1,49 @@
 {
   "slug": "division",
   "title": "Division",
-  "shortDescription": "Division is the inverse operation of multiplication. Children learn to divide a quantity into equal parts.",
-  "importance": "Division is needed for fair sharing, calculating averages, and understanding fractions and percentages later on.",
+  "shortDescription": "A parent's guide to division: from sharing candy fairly to long division, how it connects to multiplication, and the spots where most kids get tripped up.",
+  "importance": "Division is how children learn to split a quantity into equal parts, and it is the operation behind fair sharing, averages, and the fractions and percentages that come later. A child who is comfortable dividing can answer real questions like how many cookies each friend gets, how fast a car is going per hour, or how to split a bill. Because division is the mirror image of multiplication, a shaky times table makes division feel impossible, so the two are best learned hand in hand rather than as separate topics.",
   "howToTeach": [
-    "Start with physical division: 'Divide 12 candies among 3 children'",
-    "Show the connection to multiplication: if 3×4=12 then 12÷3=4",
-    "Practice division without remainders before moving to division with remainders",
-    "Explain long division gradually with simple numbers"
+    "Begin with hands-on sharing, like dividing 12 candies evenly among 3 children, so the child sees division as splitting into equal groups.",
+    "Show the tight link to multiplication by pointing out that if 3 x 4 is 12, then 12 divided by 3 must be 4.",
+    "Master division without remainders first, and only then introduce remainders so the new idea does not pile onto a shaky foundation.",
+    "Teach long division one small step at a time using friendly numbers before moving to larger or messier ones.",
+    "Always finish by checking the answer through multiplication, which turns checking into a habit rather than an afterthought."
   ],
   "examples": [
     {
-      "problem": "24 ÷ 6 = ?",
+      "problem": "24 : 6 = ?",
       "solution": "4",
-      "explanation": "How many times does 6 go into 24? 6×4=24, so 24÷6=4."
+      "explanation": "Ask how many times 6 fits into 24. Since 6 x 4 is 24, the answer is 4, and you can confirm it by multiplying 6 by 4 back to 24."
     },
     {
-      "problem": "84 ÷ 7 = ?",
+      "problem": "15 : 4 = ?",
+      "solution": "3 remainder 3",
+      "explanation": "4 goes into 15 three times, since 4 x 3 is 12, and that leaves 15 minus 12 which is 3. So the answer is 3 with a remainder of 3."
+    },
+    {
+      "problem": "84 : 7 = ?",
       "solution": "12",
-      "explanation": "Long division: 7 goes into 8 once (7), remainder 1. Bring down 4, get 14. 7 goes into 14 twice (14). Answer: 12."
+      "explanation": "Using long division, 7 goes into 8 once with 1 left over. Bring down the 4 to make 14, and 7 goes into 14 twice. Reading the digits gives 12."
+    },
+    {
+      "problem": "96 : 4 = ?",
+      "solution": "24",
+      "explanation": "4 goes into 9 twice, since 4 x 2 is 8, leaving 1. Bring down the 6 to make 16, and 4 goes into 16 four times, giving the answer 24."
     }
   ],
   "commonMistakes": [
-    "Confusion between dividend and divisor",
-    "Forgetting to check the answer by multiplying",
-    "Errors in long division due to skipping steps"
+    "Mixing up the dividend and the divisor, so the child divides 6 by 24 instead of 24 by 6 and gets a confusing answer.",
+    "Forgetting to check the result by multiplying, which is the fastest way to catch a wrong answer before moving on.",
+    "Making long division errors by skipping the bring-down step or losing track of which digit they are working on.",
+    "Dropping the remainder or writing it as part of the quotient, so 15 divided by 4 comes out as 33 instead of 3 remainder 3."
   ],
   "parentTips": [
-    "Always check with multiplication: if 24÷6=4, then 6×4 must equal 24",
-    "Practice by dividing candies or toys",
-    "In long division - work step by step, slowly"
+    "Always check together with multiplication, because if 24 divided by 6 is 4, then 6 times 4 has to equal 24.",
+    "Practice with real objects like candies, coins, or toys so the child can physically deal them into equal piles.",
+    "In long division, slow right down and work one step at a time, since rushing is where most mistakes creep in.",
+    "Connect division to the times table your child already knows, treating each division as a missing-number multiplication.",
+    "Use everyday moments, such as splitting a pizza or sharing snacks, to show that division is something we actually do."
   ],
   "relatedGeneratorHref": "/worksheet/math?op=div",
   "relatedGeneratorTitle": "Division Worksheet Generator"

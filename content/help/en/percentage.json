@@ -1,35 +1,49 @@
 {
   "slug": "percentage",
   "title": "Percentages",
-  "shortDescription": "Percentages are fractions with a denominator of 100. They allow easy comparison between different quantities.",
-  "importance": "Percentages are everywhere: discounts in stores, test scores, bank interest, and statistics in the news.",
+  "shortDescription": "A parent's guide to percentages: why percent means out of one hundred, the easy 10 percent trick, the link to fractions, and the errors that trip kids up with discounts.",
+  "importance": "Percentages are everywhere a child looks, from the sale signs in shops to test scores, phone batteries, bank interest, and the statistics on the news. A percentage is just a fraction with a denominator of 100, which makes it a shared language for comparing very different amounts. A child who can find 10 percent in their head can quickly estimate a tip, a discount, or how much of a goal is done. Because percentages tie directly to fractions and decimals, mastering them strengthens those topics too, and they remain one of the most useful pieces of math an adult uses every single week.",
   "howToTeach": [
-    "Explain that 'percent' means 'out of one hundred'",
-    "Start with simple percentages: 50% = half, 25% = quarter",
-    "Show the connection to fractions: 50% = 50/100 = 1/2",
-    "Practice calculating 10% first (divide by 10) then multiply as needed"
+    "Explain that percent literally means out of one hundred, so 30 percent is just 30 out of every 100.",
+    "Anchor a few benchmark values first, such as 50 percent being a half, 25 percent a quarter, and 10 percent one tenth.",
+    "Show the bridge to fractions and decimals, demonstrating that 50 percent equals 50/100 equals 1/2 equals 0.5.",
+    "Teach the 10 percent shortcut by simply dividing by 10, then build other percentages from it, since 20 percent is double 10 percent.",
+    "Practice with real prices and discounts so the child sees percentages as a tool for shopping, not just a worksheet exercise."
   ],
   "examples": [
     {
       "problem": "25% of 80 = ?",
       "solution": "20",
-      "explanation": "25% is a quarter. 80÷4 = 20. Or: 80 × 0.25 = 20."
+      "explanation": "25 percent is a quarter, so divide 80 by 4 to get 20. You can also multiply 80 by 0.25, which also gives 20."
     },
     {
       "problem": "15% of 200 = ?",
       "solution": "30",
-      "explanation": "10% of 200 = 20. 5% = 10. Total 15% = 30."
+      "explanation": "Find 10 percent of 200 by dividing by 10, which is 20. Half of that is 5 percent, which is 10. Add them: 20 plus 10 is 30."
+    },
+    {
+      "problem": "A 90 shirt has a 20% discount. What is the new price?",
+      "solution": "72",
+      "explanation": "10 percent of 90 is 9, so 20 percent is 18. Subtract the discount from the original: 90 minus 18 equals 72."
+    },
+    {
+      "problem": "Maya scored 18 out of 20 on a test. What percent is that?",
+      "solution": "90%",
+      "explanation": "Turn 18 out of 20 into a fraction and scale it to 100. Both numbers times 5 gives 90 out of 100, which is 90 percent."
     }
   ],
   "commonMistakes": [
-    "Dividing by 100 instead of multiplying by the percentage",
-    "Forgetting to convert the percentage to a fraction or decimal",
-    "Confusion when calculating discounts (the new price, not the discount)"
+    "Dividing by 100 when they should multiply by the percentage, so 25 percent of 80 comes out tiny instead of 20.",
+    "Forgetting to convert the percentage into a fraction or decimal before calculating, and plugging in the raw number 25 by mistake.",
+    "Giving the discount amount when the question asks for the new price, answering 18 instead of the final 72.",
+    "Confusing percent of one number with percent of another, for example finding 20 percent of the discounted price instead of the original."
   ],
   "parentTips": [
-    "Practice while shopping: 'There's a 20% discount, how much will we save?'",
-    "Show a conversion table: 10%=0.1, 25%=0.25, 50%=0.5",
-    "Always calculate 10% first - it's the easiest!"
+    "Practice while shopping by asking, there is a 20 percent discount, how much do we save and what do we pay.",
+    "Show a small conversion table on the fridge, with entries like 10 percent equals 0.1, 25 percent equals 0.25, and 50 percent equals 0.5.",
+    "Always find 10 percent first, because it is the easiest anchor and almost every other percentage builds from it.",
+    "Use battery levels, download bars, and game progress, since these are percentages your child already watches every day.",
+    "Ask whether the answer is reasonable, reminding them that a discounted price should always be less than the original."
   ],
   "relatedGeneratorHref": "/percentage",
   "relatedGeneratorTitle": "Percentage Worksheet Generator"

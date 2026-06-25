@@ -1,35 +1,49 @@
 {
   "slug": "subtraction",
   "title": "Subtraction",
-  "shortDescription": "Subtraction teaches children to understand differences and what's missing. It's the inverse operation of addition.",
-  "importance": "Subtraction is needed in daily life: calculating change when shopping, understanding how much is missing to reach a goal, and finding differences between quantities.",
+  "shortDescription": "A parent's guide to teaching subtraction, how borrowing works when the units run short, and the most common mistake with larger numbers.",
+  "importance": "Subtraction is needed every day, working out change at the store, knowing how much is left to reach a goal, or finding the difference between two numbers. It is also the mirror image of addition, and a child who understands the link between them saves half the work. The big hurdle in subtraction is borrowing, and a child who truly understands it stops being afraid of large numbers. It is worth investing here, because strong subtraction is a requirement for long division and the more complex work that comes later.",
   "howToTeach": [
-    "Start with a physical demonstration - 'There were 7 apples, we ate 3, how many are left?'",
-    "Explain that 'subtraction' is like 'taking away' or 'removing'",
-    "Show the connection between addition and subtraction (if 3+4=7 then 7-4=3)",
-    "When reaching regrouping (borrowing), explain using tens and units"
+    "Start with a physical demonstration: there were 7 apples, we ate 3, how many are left?",
+    "Explain that subtraction means taking away, and that the result is always smaller than the number you started with.",
+    "Show the link to addition, since if 3 + 4 = 7 then 7 - 4 = 3, the same story told backwards.",
+    "When you reach borrowing, explain it through tens and units, borrowing one ten and turning it into ten units.",
+    "Practice subtraction without borrowing first, and only move to borrowing once that feels solid."
   ],
   "examples": [
     {
       "problem": "12 - 5 = ?",
       "solution": "7",
-      "explanation": "Start from 12, count down 5: 11, 10, 9, 8, 7. Or: 12 - 2 = 10, minus 3 more = 7."
+      "explanation": "Start at 12 and count down five: 11, 10, 9, 8, 7. Or take 12 - 2 = 10, then step down 3 more to reach 7."
     },
     {
       "problem": "53 - 27 = ?",
       "solution": "26",
-      "explanation": "Units: 3 - 7 not possible, borrow from tens. 13 - 7 = 6. Tens: 4 - 2 = 2. Answer: 26."
+      "explanation": "In the units, 3 - 7 is not possible, so borrow from the tens. Now 13 - 7 = 6. In the tens, 4 - 2 = 2. The answer is 26."
+    },
+    {
+      "problem": "100 - 1 = ?",
+      "solution": "99",
+      "explanation": "This is chain borrowing, where you keep borrowing past the zeros. Many children stumble here because you have to borrow several times in a row. The answer is 99."
+    },
+    {
+      "problem": "40 - 15 = ?",
+      "solution": "25",
+      "explanation": "In the units, 0 - 5 is not possible, so borrow from the tens. Then 10 - 5 = 5. In the tens, 3 - 1 = 2. The answer is 25."
     }
   ],
   "commonMistakes": [
-    "Subtracting the smaller from the larger in all cases (instead of regrouping)",
-    "Forgetting to regroup (borrow) from the tens place",
-    "Confusion in number order - subtraction is not commutative!"
+    "Always subtracting the smaller digit from the larger one, even when borrowing is needed, so 53 - 27 wrongly becomes 34.",
+    "Forgetting the borrow, and not taking 1 away from the tens digit after borrowing from it.",
+    "Getting the order mixed up and trying to subtract the larger number from the smaller one, since subtraction is not reversible like addition.",
+    "Getting stuck borrowing through zeros, as in 100 minus a number, where you have to borrow several times."
   ],
   "parentTips": [
-    "Use games: 'You had 10 points, you lost 3, how many are left?'",
-    "Practice with money - it's tangible and interesting",
-    "If the child gets confused with regrouping, go back to tens and units with blocks"
+    "Use games: you had 10 points and lost 3, how many are left now?",
+    "Practice with money, since working out change is concrete and genuinely interesting to a child.",
+    "If your child gets confused with borrowing, go back to blocks for tens and units and physically break a ten into ten.",
+    "Remind them to check with addition: if 53 - 27 = 26, then 26 + 27 must come back to 53.",
+    "Give it time, because borrowing has several steps, and speed only comes once the understanding is steady."
   ],
   "relatedGeneratorHref": "/worksheet/math?op=sub",
   "relatedGeneratorTitle": "Subtraction Worksheet Generator"

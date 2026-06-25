@@ -1,36 +1,49 @@
 {
   "slug": "word-problems",
   "title": "Problemas de Palabras",
-  "shortDescription": "Los problemas de palabras son historias matematicas que necesitan traducirse a una ecuacion y resolverse.",
-  "importance": "Los problemas de palabras ensenan como aplicar las matematicas en la realidad. Desarrollan la comprension lectora y el pensamiento logico.",
+  "shortDescription": "Guia para padres sobre los problemas de palabras: como convertir una historia en una operacion, que indican de verdad las palabras clave y por que siempre conviene revisar que la respuesta tenga sentido.",
+  "importance": "Los problemas de palabras son donde las matematicas se encuentran con la vida real, ya que piden al nino leer una pequena historia y decidir que operacion se esconde dentro. Desarrollan la comprension lectora, el pensamiento logico y el habito de planear antes de calcular, algo que sirve mucho mas alla de la clase. Muchos ninos resuelven 15 menos 7 al instante pero se paralizan cuando esa misma resta viene envuelta en una historia de canicas, y cerrar esa brecha es justo lo que logran estos problemas.",
   "howToTeach": [
-    "Ensenales a leer el problema al menos dos veces",
-    "Pideles que marquen los numeros y las 'palabras clave'",
-    "Anima a dibujar o hacer un diagrama del problema",
-    "Al final, verifica si la respuesta tiene sentido"
+    "Ensena a tu hijo a leer todo el problema al menos dos veces, una para la historia y otra para fijarse en que es exactamente lo que se pregunta.",
+    "Pidele que subraye los numeros y encierre las palabras clave que sugieren la operacion, como dio, repartio, en total o cada uno.",
+    "Anima a hacer un dibujo o diagrama rapido, porque una imagen de canicas o de filas de sillas suele dejar clara la operacion correcta.",
+    "Pidele que diga que pregunta el problema antes de tocar los numeros, para que resuelva el problema verdadero y no uno adivinado.",
+    "Termina cada problema revisando si la respuesta tiene sentido en la historia, porque un nino no puede tener menos tres canicas."
   ],
   "examples": [
     {
-      "problem": "Daniel tenia 15 canicas. Le dio 7 canicas a Jose. Cuantas canicas le quedan a Daniel?",
+      "problem": "Daniel tenia 15 canicas. Le dio 7 a Jose. Cuantas le quedan a Daniel?",
       "solution": "8",
-      "explanation": "Dio = resta. 15 - 7 = 8 canicas."
+      "explanation": "La palabra dio indica quitar, asi que esto es una resta. 15 menos 7 deja 8 canicas, y 8 es menos que 15, lo cual tiene sentido."
     },
     {
-      "problem": "Cada fila tiene 6 sillas. Hay 4 filas. Cuantas sillas hay en total?",
+      "problem": "Cada fila tiene 6 sillas y hay 4 filas. Cuantas sillas hay en total?",
       "solution": "24",
-      "explanation": "Cada fila x numero de filas = multiplicacion. 6 x 4 = 24 sillas."
+      "explanation": "Grupos iguales significa multiplicacion: 6 sillas por fila por 4 filas. 6 por 4 es 24 sillas, lo que confirma un dibujo de cuatro filas de seis."
+    },
+    {
+      "problem": "Una bolsa de 20 caramelos se reparte en partes iguales entre 5 ninos. Cuantos le tocan a cada uno?",
+      "solution": "4",
+      "explanation": "Repartir en partes iguales significa dividir. 20 caramelos entre 5 ninos es 20 : 5, que da 4 caramelos para cada uno."
+    },
+    {
+      "problem": "Maya leyo 12 paginas el lunes y 18 el martes. Cuantas paginas leyo en total?",
+      "solution": "30",
+      "explanation": "La frase en total indica juntar, asi que esto es una suma. 12 mas 18 es igual a 30 paginas leidas en los dos dias."
     }
   ],
   "commonMistakes": [
-    "No leer toda la pregunta hasta el final",
-    "Confusion con palabras clave (dio = resta, recibio = suma)",
-    "No verificar si la respuesta tiene sentido"
+    "No leer la pregunta hasta el final, de modo que el nino resuelve solo una parte de la historia o responde algo distinto.",
+    "Leer mal las palabras clave, por ejemplo tomar dio como suma cuando significa resta, o cada uno como sumar cuando indica agrupar.",
+    "Lanzarse directo a los numeros sin decidir que es lo que la pregunta pide en realidad.",
+    "Saltarse la revision final, de modo que una respuesta imposible, como mas caramelos de los que tenia la bolsa, pasa sin que nadie la note."
   ],
   "parentTips": [
-    "Pide al nino que te cuente la historia con sus propias palabras",
-    "Anima a dibujar, ayuda a entender!",
-    "Pregunta: 'Que nos estan pidiendo?' antes de empezar a resolver",
-    "Despues de resolver, pregunta: 'Tiene sentido esto?'"
+    "Pide a tu hijo que vuelva a contar la historia con sus propias palabras, porque si no puede explicarla todavia no puede resolverla.",
+    "Anima a dibujar siempre, ya que un boceto sencillo convierte una frase confusa en algo que el nino puede contar.",
+    "Antes de calcular, pregunta en voz alta que es lo que nos piden encontrar, para dejar claro el objetivo.",
+    "Despues de que aparezca una respuesta, pregunta si esto tiene sentido y deja que el nino atrape sus propios errores.",
+    "Inventen problemas de la vida diaria, como repartir snacks o contar el cambio, para que se sientan utiles y no inventados al azar."
   ],
   "relatedGeneratorHref": "/word-problems",
   "relatedGeneratorTitle": "Generador de Problemas de Palabras"

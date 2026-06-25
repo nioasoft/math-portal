@@ -1,35 +1,49 @@
 {
   "slug": "fractions",
   "title": "Fracciones",
-  "shortDescription": "Las fracciones representan partes de un todo. Los ninos aprenden a leer, comparar y realizar operaciones con fracciones.",
-  "importance": "Las fracciones son la base para entender porcentajes, razones y matematicas avanzadas. Tambien son utiles en la cocina, las mediciones y la vida diaria.",
+  "shortDescription": "Guia para padres sobre las fracciones: que significan de verdad el numero de arriba y el de abajo, como comparar y sumar, las fracciones equivalentes y los errores clasicos que conviene atajar pronto.",
+  "importance": "Las fracciones son donde muchos ninos sienten por primera vez que las matematicas se vuelven raras, y sin embargo estan debajo de los porcentajes, las razones, los decimales y casi todo lo que viene despues. Una fraccion es simplemente una parte de un todo, y un nino que se imagina media pizza o tres cuartos de una barra de chocolate entiende la idea mucho mejor que uno que solo ve simbolos. Tambien viven en lo cotidiano: en recetas con media taza, en reglas marcadas y en cualquier momento en que algo se reparte de forma desigual.",
   "howToTeach": [
-    "Empieza con division fisica: la mitad de un pastel, un cuarto de pizza",
-    "Explica que el denominador (abajo) indica en cuantas partes dividimos, y el numerador (arriba) indica cuantas partes tomamos",
-    "Practica comparando fracciones con el mismo denominador",
-    "Solo despues de una comprension solida, pasa al denominador comun"
+    "Empieza con objetos fisicos como medio pastel o un cuarto de pizza para que el nino conecte el simbolo con algo que puede ver y tocar.",
+    "Explica con claridad que el numero de abajo, el denominador, dice en cuantas partes iguales se corto el todo, mientras que el de arriba, el numerador, dice cuantas de esas partes tomamos.",
+    "Practica primero comparando fracciones con el mismo denominador, ya que comparar 3/8 con 5/8 es solo comparar los numeros de arriba.",
+    "Muestra fracciones equivalentes con dibujos, demostrando que 1/2, 2/4 y 4/8 pintan exactamente la misma parte del todo.",
+    "Solo cuando la idea este firme pasa al denominador comun, construyendo sobre la comprension en lugar de correr hacia los procedimientos."
   ],
   "examples": [
     {
       "problem": "1/4 + 2/4 = ?",
       "solution": "3/4",
-      "explanation": "Cuando los denominadores son iguales, solo suma los numeradores: 1+2=3. El denominador sigue siendo 4."
+      "explanation": "Cuando los denominadores coinciden, solo sumas los numeros de arriba: 1 mas 2 es 3. El numero de abajo sigue siendo 4, asi que la respuesta es 3/4."
     },
     {
       "problem": "1/2 + 1/4 = ?",
       "solution": "3/4",
-      "explanation": "Encuentra un denominador comun: 1/2 = 2/4. Ahora 2/4 + 1/4 = 3/4."
+      "explanation": "Primero iguala los denominadores reescribiendo 1/2 como 2/4. Ahora suma 2/4 mas 1/4, que da 3/4 porque 2 mas 1 es 3."
+    },
+    {
+      "problem": "Cual es mayor, 2/3 o 3/4?",
+      "solution": "3/4",
+      "explanation": "Dales un denominador comun de 12: 2/3 se vuelve 8/12 y 3/4 se vuelve 9/12. Como 9 es mas que 8, la fraccion mayor es 3/4."
+    },
+    {
+      "problem": "Simplifica 4/8",
+      "solution": "1/2",
+      "explanation": "Divide arriba y abajo por el mismo numero. Tanto 4 como 8 se dividen entre 4, lo que da 1 sobre 2, asi que 4/8 se simplifica a 1/2."
     }
   ],
   "commonMistakes": [
-    "Sumar denominadores junto con los numeradores (1/2+1/3 NO es 2/5!)",
-    "Olvidar simplificar la respuesta final",
-    "Errores al encontrar un denominador comun"
+    "Sumar los denominadores junto con los numeradores, de modo que 1/2 mas 1/3 se escribe mal como 2/5 en lugar del 5/6 correcto.",
+    "Olvidar simplificar la respuesta final y dejar 4/8 en la hoja cuando deberia reducirse a 1/2.",
+    "Equivocarse al buscar un denominador comun, muchas veces cambiando el numero de abajo pero olvidando ajustar el de arriba.",
+    "Pensar que una fraccion con el numero de abajo mas grande siempre es mayor, asi que el nino supone que 1/8 es mas que 1/2."
   ],
   "parentTips": [
-    "Usa pizza, pastel o chocolate como ejemplos",
-    "Dibuja circulos y dividelos en partes",
-    "Muestra fracciones equivalentes: 1/2 = 2/4 = 4/8"
+    "Usen la comida que al nino le gusta, como pizza, pastel o una barra de chocolate, para que las fracciones se sientan ricas y no abstractas.",
+    "Dibujen circulos o barras en papel y pinten las partes juntos, porque ver la cantidad vale mas que memorizar la regla.",
+    "Muestren fracciones equivalentes lado a lado, por ejemplo que 1/2 es igual a 2/4 es igual a 4/8, para desarrollar flexibilidad.",
+    "Cocinen juntos y dejen que el nino mida media taza y un cuarto de taza, convirtiendo la cocina en un laboratorio de fracciones.",
+    "Cuando una respuesta parezca rara, pregunten si tiene sentido como dibujo, porque la mitad mas un poco mas no puede ser menos que la mitad."
   ],
   "relatedGeneratorHref": "/fractions",
   "relatedGeneratorTitle": "Generador de Hojas de Fracciones"

@@ -1,36 +1,49 @@
 {
   "slug": "word-problems",
   "title": "Textaufgaben",
-  "shortDescription": "Textaufgaben sind mathematische Geschichten, die in eine Gleichung übersetzt und gelöst werden müssen.",
-  "importance": "Textaufgaben lehren, wie man Mathematik in der Realität anwendet. Sie entwickeln Leseverständnis und logisches Denken.",
+  "shortDescription": "Ein Elternratgeber zu Textaufgaben: wie man eine Geschichte in eine Rechnung übersetzt, was die Signalwörter wirklich verraten und warum man die Antwort immer auf Plausibilität prüfen sollte.",
+  "importance": "Textaufgaben sind der Ort, an dem Mathematik auf die echte Welt trifft, denn sie verlangen vom Kind, eine kurze Geschichte zu lesen und zu entscheiden, welche Rechenart darin steckt. Sie bauen Leseverständnis, logisches Denken und die Gewohnheit auf, vor dem Rechnen zu planen, was weit über den Mathematikunterricht hinaus zählt. Viele Kinder rechnen 15 minus 7 sofort, erstarren aber, wenn dieselbe Aufgabe in einen Satz über Murmeln gehüllt ist, und genau diese Lücke schließen Textaufgaben.",
   "howToTeach": [
-    "Lehren Sie, die Aufgabe mindestens zweimal zu lesen",
-    "Bitten Sie sie, die Zahlen und 'Schlüsselwörter' zu markieren",
-    "Ermutigen Sie zum Zeichnen oder Erstellen eines Diagramms der Aufgabe",
-    "Am Ende - prüfen, ob die Antwort Sinn ergibt"
+    "Bringen Sie Ihrem Kind bei, die ganze Aufgabe mindestens zweimal zu lesen, einmal für die Geschichte und einmal, um genau zu bemerken, was gefragt ist.",
+    "Lassen Sie es die Zahlen unterstreichen und die Signalwörter einkreisen, die auf die Rechenart hinweisen, etwa gab, teilte, insgesamt oder je.",
+    "Ermutigen Sie zu einer schnellen Zeichnung oder Skizze, denn ein Bild von Murmeln oder Stuhlreihen macht die richtige Rechenart oft offensichtlich.",
+    "Lassen Sie es vor jeder Zahl sagen, was die Frage will, damit es die richtige Aufgabe löst und nicht eine geratene.",
+    "Schließen Sie jede Aufgabe damit ab zu prüfen, ob die Antwort in der Geschichte Sinn ergibt, denn ein Kind kann nicht minus drei Murmeln haben."
   ],
   "examples": [
     {
-      "problem": "Daniel hatte 15 Murmeln. Er gab 7 Murmeln an Jonas. Wie viele Murmeln hat Daniel noch?",
+      "problem": "Daniel hatte 15 Murmeln. Er gab 7 an Jonas. Wie viele hat Daniel noch?",
       "solution": "8",
-      "explanation": "Gab = Subtraktion. 15 - 7 = 8 Murmeln."
+      "explanation": "Das Wort gab deutet auf Wegnehmen, also Subtraktion. 15 minus 7 ergibt 8 Murmeln, und 8 ist weniger als 15, was Sinn ergibt."
     },
     {
-      "problem": "Jede Reihe hat 6 Stühle. Es gibt 4 Reihen. Wie viele Stühle gibt es insgesamt?",
+      "problem": "Jede Reihe hat 6 Stühle und es gibt 4 Reihen. Wie viele Stühle insgesamt?",
       "solution": "24",
-      "explanation": "Jede Reihe × Anzahl der Reihen = Multiplikation. 6 × 4 = 24 Stühle."
+      "explanation": "Gleiche Gruppen bedeuten Multiplikation: 6 Stühle pro Reihe mal 4 Reihen. 6 mal 4 ist 24 Stühle, was eine Zeichnung von vier Reihen mit je sechs bestätigt."
+    },
+    {
+      "problem": "Eine Tüte mit 20 Bonbons wird gleichmäßig auf 5 Kinder verteilt. Wie viele bekommt jedes?",
+      "solution": "4",
+      "explanation": "Gleichmäßig verteilen bedeutet Division. 20 Bonbons geteilt durch 5 Kinder ist 20 : 5, also 4 Bonbons pro Kind."
+    },
+    {
+      "problem": "Maya las am Montag 12 Seiten und am Dienstag 18 Seiten. Wie viele Seiten insgesamt?",
+      "solution": "30",
+      "explanation": "Der Ausdruck insgesamt deutet auf Zusammenfügen, also Addition. 12 plus 18 ergibt 30 an den beiden Tagen gelesene Seiten."
     }
   ],
   "commonMistakes": [
-    "Die ganze Frage nicht bis zum Ende lesen",
-    "Verwirrung mit Schlüsselwörtern (gab = Subtraktion, bekam = Addition)",
-    "Nicht prüfen, ob die Antwort Sinn ergibt"
+    "Die Frage wird nicht bis zum Ende gelesen, sodass das Kind nur einen Teil der Geschichte löst oder das Falsche beantwortet.",
+    "Die Signalwörter werden falsch gedeutet, etwa gab als Addition statt Subtraktion oder je als Addieren statt als Gruppieren.",
+    "Das Kind springt direkt zu den Zahlen, ohne zu entscheiden, wonach die Frage eigentlich verlangt.",
+    "Die abschließende Prüfung wird übersprungen, sodass eine unmögliche Antwort wie mehr Bonbons als am Anfang unbemerkt durchrutscht."
   ],
   "parentTips": [
-    "Bitten Sie das Kind, Ihnen die Geschichte in eigenen Worten zu erzählen",
-    "Ermutigen Sie zum Zeichnen - es hilft beim Verstehen!",
-    "Fragen Sie: 'Was wird von uns gefragt?' bevor Sie anfangen zu lösen",
-    "Nach dem Lösen fragen: 'Ergibt das Sinn?'"
+    "Bitten Sie Ihr Kind, die Geschichte zuerst in eigenen Worten nachzuerzählen, denn wer sie nicht erklären kann, kann sie noch nicht lösen.",
+    "Ermutigen Sie jedes Mal zum Zeichnen, denn eine einfache Skizze verwandelt einen verwirrenden Satz in etwas Zählbares.",
+    "Fragen Sie vor jedem Rechnen laut, was sollen wir herausfinden, um das Ziel festzunageln.",
+    "Wenn eine Antwort erscheint, fragen Sie, ergibt das Sinn, und lassen Sie das Kind eigene Fehler fangen.",
+    "Erfinden Sie Aufgaben aus dem Alltag, etwa Snacks teilen oder Wechselgeld zählen, damit Textaufgaben nützlich statt zufällig wirken."
   ],
   "relatedGeneratorHref": "/de/word-problems",
   "relatedGeneratorTitle": "Textaufgaben-Generator"

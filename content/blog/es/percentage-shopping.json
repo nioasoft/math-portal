@@ -1,14 +1,17 @@
 {
   "slug": "percentage-shopping",
   "title": "Calculando Descuentos en el Centro Comercial - Una Leccion de Vida",
-  "excerpt": "La mejor manera de ensenar porcentajes es a traves del bolsillo. Lleva a tus hijos a un viaje de compras educativo.",
+  "excerpt": "Un cartel de 30% de descuento es un gran ejercicio de porcentajes. El truco del 10% que resuelve casi todo, un ejemplo paso a paso del precio final y el error que casi todos cometen.",
   "date": "2026-02-28",
-  "readTime": "4 min",
+  "readTime": "6 min de lectura",
   "category": "tips",
   "categoryLabel": "Consejos y Metodos de Aprendizaje",
   "image": "/blog/percentage-shopping.webp",
-  "tags": ["porcentajes", "consumismo"],
+  "tags": [
+    "porcentajes",
+    "consumismo"
+  ],
   "author": "Equipo de Hojas de Trabajo Inteligentes",
-  "lastModified": "2026-01-17",
-  "content": "<p>Ves un cartel de \"30% de descuento\"? Haz que tu hijo calcule el precio final. Usa el <a href=\"/percentage\">generador de porcentajes</a> para practicar en casa.</p>"
+  "lastModified": "2026-06-25",
+  "content": "<h2>Cada cartel de rebaja es un ejercicio de porcentajes</h2>\n<p>Los porcentajes suenan abstractos y dan miedo a los ninos, hasta que llegan al centro comercial. Ahi, de repente, un 30% de descuento deja de ser un problema del libro y se convierte en cuanto dinero les queda en el bolsillo. Ir de compras es la mejor forma de ensenar porcentajes, porque el resultado es real y al nino de verdad le importa.</p>\n<h3>El truco del diez por ciento</h3>\n<p>Este es todo el secreto, y conviene ensenarlo primero. Para hallar el 10% de un numero, solo corre la coma un lugar a la izquierda o, dicho simple, quita un cero. El 10% de 200 pesos es 20 pesos. El 10% de 80 es 8. Una vez que tu hijo domina el 10%, puede armar casi cualquier porcentaje. El 30% es tres veces el 10%. El 20% es el doble. El 5% es la mitad del 10%.</p>\n<h3>Calculemos un precio con descuento</h3>\n<p>Una camiseta de 80 pesos con 30% de descuento. Primero hallamos el 10%, que son 8 pesos. Ahora por tres: 8 por 3 da 24 pesos de descuento. Por ultimo, el precio final: 80 menos 24 da 56 pesos. Deja que tu hijo haga esta cuenta en la caja antes de que el cajero marque el total, y se transforma en un juego con suspenso.</p>\n<h3>Una carrera de quien calcula mas rapido</h3>\n<p>En la tienda, frente a un cartel de oferta, compitan por llegar primero al precio final. Tambien puedes preguntar cual oferta conviene mas: 25% de descuento o lleva uno y el segundo a mitad de precio. Preguntas asi activan a la vez el pensamiento matematico y el de consumidor.</p>\n<h3>Un porcentaje siempre es de algo</h3>\n<p>Vale la pena afinar un punto, porque es fuente de confusion. Un porcentaje solo no dice nada: siempre es un porcentaje de un numero determinado. El 30% de 80 pesos es 24, pero el 30% de 200 pesos ya son 60. El mismo porcentaje, cantidades completamente distintas. Hazle preguntas que afilen esta idea: que conviene mas, 50% de descuento en una camiseta de 40 pesos o 20% en la misma camiseta a 100 pesos. Descubrira que el porcentaje mas grande no siempre significa el mayor ahorro.</p>\n<h3>El error que casi todos cometen</h3>\n<p>La confusion clasica: calcular el descuento y olvidar restarlo del precio. El nino halla que el 30% de 80 es 24 y escribe 24 como respuesta, pero 24 es el tamano del descuento, no el precio a pagar. Siempre hay un ultimo paso: restar el descuento del precio original. Vale la pena repetirlo cada vez.</p>\n<h3>Preguntas que hacen los padres</h3>\n<p><strong>¿A que edad se ensenan los porcentajes?</strong> Suelen llegar en quinto y sexto grado, despues de afianzar las fracciones y los decimales, porque un porcentaje es en realidad una fraccion sobre cien. Si las fracciones todavia flojean, conviene reforzarlas con el <a href='/fractions'>generador de fracciones</a> antes de avanzar.</p>\n<p><strong>¿Mi hijo entiende el 10% pero se traba con porcentajes raros como el 15%, que hago?</strong> Desarmalo. El 15% es 10% mas 5%, y el 5% es la mitad del 10%. Todo porcentaje se construye con piezas conocidas.</p>\n<p><strong>¿Como practicamos en casa?</strong> Pueden practicar con ofertas reales de un folleto de tienda y tambien crear ejercicios en el <a href='/percentage'>generador de porcentajes</a> para fijar el metodo.</p>"
 }

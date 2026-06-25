@@ -1,35 +1,49 @@
 {
   "slug": "ratio",
   "title": "Verhältnis & Proportion",
-  "shortDescription": "Verhältnis beschreibt die Beziehung zwischen zwei Mengen. Proportion ist eine Gleichheit zwischen zwei Verhältnissen.",
-  "importance": "Verhältnisse werden bei Rezepten (Mengen verdoppeln), Karten (Maßstab) und in den Naturwissenschaften benötigt. Es ist Vorbereitung für Algebra.",
+  "shortDescription": "Ein Elternratgeber, um Verhältnis und Proportion über Rezepte und Karten beizubringen, das fehlende Glied zu finden und den häufigen Patzer, statt zu multiplizieren zu addieren.",
+  "importance": "Verhältnisse tauchen in Rezepten auf, wenn man Mengen skaliert, in Karten, wenn man einen Maßstab versteht, und in den Naturwissenschaften. Sie sind auch direkte Vorbereitung auf die Algebra, denn die Idee, zwei Seiten im Gleichgewicht zu halten, kehrt dort immer wieder. Wer Verhältnisse versteht, lernt eine wichtige Denkweise, dass Dinge gemeinsam wachsen können, ohne dass die Beziehung zwischen ihnen verloren geht. Am besten lehrt man es über Rezepte, wo das Verhältnis greifbar ist.",
   "howToTeach": [
-    "Beginnen Sie mit konkreten Beispielen: 'Für jeden 2 Äpfel gibt es 3 Bananen'",
-    "Erklären Sie, dass ein gleiches Verhältnis erhalten bleibt, wenn man beide Seiten multipliziert oder dividiert",
-    "Üben Sie das Finden des fehlenden Glieds in einer Proportion",
-    "Zeigen Sie die Kreuzprodukt-Methode"
+    "Beginnen Sie mit konkreten Beispielen, etwa auf je 2 Äpfel kommen 3 Bananen, und zeigen Sie es mit echtem Obst.",
+    "Erklären Sie, dass das Verhältnis gleich bleibt, wenn man beide Seiten mit derselben Zahl multipliziert oder durch sie teilt.",
+    "Üben Sie das Finden des fehlenden Glieds und fragen Sie, was an die Stelle des Fragezeichens muss, damit das Verhältnis erhalten bleibt.",
+    "Zeigen Sie die Methode des Übers-Kreuz-Multiplizierens erst später, und nur nachdem das Grundverständnis sitzt.",
+    "Verbinden Sie es immer mit einem Rezept oder einer Karte, damit das Verhältnis etwas Echtes statt einer abstrakten Übung ist."
   ],
   "examples": [
     {
-      "problem": "2:3 = 6:?",
+      "problem": "2 : 3 = 6 : ?",
       "solution": "9",
-      "explanation": "Von 2 zu 6 haben wir mit 3 multipliziert. Also muss 3 auch mit 3 multipliziert werden: 3×3=9."
+      "explanation": "Von 2 auf 6 haben wir mit 3 multipliziert. Um das Verhältnis zu halten, muss auch die 3 mit 3 multipliziert werden, also 3 mal 3 ist 9."
     },
     {
-      "problem": "4:5 = ?:15",
+      "problem": "4 : 5 = ? : 15",
       "solution": "12",
-      "explanation": "Von 5 zu 15 haben wir mit 3 multipliziert. Also muss 4 auch mit 3 multipliziert werden: 4×3=12."
+      "explanation": "Von 5 auf 15 haben wir mit 3 multipliziert. Also muss auch die 4 mit 3 multipliziert werden, das ergibt 4 mal 3 ist 12."
+    },
+    {
+      "problem": "Ein Rezept für 4 Personen braucht 2 Eier. Wie viele Eier für 8 Personen?",
+      "solution": "4",
+      "explanation": "Von 4 Personen auf 8 haben wir mit 2 multipliziert, also verdoppeln sich auch die Eier. 2 mal 2 ist 4 Eier."
+    },
+    {
+      "problem": "Auf einer Karte steht 1 cm für 100 m. Wofür stehen 3 cm?",
+      "solution": "300 m",
+      "explanation": "Von 1 auf 3 haben wir mit 3 multipliziert, also wird auch die echte Entfernung mit 3 multipliziert. 100 mal 3 ist 300 m."
     }
   ],
   "commonMistakes": [
-    "Addieren statt multiplizieren",
-    "Vergessen, die gleiche Operation auf beiden Seiten durchzuführen",
-    "Fehler beim Erkennen, welche Zahl sich geändert hat"
+    "Es wird addiert statt multipliziert, sodass bei einem Verhältnis, das sich verdoppelt, eine feste Zahl auf beide Seiten addiert wird.",
+    "Nur eine Seite wird geändert, und es wird vergessen, dass das Verhältnis nur gleich bleibt, wenn sich beide Seiten gemeinsam ändern.",
+    "Es wird verwechselt, welche Zahl sich geändert hat, und nicht herausgearbeitet, wie oft das Verhältnis gewachsen ist.",
+    "Es wird zu einer komplizierten Methode gegriffen, obwohl das Verhältnis einfach und klar ist."
   ],
   "parentTips": [
-    "Üben Sie mit Rezepten: 'Wenn wir 2 Eier für 4 Personen brauchen, wie viele für 8?'",
-    "Verwenden Sie Karten oder Gegenstände, um Verhältnisse zu demonstrieren",
-    "Betonen Sie, dass das Verhältnis konstant bleibt!"
+    "Üben Sie mit Rezepten: Wenn man 2 Eier für 4 Personen braucht, wie viele für 8 und wie viele für 6?",
+    "Nutzen Sie Gegenstände oder Karten, um ein Verhältnis konkret und handfest zu zeigen.",
+    "Betonen Sie das Prinzip, dass das Verhältnis fest bleibt, während die Mengen gemeinsam wachsen.",
+    "Verbinden Sie es mit Karten, denn ein Maßstab ist ein tolles Verhältnis, das Kindern Spaß macht.",
+    "Erinnern Sie an die Probe: Wenn wir eine Seite mit drei multipliziert haben, muss die andere Seite ebenfalls mit drei multipliziert werden."
   ],
   "relatedGeneratorHref": "/de/ratio",
   "relatedGeneratorTitle": "Verhältnis-Arbeitsblatt-Generator"

@@ -1,36 +1,49 @@
 {
   "slug": "multiplication",
   "title": "Multiplicacion",
-  "shortDescription": "La multiplicacion es una suma repetida. Los ninos aprenden que multiplicar es un atajo para sumar el mismo numero muchas veces.",
-  "importance": "La multiplicacion es la base para las matematicas avanzadas, calculos de area y resolver problemas cotidianos como calcular el precio total de varios articulos.",
+  "shortDescription": "Guia para padres sobre la multiplicacion: como construir comprension real antes de las tablas, trucos de memoria que de verdad funcionan, multiplicacion de dos cifras y los errores que casi todos los ninos cometen.",
+  "importance": "La multiplicacion no es un tema mas de la lista, es la base sobre la que se apoya casi todo lo demas. La division, las fracciones, los porcentajes y el calculo de areas dependen de que el nino sepa que 7 por 8 es 56 sin ponerse a contar. Un nino que domina las tablas se siente tranquilo en clase, mientras que uno que duda sufre con cada tema nuevo. Tambien aparece a diario: el costo de seis jugos, cuantos dias hay en ocho semanas o cuantas sillas llenan cuatro filas.",
   "howToTeach": [
-    "Empieza con la comprension del concepto: 3x4 es como 3+3+3+3 o 4+4+4",
-    "Ensena las tablas de multiplicar gradualmente, empieza con el 2, 5, 10",
-    "Usa patrones visuales (filas y columnas)",
-    "Repasa los datos hasta que sean automaticos"
+    "Empieza por el significado y no por la memoria: explica que 3 por 4 son tres grupos de cuatro, lo mismo que 4 mas 4 mas 4.",
+    "Ensena las tablas en orden de dificultad, comenzando por las faciles del 2, del 5 y del 10, luego el 3 y el 4, y dejando para el final el 6, el 7 y el 8.",
+    "Usa una cuadricula de filas y columnas para que el nino vea que 3 por 4 es literalmente un rectangulo de puntos, lo que vuelve concreta la respuesta.",
+    "Muestra atajos que aligeran el trabajo, como el truco de los dedos para la tabla del 9 y el patron de que todo multiplo de 5 termina en 0 o en 5.",
+    "Practica las operaciones mezcladas en lugar de siempre en orden, porque un nino que solo sabe la tabla seguida todavia no la domina de verdad."
   ],
   "examples": [
     {
       "problem": "4 x 7 = ?",
       "solution": "28",
-      "explanation": "4 veces 7: 7+7+7+7 = 28. O usa la tabla de multiplicar."
+      "explanation": "Cuatro veces siete significa 7 mas 7 mas 7 mas 7, que suma 28. Una vez afianzado, el nino deberia recordarlo directo de la tabla sin sumar."
+    },
+    {
+      "problem": "9 x 6 = ?",
+      "solution": "54",
+      "explanation": "Usa el truco de los dedos: levanta los diez dedos y baja el sexto. Los 5 dedos a la izquierda del hueco son las decenas y los 4 de la derecha son las unidades, asi que da 54."
+    },
+    {
+      "problem": "7 x 8 = ?",
+      "solution": "56",
+      "explanation": "Si se te olvida, divide el problema: 7 por 4 es 28, y otra vez 7 por 4 es otros 28, asi que 28 mas 28 es igual a 56."
     },
     {
       "problem": "23 x 4 = ?",
       "solution": "92",
-      "explanation": "Unidades: 3x4 = 12 (escribe 2, lleva 1). Decenas: 2x4 = 8, + 1 = 9. Respuesta: 92."
+      "explanation": "Empieza por las unidades: 3 por 4 es 12, escribes el 2 y llevas 1. Luego las decenas: 2 por 4 es 8, mas el 1 que llevabas son 9. La respuesta es 92."
     }
   ],
   "commonMistakes": [
-    "Confusion entre datos de multiplicacion similares (6x7 y 7x8)",
-    "Olvidar llevarse en la multiplicacion de dos digitos",
-    "Saltarse un paso al multiplicar numeros grandes"
+    "Confundir operaciones parecidas como 6 por 7 y 7 por 8 cuando la memorizacion fue mecanica y nunca se ligo a ningun significado.",
+    "Olvidar llevarse en la multiplicacion de dos cifras, de modo que 23 por 4 sale 82 en lugar del 92 correcto.",
+    "Confundir la multiplicacion con la suma y pensar que 3 por 4 es 7, algo que conviene corregir volviendo a la idea de grupos repetidos.",
+    "Saberse la tabla solo en orden y quedarse en blanco en cuanto se pregunta un dato salteado."
   ],
   "parentTips": [
-    "Practica las tablas de multiplicar todos los dias, 5 minutos es suficiente",
-    "Conviertelo en una cancion o concurso familiar",
-    "Muestra patrones: todos los multiplos de 5 terminan en 0 o 5",
-    "No fuerces la memorizacion mecanica, la comprension viene primero"
+    "Practiquen cinco minutos cada dia, porque repasos cortos y diarios rinden mucho mas que una hora larga una vez por semana.",
+    "Conviertanlo en una cancion o en un concurso rapido en la mesa para que se sienta un juego y no una obligacion.",
+    "Senalen los patrones, por ejemplo que todo multiplo de 5 termina en 0 o en 5, lo que elimina una columna entera de adivinanzas.",
+    "Nunca fuercen el repaso mecanico antes de que el nino entienda que es multiplicar, porque la comprension siempre va primero.",
+    "Cuando se atasque en una operacion, divide en datos mas pequenos que ya domine y reconstruye la respuesta desde ahi."
   ],
   "relatedGeneratorHref": "/worksheet/math?op=mul",
   "relatedGeneratorTitle": "Generador de Hojas de Multiplicacion"

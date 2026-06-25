@@ -1,35 +1,49 @@
 {
   "slug": "percentage",
   "title": "Prozentrechnung",
-  "shortDescription": "Prozente sind Brüche mit Nenner 100. Sie ermöglichen einen einfachen Vergleich verschiedener Mengen.",
-  "importance": "Prozente sind überall: Rabatte im Geschäft, Testergebnisse, Bankzinsen und Statistiken in den Nachrichten.",
+  "shortDescription": "Ein Elternratgeber zur Prozentrechnung: warum Prozent von Hundert bedeutet, der leichte 10-Prozent-Trick, die Verbindung zu Brüchen und die Fehler, die Kinder bei Rabatten stolpern lassen.",
+  "importance": "Prozente sind überall, wohin ein Kind schaut, von den Rabattschildern im Laden über Testergebnisse und Akkustände bis zu Zinsen und den Statistiken in den Nachrichten. Ein Prozentsatz ist nur ein Bruch mit dem Nenner 100, was ihn zu einer gemeinsamen Sprache für den Vergleich sehr unterschiedlicher Mengen macht. Wer 10 Prozent im Kopf findet, kann schnell ein Trinkgeld, einen Rabatt oder einen Fortschritt schätzen. Da Prozente direkt an Brüche und Dezimalzahlen anknüpfen, stärkt ihre Beherrschung auch diese Themen.",
   "howToTeach": [
-    "Erklären Sie, dass 'Prozent' 'von hundert' bedeutet",
-    "Beginnen Sie mit einfachen Prozentsätzen: 50% = Hälfte, 25% = Viertel",
-    "Zeigen Sie die Verbindung zu Brüchen: 50% = 50/100 = 1/2",
-    "Üben Sie zuerst 10% zu berechnen (durch 10 teilen), dann entsprechend multiplizieren"
+    "Erklären Sie, dass Prozent wörtlich von Hundert bedeutet, sodass 30 Prozent einfach 30 von je 100 sind.",
+    "Verankern Sie zuerst ein paar Eckwerte, etwa dass 50 Prozent ein Halb, 25 Prozent ein Viertel und 10 Prozent ein Zehntel sind.",
+    "Zeigen Sie die Brücke zu Brüchen und Dezimalzahlen, indem Sie deutlich machen, dass 50 Prozent gleich 50/100 gleich 1/2 gleich 0,5 ist.",
+    "Lehren Sie die 10-Prozent-Abkürzung durch einfaches Teilen durch 10 und bauen Sie andere Prozente daraus, denn 20 Prozent sind das Doppelte von 10 Prozent.",
+    "Üben Sie an echten Preisen und Rabatten, damit das Kind Prozente als Werkzeug zum Einkaufen sieht und nicht nur als Übungsaufgabe."
   ],
   "examples": [
     {
       "problem": "25% von 80 = ?",
       "solution": "20",
-      "explanation": "25% ist ein Viertel. 80:4 = 20. Oder: 80 × 0,25 = 20."
+      "explanation": "25 Prozent sind ein Viertel, also teilen Sie 80 durch 4 und erhalten 20. Sie können auch 80 mal 0,25 rechnen, was ebenfalls 20 ergibt."
     },
     {
       "problem": "15% von 200 = ?",
       "solution": "30",
-      "explanation": "10% von 200 = 20. 5% = 10. Insgesamt 15% = 30."
+      "explanation": "Finden Sie 10 Prozent von 200 durch Teilen durch 10, das sind 20. Die Hälfte davon sind 5 Prozent, also 10. Addieren Sie: 20 plus 10 ist 30."
+    },
+    {
+      "problem": "Ein Hemd für 90 hat 20% Rabatt. Wie hoch ist der neue Preis?",
+      "solution": "72",
+      "explanation": "10 Prozent von 90 sind 9, also sind 20 Prozent 18. Ziehen Sie den Rabatt vom Originalpreis ab: 90 minus 18 ist 72."
+    },
+    {
+      "problem": "Maya erreichte 18 von 20 Punkten in einem Test. Wie viel Prozent ist das?",
+      "solution": "90%",
+      "explanation": "Schreiben Sie 18 von 20 als Bruch und bringen Sie ihn auf 100. Beide Zahlen mal 5 ergeben 90 von 100, also 90 Prozent."
     }
   ],
   "commonMistakes": [
-    "Durch 100 teilen statt mit dem Prozentsatz zu multiplizieren",
-    "Vergessen, den Prozentsatz in einen Bruch oder eine Dezimalzahl umzuwandeln",
-    "Verwirrung beim Berechnen von Rabatten (der neue Preis, nicht der Rabatt)"
+    "Es wird durch 100 geteilt, wo mit dem Prozentsatz multipliziert werden müsste, sodass 25 Prozent von 80 winzig statt 20 herauskommen.",
+    "Der Prozentsatz wird vor dem Rechnen nicht in einen Bruch oder eine Dezimalzahl umgewandelt, und die rohe Zahl 25 wird versehentlich eingesetzt.",
+    "Es wird der Rabattbetrag angegeben, obwohl der neue Preis gefragt ist, also 18 statt der endgültigen 72.",
+    "Prozent von einer Zahl wird mit Prozent von einer anderen verwechselt, etwa 20 Prozent vom Rabattpreis statt vom Originalpreis."
   ],
   "parentTips": [
-    "Beim Einkaufen üben: 'Es gibt 20% Rabatt, wie viel sparen wir?'",
-    "Zeigen Sie eine Umrechnungstabelle: 10%=0,1, 25%=0,25, 50%=0,5",
-    "Berechnen Sie immer zuerst 10% - das ist am einfachsten!"
+    "Üben Sie beim Einkaufen mit der Frage, hier sind 20 Prozent Rabatt, wie viel sparen wir und wie viel zahlen wir.",
+    "Hängen Sie eine kleine Umrechnungstabelle an den Kühlschrank, mit Einträgen wie 10 Prozent gleich 0,1, 25 Prozent gleich 0,25 und 50 Prozent gleich 0,5.",
+    "Finden Sie immer zuerst 10 Prozent, denn das ist der leichteste Anker, aus dem sich fast jeder andere Prozentsatz baut.",
+    "Nutzen Sie Akkustände, Ladebalken und Spielfortschritte, denn das sind Prozente, die Ihr Kind ohnehin täglich beobachtet.",
+    "Fragen Sie, ob die Antwort vernünftig ist, und erinnern Sie daran, dass ein Rabattpreis immer kleiner als der Originalpreis sein sollte."
   ],
   "relatedGeneratorHref": "/de/percentage",
   "relatedGeneratorTitle": "Prozent-Arbeitsblatt-Generator"

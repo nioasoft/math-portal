@@ -1,35 +1,49 @@
 {
   "slug": "decimals",
   "title": "Decimales",
-  "shortDescription": "Los decimales son otra forma de representar fracciones, especialmente decimas y centesimas.",
-  "importance": "Los decimales estan en todas partes: dinero (euros y centimos), medidas (metros y centimetros) y calculos cientificos.",
+  "shortDescription": "Una guia para que los padres ensenen los decimales con dinero y medidas, aprendan a alinear la coma y corrijan el error que casi todos los ninos cometen.",
+  "importance": "Los decimales aparecen por todas partes en la vida del nino, sobre todo en el dinero, con pesos y centavos, y en las medidas, como los metros y los centimetros. En realidad son fracciones disfrazadas, porque un medio es lo mismo que 0,5. El nino que descubre que un decimal y una fraccion describen el mismo valor da un salto enorme. El dinero es la mejor puerta de entrada, ya que todos lo entienden desde pequenos, y desde ahi el tema se vuelve concreto en vez de abstracto.",
   "howToTeach": [
-    "Empieza con el dinero: euros y centimos son decimales!",
-    "Explica que la coma decimal separa los numeros enteros de las partes",
-    "Practica leyendo numeros: 3,45 = tres con cuarenta y cinco centesimas",
-    "En suma y resta, siempre alinea las comas decimales"
+    "Empieza con el dinero, porque los pesos y los centavos son decimales que tu hijo ya maneja todos los dias en la tienda.",
+    "Explica que la coma decimal separa la parte entera de la parte que es mas pequena que una unidad completa.",
+    "Practica leyendo los numeros de forma correcta, asi 3,45 se lee tres con cuarenta y cinco centesimas y no tres coma cuarenta y cinco.",
+    "En la suma y la resta, convierte en regla de oro alinear las comas decimales una debajo de la otra antes de hacer cualquier cosa.",
+    "Muestra que se pueden agregar ceros al final sin cambiar el valor, ya que 0,5 es exactamente igual que 0,50."
   ],
   "examples": [
     {
       "problem": "2,5 + 1,3 = ?",
       "solution": "3,8",
-      "explanation": "Alinea las comas decimales: 2,5 + 1,3. Unidades: 5+3=8. Enteros: 2+1=3. Respuesta: 3,8"
+      "explanation": "Alinea las comas. La parte despues de la coma: 5 + 3 = 8. La parte entera: 2 + 1 = 3. Asi que la respuesta es 3,8."
     },
     {
       "problem": "5,00 - 2,75 = ?",
       "solution": "2,25",
-      "explanation": "Como calcular con dinero: 5 euros menos 2,75 = 2 euros y 25 centimos."
+      "explanation": "Piensalo como dinero: 5 pesos menos 2 pesos con 75 centavos dejan 2 pesos con 25 centavos, es decir 2,25."
+    },
+    {
+      "problem": "Cual es mayor, 0,5 o 0,45?",
+      "solution": "0,5",
+      "explanation": "Agrega un cero para comparar, asi 0,5 se vuelve 0,50. Ahora queda claro que 0,50 es mayor que 0,45, igual que 50 centavos le ganan a 45 centavos."
+    },
+    {
+      "problem": "0,3 + 0,7 = ?",
+      "solution": "1",
+      "explanation": "Tres decimas mas siete decimas dan diez decimas, y diez decimas es exactamente una unidad completa. Es un resultado redondo que muestra como las partes completan un entero."
     }
   ],
   "commonMistakes": [
-    "No alinear las comas decimales",
-    "Tratar 0,5 y 0,50 como numeros diferentes",
-    "Olvidar agregar ceros para alinear (0,5 = 0,50)"
+    "No alinear las comas decimales en la suma y la resta, de modo que los digitos se suman en la columna equivocada.",
+    "Creer que 0,5 y 0,50 son numeros distintos, aunque valen exactamente lo mismo.",
+    "Olvidar agregar ceros al comparar, lo que dificulta decidir cual numero es mayor.",
+    "Leer mal el numero, lo que es una senal de que la idea de decimas y centesimas todavia no esta firme."
   ],
   "parentTips": [
-    "Practica con dinero real en la tienda",
-    "Muestra una regla con centimetros y milimetros",
-    "Cuidado con la coma decimal! Es el error mas comun"
+    "Practica con dinero real en la tienda, ya que manipular monedas hace que los decimales sean concretos y faciles de recordar.",
+    "Muestra una regla con centimetros y milimetros como otro ejemplo cotidiano de partes de un entero.",
+    "Mantente atento a la coma decimal, porque la mayoria de los errores con decimales empiezan por colocarla mal.",
+    "Cuando tu hijo se trabe, traduce el problema a pesos y centavos y de pronto todo cobra sentido.",
+    "Pide a tu hijo que lea los numeros en voz alta, porque decir bien un numero suele significar que lo entiende."
   ],
   "relatedGeneratorHref": "/decimals",
   "relatedGeneratorTitle": "Generador de Hojas de Decimales"

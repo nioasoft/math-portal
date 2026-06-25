@@ -1,37 +1,49 @@
 {
   "slug": "addition",
   "title": "Suma",
-  "shortDescription": "La suma es la base de todas las matematicas. Los ninos aprenden a combinar cantidades y a entender el concepto de 'mas'.",
-  "importance": "La suma es la primera operacion que aprenden los ninos y es la base de todas las demas operaciones aritmeticas. Dominar la suma es necesario para las compras, el manejo del dinero, las mediciones y mucho mas.",
+  "shortDescription": "Una guia para que los padres ensenen la suma con objetos concretos, entiendan como funciona el llevar en numeros de dos cifras y eviten los tropiezos tipicos de los principiantes.",
+  "importance": "La suma es la primera operacion que conocen los ninos y es la base de todo lo que viene despues, porque la resta, la multiplicacion y la division se apoyan en ella. El nino seguro con la suma entra con buen pie en cada tema nuevo, mientras que el que duda arrastra esa dificultad hacia adelante. Ademas aparece todo el tiempo en la vida diaria, al calcular el total de varias cosas, al llevar el puntaje de un juego o al contar cuanta gente viene a cenar. Vale la pena construir comprension real aqui y no solo memorizar respuestas.",
   "howToTeach": [
-    "Empieza con objetos tangibles: bloques, lapices, caramelos",
-    "Explica que 'sumar' es como 'agregar' o 'juntar'",
-    "Practica primero con numeros pequenos (hasta 10)",
-    "Cuando el nino este listo, introduce el llevarse (reagrupacion) gradualmente",
-    "Usa una recta numerica como ayuda visual"
+    "Empieza con objetos fisicos como bloques, lapices o caramelos para que tu hijo vea la suma ocurrir de verdad.",
+    "Explica que sumar significa juntar cosas y que el total siempre es mayor que cada uno de los numeros por separado.",
+    "Practica primero con numeros pequenos hasta 10 y avanza solo cuando eso le resulte facil y automatico.",
+    "Cuando tu hijo este listo, introduce el llevar poco a poco, cuando las unidades pasan de 10 y mueves una decena a la columna siguiente.",
+    "Usa una recta numerica como apoyo visual, saltando hacia adelante desde un punto y contando los pasos."
   ],
   "examples": [
     {
       "problem": "7 + 5 = ?",
       "solution": "12",
-      "explanation": "Empieza desde el 7, cuenta 5 mas: 8, 9, 10, 11, 12. O: 7 + 3 = 10, mas 2 = 12."
+      "explanation": "Empieza en el 7 y cuenta cinco mas: 8, 9, 10, 11, 12. O usa el truco de formar diez: 7 + 3 = 10 y luego suma los 2 que sobran para llegar a 12."
     },
     {
       "problem": "25 + 38 = ?",
       "solution": "63",
-      "explanation": "Unidades: 5 + 8 = 13 (escribe 3, lleva 1). Decenas: 2 + 3 + 1 = 6. Respuesta: 63."
+      "explanation": "Primero las unidades: 5 + 8 = 13, asi que escribes 3 y llevas 1. Luego las decenas: 2 + 3 mas el 1 que llevabas dan 6. La respuesta es 63."
+    },
+    {
+      "problem": "9 + 6 = ?",
+      "solution": "15",
+      "explanation": "Un truco util: completa el 9 hasta 10 tomando 1 del 6, y luego 10 mas los 5 que quedan dan 15."
+    },
+    {
+      "problem": "40 + 60 = ?",
+      "solution": "100",
+      "explanation": "Sumar decenas completas es como sumar 4 + 6 y luego pegar un cero. Como 4 + 6 = 10, el resultado es 100."
     }
   ],
   "commonMistakes": [
-    "Olvidar llevarse cuando las unidades superan 10",
-    "Errores en el orden de los digitos al escribir verticalmente",
-    "Saltarse un numero al contar"
+    "Olvidar llevar cuando las unidades pasan de 10, de modo que 25 + 38 sale 53 en vez de 63.",
+    "Confundir el orden de los digitos al escribir en vertical, en lugar de poner unidades debajo de unidades.",
+    "Saltarse un numero al contar hacia adelante, lo que da una respuesta una unidad mas alta o mas baja.",
+    "Contar el numero de partida, de modo que 7 + 5 se vuelve 11 en lugar de 12."
   ],
   "parentTips": [
-    "No te apresures, dale tiempo al nino para pensar",
-    "Anima a usar los dedos al principio, esta bien!",
-    "Convierte la practica en un juego: 'Tengo 3 manzanas, tu me das 4 mas, cuantas tenemos?'",
-    "Celebra los pequenos logros"
+    "No tengas prisa y dale a tu hijo unos segundos para pensar, aunque la espera se sienta larga.",
+    "Anima a usar los dedos al principio, porque es una herramienta de conteo sana y totalmente valida.",
+    "Convierte la practica en un juego: tengo 3 manzanas y tu me das 4 mas, cuantas tenemos ahora?",
+    "Celebra los pequenos logros, ya que la sensacion de avance es el combustible que mantiene al nino motivado.",
+    "Cuando haya un error, no lo corrijas de inmediato, solo pregunta estas seguro, quieres volver a contar?"
   ],
   "relatedGeneratorHref": "/worksheet/math?op=add",
   "relatedGeneratorTitle": "Generador de Hojas de Suma"

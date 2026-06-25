@@ -1,14 +1,17 @@
 {
   "slug": "geometry-in-real-life",
   "title": "Wo versteckt sich Geometrie in Ihrem Zuhause?",
-  "excerpt": "Suchen Sie nach Rechtecken, Kreisen und Dreiecken in Ihrem Wohnzimmer. Eine Familienaktivität.",
+  "excerpt": "Ihr Wohnzimmer steckt voller Geometrie, Sie müssen sie nur sehen. Eine Formen-Schnitzeljagd für das ganze Haus, eine kleine Aktivität zu Umfang und Fläche mit durchgerechnetem Beispiel und wie man es mit strukturiertem Üben verbindet.",
   "date": "2026-02-18",
-  "readTime": "3 Min.",
+  "readTime": "5 Min. Lesezeit",
   "category": "games",
   "categoryLabel": "Spiele & Aktivitäten",
   "image": "/blog/geometry-in-real-life.webp",
-  "tags": ["Geometrie", "Aktivität"],
+  "tags": [
+    "Geometrie",
+    "Aktivität"
+  ],
   "author": "Team Clevere Arbeitsblätter",
-  "lastModified": "2026-01-17",
-  "content": "<p>Schauen Sie sich Fenster (Rechtecke), Teller (Kreise) und Pizzastücke (Dreiecke) an. Geometrie ist überall.</p>"
+  "lastModified": "2026-06-25",
+  "content": "<h2>Ihr Wohnzimmer ist voller Geometrie</h2>\n<p>Geometrie klingt für Kinder abstrakt und ein wenig beängstigend, dabei ist sie ständig um sie herum. Das Fenster ist ein Rechteck, der Teller ein Kreis, das Pizzastück ein Dreieck. Plötzlich ist es keine Aufgabe im Buch. Die Idee ist einfach: Bevor Sie Namen und Regeln lehren, lassen Sie Ihr Kind sehen, dass Formen Teil der Welt sind, die es schon kennt.</p>\n<h3>Die Formen-Schnitzeljagd</h3>\n<p>Wählen Sie eine Form, etwa das Rechteck, und geben Sie Ihrem Kind eine Minute, durchs Haus zu laufen und so viele Rechtecke wie möglich zu finden. Die Tür, der Bildschirm, das Buch, die Kühlschrankschublade. Dann weiter zu Kreisen, Dreiecken, Quadraten. Machen Sie einen Wettbewerb daraus, wer mehr gefunden hat, und lassen Sie erklären, warum etwas ein Rechteck und kein Quadrat ist. So sitzt der Unterschied schmerzlos.</p>\n<h3>Eine kleine Aktivität: Umfang und Fläche eines Teppichs</h3>\n<p>Nehmen Sie einen Teppich oder einen rechteckigen Tisch. Der Umfang ist, wie weit man rundherum geht, also messen Sie jede Seite und addieren Sie. Die Fläche ist, wie viel Platz innen ist, also multiplizieren Sie Länge mal Breite.</p>\n<p>Rechnen wir eins durch. Ein Teppich, 2 Meter lang und 3 Meter breit. Der Umfang ist 2 plus 3 plus 2 plus 3, also 10 Meter. Die Fläche ist 2 mal 3, also 6 Quadratmeter. Geben Sie Ihrem Kind ein Maßband und lassen Sie es messen, dann werden Umfang und Fläche zu echten, greifbaren Dingen.</p>\n<h3>Eine Bauaktivität: Formen aus Zahnstochern und Knete</h3>\n<p>Die Jagd lehrt das Erkennen, das Bauen lehrt das Verstehen. Geben Sie Ihrem Kind Zahnstocher und kleine Knetkugeln für die Ecken und bitten Sie es, ein Dreieck zu bauen. Wie viele Seiten braucht es? Drei. Jetzt ein Quadrat, vier gleiche Seiten. Dann fragen Sie: Kannst du ein Dreieck mit vier Seiten bauen? Es probiert es und entdeckt selbst, dass das nicht geht. In diesem Moment wird ein Begriff zu etwas, das man in der Hand spürt, und das bleibt besser hängen als eine Definition im Buch. Man kann sogar dreidimensional bauen, eine Pyramide oder einen Würfel, und Flächen und Ecken zählen.</p>\n<h3>Häufige Fehler in der Geometrie</h3>\n<p>Kinder verwechseln Umfang und Fläche, das ist Fehler Nummer eins. Der Umfang ist die Strecke rundherum, die Fläche der Platz innen. Ein kleiner Trick hilft: Der Umfang ist wie ein Zaun um einen Garten, die Fläche ist, wie viel Rasen man zum Bedecken braucht. Dieses Bild bleibt im Kopf.</p>\n<h3>Fragen, die Eltern stellen</h3>\n<p><strong>Ab welchem Alter beginnt Geometrie?</strong> Das Erkennen einfacher Formen beginnt im Kindergarten und der 1. Klasse. Umfang und Fläche kommen in der 3. und 4. Klasse.</p>\n<p><strong>Mein Kind kennt die Formeln, verwechselt sie aber, warum?</strong> Weil eine Formel ohne Bild nur eine Buchstabenreihe ist. Messen Sie gemeinsam echte Gegenstände, und sobald es sieht, was die Formel tut, macht es klick.</p>\n<p><strong>Wie gehen wir zum strukturierten Üben über?</strong> Nach dem Spiel erstellen Sie Geometrieblätter in unserem <a href='/geometry'>Geometrie-Generator</a> und mischen unser <a href='/play/area-perimeter'>3D-Spiel zu Fläche und Umfang</a> dazu, in dem sich die Form in Echtzeit ändert.</p>"
 }

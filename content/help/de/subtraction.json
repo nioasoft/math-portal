@@ -1,35 +1,49 @@
 {
   "slug": "subtraction",
   "title": "Subtraktion",
-  "shortDescription": "Subtraktion lehrt Kinder, Unterschiede zu verstehen und was fehlt. Es ist die Umkehroperation der Addition.",
-  "importance": "Subtraktion wird im täglichen Leben benötigt: Wechselgeld beim Einkaufen berechnen, verstehen, wie viel fehlt, um ein Ziel zu erreichen, und Unterschiede zwischen Mengen finden.",
+  "shortDescription": "Ein Elternratgeber, um Subtraktion beizubringen, wie das Borgen funktioniert, wenn die Einer nicht reichen, und der häufigste Fehler bei größeren Zahlen.",
+  "importance": "Die Subtraktion wird jeden Tag gebraucht, beim Wechselgeld im Laden, beim Wissen, wie viel bis zu einem Ziel fehlt, oder beim Finden der Differenz zwischen zwei Zahlen. Sie ist auch das Spiegelbild der Addition, und wer die Verbindung zwischen beiden versteht, spart sich die halbe Arbeit. Die große Hürde ist das Borgen, und ein Kind, das es wirklich versteht, fürchtet große Zahlen nicht mehr. Es lohnt sich, hier zu investieren, denn sichere Subtraktion ist Voraussetzung für die schriftliche Division.",
   "howToTeach": [
-    "Beginnen Sie mit einer praktischen Demonstration - 'Es waren 7 Äpfel da, wir haben 3 gegessen, wie viele sind übrig?'",
-    "Erklären Sie, dass 'Subtraktion' wie 'wegnehmen' oder 'entfernen' ist",
-    "Zeigen Sie die Verbindung zwischen Addition und Subtraktion (wenn 3+4=7, dann 7-4=3)",
-    "Beim Erreichen des Entbündelns (Borgen) erklären Sie es mit Zehnern und Einern"
+    "Beginnen Sie mit einer handfesten Vorführung: Es waren 7 Äpfel, wir haben 3 gegessen, wie viele bleiben?",
+    "Erklären Sie, dass Subtrahieren Wegnehmen bedeutet und dass das Ergebnis immer kleiner ist als die Zahl, mit der Sie begonnen haben.",
+    "Zeigen Sie die Verbindung zur Addition, denn aus 3 plus 4 gleich 7 folgt 7 minus 4 gleich 3, dieselbe Geschichte rückwärts erzählt.",
+    "Wenn Sie zum Borgen kommen, erklären Sie es über Zehner und Einer, indem Sie sich einen Zehner borgen und ihn in zehn Einer verwandeln.",
+    "Üben Sie zuerst die Subtraktion ohne Borgen und gehen Sie erst zum Borgen über, wenn das sicher sitzt."
   ],
   "examples": [
     {
       "problem": "12 - 5 = ?",
       "solution": "7",
-      "explanation": "Beginne bei 12, zähle 5 zurück: 11, 10, 9, 8, 7. Oder: 12 - 2 = 10, minus 3 mehr = 7."
+      "explanation": "Starten Sie bei 12 und zählen Sie fünf zurück: 11, 10, 9, 8, 7. Oder nehmen Sie 12 minus 2 gleich 10, dann drei weitere zurück zu 7."
     },
     {
       "problem": "53 - 27 = ?",
       "solution": "26",
-      "explanation": "Einer: 3 - 7 nicht möglich, bei den Zehnern borgen. 13 - 7 = 6. Zehner: 4 - 2 = 2. Antwort: 26."
+      "explanation": "Bei den Einern ist 3 minus 7 nicht möglich, also borgen Sie sich einen Zehner. Nun ist 13 minus 7 gleich 6. Bei den Zehnern ist 4 minus 2 gleich 2. Die Antwort ist 26."
+    },
+    {
+      "problem": "100 - 1 = ?",
+      "solution": "99",
+      "explanation": "Hier muss man sich über die Nullen hinweg borgen. Viele Kinder stolpern, weil man mehrmals hintereinander borgen muss. Die Antwort ist 99."
+    },
+    {
+      "problem": "40 - 15 = ?",
+      "solution": "25",
+      "explanation": "Bei den Einern ist 0 minus 5 nicht möglich, also borgen Sie sich einen Zehner. Dann ist 10 minus 5 gleich 5. Bei den Zehnern ist 3 minus 1 gleich 2. Die Antwort ist 25."
     }
   ],
   "commonMistakes": [
-    "Die kleinere von der größeren Zahl in allen Fällen abziehen (anstatt zu entbündeln)",
-    "Vergessen, bei den Zehnern zu entbündeln (borgen)",
-    "Verwirrung bei der Zahlenreihenfolge - Subtraktion ist nicht kommutativ!"
+    "Es wird immer die kleinere Ziffer von der größeren abgezogen, auch wenn geborgt werden müsste, sodass 53 minus 27 fälschlich 34 wird.",
+    "Das Borgen wird vergessen, und nach dem Borgen wird die 1 nicht von der Zehnerziffer abgezogen.",
+    "Die Reihenfolge wird vertauscht und versucht, die größere Zahl von der kleineren abzuziehen, denn Subtraktion ist nicht umkehrbar wie Addition.",
+    "Das Kind bleibt beim Borgen über Nullen hängen, wie bei 100 minus einer Zahl, wo man mehrmals hintereinander borgen muss."
   ],
   "parentTips": [
-    "Spiele verwenden: 'Du hattest 10 Punkte, du hast 3 verloren, wie viele sind übrig?'",
-    "Mit Geld üben - es ist greifbar und interessant",
-    "Wenn das Kind beim Entbündeln verwirrt wird, gehen Sie mit Bauklötzen zu Zehnern und Einern zurück"
+    "Nutzen Sie Spiele: Du hattest 10 Punkte und hast 3 verloren, wie viele sind jetzt übrig?",
+    "Üben Sie mit Geld, denn das Berechnen von Wechselgeld ist konkret und für ein Kind wirklich spannend.",
+    "Wenn Ihr Kind beim Borgen verwirrt ist, gehen Sie zu Klötzen für Zehner und Einer zurück und brechen Sie einen Zehner körperlich in zehn.",
+    "Erinnern Sie an die Probe mit der Addition: Wenn 53 minus 27 gleich 26 ist, muss 26 plus 27 wieder 53 ergeben.",
+    "Geben Sie ihm Zeit, denn das Entlehnen hat mehrere Schritte, und Tempo kommt erst, wenn das Verständnis stabil ist."
   ],
   "relatedGeneratorHref": "/de/worksheet/math?op=sub",
   "relatedGeneratorTitle": "Subtraktions-Arbeitsblatt-Generator"

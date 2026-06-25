@@ -1,35 +1,49 @@
 {
   "slug": "division",
   "title": "Division",
-  "shortDescription": "Division ist die Umkehroperation der Multiplikation. Kinder lernen, eine Menge in gleiche Teile aufzuteilen.",
-  "importance": "Division wird für gerechtes Teilen, Durchschnittberechnungen und das spätere Verständnis von Brüchen und Prozenten benötigt.",
+  "shortDescription": "Ein Elternratgeber zur Division: vom fairen Aufteilen von Süßigkeiten bis zur schriftlichen Division, wie sie mit der Multiplikation zusammenhängt und an welchen Stellen die meisten Kinder stolpern.",
+  "importance": "Die Division ist, wie Kinder lernen, eine Menge in gleiche Teile zu zerlegen, und sie steckt hinter dem fairen Teilen, hinter Durchschnitten und hinter den späteren Brüchen und Prozenten. Wer sicher teilt, kann echte Fragen beantworten, etwa wie viele Kekse jeder Freund bekommt oder wie schnell ein Auto pro Stunde fährt. Da die Division das Spiegelbild der Multiplikation ist, macht ein wackeliges Einmaleins sie unmöglich, weshalb man beide am besten Hand in Hand lernt.",
   "howToTeach": [
-    "Beginnen Sie mit praktischem Aufteilen: 'Teile 12 Bonbons unter 3 Kindern auf'",
-    "Zeigen Sie die Verbindung zur Multiplikation: wenn 3×4=12, dann 12:3=4",
-    "Üben Sie Division ohne Rest, bevor Sie zu Division mit Rest übergehen",
-    "Erklären Sie die schriftliche Division schrittweise mit einfachen Zahlen"
+    "Beginnen Sie mit handfestem Aufteilen, etwa 12 Bonbons gleichmäßig auf 3 Kinder, damit das Kind Division als Verteilen in gleiche Gruppen sieht.",
+    "Zeigen Sie die enge Verbindung zur Multiplikation, indem Sie darauf hinweisen, dass aus 3 mal 4 gleich 12 folgt, dass 12 geteilt durch 3 gleich 4 ist.",
+    "Beherrschen Sie zuerst die Division ohne Rest und führen Sie den Rest erst danach ein, damit die neue Idee nicht auf einem wackeligen Fundament landet.",
+    "Lehren Sie die schriftliche Division Schritt für Schritt mit freundlichen Zahlen, bevor Sie zu größeren oder krummeren übergehen.",
+    "Schließen Sie immer mit der Probe durch Multiplikation ab, wodurch das Prüfen zur Gewohnheit statt zum nachträglichen Einfall wird."
   ],
   "examples": [
     {
       "problem": "24 : 6 = ?",
       "solution": "4",
-      "explanation": "Wie oft passt 6 in 24? 6×4=24, also 24:6=4."
+      "explanation": "Fragen Sie, wie oft 6 in 24 passt. Da 6 mal 4 gleich 24 ist, lautet die Antwort 4, und Sie bestätigen es, indem Sie 6 mal 4 zurück zu 24 rechnen."
+    },
+    {
+      "problem": "15 : 4 = ?",
+      "solution": "3 Rest 3",
+      "explanation": "4 passt dreimal in 15, denn 4 mal 3 ist 12, und es bleiben 15 minus 12, also 3. Die Antwort ist daher 3 mit dem Rest 3."
     },
     {
       "problem": "84 : 7 = ?",
       "solution": "12",
-      "explanation": "Schriftliche Division: 7 passt in 8 einmal (7), Rest 1. Hole 4 herunter, ergibt 14. 7 passt in 14 zweimal (14). Antwort: 12."
+      "explanation": "Mit der schriftlichen Division passt 7 einmal in 8, Rest 1. Die 4 herunterholen ergibt 14, und 7 passt zweimal in 14. Die Ziffern gelesen ergeben 12."
+    },
+    {
+      "problem": "96 : 4 = ?",
+      "solution": "24",
+      "explanation": "4 passt zweimal in 9, denn 4 mal 2 ist 8, Rest 1. Die 6 herunterholen ergibt 16, und 4 passt viermal in 16, also lautet die Antwort 24."
     }
   ],
   "commonMistakes": [
-    "Verwechslung von Dividend und Divisor",
-    "Vergessen, die Antwort durch Multiplizieren zu überprüfen",
-    "Fehler bei der schriftlichen Division durch Überspringen von Schritten"
+    "Dividend und Divisor werden vertauscht, sodass das Kind 6 durch 24 statt 24 durch 6 teilt und ein verwirrendes Ergebnis erhält.",
+    "Die Probe durch Multiplizieren wird vergessen, dabei ist sie der schnellste Weg, eine falsche Antwort vor dem Weitermachen zu fangen.",
+    "Bei der schriftlichen Division entstehen Fehler, weil der Schritt Herunterholen übersprungen wird oder das Kind die Ziffer aus dem Blick verliert.",
+    "Der Rest wird weggelassen oder als Teil des Ergebnisses geschrieben, sodass 15 geteilt durch 4 als 33 statt 3 Rest 3 herauskommt."
   ],
   "parentTips": [
-    "Immer mit Multiplikation überprüfen: wenn 24:6=4, dann muss 6×4 gleich 24 sein",
-    "Üben Sie durch Aufteilen von Bonbons oder Spielzeug",
-    "Bei der schriftlichen Division - arbeiten Sie Schritt für Schritt, langsam"
+    "Prüfen Sie immer gemeinsam mit der Multiplikation, denn wenn 24 geteilt durch 6 gleich 4 ist, muss 6 mal 4 gleich 24 sein.",
+    "Üben Sie mit echten Gegenständen wie Bonbons, Münzen oder Spielzeug, damit das Kind sie körperlich in gleiche Haufen verteilen kann.",
+    "Verlangsamen Sie bei der schriftlichen Division stark und arbeiten Sie Schritt für Schritt, denn Eile ist die Quelle der meisten Fehler.",
+    "Verbinden Sie die Division mit dem Einmaleins, das Ihr Kind schon kennt, und behandeln Sie jede Division als Multiplikation mit einer fehlenden Zahl.",
+    "Nutzen Sie Alltagsmomente, etwa eine Pizza teilen oder Snacks verteilen, um zu zeigen, dass Division etwas ist, das wir wirklich tun."
   ],
   "relatedGeneratorHref": "/de/worksheet/math?op=div",
   "relatedGeneratorTitle": "Divisions-Arbeitsblatt-Generator"

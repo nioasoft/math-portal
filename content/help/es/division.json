@@ -1,35 +1,49 @@
 {
   "slug": "division",
   "title": "Division",
-  "shortDescription": "La division es la operacion inversa de la multiplicacion. Los ninos aprenden a dividir una cantidad en partes iguales.",
-  "importance": "La division es necesaria para repartir de forma justa, calcular promedios y entender fracciones y porcentajes mas adelante.",
+  "shortDescription": "Guia para padres sobre la division: desde repartir caramelos de forma justa hasta la division larga, como se conecta con la multiplicacion y los puntos donde mas se traban los ninos.",
+  "importance": "La division es la forma en que los ninos aprenden a separar una cantidad en partes iguales, y es la operacion detras del reparto justo, los promedios y las fracciones y porcentajes que vienen despues. Un nino comodo dividiendo puede responder preguntas reales como cuantas galletas le toca a cada amigo o como repartir una cuenta. Como la division es el reflejo de la multiplicacion, unas tablas flojas la vuelven dificilisima, asi que conviene aprender ambas de la mano y no como temas separados.",
   "howToTeach": [
-    "Empieza con division fisica: 'Reparte 12 caramelos entre 3 ninos'",
-    "Muestra la conexion con la multiplicacion: si 3x4=12 entonces 12:3=4",
-    "Practica division sin residuo antes de pasar a division con residuo",
-    "Explica la division larga gradualmente con numeros simples"
+    "Empieza con reparto fisico, como dividir 12 caramelos en partes iguales entre 3 ninos, para que el nino vea la division como separar en grupos iguales.",
+    "Muestra el vinculo estrecho con la multiplicacion senalando que si 3 por 4 es 12, entonces 12 dividido entre 3 tiene que ser 4.",
+    "Domina primero la division sin residuo y solo despues introduce el residuo, para que la idea nueva no caiga sobre una base inestable.",
+    "Ensena la division larga paso a paso, con numeros amigables antes de pasar a los mas grandes o complicados.",
+    "Termina siempre comprobando la respuesta con la multiplicacion, lo que convierte la verificacion en un habito y no en algo opcional."
   ],
   "examples": [
     {
       "problem": "24 : 6 = ?",
       "solution": "4",
-      "explanation": "Cuantas veces cabe el 6 en el 24? 6x4=24, entonces 24:6=4."
+      "explanation": "Pregunta cuantas veces cabe el 6 en el 24. Como 6 por 4 es 24, la respuesta es 4, y lo puedes confirmar multiplicando 6 por 4 para volver a 24."
+    },
+    {
+      "problem": "15 : 4 = ?",
+      "solution": "3 con residuo 3",
+      "explanation": "El 4 cabe 3 veces en el 15, porque 4 por 3 es 12, y eso deja 15 menos 12 que es 3. Asi que la respuesta es 3 con residuo 3."
     },
     {
       "problem": "84 : 7 = ?",
       "solution": "12",
-      "explanation": "Division larga: 7 cabe en 8 una vez (7), residuo 1. Baja el 4, obtienes 14. 7 cabe en 14 dos veces (14). Respuesta: 12."
+      "explanation": "Con division larga, el 7 cabe una vez en el 8 y sobra 1. Bajas el 4 para formar 14, y el 7 cabe dos veces en el 14. Al leer las cifras queda 12."
+    },
+    {
+      "problem": "96 : 4 = ?",
+      "solution": "24",
+      "explanation": "El 4 cabe dos veces en el 9, porque 4 por 2 es 8, y sobra 1. Bajas el 6 para formar 16, y el 4 cabe cuatro veces en el 16, asi que la respuesta es 24."
     }
   ],
   "commonMistakes": [
-    "Confusion entre dividendo y divisor",
-    "Olvidar verificar la respuesta multiplicando",
-    "Errores en la division larga por saltarse pasos"
+    "Confundir el dividendo con el divisor, de modo que el nino divide 6 entre 24 en lugar de 24 entre 6 y obtiene una respuesta confusa.",
+    "Olvidar comprobar el resultado multiplicando, que es la forma mas rapida de detectar un error antes de seguir.",
+    "Cometer errores en la division larga por saltarse el paso de bajar la cifra o perder de vista en que numero esta trabajando.",
+    "Descartar el residuo o escribirlo pegado al cociente, de manera que 15 entre 4 sale 33 en vez de 3 con residuo 3."
   ],
   "parentTips": [
-    "Siempre verifica con multiplicacion: si 24:6=4, entonces 6x4 debe ser igual a 24",
-    "Practica repartiendo caramelos o juguetes",
-    "En la division larga, trabaja paso a paso, despacio"
+    "Comprueben siempre juntos con la multiplicacion, porque si 24 entre 6 es 4, entonces 6 por 4 tiene que dar 24.",
+    "Practiquen con objetos reales como caramelos, monedas o juguetes para que el nino los reparta fisicamente en montones iguales.",
+    "En la division larga, vayan despacio y trabajen paso a paso, porque la prisa es donde se cuelan casi todos los errores.",
+    "Conecten la division con las tablas que el nino ya conoce, tratando cada division como una multiplicacion con un numero que falta.",
+    "Aprovechen momentos cotidianos, como partir una pizza o repartir un snack, para mostrar que dividir es algo que hacemos de verdad."
   ],
   "relatedGeneratorHref": "/worksheet/math?op=div",
   "relatedGeneratorTitle": "Generador de Hojas de Division"

@@ -1,35 +1,49 @@
 {
   "slug": "series",
   "title": "Arithmetische Folgen",
-  "shortDescription": "Folgen sind eine Reihe von Zahlen mit einem konstanten Muster. Kinder lernen, Muster zu erkennen und die Folge fortzusetzen.",
-  "importance": "Mustererkennung ist eine grundlegende Denkfähigkeit. Folgen bereiten Schüler auf Algebra und das Lösen komplexer Probleme vor.",
+  "shortDescription": "Ein Elternratgeber, um Kindern beizubringen, ein Muster in einer Folge zu erkennen, den Unterschied zwischen einer Additions- und einer Multiplikationsfolge und wie man die Regel findet.",
+  "importance": "Muster zu erkennen ist eine der grundlegendsten Denkfähigkeiten, weit über das Rechnen hinaus. Folgen lehren ein Kind, eine Reihe von Zahlen anzuschauen, zu fragen, was sich hier wiederholt, und eine Regel in Worte zu fassen. Genau dieses Denken wird ihm in der Algebra, beim Programmieren und beim Lösen von Problemen allgemein dienen. Folgen machen außerdem Spaß, weil sie einen Moment der Entdeckung enthalten, wenn ein Kind das Muster plötzlich erfasst und sich wie ein Detektiv fühlt, der den Fall geknackt hat.",
   "howToTeach": [
-    "Beginnen Sie mit einfachen Folgen: 2, 4, 6, 8...",
-    "Ermutigen Sie das Kind, die 'Regel' zu finden (was machst du, um von einer Zahl zur nächsten zu kommen)",
-    "Üben Sie aufsteigende und absteigende Folgen",
-    "Führen Sie Multiplikationsfolgen erst nach Beherrschung der Additions-/Subtraktionsfolgen ein"
+    "Beginnen Sie mit einfachen aufsteigenden Folgen wie 2, 4, 6, 8 und lassen Sie Ihr Kind den Rhythmus spüren.",
+    "Ermutigen Sie es, die Regel selbst zu finden, und fragen Sie, was man tut, um von einer Zahl zur nächsten zu kommen.",
+    "Üben Sie auch absteigende Folgen, etwa 20, 17, 14, damit es nicht annimmt, eine Folge gehe immer aufwärts.",
+    "Führen Sie Multiplikationsfolgen erst ein, nachdem Additions- und Subtraktionsfolgen sitzen, sonst wird es verwirrend.",
+    "Bitten Sie Ihr Kind, die Regel in Worten zu nennen, denn wer das Muster erklären kann, hat es wirklich verstanden."
   ],
   "examples": [
     {
       "problem": "3, 6, 9, 12, ?",
       "solution": "15",
-      "explanation": "Die Regel ist +3 jedes Mal. 12+3=15."
+      "explanation": "Die Regel lautet, jedes Mal 3 dazu. Also 12 plus 3 ist 15."
     },
     {
       "problem": "2, 4, 8, 16, ?",
       "solution": "32",
-      "explanation": "Die Regel ist ×2 jedes Mal. 16×2=32."
+      "explanation": "Hier addiert man nicht, sondern multipliziert. Die Regel ist jedes Mal mal 2, also 16 mal 2 ist 32."
+    },
+    {
+      "problem": "20, 17, 14, 11, ?",
+      "solution": "8",
+      "explanation": "Das ist eine absteigende Folge, und die Regel lautet, jedes Mal 3 abziehen. Also 11 minus 3 ist 8."
+    },
+    {
+      "problem": "1, 4, 9, 16, ?",
+      "solution": "25",
+      "explanation": "Eine kniffligere: Das sind Quadratzahlen, 1 mal 1, 2 mal 2, 3 mal 3, 4 mal 4. Die nächste ist 5 mal 5 gleich 25."
     }
   ],
   "commonMistakes": [
-    "Nach einer zu komplizierten Regel suchen, wenn sie einfach ist",
-    "Verwechslung zwischen Additions- und Multiplikationsfolgen",
-    "Rechenfehler nach dem Finden der Regel"
+    "Es wird nach einer komplizierten Regel gesucht, obwohl sie einfach ist, und der gleichbleibende Betrag direkt vor den Augen wird übersehen.",
+    "Eine Additionsfolge wird mit einer Multiplikationsfolge verwechselt, und es wird addiert, wo multipliziert werden müsste.",
+    "Die Regel wird richtig gefunden, aber bei der abschließenden Rechnung passiert ein Patzer.",
+    "Es wird angenommen, eine Folge gehe immer aufwärts, und nicht bemerkt, dass die Zahlen sinken."
   ],
   "parentTips": [
-    "Beginnen Sie mit der Frage: 'Was ist der Unterschied zwischen den Zahlen?'",
-    "Ermutigen Sie das Kind, das Muster in Worten zu erklären",
-    "Erstellen Sie eigene Folgen und lassen Sie das Kind die Regel finden"
+    "Beginnen Sie immer mit der Frage, was ist der Unterschied zwischen den Zahlen, denn das weist auf die Regel hin.",
+    "Ermutigen Sie Ihr Kind, das Muster in eigenen Worten zu erklären.",
+    "Erfinden Sie eigene Folgen und lassen Sie Ihr Kind die Regel finden, dann tauschen Sie die Rollen.",
+    "Bringen Sie Folgen aus dem Leben ein, etwa Hausnummern entlang der Straße oder das Zählen in Sprüngen.",
+    "Wenn eine Folge schwer ist, erinnern Sie daran, einfach anzufangen, denn die meisten Folgen sind ein festes Plus oder Minus."
   ],
   "relatedGeneratorHref": "/de/series",
   "relatedGeneratorTitle": "Folgen-Arbeitsblatt-Generator"

@@ -1,35 +1,49 @@
 {
   "slug": "geometry",
   "title": "Geometrie",
-  "shortDescription": "Geometrie beschäftigt sich mit Formen, Größen und räumlichen Beziehungen. Kinder lernen, Formen zu erkennen und Fläche und Umfang zu berechnen.",
-  "importance": "Geometrie entwickelt räumliches Denken, das für Architektur, Design, Navigation und das Lösen von Ingenieurproblemen benötigt wird.",
+  "shortDescription": "Ein Elternratgeber zur Geometrie: Fläche von Umfang unterscheiden, die Formeln für Rechteck, Dreieck und Kreis und die Verwechslungen, die die meisten Kinder erwischen.",
+  "importance": "Geometrie ist, wie Kinder lernen, über Formen, Größe und Raum nachzudenken, und sie trainiert das räumliche Vorstellungsvermögen, das später in Design, Architektur, Navigation und Technik gebraucht wird. Sie ist zugleich die sichtbarste Mathematik im Alltag, denn Räume, Fenster, Gärten und Pizzakartons sind Formen, die ein Kind messen und vergleichen kann. Die zwei großen Ideen, der Umfang als Strecke rundherum und die Fläche als Platz innen, geben Kindern eine Antwort auf praktische Fragen wie wie viel Zaun ein Garten braucht.",
   "howToTeach": [
-    "Beginnen Sie damit, Formen in der Umgebung zu erkennen - quadratische Fenster, runde Uhren",
-    "Erklären Sie den Unterschied zwischen Fläche (das Innere) und Umfang (die Linie drumherum)",
-    "Lehren Sie Formeln schrittweise: Rechteck, Dreieck, Kreis",
-    "Verwenden Sie Karopapier zum Zählen, bevor Sie Formeln benutzen"
+    "Beginnen Sie damit, Formen im Haus zu entdecken, etwa quadratische Fenster, runde Uhren und dreieckige Dachgiebel, damit Geometrie vertraut wirkt.",
+    "Machen Sie den Unterschied zwischen Fläche und Umfang anschaulich, indem Sie sagen, der Umfang ist der Zaun um den Garten und die Fläche der Rasen darin.",
+    "Führen Sie die Formeln nach und nach ein, zuerst das Rechteck, dann das Dreieck und erst später den Kreis, sobald die anderen sitzen.",
+    "Nutzen Sie Kästchenpapier, damit das Kind die Fläche durch Zählen von Kästchen findet, bevor es einer Formel vertraut, was die Formel beweist statt nur behauptet.",
+    "Hängen Sie an Antworten immer Einheiten an und erinnern Sie daran, dass der Umfang in Länge und die Fläche in Quadraten gemessen wird."
   ],
   "examples": [
     {
-      "problem": "Ein Rechteck mit Länge 5 und Breite 3. Was ist Fläche und Umfang?",
-      "solution": "Fläche: 15, Umfang: 16",
-      "explanation": "Fläche = Länge × Breite = 5×3 = 15. Umfang = 2×(Länge+Breite) = 2×(5+3) = 16."
+      "problem": "Ein Rechteck hat Länge 5 und Breite 3. Finde Fläche und Umfang.",
+      "solution": "Fläche 15, Umfang 16",
+      "explanation": "Die Fläche ist Länge mal Breite, also 5 mal 3 gleich 15. Der Umfang addiert alle vier Seiten, also 2 mal (5 plus 3), das ergibt 2 mal 8 gleich 16."
     },
     {
-      "problem": "Ein Dreieck mit Grundseite 8 und Höhe 6. Was ist die Fläche?",
+      "problem": "Ein Dreieck hat Grundseite 8 und Höhe 6. Finde die Fläche.",
       "solution": "24",
-      "explanation": "Dreiecksfläche = (Grundseite × Höhe) : 2 = (8×6):2 = 48:2 = 24."
+      "explanation": "Die Dreiecksfläche ist Grundseite mal Höhe geteilt durch 2. Also 8 mal 6 ist 48, und 48 geteilt durch 2 ist 24."
+    },
+    {
+      "problem": "Ein Quadrat hat eine Seite von 7. Finde Fläche und Umfang.",
+      "solution": "Fläche 49, Umfang 28",
+      "explanation": "Ein Quadrat hat vier gleiche Seiten. Die Fläche ist Seite mal Seite, also 7 mal 7 gleich 49. Der Umfang ist 4 mal 7, also 28."
+    },
+    {
+      "problem": "Ein Rechteck hat die Fläche 24 und die Breite 4. Finde seine Länge.",
+      "solution": "6",
+      "explanation": "Da die Fläche Länge mal Breite ist, rechnet man rückwärts durch Teilen: 24 geteilt durch 4 ist 6, also ist die Länge 6."
     }
   ],
   "commonMistakes": [
-    "Verwechslung von Fläche und Umfang",
-    "Vergessen, für die Dreiecksfläche durch 2 zu teilen",
-    "Die falsche Seite als Höhe bei Dreiecken verwenden"
+    "Fläche und Umfang werden verwechselt, sodass das Kind die Seiten addiert, obwohl gefragt ist, wie viel Platz innen ist.",
+    "Beim Finden der Dreiecksfläche wird das Teilen durch 2 vergessen, sodass 48 statt 24 herauskommt.",
+    "Beim Dreieck wird die falsche Seite als Höhe gewählt, also eine schräge Kante statt der senkrechten Strecke.",
+    "Die Einheiten werden weggelassen oder vertauscht, sodass ein Umfang in Quadrateinheiten steht, wo Längeneinheiten richtig wären."
   ],
   "parentTips": [
-    "Messen Sie gemeinsam Räume im Haus",
-    "Zeichnen Sie auf Karopapier und zählen Sie Quadrate",
-    "Verwenden Sie Schachteln und Lego für Demonstrationen"
+    "Messen Sie gemeinsam Räume oder Möbel im Haus, damit Ihr Kind sieht, wie Fläche und Umfang eine echte Frage lösen.",
+    "Zeichnen Sie Formen auf Kästchenpapier und zählen Sie die Kästchen innen, was die Flächenformel erarbeitet statt nur auswendig lernen lässt.",
+    "Nutzen Sie Schachteln, Fliesen und Legosteine, um Formen zu bauen, die das Kind anfassen kann, und machen Sie Geometrie körperlich.",
+    "Fragen Sie, ob eine Antwort eine Länge oder eine Fläche ist, denn diese eine Frage stoppt die meisten Verwechslungen.",
+    "Gehen Sie um den Block oder durch den Garten und schätzen Sie den Umfang, dann prüfen Sie, um die Idee mit dem Draußen zu verbinden."
   ],
   "relatedGeneratorHref": "/de/geometry",
   "relatedGeneratorTitle": "Geometrie-Arbeitsblatt-Generator"

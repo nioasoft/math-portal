@@ -1,35 +1,49 @@
 {
   "slug": "series",
   "title": "Sucesiones Aritmeticas",
-  "shortDescription": "Las sucesiones son una serie de numeros con un patron constante. Los ninos aprenden a identificar patrones y continuar la sucesion.",
-  "importance": "El reconocimiento de patrones es una habilidad de pensamiento basica. Las sucesiones preparan a los estudiantes para el algebra y la resolucion de problemas complejos.",
+  "shortDescription": "Una guia para que los padres ensenen a los ninos a descubrir el patron de una sucesion, distingan una sucesion de suma de una de multiplicacion y aprendan a encontrar la regla.",
+  "importance": "Descubrir patrones es una de las habilidades de pensamiento mas basicas, mucho mas alla de la aritmetica. Las sucesiones le ensenan al nino a mirar una serie de numeros, preguntarse que se repite aqui y poner una regla en palabras. Ese es justo el tipo de pensamiento que le servira en el algebra, en la programacion y en la resolucion de problemas en general. Las sucesiones tambien son divertidas, porque guardan un momento de descubrimiento, cuando el nino capta de pronto el patron y se siente como un detective que resolvio el caso. Vale la pena cultivar ese gusto, ya que es un motor potente para aprender.",
   "howToTeach": [
-    "Empieza con sucesiones simples: 2, 4, 6, 8...",
-    "Anima al nino a encontrar la 'regla' (que haces para pasar de un numero al siguiente)",
-    "Practica sucesiones ascendentes y descendentes",
-    "Introduce sucesiones de multiplicacion solo despues de dominar las de suma/resta"
+    "Empieza con sucesiones ascendentes simples como 2, 4, 6, 8 y deja que tu hijo sienta el ritmo.",
+    "Animalo a encontrar la regla por si mismo, preguntando que haces para pasar de un numero al siguiente.",
+    "Practica tambien sucesiones descendentes, como 20, 17, 14, para que no suponga que una sucesion siempre sube.",
+    "Introduce las sucesiones de multiplicacion solo cuando las de suma y resta esten firmes, porque si no se vuelve confuso.",
+    "Pidele a tu hijo que diga la regla con sus palabras, porque quien sabe explicar el patron lo ha entendido de verdad."
   ],
   "examples": [
     {
       "problem": "3, 6, 9, 12, ?",
       "solution": "15",
-      "explanation": "La regla es +3 cada vez. 12+3=15."
+      "explanation": "La regla es sumar 3 cada vez. Asi que 12 + 3 = 15."
     },
     {
       "problem": "2, 4, 8, 16, ?",
       "solution": "32",
-      "explanation": "La regla es x2 cada vez. 16x2=32."
+      "explanation": "Aqui no sumas, multiplicas. La regla es por 2 cada vez, asi que 16 x 2 = 32."
+    },
+    {
+      "problem": "20, 17, 14, 11, ?",
+      "solution": "8",
+      "explanation": "Esta es una sucesion descendente, y la regla es restar 3 cada vez. Asi que 11 - 3 = 8."
+    },
+    {
+      "problem": "1, 4, 9, 16, ?",
+      "solution": "25",
+      "explanation": "Una mas dificil: son cuadrados, 1 x 1, 2 x 2, 3 x 3, 4 x 4. El siguiente es 5 x 5 = 25."
     }
   ],
   "commonMistakes": [
-    "Buscar una regla demasiado complicada cuando es simple",
-    "Confusion entre sucesiones de suma y de multiplicacion",
-    "Errores de calculo despues de encontrar la regla"
+    "Buscar una regla complicada cuando en realidad es simple, y no ver la cantidad constante que esta justo delante.",
+    "Confundir una sucesion de suma con una de multiplicacion, e intentar sumar cuando hay que multiplicar.",
+    "Encontrar bien la regla pero equivocarse en el calculo final.",
+    "Suponer que una sucesion siempre sube y no notar que los numeros estan bajando."
   ],
   "parentTips": [
-    "Empieza con la pregunta: 'Cual es la diferencia entre los numeros?'",
-    "Anima al nino a explicar el patron con palabras",
-    "Crea tus propias sucesiones y deja que el nino encuentre la regla"
+    "Empieza siempre con la pregunta cual es la diferencia entre los numeros, ya que eso apunta hacia la regla.",
+    "Anima a tu hijo a explicar el patron con sus propias palabras.",
+    "Inventa tus propias sucesiones y deja que tu hijo encuentre la regla, y luego intercambien papeles.",
+    "Trae sucesiones de la vida, como los numeros de las casas en la calle o contar a saltos.",
+    "Cuando una sucesion sea dificil, recuerdale empezar simple, porque la mayoria son una suma o una resta constante."
   ],
   "relatedGeneratorHref": "/series",
   "relatedGeneratorTitle": "Generador de Hojas de Sucesiones"

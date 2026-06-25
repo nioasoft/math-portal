@@ -1,36 +1,49 @@
 {
   "slug": "multiplication",
   "title": "Multiplikation",
-  "shortDescription": "Multiplikation ist wiederholte Addition. Kinder lernen, dass Multiplikation das mehrfache Addieren derselben Zahl abkürzt.",
-  "importance": "Multiplikation ist die Grundlage für fortgeschrittene Mathematik, Flächenberechnungen und das Lösen alltäglicher Probleme wie die Berechnung des Gesamtpreises für mehrere Artikel.",
+  "shortDescription": "Ein Elternratgeber zur Multiplikation: echtes Verständnis aufbauen, bevor das Einmaleins kommt, Merktricks, die wirklich haften, zweistellige Multiplikation und die Patzer, die fast jedes Kind macht.",
+  "importance": "Die Multiplikation ist nicht nur ein weiterer Punkt auf einer Liste, sie ist der Boden, auf dem fast alles andere steht. Division, Brüche, Prozente, Flächen und das Zerlegen in Faktoren stützen sich darauf, dass ein Kind weiß, dass 7 mal 8 gleich 56 ist, ohne zu zählen. Wer das Einmaleins beherrscht, bleibt im Mathematikunterricht ruhig, während ein zögerndes Kind mit jedem neuen Thema kämpft. Auch im Alltag taucht es auf: der Preis von sechs Saftpackungen oder wie viele Tage acht Wochen haben.",
   "howToTeach": [
-    "Beginnen Sie mit dem Verständnis des Konzepts: 3×4 ist wie 3+3+3+3 oder 4+4+4",
-    "Lehren Sie das Einmaleins schrittweise - beginnen Sie mit 2, 5, 10",
-    "Verwenden Sie visuelle Muster (Reihen und Spalten)",
-    "Wiederholen Sie die Fakten, bis sie automatisch werden"
+    "Beginnen Sie mit der Bedeutung, nicht mit dem Auswendiglernen: Erklären Sie, dass 3 mal 4 drei Gruppen mit je vier sind, also dasselbe wie 4 plus 4 plus 4.",
+    "Lehren Sie das Einmaleins nach Schwierigkeit, zuerst die leichten 2er, 5er und 10er, dann die 3er und 4er, und heben Sie sich die kniffligen 6er, 7er und 8er für zuletzt auf.",
+    "Nutzen Sie ein Gitter aus Reihen und Spalten, damit das Kind sieht, dass 3 mal 4 buchstäblich ein Rechteck aus Punkten ist, was die Antwort greifbar macht.",
+    "Zeigen Sie entlastende Abkürzungen, etwa den Fingertrick für die 9er und das Muster, dass jedes Vielfache von 5 auf 0 oder 5 endet.",
+    "Üben Sie die Aufgaben gemischt statt immer der Reihe nach, denn wer das Einmaleins nur in Reihenfolge kann, kann es noch nicht wirklich."
   ],
   "examples": [
     {
       "problem": "4 × 7 = ?",
       "solution": "28",
-      "explanation": "4 mal 7: 7+7+7+7 = 28. Oder verwenden Sie das Einmaleins."
+      "explanation": "Vier Siebener bedeuten 7 plus 7 plus 7 plus 7, das ergibt 28. Sobald es sitzt, sollte das Kind es direkt aus dem Einmaleins abrufen, ohne zu addieren."
+    },
+    {
+      "problem": "9 × 6 = ?",
+      "solution": "54",
+      "explanation": "Nutzen Sie den Fingertrick: Halten Sie zehn Finger hoch und knicken Sie den sechsten ein. Die 5 Finger links davon sind die Zehner, die 4 rechts sind die Einer, also 54."
+    },
+    {
+      "problem": "7 × 8 = ?",
+      "solution": "56",
+      "explanation": "Wird diese Aufgabe vergessen, zerlegen Sie sie: 7 mal 4 ist 28, und 7 mal 4 noch einmal sind weitere 28, also 28 plus 28 gleich 56."
     },
     {
       "problem": "23 × 4 = ?",
       "solution": "92",
-      "explanation": "Einer: 3×4 = 12 (schreibe 2, merke 1). Zehner: 2×4 = 8, + 1 = 9. Antwort: 92."
+      "explanation": "Beginnen Sie mit den Einern: 3 mal 4 ist 12, also die 2 hinschreiben und die 1 merken. Dann die Zehner: 2 mal 4 ist 8, plus die gemerkte 1 ergibt 9. Die Antwort ist 92."
     }
   ],
   "commonMistakes": [
-    "Verwechslung ähnlicher Multiplikationsfakten (6×7 und 7×8)",
-    "Vergessen des Übertrags bei zweistelliger Multiplikation",
-    "Überspringen eines Schritts beim Multiplizieren großer Zahlen"
+    "Ähnliche Aufgaben wie 6 mal 7 und 7 mal 8 werden verwechselt, wenn das Auswendiglernen mechanisch war und nie an eine Bedeutung gebunden wurde.",
+    "Beim zweistelligen Multiplizieren wird der Übertrag vergessen, sodass 23 mal 4 als 82 statt richtig 92 herauskommt.",
+    "Multiplizieren wird mit Addieren vertauscht und 3 mal 4 für 7 gehalten, was sich durch die Rückkehr zur Idee wiederholter Gruppen beheben lässt.",
+    "Das Einmaleins wird nur in Reihenfolge gekonnt, und das Kind erstarrt, sobald ein einzelner Wert außer der Reihe gefragt wird."
   ],
   "parentTips": [
-    "Üben Sie das Einmaleins jeden Tag - 5 Minuten reichen",
-    "Machen Sie es zu einem Lied oder Familienquiz",
-    "Zeigen Sie Muster: alle Vielfachen von 5 enden auf 0 oder 5",
-    "Zwingen Sie kein mechanisches Auswendiglernen - Verständnis kommt zuerst"
+    "Üben Sie jeden Tag fünf Minuten, denn kurze tägliche Wiederholungen schlagen eine lange Stunde einmal pro Woche deutlich.",
+    "Machen Sie ein Lied oder ein schnelles Familienquiz am Esstisch daraus, damit es sich wie ein Spiel und nicht wie eine Pflicht anfühlt.",
+    "Weisen Sie auf Muster hin, etwa dass jedes Vielfache von 5 auf 0 oder 5 endet, was eine ganze Spalte des Ratens beseitigt.",
+    "Erzwingen Sie kein mechanisches Pauken, bevor das Kind versteht, was Multiplikation bedeutet, denn Verständnis kommt immer zuerst.",
+    "Wenn Ihr Kind bei einer Aufgabe hängt, zerlegen Sie sie in kleinere, die es schon kennt, und bauen Sie sie von dort wieder auf."
   ],
   "relatedGeneratorHref": "/de/worksheet/math?op=mul",
   "relatedGeneratorTitle": "Multiplikations-Arbeitsblatt-Generator"

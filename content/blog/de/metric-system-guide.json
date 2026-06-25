@@ -1,14 +1,17 @@
 {
   "slug": "metric-system-guide",
   "title": "Millimeter, Zentimeter, Meter - Den Durchblick behalten",
-  "excerpt": "Der vollständige Leitfaden zur Umrechnung von Längeneinheiten für Kinder.",
+  "excerpt": "Millimeter, Zentimeter, Meter, Kilometer. Die dezimale Leiter, die alles ordnet, eine einfache Merkregel, durchgerechnete Beispiele und der häufige Fehler, der die Richtung umkehrt.",
   "date": "2026-03-08",
-  "readTime": "4 Min.",
+  "readTime": "6 Min. Lesezeit",
   "category": "curriculum",
   "categoryLabel": "Lehrplan",
   "image": "/blog/metric-system-guide.webp",
-  "tags": ["Maßeinheiten", "Umrechnungen"],
+  "tags": [
+    "Maßeinheiten",
+    "Umrechnungen"
+  ],
   "author": "Team Clevere Arbeitsblätter",
-  "lastModified": "2026-01-17",
-  "content": "<p>Denken Sie an das Dezimalsystem. 10 mm = 1 cm. 100 cm = 1 Meter. Üben Sie mit dem <a href=\"/de/units\">Umrechnungs-Generator</a>.</p>"
+  "lastModified": "2026-06-25",
+  "content": "<h2>Hier ist alles dezimal, und das ist die gute Nachricht</h2>\n<p>Längenumrechnungen verwirren viele Kinder, doch sie haben einen großen Vorteil: Alles läuft in Zehnerschritten. Anders als bei Stunden und Minuten ist jede Stufe der Leiter das Zehnfache der vorigen. In dem Moment, in dem Ihr Kind diese Leiter begreift, verschwindet der größte Teil der Verwirrung.</p>\n<h3>Die Leiter, von unten nach oben</h3>\n<ul>\n<li>10 Millimeter sind 1 Zentimeter.</li>\n<li>100 Zentimeter sind 1 Meter.</li>\n<li>1000 Meter sind 1 Kilometer.</li>\n</ul>\n<p>Es lohnt sich, das neben den Schreibtisch zu hängen. Wenn das Kind die Leiter vor Augen hat, hört es auf zu raten.</p>\n<h3>Eine Merkregel für die Richtung</h3>\n<p>Die große Verwirrung ist, in welche Richtung das Komma rutscht. Die Regel ist einfach: Geht man zu einer kleineren Einheit, wird die Zahl größer, geht man zu einer größeren Einheit, wird die Zahl kleiner. Ein Meter sind viele Zentimeter, also multipliziert man von Metern zu Zentimetern. Das ergibt Sinn, denn man braucht viel mehr von den kleinen Zentimetern.</p>\n<h3>Rechnen wir gemeinsam um</h3>\n<p>Wie viele Zentimeter sind 2,5 Meter? Sie gehen zu einer kleineren Einheit, also multiplizieren Sie mit 100. 2,5 mal 100 ist 250 Zentimeter.</p>\n<p>Und andersherum, wie viele Meter sind 3000 Millimeter? Zuerst von Millimetern zu Zentimetern, durch 10 teilen, das ergibt 300 Zentimeter. Dann von Zentimetern zu Metern, durch 100 teilen, das ergibt 3 Meter. Zwei kleine Schritte statt eines verwirrenden Sprungs.</p>\n<h3>Der häufigste Fehler</h3>\n<p>Kinder schieben das Komma in die falsche Richtung und erhalten eine absurde Zahl, etwa einen 1,7 Millimeter großen Menschen. Hier kommt ein wichtiger Trick: die Plausibilitätsprüfung. Fragen Sie immer, ergibt die Antwort Sinn? Wenn ein Kind 170 Meter groß herauskommt, ist offensichtlich etwas umgekippt. Logik ist die Sicherheitsbremse.</p>\n<h3>Dieselbe Idee gilt für Gewicht und Volumen</h3>\n<p>Das Schöne am metrischen System ist, dass es sich wiederholt. Was für die Länge gilt, gilt auch für Gewicht und Volumen, auf derselben Leiter aus Zehn, Hundert und Tausend. 1000 Gramm sind ein Kilogramm, genau wie 1000 Meter ein Kilometer. 1000 Milliliter sind ein Liter. Hat Ihr Kind die Logik der Leiter einmal erfasst, kann es sie auf jede Art von Maß anwenden. Das ist der Unterschied zwischen dem Auswendiglernen dreier Tabellen und dem Verstehen einer einzigen Idee.</p>\n<h3>Fragen, die Eltern stellen</h3>\n<p><strong>In welchem Alter werden Umrechnungen gelehrt?</strong> Grundlegendes Messen taucht in den frühen Klassen auf, aber Umrechnungen mit dem Verschieben des Kommas kommen in der 4. und 5. Klasse, zusammen mit den Dezimalzahlen.</p>\n<p><strong>Mein Kind kennt die Tabelle, verwechselt aber die Richtung, warum?</strong> Weil es ohne Verständnis auswendig gelernt hat. Gehen Sie zur Grundidee zurück: Eine kleine Einheit braucht man häufiger, also wird die Zahl größer. Sobald das klickt, regelt sich die Richtung von selbst.</p>\n<p><strong>Wie üben wir?</strong> Es hilft, zu Hause echte Dinge mit Lineal und Maßband zu messen, und außerdem Umrechnungsaufgaben im <a href='/units'>Umrechnungs-Generator</a> zu bauen, um die Methode zu festigen.</p>"
 }

@@ -1,35 +1,49 @@
 {
   "slug": "percentage",
   "title": "Porcentajes",
-  "shortDescription": "Los porcentajes son fracciones con denominador 100. Permiten comparar facilmente diferentes cantidades.",
-  "importance": "Los porcentajes estan en todas partes: descuentos en tiendas, calificaciones de examenes, intereses bancarios y estadisticas en las noticias.",
+  "shortDescription": "Guia para padres sobre los porcentajes: por que por ciento significa de cada cien, el truco facil del 10 por ciento, su relacion con las fracciones y los errores que confunden a los ninos con los descuentos.",
+  "importance": "Los porcentajes estan en todas partes donde el nino mira: en los carteles de oferta de las tiendas, las calificaciones, la bateria del telefono, los intereses del banco y las estadisticas de las noticias. Un porcentaje es solo una fraccion con denominador 100, lo que lo convierte en un lenguaje comun para comparar cantidades muy distintas. Un nino que sabe hallar el 10 por ciento de cabeza puede estimar rapido un descuento o cuanto de una meta ya esta hecho. Como se ligan a las fracciones y los decimales, dominarlos refuerza tambien esos temas.",
   "howToTeach": [
-    "Explica que 'por ciento' significa 'de cada cien'",
-    "Empieza con porcentajes simples: 50% = la mitad, 25% = un cuarto",
-    "Muestra la conexion con las fracciones: 50% = 50/100 = 1/2",
-    "Practica calculando el 10% primero (divide entre 10) y luego multiplica segun sea necesario"
+    "Explica que por ciento significa literalmente de cada cien, asi que 30 por ciento es solo 30 de cada 100.",
+    "Ancla primero algunos valores de referencia, como que 50 por ciento es la mitad, 25 por ciento es un cuarto y 10 por ciento es una decima parte.",
+    "Muestra el puente con las fracciones y los decimales, demostrando que 50 por ciento es igual a 50/100, igual a 1/2, igual a 0,5.",
+    "Ensena el atajo del 10 por ciento simplemente dividiendo entre 10, y luego construye los demas a partir de ahi, ya que 20 por ciento es el doble del 10 por ciento.",
+    "Practiquen con precios y descuentos reales para que el nino vea los porcentajes como una herramienta para comprar y no solo como un ejercicio de la hoja."
   ],
   "examples": [
     {
       "problem": "25% de 80 = ?",
       "solution": "20",
-      "explanation": "25% es un cuarto. 80:4 = 20. O: 80 x 0,25 = 20."
+      "explanation": "25 por ciento es un cuarto, asi que divide 80 entre 4 para obtener 20. Tambien puedes multiplicar 80 por 0,25, que igual da 20."
     },
     {
       "problem": "15% de 200 = ?",
       "solution": "30",
-      "explanation": "10% de 200 = 20. 5% = 10. Total 15% = 30."
+      "explanation": "Halla el 10 por ciento de 200 dividiendo entre 10, que es 20. La mitad de eso es el 5 por ciento, que es 10. Suma: 20 mas 10 es 30."
+    },
+    {
+      "problem": "Una camisa de 90 tiene un 20% de descuento. Cual es el precio nuevo?",
+      "solution": "72",
+      "explanation": "El 10 por ciento de 90 es 9, asi que el 20 por ciento es 18. Resta el descuento al precio original: 90 menos 18 es igual a 72."
+    },
+    {
+      "problem": "Maya saco 18 de 20 en un examen. Que porcentaje es?",
+      "solution": "90%",
+      "explanation": "Convierte 18 de 20 en fraccion y llevala a 100. Multiplicando ambos numeros por 5 da 90 de 100, que es 90 por ciento."
     }
   ],
   "commonMistakes": [
-    "Dividir entre 100 en lugar de multiplicar por el porcentaje",
-    "Olvidar convertir el porcentaje a fraccion o decimal",
-    "Confusion al calcular descuentos (el precio nuevo, no el descuento)"
+    "Dividir entre 100 cuando deberian multiplicar por el porcentaje, de modo que el 25 por ciento de 80 sale diminuto en lugar de 20.",
+    "Olvidar convertir el porcentaje en fraccion o decimal antes de calcular y meter por error el numero 25 tal cual.",
+    "Dar el monto del descuento cuando la pregunta pide el precio nuevo, respondiendo 18 en vez del 72 final.",
+    "Confundir el porcentaje de un numero con el de otro, por ejemplo hallar el 20 por ciento del precio ya rebajado en lugar del original."
   ],
   "parentTips": [
-    "Practica mientras compran: 'Hay un 20% de descuento, cuanto ahorraremos?'",
-    "Muestra una tabla de conversion: 10%=0,1, 25%=0,25, 50%=0,5",
-    "Siempre calcula el 10% primero, es el mas facil!"
+    "Practiquen mientras compran preguntando: hay un 20 por ciento de descuento, cuanto ahorramos y cuanto pagamos.",
+    "Pongan una tablita de conversion en el refrigerador, con entradas como 10 por ciento es 0,1, 25 por ciento es 0,25 y 50 por ciento es 0,5.",
+    "Hallen siempre el 10 por ciento primero, porque es el ancla mas facil y casi todo otro porcentaje se construye a partir de el.",
+    "Usen el nivel de bateria, las barras de descarga y el avance de los juegos, ya que son porcentajes que tu hijo mira todos los dias.",
+    "Pregunten si la respuesta es razonable, recordando que un precio con descuento siempre debe ser menor que el original."
   ],
   "relatedGeneratorHref": "/percentage",
   "relatedGeneratorTitle": "Generador de Hojas de Porcentajes"

@@ -1,35 +1,49 @@
 {
   "slug": "units",
   "title": "Conversion de Unidades",
-  "shortDescription": "La conversion de unidades permite pasar entre diferentes unidades de longitud, peso y tiempo.",
-  "importance": "La conversion de unidades es necesaria en la cocina, construccion, deportes y viajes. Tambien ensena sobre el sistema decimal.",
+  "shortDescription": "Una guia para que los padres ensenen la conversion de unidades, por que la longitud va de diez en diez pero el tiempo va de sesenta en sesenta, y el error que invierte la direccion.",
+  "importance": "La conversion de unidades se necesita al cocinar, construir, hacer deporte y viajar, y ensena mucho sobre el sistema decimal. Pero hay una trampa que confunde a los ninos: algunas unidades van de diez en diez y de cien en cien, y otras no. La longitud, el peso y el volumen son decimales y amables, pero el tiempo va de sesenta en sesenta, y ahi es donde muchos ninos fallan. El nino que entiende la logica de cada escala, en vez de solo memorizar una tabla, convierte con seguridad y detecta sus propias respuestas cuando salen absurdas.",
   "howToTeach": [
-    "Empieza con las unidades basicas y las relaciones entre ellas",
-    "Explica que la palabra 'kilo' = mil",
-    "Practica multiplicar y dividir por 10, 100, 1000",
-    "Para el tiempo, recuerda que 60 (no 10) es el numero importante"
+    "Empieza con las unidades basicas y las relaciones entre ellas: milimetro, centimetro, metro y kilometro.",
+    "Explica que la palabra kilo significa mil, asi que un kilometro son mil metros y un kilogramo son mil gramos.",
+    "Practica multiplicar y dividir por 10, 100 y 1000, porque ese es el corazon de toda conversion decimal.",
+    "Ensena la regla de la direccion: pasar a una unidad mas pequena agranda el numero, y pasar a una mas grande lo achica.",
+    "Insiste en la excepcion del tiempo, ya que las horas y los minutos van de sesenta en sesenta y no de diez en diez, lo que confunde si no se senala."
   ],
   "examples": [
     {
-      "problem": "3 metros = ? cm",
+      "problem": "3 m = ? cm",
       "solution": "300",
-      "explanation": "Un metro = 100 cm. 3 metros = 3 x 100 = 300 cm."
+      "explanation": "Un metro son 100 cm. Pasamos a una unidad mas pequena, asi que multiplicamos: 3 x 100 = 300 cm."
     },
     {
       "problem": "2 horas = ? minutos",
       "solution": "120",
-      "explanation": "Una hora = 60 minutos. 2 horas = 2 x 60 = 120 minutos."
+      "explanation": "Aqui el tiempo va de sesenta en sesenta, no de diez en diez. Una hora son 60 minutos, asi que 2 x 60 = 120 minutos."
+    },
+    {
+      "problem": "2500 g = ? kg",
+      "solution": "2,5",
+      "explanation": "Un kilogramo son mil gramos. Pasamos a una unidad mas grande, asi que dividimos: 2500 : 1000 = 2,5 kg."
+    },
+    {
+      "problem": "90 minutos = ? horas",
+      "solution": "1,5 horas",
+      "explanation": "De nuevo de sesenta en sesenta: 60 minutos forman una hora, y los 30 minutos que sobran son media hora. Juntos son una hora y media."
     }
   ],
   "commonMistakes": [
-    "Confusion entre unidades (metro/cm/mm)",
-    "Olvidar que el tiempo funciona en 60, no en 10",
-    "Multiplicar en lugar de dividir o viceversa"
+    "Confundir las unidades de longitud y no saber si de metros a centimetros se multiplica por 10 o por 100.",
+    "Olvidar que el tiempo va de sesenta en sesenta y no de diez en diez, calculando dos horas como 100 minutos.",
+    "Multiplicar cuando hay que dividir o al reves, porque no se detuvieron a pensar en que direccion van.",
+    "No revisar si la respuesta tiene sentido y terminar con una persona de 100 metros de alto sin notarlo."
   ],
   "parentTips": [
-    "Muestra una regla y una cinta metrica para ejemplos practicos",
-    "Practica con un reloj real",
-    "Crea una tabla de conversion en la pared"
+    "Muestra una regla y un metro de verdad, y deja que tu hijo mida objetos y convierta los resultados.",
+    "Practica el tiempo con un reloj real: cuantos minutos faltan para salir, cuantas horas duro el viaje.",
+    "Haz una tabla de conversion colorida y cuelgala en la pared junto al escritorio de tareas.",
+    "Recuerdale la regla de la direccion, donde una unidad mas pequena necesita mas cantidad de si misma y por eso el numero crece.",
+    "Practica la revision con sentido comun, porque si sale un numero raro, lo mas probable es que se haya invertido la direccion."
   ],
   "relatedGeneratorHref": "/units",
   "relatedGeneratorTitle": "Generador de Hojas de Conversion de Unidades"

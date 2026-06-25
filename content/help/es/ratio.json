@@ -1,35 +1,49 @@
 {
   "slug": "ratio",
   "title": "Razon y Proporcion",
-  "shortDescription": "La razon describe la relacion entre dos cantidades. La proporcion es una igualdad entre dos razones.",
-  "importance": "La razon es necesaria en recetas (duplicar cantidades), mapas (escala) y ciencias. Es preparacion para el algebra.",
+  "shortDescription": "Una guia para que los padres ensenen la razon y la proporcion con recetas y mapas, encuentren el termino que falta y eviten el desliz de sumar en vez de multiplicar.",
+  "importance": "La razon aparece en las recetas cuando ajustas las cantidades, en los mapas cuando interpretas una escala y en las ciencias. Tambien es preparacion directa para el algebra, porque la idea de mantener dos lados en equilibrio vuelve una y otra vez. El nino que entiende la razon aprende una forma importante de pensar: las cosas pueden crecer juntas sin perder la relacion entre ellas. La mejor manera de ensenarla es con recetas, donde la razon es concreta: cada dos huevos por cierta cantidad de harina, y cuando duplicas la receta, duplicas ambos.",
   "howToTeach": [
-    "Empieza con ejemplos concretos: 'Por cada 2 manzanas hay 3 platanos'",
-    "Explica que una razon igual se mantiene al multiplicar o dividir ambos lados",
-    "Practica encontrando el termino que falta en una proporcion",
-    "Muestra el metodo de productos cruzados"
+    "Empieza con ejemplos concretos, como por cada 2 manzanas hay 3 platanos, y muestralo con fruta de verdad.",
+    "Explica que la razon se mantiene igual cuando multiplicas o divides ambos lados por el mismo numero.",
+    "Practica encontrando el termino que falta, preguntando que debe ir en lugar del signo de interrogacion para conservar la razon.",
+    "Muestra el metodo de los productos cruzados cuando avance, pero solo despues de que la comprension basica este afianzada.",
+    "Conecta siempre con una receta o un mapa, para que la razon sea algo real y no un ejercicio abstracto."
   ],
   "examples": [
     {
-      "problem": "2:3 = 6:?",
+      "problem": "2 : 3 = 6 : ?",
       "solution": "9",
-      "explanation": "De 2 a 6 multiplicamos por 3. Entonces 3 tambien debe multiplicarse por 3: 3x3=9."
+      "explanation": "De 2 a 6 multiplicamos por 3. Para conservar la razon, el 3 tambien debe multiplicarse por 3, asi que 3 x 3 = 9."
     },
     {
-      "problem": "4:5 = ?:15",
+      "problem": "4 : 5 = ? : 15",
       "solution": "12",
-      "explanation": "De 5 a 15 multiplicamos por 3. Entonces 4 tambien debe multiplicarse por 3: 4x3=12."
+      "explanation": "De 5 a 15 multiplicamos por 3. Entonces el 4 tambien debe multiplicarse por 3, lo que da 4 x 3 = 12."
+    },
+    {
+      "problem": "Una receta para 4 personas lleva 2 huevos. Cuantos huevos para 8 personas?",
+      "solution": "4",
+      "explanation": "De 4 personas a 8 multiplicamos por 2, asi que los huevos tambien se duplican. 2 x 2 = 4 huevos."
+    },
+    {
+      "problem": "En un mapa, 1 cm representa 100 m. Cuanto representan 3 cm?",
+      "solution": "300 m",
+      "explanation": "De 1 a 3 multiplicamos por 3, asi que la distancia real tambien se multiplica por 3. 100 x 3 = 300 m."
     }
   ],
   "commonMistakes": [
-    "Sumar en lugar de multiplicar",
-    "Olvidar hacer la misma operacion en ambos lados",
-    "Errores al identificar que numero cambio"
+    "Sumar en vez de multiplicar, de modo que para una razon que se duplica, el nino le agrega un numero fijo a ambos lados.",
+    "Cambiar solo un lado y olvidar que la razon se mantiene igual solo cuando ambos lados cambian juntos.",
+    "Confundir cual numero cambio y no calcular cuantas veces crecio la razon.",
+    "Recurrir a un metodo complicado cuando la razon es simple y clara."
   ],
   "parentTips": [
-    "Practica con recetas: 'Si necesitamos 2 huevos para 4 personas, cuantos para 8?'",
-    "Usa cartas u objetos para demostrar razones",
-    "Enfatiza que la razon se mantiene constante!"
+    "Practica con recetas: si necesitas 2 huevos para 4 personas, cuantos para 8 y cuantos para 6?",
+    "Usa objetos o cartas para mostrar una razon de forma concreta y manipulable.",
+    "Insiste en el principio de que la razon se mantiene fija mientras las cantidades crecen juntas.",
+    "Conecta con los mapas, ya que una escala es una gran razon que los ninos disfrutan.",
+    "Recuerdale comprobar: si multiplicamos un lado por tres, el otro lado tambien debe multiplicarse por tres."
   ],
   "relatedGeneratorHref": "/ratio",
   "relatedGeneratorTitle": "Generador de Hojas de Razon"

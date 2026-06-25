@@ -1,37 +1,49 @@
 {
   "slug": "addition",
   "title": "Addition",
-  "shortDescription": "Addition ist die Grundlage aller Mathematik. Kinder lernen, Mengen zu kombinieren und das Konzept von 'mehr' zu verstehen.",
-  "importance": "Addition ist die erste Operation, die Kinder lernen, und bildet die Basis für alle anderen Rechenoperationen. Die Beherrschung der Addition wird beim Einkaufen, bei der Geldverwaltung, beim Messen und mehr benötigt.",
+  "shortDescription": "Ein Elternratgeber, um Addition mit echten Gegenständen beizubringen, wie der Übertrag bei zweistelligen Aufgaben funktioniert und welche Patzer Anfänger stolpern lassen.",
+  "importance": "Die Addition ist die erste Rechenart, die Kinder kennenlernen, und sie ist das Fundament für alles Weitere, denn Subtraktion, Multiplikation und Division stützen sich alle darauf. Wer sicher addiert, steigt mit dem richtigen Fuß in jedes neue Thema, während ein zögerndes Kind diese Mühe mitnimmt. Sie taucht auch ständig im Alltag auf, etwa beim Zusammenrechnen mehrerer Artikel, beim Punktezählen im Spiel oder beim Abzählen, wie viele Personen zum Essen kommen. Es lohnt sich, hier echtes Verständnis aufzubauen.",
   "howToTeach": [
-    "Beginnen Sie mit greifbaren Objekten - Bauklötze, Stifte, Bonbons",
-    "Erklären Sie, dass 'Addition' wie 'hinzufügen' oder 'zusammenzählen' ist",
-    "Üben Sie zuerst mit kleinen Zahlen (bis 10)",
-    "Wenn das Kind bereit ist, führen Sie den Zehnerübertrag schrittweise ein",
-    "Verwenden Sie einen Zahlenstrahl als visuelle Hilfe"
+    "Beginnen Sie mit echten Gegenständen wie Bauklötzen, Stiften oder Bonbons, damit Ihr Kind das Addieren tatsächlich geschehen sieht.",
+    "Erklären Sie, dass Addieren bedeutet, Dinge zusammenzulegen, und dass die Summe immer größer ist als jede der Zahlen.",
+    "Üben Sie zuerst kleine Zahlen bis 10 und gehen Sie erst weiter, wenn sich das leicht und automatisch anfühlt.",
+    "Wenn Ihr Kind bereit ist, führen Sie den Übertrag schrittweise ein, bei dem die Einer 10 überschreiten und Sie einen Zehner in die nächste Spalte übertragen.",
+    "Nutzen Sie einen Zahlenstrahl als visuelle Hilfe, indem Sie von einer Stelle vorwärts springen und die Schritte zählen."
   ],
   "examples": [
     {
       "problem": "7 + 5 = ?",
       "solution": "12",
-      "explanation": "Beginnen Sie bei 7, zählen Sie 5 weiter: 8, 9, 10, 11, 12. Oder: 7 + 3 = 10, plus 2 mehr = 12."
+      "explanation": "Starten Sie bei 7 und zählen Sie fünf weiter: 8, 9, 10, 11, 12. Oder nutzen Sie den Zehnertrick: 7 plus 3 ist 10, dann die übrigen 2 dazu ergeben 12."
     },
     {
       "problem": "25 + 38 = ?",
       "solution": "63",
-      "explanation": "Einer: 5 + 8 = 13 (schreibe 3, merke 1). Zehner: 2 + 3 + 1 = 6. Antwort: 63."
+      "explanation": "Zuerst die Einer: 5 plus 8 ist 13, also die 3 schreiben und 1 übertragen. Dann die Zehner: 2 plus 3 plus der Übertrag 1 ergibt 6. Die Antwort ist 63."
+    },
+    {
+      "problem": "9 + 6 = ?",
+      "solution": "15",
+      "explanation": "Ein nützlicher Trick: Ergänzen Sie die 9 mit 1 aus der 6 zu 10, dann 10 plus die übrigen 5 ergibt 15."
+    },
+    {
+      "problem": "40 + 60 = ?",
+      "solution": "100",
+      "explanation": "Ganze Zehner zu addieren ist wie 4 plus 6 und dann eine Null anhängen. Da 4 plus 6 gleich 10 ist, lautet das Ergebnis 100."
     }
   ],
   "commonMistakes": [
-    "Vergessen des Übertrags - wenn die Einer 10 überschreiten",
-    "Fehler in der Ziffernreihenfolge beim senkrechten Schreiben",
-    "Überspringen einer Zahl beim Zählen"
+    "Der Übertrag wird vergessen, wenn die Einer 10 überschreiten, sodass 25 plus 38 als 53 statt 63 herauskommt.",
+    "Beim senkrechten Schreiben wird die Reihenfolge der Ziffern vertauscht, statt Einer unter Einer zu stellen.",
+    "Beim Vorwärtszählen wird eine Zahl übersprungen, was eine Antwort ergibt, die um eins zu hoch oder zu niedrig ist.",
+    "Die Startzahl wird mitgezählt, sodass aus 7 plus 5 fälschlich 11 statt 12 wird."
   ],
   "parentTips": [
-    "Nicht hetzen - geben Sie dem Kind Zeit zum Nachdenken",
-    "Ermutigen Sie anfangs das Benutzen von Fingern - das ist in Ordnung!",
-    "Machen Sie das Üben zum Spiel: 'Ich habe 3 Äpfel, du gibst mir 4 dazu, wie viele haben wir?'",
-    "Feiern Sie kleine Erfolge"
+    "Drängen Sie nicht und geben Sie Ihrem Kind ein paar Sekunden zum Nachdenken, auch wenn das Warten lang wirkt.",
+    "Ermutigen Sie am Anfang das Zählen mit den Fingern, denn es ist ein gesundes und legitimes Zählwerkzeug.",
+    "Machen Sie das Üben zum Spiel: Ich habe 3 Äpfel und du gibst mir 4 dazu, wie viele haben wir jetzt?",
+    "Feiern Sie kleine Erfolge, denn das Gefühl voranzukommen ist der Treibstoff, der ein Kind am Ball hält.",
+    "Bei einem Fehler korrigieren Sie nicht sofort, sondern fragen nur, bist du sicher, willst du noch einmal zählen?"
   ],
   "relatedGeneratorHref": "/de/worksheet/math?op=add",
   "relatedGeneratorTitle": "Additions-Arbeitsblatt-Generator"

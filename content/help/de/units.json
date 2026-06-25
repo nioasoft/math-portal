@@ -1,35 +1,49 @@
 {
   "slug": "units",
   "title": "Einheitenumrechnung",
-  "shortDescription": "Einheitenumrechnung ermöglicht das Wechseln zwischen verschiedenen Einheiten für Länge, Gewicht und Zeit.",
-  "importance": "Einheitenumrechnung wird beim Kochen, Bauen, Sport und Reisen benötigt. Sie lehrt auch das Dezimalsystem.",
+  "shortDescription": "Ein Elternratgeber, um Einheitenumrechnungen beizubringen, warum Längen in Zehnern, aber die Zeit in Sechzigern läuft, und der Fehler, der die Richtung umkehrt.",
+  "importance": "Einheitenumrechnung wird beim Kochen, Bauen, im Sport und auf Reisen gebraucht, und sie lehrt viel über das Zehnersystem. Es gibt aber eine Falle, die Kinder verwirrt: Manche Einheiten laufen in Zehnern und Hundertern, andere nicht. Länge, Gewicht und Volumen sind alle dezimal und freundlich, doch die Zeit läuft in Sechzigern, und genau hier fallen viele Kinder. Wer die Logik jeder Skala versteht, statt nur eine Tabelle auswendig zu lernen, rechnet sicher um und fängt eigene absurde Antworten ab.",
   "howToTeach": [
-    "Beginnen Sie mit Grundeinheiten und den Beziehungen zwischen ihnen",
-    "Erklären Sie, dass das Wort 'Kilo' = tausend bedeutet",
-    "Üben Sie das Multiplizieren und Dividieren mit 10, 100, 1000",
-    "Für Zeit - denken Sie daran, dass 60 (nicht 10) die wichtige Zahl ist"
+    "Beginnen Sie mit den Grundeinheiten und ihren Beziehungen: Millimeter, Zentimeter, Meter und Kilometer.",
+    "Erklären Sie, dass das Wort Kilo Tausend bedeutet, sodass ein Kilometer tausend Meter und ein Kilogramm tausend Gramm sind.",
+    "Üben Sie das Multiplizieren und Teilen mit 10, 100 und 1000, denn das ist das Herz jeder dezimalen Umrechnung.",
+    "Lehren Sie die Richtungsregel: zu einer kleineren Einheit wird die Zahl größer, zu einer größeren Einheit wird die Zahl kleiner.",
+    "Betonen Sie die Ausnahme der Zeit, denn Stunden und Minuten laufen in Sechzigern statt in Zehnern, was verwirrt, wenn man nicht darauf hinweist."
   ],
   "examples": [
     {
-      "problem": "3 Meter = ? cm",
+      "problem": "3 m = ? cm",
       "solution": "300",
-      "explanation": "Ein Meter = 100 cm. 3 Meter = 3 × 100 = 300 cm."
+      "explanation": "Ein Meter sind 100 cm. Wir gehen zu einer kleineren Einheit, also multiplizieren wir: 3 mal 100 ist 300 cm."
     },
     {
       "problem": "2 Stunden = ? Minuten",
       "solution": "120",
-      "explanation": "Eine Stunde = 60 Minuten. 2 Stunden = 2 × 60 = 120 Minuten."
+      "explanation": "Hier läuft die Zeit in Sechzigern, nicht in Zehnern. Eine Stunde sind 60 Minuten, also 2 mal 60 ist 120 Minuten."
+    },
+    {
+      "problem": "2500 g = ? kg",
+      "solution": "2,5",
+      "explanation": "Ein Kilogramm sind tausend Gramm. Wir gehen zu einer größeren Einheit, also teilen wir: 2500 geteilt durch 1000 ist 2,5 kg."
+    },
+    {
+      "problem": "90 Minuten = ? Stunden",
+      "solution": "1,5 Stunden",
+      "explanation": "Wieder Sechziger: 60 Minuten ergeben eine Stunde, und die übrigen 30 Minuten sind eine halbe Stunde. Zusammen sind das eineinhalb Stunden."
     }
   ],
   "commonMistakes": [
-    "Verwechslung zwischen Einheiten (Meter/cm/mm)",
-    "Vergessen, dass Zeit in 60ern funktioniert, nicht in 10ern",
-    "Multiplizieren statt dividieren oder umgekehrt"
+    "Die Längeneinheiten werden vermischt, und es ist unklar, ob Meter zu Zentimeter mit 10 oder mit 100 multipliziert werden.",
+    "Es wird vergessen, dass die Zeit in Sechzigern statt in Zehnern läuft, und zwei Stunden werden als 100 Minuten gerechnet.",
+    "Es wird multipliziert, wo geteilt werden müsste, oder umgekehrt, weil nicht über die Richtung nachgedacht wurde.",
+    "Es wird nicht geprüft, ob die Antwort Sinn ergibt, und man landet bei einem 100 Meter großen Menschen, ohne es zu bemerken."
   ],
   "parentTips": [
-    "Zeigen Sie ein Lineal und einen Meterstab für praktische Beispiele",
-    "Üben Sie mit einer echten Uhr",
-    "Erstellen Sie eine Umrechnungstabelle an der Wand"
+    "Zeigen Sie ein echtes Lineal und einen Meterstab und lassen Sie Ihr Kind Gegenstände messen und die Ergebnisse umrechnen.",
+    "Üben Sie die Zeit an einer echten Uhr: wie viele Minuten bis wir losgehen, wie viele Stunden hat die Fahrt gedauert.",
+    "Machen Sie eine bunte Umrechnungstabelle und hängen Sie sie an die Wand beim Schreibtisch.",
+    "Erinnern Sie an die Richtungsregel, bei der eine kleinere Einheit häufiger gebraucht wird, sodass die Zahl wächst.",
+    "Üben Sie die Plausibilitätsprüfung, denn wenn eine seltsame Zahl herauskommt, wurde wahrscheinlich die Richtung verkehrt."
   ],
   "relatedGeneratorHref": "/de/units",
   "relatedGeneratorTitle": "Einheitenumrechnung-Arbeitsblatt-Generator"

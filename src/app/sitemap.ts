@@ -7,9 +7,36 @@ import {
     getHelpTopics,
     parseContentDate,
 } from '@/lib/content'
+import {
+    isSubstantialBlogPost,
+    isSubstantialHelpTopic,
+    isCompleteGameSeo,
+} from '@/lib/contentQuality'
 import { GAME_IDS } from '@/lib/games3d/games/loaders'
+import { getRegisteredGames } from '@/lib/games3d/games'
+import heGames3d from '../../messages/he/games3d.json'
+import enGames3d from '../../messages/en/games3d.json'
+import arGames3d from '../../messages/ar/games3d.json'
+import deGames3d from '../../messages/de/games3d.json'
+import esGames3d from '../../messages/es/games3d.json'
+import ruGames3d from '../../messages/ru/games3d.json'
 
 const BASE_URL = 'https://www.tirgul.net'
+
+// A locale's blog/help index page is only worth indexing once it lists a few
+// substantial children — an index of thin pages is itself thin.
+const INDEX_MIN_CHILDREN = 3
+
+// Per-locale games3d messages, used to check each game's SEO completeness.
+type GameSeoMessages = Record<string, { seo?: unknown } | undefined>
+const gameMessagesByLocale: Record<Locale, GameSeoMessages> = {
+    he: heGames3d as GameSeoMessages,
+    en: enGames3d as GameSeoMessages,
+    ar: arGames3d as GameSeoMessages,
+    de: deGames3d as GameSeoMessages,
+    es: esGames3d as GameSeoMessages,
+    ru: ruGames3d as GameSeoMessages,
+}
 
 // Helper to generate URL for a path and locale
 function getUrl(path: string, locale: Locale): string {
@@ -32,6 +59,7 @@ type SitemapRoute = {
     path: string
     priority: number
     changeFrequency: NonNullable<MetadataRoute.Sitemap[number]['changeFrequency']>
+    // Locales for which this page is indexable. Membership === page robots === hreflang.
     availableLocales?: readonly Locale[]
     lastModified?: Date
 }
@@ -40,10 +68,63 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const entries: MetadataRoute.Sitemap = []
     const blogLocales = getBlogContentLocales()
     const helpLocales = getHelpContentLocales()
-    const blogPosts = await getBlogPosts(defaultLocale)
-    const helpTopics = await getHelpTopics(defaultLocale)
 
-    // Main pages
+    // --- Blog: build slug -> indexable locales, and per-locale substantial counts ---
+    const blogLocalesBySlug = new Map<string, Locale[]>()
+    const blogLastModifiedBySlug = new Map<string, Date | undefined>()
+    const blogSubstantialCountByLocale = new Map<Locale, number>()
+    for (const locale of blogLocales) {
+        const posts = await getBlogPosts(locale)
+        for (const post of posts) {
+            if (!isSubstantialBlogPost(post)) continue
+            const arr = blogLocalesBySlug.get(post.slug) ?? []
+            arr.push(locale)
+            blogLocalesBySlug.set(post.slug, arr)
+            blogSubstantialCountByLocale.set(locale, (blogSubstantialCountByLocale.get(locale) ?? 0) + 1)
+            if (locale === defaultLocale || !blogLastModifiedBySlug.has(post.slug)) {
+                blogLastModifiedBySlug.set(post.slug, parseContentDate(post.lastModified ?? post.date))
+            }
+        }
+    }
+
+    // --- Help: build slug -> indexable locales, and per-locale substantial counts ---
+    const helpLocalesBySlug = new Map<string, Locale[]>()
+    const helpSubstantialCountByLocale = new Map<Locale, number>()
+    for (const locale of helpLocales) {
+        const topics = await getHelpTopics(locale)
+        for (const topic of topics) {
+            if (!isSubstantialHelpTopic(topic)) continue
+            const arr = helpLocalesBySlug.get(topic.slug) ?? []
+            arr.push(locale)
+            helpLocalesBySlug.set(topic.slug, arr)
+            helpSubstantialCountByLocale.set(locale, (helpSubstantialCountByLocale.get(locale) ?? 0) + 1)
+        }
+    }
+
+    // --- Games: build gameId -> locales whose SEO block is complete ---
+    const metaById = new Map(getRegisteredGames().map((g) => [g.meta.id, g.meta]))
+    const gameLocalesById = new Map<string, Locale[]>()
+    for (const gameId of GAME_IDS) {
+        const meta = metaById.get(gameId)
+        if (!meta) continue
+        const seoKey = meta.i18nKey.replace(/^games3d\./, '')
+        const locs: Locale[] = []
+        for (const locale of locales) {
+            const seo = gameMessagesByLocale[locale]?.[seoKey]?.seo
+            if (isCompleteGameSeo(seo)) locs.push(locale)
+        }
+        if (locs.length > 0) gameLocalesById.set(gameId, locs)
+    }
+
+    // Index pages: keep only locales that have enough substantial children.
+    const blogIndexLocales = blogLocales.filter(
+        (loc) => (blogSubstantialCountByLocale.get(loc) ?? 0) >= INDEX_MIN_CHILDREN,
+    )
+    const helpIndexLocales = helpLocales.filter(
+        (loc) => (helpSubstantialCountByLocale.get(loc) ?? 0) >= INDEX_MIN_CHILDREN,
+    )
+
+    // Main pages (not part of the thin tier — all locales)
     const mainRoutes: SitemapRoute[] = [
         { path: '/', priority: 1, changeFrequency: 'daily' as const },
         { path: '/about', priority: 0.6, changeFrequency: 'monthly' as const },
@@ -73,39 +154,48 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         { path: '/word-problems', priority: 0.8, changeFrequency: 'weekly' as const },
     ]
 
-    // Play/Games pages
-    const playRoutes: SitemapRoute[] = [
+    // Play category pages (not individual games — those are gated below)
+    const playCategoryRoutes: SitemapRoute[] = [
         { path: '/play', priority: 0.7, changeFrequency: 'weekly' as const },
         { path: '/play/math', priority: 0.7, changeFrequency: 'weekly' as const },
         { path: '/play/fractions', priority: 0.7, changeFrequency: 'weekly' as const },
         { path: '/play/percentage', priority: 0.7, changeFrequency: 'weekly' as const },
-        ...GAME_IDS.map(gameId => ({
+    ]
+
+    // Individual game pages — only locales whose SEO block is complete
+    const gameRoutes: SitemapRoute[] = GAME_IDS
+        .filter((gameId) => gameLocalesById.has(gameId))
+        .map((gameId) => ({
             path: `/play/${gameId}`,
             priority: 0.7,
             changeFrequency: 'weekly' as const,
-        })),
-    ]
+            availableLocales: gameLocalesById.get(gameId),
+        }))
 
-    // Blog pages
+    // Blog pages — index + substantial posts only
     const blogRoutes: SitemapRoute[] = [
-        { path: '/blog', priority: 0.7, changeFrequency: 'daily' as const, availableLocales: blogLocales },
-        ...blogPosts.map(post => ({
-            path: `/blog/${post.slug}`,
+        ...(blogIndexLocales.length > 0
+            ? [{ path: '/blog', priority: 0.7, changeFrequency: 'daily' as const, availableLocales: blogIndexLocales }]
+            : []),
+        ...Array.from(blogLocalesBySlug.entries()).map(([slug, locs]) => ({
+            path: `/blog/${slug}`,
             priority: 0.6,
             changeFrequency: 'monthly' as const,
-            availableLocales: blogLocales,
-            lastModified: parseContentDate(post.lastModified ?? post.date),
+            availableLocales: locs,
+            lastModified: blogLastModifiedBySlug.get(slug),
         })),
     ]
 
-    // Help pages
+    // Help pages — index + substantial topics only
     const helpRoutes: SitemapRoute[] = [
-        { path: '/help', priority: 0.7, changeFrequency: 'weekly' as const, availableLocales: helpLocales },
-        ...helpTopics.map(topic => ({
-            path: `/help/${topic.slug}`,
+        ...(helpIndexLocales.length > 0
+            ? [{ path: '/help', priority: 0.7, changeFrequency: 'weekly' as const, availableLocales: helpIndexLocales }]
+            : []),
+        ...Array.from(helpLocalesBySlug.entries()).map(([slug, locs]) => ({
+            path: `/help/${slug}`,
             priority: 0.6,
             changeFrequency: 'monthly' as const,
-            availableLocales: helpLocales,
+            availableLocales: locs,
         })),
     ]
 
@@ -114,12 +204,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ...mainRoutes,
         ...gradeRoutes,
         ...worksheetRoutes,
-        ...playRoutes,
+        ...playCategoryRoutes,
+        ...gameRoutes,
         ...blogRoutes,
         ...helpRoutes,
     ]
 
-    // Generate sitemap entries for each route in each locale
+    // Generate sitemap entries for each route in each indexable locale.
+    // alternates.languages is built from the SAME locale set, so sitemap
+    // membership, hreflang, and per-page robots all stay consistent.
     for (const { path, priority, changeFrequency, availableLocales = locales, lastModified } of allRoutes) {
         for (const locale of availableLocales) {
             const entry: MetadataRoute.Sitemap[number] = {

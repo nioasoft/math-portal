@@ -9,6 +9,7 @@ import { ArrowLeft, ArrowRight, BookOpen, AlertTriangle, Lightbulb, CheckCircle,
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
+import { isSubstantialHelpTopic } from '@/lib/contentQuality';
 
 interface PageProps {
     params: Promise<{ topic: string; locale: string }>;
@@ -55,13 +56,29 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const metaDescription = t('topic.metaDescription', { title: topic.title });
     const title = t('topic.metaTitle', { title: topic.title });
 
+    // A page is indexable only when it has localized content AND enough body text.
+    // Thin topics stay out of the index (and out of the sitemap) until expanded.
+    const isIndexable = hasLocalizedContent && isSubstantialHelpTopic(topic);
+
+    // hreflang should only list locales whose own version of this topic is itself
+    // indexable, so the sitemap, hreflang, and per-page robots all stay consistent.
+    const indexableLocales: Locale[] = [];
+    for (const loc of helpLocales) {
+        if (!hasLocalizedHelpContent(loc)) continue;
+        const localeTopic = await getHelpTopic(topicSlug, loc);
+        if (localeTopic && isSubstantialHelpTopic(localeTopic)) {
+            indexableLocales.push(loc);
+        }
+    }
+    const alternateLocales = indexableLocales.length > 0 ? indexableLocales : helpLocales;
+
     return {
         title,
         description: metaDescription,
-        alternates: generateAlternates(`/help/${topicSlug}`, localeKey, helpLocales),
+        alternates: generateAlternates(`/help/${topicSlug}`, localeKey, alternateLocales),
         openGraph: generateOpenGraphMeta(resolvedLocale, title, metaDescription, `/help/${topicSlug}`),
         twitter: generateTwitterMeta(title, metaDescription),
-        robots: hasLocalizedContent ? undefined : {
+        robots: isIndexable ? undefined : {
             index: false,
             follow: true,
         },

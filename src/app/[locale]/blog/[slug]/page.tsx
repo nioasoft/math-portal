@@ -11,6 +11,7 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { defaultLocale, type Locale } from '@/i18n/config';
 import { generateAlternates, getOrganizationName } from '@/lib/seo';
 import { getBlogContentLocales, hasLocalizedBlogContent } from '@/lib/content';
+import { isSubstantialBlogPost } from '@/lib/contentQuality';
 
 // Map blog post tags to related help topics
 function getRelatedHelpTopics(tags: string[], content: string) {
@@ -244,6 +245,24 @@ export async function generateMetadata(
     const hasLocalizedContent = hasLocalizedBlogContent(localeKey);
     const resolvedLocale = hasLocalizedContent ? localeKey : defaultLocale;
 
+    // A page is indexable only when it has localized content AND enough body text.
+    // Thin pages stay out of the index (and out of the sitemap) until expanded.
+    const isIndexable = hasLocalizedContent && isSubstantialBlogPost(post);
+
+    // hreflang should only list locales whose own version of this slug is itself
+    // indexable, so the sitemap, hreflang, and per-page robots all stay consistent.
+    const indexableLocales: Locale[] = [];
+    for (const loc of blogLocales) {
+        if (!hasLocalizedBlogContent(loc)) continue;
+        const localePost = await getBlogPost(slug, loc);
+        if (localePost && isSubstantialBlogPost(localePost)) {
+            indexableLocales.push(loc);
+        }
+    }
+    // If the current locale is indexable it must appear in its own alternates;
+    // otherwise fall back to the section locales so the page still cross-links.
+    const alternateLocales = indexableLocales.length > 0 ? indexableLocales : blogLocales;
+
     const baseUrl = 'https://www.tirgul.net';
     const localePath = resolvedLocale !== defaultLocale ? `/${resolvedLocale}` : '';
 
@@ -263,7 +282,7 @@ export async function generateMetadata(
             ? `${post.title} | בלוג תרגול`
             : `${post.title} | Tirgul Blog`,
         description: post.excerpt,
-        alternates: generateAlternates(`/blog/${slug}`, localeKey, blogLocales),
+        alternates: generateAlternates(`/blog/${slug}`, localeKey, alternateLocales),
         openGraph: {
             title: post.title,
             description: post.excerpt,
@@ -289,7 +308,7 @@ export async function generateMetadata(
             description: post.excerpt,
             images: [imageUrl],
         },
-        robots: hasLocalizedContent ? undefined : {
+        robots: isIndexable ? undefined : {
             index: false,
             follow: true,
         },

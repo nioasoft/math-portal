@@ -230,6 +230,24 @@ function getRelatedGeneratorPath(tags: string[]): string | null {
     return null;
 }
 
+/**
+ * Extracts FAQ pairs from a post's HTML content for FAQPage JSON-LD.
+ * FAQ blocks are authored as `<p><strong>question?</strong> answer</p>`.
+ * Keying on a trailing "?" in the bold text is locale-agnostic and excludes
+ * worked-example lead-ins (which end with "."), so no per-locale heading is needed.
+ */
+function extractFaqs(html: string): Array<{ question: string; answer: string }> {
+    const faqs: Array<{ question: string; answer: string }> = [];
+    const re = /<p>\s*<strong>([^<]*\?)<\/strong>\s*([\s\S]*?)<\/p>/g;
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(html)) !== null) {
+        const question = m[1].trim();
+        const answer = m[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+        if (question && answer) faqs.push({ question, answer });
+    }
+    return faqs;
+}
+
 type Props = {
     params: Promise<{ locale: string; slug: string }>
 }
@@ -438,6 +456,21 @@ export default async function BlogPostPage({ params }: Props) {
         ]
     };
 
+    // FAQPage schema, built from the FAQ block authored inside the post content.
+    const faqs = extractFaqs(post.content);
+    const faqSchema = faqs.length >= 2 ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((f) => ({
+            "@type": "Question",
+            "name": f.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": f.answer
+            }
+        }))
+    } : null;
+
     // Note: Content is trusted as it comes from our own JSON files in /content/blog/
     // which are created and maintained by the development team
 
@@ -455,6 +488,14 @@ export default async function BlogPostPage({ params }: Props) {
                     __html: JSON.stringify(breadcrumbSchema)
                 }}
             />
+            {faqSchema && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(faqSchema)
+                    }}
+                />
+            )}
             <Header />
 
             <main className="flex-1">

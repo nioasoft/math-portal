@@ -238,7 +238,8 @@ function getRelatedGeneratorPath(tags: string[]): string | null {
  */
 function extractFaqs(html: string): Array<{ question: string; answer: string }> {
     const faqs: Array<{ question: string; answer: string }> = [];
-    const re = /<p>\s*<strong>([^<]*\?)<\/strong>\s*([\s\S]*?)<\/p>/g;
+    // Match a trailing question mark: ASCII "?" or the Arabic question mark "؟" (U+061F).
+    const re = /<p>\s*<strong>([^<]*[?؟])<\/strong>\s*([\s\S]*?)<\/p>/g;
     let m: RegExpExecArray | null;
     while ((m = re.exec(html)) !== null) {
         const question = m[1].trim();

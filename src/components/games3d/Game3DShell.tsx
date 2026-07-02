@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import GameShell from '@/components/game/GameShell';
 import type { BreadcrumbItem } from '@/components/ui/Breadcrumb';
@@ -16,6 +16,7 @@ import { computeStars } from '@/lib/games3d/kit';
 import type { CompleteSummary, ControlButton, FeedbackEvent, Game3D, GameMeta, GameMode3D, GameStatus } from '@/lib/games3d/types';
 import { gameLoaders } from '@/lib/games3d/games/loaders';
 import { getMutePreference, setMutePreference, getAudioVolumePreference, setAudioVolumePreference } from '@/lib/game/storage';
+import { trackGameStart, trackGameComplete } from '@/lib/analytics';
 
 interface Props {
   /** Game id — resolved to the actual Game3D module on the client (the game object
@@ -62,6 +63,8 @@ export function Game3DShell({
   const [loaded, setLoaded] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [reloadKey, setReloadKey] = useState<number>(0);
+  // Guard so game_start fires exactly once per play; resets when the scene reloads (replay/retry).
+  const startedRef = useRef<boolean>(false);
 
   // Load the game module on the client (it carries functions, so it can't be
   // passed from the server component). Only needed once a mode is chosen.
@@ -93,6 +96,19 @@ export function Game3DShell({
     const id = setTimeout(() => setFeedback(null), 1400);
     return () => clearTimeout(id);
   }, [feedback]);
+
+  // Fire game_start once the scene is loaded (per play). Ref resets when `loaded`
+  // flips back to false on replay/retry, so each new play re-fires.
+  useEffect(() => {
+    if (!loaded) {
+      startedRef.current = false;
+      return;
+    }
+    if (mode && !startedRef.current) {
+      startedRef.current = true;
+      trackGameStart(gameId, mode);
+    }
+  }, [loaded, mode, gameId]);
 
   const toggleMute = useCallback(() => {
     setMuted((m) => {
@@ -129,6 +145,12 @@ export function Game3DShell({
 
   const handleComplete = useCallback((s: CompleteSummary) => {
     const result = recordCompletion(gameId, s);
+    trackGameComplete({
+      gameId,
+      score: s.totalPoints,
+      accuracy: s.accuracy,
+      durationSec: s.durationSec,
+    });
     setSummary({ ...s, isNewBest: result.isNewBest });
     onComplete?.(s);
   }, [gameId, onComplete]);

@@ -1,10 +1,10 @@
 {
   "hero": {
     "badge": "44 3D math learning games",
-    "title": "Math Games",
-    "titleHighlight": "Fun & Easy",
-    "description": "Play interactive math games for kids in grades 1-6.",
-    "descriptionLine2": "Choose a topic, start playing, and print worksheets when you need extra practice –",
+    "title": "Math Worksheets &",
+    "titleHighlight": "Games",
+    "description": "Print custom math worksheets — or play interactive math games.",
+    "descriptionLine2": "For grades 1-6. Choose a topic, customize, print or play — all",
     "free": "Free",
     "cta": "Start Playing",
     "ctaSecondary": "How does it work?",
@@ -34,8 +34,8 @@
     "percentageDesc": "Calculate Percentages"
   },
   "generators": {
-    "title": "Need printable worksheets too?",
-    "subtitle": "After the games, create custom worksheets for extra printed practice",
+    "title": "Printable Math Worksheets",
+    "subtitle": "Choose a topic, set the difficulty, and print a ready worksheet — with an answer key.",
     "cta": "Create Worksheet",
     "addSubtract": {
       "title": "Addition & Subtraction",
@@ -130,5 +130,20 @@
     "trust": "Free · No signup · Works on any device",
     "showAll": "All",
     "empty": "No games available yet"
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "step1": {
+      "title": "Choose a topic",
+      "desc": "Pick a worksheet or a game by grade and topic."
+    },
+    "step2": {
+      "title": "Customize",
+      "desc": "Set the difficulty, number range, and how many problems."
+    },
+    "step3": {
+      "title": "Print or play",
+      "desc": "Print a ready worksheet with an answer key — or play online."
+    }
   }
 }

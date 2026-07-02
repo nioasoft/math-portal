@@ -166,6 +166,25 @@ export default async function Home() {
 
               {/* Dual CTA Cards */}
               <div className="flex flex-col sm:flex-row gap-4 md:gap-5 max-w-3xl md:max-w-4xl mx-auto animate-slide-up delay-200">
+                {/* Worksheets Card — first so worksheet-intent visitors (the dominant search
+                    intent) see their path at the RTL start. ponytail: stays an in-page anchor
+                    to #generators (same-page content 300px down) — a route navigation would be
+                    worse UX, not a real inconsistency to "fix". */}
+                <a
+                  href="#generators"
+                  className="flex-1 bg-white border-2 border-orange-200 rounded-xl p-5 md:p-6 hover:border-orange-400 hover:shadow-lg transition-all group text-right"
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <Printer className="w-7 h-7 md:w-8 md:h-8 text-orange-500" />
+                    <h3 className="text-xl md:text-2xl font-bold text-slate-800">{t('hero.worksheetCard.title')}</h3>
+                  </div>
+                  <p className="text-base md:text-lg text-slate-600 mb-3">{t('hero.worksheetCard.desc')}</p>
+                  <span className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-bold text-base md:text-lg group-hover:-translate-y-0.5 transition-transform">
+                    {t('hero.worksheetCard.cta')}
+                    <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
+                  </span>
+                </a>
+
                 {/* Games Card */}
                 <Link
                   href="/play"
@@ -181,22 +200,6 @@ export default async function Home() {
                     <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
                   </span>
                 </Link>
-
-                {/* Worksheets Card */}
-                <a
-                  href="#generators"
-                  className="flex-1 bg-white border-2 border-orange-200 rounded-xl p-5 md:p-6 hover:border-orange-400 hover:shadow-lg transition-all group text-right"
-                >
-                  <div className="flex items-center gap-2 mb-2">
-                    <Printer className="w-7 h-7 md:w-8 md:h-8 text-orange-500" />
-                    <h3 className="text-xl md:text-2xl font-bold text-slate-800">{t('hero.worksheetCard.title')}</h3>
-                  </div>
-                  <p className="text-base md:text-lg text-slate-600 mb-3">{t('hero.worksheetCard.desc')}</p>
-                  <span className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-bold text-base md:text-lg group-hover:-translate-y-0.5 transition-transform">
-                    {t('hero.worksheetCard.cta')}
-                    <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
-                  </span>
-                </a>
               </div>
 
               {/* Quick Games Strip */}
@@ -252,6 +255,28 @@ export default async function Home() {
                   <span>{t('hero.trustFree')}</span>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* How it works - quick-start so first-timers know the flow (choose → customize → print/play) */}
+        <section className="py-12 bg-white border-y border-slate-100">
+          <div className="container-custom">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-black text-slate-800 text-display">{t('howItWorks.title')}</h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+              {[
+                { n: '1', grad: 'from-sky-400 to-sky-500', shadow: 'shadow-sky-200' },
+                { n: '2', grad: 'from-violet-400 to-violet-500', shadow: 'shadow-violet-200' },
+                { n: '3', grad: 'from-emerald-400 to-emerald-500', shadow: 'shadow-emerald-200' },
+              ].map((s) => (
+                <div key={s.n} className="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${s.grad} text-white rounded-xl flex items-center justify-center mx-auto mb-4 text-xl font-black shadow-lg ${s.shadow}`}>{s.n}</div>
+                  <h3 className="text-lg font-bold mb-2 text-slate-800">{t(`howItWorks.step${s.n}.title`)}</h3>
+                  <p className="text-slate-500 text-sm">{t(`howItWorks.step${s.n}.desc`)}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

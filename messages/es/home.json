@@ -1,10 +1,10 @@
 {
   "hero": {
     "badge": "44 juegos de matemáticas en 3D",
-    "title": "Juegos de Matemáticas",
-    "titleHighlight": "Fácil y Divertido",
-    "description": "Juega juegos de matemáticas interactivos para niños de grados 1-6.",
-    "descriptionLine2": "Elige un tema, empieza a jugar e imprime hojas cuando necesites práctica adicional –",
+    "title": "Hojas y juegos de",
+    "titleHighlight": "matemáticas",
+    "description": "Imprime hojas de ejercicios de matemáticas personalizadas — o juega a juegos interactivos.",
+    "descriptionLine2": "Para grados 1-6. Elige un tema, personaliza, imprime o juega — todo",
     "free": "Gratis",
     "cta": "Empezar a Jugar",
     "ctaSecondary": "¿Cómo funciona?",
@@ -24,8 +24,8 @@
     }
   },
   "generators": {
-    "title": "¿También necesitas hojas imprimibles?",
-    "subtitle": "Después de los juegos, crea hojas personalizadas para práctica adicional impresa",
+    "title": "Hojas de matemáticas para imprimir",
+    "subtitle": "Elige un tema, ajusta la dificultad e imprime una hoja lista — con hoja de respuestas.",
     "cta": "Crear Hoja de Trabajo",
     "addSubtract": {
       "title": "Suma y Resta",
@@ -130,5 +130,20 @@
     "fractionsDesc": "Fracciones simples",
     "percentage": "Porcentajes",
     "percentageDesc": "Calcular porcentajes"
+  },
+  "howItWorks": {
+    "title": "Cómo funciona",
+    "step1": {
+      "title": "Elige un tema",
+      "desc": "Elige una hoja o un juego según el grado y el tema."
+    },
+    "step2": {
+      "title": "Personaliza",
+      "desc": "Ajusta la dificultad, el rango de números y la cantidad de ejercicios."
+    },
+    "step3": {
+      "title": "Imprime o juega",
+      "desc": "Imprime una hoja lista con respuestas — o juega en línea."
+    }
   }
 }

@@ -92,12 +92,12 @@
     },
     "catalog": {
       "title": "Juegos de aprendizaje en 3D",
-      "subtitle": "Todos los juegos interactivos, por tema",
+      "subtitle": "Juegos 3D para explorar y aprender — sin cronómetro, a tu ritmo",
       "all": "Todos",
       "count": "{n} juegos",
       "empty": "No hay juegos en este tema",
       "quizzesTitle": "Cuestionarios rápidos",
-      "quizzesSubtitle": "Juegos de cuestionario 2D con cronómetro"
+      "quizzesSubtitle": "Cuestionarios de aritmética con cronómetro — ¿cuántos resuelves a contrarreloj?"
     }
   },
   "setup": {

@@ -183,7 +183,7 @@ export function Header() {
                             className="flex items-center gap-3 px-4 py-3 text-lg font-bold text-purple-700 bg-purple-50 hover:bg-purple-100 rounded-xl transition-colors mt-2"
                         >
                             <Gamepad2 size={22} />
-                            {t('nav.interactiveGames')}
+                            {t('nav.games')}
                         </Link>
 
                         {/* Grades Section */}

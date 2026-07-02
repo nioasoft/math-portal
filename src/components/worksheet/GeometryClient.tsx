@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
+import { usePersistentToggle } from '@/lib/useWorksheetPrefs';
+import { WorksheetActionBar } from '@/components/worksheet/WorksheetActionBar';
 import ContentSection from '@/components/ContentSection';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { trackPrintEvent } from '@/lib/analytics';
@@ -98,7 +100,7 @@ export default function GeometryClient() {
     const metaT = useTranslations('meta');
     const [topic, setTopic] = useState<GeomTopic>('rect');
     const [problems, setProblems] = useState<GeomProblem[]>(() => createProblems('rect'));
-    const [showAnswers, setShowAnswers] = useState<boolean>(false);
+    const [showAnswers, setShowAnswers] = usePersistentToggle('showAnswers');
 
     const regenerateProblems = () => {
         setProblems(createProblems(topic));
@@ -323,6 +325,8 @@ export default function GeometryClient() {
             </div>
 
             {/* A4 Paper Wrapper */}
+            <WorksheetActionBar count={problems.length} onRefresh={regenerateProblems} />
+
             <div className="w-full overflow-x-auto pb-12 print:pb-0 print:overflow-visible custom-scrollbar">
                 <div className="min-w-[210mm] max-w-[210mm] mx-auto mt-8 bg-white shadow-xl min-h-[297mm] p-[20mm] print:p-[10mm] print:shadow-none print:mt-0 print:mx-0 print:w-full print:min-h-0 print:h-auto print:overflow-visible">
                     <div className="text-center border-b-2 border-slate-100 pb-8 mb-12 print:mb-4 print:pb-2 print:border-b">

@@ -92,12 +92,12 @@
     },
     "catalog": {
       "title": "3D-Lernspiele",
-      "subtitle": "Alle interaktiven Spiele, nach Thema",
+      "subtitle": "3D-Spiele zum Entdecken und Lernen — ohne Timer, im eigenen Tempo",
       "all": "Alle",
       "count": "{n} Spiele",
       "empty": "Keine Spiele in diesem Thema",
       "quizzesTitle": "Schnelle Quizze",
-      "quizzesSubtitle": "2D-Quizspiele mit Timer"
+      "quizzesSubtitle": "Schnelle Rechen-Quizze mit Timer — wie viele schaffst du gegen die Uhr?"
     }
   },
   "setup": {

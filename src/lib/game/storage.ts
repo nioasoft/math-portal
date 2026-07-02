@@ -133,6 +133,18 @@ function safeWrite(key: string, value: string): void {
     }
 }
 
+// ============ Worksheet preferences (reuse safeRead/safeWrite) ============
+
+const KEY_WORKSHEET_PREFIX = 'tirgul.worksheet.';
+
+export function getWorksheetPref(key: string): string | null {
+    return safeRead(KEY_WORKSHEET_PREFIX + key);
+}
+
+export function setWorksheetPref(key: string, value: string): void {
+    safeWrite(KEY_WORKSHEET_PREFIX + key, value);
+}
+
 export function getGame3DBestScore(gameId: string): number {
     const raw = safeRead(KEY_3D_BEST_PREFIX + gameId);
     if (!raw) return 0;

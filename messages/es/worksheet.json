@@ -12,7 +12,8 @@
     "settings": "Configuración",
     "problemCount": "Número de ejercicios",
     "selectOperation": "Seleccionar operación",
-    "helpForParents": "Guía para Padres"
+    "helpForParents": "Guía para Padres",
+    "refreshTooltip": "Generar un nuevo conjunto de ejercicios"
   },
   "print": {
     "title": "Hoja de Práctica",
@@ -423,5 +424,11 @@
         "Para círculos: recuerda que el diámetro es exactamente el doble del radio."
       ]
     }
+  },
+  "ready": {
+    "hint": "Tu hoja de ejercicios está lista — desplázate hacia abajo o imprímela"
+  },
+  "empty": {
+    "message": "No se generaron ejercicios. Inténtalo de nuevo."
   }
 }

@@ -12,7 +12,8 @@
     "settings": "Einstellungen",
     "problemCount": "Anzahl der Aufgaben",
     "selectOperation": "Rechenart wählen",
-    "helpForParents": "Elternratgeber"
+    "helpForParents": "Elternratgeber",
+    "refreshTooltip": "Neue Aufgaben erstellen"
   },
   "print": {
     "title": "Übungsblatt",
@@ -423,5 +424,11 @@
         "Bei Kreisen: Denken Sie daran, dass der Durchmesser genau das Doppelte des Radius ist."
       ]
     }
+  },
+  "ready": {
+    "hint": "Dein Arbeitsblatt ist fertig — nach unten scrollen oder drucken"
+  },
+  "empty": {
+    "message": "Es wurden keine Aufgaben erstellt. Versuche es erneut."
   }
 }

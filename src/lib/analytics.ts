@@ -24,11 +24,14 @@ export interface PrintEventParams {
     range?: number;
 }
 
+/**
+ * Fires the site's primary conversion. Mark `print_worksheet` as a GA4 key event
+ * in Admin so a print flips the session to "engaged" (not a bounce).
+ */
 export function trackPrintEvent(params: PrintEventParams): void {
     if (typeof window !== 'undefined' && window.gtag) {
         window.gtag('event', 'print_worksheet', {
-            event_category: 'engagement',
-            event_label: params.worksheet_type,
+            value: 1,
             worksheet_type: params.worksheet_type,
             difficulty: params.difficulty || 'default',
             operation: params.operation || 'mixed',
@@ -37,11 +40,14 @@ export function trackPrintEvent(params: PrintEventParams): void {
     }
 }
 
-export function trackGenerateEvent(params: PrintEventParams): void {
+/**
+ * Not intent — `trigger:'auto'` marks automatic on-load generation so it can be
+ * filtered out in GA4. Do NOT mark this a key event.
+ */
+export function trackGenerateEvent(params: PrintEventParams & { trigger?: 'auto' | 'manual' }): void {
     if (typeof window !== 'undefined' && window.gtag) {
         window.gtag('event', 'generate_worksheet', {
-            event_category: 'engagement',
-            event_label: params.worksheet_type,
+            trigger: params.trigger || 'manual',
             worksheet_type: params.worksheet_type,
             difficulty: params.difficulty || 'default',
             operation: params.operation || 'mixed',
@@ -50,12 +56,34 @@ export function trackGenerateEvent(params: PrintEventParams): void {
     }
 }
 
-export function trackNavigationEvent(from: string, to: string): void {
+/** Game engagement — mark `game_start` (optional) as a key event to rescue game landers from bounce. */
+export function trackGameStart(gameId: string, mode?: string): void {
     if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'navigation', {
-            event_category: 'navigation',
-            from_page: from,
-            to_page: to,
+        window.gtag('event', 'game_start', {
+            game_id: gameId,
+            mode: mode || 'default',
+        });
+    }
+}
+
+export interface GameCompleteParams {
+    gameId: string;
+    mode?: string;
+    score: number;
+    accuracy: number;
+    durationSec: number;
+}
+
+/** Secondary conversion — mark `game_complete` as a GA4 key event. `value` = points. */
+export function trackGameComplete(params: GameCompleteParams): void {
+    if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'game_complete', {
+            value: params.score,
+            game_id: params.gameId,
+            mode: params.mode || 'default',
+            score: params.score,
+            accuracy: params.accuracy,
+            duration_sec: params.durationSec,
         });
     }
 }

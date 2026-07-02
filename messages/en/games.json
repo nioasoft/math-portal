@@ -92,12 +92,12 @@
     },
     "catalog": {
       "title": "3D learning games",
-      "subtitle": "All the interactive games, by topic",
+      "subtitle": "Explore-and-learn 3D games — no timer, at your own pace",
       "all": "All",
       "count": "{n} games",
       "empty": "No games in this topic",
       "quizzesTitle": "Quick quizzes",
-      "quizzesSubtitle": "Timed 2D quiz games"
+      "quizzesSubtitle": "Fast timed arithmetic quizzes — how many can you solve against the clock?"
     }
   },
   "setup": {

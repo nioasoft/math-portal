@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { WordProblemEngine, Operation } from '@/lib/word-problem-engine';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
+import { usePersistentToggle } from '@/lib/useWorksheetPrefs';
+import { WorksheetActionBar } from '@/components/worksheet/WorksheetActionBar';
 import ContentSection from '@/components/ContentSection';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { trackPrintEvent } from '@/lib/analytics';
@@ -52,7 +54,7 @@ export default function WordProblemsClient() {
     const metaT = useTranslations('meta');
     const [grade, setGrade] = useState<number>(1);
     const [questions, setQuestions] = useState<QuestionState[]>(() => createQuestions(1));
-    const [showAnswers, setShowAnswers] = useState(false);
+    const [showAnswers, setShowAnswers] = usePersistentToggle('showAnswers');
 
     const regenerateQuestions = () => {
         setQuestions(createQuestions(grade));
@@ -142,6 +144,8 @@ export default function WordProblemsClient() {
             </div>
 
             {/* A4 Paper Wrapper */}
+            <WorksheetActionBar count={questions.length} onRefresh={regenerateQuestions} />
+
             <div className="w-full overflow-x-auto pb-12 print:pb-0 print:overflow-visible custom-scrollbar">
                 <div className="min-w-[210mm] max-w-[210mm] mx-auto mt-8 bg-white shadow-xl min-h-[297mm] p-[20mm] print:p-[10mm] print:shadow-none print:mt-0 print:mx-0 print:w-full print:min-h-0 print:h-auto print:overflow-visible">
 

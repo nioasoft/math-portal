@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
+import { usePersistentToggle } from '@/lib/useWorksheetPrefs';
+import { WorksheetActionBar } from '@/components/worksheet/WorksheetActionBar';
 import ContentSection from '@/components/ContentSection';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { trackPrintEvent } from '@/lib/analytics';
@@ -119,7 +121,7 @@ function createProblems(difficulty: Difficulty, count: number): FractionProblem[
 export default function FractionsClient() {
     const t = useTranslations('worksheet');
     const metaT = useTranslations('meta');
-    const [showAnswers, setShowAnswers] = useState<boolean>(false);
+    const [showAnswers, setShowAnswers] = usePersistentToggle('showAnswers');
     const [difficulty, setDifficulty] = useState<Difficulty>('level1');
     const [count] = useState<number>(12); // Problems per page
     const [problems, setProblems] = useState<FractionProblem[]>(() => createProblems('level1', 12));
@@ -273,6 +275,8 @@ export default function FractionsClient() {
                     ]}
                 />
             </div>
+
+            <WorksheetActionBar count={problems.length} onRefresh={regenerateProblems} />
 
             {/* A4 Paper Wrapper */}
             <div className="w-full overflow-x-auto pb-12 print:pb-0 print:overflow-visible custom-scrollbar">

@@ -1,10 +1,10 @@
 {
   "hero": {
     "badge": "44 3D-Mathe-Lernspiele",
-    "title": "Mathe-Spiele",
-    "titleHighlight": "spielend leicht",
-    "description": "Spielen Sie interaktive Mathe-Spiele für Kinder in den Klassen 1-6.",
-    "descriptionLine2": "Wählen Sie ein Thema, starten Sie das Spiel und drucken Sie Arbeitsblätter für zusätzliche Übung –",
+    "title": "Mathe-Arbeitsblätter &",
+    "titleHighlight": "Spiele",
+    "description": "Drucke individuelle Mathe-Arbeitsblätter — oder spiele interaktive Mathespiele.",
+    "descriptionLine2": "Für die Klassen 1-6. Thema wählen, anpassen, drucken oder spielen — alles",
     "free": "kostenlos",
     "cta": "Jetzt spielen",
     "ctaSecondary": "Wie funktioniert es?",
@@ -24,8 +24,8 @@
     }
   },
   "generators": {
-    "title": "Brauchen Sie auch Arbeitsblätter?",
-    "subtitle": "Nach den Spielen können Sie individuelle Arbeitsblätter für zusätzliche Übung drucken",
+    "title": "Druckbare Mathe-Arbeitsblätter",
+    "subtitle": "Wähle ein Thema, stelle die Schwierigkeit ein und drucke ein fertiges Arbeitsblatt — mit Lösungsblatt.",
     "cta": "Arbeitsblatt erstellen",
     "addSubtract": {
       "title": "Addition & Subtraktion",
@@ -130,5 +130,20 @@
     "fractionsDesc": "Einfache Brüche",
     "percentage": "Prozente",
     "percentageDesc": "Prozente berechnen"
+  },
+  "howItWorks": {
+    "title": "So funktioniert's",
+    "step1": {
+      "title": "Thema wählen",
+      "desc": "Wähle ein Arbeitsblatt oder ein Spiel nach Klasse und Thema."
+    },
+    "step2": {
+      "title": "Anpassen",
+      "desc": "Stelle Schwierigkeit, Zahlenbereich und Anzahl der Aufgaben ein."
+    },
+    "step3": {
+      "title": "Drucken oder spielen",
+      "desc": "Drucke ein fertiges Arbeitsblatt mit Lösungsblatt — oder spiele online."
+    }
   }
 }

@@ -12,7 +12,8 @@
     "settings": "Settings",
     "problemCount": "Number of problems",
     "selectOperation": "Select operation",
-    "helpForParents": "Parent Guide"
+    "helpForParents": "Parent Guide",
+    "refreshTooltip": "Generate a new set of problems"
   },
   "print": {
     "title": "Practice Sheet",
@@ -423,5 +424,11 @@
         "For circles: remember that the diameter is exactly twice the radius."
       ]
     }
+  },
+  "ready": {
+    "hint": "Your worksheet is ready — scroll down or print it"
+  },
+  "empty": {
+    "message": "No problems were generated. Try again."
   }
 }

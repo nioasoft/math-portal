@@ -8,6 +8,7 @@ import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { trackPrintEvent, trackGenerateEvent } from '@/lib/analytics';
+import { usePersistentToggle } from '@/lib/useWorksheetPrefs';
 import { useTranslations } from 'next-intl';
 
 export default function WorksheetClient() {
@@ -23,7 +24,7 @@ export default function WorksheetClient() {
     const [range, setRange] = useState<number>(10);
     const [count] = useState<number>(20); // Problems per page
     const [title, setTitle] = useState<string>(t('generator.defaultWorksheetTitle'));
-    const [showAnswers, setShowAnswers] = useState<boolean>(false);
+    const [showAnswers, setShowAnswers] = usePersistentToggle('showAnswers');
 
     const updateUrl = (newOp: MathOperation, newRange: number) => {
         const params = new URLSearchParams(searchParams);
@@ -57,10 +58,12 @@ export default function WorksheetClient() {
         setProblems(newProblems);
         updateTitle(op, r);
         if (trackEvent) {
+            // ponytail: only the manual refresh passes trackEvent=true; auto-load never fires this.
             trackGenerateEvent({
                 worksheet_type: 'math',
                 operation: op,
                 range: r,
+                trigger: 'manual',
             });
         }
     };

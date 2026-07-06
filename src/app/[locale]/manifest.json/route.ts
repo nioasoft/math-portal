@@ -1,23 +1,24 @@
-import type { MetadataRoute } from 'next';
-import { getTranslations } from 'next-intl/server';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { locales, localeConfig, type Locale } from '@/i18n/config';
 
+// Route handler (not the `manifest.ts` metadata convention) because the metadata
+// convention does not route under a dynamic `[locale]` segment — it 404s in prod.
+// A handler at this path serves the localized manifest at the `/[locale]/manifest.json`
+// URL that layout.tsx already links to.
 export function generateStaticParams() {
     return locales.map((locale) => ({ locale }));
 }
 
-export default async function manifest({
-    params,
-}: {
-    params: Promise<{ locale: string }>;
-}): Promise<MetadataRoute.Manifest> {
+export async function GET(
+    _req: Request,
+    { params }: { params: Promise<{ locale: string }> },
+): Promise<Response> {
     const { locale } = await params;
     setRequestLocale(locale);
     const t = await getTranslations({ locale, namespace: 'meta' });
     const { dir } = localeConfig[locale as Locale];
 
-    return {
+    const manifest = {
         name: t('site.title'),
         short_name: t('site.name'),
         description: t('site.description'),
@@ -26,7 +27,7 @@ export default async function manifest({
         background_color: '#fef7ed',
         theme_color: '#f97316',
         orientation: 'portrait-primary',
-        dir: dir as 'rtl' | 'ltr',
+        dir,
         lang: locale,
         categories: ['education', 'kids'],
         icons: [
@@ -41,4 +42,11 @@ export default async function manifest({
             { src: '/icons/icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
         ],
     };
+
+    return new Response(JSON.stringify(manifest), {
+        headers: {
+            'Content-Type': 'application/manifest+json; charset=utf-8',
+            'Cache-Control': 'public, max-age=3600',
+        },
+    });
 }

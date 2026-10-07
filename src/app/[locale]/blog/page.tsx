@@ -8,7 +8,7 @@ import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { Newspaper, Sparkles, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Locale } from '@/i18n/config';
-import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, CONTENT_FALLBACK_LOCALE } from '@/lib/seo';
 
 type Props = {
     params: Promise<{ locale: string }>
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props) {
         title,
         description,
         alternates: generateAlternates('/blog', localeKey, blogLocales),
-        openGraph: generateOpenGraphMeta(isIndexableLocale ? localeKey : 'he', title, description, '/blog'),
+        openGraph: generateOpenGraphMeta(isIndexableLocale ? localeKey : CONTENT_FALLBACK_LOCALE, title, description, '/blog'),
         twitter: generateTwitterMeta(title, description),
         robots: isIndexableLocale ? undefined : {
             index: false,

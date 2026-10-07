@@ -1,14 +1,10 @@
 {
   "hero": {
-    "badge": "44 3D math learning games",
     "title": "Math Worksheets &",
     "titleHighlight": "Games",
     "description": "Print custom math worksheets — or play interactive math games.",
     "descriptionLine2": "For grades 1-6. Choose a topic, customize, print or play — all",
     "free": "Free",
-    "cta": "Start Playing",
-    "ctaSecondary": "How does it work?",
-    "ctaGames": "🎮 Math Games",
     "trustPrint": "Direct Print",
     "trustNoSignup": "No Registration",
     "trustFree": "100% Free",
@@ -25,13 +21,7 @@
   },
   "quickGames": {
     "title": "Let's Play!",
-    "subtitle": "Interactive Math Games",
-    "math": "Math",
-    "mathDesc": "Addition & Subtraction",
-    "fractions": "Fractions",
-    "fractionsDesc": "Simple Fractions",
-    "percentage": "Percentages",
-    "percentageDesc": "Calculate Percentages"
+    "subtitle": "Interactive Math Games"
   },
   "generators": {
     "title": "Printable Math Worksheets",
@@ -61,11 +51,6 @@
       "title": "Unit Conversions",
       "desc": "Length, weight, and time"
     }
-  },
-  "games": {
-    "title": "Math Games",
-    "subtitle": "Learn arithmetic, fractions and geometry through play!",
-    "cta": "All Math Games"
   },
   "grades": {
     "label": "By Grade:",
@@ -101,26 +86,6 @@
     "tipLabel": "Tip:",
     "tip": "When adding with carrying, remember to add 1 to the left column!",
     "answerSheet": "Separate answer sheet"
-  },
-  "topics": {
-    "title": "Topics",
-    "math": "Math",
-    "fractions": "Fractions",
-    "geometry": "Geometry",
-    "percentage": "Percentages",
-    "decimals": "Decimals",
-    "ratio": "Ratios",
-    "units": "Units of Measurement",
-    "series": "Sequences",
-    "wordProblems": "Word Problems"
-  },
-  "features": {
-    "free": "Free",
-    "freeDesc": "No cost and no registration",
-    "print": "Printable",
-    "printDesc": "Worksheets designed for printing",
-    "interactive": "Interactive",
-    "interactiveDesc": "Math games and online exercises"
   },
   "gamesHub": {
     "badge": "Interactive games",

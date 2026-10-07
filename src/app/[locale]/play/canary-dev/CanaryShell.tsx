@@ -20,7 +20,6 @@ export function CanaryShell({ title, breadcrumbItems }: Props): React.ReactEleme
       gameId={canaryGame.meta.id}
       meta={canaryGame.meta}
       title={title}
-      webGLAvailable={true}
       breadcrumbItems={breadcrumbItems}
       gameLoader={() => Promise.resolve({ default: canaryGame })}
     />

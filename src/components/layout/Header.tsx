@@ -6,11 +6,25 @@ import { useState, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
+const FOCUSABLE_SELECTOR =
+    'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+// `querySelectorAll` also returns elements hidden with visibility/display, which
+// the browser skips while tabbing — counting them makes a trap wrap at the wrong
+// boundary, so only elements that can actually receive focus are returned.
+function getTabbables(container: HTMLElement | null): HTMLElement[] {
+    if (!container) return [];
+    return [...container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)].filter(
+        (el) => el.getClientRects().length > 0 && getComputedStyle(el).visibility !== 'hidden'
+    );
+}
+
 export function Header() {
     const t = useTranslations('common');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isGradesOpen, setIsGradesOpen] = useState(false);
     const gradesRef = useRef<HTMLDivElement>(null);
+    const drawerRef = useRef<HTMLDivElement>(null);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -27,6 +41,49 @@ export function Header() {
             document.body.style.overflow = '';
         };
     }, [isMenuOpen]);
+
+    // While the drawer is open: Escape closes it, Tab cycles inside it, and
+    // closing hands focus back to whatever opened it.
+    useEffect(() => {
+        if (!isMenuOpen) return;
+        const opener = document.activeElement as HTMLElement | null;
+        drawerRef.current?.focus();
+
+        function handleKeyDown(event: KeyboardEvent) {
+            if (event.key === 'Escape') {
+                setIsMenuOpen(false);
+                return;
+            }
+            if (event.key !== 'Tab') return;
+            const focusables = getTabbables(drawerRef.current);
+            if (focusables.length === 0) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        }
+
+        document.addEventListener('keydown', handleKeyDown);
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+            opener?.focus();
+        };
+    }, [isMenuOpen]);
+
+    // Escape also dismisses the grades dropdown.
+    useEffect(() => {
+        if (!isGradesOpen) return;
+        function handleKeyDown(event: KeyboardEvent) {
+            if (event.key === 'Escape') setIsGradesOpen(false);
+        }
+        document.addEventListener('keydown', handleKeyDown);
+        return () => document.removeEventListener('keydown', handleKeyDown);
+    }, [isGradesOpen]);
 
     // Close dropdown when clicking outside
     useEffect(() => {
@@ -51,9 +108,10 @@ export function Header() {
     return (
         <header className="bg-white/95 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50 shadow-sm">
             <div className="container-custom h-16 flex items-center justify-between">
-                {/* Mobile Menu Button - First for RTL (appears on right) */}
+                {/* Menu Button - First for RTL (appears on right). `md:` not `lg:` so a
+                    tablet in portrait (768-1023) gets the real nav instead of a drawer. */}
                 <button
-                    className="lg:hidden p-2 text-slate-600 z-50 relative hover:bg-slate-100 rounded-lg transition-colors"
+                    className="md:hidden flex h-11 w-11 items-center justify-center text-slate-600 z-50 relative hover:bg-slate-100 rounded-lg transition-colors"
                     onClick={toggleMenu}
                     aria-label={isMenuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
                     aria-expanded={isMenuOpen}
@@ -61,11 +119,12 @@ export function Header() {
                     {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
                 </button>
 
-                {/* Desktop Nav */}
-                <nav className="hidden lg:flex items-center gap-1">
+                {/* Desktop Nav. Help/Blog/About are parent-facing and stay `lg:`-only —
+                    showing all six links at 768px overflows the bar. */}
+                <nav className="hidden md:flex items-center gap-1">
                     <Link
                         href="/"
-                        className="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all"
+                        className="px-3 lg:px-4 py-2 text-sm font-semibold text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all"
                     >
                         {t('nav.home')}
                     </Link>
@@ -74,7 +133,7 @@ export function Header() {
                     <div className="relative" ref={gradesRef}>
                         <button
                             onClick={() => setIsGradesOpen(!isGradesOpen)}
-                            className={`flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-lg transition-all ${isGradesOpen ? 'text-orange-600 bg-orange-50' : 'text-slate-600 hover:text-orange-600 hover:bg-orange-50'}`}
+                            className={`flex items-center gap-1.5 px-3 lg:px-4 py-2 text-sm font-semibold rounded-lg transition-all ${isGradesOpen ? 'text-orange-600 bg-orange-50' : 'text-slate-600 hover:text-orange-600 hover:bg-orange-50'}`}
                         >
                             <GraduationCap size={16} />
                             {t('nav.byGrade')}
@@ -98,7 +157,7 @@ export function Header() {
 
                     <Link
                         href="/play"
-                        className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 rounded-lg transition-all shadow-sm"
+                        className="flex items-center gap-1.5 px-3 lg:px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 rounded-lg transition-all shadow-sm"
                     >
                         <Gamepad2 size={16} />
                         {t('nav.games')}
@@ -106,7 +165,7 @@ export function Header() {
 
                     <Link
                         href="/help"
-                        className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all"
+                        className="hidden lg:flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all"
                     >
                         <BookOpen size={16} />
                         {t('nav.help')}
@@ -114,7 +173,7 @@ export function Header() {
 
                     <Link
                         href="/blog"
-                        className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50 rounded-lg transition-all"
+                        className="hidden lg:flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50 rounded-lg transition-all"
                     >
                         <Newspaper size={16} />
                         {t('nav.blog')}
@@ -122,7 +181,7 @@ export function Header() {
 
                     <Link
                         href="/about"
-                        className="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all"
+                        className="hidden lg:block px-4 py-2 text-sm font-semibold text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all"
                     >
                         {t('nav.about')}
                     </Link>
@@ -145,21 +204,27 @@ export function Header() {
 
                 {/* Mobile Nav - Slide from Right */}
                 <div
-                    className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-300 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
+                    className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
                     onClick={() => setIsMenuOpen(false)}
                 >
                     {/* Backdrop */}
                     <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
                 </div>
                 <div
-                    className={`lg:hidden fixed top-0 start-0 h-screen w-[280px] max-w-[85vw] bg-white z-50 shadow-2xl transform transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-0' : 'ltr:-translate-x-full rtl:translate-x-full'}`}
+                    ref={drawerRef}
+                    tabIndex={-1}
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label={t('nav.menu')}
+                    inert={!isMenuOpen}
+                    className={`md:hidden fixed top-0 start-0 h-screen w-[280px] max-w-[85vw] bg-white z-50 shadow-2xl transform transition-transform duration-300 ease-out outline-none ${isMenuOpen ? 'translate-x-0' : 'ltr:-translate-x-full rtl:translate-x-full'}`}
                 >
                     {/* Menu Header */}
                     <div className="flex items-center justify-between p-4 border-b border-slate-100">
                         <span className="text-lg font-black text-slate-800">{t('nav.menu')}</span>
                         <button
                             onClick={() => setIsMenuOpen(false)}
-                            className="p-2 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors"
+                            className="flex h-11 w-11 items-center justify-center text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors"
                             aria-label={t('nav.closeMenu')}
                         >
                             <X size={24} />

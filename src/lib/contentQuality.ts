@@ -18,19 +18,29 @@ export const MIN_BLOG_WORDS = 350;
 /** Minimum combined body words for a help topic to be considered indexable. */
 export const MIN_HELP_WORDS = 300;
 
+/** CJK Unified Ideographs — one ideograph reads as one word. */
+const CJK_IDEOGRAPH = /[\u4e00-\u9fff]/g;
+
 /**
  * Counts words in a string after stripping HTML.
- * Whitespace splitting is correct for all supported locales (he/ar/de/es/ru).
+ *
+ * Chinese has no inter-word spaces, so whitespace splitting alone would score a
+ * whole zh page as a single "word" and gate it out of the index and sitemap.
+ * Each CJK ideograph is counted as one word; everything else is still split on
+ * whitespace, so counts for the space-delimited locales are unchanged.
  */
 export function countWords(text: string): number {
   if (!text) return 0;
   const plain = text
     .replace(/<[^>]+>/g, ' ') // strip tags
     .replace(/&[a-z#0-9]+;/gi, ' ') // strip entities
+    .replace(/[\u3000-\u303f\uff00-\uffef]/g, ' ') // strip CJK + fullwidth punctuation
     .replace(/\s+/g, ' ')
     .trim();
   if (!plain) return 0;
-  return plain.split(/\s+/).filter(Boolean).length;
+  const ideographs = plain.match(CJK_IDEOGRAPH)?.length ?? 0;
+  const spacedTokens = plain.replace(CJK_IDEOGRAPH, ' ').split(/\s+/).filter(Boolean).length;
+  return ideographs + spacedTokens;
 }
 
 /** Body word count for a blog post (title/excerpt are metadata, not counted). */

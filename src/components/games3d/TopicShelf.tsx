@@ -1,6 +1,7 @@
 import { Link } from '@/i18n/navigation';
 import { ArrowLeft } from 'lucide-react';
 import { GameCard, type GameCardData } from './GameCard';
+import { ScrollRow } from './ScrollRow';
 import { topicStyle } from './topicMeta';
 
 interface TopicShelfProps {
@@ -28,7 +29,7 @@ export function TopicShelf({ topic, topicLabel, games, showAllLabel }: TopicShel
             <Icon size={18} className="text-white" />
           </span>
           <h3 className="text-lg font-black text-slate-800">{topicLabel}</h3>
-          <span className="text-sm font-medium text-slate-400">({games.length})</span>
+          <span className="text-sm font-medium text-slate-500">({games.length})</span>
         </div>
         <Link
           href="/play"
@@ -39,11 +40,11 @@ export function TopicShelf({ topic, topicLabel, games, showAllLabel }: TopicShel
         </Link>
       </div>
 
-      <div className="flex snap-x gap-4 overflow-x-auto pb-3 scrollbar-hide">
+      <ScrollRow className="flex snap-x gap-4 pb-3">
         {games.map((game) => (
           <GameCard key={game.id} game={game} />
         ))}
-      </div>
+      </ScrollRow>
     </section>
   );
 }

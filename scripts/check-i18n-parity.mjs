@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * i18n parity checker for the games3d + home namespaces.
+ * i18n parity checker for every message namespace.
  *
  * Compares the key sets of every locale against the reference locale (he) and
  * reports any missing or extra keys — including inside every per-game block
@@ -9,7 +9,12 @@
  *
  * Also asserts that every `meta.topic` actually used by a registered game has a
  * `topics.<topic>` label in ALL locales (a missing one throws MISSING_MESSAGE
- * in the /play catalog at build/SSG time).
+ * in the /play catalog at build/SSG time), and that every game's `seo` block is
+ * complete in ALL locales (the sitemap drops pages whose seo is incomplete).
+ *
+ * Locales and namespaces are discovered from `messages/` rather than listed
+ * here, so a new locale or namespace is checked from the moment it lands
+ * instead of silently escaping the gate.
  *
  * Usage: node scripts/check-i18n-parity.mjs   (exit 1 on any gap)
  */
@@ -17,9 +22,18 @@ import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 const ROOT = process.cwd();
-const LOCALES = ['he', 'en', 'ar', 'de', 'es', 'ru'];
+const LOCALES = readdirSync(join(ROOT, 'messages')).filter(
+  (d) => !d.startsWith('.') && statSync(join(ROOT, 'messages', d)).isDirectory(),
+);
 const REF = 'he';
-const NAMESPACES = ['games3d', 'home', 'games'];
+const NAMESPACES = readdirSync(join(ROOT, 'messages', REF))
+  .filter((f) => f.endsWith('.json'))
+  .map((f) => f.replace(/\.json$/, ''));
+
+if (!LOCALES.includes(REF)) {
+  console.error(`✗ reference locale "${REF}" has no messages/ directory.`);
+  process.exit(1);
+}
 
 function load(locale, ns) {
   return JSON.parse(readFileSync(join(ROOT, `messages/${locale}/${ns}.json`), 'utf8'));
@@ -79,23 +93,30 @@ for (const locale of LOCALES) {
   }
 }
 
-// 3. Assert every game block in the reference locale carries a complete seo block.
-const refGames = load(REF, 'games3d');
+// 3. Assert every game block in every locale carries a complete seo block.
+// The sitemap drops a game page for a locale whose seo block is incomplete, so
+// a gap here silently removes URLs from that locale's sitemap and its hreflang.
 const REQUIRED_SEO = ['intro', 'howToPlay', 'skills', 'example', 'mistakes', 'faqs'];
-for (const [key, block] of Object.entries(refGames)) {
-  if (!block || typeof block !== 'object' || !('title' in block) || key === 'canary') continue;
-  const seo = block.seo;
-  const missing = !seo || typeof seo !== 'object'
-    ? REQUIRED_SEO
-    : REQUIRED_SEO.filter((f) => !(f in seo));
-  if (missing.length) {
-    console.error(`SEO_INCOMPLETE games3d.${key}.seo (he) missing: ${missing.join(', ')}`);
-    problems++;
+const refGames = load(REF, 'games3d');
+const GAME_KEYS = Object.entries(refGames)
+  .filter(([key, block]) => block && typeof block === 'object' && 'title' in block && key !== 'canary')
+  .map(([key]) => key);
+for (const locale of LOCALES) {
+  const games = load(locale, 'games3d');
+  for (const key of GAME_KEYS) {
+    const seo = games[key]?.seo;
+    const missing = !seo || typeof seo !== 'object'
+      ? REQUIRED_SEO
+      : REQUIRED_SEO.filter((f) => !(f in seo));
+    if (missing.length) {
+      console.error(`SEO_INCOMPLETE games3d.${key}.seo (${locale}) missing: ${missing.join(', ')}`);
+      problems++;
+    }
   }
 }
 
 if (problems === 0) {
-  console.log(`✓ i18n parity OK — ${NAMESPACES.join(', ')} aligned across ${LOCALES.join('/')}; all ${topics.size} used topics labelled in every locale; all game seo blocks complete in ${REF}.`);
+  console.log(`✓ i18n parity OK — ${NAMESPACES.join(', ')} aligned across ${LOCALES.join('/')}; all ${topics.size} used topics labelled in every locale; all ${GAME_KEYS.length} game seo blocks complete in every locale.`);
   process.exit(0);
 } else {
   console.log(`\n✗ ${problems} i18n parity problem(s) found.`);

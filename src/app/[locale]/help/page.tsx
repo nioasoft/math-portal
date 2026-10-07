@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { ArrowLeft, GraduationCap, Sparkles } from 'lucide-react';
 import { HelpIndexClient } from './HelpIndexClient';
 import { getTranslations } from 'next-intl/server';
-import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, CONTENT_FALLBACK_LOCALE } from '@/lib/seo';
 
 interface PageProps {
     params: Promise<{ locale: string }>;
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps) {
         title,
         description,
         alternates: generateAlternates('/help', localeKey, helpLocales),
-        openGraph: generateOpenGraphMeta(isIndexableLocale ? localeKey : 'he', title, description, '/help'),
+        openGraph: generateOpenGraphMeta(isIndexableLocale ? localeKey : CONTENT_FALLBACK_LOCALE, title, description, '/help'),
         twitter: generateTwitterMeta(title, description),
         robots: isIndexableLocale ? undefined : {
             index: false,

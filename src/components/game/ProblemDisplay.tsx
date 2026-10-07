@@ -39,8 +39,8 @@ export default function ProblemDisplay({ problem }: ProblemDisplayProps) {
                     <span>{num1}</span>
                     <span className="mx-4 text-yellow-400">{operator}</span>
                     <span>{num2}</span>
-                    <span className="mx-4 text-slate-500">=</span>
-                    <span className="text-slate-600">?</span>
+                    <span className="mx-4 text-slate-300">=</span>
+                    <span>?</span>
                 </div>
             </div>
         );
@@ -54,8 +54,8 @@ export default function ProblemDisplay({ problem }: ProblemDisplayProps) {
                     <FractionDisplay n={f1.n} d={f1.d} whole={f1.whole} />
                     <span className="mx-2 md:mx-4 text-yellow-400 text-4xl md:text-5xl">{op}</span>
                     <FractionDisplay n={f2.n} d={f2.d} whole={f2.whole} />
-                    <span className="mx-2 md:mx-4 text-slate-500">=</span>
-                    <span className="text-slate-600">?</span>
+                    <span className="mx-2 md:mx-4 text-slate-300">=</span>
+                    <span>?</span>
                 </div>
             </div>
         );
@@ -65,12 +65,12 @@ export default function ProblemDisplay({ problem }: ProblemDisplayProps) {
         const { percent, total } = problem.percentProblem;
         return (
             <div className="text-center py-8">
-                <div className="text-4xl md:text-5xl font-bold">
+                <div className="text-4xl md:text-5xl font-bold" dir="ltr">
                     <span className="text-yellow-400">{percent}%</span>
-                    <span className="mx-4 text-slate-400 text-3xl">{t('problem.of')}</span>
+                    <span className="mx-4 text-slate-200 text-3xl">{t('problem.of')}</span>
                     <span>{total}</span>
-                    <span className="mx-4 text-slate-500">=</span>
-                    <span className="text-slate-600">?</span>
+                    <span className="mx-4 text-slate-300">=</span>
+                    <span>?</span>
                 </div>
             </div>
         );

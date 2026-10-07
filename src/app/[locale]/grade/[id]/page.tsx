@@ -2,12 +2,15 @@ import type { Metadata } from 'next';
 import { GRADE_TOPICS, GRADE_IDS, TOPIC_ICONS, TOPIC_HREFS } from '@/lib/curriculum';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import Link from 'next/link';
-import { ArrowLeft, GraduationCap, Sparkles } from 'lucide-react';
+import { Link } from '@/i18n/navigation';
+import { ArrowLeft, GraduationCap, Sparkles, Gamepad2 } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
+import { GameCard } from '@/components/games3d/GameCard';
+import { getGameCards } from '@/components/games3d/gameCards';
+import { ScrollRow } from '@/components/games3d/ScrollRow';
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string; locale: string }> }): Promise<Metadata> {
     const { id, locale } = await params;
@@ -35,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
             t('grade.meta.keywords.worksheets', { gradeTitle }),
             t('grade.meta.keywords.math', { gradeTitle }),
             t('grade.meta.keywords.printable'),
-            t('grade.meta.keywords.exercises')
+            t('grade.meta.keywords.exercises', { gradeTitle })
         ],
         alternates: generateAlternates(`/grade/${id}`, locale as Locale),
         openGraph: generateOpenGraphMeta(locale as Locale, title, description, `/grade/${id}`),
@@ -81,6 +84,14 @@ export default async function GradePage({ params }: { params: Promise<{ id: stri
     }));
 
     const colors = gradeColors[id] || gradeColors['1'];
+
+    // Games whose grade range covers this grade — the grade pages linked to
+    // worksheets only, so there was no path from a grade to its games.
+    const tGames = await getTranslations({ locale, namespace: 'games3d' });
+    const gradeNum = Number(id);
+    const gradeGames = (await getGameCards(locale)).filter(
+        (card) => card.grades[0] <= gradeNum && gradeNum <= card.grades[1]
+    );
 
     const breadcrumbSchema = {
         "@context": "https://schema.org",
@@ -168,7 +179,7 @@ export default async function GradePage({ params }: { params: Promise<{ id: stri
                                         <div className={`${colors.iconBg} p-3 rounded-xl group-hover:bg-gradient-to-br group-hover:${colors.gradient} transition-all`}>
                                             <topic.icon size={24} className={`text-slate-600 group-hover:text-white transition-colors`} />
                                         </div>
-                                        <ArrowLeft size={20} className="text-slate-300 group-hover:text-orange-500 transform group-hover:-translate-x-1 transition-all" />
+                                        <ArrowLeft size={20} className="text-slate-300 transition-all group-hover:text-orange-500 ltr:-scale-x-100 group-hover:rtl:-translate-x-1 group-hover:ltr:translate-x-1" />
                                     </div>
                                     <h3 className="font-bold text-lg text-slate-800 mb-2 group-hover:text-orange-600 transition-colors">{topic.title}</h3>
                                     <p className="text-slate-500 text-sm leading-relaxed">{topic.description}</p>
@@ -177,6 +188,35 @@ export default async function GradePage({ params }: { params: Promise<{ id: stri
                         </div>
                     </div>
                 </section>
+
+                {/* Games for this grade */}
+                {gradeGames.length > 0 && (
+                    <section className="py-12">
+                        <div className="container-custom">
+                            <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+                                <h2 className="flex items-center gap-2 text-2xl font-black text-slate-800">
+                                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 shadow-sm">
+                                        <Gamepad2 size={20} className="text-white" />
+                                    </span>
+                                    {tGames('gradeGamesTitle')}
+                                </h2>
+                                <Link
+                                    href="/play"
+                                    className="group flex items-center gap-1 text-sm font-bold text-purple-600 transition-colors hover:text-purple-700"
+                                >
+                                    {tGames('gradeGamesAll')}
+                                    <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-0.5 ltr:-scale-x-100" />
+                                </Link>
+                            </div>
+
+                            <ScrollRow className="flex snap-x gap-4 pb-3">
+                                {gradeGames.map((card) => (
+                                    <GameCard key={card.id} game={card} />
+                                ))}
+                            </ScrollRow>
+                        </div>
+                    </section>
+                )}
 
                 {/* Other Grades */}
                 <section className="py-12 bg-white">

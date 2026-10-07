@@ -3,6 +3,10 @@
     "backToGames": "Volver a Juegos",
     "home": "Inicio"
   },
+  "hud": {
+    "help": "Cómo jugar",
+    "hideHelp": "Ocultar las instrucciones"
+  },
   "feedback": {
     "correct": "¡Correcto!",
     "incorrect": "Incorrecto",
@@ -50,18 +54,16 @@
     "clear": "Limpiar",
     "check": "Verificar",
     "checkAnswer": "Verificar respuesta",
-    "numerator": "Num",
-    "denominator": "Den",
+    "numerator": "Numerador",
+    "denominator": "Denominador",
     "whole": "Entero"
   },
   "play": {
     "header": {
       "title": "Juegos de Matemáticas",
-      "subtitle": "¡Elige un tema y empieza a jugar!",
-      "back": "← Volver"
+      "subtitle": "¡Elige un tema y empieza a jugar!"
     },
     "topics": {
-      "title": "Elige un tema",
       "math": {
         "title": "Aritmética Básica",
         "description": "Suma, resta, multiplicación y división"
@@ -73,17 +75,6 @@
       "percentage": {
         "title": "Porcentajes",
         "description": "Cálculo de porcentaje de un total"
-      },
-      "startPlaying": "Comenzar a jugar"
-    },
-    "gameModes": {
-      "practice": {
-        "title": "Práctica libre",
-        "description": "Practica sin presión de tiempo. Ejercicios infinitos, acumula una racha de respuestas correctas y mejora tu puntuación."
-      },
-      "quiz": {
-        "title": "Quiz con temporizador",
-        "description": "¡Compite contra el reloj! 60/90/120 segundos para responder la mayor cantidad de ejercicios posible. ¡Rompe récords!"
       }
     },
     "footer": {
@@ -94,6 +85,7 @@
       "title": "Juegos de aprendizaje en 3D",
       "subtitle": "Juegos 3D para explorar y aprender — sin cronómetro, a tu ritmo",
       "all": "Todos",
+      "allGrades": "Todos los grados",
       "count": "{n} juegos",
       "empty": "No hay juegos en este tema",
       "quizzesTitle": "Cuestionarios rápidos",

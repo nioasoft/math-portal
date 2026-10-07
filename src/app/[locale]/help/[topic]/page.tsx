@@ -8,7 +8,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowRight, BookOpen, AlertTriangle, Lightbulb, CheckCircle, ExternalLink, GraduationCap } from 'lucide-react';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, CONTENT_FALLBACK_LOCALE } from '@/lib/seo';
 import { isSubstantialHelpTopic } from '@/lib/contentQuality';
 
 interface PageProps {
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const t = await getTranslations({ locale, namespace: 'help' });
     const helpLocales = getHelpContentLocales();
     const hasLocalizedContent = hasLocalizedHelpContent(localeKey);
-    const resolvedLocale = hasLocalizedContent ? localeKey : defaultLocale;
+    const resolvedLocale = hasLocalizedContent ? localeKey : CONTENT_FALLBACK_LOCALE;
 
     if (!topic) {
         return {

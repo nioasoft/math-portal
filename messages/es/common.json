@@ -11,6 +11,9 @@
     "menu": "Menú",
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
+    "selectLanguage": "Seleccionar idioma",
+    "availableLanguages": "Idiomas disponibles",
+    "breadcrumb": "Ruta de navegación",
     "privacy": "Política de Privacidad",
     "contact": "Contáctenos",
     "editorial": "Directrices Editoriales"

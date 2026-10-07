@@ -29,9 +29,9 @@ export function MuteButton({ muted, onToggle, volume = 1, onVolumeChange }: Prop
         type="button"
         onClick={onToggle}
         aria-label={label}
-        className="p-2 bg-slate-700/50 hover:bg-slate-700 rounded-lg transition"
+        className="flex h-11 w-11 items-center justify-center bg-slate-700/50 hover:bg-slate-700 rounded-lg transition"
       >
-        <Icon className="w-5 h-5" aria-hidden="true" />
+        <Icon className="h-6 w-6" aria-hidden="true" />
       </button>
       {onVolumeChange && (
         <input
@@ -42,7 +42,7 @@ export function MuteButton({ muted, onToggle, volume = 1, onVolumeChange }: Prop
           value={muted ? 0 : volume}
           onChange={handleSliderChange}
           aria-label={t('volume')}
-          className="w-20 h-1.5 accent-indigo-400 cursor-pointer"
+          className="h-11 w-24 accent-toy-sky cursor-pointer"
         />
       )}
     </div>

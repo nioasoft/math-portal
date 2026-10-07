@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Link } from '@/i18n/navigation';
-import { Calculator, BookOpen, Newspaper, GraduationCap, MessageSquare, Quote } from 'lucide-react';
+import { Calculator, BookOpen, Newspaper, GraduationCap, MessageSquare, Quote, Gamepad2 } from 'lucide-react';
 import { FeedbackModal } from '@/components/FeedbackModal';
 import { useTranslations } from 'next-intl';
 
@@ -14,8 +14,11 @@ interface Testimonial {
 
 export function Footer() {
     const t = useTranslations('common');
+    const tGames = useTranslations('games3d');
+    const tQuiz = useTranslations('games.play.topics');
     const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
+    const [rotationPaused, setRotationPaused] = useState(false);
 
     const testimonials: Testimonial[] = [
         {
@@ -36,11 +39,13 @@ export function Footer() {
     ];
 
     useEffect(() => {
+        if (rotationPaused) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         const interval = setInterval(() => {
             setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
         }, 5000);
         return () => clearInterval(interval);
-    }, [testimonials.length]);
+    }, [rotationPaused, testimonials.length]);
 
     const grades = [
         { label: t('grades.grade1'), href: '/grade/1' },
@@ -60,11 +65,20 @@ export function Footer() {
         { label: t('footer.units'), href: '/units' },
     ];
 
+    // Games get their own column: the Quick Links / Topics columns were
+    // worksheet-only, so there was no footer path into the catalog at all.
+    const gameLinks = [
+        { label: tGames('sectionTitle'), href: '/play' },
+        { label: tQuiz('math.title'), href: '/play/math' },
+        { label: tQuiz('fractions.title'), href: '/play/fractions' },
+        { label: tQuiz('percentage.title'), href: '/play/percentage' },
+    ];
+
     return (
         <footer className="bg-slate-900 text-slate-300 pt-16 pb-8 mt-auto print:hidden">
             <div className="container-custom">
                 {/* Main footer content */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-10 mb-12">
                     {/* Brand */}
                     <div className="lg:col-span-1">
                         <Link href="/" className="flex items-center gap-2.5 mb-4">
@@ -139,6 +153,23 @@ export function Footer() {
                         </ul>
                     </div>
 
+                    {/* Games */}
+                    <div>
+                        <h3 className="text-white font-bold mb-4 flex items-center gap-2">
+                            <Gamepad2 size={16} className="text-purple-400" />
+                            {t('nav.games')}
+                        </h3>
+                        <ul className="space-y-2 text-sm">
+                            {gameLinks.map((game) => (
+                                <li key={game.href}>
+                                    <Link href={game.href} className="hover:text-purple-400 transition-colors">
+                                        {game.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
                     {/* Grades */}
                     <div>
                         <h3 className="text-white font-bold mb-4 flex items-center gap-2">
@@ -186,7 +217,13 @@ export function Footer() {
 
                     {/* Testimonials */}
                     <div className="mt-8 max-w-xl mx-auto">
-                        <div className="relative bg-slate-800/50 rounded-xl p-5 border border-slate-700/50">
+                        <div
+                            className="relative bg-slate-800/50 rounded-xl p-5 border border-slate-700/50"
+                            onMouseEnter={() => setRotationPaused(true)}
+                            onMouseLeave={() => setRotationPaused(false)}
+                            onFocus={() => setRotationPaused(true)}
+                            onBlur={() => setRotationPaused(false)}
+                        >
                             <Quote size={16} className="absolute top-3 start-3 text-orange-500/40" />
                             <div className="text-center">
                                 <p className="text-sm text-slate-300 italic mb-3 px-4">
@@ -199,16 +236,23 @@ export function Footer() {
                                 </div>
                             </div>
                             {/* Dots indicator */}
-                            <div className="flex justify-center gap-1.5 mt-4">
-                                {testimonials.map((_, index) => (
+                            <div className="flex justify-center mt-2">
+                                {testimonials.map((testimonial, index) => (
                                     <button
                                         key={index}
+                                        type="button"
                                         onClick={() => setCurrentTestimonial(index)}
-                                        className={`w-1.5 h-1.5 rounded-full transition-colors ${
-                                            index === currentTestimonial ? 'bg-orange-500' : 'bg-slate-600 hover:bg-slate-500'
-                                        }`}
-                                        aria-label={`Testimonial ${index + 1}`}
-                                    />
+                                        aria-label={testimonial.author}
+                                        aria-current={index === currentTestimonial}
+                                        className="flex h-11 w-11 items-center justify-center"
+                                    >
+                                        <span
+                                            aria-hidden="true"
+                                            className={`h-2.5 w-2.5 rounded-full transition-colors ${
+                                                index === currentTestimonial ? 'bg-orange-500' : 'bg-slate-600 hover:bg-slate-500'
+                                            }`}
+                                        />
+                                    </button>
                                 ))}
                             </div>
                         </div>

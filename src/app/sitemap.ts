@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { locales, defaultLocale, type Locale } from '@/i18n/config'
+import { toHreflang } from '@/lib/seo'
 import {
     getBlogContentLocales,
     getBlogPosts,
@@ -20,6 +21,7 @@ import arGames3d from '../../messages/ar/games3d.json'
 import deGames3d from '../../messages/de/games3d.json'
 import esGames3d from '../../messages/es/games3d.json'
 import ruGames3d from '../../messages/ru/games3d.json'
+import zhGames3d from '../../messages/zh/games3d.json'
 
 const BASE_URL = 'https://www.tirgul.net'
 
@@ -36,6 +38,7 @@ const gameMessagesByLocale: Record<Locale, GameSeoMessages> = {
     de: deGames3d as GameSeoMessages,
     es: esGames3d as GameSeoMessages,
     ru: ruGames3d as GameSeoMessages,
+    zh: zhGames3d as GameSeoMessages,
 }
 
 // Helper to generate URL for a path and locale
@@ -46,12 +49,15 @@ function getUrl(path: string, locale: Locale): string {
     return `${BASE_URL}/${locale}${path === '/' ? '' : path}`
 }
 
-// Helper to generate language alternates for a path
+// Helper to generate language alternates for a path. Keys are BCP-47 hreflang
+// codes (zh → zh-Hans) and include x-default, matching the pages' hreflang head
+// links emitted by generateAlternates in src/lib/seo.ts.
 function getLanguageAlternates(path: string, availableLocales: readonly Locale[]): Record<string, string> {
     const alternates: Record<string, string> = {}
     for (const locale of availableLocales) {
-        alternates[locale] = getUrl(path, locale)
+        alternates[toHreflang(locale)] = getUrl(path, locale)
     }
+    alternates['x-default'] = getUrl(path, defaultLocale)
     return alternates
 }
 

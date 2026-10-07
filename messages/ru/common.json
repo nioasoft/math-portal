@@ -11,6 +11,9 @@
     "menu": "Меню",
     "openMenu": "Открыть меню",
     "closeMenu": "Закрыть меню",
+    "selectLanguage": "Выбрать язык",
+    "availableLanguages": "Доступные языки",
+    "breadcrumb": "Хлебные крошки",
     "privacy": "Политика конфиденциальности",
     "contact": "Связаться с нами",
     "editorial": "Редакционные правила"

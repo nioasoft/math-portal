@@ -1,16 +1,24 @@
 import { describe, it, expect, vi } from 'vitest';
-import { hasWebGL, getWebGLContext } from '../engine/WebGLCheck';
+
+// `hasWebGL` memoizes its probe, so every test needs a fresh module instance.
+async function loadCheck() {
+  vi.resetModules();
+  return import('../engine/WebGLCheck');
+}
 
 describe('WebGLCheck', () => {
-  it('returns false in jsdom (no WebGL)', () => {
+  it('returns false in jsdom (no WebGL)', async () => {
+    const { hasWebGL } = await loadCheck();
     expect(hasWebGL()).toBe(false);
   });
 
-  it('returns null context in jsdom', () => {
+  it('returns null context in jsdom', async () => {
+    const { getWebGLContext } = await loadCheck();
     expect(getWebGLContext()).toBeNull();
   });
 
-  it('returns true when canvas getContext returns a webgl context', () => {
+  it('returns true when canvas getContext returns a webgl context', async () => {
+    const { hasWebGL } = await loadCheck();
     const fakeCanvas = {
       getContext: vi.fn((type: string) =>
         type === 'webgl2' || type === 'webgl' ? { fake: true } : null
@@ -23,5 +31,15 @@ describe('WebGLCheck', () => {
     });
     expect(hasWebGL()).toBe(true);
     vi.restoreAllMocks();
+  });
+
+  it('probes once so repeated calls cannot exhaust the browser GL context cap', async () => {
+    const { hasWebGL } = await loadCheck();
+    hasWebGL();
+    const create = vi.spyOn(document, 'createElement');
+    hasWebGL();
+    hasWebGL();
+    expect(create).not.toHaveBeenCalled();
+    create.mockRestore();
   });
 });

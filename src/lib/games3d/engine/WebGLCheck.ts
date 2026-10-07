@@ -7,6 +7,11 @@ export function getWebGLContext(): WebGLRenderingContext | WebGL2RenderingContex
   return gl;
 }
 
+// Memoized: every probe allocates a canvas and a GL context, and browsers cap how
+// many contexts can stay live. Support never changes during a session.
+let probed: boolean | null = null;
+
 export function hasWebGL(): boolean {
-  return getWebGLContext() !== null;
+  probed ??= getWebGLContext() !== null;
+  return probed;
 }

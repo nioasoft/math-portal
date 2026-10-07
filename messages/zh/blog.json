@@ -1,0 +1,19 @@
+{
+  "badge": "文章与建议",
+  "title": "我们的博客",
+  "subtitle": "为家长和教师提供的文章、技巧与工具，让数学学习更有趣、更有效",
+  "allCategories": "全部",
+  "readArticle": "阅读全文",
+  "noArticlesFound": "该分类下暂无文章。",
+  "backToAll": "返回全部文章",
+  "categories": {
+    "tips": "技巧与学习方法",
+    "anxiety": "应对学习困难",
+    "games": "游戏与活动",
+    "curriculum": "课程内容",
+    "homework": "家庭作业"
+  },
+  "ctaTitle": "准备好练习了吗？",
+  "ctaDescription": "读完文章后，到我们的生成器创建个性化练习纸",
+  "ctaButton": "全部生成器"
+}

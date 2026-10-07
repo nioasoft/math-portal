@@ -1,29 +1,37 @@
 @import "tailwindcss";
 
-@theme {
+/* `static` so every token below is emitted into :root even when it is only
+   reached through var() in this file rather than through a utility class. */
+@theme static {
   --font-sans: var(--font-locale), ui-sans-serif, system-ui, sans-serif;
-  /* Warm, educational color palette */
-  --color-primary: #1e3a5f;
-  --color-accent: #f97316;
-  --color-warm: #fef7ed;
-  --color-paper: #fffbf5;
+
+  /* Site brand: the warm orange behind CTAs, focus rings and worksheet chrome.
+     Deliberately not called `coral` — in the game palette coral is a red, and
+     the two used to share a name with two different values. */
+  --color-brand: #f97316;
+  --color-brand-dark: #ea580c;
+  --color-brand-light: #fed7aa;
+  --color-brand-warm: #fef7ed;
+  --color-navy: #1e3a5f;
+  --color-navy-light: #3b5a80;
+
+  /* Kid palette, mirroring PALETTE_HEX in src/lib/games3d/kit/palette.ts so the
+     DOM chrome and the three.js materials cannot drift apart. The `toy-` prefix
+     keeps these clear of Tailwind's own scales (bg-toy-sky vs bg-sky-500). */
+  --color-toy-coral: #ff6b6b;
+  --color-toy-sun: #ffd93d;
+  --color-toy-mint: #6bcb77;
+  --color-toy-sky: #4d96ff;
+  --color-toy-grape: #9b5de5;
+  --color-toy-cream: #fff3e0;
+  --color-toy-ground: #ede0d4;
+  --color-toy-blush: #ff9a9e;
+  --color-toy-ocean: #0077b6;
+  --color-toy-lemon: #f7dc6f;
 }
 
 :root {
   --font-locale: ui-sans-serif, system-ui, sans-serif;
-  --foreground-rgb: 30, 58, 95;
-  --background-start-rgb: 254, 247, 237;
-  --background-end-rgb: 255, 255, 255;
-
-  /* Design tokens */
-  --color-coral: #f97316;
-  --color-coral-light: #fed7aa;
-  --color-navy: #1e3a5f;
-  --color-navy-light: #3b5a80;
-  --color-cream: #fef7ed;
-  --color-paper: #fffbf5;
-  --color-sage: #22c55e;
-  --color-sky: #0ea5e9;
 }
 
 .font-locale-he {
@@ -36,6 +44,10 @@
 
 .font-locale-latin {
   --font-locale: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.font-locale-zh {
+  --font-locale: var(--font-noto-sc), "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 /* Print Styles */
@@ -59,7 +71,8 @@
 
 /* Custom Utilities */
 .container-custom {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  /* w-full: as a flex item the `mx-auto` disables stretch, so it would size to fit-content and overflow. */
+  @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
 /* Enhanced Typography */
@@ -94,17 +107,17 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #fef7ed;
+  background: var(--color-brand-warm);
   border-radius: 4px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #fed7aa;
+  background: var(--color-brand-light);
   border-radius: 4px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #f97316;
+  background: var(--color-brand);
 }
 
 /* Animations */
@@ -184,6 +197,9 @@
   .animate-slide-up,
   .animate-fade-in,
   .animate-bounce-in,
+  .animate-pulse,
+  .animate-bounce,
+  .animate-ping,
   .animate-shake {
     animation: none !important;
   }
@@ -236,14 +252,14 @@
 
 /* Gradient text */
 .text-gradient-warm {
-  background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
+  background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-dark) 50%, #dc2626 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-navy {
-  background: linear-gradient(135deg, #1e3a5f 0%, #3b5a80 100%);
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -251,27 +267,32 @@
 
 /* Button styles */
 .btn-primary {
-  @apply bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold rounded-xl
-         shadow-lg shadow-orange-200 hover:shadow-xl hover:shadow-orange-300
+  @apply bg-gradient-to-r from-brand to-brand-dark text-white font-bold rounded-xl
+         shadow-lg shadow-brand-light hover:shadow-xl hover:shadow-brand-light
          transition-all duration-300 hover:-translate-y-0.5;
 }
 
 .btn-secondary {
   @apply bg-white text-slate-700 font-bold rounded-xl border-2 border-slate-200
-         hover:border-orange-200 hover:bg-orange-50 transition-all duration-300;
+         hover:border-brand-light hover:bg-brand-warm transition-all duration-300;
 }
 
 /* Focus styles */
-a:focus-visible, button:focus-visible {
-  outline: 2px solid #f97316;
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: 2px solid var(--color-brand);
   outline-offset: 2px;
-  border-radius: 8px;
 }
 
 /* Selection color */
 ::selection {
-  background-color: #fed7aa;
-  color: #1e3a5f;
+  background-color: var(--color-brand-light);
+  color: var(--color-navy);
 }
 
 /* Hide scrollbar utility */

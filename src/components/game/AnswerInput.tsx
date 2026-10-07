@@ -136,7 +136,8 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                         onKeyDown={handleKeyDown}
                         disabled={disabled}
                         placeholder={t('input.placeholder')}
-                        className="w-full text-center text-4xl font-bold py-4 px-6 bg-slate-700/50 border-2 border-slate-600 rounded-xl focus:border-yellow-400 focus:outline-none transition disabled:opacity-50 placeholder:text-slate-500"
+                        aria-label={t('input.placeholder')}
+                        className="w-full text-center text-4xl font-bold py-4 px-6 bg-slate-700/50 border-2 border-slate-600 rounded-xl focus:border-yellow-400 focus:outline-none transition disabled:opacity-50 placeholder:text-slate-300"
                         dir="ltr"
                     />
                 </div>
@@ -239,10 +240,11 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                         onFocus={() => setActiveField('numerator')}
                         disabled={disabled}
                         placeholder={t('input.numerator')}
-                        className={`w-16 md:w-20 text-center text-xl md:text-2xl font-bold py-1.5 md:py-2 px-2 bg-slate-700/50 border-2 rounded-lg focus:outline-none transition disabled:opacity-50 ${activeField === 'numerator' ? 'border-yellow-400 ring-2 ring-yellow-400/50' : 'border-slate-600'}`}
+                        aria-label={t('input.numerator')}
+                        className={`w-32 md:w-36 text-center text-xl md:text-2xl font-bold placeholder:text-base md:placeholder:text-lg py-1.5 md:py-2 px-2 bg-slate-700/50 border-2 rounded-lg focus:outline-none transition disabled:opacity-50 ${activeField === 'numerator' ? 'border-yellow-400 ring-2 ring-yellow-400/50' : 'border-slate-600'}`}
                         dir="ltr"
                     />
-                    <div className="w-16 md:w-20 h-0.5 md:h-1 bg-white my-0.5 md:my-1"></div>
+                    <div className="w-32 md:w-36 h-0.5 md:h-1 bg-white my-0.5 md:my-1"></div>
                     <input
                         ref={denominatorRef}
                         type="text"
@@ -253,7 +255,8 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                         onFocus={() => setActiveField('denominator')}
                         disabled={disabled}
                         placeholder={t('input.denominator')}
-                        className={`w-16 md:w-20 text-center text-xl md:text-2xl font-bold py-1.5 md:py-2 px-2 bg-slate-700/50 border-2 rounded-lg focus:outline-none transition disabled:opacity-50 ${activeField === 'denominator' ? 'border-yellow-400 ring-2 ring-yellow-400/50' : 'border-slate-600'}`}
+                        aria-label={t('input.denominator')}
+                        className={`w-32 md:w-36 text-center text-xl md:text-2xl font-bold placeholder:text-base md:placeholder:text-lg py-1.5 md:py-2 px-2 bg-slate-700/50 border-2 rounded-lg focus:outline-none transition disabled:opacity-50 ${activeField === 'denominator' ? 'border-yellow-400 ring-2 ring-yellow-400/50' : 'border-slate-600'}`}
                         dir="ltr"
                     />
                 </div>
@@ -269,7 +272,8 @@ export default function AnswerInput({ onSubmit, disabled = false, autoFocus = tr
                     onFocus={() => setActiveField('whole')}
                     disabled={disabled}
                     placeholder={t('input.whole')}
-                    className={`w-16 md:w-20 text-center text-2xl md:text-3xl font-bold py-2 md:py-3 px-2 bg-slate-700/50 border-2 rounded-xl focus:outline-none transition disabled:opacity-50 ${activeField === 'whole' ? 'border-yellow-400 ring-2 ring-yellow-400/50' : 'border-slate-600'}`}
+                    aria-label={t('input.whole')}
+                    className={`w-24 md:w-28 text-center text-2xl md:text-3xl font-bold placeholder:text-base md:placeholder:text-lg py-2 md:py-3 px-2 bg-slate-700/50 border-2 rounded-xl focus:outline-none transition disabled:opacity-50 ${activeField === 'whole' ? 'border-yellow-400 ring-2 ring-yellow-400/50' : 'border-slate-600'}`}
                     dir="ltr"
                 />
             </div>

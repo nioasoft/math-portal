@@ -2,7 +2,7 @@ import UnitsClient from '@/components/worksheet/UnitsClient';
 import { FeaturedTopicGames } from '@/components/games3d/FeaturedTopicGames';
 import { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels, toHreflang } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -53,7 +53,7 @@ export default async function UnitsPage({ params }: { params: Promise<{ locale: 
         "name": t('pages.units.title'),
         "description": t('pages.units.description'),
         "url": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/units`,
-        "inLanguage": locale,
+        "inLanguage": toHreflang(locale as Locale),
         "learningResourceType": "Worksheet",
         "educationalLevel": eduLevels.slice(2), // Grades 3-6
         "educationalUse": "Practice",

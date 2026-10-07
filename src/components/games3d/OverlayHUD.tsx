@@ -1,7 +1,8 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Trophy, Check, X, Lightbulb } from 'lucide-react';
+import { Trophy, Check, X, Lightbulb, HelpCircle } from 'lucide-react';
 import type { ControlButton, FeedbackEvent, GameStatus } from '@/lib/games3d/types';
 
 interface Props {
@@ -16,6 +17,9 @@ interface Props {
   /** Reward/progress snapshot (stars, streak, progress) shown in the top status bar. */
   status?: GameStatus;
 }
+
+/** Instructions auto-collapse after this long so the playfield stays visible. */
+const HELP_AUTO_COLLAPSE_MS = 6000;
 
 /** True when the status object carries anything worth rendering. */
 function hasStatus(s?: GameStatus): s is GameStatus {
@@ -41,16 +45,31 @@ const CONTROL_VARIANT_STYLES = {
 
 export function OverlayHUD({ score, feedback, prompt, instructions, controls, status }: Props): React.ReactElement {
   const t = useTranslations('games');
+  const [helpOpen, setHelpOpen] = useState(true);
+  const [trackedInstructions, setTrackedInstructions] = useState(instructions);
   const showStatus = hasStatus(status);
   const stars = status?.stars ?? 0;
   const maxStars = status?.maxStars ?? 0;
+
+  // A different game/mode means a different how-to-play text, so start expanded again.
+  if (instructions !== trackedInstructions) {
+    setTrackedInstructions(instructions);
+    setHelpOpen(true);
+  }
+
+  useEffect(() => {
+    if (!instructions) return;
+    const id = setTimeout(() => setHelpOpen(false), HELP_AUTO_COLLAPSE_MS);
+    return () => clearTimeout(id);
+  }, [instructions]);
+
   return (
-    <div className="pointer-events-none absolute inset-0 flex flex-col items-stretch p-4">
-      <div className="flex items-center justify-between gap-2">
+    <div className="pointer-events-none absolute inset-0 flex flex-col items-stretch p-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
+      <div className="flex items-start justify-between gap-2">
         {showStatus ? (
           <div
             data-testid="status-bar"
-            className="flex items-center gap-3 bg-slate-800/70 backdrop-blur px-3 py-1.5 rounded-lg text-white text-sm"
+            className="flex items-center gap-3 bg-slate-800/85 backdrop-blur px-3 py-1.5 rounded-lg text-white text-base"
             dir="auto"
           >
             {maxStars > 0 && (
@@ -83,39 +102,69 @@ export function OverlayHUD({ score, feedback, prompt, instructions, controls, st
         ) : (
           <span />
         )}
-        <div className="flex items-center gap-2 bg-slate-800/70 backdrop-blur px-3 py-1.5 rounded-lg text-white text-sm">
-          <Trophy className="w-4 h-4" aria-hidden="true" />
-          <span className="sr-only">{t('score.score')}: </span>
-          <span className="font-semibold tabular-nums">{score}</span>
+        <div className="flex items-center gap-2">
+          {instructions && !helpOpen && (
+            <button
+              type="button"
+              data-testid="help-toggle"
+              onClick={() => setHelpOpen(true)}
+              aria-expanded={false}
+              aria-label={t('hud.help')}
+              className="pointer-events-auto flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg bg-slate-800/85 text-white backdrop-blur transition hover:bg-slate-700"
+            >
+              <HelpCircle className="h-6 w-6" aria-hidden="true" />
+            </button>
+          )}
+          <div className="flex items-center gap-2 bg-slate-800/85 backdrop-blur px-3 py-1.5 rounded-lg text-white text-lg">
+            <Trophy className="h-6 w-6 text-amber-300" aria-hidden="true" />
+            <span className="sr-only">{t('score.score')}: </span>
+            <span className="font-bold tabular-nums">{score}</span>
+          </div>
         </div>
       </div>
 
-      {prompt && (
-        <div
-          data-testid="prompt-banner"
-          className="mx-auto mt-2 px-5 py-2 rounded-xl bg-slate-900/80 backdrop-blur text-white text-lg font-bold tabular-nums shadow-lg text-center"
-          dir="auto"
-          role="status"
-          aria-live="polite"
-        >
-          {prompt}
-        </div>
-      )}
+      {/* Top band: prompt + how-to-play live here so they never cover the playfield
+          centre or the bottom control row. */}
+      {(prompt || (instructions && helpOpen)) && (
+        <div className="mx-auto mt-2 flex w-full max-w-[min(92%,34rem)] flex-col items-center gap-1.5">
+          {prompt && (
+            <div
+              data-testid="prompt-banner"
+              className="w-full rounded-xl bg-slate-900 px-5 py-2 text-center text-2xl font-bold tabular-nums text-white shadow-lg md:text-3xl"
+              dir="auto"
+              role="status"
+              aria-live="polite"
+            >
+              {prompt}
+            </div>
+          )}
 
-      {prompt && instructions && (
-        <p
-          data-testid="prompt-instructions"
-          className="mx-auto mt-1 max-w-md rounded-lg bg-slate-900/70 px-3 py-1 text-center text-sm text-white/90 backdrop-blur shadow"
-          dir="auto"
-        >
-          {instructions}
-        </p>
+          {instructions && helpOpen && (
+            <div
+              data-testid="prompt-instructions"
+              className="relative w-full rounded-lg bg-slate-900 px-9 py-2 text-center text-base text-white shadow"
+              dir="auto"
+            >
+              {instructions}
+              <button
+                type="button"
+                data-testid="help-close"
+                onClick={() => setHelpOpen(false)}
+                aria-expanded
+                aria-label={t('hud.hideHelp')}
+                className="pointer-events-auto absolute end-1 top-1/2 flex min-h-[44px] min-w-[44px] -translate-y-1/2 items-center justify-center rounded-lg text-slate-300 transition hover:text-white"
+              >
+                <X className="h-5 w-5" aria-hidden="true" />
+              </button>
+            </div>
+          )}
+        </div>
       )}
 
       {feedback && (
         <div
           data-testid="feedback-toast"
-          className={`self-center mb-4 px-4 py-2 rounded-full flex items-center gap-2 shadow-lg animate-[toastIn_200ms_ease-out] ${FEEDBACK_STYLES[feedback.kind].bg} ${FEEDBACK_STYLES[feedback.kind].text} ${controls && controls.length > 0 ? 'mt-2' : 'mt-auto'}`}
+          className={`self-center mb-4 px-4 py-2 rounded-full flex items-center gap-2 shadow-lg text-base font-semibold animate-[toastIn_200ms_ease-out] ${FEEDBACK_STYLES[feedback.kind].bg} ${FEEDBACK_STYLES[feedback.kind].text} ${controls && controls.length > 0 ? 'mt-2' : 'mt-auto'}`}
           role="status"
           aria-live="polite"
         >

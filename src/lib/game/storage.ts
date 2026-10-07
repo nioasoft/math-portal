@@ -195,3 +195,50 @@ export function getAudioVolumePreference(): number {
 export function setAudioVolumePreference(volume: number): void {
     safeWrite(KEY_VOLUME, String(Math.max(0, Math.min(1, volume))));
 }
+
+// ============ Audio preference store ============
+
+export interface AudioPrefs {
+    muted: boolean;
+    volume: number;
+}
+
+// Server snapshot: localStorage doesn't exist there. React swaps in the real
+// values right after hydration, so SSR markup can't mismatch the client.
+const SERVER_AUDIO_PREFS: AudioPrefs = { muted: false, volume: 1 };
+
+// `useSyncExternalStore` compares snapshots by identity, so the object is rebuilt
+// only when a stored value actually changes.
+let audioCacheKey = '';
+let audioSnapshot: AudioPrefs = SERVER_AUDIO_PREFS;
+const audioListeners = new Set<() => void>();
+
+/** Client snapshot — always reflects localStorage, but identity-stable when unchanged. */
+export function getAudioPrefs(): AudioPrefs {
+    const muted = getMutePreference();
+    const volume = getAudioVolumePreference();
+    const key = `${muted ? 1 : 0}|${volume}`;
+    if (key !== audioCacheKey) {
+        audioCacheKey = key;
+        audioSnapshot = { muted, volume };
+    }
+    return audioSnapshot;
+}
+
+export function getServerAudioPrefs(): AudioPrefs {
+    return SERVER_AUDIO_PREFS;
+}
+
+export function subscribeAudioPrefs(listener: () => void): () => void {
+    audioListeners.add(listener);
+    return () => {
+        audioListeners.delete(listener);
+    };
+}
+
+/** Single write path for mute/volume so every subscribed component stays in sync. */
+export function setAudioPrefs(patch: Partial<AudioPrefs>): void {
+    if (patch.muted !== undefined) setMutePreference(patch.muted);
+    if (patch.volume !== undefined) setAudioVolumePreference(patch.volume);
+    audioListeners.forEach((listener) => listener());
+}

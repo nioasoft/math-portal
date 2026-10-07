@@ -5,12 +5,14 @@ import { Footer } from '@/components/layout/Footer';
 import { Link } from '@/i18n/navigation';
 import {
   Calculator, Brain, ArrowLeft, Percent, Divide,
-  Shapes, Scale, Star, BookOpen, GraduationCap, Printer, Zap, Gamepad2, PieChart
+  Shapes, Scale, Star, BookOpen, GraduationCap, Printer, Zap, Gamepad2
 } from 'lucide-react';
 import { FeaturedPosts } from '@/components/FeaturedPosts';
 import { getBlogPosts, getHelpTopics } from '@/lib/content';
 import { getTranslations, getLocale } from 'next-intl/server';
-import { Locale } from '@/i18n/config';
+import { Locale, scriptTypography } from '@/i18n/config';
+import { getGameCards } from '@/components/games3d/gameCards';
+import { gameArt } from '@/components/games3d/gameArt';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
 
 const GamesHub = dynamic(() => import('@/components/games3d/GamesHub').then(m => m.GamesHub), {
@@ -41,7 +43,8 @@ const getGenerators = (t: Awaited<ReturnType<typeof getTranslations<'home'>>>) =
     icon: Calculator,
     color: "from-sky-400 to-blue-500",
     bgColor: "bg-sky-50",
-    iconBg: "bg-sky-100"
+    iconBg: "bg-sky-100",
+    iconColor: "text-sky-600"
   },
   {
     href: "/grade/3",
@@ -50,7 +53,8 @@ const getGenerators = (t: Awaited<ReturnType<typeof getTranslations<'home'>>>) =
     icon: Divide,
     color: "from-violet-400 to-purple-500",
     bgColor: "bg-violet-50",
-    iconBg: "bg-violet-100"
+    iconBg: "bg-violet-100",
+    iconColor: "text-violet-600"
   },
   {
     href: "/fractions",
@@ -59,7 +63,8 @@ const getGenerators = (t: Awaited<ReturnType<typeof getTranslations<'home'>>>) =
     icon: ({ size }: { size?: number }) => <span style={{ fontSize: size ? size - 4 : 20 }} className="font-black">½</span>,
     color: "from-emerald-400 to-green-500",
     bgColor: "bg-emerald-50",
-    iconBg: "bg-emerald-100"
+    iconBg: "bg-emerald-100",
+    iconColor: "text-emerald-600"
   },
   {
     href: "/geometry",
@@ -68,7 +73,8 @@ const getGenerators = (t: Awaited<ReturnType<typeof getTranslations<'home'>>>) =
     icon: Shapes,
     color: "from-rose-400 to-pink-500",
     bgColor: "bg-rose-50",
-    iconBg: "bg-rose-100"
+    iconBg: "bg-rose-100",
+    iconColor: "text-rose-600"
   },
   {
     href: "/percentage",
@@ -77,7 +83,8 @@ const getGenerators = (t: Awaited<ReturnType<typeof getTranslations<'home'>>>) =
     icon: Percent,
     color: "from-amber-400 to-orange-500",
     bgColor: "bg-amber-50",
-    iconBg: "bg-amber-100"
+    iconBg: "bg-amber-100",
+    iconColor: "text-amber-600"
   },
   {
     href: "/units",
@@ -86,9 +93,18 @@ const getGenerators = (t: Awaited<ReturnType<typeof getTranslations<'home'>>>) =
     icon: Scale,
     color: "from-cyan-400 to-teal-500",
     bgColor: "bg-cyan-50",
-    iconBg: "bg-cyan-100"
+    iconBg: "bg-cyan-100",
+    iconColor: "text-cyan-600"
   },
 ];
+
+/**
+ * Hero "quick play" chips: three 3D games spanning arithmetic, fractions and
+ * geometry at the lowest difficulty, so a child can start playing in one tap.
+ * Resolved against the live registry — an id that is renamed simply drops out
+ * rather than rendering a dead link.
+ */
+const QUICK_PLAY_IDS = ['ten-frame-fill', 'fraction-slice', 'shape-sort-3d'];
 
 // Floating math symbols for hero decoration
 function MathSymbol({ symbol, className }: { symbol: string; className: string }) {
@@ -104,10 +120,17 @@ export default async function Home() {
   const t = await getTranslations('home');
   const tCommon = await getTranslations('common');
   const generators = getGenerators(t);
+  const { gap, stop } = scriptTypography[locale];
 
   // Fetch locale-specific content
   const allPosts = await getBlogPosts(locale);
   const helpTopics = await getHelpTopics(locale);
+  const gameCards = await getGameCards(locale);
+  const cardsById = new Map(gameCards.map((card) => [card.id, card]));
+  const quickPlay = QUICK_PLAY_IDS.flatMap((id) => {
+    const card = cardsById.get(id);
+    return card ? [card] : [];
+  });
   const featuredPosts = allPosts.slice(0, 6).map(p => ({
     slug: p.slug,
     title: p.title,
@@ -153,7 +176,7 @@ export default async function Home() {
               <h1 className="text-4xl md:text-7xl font-black text-slate-800 mb-3 leading-tight text-display animate-slide-up">
                 {t('hero.title')}
                 <br className="sm:hidden" />
-                <span className="hidden sm:inline">{' '}</span>
+                {gap ? <span className="hidden sm:inline">{gap}</span> : null}
                 <span className="text-gradient-warm">{t('hero.titleHighlight')}</span>
               </h1>
 
@@ -161,7 +184,13 @@ export default async function Home() {
               <p className="text-lg md:text-2xl text-slate-600 mb-6 max-w-3xl md:max-w-4xl mx-auto leading-relaxed animate-slide-up delay-100">
                 {t('hero.description')}
                 <br className="hidden sm:block" />
-                {t('hero.descriptionLine2')} <strong className="text-orange-600">{t('hero.free')}</strong>.
+                {/* `gap` cannot sit next to the `<br>`: JSX children of a void element are
+                    dropped. It only applies where the `<br>` is hidden, i.e. below `sm`. */}
+                {gap ? <span className="sm:hidden">{gap}</span> : null}
+                {t('hero.descriptionLine2')}
+                {gap}
+                <strong className="text-orange-600">{t('hero.free')}</strong>
+                {stop}
               </p>
 
               {/* Dual CTA Cards */}
@@ -172,7 +201,7 @@ export default async function Home() {
                     worse UX, not a real inconsistency to "fix". */}
                 <a
                   href="#generators"
-                  className="flex-1 bg-white border-2 border-orange-200 rounded-xl p-5 md:p-6 hover:border-orange-400 hover:shadow-lg transition-all group text-right"
+                  className="flex-1 bg-white border-2 border-orange-200 rounded-xl p-5 md:p-6 hover:border-orange-400 hover:shadow-lg transition-all group text-start"
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <Printer className="w-7 h-7 md:w-8 md:h-8 text-orange-500" />
@@ -181,14 +210,14 @@ export default async function Home() {
                   <p className="text-base md:text-lg text-slate-600 mb-3">{t('hero.worksheetCard.desc')}</p>
                   <span className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-bold text-base md:text-lg group-hover:-translate-y-0.5 transition-transform">
                     {t('hero.worksheetCard.cta')}
-                    <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
+                    <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 ltr:-scale-x-100" />
                   </span>
                 </a>
 
                 {/* Games Card */}
                 <Link
                   href="/play"
-                  className="flex-1 bg-white border-2 border-purple-200 rounded-xl p-5 md:p-6 hover:border-purple-400 hover:shadow-lg transition-all group text-right"
+                  className="flex-1 bg-white border-2 border-purple-200 rounded-xl p-5 md:p-6 hover:border-purple-400 hover:shadow-lg transition-all group text-start"
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <Gamepad2 className="w-7 h-7 md:w-8 md:h-8 text-purple-500" />
@@ -197,46 +226,48 @@ export default async function Home() {
                   <p className="text-base md:text-lg text-slate-600 mb-3">{t('hero.gamesCard.desc')}</p>
                   <span className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-bold text-base md:text-lg group-hover:-translate-y-0.5 transition-transform">
                     {t('hero.gamesCard.cta')}
-                    <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
+                    <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 ltr:-scale-x-100" />
                   </span>
                 </Link>
               </div>
 
-              {/* Quick Games Strip */}
-              <div className="mt-4 text-center animate-slide-up delay-300">
-                <div className="flex items-center justify-center gap-1.5 mb-2">
-                  <Gamepad2 className="w-4 h-4 text-purple-500" />
-                  <span className="text-sm font-bold text-slate-700">{t('quickGames.title')}</span>
-                  <span className="text-xs text-slate-400">-</span>
-                  <span className="text-xs text-slate-500">{t('quickGames.subtitle')}</span>
+              {/* Quick Games Strip — live 3D games from the registry, so the hero
+                  points at the flagship experience instead of only the three
+                  legacy 2D quizzes (which stay reachable from /play). */}
+              {quickPlay.length > 0 && (
+                <div className="mt-4 text-center animate-slide-up delay-300">
+                  <div className="mb-2 flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1">
+                    <Gamepad2 className="w-4 h-4 text-purple-500" />
+                    <span className="text-sm font-bold text-slate-700">{t('quickGames.title')}</span>
+                    <span className="text-xs text-slate-400" aria-hidden="true">·</span>
+                    <span className="text-xs text-slate-500">{t('quickGames.subtitle')}</span>
+                  </div>
+
+                  <div className="flex flex-wrap justify-center gap-2">
+                    {quickPlay.map((game) => {
+                      const art = gameArt(game.id, game.topic);
+                      const Icon = art.icon;
+                      return (
+                        <Link
+                          key={game.id}
+                          href={`/play/${game.id}`}
+                          className="flex min-h-11 items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 shadow-sm transition-all hover:-translate-y-0.5 hover:border-transparent hover:shadow-md"
+                        >
+                          <span
+                            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-white"
+                            style={{ backgroundImage: `linear-gradient(135deg, ${art.from}, ${art.to})` }}
+                          >
+                            <Icon size={16} strokeWidth={2.4} />
+                          </span>
+                          <span className="max-w-[9rem] truncate text-xs font-bold text-slate-700">
+                            {game.title}
+                          </span>
+                        </Link>
+                      );
+                    })}
+                  </div>
                 </div>
-
-                <div className="flex justify-center gap-2">
-                  <Link
-                    href="/play/math"
-                    className="flex flex-col items-center gap-1 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-lg px-3 py-2 transition-all hover:-translate-y-0.5"
-                  >
-                    <Calculator className="w-5 h-5 text-blue-600" />
-                    <span className="font-bold text-xs text-blue-700">{t('quickGames.math')}</span>
-                  </Link>
-
-                  <Link
-                    href="/play/fractions"
-                    className="flex flex-col items-center gap-1 bg-purple-50 hover:bg-purple-100 border border-purple-200 rounded-lg px-3 py-2 transition-all hover:-translate-y-0.5"
-                  >
-                    <PieChart className="w-5 h-5 text-purple-600" />
-                    <span className="font-bold text-xs text-purple-700">{t('quickGames.fractions')}</span>
-                  </Link>
-
-                  <Link
-                    href="/play/percentage"
-                    className="flex flex-col items-center gap-1 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-lg px-3 py-2 transition-all hover:-translate-y-0.5"
-                  >
-                    <Percent className="w-5 h-5 text-emerald-600" />
-                    <span className="font-bold text-xs text-emerald-700">{t('quickGames.percentage')}</span>
-                  </Link>
-                </div>
-              </div>
+              )}
 
               {/* Trust indicators */}
               <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-500 animate-fade-in delay-400">
@@ -312,11 +343,12 @@ export default async function Home() {
                   <div className={`absolute -top-12 -left-12 w-32 h-32 ${gen.bgColor} rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-150`}></div>
 
                   <div className="relative z-10">
-                    {/* Icon container */}
-                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-5 ${gen.iconBg} group-hover:scale-110 transition-transform duration-300`}>
-                      <div className={`bg-gradient-to-br ${gen.color} bg-clip-text text-transparent`}>
-                        {(() => { const Icon = gen.icon; return <Icon size={30} />; })()}
-                      </div>
+                    {/* Icon container — the colour lives here, not on a
+                        `bg-clip-text text-transparent` wrapper: lucide icons
+                        stroke with currentColor, so clipping the background to
+                        the text made every glyph fully transparent. */}
+                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-5 ${gen.iconBg} ${gen.iconColor} group-hover:scale-110 transition-transform duration-300`}>
+                      {(() => { const Icon = gen.icon; return <Icon size={30} />; })()}
                     </div>
 
                     {/* Content */}
@@ -330,7 +362,7 @@ export default async function Home() {
                     {/* CTA */}
                     <div className="flex items-center text-orange-600 font-bold text-sm group-hover:gap-2 transition-all">
                       <span>{t('generators.cta')}</span>
-                      <ArrowLeft size={16} className="mr-1 opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
+                      <ArrowLeft size={16} className="opacity-0 group-hover:opacity-100 transition-opacity ltr:-scale-x-100" />
                     </div>
                   </div>
                 </Link>
@@ -374,7 +406,7 @@ export default async function Home() {
               </div>
               <Link href="/help" className="hidden sm:flex items-center gap-1 font-bold text-emerald-600 hover:gap-2 transition-all group">
                 {t('help.cta')}
-                <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+                <ArrowLeft size={16} className="ltr:-scale-x-100" />
               </Link>
             </div>
 
@@ -398,7 +430,7 @@ export default async function Home() {
 
             <div className="mt-8 text-center sm:hidden">
               <Link href="/help" className="inline-flex items-center gap-2 font-bold text-emerald-600">
-                {t('help.cta')} <ArrowLeft size={16} />
+                {t('help.cta')} <ArrowLeft size={16} className="ltr:-scale-x-100" />
               </Link>
             </div>
           </div>
@@ -467,7 +499,7 @@ export default async function Home() {
                         <h4 className="font-black text-slate-800 text-sm">{t('preview.title')}</h4>
                         <p className="text-[10px] text-slate-400">{t('preview.subtitle')}</p>
                       </div>
-                      <div className="text-left">
+                      <div className="text-start">
                         <p className="text-[10px] text-slate-500">{t('preview.name')} _____________</p>
                         <p className="text-[10px] text-slate-500">{t('preview.class')} ____</p>
                       </div>

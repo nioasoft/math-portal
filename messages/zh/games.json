@@ -1,0 +1,138 @@
+{
+  "shell": {
+    "backToGames": "返回游戏列表",
+    "home": "首页"
+  },
+  "hud": {
+    "help": "怎么玩",
+    "hideHelp": "隐藏说明"
+  },
+  "feedback": {
+    "correct": "答对了！",
+    "incorrect": "答错了",
+    "tryAgain": "再试一次",
+    "theAnswer": "正确答案："
+  },
+  "summary": {
+    "title": "游戏结束",
+    "score": "得分",
+    "maxStreak": "最佳连对",
+    "accuracy": "正确率",
+    "correctWrong": "答对 / 答错",
+    "newRecord": "新纪录！",
+    "brokeRecord": "你打破了之前 {points} 分的纪录",
+    "greatJob": "练得很棒！",
+    "playAgain": "再玩一次",
+    "backToMenu": "返回菜单"
+  },
+  "score": {
+    "score": "得分",
+    "streak": "连对",
+    "correctWrong": "对/错"
+  },
+  "problem": {
+    "of": "×"
+  },
+  "modes": {
+    "practice": "练习",
+    "quiz": "闯关",
+    "timed": "计时"
+  },
+  "timer": {
+    "timeLeft": "剩余时间",
+    "seconds": "秒"
+  },
+  "ui": {
+    "start": "开始",
+    "pause": "暂停",
+    "resume": "继续",
+    "quit": "退出"
+  },
+  "input": {
+    "placeholder": "输入你的答案",
+    "backspace": "退格",
+    "clear": "清空",
+    "check": "检查",
+    "checkAnswer": "检查答案",
+    "numerator": "分子",
+    "denominator": "分母",
+    "whole": "整数"
+  },
+  "play": {
+    "header": {
+      "title": "数学游戏",
+      "subtitle": "选一个主题，开始玩吧！"
+    },
+    "topics": {
+      "math": {
+        "title": "基础算术",
+        "description": "加法、减法、乘法与除法"
+      },
+      "fractions": {
+        "title": "分数",
+        "description": "真分数与带分数的运算"
+      },
+      "percentage": {
+        "title": "百分数",
+        "description": "求一个量的百分之几"
+      }
+    },
+    "footer": {
+      "worksheetsPrompt": "想打印练习册吗？",
+      "backToHome": "回到首页即可打印"
+    },
+    "catalog": {
+      "title": "3D 学习游戏",
+      "subtitle": "边探索边学习的 3D 游戏——没有计时，按自己的节奏来",
+      "all": "全部",
+      "allGrades": "全部年级",
+      "count": "{n} 款游戏",
+      "empty": "这个主题下还没有游戏",
+      "quizzesTitle": "快速闯关",
+      "quizzesSubtitle": "限时算术闯关——你能在倒计时里答对多少题？"
+    }
+  },
+  "setup": {
+    "gameMode": "游戏模式",
+    "freePractice": "自由练习",
+    "noTimeLimit": "不限时",
+    "quiz": "计时闯关",
+    "againstClock": "和时钟赛跑",
+    "quizDuration": "闯关时长",
+    "seconds": "{duration} 秒",
+    "operation": "运算",
+    "mixed": "混合",
+    "numberRange": "数字范围",
+    "upTo": "最大到 {range}",
+    "previousHighScore": "历史最高分：",
+    "startPlaying": "开始游戏",
+    "endGame": "结束游戏",
+    "difficulty": "难度等级",
+    "whatWePractice": "我们要练什么？",
+    "percentageInfo": "求一个量的百分之几。例如：80 的 25% 是多少？",
+    "percentageTip": "小提示：求 10% 只要除以 10！"
+  },
+  "gameTitle": {
+    "math": "算术游戏",
+    "fractions": "分数游戏",
+    "percentage": "百分数游戏"
+  },
+  "fractionDifficulty": {
+    "level1": {
+      "title": "第 1 关",
+      "description": "同分母加减"
+    },
+    "level2": {
+      "title": "第 2 关",
+      "description": "异分母加减"
+    },
+    "level3": {
+      "title": "第 3 关",
+      "description": "带分数"
+    },
+    "level4": {
+      "title": "第 4 关",
+      "description": "乘法与除法"
+    }
+  }
+}

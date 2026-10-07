@@ -1,6 +1,6 @@
 'use client';
 
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { locales, localeConfig, type Locale } from '@/i18n/config';
 import { Globe, ChevronDown } from 'lucide-react';
@@ -13,6 +13,7 @@ function setLocaleCookie(locale: string) {
 
 export function LanguageSwitcher() {
   const locale = useLocale() as Locale;
+  const t = useTranslations('common.nav');
   const pathname = usePathname();
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
@@ -58,7 +59,7 @@ export function LanguageSwitcher() {
         }`}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
-        aria-label="Select language"
+        aria-label={t('selectLanguage')}
       >
         <Globe size={16} />
         <span className="hidden sm:inline">{localeConfig[locale].name}</span>
@@ -80,7 +81,7 @@ export function LanguageSwitcher() {
           insetInlineStart: 0
         }}
         role="listbox"
-        aria-label="Available languages"
+        aria-label={t('availableLanguages')}
       >
         {locales.map((loc) => (
           <button

@@ -16,6 +16,8 @@ export interface MathNotation {
  * - German (de): Uses ":" for division, "," for decimals
  * - Spanish (es): Uses "÷" for division, "," for decimals
  * - Russian (ru): Uses "÷" for division, "," for decimals, space for thousands
+ * - Chinese (zh): Uses "÷" for division (mainland primary-school notation); the
+ *   ":" division symbol is Israeli convention, not a global default.
  */
 const notations: Record<Locale, MathNotation> = {
   he: { division: ':', decimal: '.', thousands: ',' },
@@ -24,6 +26,7 @@ const notations: Record<Locale, MathNotation> = {
   de: { division: ':', decimal: ',', thousands: '.' },
   es: { division: '÷', decimal: ',', thousands: '.' },
   ru: { division: '÷', decimal: ',', thousands: ' ' },
+  zh: { division: '÷', decimal: '.', thousands: ',' },
 };
 
 /**

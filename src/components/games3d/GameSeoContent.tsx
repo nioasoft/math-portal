@@ -1,6 +1,7 @@
 import { Link } from '@/i18n/navigation';
 import type { GameMeta } from '@/lib/games3d/types';
 import type { GameSeo } from '@/lib/games3d/gameSeo';
+import type { Locale } from '@/i18n/config';
 import {
   getGameSeoCopy,
   getTopicPracticePath,
@@ -13,7 +14,7 @@ interface RelatedGame {
 }
 
 interface GameSeoContentProps {
-  locale: string;
+  locale: Locale;
   meta: GameMeta;
   title: string;
   topicLabel: string;

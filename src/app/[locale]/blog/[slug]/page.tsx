@@ -8,8 +8,8 @@ import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
-import { defaultLocale, type Locale } from '@/i18n/config';
-import { generateAlternates, getOrganizationName } from '@/lib/seo';
+import { defaultLocale, localeConfig, type Locale } from '@/i18n/config';
+import { generateAlternates, getOrganizationName, CONTENT_FALLBACK_LOCALE, toHreflang } from '@/lib/seo';
 import { getBlogContentLocales, hasLocalizedBlogContent } from '@/lib/content';
 import { isSubstantialBlogPost } from '@/lib/contentQuality';
 
@@ -238,8 +238,9 @@ function getRelatedGeneratorPath(tags: string[]): string | null {
  */
 function extractFaqs(html: string): Array<{ question: string; answer: string }> {
     const faqs: Array<{ question: string; answer: string }> = [];
-    // Match a trailing question mark: ASCII "?" or the Arabic question mark "؟" (U+061F).
-    const re = /<p>\s*<strong>([^<]*[?؟])<\/strong>\s*([\s\S]*?)<\/p>/g;
+    // Match a trailing question mark: ASCII "?", Arabic "؟" (U+061F), or the
+    // fullwidth Chinese "？" (U+FF1F) used by zh posts.
+    const re = /<p>\s*<strong>([^<]*[?؟？])<\/strong>\s*([\s\S]*?)<\/p>/g;
     let m: RegExpExecArray | null;
     while ((m = re.exec(html)) !== null) {
         const question = m[1].trim();
@@ -262,7 +263,7 @@ export async function generateMetadata(
     if (!post) return {};
     const blogLocales = getBlogContentLocales();
     const hasLocalizedContent = hasLocalizedBlogContent(localeKey);
-    const resolvedLocale = hasLocalizedContent ? localeKey : defaultLocale;
+    const resolvedLocale = hasLocalizedContent ? localeKey : CONTENT_FALLBACK_LOCALE;
 
     // A page is indexable only when it has localized content AND enough body text.
     // Thin pages stay out of the index (and out of the sitemap) until expanded.
@@ -307,7 +308,7 @@ export async function generateMetadata(
             description: post.excerpt,
             url: `${baseUrl}${localePath}/blog/${slug}`,
             siteName: resolvedLocale === defaultLocale ? 'תרגול' : 'Tirgul',
-            locale: resolvedLocale === defaultLocale ? 'he_IL' : resolvedLocale,
+            locale: localeConfig[resolvedLocale].locale,
             type: 'article',
             publishedTime: post.date.includes('/')
                 ? post.date.split('/').reverse().join('-')
@@ -429,7 +430,7 @@ export default async function BlogPostPage({ params }: Props) {
         },
         "keywords": post.tags.join(', '),
         "articleSection": post.categoryLabel,
-        "inLanguage": locale
+        "inLanguage": toHreflang(locale as Locale)
     };
 
     const breadcrumbSchema = {

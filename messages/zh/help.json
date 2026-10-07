@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "badge": "全面的家长指南",
+    "title": "家长指南",
+    "description": "详细指南，帮助您辅导孩子学习每一个数学主题。",
+    "descriptionExtra": "包含示例、常见错误和实用建议。"
+  },
+  "cta": {
+    "title": "准备好开始练习了吗？",
+    "description": "读完指南后，到我们的生成器创建个性化练习纸",
+    "button": "全部生成器"
+  },
+  "topic": {
+    "notFound": "未找到该主题",
+    "metaTitle": "如何给孩子讲解{title}——附示例的实用家长指南",
+    "metaDescription": "全面的家长指南：{title}为什么重要、如何在家辅导、应避免的常见错误以及实用建议，并附详细例题。",
+    "breadcrumb": {
+      "home": "首页",
+      "help": "家长指南"
+    },
+    "backToAll": "返回全部指南",
+    "howToTeachTitle": "如何教{title}",
+    "sections": {
+      "whyImportant": "为什么重要？",
+      "howToTeach": "怎么教？",
+      "examples": "详细示例",
+      "commonMistakes": "常见错误",
+      "parentTips": "给家长的建议"
+    },
+    "explanation": "讲解：",
+    "readyToPractice": "准备好练习了吗？",
+    "readyToPracticeDesc": "既然您已经了解如何教{title}，现在就来创建自定义练习纸吧",
+    "otherTopics": "其他主题",
+    "allTopics": "全部主题"
+  }
+}

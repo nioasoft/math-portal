@@ -11,6 +11,9 @@
     "menu": "القائمة",
     "openMenu": "فتح القائمة",
     "closeMenu": "إغلاق القائمة",
+    "selectLanguage": "اختيار اللغة",
+    "availableLanguages": "اللغات المتاحة",
+    "breadcrumb": "مسار التنقل",
     "privacy": "سياسة الخصوصية",
     "contact": "اتصل بنا",
     "editorial": "إرشادات التحرير"

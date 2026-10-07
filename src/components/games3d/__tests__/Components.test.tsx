@@ -1,10 +1,12 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
 import { WebGLFallback } from '../WebGLFallback';
 import { LoadingScene } from '../LoadingScene';
 import { GameLoadError } from '../GameLoadError';
 import { MuteButton } from '../MuteButton';
+import { GameProgressBadge } from '../GameProgressBadge';
+import { setGame3DRecord } from '@/lib/game/storage';
 
 const messages = {
   games3d: {
@@ -16,6 +18,8 @@ const messages = {
     retry: 'Try again',
     webglNotSupported: 'Your browser does not support 3D graphics.',
     frameRateLowNotice: 'Reducing quality',
+    stars: '{count} Stars',
+    bestScore: 'Best score',
     canary: { title: 'Tap the Cube', description: 'Dev test' },
   },
 };
@@ -70,5 +74,29 @@ describe('MuteButton', () => {
     render(wrap(<MuteButton muted={false} onToggle={onToggle} />));
     fireEvent.click(screen.getByLabelText('Mute sound'));
     expect(onToggle).toHaveBeenCalledOnce();
+  });
+});
+
+describe('GameProgressBadge', () => {
+  beforeEach(() => {
+    localStorage.clear();
+  });
+
+  it('renders nothing for a game that has never been played', () => {
+    const { container } = render(wrap(<GameProgressBadge gameId="never-played" />));
+    expect(container).toBeEmptyDOMElement();
+  });
+
+  it('shows the stored best score and star rating', async () => {
+    setGame3DRecord('ten-frame', {
+      bestScore: 240,
+      bestAccuracy: 0.95,
+      bestStreak: 5,
+      totalPlays: 3,
+    });
+    render(wrap(<GameProgressBadge gameId="ten-frame" />));
+    const badge = await screen.findByTestId('game-progress');
+    expect(badge).toHaveTextContent('240');
+    expect(badge).toHaveTextContent('3 Stars');
   });
 });

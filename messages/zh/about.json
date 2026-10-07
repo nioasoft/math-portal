@@ -1,0 +1,100 @@
+{
+  "badge": "教育公益项目",
+  "hero": {
+    "title": "学数学，",
+    "titleHighlight": "也可以很好玩",
+    "description": "“Tirgul” 是一个免费公益项目，提供互动数学游戏、练习题和可打印练习纸，帮助家长和教师创建个性化数学练习。",
+    "subdescription": "内容覆盖 1-6 年级的数学主题，让每个水平都能进行有针对性的练习。"
+  },
+  "howItWorks": {
+    "title": "如何使用？",
+    "subtitle": "三步做出一份完美的练习纸",
+    "step1": {
+      "title": "选择主题",
+      "description": "加法、乘法、分数还是百分数？选择与孩子水平匹配的生成器。"
+    },
+    "step2": {
+      "title": "自定义",
+      "description": "调整数字范围、题目数量和难度等级，完全符合您的需求。"
+    },
+    "step3": {
+      "title": "打印并解答",
+      "description": "点击“打印练习纸”，获得整洁清晰的练习纸，并附单独的答案页。"
+    }
+  },
+  "mission": {
+    "badge": "我们的使命",
+    "title": "为什么创建这个网站？",
+    "background": {
+      "label": "背景：",
+      "text": "我们意识到，并不是总有足够的练习材料适合每个孩子。我们希望打造一个简单、易用的工具，让家长和教师可以轻松生成练习纸。"
+    },
+    "problem": "我们发现，适合每个孩子水平的练习并不总是充足。我们希望让孩子能用新的练习纸反复练习，直到对知识充满信心——不限量、全免费。",
+    "method": {
+      "label": "方法：",
+      "text": "练习由浅入深循序渐进，可以根据孩子的水平调整，让他们按自己的节奏进步。"
+    },
+    "infinite": "本站可以生成",
+    "infiniteHighlight": "无限多的不同练习题",
+    "infiniteText": "。每次点击“换一批题目”都会生成新题，可以反复练习直到掌握。",
+    "features": {
+      "thinking": "培养思维",
+      "inkSaving": "节省墨水",
+      "customization": "完全自定义",
+      "cleanUI": "界面清爽"
+    }
+  },
+  "free": {
+    "title": "永久免费",
+    "description": "我们相信基础教育和练习应该人人可得。本站向家长、教师和学生免费开放。",
+    "cta": "开始练习"
+  },
+  "stats": {
+    "title": "用数字说话",
+    "subtitle": "关于本站及其使用情况的数据",
+    "generators": "种不同的生成器",
+    "grades": "1-6 年级",
+    "exercises": "种可能的练习题",
+    "cost": "永久费用",
+    "coverage": {
+      "title": "课程覆盖",
+      "description": "生成器覆盖小学 1-6 年级的数学主题，包括加法、减法、乘法、除法、分数、百分数和几何。"
+    }
+  },
+  "methodology": {
+    "title": "我们的教学方法",
+    "subtitle": "支撑本站的教学原则",
+    "personalized": {
+      "title": "个性化练习",
+      "description": "每个学生按自己的节奏进步。本站可以针对每个孩子的具体情况调整难度等级、数字范围和题型。"
+    },
+    "repetition": {
+      "title": "重复与巩固",
+      "description": "研究表明，反复练习是掌握数学技能的关键。生成新的练习纸可以让孩子一遍遍练习，而不必担心记住答案。"
+    },
+    "progressive": {
+      "title": "循序渐进",
+      "description": "练习由浅入深编排，孩子可以按自己的节奏进步，建立自信心。"
+    },
+    "feedback": {
+      "title": "即时反馈",
+      "description": "每份练习纸都附单独的答案页，孩子或家长可以立即核对答案，找出反复出现的错误。"
+    }
+  },
+  "cta": {
+    "title": "准备好开始了吗？",
+    "description": "免费创建个性化练习纸——无需注册",
+    "button": "前往生成器"
+  },
+  "schema": {
+    "name": "Tirgul",
+    "description": "教育公益项目，为家长和教师提供免费工具，创建 1-6 年级个性化数学练习纸",
+    "areaServed": "以色列",
+    "knowsAbout": {
+      "math": "数学教育",
+      "elementary": "小学",
+      "worksheets": "练习纸",
+      "mathematics": "数学"
+    }
+  }
+}

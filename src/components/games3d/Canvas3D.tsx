@@ -6,17 +6,29 @@ import {
   SceneEngineInstance,
   SceneEngineOptions,
 } from '@/lib/games3d/engine/SceneEngine';
-import type { Game3D, CompleteSummary, FeedbackEvent, ControlButton, GameStatus } from '@/lib/games3d/types';
+import type {
+  Game3D,
+  GameMode3D,
+  CompleteSummary,
+  FeedbackEvent,
+  ControlButton,
+  GameStatus,
+} from '@/lib/games3d/types';
+
+type Translator = (key: string, params?: Record<string, string | number>) => string;
 
 interface Props {
   game: Game3D;
   locale: string;
   isRTL: boolean;
-  mode: import('@/lib/games3d/types').GameMode3D;
+  mode: GameMode3D;
   /** In-game translator (scoped to the `games3d` namespace). */
-  t: (key: string, params?: Record<string, string | number>) => string;
+  t: Translator;
   /** Human-readable game title for accessibility. */
   gameTitle?: string;
+  /** Mirrored into the engine's audio bus so the header mute button works mid-game. */
+  muted?: boolean;
+  volume?: number;
   onComplete?: (summary: CompleteSummary) => void;
   onScore?: (score: number) => void;
   onFeedback?: (event: FeedbackEvent) => void;
@@ -36,6 +48,8 @@ export function Canvas3D({
   mode,
   t,
   gameTitle,
+  muted,
+  volume,
   onComplete,
   onScore,
   onFeedback,
@@ -48,15 +62,19 @@ export function Canvas3D({
 }: Props): React.ReactElement {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const engineRef = useRef<SceneEngineInstance | null>(null);
+  // The engine captures the translator once, so route it through a ref: an in-app
+  // locale switch then reaches live strings instead of tearing the scene down.
+  const tRef = useRef<Translator>(t);
+  useEffect(() => {
+    tRef.current = t;
+  }, [t]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const prefersReducedMotion =
-      typeof window !== 'undefined'
-        ? window.matchMedia?.('(prefers-reduced-motion: reduce)').matches === true
-        : false;
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches === true;
 
     const factory = engineFactory ?? createSceneEngine;
     let engine: SceneEngineInstance;
@@ -66,7 +84,7 @@ export function Canvas3D({
         locale,
         isRTL,
         mode,
-        t,
+        t: (key, params) => tRef.current(key, params),
         prefersReducedMotion,
         onComplete,
         onLoadProgress,
@@ -83,9 +101,33 @@ export function Canvas3D({
     const unsubControls = onControls ? engine.subscribeControls(onControls) : () => {};
     const unsubStatus = onStatus ? engine.subscribeStatus(onStatus) : () => {};
 
-    engine.start(game).catch((err) => onError?.(err));
+    let cancelled = false;
+    engine
+      .start(game)
+      .then(() => {
+        // Layout has settled by now, so fit the drawing buffer to the real CSS box.
+        if (!cancelled) engine.resize();
+      })
+      .catch((err) => {
+        if (!cancelled) onError?.(err);
+      });
+
+    // The canvas is sized by CSS, so its container — not the window — is the source
+    // of truth: mobile URL-bar collapse, on-screen keyboards, orientation changes
+    // and shell growth all resize the playfield without a window resize event.
+    const parent = canvas.parentElement;
+    const observer =
+      parent && typeof ResizeObserver !== 'undefined'
+        ? new ResizeObserver((entries) => {
+            const box = entries[0]?.contentRect;
+            if (box && box.width > 0 && box.height > 0) engine.resize(box.width, box.height);
+          })
+        : null;
+    if (parent && observer) observer.observe(parent);
 
     return () => {
+      cancelled = true;
+      observer?.disconnect();
       unsubScore();
       unsubFeedback();
       unsubPrompt();
@@ -94,8 +136,30 @@ export function Canvas3D({
       engine.dispose();
       engineRef.current = null;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [game]);
+  }, [
+    game,
+    locale,
+    isRTL,
+    mode,
+    engineFactory,
+    onComplete,
+    onLoadProgress,
+    onError,
+    onScore,
+    onFeedback,
+    onPrompt,
+    onControls,
+    onStatus,
+  ]);
+
+  // The engine owns the audio graph and outlives a single render, so mirror the
+  // shell's mute/volume state into it whenever the child changes either.
+  useEffect(() => {
+    const audio = engineRef.current?.getAudio();
+    if (!audio) return;
+    if (muted !== undefined) audio.setMuted(muted);
+    if (volume !== undefined) audio.setVolume(volume);
+  }, [muted, volume]);
 
   return (
     <canvas

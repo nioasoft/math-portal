@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import RatioClient from '@/components/worksheet/RatioClient';
 import { FeaturedTopicGames } from '@/components/games3d/FeaturedTopicGames';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels, toHreflang } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -53,7 +53,7 @@ export default async function RatioPage({ params }: { params: Promise<{ locale: 
         "name": t('pages.ratio.title'),
         "description": t('pages.ratio.description'),
         "url": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/ratio`,
-        "inLanguage": locale,
+        "inLanguage": toHreflang(locale as Locale),
         "learningResourceType": "Worksheet",
         "educationalLevel": eduLevels.slice(4), // Grades 5-6
         "educationalUse": "Practice",

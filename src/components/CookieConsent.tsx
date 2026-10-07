@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { Cookie, Settings, ChevronDown, ChevronUp } from 'lucide-react';
 import {
@@ -11,7 +11,7 @@ import {
   getCookiePreferences,
   type CookiePreferences,
 } from '@/lib/cookie-consent';
-import { Link } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 
 export function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
@@ -22,6 +22,14 @@ export function CookieConsent() {
     marketing: true,
   });
   const t = useTranslations('cookies');
+  const settingsToggleRef = useRef<HTMLButtonElement>(null);
+  // Inside a game the bottom sheet lands squarely on the Check/+/− control row
+  // (and on the ModePicker's start button at phone widths), so the banner waits
+  // until the child is back on a browsing page. This lives in the root layout, so
+  // it stays mounted across client-side navigations and the sheet reappears on
+  // its own — and no optional cookie loads before consent either way.
+  const pathname = usePathname();
+  const inGame = /^\/play\/[^/]+/.test(pathname);
 
   useEffect(() => {
     // Small delay to avoid hydration issues and let page load
@@ -32,6 +40,19 @@ export function CookieConsent() {
     }, 500);
     return () => clearTimeout(timer);
   }, []);
+
+  // Escape collapses the settings panel and returns focus to its toggle, since
+  // the panel unmounts and would otherwise drop focus to the document body.
+  useEffect(() => {
+    if (!showSettings) return;
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key !== 'Escape') return;
+      setShowSettings(false);
+      settingsToggleRef.current?.focus();
+    }
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [showSettings]);
 
   const handleAcceptAll = () => {
     acceptAllCookies();
@@ -61,7 +82,7 @@ export function CookieConsent() {
     setShowSettings(true);
   };
 
-  if (!showBanner) return null;
+  if (!showBanner || inGame) return null;
 
   return (
     <div className="fixed bottom-0 inset-x-0 z-[70] p-4 print:hidden">
@@ -86,30 +107,38 @@ export function CookieConsent() {
           <div className="flex flex-wrap items-center gap-2 mt-4">
             <button
               onClick={handleAcceptAll}
-              className="px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white text-sm font-medium rounded-lg transition-colors"
+              className="min-h-11 px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white text-sm font-medium rounded-lg transition-colors"
             >
               {t('acceptAll')}
             </button>
             <button
               onClick={handleDeclineOptional}
-              className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium rounded-lg transition-colors"
+              className="min-h-11 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium rounded-lg transition-colors"
             >
               {t('necessaryOnly')}
             </button>
             <button
+              ref={settingsToggleRef}
               onClick={handleOpenSettings}
-              className="flex items-center gap-1.5 px-3 py-2 text-slate-500 hover:text-slate-700 text-sm transition-colors"
+              aria-expanded={showSettings}
+              aria-controls="cookie-preferences"
+              className="flex min-h-11 items-center gap-1.5 px-3 py-2 text-slate-500 hover:text-slate-700 text-sm transition-colors"
             >
-              <Settings size={16} />
+              <Settings size={16} aria-hidden="true" />
               {t('settings')}
-              {showSettings ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+              {showSettings ? <ChevronUp size={14} aria-hidden="true" /> : <ChevronDown size={14} aria-hidden="true" />}
             </button>
           </div>
         </div>
 
         {/* Settings Panel */}
         {showSettings && (
-          <div className="border-t border-slate-200 p-4 bg-slate-50 rounded-b-xl">
+          <div
+            id="cookie-preferences"
+            role="group"
+            aria-label={t('settings')}
+            className="border-t border-slate-200 p-4 bg-slate-50 rounded-b-xl"
+          >
             <div className="space-y-3">
               {/* Necessary - Always on */}
               <label className="flex items-center justify-between p-3 bg-white rounded-lg">
@@ -142,7 +171,7 @@ export function CookieConsent() {
                     onChange={(e) => setPreferences({ ...preferences, functional: e.target.checked })}
                     className="sr-only peer"
                   />
-                  <div className="w-10 h-6 bg-slate-200 peer-checked:bg-orange-500 rounded-full transition-colors" />
+                  <div className="w-10 h-6 bg-slate-200 peer-checked:bg-orange-500 rounded-full transition-colors peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-brand" />
                   <div className="absolute start-1 top-1 w-4 h-4 bg-white rounded-full peer-checked:translate-x-4 peer-checked:rtl:-translate-x-4 transition-transform shadow" />
                 </div>
               </label>
@@ -160,7 +189,7 @@ export function CookieConsent() {
                     onChange={(e) => setPreferences({ ...preferences, analytics: e.target.checked })}
                     className="sr-only peer"
                   />
-                  <div className="w-10 h-6 bg-slate-200 peer-checked:bg-orange-500 rounded-full transition-colors" />
+                  <div className="w-10 h-6 bg-slate-200 peer-checked:bg-orange-500 rounded-full transition-colors peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-brand" />
                   <div className="absolute start-1 top-1 w-4 h-4 bg-white rounded-full peer-checked:translate-x-4 peer-checked:rtl:-translate-x-4 transition-transform shadow" />
                 </div>
               </label>
@@ -178,7 +207,7 @@ export function CookieConsent() {
                     onChange={(e) => setPreferences({ ...preferences, marketing: e.target.checked })}
                     className="sr-only peer"
                   />
-                  <div className="w-10 h-6 bg-slate-200 peer-checked:bg-orange-500 rounded-full transition-colors" />
+                  <div className="w-10 h-6 bg-slate-200 peer-checked:bg-orange-500 rounded-full transition-colors peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-brand" />
                   <div className="absolute start-1 top-1 w-4 h-4 bg-white rounded-full peer-checked:translate-x-4 peer-checked:rtl:-translate-x-4 transition-transform shadow" />
                 </div>
               </label>
@@ -186,7 +215,7 @@ export function CookieConsent() {
 
             <button
               onClick={handleSavePreferences}
-              className="w-full mt-4 px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white text-sm font-medium rounded-lg transition-colors"
+              className="w-full mt-4 min-h-11 px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white text-sm font-medium rounded-lg transition-colors"
             >
               {t('savePreferences')}
             </button>

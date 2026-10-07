@@ -1,14 +1,10 @@
 {
   "hero": {
-    "badge": "44 3D-Mathe-Lernspiele",
     "title": "Mathe-Arbeitsblätter &",
     "titleHighlight": "Spiele",
     "description": "Drucke individuelle Mathe-Arbeitsblätter — oder spiele interaktive Mathespiele.",
     "descriptionLine2": "Für die Klassen 1-6. Thema wählen, anpassen, drucken oder spielen — alles",
     "free": "kostenlos",
-    "cta": "Jetzt spielen",
-    "ctaSecondary": "Wie funktioniert es?",
-    "ctaGames": "🎮 Mathe-Spiele",
     "trustPrint": "Direkter Druck",
     "trustNoSignup": "Keine Registrierung",
     "trustFree": "100% kostenlos",
@@ -52,11 +48,6 @@
       "desc": "Länge, Gewicht und Zeit"
     }
   },
-  "games": {
-    "title": "Mathe-Spiele",
-    "subtitle": "Rechnen, Brüche und Geometrie spielerisch lernen!",
-    "cta": "Alle Mathe-Spiele"
-  },
   "grades": {
     "label": "Nach Klassenstufe:",
     "grade": "Klasse"
@@ -92,26 +83,6 @@
     "tip": "Beim Addieren mit Übertrag: Denken Sie daran, 1 zur linken Spalte hinzuzufügen!",
     "answerSheet": "Separates Lösungsblatt"
   },
-  "topics": {
-    "title": "Themen",
-    "math": "Rechnen",
-    "fractions": "Brüche",
-    "geometry": "Geometrie",
-    "percentage": "Prozentrechnung",
-    "decimals": "Dezimalzahlen",
-    "ratio": "Verhältnisse",
-    "units": "Maßeinheiten",
-    "series": "Zahlenfolgen",
-    "wordProblems": "Textaufgaben"
-  },
-  "features": {
-    "free": "Kostenlos",
-    "freeDesc": "Ohne Kosten und ohne Registrierung",
-    "print": "Druckbar",
-    "printDesc": "Arbeitsblätter zum Ausdrucken",
-    "interactive": "Interaktiv",
-    "interactiveDesc": "Mathe-Spiele und Online-Übungen"
-  },
   "gamesHub": {
     "badge": "Interaktive Spiele",
     "title": "{count} 3D-Lernspiele",
@@ -123,13 +94,7 @@
   },
   "quickGames": {
     "title": "Los geht’s!",
-    "subtitle": "Interaktive Mathe-Spiele",
-    "math": "Mathe",
-    "mathDesc": "Addition & Subtraktion",
-    "fractions": "Brüche",
-    "fractionsDesc": "Einfache Brüche",
-    "percentage": "Prozente",
-    "percentageDesc": "Prozente berechnen"
+    "subtitle": "Interaktive Mathe-Spiele"
   },
   "howItWorks": {
     "title": "So funktioniert's",

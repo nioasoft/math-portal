@@ -26,8 +26,10 @@ export function createAudioManager(): InternalManager {
   let context: AudioContext | null = null;
   const buffers = new Map<string, AudioBuffer>();
   const inflight = new Map<string, Promise<void>>();
+  const timers = new Set<ReturnType<typeof setTimeout>>();
   let muted = getMutePreference();
   let volume = getAudioVolumePreference();
+  let disposed = false;
 
   // BGM state
   let bgmSource: AudioBufferSourceNode | null = null;
@@ -37,15 +39,23 @@ export function createAudioManager(): InternalManager {
   // Master gain
   let masterGain: GainNode | null = null;
 
+  function later(fn: () => void, ms: number): void {
+    const id = setTimeout(() => {
+      timers.delete(id);
+      if (!disposed) fn();
+    }, ms);
+    timers.add(id);
+  }
+
   function ensureContext(): AudioContext | null {
-    if (typeof window === 'undefined') return null;
+    if (disposed || typeof window === 'undefined') return null;
     const w = window as WindowWithAudio;
     const Ctor = w.AudioContext ?? w.webkitAudioContext;
     if (!Ctor) return null;
     if (!context) {
       context = new Ctor();
       masterGain = context.createGain();
-      masterGain.gain.value = volume;
+      masterGain.gain.value = muted ? 0 : volume;
       masterGain.connect(context.destination);
     }
     return context;
@@ -85,21 +95,7 @@ export function createAudioManager(): InternalManager {
     return null;
   }
 
-  function play(key: string, url?: string, pitchRate?: number): void {
-    if (muted) return;
-    const ctx = ensureContext();
-    if (!ctx) return;
-    if (ctx.state === 'suspended') {
-      void ctx.resume();
-    }
-    const targetUrl = resolveUrl(key, url);
-    if (!targetUrl) return;
-
-    const buf = buffers.get(key);
-    if (!buf) {
-      void loadBuffer(key, targetUrl);
-      return;
-    }
+  function startSource(ctx: AudioContext, buf: AudioBuffer, pitchRate?: number): void {
     const src = ctx.createBufferSource();
     src.buffer = buf;
     if (pitchRate !== undefined) {
@@ -119,6 +115,31 @@ export function createAudioManager(): InternalManager {
       src.disconnect();
       gain.disconnect();
     };
+  }
+
+  function play(key: string, url?: string, pitchRate?: number): void {
+    if (muted || disposed) return;
+    const ctx = ensureContext();
+    if (!ctx) return;
+    if (ctx.state === 'suspended') {
+      void ctx.resume();
+    }
+    const targetUrl = resolveUrl(key, url);
+    if (!targetUrl) return;
+
+    const buf = buffers.get(key);
+    if (buf) {
+      startSource(ctx, buf, pitchRate);
+      return;
+    }
+    // First use of this sound: kick off fetch+decode and play it as soon as it's
+    // ready, so the very first tap on a fresh game isn't silently dropped.
+    void loadBuffer(key, targetUrl).then(() => {
+      const ready = buffers.get(key);
+      if (!ready || muted || disposed) return;
+      const live = ensureContext();
+      if (live) startSource(live, ready, pitchRate);
+    });
   }
 
   return {
@@ -141,7 +162,7 @@ export function createAudioManager(): InternalManager {
         const oldGain = bgmGain;
         const oldSource = bgmSource;
         oldGain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.5);
-        setTimeout(() => {
+        later(() => {
           try { oldSource.stop(); } catch { /* already stopped */ }
           oldSource.disconnect();
           oldGain.disconnect();
@@ -169,7 +190,7 @@ export function createAudioManager(): InternalManager {
       const oldGain = bgmGain;
       const oldSource = bgmSource;
       oldGain.gain.linearRampToValueAtTime(0, ctx.currentTime + fadeMs / 1000);
-      setTimeout(() => {
+      later(() => {
         try { oldSource.stop(); } catch { /* already stopped */ }
         oldSource.disconnect();
         oldGain.disconnect();
@@ -186,9 +207,7 @@ export function createAudioManager(): InternalManager {
     setVolume(v: number): void {
       volume = Math.max(0, Math.min(1, v));
       setAudioVolumePreference(volume);
-      if (masterGain) {
-        masterGain.gain.value = volume;
-      }
+      applyMasterGain();
     },
 
     isMuted(): boolean {
@@ -198,16 +217,47 @@ export function createAudioManager(): InternalManager {
     setMuted(value: boolean): void {
       muted = value;
       setMutePreference(value);
+      // New sfx are gated by `muted`, but looping BGM only stops when the master
+      // bus is silenced.
+      applyMasterGain();
     },
 
     async preload(key: string, url: string): Promise<void> {
       await loadBuffer(key, url);
     },
 
+    dispose(): void {
+      if (disposed) return;
+      disposed = true;
+      timers.forEach(clearTimeout);
+      timers.clear();
+      if (bgmSource) {
+        try { bgmSource.stop(); } catch { /* already stopped */ }
+        bgmSource.disconnect();
+      }
+      bgmGain?.disconnect();
+      bgmSource = null;
+      bgmGain = null;
+      bgmKey = null;
+      buffers.clear();
+      inflight.clear();
+      masterGain?.disconnect();
+      masterGain = null;
+      const ctx = context;
+      context = null;
+      if (ctx && ctx.state !== 'closed') void ctx.close().catch(() => {});
+    },
+
     _debugContext(): AudioContext | null {
       return ensureContext();
     },
   };
+
+  function applyMasterGain(): void {
+    if (masterGain) {
+      masterGain.gain.value = muted ? 0 : volume;
+    }
+  }
 
   function playBGMInternal(key: string, url: string, bgmVolume?: number): void {
     const ctx = ensureContext();
@@ -236,10 +286,11 @@ export function createAudioManager(): InternalManager {
   }
 }
 
+/** Keys every game triggers; the rest of the shared set loads on first use. */
+const PRELOADED_SHARED_KEYS: SharedSfxKey[] = ['success', 'fail', 'click'];
+
 export async function preloadSharedSfx(manager: AudioManager): Promise<void> {
   await Promise.all(
-    (Object.entries(SHARED_URLS) as Array<[SharedSfxKey, string]>).map(([key, url]) =>
-      manager.preload(key, url)
-    )
+    PRELOADED_SHARED_KEYS.map((key) => manager.preload(key, SHARED_URLS[key]))
   );
 }

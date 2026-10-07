@@ -170,4 +170,33 @@ describe('SceneEngine', () => {
     vi.runAllTimers();
     expect(onComplete).toHaveBeenCalledWith(expect.objectContaining({ totalPoints: 5 }));
   });
+
+  it('dispose() frees GPU resources a game left in the scene', async () => {
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const texture = new THREE.Texture();
+    const material = new THREE.MeshBasicMaterial({ map: texture });
+    const geometryDispose = vi.spyOn(geometry, 'dispose');
+    const materialDispose = vi.spyOn(material, 'dispose');
+    const textureDispose = vi.spyOn(texture, 'dispose');
+
+    const game: Game3D = {
+      ...makeGame(),
+      init: (ctx) => {
+        ctx.scene.add(new THREE.Mesh(geometry, material));
+        return { dispose: vi.fn() };
+      },
+    };
+    const engine = createSceneEngine({
+      canvas: document.createElement('canvas'),
+      renderer: new FakeRenderer() as unknown as THREE.WebGLRenderer,
+      locale: 'en', isRTL: false, t: (k) => k,
+    });
+    await engine.start(game);
+    engine.dispose();
+
+    expect(geometryDispose).toHaveBeenCalledOnce();
+    expect(materialDispose).toHaveBeenCalledOnce();
+    expect(textureDispose).toHaveBeenCalledOnce();
+    expect(engine._debug().scene.children).toHaveLength(0);
+  });
 });

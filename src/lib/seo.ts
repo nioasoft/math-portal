@@ -3,6 +3,19 @@ import type { Metadata } from 'next';
 
 const BASE_URL = 'https://www.tirgul.net';
 
+// Blog/help pages whose locale has no localized file serve English content
+// (see FALLBACK_LOCALE in src/lib/content.ts), so their canonical/og must
+// point at the English URL — the content actually served — not the Hebrew root.
+export const CONTENT_FALLBACK_LOCALE: Locale = 'en';
+
+/**
+ * BCP-47 tag for hreflang/lang attributes. Bare "zh" is ambiguous
+ * (Simplified vs Traditional); every other locale key is already a valid code.
+ */
+export function toHreflang(locale: Locale): string {
+  return locale === 'zh' ? 'zh-Hans' : locale;
+}
+
 /**
  * Generates alternate URLs and hreflang tags for a given path
  * @param path - The current path (with or without locale prefix)
@@ -14,24 +27,30 @@ export function generateAlternates(
   currentLocale: Locale,
   availableLocales: readonly Locale[] = locales
 ) {
-  // Remove any leading locale prefix to get the clean path
-  const cleanPath = path.replace(/^\/(en|ar|de|es|ru)/, '') || '/';
+  // Remove any leading locale prefix to get the clean path. Derived from the
+  // locale list (minus the unprefixed default) so adding a locale can't leave
+  // this regex behind and emit wrong canonicals/hreflang.
+  const prefixed = locales.filter((l) => l !== defaultLocale).join('|');
+  const cleanPath = path.replace(new RegExp(`^\\/(${prefixed})`), '') || '/';
   const eligibleLocales = availableLocales.length > 0 ? [...availableLocales] : [defaultLocale];
   const canonicalLocale = eligibleLocales.includes(currentLocale)
     ? currentLocale
-    : eligibleLocales.includes(defaultLocale)
-      ? defaultLocale
-      : eligibleLocales[0];
+    : eligibleLocales.includes(CONTENT_FALLBACK_LOCALE)
+      ? CONTENT_FALLBACK_LOCALE
+      : eligibleLocales.includes(defaultLocale)
+        ? defaultLocale
+        : eligibleLocales[0];
 
   const languages: Record<string, string> = {};
 
   for (const locale of eligibleLocales) {
+    const hreflang = toHreflang(locale);
     if (locale === defaultLocale) {
       // Hebrew stays at root (no prefix)
-      languages[locale] = `${BASE_URL}${cleanPath}`;
+      languages[hreflang] = `${BASE_URL}${cleanPath}`;
     } else {
       // Other languages use prefix
-      languages[locale] = `${BASE_URL}/${locale}${cleanPath === '/' ? '' : cleanPath}`;
+      languages[hreflang] = `${BASE_URL}/${locale}${cleanPath === '/' ? '' : cleanPath}`;
     }
   }
 
@@ -154,6 +173,7 @@ export function getSiteName(locale: Locale): string {
     de: 'Tirgul',
     es: 'Tirgul',
     ru: 'Tirgul',
+    zh: 'Tirgul',
   };
   return siteNames[locale];
 }
@@ -171,6 +191,7 @@ export function getOrganizationName(locale: Locale): string {
     de: 'Tirgul',
     es: 'Tirgul',
     ru: 'Tirgul',
+    zh: 'Tirgul',
   };
   return orgNames[locale];
 }
@@ -188,6 +209,7 @@ export function getEducationalLevels(locale: Locale): string[] {
     de: ['Klasse 1', 'Klasse 2', 'Klasse 3', 'Klasse 4', 'Klasse 5', 'Klasse 6'],
     es: ['Grado 1', 'Grado 2', 'Grado 3', 'Grado 4', 'Grado 5', 'Grado 6'],
     ru: ['1 класс', '2 класс', '3 класс', '4 класс', '5 класс', '6 класс'],
+    zh: ['一年级', '二年级', '三年级', '四年级', '五年级', '六年级'],
   };
   return levels[locale];
 }

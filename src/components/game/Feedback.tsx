@@ -10,6 +10,10 @@ interface FeedbackProps {
     onComplete?: () => void;
 }
 
+const REVEAL_MS_CORRECT = 1200;
+// A wrong answer also shows the correct value — that needs time to be read.
+const REVEAL_MS_WRONG = 2800;
+
 export default function Feedback({ correct, correctAnswer, onComplete }: FeedbackProps) {
     const t = useTranslations('games');
     const [show, setShow] = useState(false);
@@ -20,28 +24,38 @@ export default function Feedback({ correct, correctAnswer, onComplete }: Feedbac
         const prevCorrect = prevCorrectRef.current;
         prevCorrectRef.current = correct;
 
+        const frames: number[] = [];
+        const nextFrame = (fn: () => void) => {
+            frames.push(requestAnimationFrame(fn));
+        };
+        let timer: ReturnType<typeof setTimeout> | undefined;
+        const cleanup = () => {
+            frames.forEach((id) => cancelAnimationFrame(id));
+            if (timer !== undefined) clearTimeout(timer);
+        };
+
         // Only trigger when correct changes from null to a value
         if (prevCorrect === null && correct !== null) {
             // Use requestAnimationFrame to batch state updates
-            requestAnimationFrame(() => {
+            nextFrame(() => {
                 setShow(true);
                 setAnimating(true);
             });
 
-            const timer = setTimeout(() => {
+            timer = setTimeout(() => {
                 setShow(false);
                 setAnimating(false);
                 onComplete?.();
-            }, 1200);
-
-            return () => clearTimeout(timer);
+            }, correct ? REVEAL_MS_CORRECT : REVEAL_MS_WRONG);
         } else if (correct === null && prevCorrect !== null) {
             // Reset when correct goes back to null
-            requestAnimationFrame(() => {
+            nextFrame(() => {
                 setShow(false);
                 setAnimating(false);
             });
         }
+
+        return cleanup;
     }, [correct, onComplete]);
 
     if (!show || correct === null) return null;
@@ -69,7 +83,7 @@ export default function Feedback({ correct, correctAnswer, onComplete }: Feedbac
                         </div>
                         <span className="mt-4 text-3xl font-bold text-red-400">{t('feedback.incorrect')}</span>
                         {correctAnswer !== undefined && (
-                            <span className="mt-2 text-xl text-slate-400">
+                            <span className="mt-2 text-xl text-slate-200">
                                 {t('feedback.theAnswer')} <span className="text-white font-bold">{correctAnswer}</span>
                             </span>
                         )}

@@ -3,19 +3,6 @@ import { getRegisteredGames } from '@/lib/games3d/games';
 import { topicStyle } from './topicMeta';
 import { getTranslations } from 'next-intl/server';
 
-const copy = {
-  he: {
-    title: 'משחקים לתרגול הנושא',
-    subtitle: 'תרגול אינטראקטיבי לפני או אחרי דף העבודה',
-    allGames: 'לכל משחקי התלת-ממד',
-  },
-  en: {
-    title: 'Games for this topic',
-    subtitle: 'Interactive practice before or after the worksheet',
-    allGames: 'All 3D games',
-  },
-} as const;
-
 interface FeaturedTopicGamesProps {
   locale: string;
   topic: string;
@@ -27,7 +14,6 @@ export async function FeaturedTopicGames({
   topic,
   limit = 4,
 }: FeaturedTopicGamesProps) {
-  const c = locale === 'he' ? copy.he : copy.en;
   const t = await getTranslations({ locale, namespace: 'games3d' });
   const games = getRegisteredGames()
     .filter((game) => game.meta.topic === topic)
@@ -39,7 +25,6 @@ export async function FeaturedTopicGames({
         id: game.meta.id,
         title: block?.title ?? game.meta.id,
         description: block?.description ?? '',
-        gradeRange: game.meta.gradeRange,
       };
     });
 
@@ -52,11 +37,11 @@ export async function FeaturedTopicGames({
       <div className="container-custom">
         <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
           <div>
-            <h2 className="text-2xl font-black text-slate-900">{c.title}</h2>
-            <p className="mt-1 text-sm text-slate-500">{c.subtitle}</p>
+            <h2 className="text-2xl font-black text-slate-900">{t('topicGamesTitle')}</h2>
+            <p className="mt-1 text-sm text-slate-500">{t('topicGamesSubtitle')}</p>
           </div>
           <Link href="/play" className="text-sm font-bold text-indigo-600 hover:text-indigo-700">
-            {c.allGames}
+            {t('topicGamesAll')}
           </Link>
         </div>
 

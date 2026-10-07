@@ -19,7 +19,8 @@ describe('isCompleteGameSeo', () => {
     expect(isCompleteGameSeo(valid)).toBe(true);
   });
   it('rejects a missing field', () => {
-    const { skills, ...rest } = valid;
+    const rest: Partial<GameSeo> = { ...valid };
+    delete rest.skills;
     expect(isCompleteGameSeo(rest)).toBe(false);
   });
   it('rejects fewer than 3 howToPlay steps', () => {

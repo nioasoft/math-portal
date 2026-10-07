@@ -28,12 +28,21 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: meta.i18nKey });
   const games3dT = await getTranslations({ locale, namespace: 'games3d' });
   const title = t('title');
-  const description = t('description');
+  const uiDescription = t('description');
 
   const seoRaw = (() => {
     try { return t.raw('seo'); } catch { return undefined; }
   })();
-  const hasSeo = isCompleteGameSeo(seoRaw);
+  const gameSeo = isCompleteGameSeo(seoRaw) ? seoRaw : null;
+
+  // The UI `description` doubles as the kid-facing card tagline and is kept
+  // short — in CJK locales often ~10-20 chars, which Google would rewrite.
+  // When it's too thin for a SERP snippet, derive the meta description from
+  // the richer seo.intro instead (locale-agnostic, applies to any locale).
+  const description =
+    uiDescription.length < 80 && gameSeo
+      ? `${gameSeo.intro.slice(0, 157).trimEnd()}${gameSeo.intro.length > 157 ? '…' : ''}`
+      : uiDescription;
 
   return {
     title,
@@ -42,7 +51,7 @@ export async function generateMetadata({
     alternates: generateAlternates(`/play/${gameId}`, locale as Locale),
     openGraph: generateOpenGraphMeta(locale as Locale, title, description, `/play/${gameId}`),
     twitter: generateTwitterMeta(title, description),
-    robots: hasSeo ? undefined : { index: false, follow: true },
+    robots: gameSeo ? undefined : { index: false, follow: true },
   };
 }
 
@@ -124,8 +133,8 @@ export default async function GamePage({
         meta={meta}
         title={title}
         instructions={instructions}
-        webGLAvailable={true}
         initialMode={initialMode}
+        relatedGames={relatedGames}
         breadcrumbItems={[
           { label: metaT('breadcrumb.home'), href: '/' },
           { label: metaT('pages.play.title'), href: '/play' },
@@ -134,7 +143,7 @@ export default async function GamePage({
       />
       {gameSeo && (
         <GameSeoContent
-          locale={locale}
+          locale={locale as Locale}
           meta={meta}
           title={title}
           topicLabel={topicLabel}

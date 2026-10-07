@@ -1,65 +1,60 @@
-# CLAUDE.md
+# Math Portal (תרגול / דפי עבודה חכמים)
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Next.js App Router, static-first, React Compiler on. Two product surfaces for grades 1–6:
+**printable worksheets** and **browser math games**. Hebrew is the default locale
+(`defaultLocale: 'he'`, `localePrefix: 'as-needed'` — `/he/…` is served at `/…`), with
+7 locales total: `he, en, ar, de, es, ru, zh` (`src/i18n/config.ts`).
 
-## Project Overview
+- **The worksheet deliverable is print**: A4 via `print:` Tailwind utilities and `@media print`
+  in `globals.css` — check the print preview, not just the screen.
+- **Never hardcode math symbols.** Division, decimal and thousands separators are per-locale in
+  `src/lib/math-notation.ts` (a `Record<Locale, …>`). `:` for division is Israeli notation
+  (`he`, plus `de`); `en, ar, es, ru, zh` use `÷`. zh follows mainland primary-school notation:
+  `÷`, decimal `.`, thousands `,`.
+- Worksheet generators are client components in `src/components/worksheet/` and all follow one
+  pattern: problem engine from `src/lib/` (`math-engine.ts`, `word-problem-engine.ts`,
+  `curriculum.ts` for grade topics) + URL query-param sync for settings + show/hide answers
+  toggle. New generators copy an existing one.
+- Grade ids are the numeric strings `'1'`–`'6'` (`GRADE_IDS` in `src/lib/curriculum.ts`).
+  The Hebrew labels in `curriculum.ts` are a fallback; what renders comes from
+  `messages/{locale}/curriculum.json`.
+- Blog and help content is **JSON on disk**, not TS: `content/{blog,help}/{locale}/*.json`,
+  read by `src/lib/content.ts` with `locale → en → he` fallback. A locale without content
+  (zh today, by design) serves English and is marked `noindex`. `src/lib/blog-data.ts` now
+  only supplies the category list — its `blogPosts` array is dead.
+- Fonts are per-locale in `fontByLocale` (`src/app/[locale]/layout.tsx`): Assistant (he),
+  Noto Sans Arabic (ar), Inter (en/de/es/ru), Noto Sans SC (zh).
 
-Math Portal (Smart Worksheets / דפי עבודה חכמים) is a Hebrew-language educational platform for generating printable math worksheets. Built with Next.js 16, React 19, and Tailwind CSS 4.
+## Games
+
+- `src/lib/games3d/` is a **hand-rolled vanilla three.js** engine (`three ^0.180.0`) — not
+  react-three-fiber. 53 registry games; each is a folder under `src/lib/games3d/games/<id>/`,
+  registered in `games/index.ts`, lazy-loaded via `games/loaders.ts`, and rendered through
+  `src/components/games3d/Game3DShell.tsx`. Shared helpers live in `games3d/kit/`, engine
+  plumbing (renderer, resize, audio, dispose) in `games3d/engine/`.
+- 3 legacy 2D quiz games (`/play/math|fractions|percentage`) run on a separate engine,
+  `src/lib/game/game-engine.ts`.
+- Adding a game means touching all four places above plus copy in `messages/{locale}/games3d.json`
+  under that game's id (`title, description, instructions, prompt, correct, seo{…}`).
+
+## i18n
+
+- 14 namespace files per locale in `messages/{locale}/`; `npm run i18n:check` enforces key
+  parity, topic labels and per-game `seo` blocks. Run it after any copy change.
+- `games.json` and `home.json` are plain 2-space JSON and safe to rewrite with a script.
+  **`games3d.json` is hand-formatted** (inline `{ "q": …, "a": … }` objects in `faqs` arrays),
+  so a JSON round-trip reformats the whole file — edit it surgically.
+- CJK writes no inter-word space, so a `{gap}` separator between adjacent `t()` calls comes
+  from `scriptTypography[locale]`. JSX drops children of void elements, so it can never sit
+  next to a `<br />`.
+- `Record<Locale, …>` is the compile gate for a new locale (`fontByLocale`, `math-notation`,
+  the maps in `src/lib/seo.ts` and `src/lib/games3d/seo.ts`, `scriptTypography`). `localeConfig`
+  in `src/i18n/config.ts` is a plain literal, so TS will *not* catch an omission there.
 
 ## Commands
 
-```bash
-npm run dev      # Start development server (http://localhost:3000)
-npm run build    # Production build
-npm run lint     # ESLint with Next.js TypeScript rules
-npm run start    # Start production server
-```
-
-## Architecture
-
-### Route Structure (App Router)
-- `/` - Homepage with topic cards linking to generators
-- `/grade/[id]` - Grade-specific topic pages (1-6, using Hebrew letters א-ו)
-- `/worksheet/math` - Basic math worksheet generator (add/sub/mul/div)
-- `/fractions`, `/geometry`, `/percentage`, `/decimals`, `/ratio`, `/units`, `/series` - Specialized worksheet generators
-- `/blog/[slug]` - Blog posts (static generation from `blog-data.ts`)
-- `/about` - About page
-
-### Key Patterns
-
-**Worksheet Generators**: Each topic has a client component in `src/components/worksheet/` that:
-1. Uses `'use client'` directive for interactivity
-2. Manages problem state with useState
-3. Generates problems using engines from `src/lib/`
-4. Provides print-optimized A4 layout with `print:` Tailwind utilities
-5. Includes URL query param sync for operation/range settings
-6. Has show/hide answers toggle
-
-**Math Engines** (`src/lib/`):
-- `math-engine.ts` - Basic arithmetic (MathEngine class)
-- `word-problem-engine.ts` - Word problem generation
-- `curriculum.ts` - Grade-level topic definitions (CURRICULUM object)
-- `blog-data.ts` - Static blog content
-
-**Layout Components** (`src/components/layout/`):
-- `Header.tsx`, `Footer.tsx` - Shared across pages
-- `ContentSection.tsx` - SEO content blocks below worksheets
-
-### Styling
-- Tailwind CSS 4 with `@import "tailwindcss"` in globals.css
-- RTL layout: `dir="rtl"` and `lang="he"` on html element
-- Font: Assistant (Hebrew/Latin) via next/font/google
-- Print styles in globals.css with `@media print` and `print:` utilities
-- Custom `.container-custom` class for consistent max-width
-
-### Static Generation
-- Grade pages use `generateStaticParams()` for grades 1-6
-- Blog pages use `generateStaticParams()` from `blogPosts` array
-- React Compiler enabled (`reactCompiler: true` in next.config.ts)
-
-## Conventions
-
-- Path alias: `@/*` maps to `./src/*`
-- Division operator displays as `:` (Israeli notation) not `/`
-- Worksheets target A4 paper size with proper print margins
-- All user-facing text is in Hebrew
+- `npm run build` — already passes `--webpack`; **Turbopack builds hang.** Dev is Turbopack:
+  `PORT=3100 npm run dev`.
+- `npm run test` (vitest; the 80/80/70/80 coverage thresholds apply only to games3d),
+  `npm run lint`, `npm run i18n:check`, `npm run e2e` (Playwright against :3100),
+  `npm run perf:games3d` (needs `PERF_URL=http://localhost:3100/play/canary-dev`).

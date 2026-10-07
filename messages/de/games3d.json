@@ -11,7 +11,18 @@
   "resume": "Spiel fortsetzen",
   "newBest": "Neuer Rekord!",
   "bestStreak": "Beste Serie",
+  "bestScore": "Beste Punktzahl",
   "stars": "{count} Sterne",
+  "difficultyLevel": "Stufe {level} von {max}",
+  "duration": "{minutes} Min.",
+  "scrollNext": "Weiter scrollen",
+  "scrollPrev": "Zurück scrollen",
+  "relatedTitle": "Mehr Spiele wie dieses",
+  "gradeGamesTitle": "Spiele für diese Klasse",
+  "gradeGamesAll": "Alle Spiele ansehen",
+  "topicGamesTitle": "Spiele zu diesem Thema",
+  "topicGamesSubtitle": "Interaktives Üben vor oder nach dem Arbeitsblatt",
+  "topicGamesAll": "Alle 3D-Spiele",
   "loadingTips": [
     "Wusstest du? Null ist gerade und nicht positiv!",
     "Ein Regenbogen ist immer rund — weil er Teil eines Kreises ist!",
@@ -266,7 +277,7 @@
       ],
       "skills": "Stellenwert-Builder entwickelt das Verständnis dafür, dass die Position einer Ziffer ihren Wert bestimmt: eine 3 in der Hunderterstelle steht für 300, nicht 3. Die Lernenden üben, mehrstellige Zahlen aus ihren Bestandteilen zusammenzusetzen, und erleben Bündelung als natürliche Folge des Zehnersystems.",
       "example": "Um 234 zu bauen: 2 Hunderter-Platten, 3 Zehner-Stäbe und 4 Einer-Würfel. Das Lager zeigt 200+30+4 getrennt, und Prüfen bestätigt, dass der Gesamtwert 234 ergibt.",
-      "mistakes": "Lernende geben häufig die Ziffer selbst ein, nicht den Wert — sie legen 2 Einer für 234 ein, weil sie die Einerstelle zuletzt lesen. Die farbcodierten Spalten (blau für Hunderte, gelb für Zehner, rot für Einer) trainieren, jede Ziffer in ihrer richtigen Spalte zu lesen, bevor Blöcke gesetzt werden.",
+      "mistakes": "Lernende geben häufig die Ziffer selbst ein, nicht den Wert — sie legen 2 Einer für 234 ein, weil sie die Einerstelle zuletzt lesen. Die farbcodierten Spalten (rot für Hunderte, blau für Zehner, gelb für Einer) trainieren, jede Ziffer in ihrer richtigen Spalte zu lesen, bevor Blöcke gesetzt werden.",
       "faqs": [
         {
           "q": "Wie unterscheidet sich Stellenwert-Builder vom Exploding-Dots-Spiel?",

@@ -13,12 +13,6 @@ export interface QuizConfig {
   pointsPerCorrect: number;
   /** Bonus points multiplied by current streak (e.g. 2 → streak 3 gives +6 bonus). */
   streakBonus?: number;
-  /** Max milliseconds per question. undefined = no time limit. */
-  timePerQuestionMs?: number;
-  /** Generate a hint string for a problem. */
-  hintGenerator?: (problem: unknown) => string;
-  /** Max hints allowed per quiz. undefined = unlimited. */
-  maxHints?: number;
 }
 
 export interface QuizState<TProblem> {
@@ -30,8 +24,4 @@ export interface QuizState<TProblem> {
   streak: number;
   bestStreak: number;
   finished: boolean;
-  questionStartedAt: number;
-  timeRemainingMs: number | null;
-  hintsUsed: number;
-  hintsRemaining: number | null;
 }

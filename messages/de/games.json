@@ -3,10 +3,14 @@
     "backToGames": "Zurück zu den Spielen",
     "home": "Startseite"
   },
+  "hud": {
+    "help": "So wird gespielt",
+    "hideHelp": "Anleitung ausblenden"
+  },
   "feedback": {
     "correct": "Richtig!",
     "incorrect": "Falsch",
-    "tryAgain": "Versuchen Sie es nochmal",
+    "tryAgain": "Versuch es nochmal",
     "theAnswer": "Die Antwort:"
   },
   "summary": {
@@ -16,7 +20,7 @@
     "accuracy": "Genauigkeit",
     "correctWrong": "Richtig / Falsch",
     "newRecord": "Neuer Rekord!",
-    "brokeRecord": "Sie haben Ihren vorherigen Rekord von {points} Punkten übertroffen",
+    "brokeRecord": "Du hast deinen Rekord von {points} Punkten übertroffen",
     "greatJob": "Toll geübt!",
     "playAgain": "Nochmal spielen",
     "backToMenu": "Zurück zum Menü"
@@ -52,16 +56,14 @@
     "checkAnswer": "Antwort prüfen",
     "numerator": "Zähler",
     "denominator": "Nenner",
-    "whole": "Ganz"
+    "whole": "Ganze"
   },
   "play": {
     "header": {
       "title": "Mathespiele",
-      "subtitle": "Wählen Sie ein Thema und beginnen Sie zu spielen!",
-      "back": "← Zurück"
+      "subtitle": "Wähl ein Thema und leg los!"
     },
     "topics": {
-      "title": "Wählen Sie ein Thema",
       "math": {
         "title": "Grundrechenarten",
         "description": "Addition, Subtraktion, Multiplikation und Division"
@@ -73,17 +75,6 @@
       "percentage": {
         "title": "Prozentrechnung",
         "description": "Berechnung des Prozentsatzes eines Ganzen"
-      },
-      "startPlaying": "Jetzt spielen"
-    },
-    "gameModes": {
-      "practice": {
-        "title": "Freies Üben",
-        "description": "Üben Sie ohne Zeitdruck. Unendliche Übungen, bauen Sie eine Serie korrekter Antworten auf und verbessern Sie Ihre Punktzahl."
-      },
-      "quiz": {
-        "title": "Quiz mit Timer",
-        "description": "Wettlauf gegen die Zeit! 60/90/120 Sekunden, um so viele Aufgaben wie möglich zu lösen. Brechen Sie Rekorde!"
       }
     },
     "footer": {
@@ -94,6 +85,7 @@
       "title": "3D-Lernspiele",
       "subtitle": "3D-Spiele zum Entdecken und Lernen — ohne Timer, im eigenen Tempo",
       "all": "Alle",
+      "allGrades": "Alle Klassen",
       "count": "{n} Spiele",
       "empty": "Keine Spiele in diesem Thema",
       "quizzesTitle": "Schnelle Quizze",

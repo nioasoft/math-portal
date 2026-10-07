@@ -223,6 +223,12 @@ export class GameEngine {
         };
     }
 
+    /** Callers hand this straight to `setState`, so it must be a fresh object every
+     * time — returning `this.state` would leave React comparing a reference to itself. */
+    private snapshot(): GameState {
+        return { ...this.state };
+    }
+
     // Start a new game
     startGame(mode: GameMode, topic: GameTopic, quizDuration: number = 60): GameState {
         this.usedProblems.clear();
@@ -231,7 +237,7 @@ export class GameEngine {
         this.state.timeRemaining = mode === 'quiz' ? quizDuration : null;
         this.state.isActive = true;
         this.state.currentProblem = this.generateProblem(topic);
-        return this.state;
+        return this.snapshot();
     }
 
     // Generate a problem based on topic
@@ -281,7 +287,9 @@ export class GameEngine {
                     problem = {
                         id: percentProblem.id,
                         type: 'percentage',
-                        display: `${percentProblem.percent}% מתוך ${percentProblem.total}`,
+                        // Locale-neutral: this engine has no translator. The UI renders
+                        // the spoken form from `percentProblem` instead.
+                        display: `${percentProblem.percent}% × ${percentProblem.total}`,
                         answer,
                         percentProblem
                     };
@@ -313,7 +321,7 @@ export class GameEngine {
     // Check answer and update state
     checkAnswer(userAnswer: number): { correct: boolean; correctAnswer: number; state: GameState } {
         if (!this.state.currentProblem) {
-            return { correct: false, correctAnswer: 0, state: this.state };
+            return { correct: false, correctAnswer: 0, state: this.snapshot() };
         }
 
         const correctAnswer = this.state.currentProblem.answer;
@@ -336,13 +344,13 @@ export class GameEngine {
         this.state.problemHistory.push(this.state.currentProblem);
         this.state.quizProblemCount++;
 
-        return { correct, correctAnswer, state: this.state };
+        return { correct, correctAnswer, state: this.snapshot() };
     }
 
     // Get next problem
     nextProblem(operation?: MathOperation, range?: number, fractionDifficulty?: FractionDifficulty): GameState {
         this.state.currentProblem = this.generateProblem(this.state.topic, operation, range, fractionDifficulty);
-        return this.state;
+        return this.snapshot();
     }
 
     // Update timer (called every second)
@@ -353,18 +361,18 @@ export class GameEngine {
                 this.state.isActive = false;
             }
         }
-        return this.state;
+        return this.snapshot();
     }
 
     // End game
     endGame(): GameState {
         this.state.isActive = false;
-        return this.state;
+        return this.snapshot();
     }
 
     // Get current state
     getState(): GameState {
-        return this.state;
+        return this.snapshot();
     }
 
     // Add time bonus for quiz mode (on correct answer)

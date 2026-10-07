@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import type { Game3D, GameInstance, CompleteSummary, ScoreController } from '../types';
+import type { Game3D, GameInstance, CompleteSummary, ScoreController, AudioManager } from '../types';
 import { createInputAdapter, InputAdapterInstance } from './InputAdapter';
 import { createAudioManager, preloadSharedSfx } from './AudioManager';
 import { createAssetLoader, AssetLoaderInstance } from './AssetLoader';
@@ -19,7 +19,30 @@ import {
   ObservableStatus,
 } from './SceneContext';
 import { createPerformanceMonitor } from './PerformanceMonitor';
-import { tweenGroup } from '../kit/juice';
+import { tweenGroup, setReducedMotion } from '../kit/juice';
+
+/**
+ * Safety net under each game's own `dispose()`: a game that forgets one mesh would
+ * otherwise leave its GPU buffers alive until the WebGL context is lost.
+ */
+function disposeSceneResources(root: THREE.Object3D): void {
+  const materials = new Set<THREE.Material>();
+  root.traverse((obj) => {
+    const mesh = obj as Partial<THREE.Mesh>;
+    mesh.geometry?.dispose?.();
+    const material = mesh.material;
+    if (Array.isArray(material)) material.forEach((m) => materials.add(m));
+    else if (material) materials.add(material);
+  });
+  materials.forEach((material) => {
+    for (const value of Object.values(material as unknown as Record<string, unknown>)) {
+      const texture = value as { isTexture?: boolean; dispose?: () => void } | null;
+      if (texture?.isTexture) texture.dispose?.();
+    }
+    material.dispose();
+  });
+  root.clear();
+}
 
 export interface SceneEngineOptions {
   canvas: HTMLCanvasElement;
@@ -40,6 +63,10 @@ export interface SceneEngineInstance {
   pause(): void;
   resume(): void;
   dispose(): void;
+  /** Re-fit camera + drawing buffer. Pass explicit CSS pixel size to skip measuring the canvas. */
+  resize(width?: number, height?: number): void;
+  /** Live audio bus — lets the shell apply mute/volume changes mid-session. */
+  getAudio(): AudioManager;
   getScoreController(): ScoreController;
   subscribeScore(observer: (newValue: number) => void): () => void;
   subscribeFeedback: ObservableFeedback['subscribe'];
@@ -138,20 +165,24 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
     else resume();
   }
 
-  function onResize(): void {
-    const w = opts.canvas.clientWidth || opts.canvas.width;
-    const h = opts.canvas.clientHeight || opts.canvas.height;
-    if (w === 0 || h === 0) return;
+  function resize(width?: number, height?: number): void {
+    const w = width ?? opts.canvas.clientWidth ?? opts.canvas.width;
+    const h = height ?? opts.canvas.clientHeight ?? opts.canvas.height;
+    if (!w || !h) return;
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
     renderer.setSize(w, h, false);
     instance?.onResize?.(w, h);
   }
 
+  function onWindowResize(): void {
+    resize();
+  }
+
   document.addEventListener('visibilitychange', onVisibility);
   window.addEventListener('blur', pause);
   window.addEventListener('focus', resume);
-  window.addEventListener('resize', onResize);
+  window.addEventListener('resize', onWindowResize);
 
   async function start(g: Game3D): Promise<void> {
     if (game) throw new Error('SceneEngine.start: a game is already running. Dispose first.');
@@ -185,6 +216,11 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
     }
     await preloadSharedSfx(audio);
 
+    const prefersReducedMotion = opts.prefersReducedMotion ?? false;
+    // Must happen before `g.init`: games build their opening tweens there, and
+    // 32 of 53 never read `ctx.prefersReducedMotion` themselves.
+    setReducedMotion(prefersReducedMotion);
+
     const ctx = createSceneContext({
       scene, camera, renderer,
       input, audio,
@@ -192,7 +228,7 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
       locale: opts.locale,
       isRTL: opts.isRTL,
       mode: opts.mode ?? 'practice',
-      prefersReducedMotion: opts.prefersReducedMotion ?? false,
+      prefersReducedMotion,
       score, feedback, prompt, controls, status,
       t: opts.t,
       onComplete: (summary) => {
@@ -235,20 +271,23 @@ export function createSceneEngine(opts: SceneEngineOptions): SceneEngineInstance
     document.removeEventListener('visibilitychange', onVisibility);
     window.removeEventListener('blur', pause);
     window.removeEventListener('focus', resume);
-    window.removeEventListener('resize', onResize);
+    window.removeEventListener('resize', onWindowResize);
     instance?.dispose();
     instance = null;
     // Drop any in-flight kit tweens so a disposed game's objects aren't kept alive.
     tweenGroup.getAll().forEach((tw) => tw.stop());
     tweenGroup.removeAll();
+    disposeSceneResources(scene);
     input.dispose?.();
     assetLoader.evict();
+    audio.dispose();
     if (!opts.renderer) renderer.dispose?.();
     game = null;
   }
 
   return {
-    start, pause, resume, dispose,
+    start, pause, resume, dispose, resize,
+    getAudio: () => audio,
     getScoreController: () => score,
     subscribeScore: (o) => score.subscribe(o),
     subscribeFeedback: (o) => feedback.subscribe(o),

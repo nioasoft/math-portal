@@ -3,6 +3,10 @@
     "backToGames": "Back to Games",
     "home": "Home"
   },
+  "hud": {
+    "help": "How to play",
+    "hideHelp": "Hide instructions"
+  },
   "feedback": {
     "correct": "Correct!",
     "incorrect": "Incorrect",
@@ -50,18 +54,16 @@
     "clear": "Clear",
     "check": "Check",
     "checkAnswer": "Check Answer",
-    "numerator": "Num",
-    "denominator": "Den",
+    "numerator": "Numerator",
+    "denominator": "Denominator",
     "whole": "Whole"
   },
   "play": {
     "header": {
       "title": "Math Games",
-      "subtitle": "Choose a topic and start playing!",
-      "back": "← Back"
+      "subtitle": "Choose a topic and start playing!"
     },
     "topics": {
-      "title": "Choose a Topic",
       "math": {
         "title": "Basic Arithmetic",
         "description": "Addition, subtraction, multiplication, and division"
@@ -73,17 +75,6 @@
       "percentage": {
         "title": "Percentages",
         "description": "Calculate percentage of a whole"
-      },
-      "startPlaying": "Start Playing"
-    },
-    "gameModes": {
-      "practice": {
-        "title": "Free Practice",
-        "description": "Practice without time pressure. Infinite exercises, build your correct answer streak and improve your score."
-      },
-      "quiz": {
-        "title": "Timed Quiz",
-        "description": "Race against the clock! 60/90/120 seconds to answer as many exercises as possible. Break records!"
       }
     },
     "footer": {
@@ -94,6 +85,7 @@
       "title": "3D learning games",
       "subtitle": "Explore-and-learn 3D games — no timer, at your own pace",
       "all": "All",
+      "allGrades": "All grades",
       "count": "{n} games",
       "empty": "No games in this topic",
       "quizzesTitle": "Quick quizzes",

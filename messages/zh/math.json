@@ -1,0 +1,64 @@
+{
+  "operations": {
+    "addition": "加法",
+    "subtraction": "减法",
+    "multiplication": "乘法",
+    "division": "除法"
+  },
+  "notation": {
+    "division": "÷",
+    "decimal": ".",
+    "thousands": ","
+  },
+  "labels": {
+    "exercise": "题目",
+    "answer": "答案",
+    "answers": "答案",
+    "range": "范围",
+    "from": "从",
+    "to": "到",
+    "difficulty": "难度",
+    "easy": "简单",
+    "medium": "中等",
+    "hard": "困难",
+    "count": "题目数量",
+    "generate": "生成题目",
+    "print": "打印",
+    "showAnswers": "显示答案",
+    "hideAnswers": "隐藏答案"
+  },
+  "terms": {
+    "numerator": "分子",
+    "denominator": "分母",
+    "fraction": "分数",
+    "mixedNumber": "带分数",
+    "improperFraction": "假分数",
+    "percent": "百分数",
+    "ratio": "比",
+    "decimal": "小数"
+  },
+  "shapes": {
+    "square": "正方形",
+    "rectangle": "长方形",
+    "triangle": "三角形",
+    "circle": "圆",
+    "parallelogram": "平行四边形",
+    "trapezoid": "梯形"
+  },
+  "units": {
+    "length": {
+      "meter": "米",
+      "centimeter": "厘米",
+      "kilometer": "千米"
+    },
+    "weight": {
+      "kilogram": "千克",
+      "gram": "克"
+    },
+    "time": {
+      "hour": "时",
+      "minute": "分",
+      "second": "秒"
+    }
+  }
+}

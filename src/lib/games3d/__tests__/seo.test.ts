@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { locales } from '@/i18n/config';
 import {
   buildGameFaqJsonLd,
   buildGameJsonLd,
@@ -48,10 +49,21 @@ describe('games3d seo helpers', () => {
   });
 
   it('provides localized SEO copy for every supported locale', () => {
+    const keys = Object.keys(getGameSeoCopy('en'));
+    for (const locale of locales) {
+      const copy = getGameSeoCopy(locale) as Record<string, string>;
+      for (const key of keys) {
+        expect(copy[key]?.trim().length, `${locale}.${key}`).toBeGreaterThan(0);
+      }
+      // `grades` is run through interpolate(); a dropped placeholder renders "Best for grades ".
+      expect(copy.grades, `${locale}.grades`).toContain('{from}');
+      expect(copy.grades, `${locale}.grades`).toContain('{to}');
+    }
     expect(getGameSeoCopy('ar').gameType).toContain('ثلاثية');
     expect(getGameSeoCopy('de').practiceTitle).toBe('Was geübt wird');
     expect(getGameSeoCopy('es').faqTitle).toBe('Preguntas frecuentes');
     expect(getGameSeoCopy('ru').relatedTitle).toBe('Связанная практика');
+    expect(getGameSeoCopy('zh').faqTitle).toBe('常见问题');
   });
 
   it('maps game topics to related worksheet pages', () => {

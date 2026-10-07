@@ -1,9 +1,9 @@
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { Gamepad2, ArrowLeft, Sparkles } from 'lucide-react';
-import { getRegisteredGames } from '@/lib/games3d/games';
 import { TopicShelf } from './TopicShelf';
 import { TOPIC_ORDER } from './topicMeta';
+import { getGameCards } from './gameCards';
 import type { GameCardData } from './GameCard';
 
 /**
@@ -12,25 +12,16 @@ import type { GameCardData } from './GameCard';
  * Server component (the registry is server-only). RTL-safe throughout.
  */
 export async function GamesHub() {
-  const games = getRegisteredGames();
   const tHome = await getTranslations('home');
   const tGames = await getTranslations('games3d');
+  const cards = await getGameCards(await getLocale());
 
-  // Group games by topic and resolve their localized card data.
+  // Group the resolved cards by topic.
   const byTopic = new Map<string, GameCardData[]>();
-  for (const g of games) {
-    const suffix = g.meta.i18nKey.replace('games3d.', '');
-    const block = tGames.raw(suffix) as { title?: string } | undefined;
-    const card: GameCardData = {
-      id: g.meta.id,
-      title: block?.title ?? g.meta.id,
-      topic: g.meta.topic,
-      topicLabel: tGames(`topics.${g.meta.topic}`),
-      gradeLabel: tGames('grades', { from: g.meta.gradeRange[0], to: g.meta.gradeRange[1] }),
-    };
-    const list = byTopic.get(g.meta.topic) ?? [];
+  for (const card of cards) {
+    const list = byTopic.get(card.topic) ?? [];
     list.push(card);
-    byTopic.set(g.meta.topic, list);
+    byTopic.set(card.topic, list);
   }
 
   // Order shelves: known topics first (TOPIC_ORDER), then any unexpected ones.
@@ -53,7 +44,7 @@ export async function GamesHub() {
             {tHome('gamesHub.badge')}
           </div>
           <h2 className="mb-3 text-2xl font-black text-slate-800 md:text-4xl text-display">
-            {tHome('gamesHub.title', { count: games.length })}
+            {tHome('gamesHub.title', { count: cards.length })}
           </h2>
           <p className="mx-auto mb-6 max-w-2xl text-base text-slate-600 md:text-lg">
             {tHome('gamesHub.subtitle')}

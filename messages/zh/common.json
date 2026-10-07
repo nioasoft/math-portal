@@ -1,0 +1,167 @@
+{
+  "readMore": "阅读更多",
+  "nav": {
+    "home": "首页",
+    "byGrade": "按年级",
+    "games": "游戏",
+    "interactiveGames": "互动游戏",
+    "help": "家长指南",
+    "blog": "博客",
+    "about": "关于我们",
+    "menu": "菜单",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "selectLanguage": "选择语言",
+    "availableLanguages": "可用语言",
+    "breadcrumb": "面包屑导航",
+    "privacy": "隐私政策",
+    "contact": "联系我们",
+    "editorial": "编辑准则"
+  },
+  "grades": {
+    "grade1": "一年级",
+    "grade2": "二年级",
+    "grade3": "三年级",
+    "grade4": "四年级",
+    "grade5": "五年级",
+    "grade6": "六年级"
+  },
+  "footer": {
+    "home": "首页",
+    "quickNav": "快速导航",
+    "byGrade": "按年级",
+    "topics": "主题",
+    "copyright": "© {year} Tirgul。保留所有权利。",
+    "description": "面向 1-6 年级的互动数学游戏，并提供可打印练习纸用于额外练习。免费且无需注册。",
+    "feature1": "覆盖 1-6 年级课程主题",
+    "feature2": "可自定义难度等级",
+    "feature3": "完全免费，无需注册",
+    "aboutSite": "关于本站：",
+    "aboutDescription": "本站的数学游戏、练习题和练习纸取材于小学课程主题，旨在帮助家长、教师和学生进行自主练习。",
+    "sendFeedback": "发送反馈",
+    "madeWith": "用心打造，只为更好的学习",
+    "addSubtract": "加法与减法",
+    "mulDiv": "乘法与除法",
+    "fractions": "分数",
+    "percentage": "百分数",
+    "geometry": "几何",
+    "units": "单位换算"
+  },
+  "feedback": {
+    "modalTitle": "给我们留言",
+    "close": "关闭",
+    "type": "留言类型",
+    "typeRequired": "留言类型",
+    "typePlaceholder": "选择留言类型",
+    "typeGeneral": "一般反馈",
+    "typeBug": "报告问题",
+    "typeSuggestion": "改进建议",
+    "description": "描述",
+    "descriptionPlaceholder": "告诉我们您的想法……",
+    "email": "回复邮箱",
+    "emailOptional": "选填",
+    "required": "*",
+    "send": "发送反馈",
+    "sending": "发送中……",
+    "successTitle": "感谢您的反馈！",
+    "successMessage": "我们已收到您的留言，会尽快回复。",
+    "feedbackId": "编号：",
+    "errorRequired": "请填写所有必填项",
+    "errorSubmit": "提交反馈时出错",
+    "errorRetry": "提交反馈时出错，请稍后再试"
+  },
+  "siteName": "Tirgul",
+  "contentSection": {
+    "featuresTitle": "可以练习什么？",
+    "benefitsTitle": "为什么使用游戏和练习工具？",
+    "tipsTitle": "陪孩子高效练习的小贴士"
+  },
+  "featuredPosts": {
+    "title": "家长杂志",
+    "subtitle": "帮助孩子取得进步的技巧、文章与教学方法",
+    "allArticles": "全部文章",
+    "readMore": "阅读更多"
+  },
+  "pwa": {
+    "installOnIphone": "安装到 iPhone",
+    "close": "关闭",
+    "step1Title": "点按“分享”按钮",
+    "step1Desc": "位于 Safari 底部",
+    "step2Title": "选择“添加到主屏幕”",
+    "step2Desc": "如有需要请向下滚动",
+    "step3Title": "点按“添加”",
+    "step3Desc": "应用将出现在主屏幕上",
+    "gotIt": "知道了，谢谢！",
+    "installApp": "安装应用",
+    "quickAccess": "从主屏幕快速访问",
+    "install": "安装"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "有问题、建议或反馈？我们非常乐意听到您的声音！",
+    "feedbackTitle": "反馈与建议",
+    "feedbackDesc": "分享您改进本站或新增练习的想法",
+    "bugTitle": "报告问题",
+    "bugDesc": "遇到问题了？告诉我们，我们会尽快修复",
+    "thankYouTitle": "感谢您的联系！",
+    "thankYouMessage": "我们已收到您的留言，会尽快回复。",
+    "feedbackIdLabel": "编号：",
+    "sendAnother": "再发一条留言",
+    "typeLabel": "留言类型",
+    "typePlaceholder": "选择留言类型",
+    "typeGeneral": "一般反馈",
+    "typeBug": "报告问题",
+    "typeSuggestion": "改进建议",
+    "messageLabel": "描述",
+    "messagePlaceholder": "告诉我们能帮您做什么……",
+    "emailLabel": "回复邮箱",
+    "emailOptional": "选填",
+    "emailHint": "如希望我们回复，请留下邮箱",
+    "submitButton": "提交",
+    "submitting": "发送中……",
+    "errorRequired": "请填写所有必填项",
+    "errorSubmit": "提交反馈时出错",
+    "errorRetry": "提交反馈时出错，请稍后再试"
+  },
+  "notFound": {
+    "title": "页面未找到",
+    "description": "您访问的页面似乎不存在。它可能已被移动，或链接有误。",
+    "goHome": "返回首页",
+    "worksheets": "练习纸",
+    "games": "游戏"
+  },
+  "error": {
+    "title": "出错了",
+    "description": "发生了意外错误。请刷新页面或返回首页。",
+    "tryAgain": "重试",
+    "goHome": "返回首页"
+  },
+  "blog": {
+    "backToBlog": "返回博客",
+    "readingTime": "分钟阅读",
+    "relatedGuides": "本主题的家长指南",
+    "readyToPractice": "准备好练习了吗？",
+    "practiceCta": "到我们的生成器创建自定义练习纸",
+    "allGenerators": "全部生成器"
+  },
+  "testimonials": {
+    "title": "家长们怎么说",
+    "items": [
+      {
+        "quote": "这些练习纸让女儿的数学进步很大。好用又多样！",
+        "author": "Sarah M.",
+        "role": "三年级学生的妈妈"
+      },
+      {
+        "quote": "终于有一个练习与课程匹配的网站了。强烈推荐。",
+        "author": "David R.",
+        "role": "两个孩子的爸爸"
+      },
+      {
+        "quote": "不同的难度等级让我能适应每个孩子的学习节奏。",
+        "author": "Lisa T.",
+        "role": "数学私教老师"
+      }
+    ]
+  }
+}

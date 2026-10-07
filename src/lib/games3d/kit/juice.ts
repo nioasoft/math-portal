@@ -9,6 +9,36 @@ import { Tween, Group, Easing } from '@tweenjs/tween.js';
 export const tweenGroup = new Group();
 
 /**
+ * Set by {@link SceneEngine} from `SceneContext.prefersReducedMotion` before the
+ * game is constructed, so every kit tween in all 53 games honours the OS setting
+ * without each game having to read it. Decorative motion (pop, punch, shake,
+ * bob) is skipped outright and its end state applied immediately; motion that
+ * carries game state (value lerps, slides, rotations) is kept but made short and
+ * linear so callers that chain work off `onComplete` still behave.
+ */
+let reducedMotion = false;
+
+export function setReducedMotion(value: boolean): void {
+  reducedMotion = value;
+}
+
+/** A tween that is never added to {@link tweenGroup} and never started. */
+function settled<T extends object>(state: T): Tween<T> {
+  return new Tween(state);
+}
+
+/** Longest duration allowed for a functional tween under reduced motion. */
+const REDUCED_MOTION_MAX_MS = 150;
+
+function motionDuration(ms: number): number {
+  return reducedMotion ? Math.min(ms, REDUCED_MOTION_MAX_MS) : ms;
+}
+
+function motionEasing(easing?: (k: number) => number): (k: number) => number {
+  return reducedMotion ? Easing.Linear.None : (easing ?? Easing.Quadratic.InOut);
+}
+
+/**
  * Animate `obj.scale` from 0 → overshoot → its current target with a bouncy
  * Back ease. Returns the {@link Tween} so the caller can `.stop()` it (e.g. when
  * disposing the object) — never let a tween outlive its target.
@@ -18,6 +48,10 @@ export function popIn(
   opts?: { delay?: number; scale?: number }
 ): Tween<{ s: number }> {
   const target = opts?.scale ?? obj.scale.x ?? 1;
+  if (reducedMotion) {
+    obj.scale.setScalar(target);
+    return settled({ s: target });
+  }
   obj.scale.setScalar(0.001);
   const state = { s: 0.001 };
   const tween = new Tween(state)
@@ -37,6 +71,7 @@ export function popIn(
  */
 export function punch(obj: THREE.Object3D, amount = 0.18): Tween<{ s: number }> {
   const base = obj.scale.x || 1;
+  if (reducedMotion) return settled({ s: base });
   const state = { s: base };
   const tween = new Tween(state)
     .to({ s: base * (1 + amount) }, 110)
@@ -70,9 +105,9 @@ export function tweenTo(
 ): Tween<{ v: number }> {
   const state = { v: from };
   const tween = new Tween(state)
-    .to({ v: to }, durationMs)
+    .to({ v: to }, motionDuration(durationMs))
     .delay(opts?.delay ?? 0)
-    .easing(opts?.easing ?? Easing.Quadratic.InOut)
+    .easing(motionEasing(opts?.easing))
     .onUpdate(() => onUpdate(state.v))
     .onComplete(() => {
       onUpdate(to);
@@ -88,6 +123,7 @@ export function tweenTo(
  * position on completion. Returns the driving {@link Tween}.
  */
 export function shake(obj: THREE.Object3D, intensity = 0.1, ms = 250): Tween<{ t: number }> {
+  if (reducedMotion) return settled({ t: 0 });
   const origin = obj.position.clone();
   const state = { t: 0 };
   const tween = new Tween(state)
@@ -139,9 +175,9 @@ export function spinTo(
   const to = from + radians;
   const state = { angle: from };
   const tween = new Tween(state)
-    .to({ angle: to }, ms)
+    .to({ angle: to }, motionDuration(ms))
     .delay(opts?.delay ?? 0)
-    .easing(opts?.easing ?? Easing.Quadratic.InOut)
+    .easing(motionEasing(opts?.easing))
     .onUpdate(() => {
       obj.rotation[axis] = state.angle;
     })
@@ -166,9 +202,9 @@ export function slideTo(
   const from = obj.position;
   const state = { x: from.x, y: from.y, z: from.z };
   const tween = new Tween(state)
-    .to({ x: target.x, y: target.y, z: target.z }, ms)
+    .to({ x: target.x, y: target.y, z: target.z }, motionDuration(ms))
     .delay(opts?.delay ?? 0)
-    .easing(opts?.easing ?? Easing.Quadratic.InOut)
+    .easing(motionEasing(opts?.easing))
     .onUpdate(() => obj.position.set(state.x, state.y, state.z))
     .onComplete(() => {
       obj.position.copy(target);
@@ -188,6 +224,7 @@ export function float(
   amplitude = 0.15,
   periodMs = 2000
 ): Tween<{ offset: number }> {
+  if (reducedMotion) return settled({ offset: 0 });
   const baseY = obj.position.y;
   const state = { offset: 0 };
   const tween = new Tween(state)

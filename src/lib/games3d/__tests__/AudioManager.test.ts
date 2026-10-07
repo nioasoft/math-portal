@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { createAudioManager } from '../engine/AudioManager';
+import { createAudioManager, preloadSharedSfx } from '../engine/AudioManager';
 
 class FakeAudioBuffer {}
 class FakeBufferSource {
@@ -79,5 +79,61 @@ describe('AudioManager', () => {
     const ctx = (m as any)._debugContext() as FakeAudioContext;
     m.play('click', '/x.ogg');
     expect(ctx.resume).toHaveBeenCalled();
+  });
+
+  it('plays an undecoded sound once its buffer arrives', async () => {
+    const m = createAudioManager();
+    const ctx = (m as any)._debugContext() as FakeAudioContext;
+    m.play('success');
+    expect(ctx.createBufferSource).not.toHaveBeenCalled();
+    await vi.waitFor(() => expect(ctx.createBufferSource).toHaveBeenCalledOnce());
+    const src = ctx.createBufferSource.mock.results[0].value as FakeBufferSource;
+    expect(src.start).toHaveBeenCalled();
+  });
+
+  it('drops a queued sound if muted while it was decoding', async () => {
+    const m = createAudioManager();
+    const ctx = (m as any)._debugContext() as FakeAudioContext;
+    m.play('success');
+    m.setMuted(true);
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    expect(globalThis.fetch).toHaveBeenCalled();
+    expect(ctx.createBufferSource).not.toHaveBeenCalled();
+  });
+
+  it('silences the master bus while muted so looping BGM stops too', async () => {
+    const m = createAudioManager();
+    await m.preload('bg', '/bg.ogg');
+    m.playBGM('bg', '/bg.ogg');
+    const ctx = (m as any)._debugContext() as FakeAudioContext;
+    const master = ctx.createGain.mock.results[0].value as FakeGain;
+    expect(master.gain.value).toBe(1);
+    m.setMuted(true);
+    expect(master.gain.value).toBe(0);
+    m.setMuted(false);
+    expect(master.gain.value).toBe(1);
+  });
+
+  it('closes the audio context on dispose', async () => {
+    const m = createAudioManager();
+    await m.preload('click', '/x.ogg');
+    const ctx = (m as any)._debugContext() as FakeAudioContext;
+    m.dispose();
+    expect(ctx.close).toHaveBeenCalledOnce();
+    expect((m as any)._debugContext()).toBeNull();
+    expect(() => m.play('click', '/x.ogg')).not.toThrow();
+  });
+});
+
+describe('preloadSharedSfx', () => {
+  it('fetches only the shared sounds the shipped games use', async () => {
+    const m = createAudioManager();
+    await preloadSharedSfx(m);
+    const urls = (globalThis.fetch as any).mock.calls.map((call: unknown[]) => call[0]);
+    expect(urls.sort()).toEqual([
+      '/games/_shared/audio/click.ogg',
+      '/games/_shared/audio/fail.ogg',
+      '/games/_shared/audio/success.ogg',
+    ]);
   });
 });

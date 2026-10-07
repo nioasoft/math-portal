@@ -1,5 +1,5 @@
 import type { GameMeta } from './types';
-import { BASE_URL, getLocalizedUrl } from '@/lib/seo';
+import { BASE_URL, getLocalizedUrl, toHreflang } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
 import type { GameFaq } from './gameSeo';
 
@@ -16,6 +16,24 @@ export const topicPracticePath: Record<string, string> = {
   misc: '/play',
 };
 
+/**
+ * Chrome rendered around every game page's SEO blocks. Declared as a
+ * `Record<Locale, …>` so a new locale fails to compile here instead of
+ * silently serving English copy on its game pages.
+ */
+type GameSeoCopy = {
+  gameType: string;
+  grades: string;
+  practiceTitle: string;
+  parentTitle: string;
+  relatedTitle: string;
+  relatedWorksheet: string;
+  relatedGames: string;
+  faqTitle: string;
+  classroomUse: string;
+  playCta: string;
+};
+
 const localizedCopy = {
   he: {
     gameType: 'משחק מתמטיקה תלת-ממדי',
@@ -26,7 +44,6 @@ const localizedCopy = {
     relatedWorksheet: 'דפי עבודה ותרגול בנושא',
     relatedGames: 'משחקים נוספים באותו נושא',
     faqTitle: 'שאלות נפוצות',
-    skillPrefix: 'המשחק מחזק הבנה של',
     classroomUse: 'אפשר לשחק לבד, בזוגות או כהדגמה קצרה לפני דף עבודה בנושא.',
     playCta: 'התחילו במשחק למעלה, ואז המשיכו לתרגול כתוב כדי לבסס את המיומנות.',
   },
@@ -39,7 +56,6 @@ const localizedCopy = {
     relatedWorksheet: 'Worksheets and practice for this topic',
     relatedGames: 'More games in this topic',
     faqTitle: 'Common questions',
-    skillPrefix: 'The game builds understanding of',
     classroomUse: 'Use it for individual practice, paired work, or a short class demonstration before worksheets.',
     playCta: 'Start with the game above, then continue with written practice to reinforce the skill.',
   },
@@ -52,7 +68,6 @@ const localizedCopy = {
     relatedWorksheet: 'أوراق عمل وتدريبات لهذا الموضوع',
     relatedGames: 'ألعاب أخرى في الموضوع نفسه',
     faqTitle: 'أسئلة شائعة',
-    skillPrefix: 'تساعد اللعبة على فهم',
     classroomUse: 'يمكن استخدامها للتدريب الفردي، العمل الثنائي، أو كتمهيد قصير قبل ورقة عمل.',
     playCta: 'ابدأوا باللعبة في الأعلى، ثم تابعوا بتدريب كتابي لترسيخ المهارة.',
   },
@@ -65,7 +80,6 @@ const localizedCopy = {
     relatedWorksheet: 'Arbeitsblätter und Übungen zu diesem Thema',
     relatedGames: 'Weitere Spiele zu diesem Thema',
     faqTitle: 'Häufige Fragen',
-    skillPrefix: 'Das Spiel stärkt das Verständnis von',
     classroomUse: 'Es eignet sich für Einzelarbeit, Partnerarbeit oder eine kurze Einführung vor einem Arbeitsblatt.',
     playCta: 'Starten Sie mit dem Spiel oben und festigen Sie die Fähigkeit anschließend mit schriftlichen Übungen.',
   },
@@ -78,7 +92,6 @@ const localizedCopy = {
     relatedWorksheet: 'Hojas de trabajo y práctica de este tema',
     relatedGames: 'Más juegos de este tema',
     faqTitle: 'Preguntas frecuentes',
-    skillPrefix: 'El juego desarrolla la comprensión de',
     classroomUse: 'Puede usarse para práctica individual, trabajo en parejas o una demostración breve antes de una hoja de trabajo.',
     playCta: 'Empieza con el juego de arriba y continúa con práctica escrita para reforzar la habilidad.',
   },
@@ -91,16 +104,25 @@ const localizedCopy = {
     relatedWorksheet: 'Рабочие листы и задания по этой теме',
     relatedGames: 'Другие игры по этой теме',
     faqTitle: 'Частые вопросы',
-    skillPrefix: 'Игра развивает понимание темы',
     classroomUse: 'Ее можно использовать для самостоятельной работы, работы в парах или короткой демонстрации перед рабочим листом.',
     playCta: 'Начните с игры выше, затем закрепите навык письменными заданиями.',
   },
-} as const;
+  zh: {
+    gameType: '3D 数学游戏',
+    grades: '适合 {from}-{to} 年级',
+    practiceTitle: '孩子练的是什么',
+    parentTitle: '在家或课堂上怎么用',
+    relatedTitle: '相关练习',
+    relatedWorksheet: '本主题的练习册与训练',
+    relatedGames: '本主题的更多游戏',
+    faqTitle: '常见问题',
+    classroomUse: '可以个人练习、两人合作，也可以在发练习纸之前作为课堂上的简短演示。',
+    playCta: '先玩上面的游戏，再做书面练习来巩固这个能力。',
+  },
+} as const satisfies Record<Locale, GameSeoCopy>;
 
-type SeoLocale = keyof typeof localizedCopy;
-
-export function getGameSeoCopy(locale: string) {
-  return localizedCopy[(locale in localizedCopy ? locale : 'en') as SeoLocale];
+export function getGameSeoCopy(locale: Locale) {
+  return localizedCopy[locale];
 }
 
 export function interpolate(template: string, values: Record<string, string | number>): string {
@@ -129,7 +151,7 @@ export function buildGameJsonLd(args: {
     name: title,
     description,
     url,
-    inLanguage: locale,
+    inLanguage: toHreflang(locale),
     learningResourceType: 'Game',
     educationalUse: ['Practice', 'Quiz'],
     educationalLevel: `Grades ${meta.gradeRange[0]}-${meta.gradeRange[1]}`,

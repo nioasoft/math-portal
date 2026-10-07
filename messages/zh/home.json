@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "title": "数学练习册与",
+    "titleHighlight": "游戏",
+    "description": "打印自定义数学练习册——或者玩互动数学游戏。",
+    "descriptionLine2": "适合 1-6 年级。选择主题、自定义难度，打印或游玩——全部",
+    "free": "免费",
+    "trustPrint": "直接打印",
+    "trustNoSignup": "无需注册",
+    "trustFree": "100% 免费",
+    "worksheetCard": {
+      "title": "可打印练习册",
+      "desc": "游戏之后的书面巩固练习",
+      "cta": "开始生成"
+    },
+    "gamesCard": {
+      "title": "互动游戏",
+      "desc": "玩数学游戏，在快乐中学习！",
+      "cta": "开始玩！"
+    }
+  },
+  "quickGames": {
+    "title": "开始玩！",
+    "subtitle": "互动数学游戏"
+  },
+  "generators": {
+    "title": "可打印数学练习册",
+    "subtitle": "选择主题、设置难度，打印一份现成的练习册——附带答案页。",
+    "cta": "生成练习册",
+    "addSubtract": {
+      "title": "加法与减法",
+      "desc": "20 以内、100 以内以及更大的数"
+    },
+    "mulDiv": {
+      "title": "乘法与除法",
+      "desc": "乘法口诀、长除法与乘方"
+    },
+    "fractions": {
+      "title": "分数",
+      "desc": "从入门到进阶，约分与通分"
+    },
+    "geometry": {
+      "title": "几何",
+      "desc": "面积、周长与多边形"
+    },
+    "percentage": {
+      "title": "百分数",
+      "desc": "百分数计算、折扣与利息"
+    },
+    "units": {
+      "title": "单位换算",
+      "desc": "长度、重量与时间"
+    }
+  },
+  "grades": {
+    "label": "按年级：",
+    "grade": "年级"
+  },
+  "help": {
+    "badge": "家长指南",
+    "title": "如何辅导孩子？",
+    "subtitle": "简单的讲解、详细的例题与实用建议",
+    "cta": "查看全部指南"
+  },
+  "whyUs": {
+    "title": "为什么家长和老师选择",
+    "titleHighlight": "Tirgul？",
+    "feature1": {
+      "title": "为每个孩子量身定做",
+      "desc": "与标准练习本不同，这里由你决定难度。从简单开始，逐步加大挑战。"
+    },
+    "feature2": {
+      "title": "练习无限量",
+      "desc": "练习本做完了？还想多练乘法口诀？点一下就能生成新的练习册。"
+    },
+    "feature3": {
+      "title": "即刻打印",
+      "desc": "无需注册，无需付费。选好主题、设定难度，直接在浏览器里打印。"
+    }
+  },
+  "preview": {
+    "title": "加法与减法练习",
+    "subtitle": "100 以内的数 | 难度：中等",
+    "name": "姓名：",
+    "class": "班级：",
+    "tipLabel": "提示：",
+    "tip": "进位加法时，别忘了给左边一列加上 1！",
+    "answerSheet": "单独的答案页"
+  },
+  "gamesHub": {
+    "badge": "互动游戏",
+    "title": "{count} 款 3D 学习游戏",
+    "subtitle": "练习算术、几何、分数等内容——直接在浏览器里玩，无需下载",
+    "cta": "立即开玩",
+    "trust": "免费 · 无需注册 · 支持任何设备",
+    "showAll": "全部",
+    "empty": "暂无可用游戏"
+  },
+  "howItWorks": {
+    "title": "使用步骤",
+    "step1": {
+      "title": "选择主题",
+      "desc": "按年级和主题挑选练习册或游戏。"
+    },
+    "step2": {
+      "title": "自定义",
+      "desc": "设置难度、数字范围和题目数量。"
+    },
+    "step3": {
+      "title": "打印或游玩",
+      "desc": "打印一份带答案页的练习册——或者在线玩。"
+    }
+  }
+}

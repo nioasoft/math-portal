@@ -11,7 +11,18 @@
   "resume": "Resume Game",
   "newBest": "New Best!",
   "bestStreak": "Best Streak",
+  "bestScore": "Best score",
   "stars": "{count} Stars",
+  "difficultyLevel": "Level {level} of {max}",
+  "duration": "{minutes} min",
+  "scrollNext": "Scroll forward",
+  "scrollPrev": "Scroll back",
+  "relatedTitle": "More games like this",
+  "gradeGamesTitle": "Games for this grade",
+  "gradeGamesAll": "See all games",
+  "topicGamesTitle": "Games for this topic",
+  "topicGamesSubtitle": "Interactive practice before or after the worksheet",
+  "topicGamesAll": "All 3D games",
   "loadingTips": [
     "Did you know? Zero is both even and not positive!",
     "A rainbow is always round — because it's part of a circle!",
@@ -272,7 +283,7 @@
       ],
       "skills": "Place Value Builder develops the understanding that each digit's position determines its value: a 3 in the hundreds column is worth 300, not 3. Students practise composing multi-digit numbers from their constituent parts and see regrouping as a natural consequence of the base-ten system.",
       "example": "To build 234: add 2 hundreds-flats, 3 ten-rods, and 4 ones-cubes. The warehouse shows 200+30+4 stacked separately, then Check confirms the combined value is 234.",
-      "mistakes": "Students often enter the digit, not the value — placing 2 ones when asked for 234 because the digit '4' is the one they see last. The warehouse's colour-coded columns (blue for hundreds, yellow for tens, red for ones) train them to read each digit in its correct column before placing blocks.",
+      "mistakes": "Students often enter the digit, not the value — asked for 234, they drop in 2 one-cubes because '2' reads as 'two things' rather than 'two hundreds'. The warehouse's colour-coded columns (red for hundreds, blue for tens, yellow for ones) train them to find the right column for each digit before placing any blocks.",
       "faqs": [
         {
           "q": "How does Place Value Builder differ from Exploding Dots?",
@@ -402,7 +413,7 @@
         "Press Check once the scale is balanced."
       ],
       "skills": "Balance Scale builds the foundational understanding of equality — that both sides of an equals sign must hold the same value. Students practice mental addition and decomposition while the visual feedback of a levelling beam makes each correct answer immediately satisfying.",
-      "example": "The left pan holds cubes worth 3 + 7 + 5 = 15. Students add weights to the right: two 5s and one 10 give 20 — too heavy. Swap one 5 for nothing and add a 1 and a 2 to reach 15. The beam levels.",
+      "example": "The left pan holds cubes worth 3 + 7 + 5 = 15. Students add weights to the right: two 5s and one 10 give 20 — too heavy. Remove one 5 and the right pan also totals 15, so the beam levels. A 10 with two 2s and a 1 works too — any combination that totals 15 is accepted.",
       "mistakes": "Students often overshoot and keep adding weights when the beam has already tipped past level. Learning to remove weights (decrease) is as important as adding, and the game requires both directions of adjustment.",
       "faqs": [
         { "q": "Which grade range is Balance Scale aimed at?", "a": "Grades 2–5, where students practise addition, mental arithmetic, and early equation concepts with increasing number sizes." },

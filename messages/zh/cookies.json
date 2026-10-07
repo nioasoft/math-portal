@@ -1,0 +1,18 @@
+{
+  "message": "我们使用 Cookie 来提升浏览体验并展示个性化广告。",
+  "learnMore": "隐私政策",
+  "acceptAll": "全部接受",
+  "necessaryOnly": "仅必要",
+  "settings": "设置",
+  "savePreferences": "保存偏好",
+  "categories": {
+    "necessary": "必要 Cookie",
+    "necessaryDesc": "网站正常运行所必需",
+    "functional": "功能性 Cookie",
+    "functionalDesc": "记住语言等偏好设置",
+    "analytics": "分析 Cookie",
+    "analyticsDesc": "帮助我们了解网站的使用情况",
+    "marketing": "营销 Cookie",
+    "marketingDesc": "用于展示相关广告"
+  }
+}

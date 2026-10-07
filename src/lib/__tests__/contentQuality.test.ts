@@ -55,6 +55,16 @@ describe('countWords', () => {
   it('counts non-Latin scripts by whitespace', () => {
     expect(countWords('שלום עולם מתמטיקה')).toBe(3);
   });
+  it('counts Chinese ideographs individually — zh has no word spaces', () => {
+    expect(countWords('你好世界')).toBe(4);
+    expect(countWords('<p>分数是数学的重要主题。</p>')).toBe(10);
+  });
+  it('does not let CJK punctuation inflate the count', () => {
+    expect(countWords('你好，世界！')).toBe(4);
+  });
+  it('adds spaced tokens to the ideograph count', () => {
+    expect(countWords('用 3D 游戏练习分数')).toBe(8);
+  });
 });
 
 describe('isSubstantialBlogPost', () => {
@@ -65,6 +75,10 @@ describe('isSubstantialBlogPost', () => {
   });
   it('accepts a post at/over the threshold', () => {
     const body = `<p>${Array(MIN_BLOG_WORDS).fill('word').join(' ')}</p>`;
+    expect(isSubstantialBlogPost(makeBlogPost(body))).toBe(true);
+  });
+  it('accepts a Chinese post of the same length in ideographs', () => {
+    const body = `<p>${'数'.repeat(MIN_BLOG_WORDS)}</p>`;
     expect(isSubstantialBlogPost(makeBlogPost(body))).toBe(true);
   });
 });

@@ -212,6 +212,8 @@ export interface AudioManager {
   isMuted(): boolean;
   setMuted(muted: boolean): void;
   preload(key: string, url: string): Promise<void>;
+  /** Stop all playback and close the AudioContext. Browsers cap live contexts (~6). */
+  dispose(): void;
 }
 
 // =========== Assets ============

@@ -1,9 +1,13 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import {
   getGame3DBestScore,
   setGame3DBestScore,
   getMutePreference,
   setMutePreference,
+  getAudioPrefs,
+  getServerAudioPrefs,
+  setAudioPrefs,
+  subscribeAudioPrefs,
 } from '../storage';
 
 describe('storage 3D extensions', () => {
@@ -45,5 +49,35 @@ describe('storage 3D extensions', () => {
     expect(() => setGame3DBestScore('x', 1)).not.toThrow();
     expect(getMutePreference()).toBe(false);
     globalThis.localStorage = original;
+  });
+});
+
+describe('audio preference store', () => {
+  beforeEach(() => localStorage.clear());
+
+  it('serves a fixed default snapshot for server rendering', () => {
+    expect(getServerAudioPrefs()).toEqual({ muted: false, volume: 1 });
+  });
+
+  it('reflects stored preferences with a stable identity between reads', () => {
+    setMutePreference(true);
+    const snapshot = getAudioPrefs();
+    expect(snapshot).toEqual({ muted: true, volume: 1 });
+    expect(getAudioPrefs()).toBe(snapshot);
+  });
+
+  it('writes through to localStorage and notifies subscribers', () => {
+    const listener = vi.fn();
+    const unsubscribe = subscribeAudioPrefs(listener);
+
+    setAudioPrefs({ volume: 0.4 });
+    expect(localStorage.getItem('tirgul.games3d.volume')).toBe('0.4');
+    expect(getAudioPrefs()).toEqual({ muted: false, volume: 0.4 });
+    expect(listener).toHaveBeenCalledOnce();
+
+    unsubscribe();
+    setAudioPrefs({ muted: true });
+    expect(getMutePreference()).toBe(true);
+    expect(listener).toHaveBeenCalledOnce();
   });
 });

@@ -1,14 +1,10 @@
 {
   "hero": {
-    "badge": "44 juegos de matemáticas en 3D",
     "title": "Hojas y juegos de",
     "titleHighlight": "matemáticas",
     "description": "Imprime hojas de ejercicios de matemáticas personalizadas — o juega a juegos interactivos.",
     "descriptionLine2": "Para grados 1-6. Elige un tema, personaliza, imprime o juega — todo",
     "free": "Gratis",
-    "cta": "Empezar a Jugar",
-    "ctaSecondary": "¿Cómo funciona?",
-    "ctaGames": "🎮 Juegos de Matemáticas",
     "trustPrint": "Impresión Directa",
     "trustNoSignup": "Sin Registro",
     "trustFree": "100% Gratis",
@@ -52,11 +48,6 @@
       "desc": "Longitud, peso y tiempo"
     }
   },
-  "games": {
-    "title": "Juegos de Matemáticas",
-    "subtitle": "¡Aprende aritmética, fracciones y geometría jugando!",
-    "cta": "Todos los Juegos de Matemáticas"
-  },
   "grades": {
     "label": "Por Grado:",
     "grade": "Grado"
@@ -92,26 +83,6 @@
     "tip": "Al sumar con acarreo, ¡recuerda agregar 1 a la columna de la izquierda!",
     "answerSheet": "Hoja de respuestas separada"
   },
-  "topics": {
-    "title": "Temas",
-    "math": "Matemáticas",
-    "fractions": "Fracciones",
-    "geometry": "Geometría",
-    "percentage": "Porcentajes",
-    "decimals": "Decimales",
-    "ratio": "Razones",
-    "units": "Unidades de Medida",
-    "series": "Secuencias",
-    "wordProblems": "Problemas de Palabras"
-  },
-  "features": {
-    "free": "Gratis",
-    "freeDesc": "Sin costo y sin registro",
-    "print": "Imprimible",
-    "printDesc": "Hojas de trabajo diseñadas para imprimir",
-    "interactive": "Interactivo",
-    "interactiveDesc": "Juegos de matemáticas y ejercicios en línea"
-  },
   "gamesHub": {
     "badge": "Juegos interactivos",
     "title": "{count} juegos de aprendizaje en 3D",
@@ -123,13 +94,7 @@
   },
   "quickGames": {
     "title": "¡A jugar!",
-    "subtitle": "Juegos de matemáticas interactivos",
-    "math": "Matemáticas",
-    "mathDesc": "Suma y resta",
-    "fractions": "Fracciones",
-    "fractionsDesc": "Fracciones simples",
-    "percentage": "Porcentajes",
-    "percentageDesc": "Calcular porcentajes"
+    "subtitle": "Juegos de matemáticas interactivos"
   },
   "howItWorks": {
     "title": "Cómo funciona",

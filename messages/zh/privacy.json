@@ -1,0 +1,75 @@
+{
+  "backHome": "返回首页",
+  "title": "隐私政策",
+  "lastUpdated": "最后更新：2026 年 1 月",
+  "intro": {
+    "heading": "引言",
+    "text": "“Tirgul” 网站（以下简称“本网站”）致力于保护您的隐私。本隐私政策说明我们如何收集、使用和保护您的信息。"
+  },
+  "collection": {
+    "heading": "信息收集",
+    "intro": "本网站收集以下类型的信息：",
+    "technical": "技术信息：",
+    "technicalDesc": "IP 地址、浏览器类型、操作系统、浏览的页面以及访问时间。",
+    "cookies": "Cookie：",
+    "cookiesDesc": "存储在您设备上的小文件，用于改善浏览体验。",
+    "analytics": "分析信息：",
+    "analyticsDesc": "通过 Google Analytics 等分析工具收集的匿名使用数据。"
+  },
+  "usage": {
+    "heading": "信息的使用",
+    "intro": "所收集的信息用于：",
+    "improve": "改善用户在本网站上的体验",
+    "analyze": "分析使用模式并改进内容",
+    "ads": "展示相关广告",
+    "legal": "遵守法律要求"
+  },
+  "advertising": {
+    "heading": "广告",
+    "para1": "本网站使用第三方广告服务，包括 Google AdSense。这些服务方可能使用 Cookie，根据您此前访问本站或其他网站的情况展示广告。",
+    "para2": "Google 使用 Cookie 根据您此前访问本站及其他网站的情况展示广告。您可以访问以下页面选择退出 Google 的个性化广告：",
+    "googleAdsSettings": "Google 广告设置"
+  },
+  "cookiesSection": {
+    "heading": "Cookie",
+    "intro": "本网站使用以下类型的 Cookie：",
+    "essential": "必要 Cookie：",
+    "essentialDesc": "网站基本运行所必需，无法禁用。",
+    "functional": "功能性 Cookie：",
+    "functionalDesc": "记住界面语言等偏好设置。",
+    "analytics": "分析 Cookie：",
+    "analyticsDesc": "帮助我们了解访客如何使用本网站（Google Analytics）。",
+    "advertising": "广告 Cookie：",
+    "advertisingDesc": "用于展示相关广告（Google AdSense）。",
+    "consent": "管理 Cookie 偏好",
+    "consentIntro": "首次访问本网站时，您会看到 Cookie 同意提示。您可以：",
+    "consentAcceptAll": "接受所有 Cookie",
+    "consentNecessary": "仅接受必要 Cookie",
+    "consentCustom": "按类别自定义偏好",
+    "consentChange": "您可以随时在浏览器中删除 'cookie_consent' Cookie 并刷新页面来更改偏好。"
+  },
+  "sharing": {
+    "heading": "信息共享",
+    "text": "除提供服务所必需或法律要求外，我们不会向第三方出售、出租或共享个人信息。"
+  },
+  "security": {
+    "heading": "信息安全",
+    "text": "我们采取合理的安全措施保护所收集的信息。但任何通过互联网传输的方式都无法做到 100% 安全。"
+  },
+  "userRights": {
+    "heading": "用户权利",
+    "intro": "您有权：",
+    "request": "要求了解我们收集的关于您的数据",
+    "correction": "要求更正或删除信息",
+    "object": "反对将信息用于营销目的"
+  },
+  "changes": {
+    "heading": "政策变更",
+    "text": "我们可能会不时更新本政策。任何变更都会在本页面发布，并注明最后更新日期。"
+  },
+  "contact": {
+    "heading": "联系方式",
+    "text": "如对本隐私政策有疑问，可通过以下方式联系我们：",
+    "contactLink": "联系我们"
+  }
+}

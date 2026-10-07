@@ -4,8 +4,7 @@ import { join } from 'node:path';
 import { isCompleteGameSeo, type GameSeo } from '../gameSeo';
 import { buildGameFaqJsonLd } from '../seo';
 import { getRegisteredGames } from '../games';
-
-const LOCALES = ['he', 'en', 'ar', 'de', 'es', 'ru'] as const;
+import { locales as LOCALES } from '@/i18n/config';
 
 // camelCase i18n keys for the 4 fractions games (this task's scope).
 const FRACTIONS_KEYS = ['fractionBuild', 'fractionNumberLine', 'fractionSlice', 'fractionStrip'];
@@ -169,6 +168,7 @@ describe('non-latin script sanity', () => {
     { locale: 'he', label: 'Hebrew', regex: /[֐-׿]/ },
     { locale: 'de', label: 'German-specific (äöüßÄÖÜ)', regex: /[äöüßÄÖÜ]/ },
     { locale: 'es', label: 'Spanish accent/ñ', regex: /[áéíóúñ¿¡ÁÉÍÓÚÑ]/ },
+    { locale: 'zh', label: 'CJK ideograph', regex: /[\u4e00-\u9fff]/ },
   ];
 
   for (const { locale, label, regex } of scriptChecks) {

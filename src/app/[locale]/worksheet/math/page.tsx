@@ -3,7 +3,7 @@ import WorksheetClient from '@/components/worksheet/WorksheetClient';
 import { FeaturedTopicGames } from '@/components/games3d/FeaturedTopicGames';
 import { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels } from '@/lib/seo';
+import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta, getOrganizationName, getEducationalLevels, toHreflang } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -54,7 +54,7 @@ export default async function MathWorksheetPage({ params }: { params: Promise<{ 
         "name": t('pages.worksheet.title'),
         "description": t('pages.worksheet.description'),
         "url": `https://www.tirgul.net${locale !== 'he' ? `/${locale}` : ''}/worksheet/math`,
-        "inLanguage": locale,
+        "inLanguage": toHreflang(locale as Locale),
         "learningResourceType": "Worksheet",
         "educationalLevel": eduLevels,
         "educationalUse": "Practice",

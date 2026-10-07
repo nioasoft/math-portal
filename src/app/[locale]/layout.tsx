@@ -2,14 +2,14 @@ import type { Metadata, Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { Assistant, Noto_Sans_Arabic, Inter } from "next/font/google";
+import { Assistant, Noto_Sans_Arabic, Noto_Sans_SC, Inter } from "next/font/google";
 import "../globals.css";
 import { PWAInstallBanner } from "@/components/PWAInstallBanner";
 import { CookieConsent } from "@/components/CookieConsent";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { GoogleAdsense } from "@/components/GoogleAdsense";
 import { locales, localeConfig, defaultLocale, type Locale } from "@/i18n/config";
-import { BASE_URL, getSiteName, getOrganizationName, getEducationalLevels } from "@/lib/seo";
+import { BASE_URL, getSiteName, getOrganizationName, getEducationalLevels, toHreflang } from "@/lib/seo";
 
 const assistant = Assistant({
   subsets: ["latin", "hebrew"],
@@ -32,6 +32,15 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
+// Simplified Chinese: Google only exposes a `latin` subset here, but the
+// generated CSS still carries every CJK slice behind its own unicode-range.
+const notoSansSC = Noto_Sans_SC({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-noto-sc",
+  weight: ["400", "500", "700", "900"],
+});
+
 export const viewport: Viewport = {
   themeColor: "#f97316",
   width: "device-width",
@@ -45,6 +54,7 @@ const fontByLocale: Record<Locale, string> = {
   de: `font-locale-latin ${inter.variable}`,
   es: `font-locale-latin ${inter.variable}`,
   ru: `font-locale-latin ${inter.variable}`,
+  zh: `font-locale-zh ${notoSansSC.variable}`,
 };
 
 export function generateStaticParams() {
@@ -197,11 +207,11 @@ export default async function LocaleLayout({
       "@type": "Country",
       name: "Israel",
     },
-    knowsLanguage: ["he", "en", "ar", "de", "es", "ru"],
+    knowsLanguage: locales.map(toHreflang),
     availableLanguage: locales.map((l) => ({
       "@type": "Language",
       name: localeConfig[l].name,
-      alternateName: l,
+      alternateName: toHreflang(l),
     })),
   };
 
@@ -210,7 +220,7 @@ export default async function LocaleLayout({
     "@type": "WebSite",
     name: orgName,
     url: "https://www.tirgul.net",
-    inLanguage: locale,
+    inLanguage: toHreflang(locale as Locale),
   };
 
   const educationalOrganizationSchema = {
@@ -231,7 +241,7 @@ export default async function LocaleLayout({
       "@type": "Country",
       name: "Israel",
     },
-    inLanguage: locale,
+    inLanguage: toHreflang(locale as Locale),
   };
 
   // Safely serialize JSON for script tags
@@ -240,7 +250,7 @@ export default async function LocaleLayout({
   const eduSchemaJson = JSON.stringify(educationalOrganizationSchema);
 
   return (
-    <html lang={locale} dir={dir} className={fontVar}>
+    <html lang={toHreflang(locale as Locale)} dir={dir} className={fontVar}>
       <head>
         <script
           type="application/ld+json"

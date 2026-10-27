@@ -6,9 +6,9 @@
   },
   "controls": {
     "print": "Print",
-    "refresh": "Refresh",
-    "showAnswers": "Show Answers",
-    "hideAnswers": "Hide Answers",
+    "refresh": "New exercises",
+    "showAnswers": "Include answer pages",
+    "hideAnswers": "Remove answer pages",
     "settings": "Settings",
     "problemCount": "Number of problems",
     "selectOperation": "Select operation",
@@ -155,6 +155,24 @@
         "Drawing helps! Encourage your child to draw the problem before writing the equation.",
         "Ask at the end: 'Does the answer make sense?'. If Danny ended up with a million apples, there's probably a mistake."
       ]
+    },
+    "engine": {
+      "addition": [
+        "A box has {a} pencils. We add {b} more pencils. How many pencils are in the box now?",
+        "There are {a} books on a shelf. We add {b} more. How many books are on the shelf now?"
+      ],
+      "subtraction": [
+        "A basket has {a} apples. We take out {b} apples. How many apples are left?",
+        "A shop has {a} balls and sells {b}. How many balls are left?"
+      ],
+      "multiplication": [
+        "There are {b} boxes with {a} pencils in each box. How many pencils are there altogether?",
+        "A ticket costs {a} coins. How many coins do {b} tickets cost?"
+      ],
+      "division": [
+        "We share {a} stickers equally among {b} children. How many stickers does each child get?",
+        "We put {a} books equally on {b} shelves. How many books are on each shelf?"
+      ]
     }
   },
   "series": {
@@ -168,8 +186,8 @@
       "hard": "Hard"
     },
     "showHide": {
-      "show": "Show",
-      "hide": "Hide"
+      "show": "Include answer pages",
+      "hide": "Remove answer pages"
     },
     "help": "Explanations",
     "rule": "Pattern:",
@@ -231,8 +249,8 @@
       "days": "days"
     },
     "showHide": {
-      "show": "Show",
-      "hide": "Hide"
+      "show": "Include answer pages",
+      "hide": "Remove answer pages"
     },
     "help": "Explanations",
     "content": {
@@ -430,5 +448,20 @@
   },
   "empty": {
     "message": "No problems were generated. Try again."
+  },
+  "document": {
+    "all": "All exercises ({count})",
+    "onePage": "One page ({count} exercises)",
+    "summary": "{count} exercises · {pages} practice pages · {answers} answer pages",
+    "printHint": "Print on A4 at 100% scale, with browser headers and footers off. Answer pages are included separately only when selected.",
+    "page": "Page {page} of {pages}",
+    "customTitle": "Custom title",
+    "childName": "Child’s name",
+    "optional": "Optional",
+    "spacious": "Extra writing space — fewer exercises per page",
+    "answersOnly": "Print answers only",
+    "loading": "Preparing your worksheet…",
+    "circleHint": "For circles, use the calculator π key and round to two decimal places. Diagrams are not to scale.",
+    "printError": "We could not open the print dialog. Try again or use Print in your browser menu."
   }
 }

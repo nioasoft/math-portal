@@ -3,11 +3,12 @@
 import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { usePersistentToggle } from '@/lib/useWorksheetPrefs';
+import { useWorksheetProblems } from '@/lib/useWorksheetProblems';
+import { useWorksheetPrint } from '@/lib/useWorksheetPrint';
+import { WorksheetDocument } from './WorksheetDocument';
 import { WorksheetActionBar } from '@/components/worksheet/WorksheetActionBar';
 import ContentSection from '@/components/ContentSection';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { trackPrintEvent } from '@/lib/analytics';
 import { useTranslations } from 'next-intl';
 
 interface RatioProblem {
@@ -49,26 +50,23 @@ function createProblems(): RatioProblem[] {
 export default function RatioClient() {
     const t = useTranslations('worksheet');
     const metaT = useTranslations('meta');
-    const [problems, setProblems] = useState<RatioProblem[]>(() => createProblems());
-    const [showAnswers, setShowAnswers] = usePersistentToggle('showAnswers');
+    const [problems, setProblems] = useWorksheetProblems(() => createProblems());
+    const [showAnswers, setShowAnswers] = useState(false);
 
     const regenerateProblems = () => {
         setProblems(createProblems());
     };
 
-    const onPrint = () => {
-        trackPrintEvent({ worksheet_type: 'ratio' });
-        window.print();
-    };
+    const { onPrint, printing, printError } = useWorksheetPrint({ worksheet_type: 'ratio' });
 
     return (
-        <div className="min-h-screen bg-slate-100 font-sans text-slate-900 pb-20 print:bg-white">
+        <div className="worksheet-workspace min-h-screen bg-slate-100 text-slate-900 pb-20 print:bg-white">
             <div className="bg-white border-b border-slate-200 sticky top-0 z-40 print:hidden shadow-sm">
                 <div className="container-custom py-4 flex flex-wrap items-center justify-between gap-4">
                     {/* Header similar to others */}
                     <div className="flex items-center gap-4">
-                        <Link href="/" className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition text-slate-900">
-                            <ArrowLeft size={20} />
+                        <Link href="/worksheet" aria-label={metaT('breadcrumb.worksheets')} className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition text-slate-900">
+                            <ArrowLeft size={20} className="rtl:rotate-180" />
                         </Link>
                         <h1 className="text-xl font-bold text-slate-800">{t('ratio.title')}</h1>
                     </div>
@@ -81,9 +79,10 @@ export default function RatioClient() {
                             onClick={() => setShowAnswers(!showAnswers)}
                             className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition shadow-sm ${showAnswers ? 'bg-amber-100 text-amber-700 border border-amber-200' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}
                             aria-pressed={showAnswers}
+                            aria-label={showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}
                         >
                             {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
-                            <span className="hidden sm:inline">{showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}</span>
+                            <span>{showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}</span>
                         </button>
                     </div>
                     <Link
@@ -91,14 +90,15 @@ export default function RatioClient() {
                         className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-emerald-200 transition shadow-sm"
                     >
                         <HelpCircle size={16} aria-hidden="true" />
-                        <span className="hidden sm:inline">{t('controls.helpForParents')}</span>
+                        <span>{t('controls.helpForParents')}</span>
                     </Link>
-                    <button onClick={onPrint} className="bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-slate-800 flex items-center gap-2 font-bold">
+                    <button onClick={onPrint} disabled={printing || problems.length === 0} className="bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-slate-800 flex items-center gap-2 font-bold">
                         <Printer size={16} aria-hidden="true" /> <span>{t('controls.print')}</span>
                     </button>
                 </div>
             </div>
 
+            {printError && <p role="alert" className="container-custom py-3 text-red-700 print:hidden">{t('document.printError')}</p>}
             {/* Breadcrumbs */}
             <div className="container-custom py-3 print:hidden">
                 <Breadcrumb
@@ -112,21 +112,18 @@ export default function RatioClient() {
 
             <WorksheetActionBar count={problems.length} onRefresh={regenerateProblems} />
 
-            <div className="w-full overflow-x-auto pb-12 print:pb-0 print:overflow-visible custom-scrollbar">
-                <div className="min-w-[210mm] max-w-[210mm] mx-auto mt-8 bg-white shadow-xl min-h-[297mm] p-[20mm] print:p-[10mm] print:shadow-none print:mt-0 print:mx-0 print:w-full print:min-h-0 print:h-auto print:overflow-visible">
-                    <div className="text-center border-b-2 border-slate-100 pb-8 mb-12 print:mb-4 print:pb-2 print:border-b">
-                        <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">{t('ratio.worksheetTitle')}</h2>
-                        <p className="text-slate-500 print:hidden">{t('ratio.instruction')}</p>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-y-16 gap-x-20" dir="ltr">
-                        {problems.map((prob) => {
+            <WorksheetDocument title={t('ratio.worksheetTitle')} instruction={t('ratio.instruction')}
+                items={problems} perPage={10} variant="ratio" includeAnswers={showAnswers}
+                renderPage={(pageItems, showAnswers, offset) => (
+                    <div className="worksheet-grid">
+                        {pageItems.map((prob, index) => {
                             const c = prob.a * prob.factor;
                             const d = prob.b * prob.factor;
                             // numbers array: [a, b, c, d] for a:b = c:d
                             const nums = [prob.a, prob.b, c, d];
                             return (
-                                <div key={prob.id} className="break-inside-avoid page-break-inside-avoid flex items-center justify-center text-3xl font-bold font-mono">
+                                <div key={prob.id} dir="ltr" className="worksheet-problem flex items-center justify-center text-3xl font-bold font-mono">
+                                    <span className="worksheet-number">{offset + index + 1}</span>
                                     {/* a : b = c : d */}
                                     <span className={prob.missingIndex === 0 && showAnswers ? 'text-red-600' : ''}>
                                         {prob.missingIndex === 0 ? (showAnswers ? nums[0] : '___') : nums[0]}
@@ -149,12 +146,8 @@ export default function RatioClient() {
                             );
                         })}
                     </div>
-
-                    <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
-                        {t('print.copyright')}
-                    </div>
-                </div>
-            </div>
+                )}
+            />
 
             <ContentSection
                 title={t('ratio.content.title')}

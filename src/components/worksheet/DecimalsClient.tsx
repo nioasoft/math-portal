@@ -4,12 +4,15 @@
 import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { usePersistentToggle } from '@/lib/useWorksheetPrefs';
+import { useWorksheetProblems } from '@/lib/useWorksheetProblems';
+import { useWorksheetPrint } from '@/lib/useWorksheetPrint';
+import { WorksheetDocument } from './WorksheetDocument';
 import { WorksheetActionBar } from '@/components/worksheet/WorksheetActionBar';
 import ContentSection from '@/components/ContentSection';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { trackPrintEvent } from '@/lib/analytics';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import { getMathNotation } from '@/lib/math-notation';
+import type { Locale } from '@/i18n/config';
 
 interface MathProblem {
     id: string;
@@ -51,27 +54,26 @@ function createProblems(): MathProblem[] {
 
 export default function DecimalsClient() {
     const t = useTranslations('worksheet');
+    const locale = useLocale() as Locale;
+    const decimal = (value: number) => value.toFixed(2).replace('.', getMathNotation(locale).decimal);
     const metaT = useTranslations('meta');
-    const [problems, setProblems] = useState<MathProblem[]>(() => createProblems());
-    const [showAnswers, setShowAnswers] = usePersistentToggle('showAnswers');
+    const [problems, setProblems] = useWorksheetProblems(() => createProblems());
+    const [showAnswers, setShowAnswers] = useState(false);
 
     const regenerateProblems = () => {
         setProblems(createProblems());
     };
 
-    const onPrint = () => {
-        trackPrintEvent({ worksheet_type: 'decimals' });
-        window.print();
-    };
+    const { onPrint, printing, printError } = useWorksheetPrint({ worksheet_type: 'decimals' });
 
     return (
-        <div className="min-h-screen bg-slate-100 font-sans text-slate-900 pb-20 print:bg-white">
+        <div className="worksheet-workspace min-h-screen bg-slate-100 text-slate-900 pb-20 print:bg-white">
             {/* Header */}
             <div className="bg-white border-b border-slate-200 sticky top-0 z-40 print:hidden shadow-sm">
                 <div className="container-custom py-4 flex flex-wrap items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
-                        <Link href="/" className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
-                            <ArrowLeft size={20} />
+                        <Link href="/worksheet" aria-label={metaT('breadcrumb.worksheets')} className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
+                            <ArrowLeft size={20} className="rtl:rotate-180" />
                         </Link>
                         <h1 className="text-xl font-bold text-slate-800">{t('decimals.title')}</h1>
                     </div>
@@ -84,9 +86,10 @@ export default function DecimalsClient() {
                             onClick={() => setShowAnswers(!showAnswers)}
                             className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition shadow-sm ${showAnswers ? 'bg-amber-100 text-amber-700 border border-amber-200' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}
                             aria-pressed={showAnswers}
+                            aria-label={showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}
                         >
                             {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
-                            <span className="hidden sm:inline">{showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}</span>
+                            <span>{showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}</span>
                         </button>
                     </div>
                     <Link
@@ -94,14 +97,15 @@ export default function DecimalsClient() {
                         className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-emerald-200 transition shadow-sm"
                     >
                         <HelpCircle size={16} aria-hidden="true" />
-                        <span className="hidden sm:inline">{t('controls.helpForParents')}</span>
+                        <span>{t('controls.helpForParents')}</span>
                     </Link>
-                    <button onClick={onPrint} className="bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-slate-800 flex items-center gap-2 font-bold">
+                    <button onClick={onPrint} disabled={printing || problems.length === 0} className="bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-slate-800 flex items-center gap-2 font-bold">
                         <Printer size={16} aria-hidden="true" /> <span>{t('controls.print')}</span>
                     </button>
                 </div>
             </div>
 
+            {printError && <p role="alert" className="container-custom py-3 text-red-700 print:hidden">{t('document.printError')}</p>}
             {/* Breadcrumbs */}
             <div className="container-custom py-3 print:hidden">
                 <Breadcrumb
@@ -116,45 +120,36 @@ export default function DecimalsClient() {
             {/* A4 Paper Preview */}
             <WorksheetActionBar count={problems.length} onRefresh={regenerateProblems} />
 
-            <div className="w-full overflow-x-auto pb-12 print:pb-0 print:overflow-visible custom-scrollbar">
-                <div className="min-w-[210mm] max-w-[210mm] mx-auto mt-8 bg-white shadow-xl min-h-[297mm] p-[20mm] print:p-[10mm] print:shadow-none print:mt-0 print:mx-0 print:w-full print:min-h-0 print:h-auto print:overflow-visible">
-                    <div className="text-center border-b-2 border-slate-100 pb-8 mb-12 print:mb-4 print:pb-2 print:border-b">
-                        <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">{t('decimals.worksheetTitle')}</h2>
-                        <div className="flex justify-between mt-8 text-lg print:hidden">
-                            <div className="text-slate-400 text-sm">tirgul.net</div>
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-4 gap-y-16 gap-x-12" dir="ltr">
-                        {problems.map((prob) => {
+            <WorksheetDocument title={t('decimals.worksheetTitle')}
+                items={problems} perPage={12} variant="decimals" includeAnswers={showAnswers}
+                renderPage={(pageItems, showAnswers, offset) => (
+                    <div className="worksheet-grid">
+                        {pageItems.map((prob, index) => {
                             const result = prob.op === '+' ? prob.num1 + prob.num2 : prob.num1 - prob.num2;
                             return (
-                                <div key={prob.id} className="break-inside-avoid page-break-inside-avoid">
-                                    <div className="inline-grid grid-cols-[auto_1fr] text-3xl font-medium font-mono leading-none ml-auto content-end w-fit">
+                                <div key={prob.id} dir="ltr" className="worksheet-problem">
+                                    <span className="worksheet-number">{offset + index + 1}</span>
+                                    <div className="inline-grid grid-cols-[auto_1fr] text-3xl font-medium font-mono leading-none me-auto content-end w-fit">
                                         {/* Row 1 */}
                                         <div></div>
-                                        <div className="text-right pb-1">{prob.num1.toFixed(2)}</div>
+                                        <div className="text-right pb-1">{decimal(prob.num1)}</div>
 
                                         {/* Row 2 */}
-                                        <div className="text-2xl pt-1 pr-3 border-b-2 border-slate-900 pb-2">{prob.op}</div>
-                                        <div className="text-right border-b-2 border-slate-900 pb-2">{prob.num2.toFixed(2)}</div>
+                                        <div className="text-2xl pt-1 pe-3 border-b-2 border-slate-900 pb-2">{prob.op}</div>
+                                        <div className="text-right border-b-2 border-slate-900 pb-2">{decimal(prob.num2)}</div>
 
                                         {/* Result Row - Answer Key - always rendered to prevent CLS */}
                                         <div></div>
                                         <div className={`text-right pt-2 text-red-600 font-bold min-h-[1.5em] ${showAnswers ? 'visible' : 'invisible'}`}>
-                                            {result.toFixed(2)}
+                                            {decimal(result)}
                                         </div>
                                     </div>
                                 </div>
                             )
                         })}
                     </div>
-
-                    <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
-                        {t('print.copyright')}
-                    </div>
-                </div>
-            </div>
+                )}
+            />
 
             <ContentSection
                 title={t('decimals.content.title')}

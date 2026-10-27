@@ -3,11 +3,12 @@
 import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { usePersistentToggle } from '@/lib/useWorksheetPrefs';
+import { useWorksheetProblems } from '@/lib/useWorksheetProblems';
+import { useWorksheetPrint } from '@/lib/useWorksheetPrint';
+import { WorksheetDocument } from './WorksheetDocument';
 import { WorksheetActionBar } from '@/components/worksheet/WorksheetActionBar';
 import ContentSection from '@/components/ContentSection';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { trackPrintEvent } from '@/lib/analytics';
 import { useTranslations } from 'next-intl';
 
 interface SeriesProblem {
@@ -45,6 +46,7 @@ function createProblems(difficulty: Difficulty): SeriesProblem[] {
             if (Math.random() > 0.5) {
                 start = Math.floor(Math.random() * 50) + 20;
                 diff = Math.floor(Math.random() * 10) + 2;
+                start = Math.max(start, diff * (length - 1));
                 rule = `-${diff}`;
                 for (let j = 0; j < length; j++) {
                     sequence.push(start - (j * diff));
@@ -94,8 +96,8 @@ export default function SeriesClient() {
     const t = useTranslations('worksheet');
     const metaT = useTranslations('meta');
     const [difficulty, setDifficulty] = useState<Difficulty>('easy');
-    const [problems, setProblems] = useState<SeriesProblem[]>(() => createProblems('easy'));
-    const [showAnswers, setShowAnswers] = usePersistentToggle('showAnswers');
+    const [problems, setProblems] = useWorksheetProblems(() => createProblems('easy'));
+    const [showAnswers, setShowAnswers] = useState(false);
 
     const regenerateProblems = () => {
         setProblems(createProblems(difficulty));
@@ -106,19 +108,16 @@ export default function SeriesClient() {
         setProblems(createProblems(newDifficulty));
     };
 
-    const onPrint = () => {
-        trackPrintEvent({ worksheet_type: 'series', difficulty });
-        window.print();
-    };
+    const { onPrint, printing, printError } = useWorksheetPrint({ worksheet_type: 'series', difficulty });
 
     return (
-        <div className="min-h-screen bg-slate-100 font-sans text-slate-900 pb-20 print:bg-white">
+        <div className="worksheet-workspace min-h-screen bg-slate-100 text-slate-900 pb-20 print:bg-white">
             {/* Header */}
             <div className="bg-white border-b border-slate-200 sticky top-0 z-40 print:hidden shadow-sm">
                 <div className="container-custom py-4 flex flex-wrap items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
-                        <Link href="/" className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
-                            <ArrowLeft size={20} />
+                        <Link href="/worksheet" aria-label={metaT('breadcrumb.worksheets')} className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
+                            <ArrowLeft size={20} className="rtl:rotate-180" />
                         </Link>
                         <h1 className="text-xl font-bold text-slate-800">{t('series.title')}</h1>
                     </div>
@@ -137,7 +136,7 @@ export default function SeriesClient() {
 
                     <div className="flex items-center gap-4">
                         <button onClick={regenerateProblems} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-2 font-bold text-sm">
-                            <RefreshCw size={16} /> <span className="hidden sm:inline">{t('controls.refresh')}</span>
+                            <RefreshCw size={16} /> <span>{t('controls.refresh')}</span>
                         </button>
                         <button
                             onClick={() => setShowAnswers(!showAnswers)}
@@ -146,22 +145,23 @@ export default function SeriesClient() {
                             aria-label={showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}
                         >
                             {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
-                            <span className="hidden sm:inline">{showAnswers ? t('series.showHide.hide') : t('series.showHide.show')}</span>
+                            <span>{showAnswers ? t('series.showHide.hide') : t('series.showHide.show')}</span>
                         </button>
                         <Link
                             href="/help/series"
                             className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-emerald-200 transition shadow-sm"
                         >
                             <HelpCircle size={16} />
-                            <span className="hidden sm:inline">{t('series.help')}</span>
+                            <span>{t('series.help')}</span>
                         </Link>
-                        <button onClick={onPrint} className="bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-slate-800 flex items-center gap-2 font-bold text-sm">
+                        <button onClick={onPrint} disabled={printing || problems.length === 0} className="bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-slate-800 flex items-center gap-2 font-bold text-sm">
                             <Printer size={16} /> <span>{t('controls.print')}</span>
                         </button>
                     </div>
                 </div>
             </div>
 
+            {printError && <p role="alert" className="container-custom py-3 text-red-700 print:hidden">{t('document.printError')}</p>}
             {/* Breadcrumbs */}
             <div className="container-custom py-3 print:hidden">
                 <Breadcrumb
@@ -175,18 +175,13 @@ export default function SeriesClient() {
 
             <WorksheetActionBar count={problems.length} onRefresh={regenerateProblems} />
 
-            <div className="w-full overflow-x-auto pb-12 print:pb-0 print:overflow-visible custom-scrollbar">
-                <div className="min-w-[210mm] max-w-[210mm] mx-auto mt-8 bg-white shadow-xl min-h-[297mm] p-[20mm] print:p-[10mm] print:shadow-none print:mt-0 print:mx-0 print:w-full print:min-h-0 print:h-auto print:overflow-visible">
-                    <div className="text-center border-b-2 border-slate-100 pb-8 mb-12 print:mb-4 print:pb-2 print:border-b">
-                        <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">
-                            {t('series.worksheetTitle')}
-                        </h2>
-                        <p className="text-slate-500 print:hidden">{t('series.instruction')}</p>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-y-16 gap-x-20" dir="ltr">
-                        {problems.map((prob) => (
-                            <div key={prob.id} className="break-inside-avoid page-break-inside-avoid border-b border-slate-100 pb-4">
+            <WorksheetDocument title={t('series.worksheetTitle')} instruction={t('series.instruction')}
+                items={problems} perPage={8} variant="series" includeAnswers={showAnswers}
+                renderPage={(pageItems, showAnswers, offset) => (
+                    <div className="worksheet-grid">
+                        {pageItems.map((prob, index) => (
+                            <div key={prob.id} dir="ltr" className="worksheet-problem border-b border-slate-100 pb-4">
+                                    <span className="worksheet-number">{offset + index + 1}</span>
                                 <div className="flex items-center justify-between text-2xl font-bold font-mono text-slate-800">
                                     {prob.sequence.map((num, idx) => (
                                         <div key={idx} className="relative w-16 text-center">
@@ -207,16 +202,12 @@ export default function SeriesClient() {
                                         </div>
                                     ))}
                                 </div>
-                                <div className={`text-xs text-center mt-2 text-slate-400 min-h-[1.25em] ${showAnswers ? 'visible' : 'invisible'}`}>{t('series.rule')} {prob.rule}</div>
+                                <div className={`text-xs text-center mt-2 text-slate-400 min-h-[1.25em] ${showAnswers ? 'visible' : 'invisible'}`}>{t('series.rule')} <bdi>{prob.rule}</bdi></div>
                             </div>
                         ))}
                     </div>
-
-                    <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
-                        {t('print.copyright')}
-                    </div>
-                </div>
-            </div>
+                )}
+            />
 
             <ContentSection
                 title={t('series.content.title')}

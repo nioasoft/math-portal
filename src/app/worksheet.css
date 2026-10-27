@@ -1,0 +1,71 @@
+/* Keep physical page geometry identical in preview and print. */
+.worksheet-document { margin: 0 auto; max-width: 210mm; width: 100%; }
+.worksheet-preview { width: 210mm; }
+.worksheet-page { box-sizing: border-box; width: 210mm; height: 296mm; padding: 12mm; margin-block: 0 6mm; background: white; color: #111827; box-shadow: 0 4px 24px #0f172a18; display: flex; flex-direction: column; }
+.worksheet-page-header { flex: none; padding-block-end: 6mm; border-block-end: 1px solid #64748b; }
+.worksheet-page-kicker { display: flex; justify-content: space-between; font-size: 10pt; color: #475569; }
+.worksheet-page-header h2 { font-size: 21pt; line-height: 1.3; font-weight: 700; overflow-wrap: anywhere; margin-block: 3mm 2mm; }
+.worksheet-page-header p { font-size: 12pt; line-height: 1.5; }
+.worksheet-personal { display: flex; gap: 12mm; margin-block-start: 5mm; font-size: 12pt; }
+.worksheet-personal span { display: flex; gap: 2mm; align-items: end; }
+.worksheet-personal i { display: inline-block; width: 45mm; border-block-end: 1px solid #64748b; }
+.worksheet-personal span:last-child i { width: 30mm; }
+.worksheet-exercises { flex: 1; min-height: 0; padding-block: 6mm; }
+.worksheet-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(0, 1fr); height: 100%; column-gap: 10mm; row-gap: 5mm; align-content: start; }
+.worksheet-problem { min-width: 0; position: relative; break-inside: avoid; padding-block-start: 6mm; border-color: #94a3b8; }
+.worksheet-page-footer { display: flex; justify-content: space-between; border-block-start: 1px solid #cbd5e1; padding-block-start: 3mm; font-size: 9pt; line-height: 2; padding-block-end: 1mm; color: #475569; flex: none; }
+.worksheet-math .worksheet-grid, .worksheet-decimals .worksheet-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.worksheet-math .worksheet-problem > div, .worksheet-decimals .worksheet-problem > div { font-size: 22px; }
+.worksheet-fractions .worksheet-problem { font-size: 22px; align-items: flex-start; padding-block-start: 10mm; }
+.worksheet-ratio .worksheet-problem { font-size: 22px; align-items: flex-start; padding-block-start: 10mm; }
+.worksheet-ratio .worksheet-problem span { margin-inline: 2mm; }
+.worksheet-series .worksheet-grid, .worksheet-word .worksheet-grid { grid-template-columns: 1fr; }
+.worksheet-series .worksheet-problem > div:first-of-type { max-width: 155mm; margin-inline: auto; }
+.worksheet-units .worksheet-problem { font-size: 20px; align-items: flex-start; gap: 2mm; padding-block-start: 10mm; }
+.worksheet-units .worksheet-problem > div { min-width: 0; flex-wrap: wrap; }
+.worksheet-units .worksheet-problem .w-24 { width: 18mm; }
+.worksheet-percentage .worksheet-problem > div:first-of-type { font-size: 21px; white-space: normal; }
+.worksheet-word .worksheet-problem { padding-block-start: 0; border-block-end: 1px solid #94a3b8; }
+.worksheet-word .worksheet-problem p { font-size: 15pt; margin-block-end: 5mm; padding-inline-end: 0; }
+.worksheet-word .worksheet-problem .ms-8 { margin-inline-start: 2mm; }
+.worksheet-word .worksheet-problem .text-slate-400 { color: #475569; }
+.worksheet-geometry .worksheet-problem { padding-block-start: 0; }
+.worksheet-geometry .worksheet-problem .h-32 { height: 35mm; }
+.worksheet-geometry .worksheet-problem .mb-4 { margin-block-end: 8mm; }
+.worksheet-geometry .worksheet-problem .mt-6 { margin-block-start: 6mm; }
+.worksheet-workspace button:disabled { opacity: .5; cursor: wait; }
+.worksheet-workspace > div:first-child > div { gap: .75rem; }
+@media (max-width: 640px) {
+  .worksheet-workspace > div:first-child { position: static; }
+  .worksheet-workspace > div:first-child > div, .worksheet-workspace > div:first-child > div > div { flex-wrap: wrap; }
+  .worksheet-workspace button, .worksheet-workspace select { min-height: 44px; }
+}
+@page worksheet { size: A4 portrait; margin: 12mm; }
+@media print {
+  /* Only the explicit document is printable, regardless of future site widgets. */
+  body:has(.worksheet-document) *:not(:has(.worksheet-document)):not(.worksheet-document):not(.worksheet-document *) { display: none !important; }
+  html:has(.worksheet-document), body:has(.worksheet-document), body:has(.worksheet-document) *:has(.worksheet-document) { display: block !important; min-height: 0 !important; height: auto !important; padding: 0 !important; margin: 0 !important; background: white !important; }
+  .worksheet-document { width: auto; max-width: none; margin: 0; }
+  .worksheet-preview { zoom: 1 !important; width: auto; }
+  .worksheet-page { page: worksheet; width: 186mm; height: 272mm; padding: 0; margin: 0; box-shadow: none; break-after: page; break-inside: avoid; }
+  .worksheet-page:last-child { break-after: auto; }
+  .worksheet-page * { print-color-adjust: economy; -webkit-print-color-adjust: economy; }
+}
+.worksheet-number { position: absolute; inset-block-start: 0; inset-inline-start: 0; color: #475569; font: 10pt sans-serif; }
+.worksheet-page:dir(rtl) .worksheet-number { direction: rtl; }
+.worksheet-ratio .worksheet-problem .worksheet-number { margin-inline: 0; }
+.worksheet-page .border-slate-200, .worksheet-page .border-slate-300 { border-color: #64748b; }
+.worksheet-settings { margin: 1rem; padding: 1.25rem; border: 1px solid #cbd5e1; border-radius: 1rem; background: #fff; color: #334155; }
+.worksheet-settings-fields { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+.worksheet-settings-fields label { display: flex; flex-direction: column; gap: .4rem; font-size: .875rem; font-weight: 600; }
+.worksheet-settings-fields input, .worksheet-settings select { min-width: 0; width: 100%; border: 1px solid #94a3b8; padding: .65rem; border-radius: .5rem; background: white; }
+.worksheet-settings-options { display: flex; flex-wrap: wrap; gap: 1rem; margin-block: 1rem; }
+.worksheet-settings-options label { display: flex; align-items: center; gap: .5rem; }
+.worksheet-settings-options input { width: 1.1rem; height: 1.1rem; }
+.worksheet-print-hint { font-size: .875rem; margin-block-start: .5rem; color: #475569; }
+.worksheet-personal bdi { max-width: 90mm; overflow-wrap: anywhere; }
+@media (max-width: 640px) { .worksheet-settings-fields { grid-template-columns: 1fr; } }
+@media print { .worksheet-settings { display: none !important; } }
+
+.worksheet-math .worksheet-problem, .worksheet-decimals .worksheet-problem { text-align: center; }
+.worksheet-math .inline-grid, .worksheet-decimals .inline-grid { align-items: end; }

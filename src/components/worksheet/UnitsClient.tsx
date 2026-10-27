@@ -3,12 +3,15 @@
 import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, Ruler, Scale, Clock, HelpCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { usePersistentToggle } from '@/lib/useWorksheetPrefs';
+import { useWorksheetProblems } from '@/lib/useWorksheetProblems';
+import { useWorksheetPrint } from '@/lib/useWorksheetPrint';
+import { WorksheetDocument } from './WorksheetDocument';
 import { WorksheetActionBar } from '@/components/worksheet/WorksheetActionBar';
 import ContentSection from '@/components/ContentSection';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { trackPrintEvent } from '@/lib/analytics';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import { formatNumber } from '@/lib/math-notation';
+import type { Locale } from '@/i18n/config';
 
 interface UnitProblem {
     id: string;
@@ -83,10 +86,11 @@ function createProblems(unitType: UnitType): UnitProblem[] {
 
 export default function UnitsClient() {
     const t = useTranslations('worksheet');
+    const locale = useLocale() as Locale;
     const metaT = useTranslations('meta');
     const [unitType, setUnitType] = useState<UnitType>('length');
-    const [problems, setProblems] = useState<UnitProblem[]>(() => createProblems('length'));
-    const [showAnswers, setShowAnswers] = usePersistentToggle('showAnswers');
+    const [problems, setProblems] = useWorksheetProblems(() => createProblems('length'));
+    const [showAnswers, setShowAnswers] = useState(false);
 
     const regenerateProblems = () => {
         setProblems(createProblems(unitType));
@@ -97,19 +101,16 @@ export default function UnitsClient() {
         setProblems(createProblems(newUnitType));
     };
 
-    const onPrint = () => {
-        trackPrintEvent({ worksheet_type: 'units' });
-        window.print();
-    };
+    const { onPrint, printing, printError } = useWorksheetPrint({ worksheet_type: 'units' });
 
     return (
-        <div className="min-h-screen bg-slate-100 font-sans text-slate-900 pb-20 print:bg-white">
+        <div className="worksheet-workspace min-h-screen bg-slate-100 text-slate-900 pb-20 print:bg-white">
             {/* Header */}
             <div className="bg-white border-b border-slate-200 sticky top-0 z-40 print:hidden shadow-sm">
                 <div className="container-custom py-4 flex flex-wrap items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
-                        <Link href="/" className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
-                            <ArrowLeft size={20} />
+                        <Link href="/worksheet" aria-label={metaT('breadcrumb.worksheets')} className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
+                            <ArrowLeft size={20} className="rtl:rotate-180" />
                         </Link>
                         <h1 className="text-xl font-bold text-slate-800">{t('units.title')}</h1>
                     </div>
@@ -128,7 +129,7 @@ export default function UnitsClient() {
 
                     <div className="flex items-center gap-4">
                         <button onClick={regenerateProblems} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-2 font-bold text-sm">
-                            <RefreshCw size={16} /> <span className="hidden sm:inline">{t('controls.refresh')}</span>
+                            <RefreshCw size={16} /> <span>{t('controls.refresh')}</span>
                         </button>
                         <button
                             onClick={() => setShowAnswers(!showAnswers)}
@@ -137,22 +138,23 @@ export default function UnitsClient() {
                             aria-label={showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}
                         >
                             {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
-                            <span className="hidden sm:inline">{showAnswers ? t('units.showHide.hide') : t('units.showHide.show')}</span>
+                            <span>{showAnswers ? t('units.showHide.hide') : t('units.showHide.show')}</span>
                         </button>
                         <Link
                             href="/help/units"
                             className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-emerald-200 transition shadow-sm"
                         >
                             <HelpCircle size={16} />
-                            <span className="hidden sm:inline">{t('units.help')}</span>
+                            <span>{t('units.help')}</span>
                         </Link>
-                        <button onClick={onPrint} className="bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-slate-800 flex items-center gap-2 font-bold text-sm">
+                        <button onClick={onPrint} disabled={printing || problems.length === 0} className="bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-slate-800 flex items-center gap-2 font-bold text-sm">
                             <Printer size={16} /> <span>{t('controls.print')}</span>
                         </button>
                     </div>
                 </div>
             </div>
 
+            {printError && <p role="alert" className="container-custom py-3 text-red-700 print:hidden">{t('document.printError')}</p>}
             {/* Breadcrumbs */}
             <div className="container-custom py-3 print:hidden">
                 <Breadcrumb
@@ -166,18 +168,13 @@ export default function UnitsClient() {
 
             <WorksheetActionBar count={problems.length} onRefresh={regenerateProblems} />
 
-            <div className="w-full overflow-x-auto pb-12 print:pb-0 print:overflow-visible custom-scrollbar">
-                <div className="min-w-[210mm] max-w-[210mm] mx-auto mt-8 bg-white shadow-xl min-h-[297mm] p-[20mm] print:p-[10mm] print:shadow-none print:mt-0 print:mx-0 print:w-full print:min-h-0 print:h-auto print:overflow-visible">
-                    <div className="text-center border-b-2 border-slate-100 pb-8 mb-12 print:mb-4 print:pb-2 print:border-b">
-                        <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">
-                            {t(`units.worksheetTitles.${unitType}`)}
-                        </h2>
-                        <p className="text-slate-500 print:hidden">{t('units.instruction')}</p>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-y-12 gap-x-20" dir="rtl">
-                        {problems.map((prob) => (
-                            <div key={prob.id} className="break-inside-avoid page-break-inside-avoid flex items-center justify-between border-b border-slate-100 pb-4 text-2xl font-bold text-slate-800">
+            <WorksheetDocument title={t(`units.worksheetTitles.${unitType}`)} instruction={t('units.instruction')}
+                items={problems} perPage={10} variant="units" includeAnswers={showAnswers}
+                renderPage={(pageItems, showAnswers, offset) => (
+                    <div className="worksheet-grid">
+                        {pageItems.map((prob, index) => (
+                            <div key={prob.id} dir="inherit" className="worksheet-problem flex items-center justify-between border-b border-slate-100 pb-4 text-2xl font-bold text-slate-800">
+                                    <span className="worksheet-number">{offset + index + 1}</span>
 
                                 <div className="flex items-center gap-2 min-w-[120px]">
                                     <span className="font-mono">{prob.val}</span>
@@ -188,7 +185,7 @@ export default function UnitsClient() {
 
                                 <div className="flex items-center gap-2 min-w-[120px] justify-end relative">
                                     {showAnswers ? (
-                                        <span className="font-mono text-red-600">{prob.answer.toLocaleString()}</span>
+                                        <span className="font-mono text-red-600">{formatNumber(prob.answer, locale)}</span>
                                     ) : (
                                         <div className="w-24 h-8 border-b-2 border-slate-300 border-dashed"></div>
                                     )}
@@ -197,12 +194,8 @@ export default function UnitsClient() {
                             </div>
                         ))}
                     </div>
-
-                    <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
-                        {t('print.copyright')}
-                    </div>
-                </div>
-            </div>
+                )}
+            />
 
             <ContentSection
                 title={t('units.content.title')}

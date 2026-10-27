@@ -31,7 +31,7 @@ for (const route of routes) {
         expect(pdf.toString('latin1').match(/\/Type\s*\/Page\b/g)?.length).toBe(initialCount * 2);
         await page.emulateMedia({ media: 'screen' });
         await page.getByRole('button', { name: 'הסר דפי תשובות' }).click();
-        await page.getByLabel('מספר תרגילים').selectOption({ index: 1 });
+        await page.getByLabel('מספר תרגילים').selectOption('-1');
         await expect(studentPages).toHaveCount(1);
         await page.setViewportSize({ width: 390, height: 844 });
         await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
@@ -53,6 +53,7 @@ test('personalization, extra space, answers-only and print errors', async ({ pag
     await page.getByLabel('שם הילד או הילדה').fill('נועה');
     await expect(page.locator('.worksheet-page-header h2').first()).toHaveText('התרגול של נועה');
     await expect(page.locator('.worksheet-personal').first()).toContainText('נועה');
+    await page.getByLabel('מספר תרגילים').selectOption('0');
     const before = await page.locator('.worksheet-page').count();
     await page.getByLabel('צפיפות ההדפסה').selectOption('spacious');
     expect(await page.locator('.worksheet-page').count()).toBeGreaterThan(before);
@@ -141,3 +142,20 @@ for (const route of routes) {
         expect(pdf.toString('latin1').match(/\/Type\s*\/Page\b/g)?.length).toBe(await page.locator('.worksheet-page').count());
     });
 }
+
+
+test('one-page quantity follows density while explicit quantities stay fixed', async ({ page }) => {
+    await page.goto('/worksheet/math?range=100');
+    const problems = page.locator('.worksheet-page[data-answers="false"] .worksheet-problem');
+    await expect(problems).toHaveCount(12);
+    await page.getByLabel('צפיפות ההדפסה').selectOption('compact');
+    await expect(problems).toHaveCount(18);
+    await expect(page.locator('.worksheet-page')).toHaveCount(1);
+    await page.getByLabel('צפיפות ההדפסה').selectOption('spacious');
+    await expect(problems).toHaveCount(6);
+    await page.getByLabel('מספר תרגילים').selectOption('12');
+    await expect(page.locator('.worksheet-page')).toHaveCount(2);
+    await page.getByLabel('צפיפות ההדפסה').selectOption('compact');
+    await expect(problems).toHaveCount(12);
+    await expect(page.locator('.worksheet-page')).toHaveCount(1);
+});

@@ -2,7 +2,7 @@
   "hero": {
     "title": "Hojas y juegos de",
     "titleHighlight": "matemáticas",
-    "description": "Imprime hojas de ejercicios de matemáticas personalizadas — o juega a juegos interactivos.",
+    "description": "Práctica de matemáticas para los cursos 1–6, en papel o en pantalla. Elige cómo empezar.",
     "descriptionLine2": "Para grados 1-6. Elige un tema, personaliza, imprime o juega — todo",
     "free": "Gratis",
     "trustPrint": "Impresión Directa",
@@ -10,8 +10,8 @@
     "trustFree": "100% Gratis",
     "worksheetCard": {
       "title": "Fichas imprimibles",
-      "desc": "Práctica escrita para continuar después de los juegos",
-      "cta": "Empezar a crear"
+      "desc": "Elige un tema y un nivel, imprime y practica a tu ritmo.",
+      "cta": "Elegir una ficha"
     },
     "gamesCard": {
       "title": "Juegos interactivos",
@@ -29,28 +29,30 @@
     },
     "mulDiv": {
       "title": "Multiplicación y División",
-      "desc": "Tablas de multiplicar, división larga y potencias"
+      "desc": "Tablas de multiplicar y división sin resto"
     },
     "fractions": {
       "title": "Fracciones",
-      "desc": "Principiantes a avanzados, simplificar y ampliar"
+      "desc": "Operaciones con fracciones y simplificación"
     },
     "geometry": {
       "title": "Geometría",
-      "desc": "Áreas, perímetros y polígonos"
+      "desc": "Área, perímetro y tipos de ángulos"
     },
     "percentage": {
       "title": "Porcentajes",
-      "desc": "Cálculo de porcentajes, descuentos e intereses"
+      "desc": "Calcular el porcentaje de un número"
     },
     "units": {
       "title": "Conversión de Unidades",
       "desc": "Longitud, peso y tiempo"
-    }
+    },
+    "all": "Todos los temas de fichas"
   },
   "grades": {
     "label": "Por Grado:",
-    "grade": "Grado"
+    "grade": "Grado",
+    "prompt": "¿No sabes por dónde empezar? Elige un curso:"
   },
   "help": {
     "badge": "Guía para Padres",
@@ -86,8 +88,8 @@
   "gamesHub": {
     "badge": "Juegos interactivos",
     "title": "{count} juegos de aprendizaje en 3D",
-    "subtitle": "Practica aritmética, geometría, fracciones y más — directamente en el navegador, sin descargas",
-    "cta": "Jugar ahora",
+    "subtitle": "Elige un juego para una práctica breve o filtra el catálogo por curso y tema.",
+    "cta": "Todos los juegos",
     "trust": "Gratis · Sin registro · Funciona en cualquier dispositivo",
     "showAll": "Todos",
     "empty": "Aún no hay juegos disponibles"

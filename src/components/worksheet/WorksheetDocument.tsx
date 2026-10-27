@@ -19,7 +19,7 @@ export function WorksheetDocument<T>({ title, instruction, items, perPage, varia
     const t = useTranslations('worksheet');
     const container = useRef<HTMLDivElement>(null);
     const [scale, setScale] = useState(1);
-    const [settings, setSettings] = useState<DocumentSettings>({ title: '', name: '', limit: perPage, density: 'standard', answersOnly: false });
+    const [settings, setSettings] = useState<DocumentSettings>({ title: '', name: '', limit: -1, density: 'standard', answersOnly: false });
     const compactSize = variant === 'geometry' ? 8 : variant === 'series' ? 10 : Math.floor(perPage * 1.5);
     const pageSize = settings.density === 'spacious' ? Math.max(2, Math.floor(perPage / 2)) : settings.density === 'compact' ? compactSize : perPage;
     useEffect(() => {
@@ -31,11 +31,11 @@ export function WorksheetDocument<T>({ title, instruction, items, perPage, varia
         observer.observe(element);
         return () => observer.disconnect();
     }, []);
-    const selected = settings.limit ? items.slice(0, settings.limit) : items;
+    const selected = settings.limit === -1 ? items.slice(0, pageSize) : settings.limit ? items.slice(0, settings.limit) : items;
     const pages = Array.from({ length: Math.ceil(selected.length / pageSize) }, (_, i) => selected.slice(i * pageSize, (i + 1) * pageSize));
     return (
         <div className="worksheet-document" ref={container}>
-            <WorksheetSettings settings={settings} onChange={setSettings} count={items.length} perPage={pageSize} pages={pages.length} includeAnswers={includeAnswers} />
+            <WorksheetSettings settings={settings} onChange={setSettings} count={items.length} selectedCount={selected.length} perPage={pageSize} pages={pages.length} includeAnswers={includeAnswers} />
             <div className="worksheet-preview" style={{ zoom: scale }}>
                 {[...(includeAnswers && settings.answersOnly ? [] : [false]), ...(includeAnswers ? [true] : [])].flatMap(answers => pages.map((page, index) => (
                     <section className={`worksheet-page worksheet-${variant}`} key={`${answers}-${index}`} data-answers={answers} data-density={settings.density}>

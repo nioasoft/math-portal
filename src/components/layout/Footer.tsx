@@ -57,8 +57,9 @@ export function Footer() {
     ];
 
     const topics = [
+        { label: t('nav.worksheets'), href: '/worksheet' },
         { label: t('footer.addSubtract'), href: '/worksheet/math?op=add' },
-        { label: t('footer.mulDiv'), href: '/worksheet/math?op=mul' },
+        { label: t('footer.mulDiv'), href: '/worksheet/math?op=mul&range=100' },
         { label: t('footer.fractions'), href: '/fractions' },
         { label: t('footer.percentage'), href: '/percentage' },
         { label: t('footer.geometry'), href: '/geometry' },
@@ -162,7 +163,7 @@ export function Footer() {
                         <ul className="space-y-2 text-sm">
                             {gameLinks.map((game) => (
                                 <li key={game.href}>
-                                    <Link href={game.href} className="hover:text-purple-400 transition-colors">
+                                    <Link href={game.href} data-discovery-source="footer" data-discovery-target={game.href === '/play' ? 'games' : `game-${game.href.split('/').pop()}`} className="hover:text-purple-400 transition-colors">
                                         {game.label}
                                     </Link>
                                 </li>
@@ -181,6 +182,7 @@ export function Footer() {
                                 <Link
                                     key={grade.href}
                                     href={grade.href}
+                                    data-discovery-source="footer" data-discovery-target={`grade-${grade.href.split('/').pop()}`}
                                     className="hover:text-orange-400 transition-colors"
                                 >
                                     {grade.label}
@@ -198,7 +200,7 @@ export function Footer() {
                         <ul className="space-y-2 text-sm">
                             {topics.map((topic) => (
                                 <li key={topic.href}>
-                                    <Link href={topic.href} className="hover:text-orange-400 transition-colors">
+                                    <Link href={topic.href} data-discovery-source="footer" data-discovery-target={topic.href === '/worksheet' ? 'worksheets' : `worksheet-${topic.href.split('/').pop()?.split('?')[0]}`} className="hover:text-orange-400 transition-colors">
                                         {topic.label}
                                     </Link>
                                 </li>

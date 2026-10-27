@@ -1,3 +1,5 @@
+import { isCategoryAllowed } from './cookie-consent';
+
 // Google Analytics tracking utilities
 
 declare global {
@@ -34,7 +36,7 @@ export interface PrintEventParams {
  * in Admin so a print flips the session to "engaged" (not a bounce).
  */
 export function trackPrintEvent(params: PrintEventParams): void {
-    if (typeof window !== 'undefined' && window.gtag) {
+    if (typeof window !== 'undefined' && isCategoryAllowed('analytics') && window.gtag) {
         window.gtag('event', 'print_worksheet', {
             value: 1,
             density: params.density,
@@ -55,7 +57,7 @@ export function trackPrintEvent(params: PrintEventParams): void {
  * filtered out in GA4. Do NOT mark this a key event.
  */
 export function trackGenerateEvent(params: PrintEventParams & { trigger?: 'auto' | 'manual' }): void {
-    if (typeof window !== 'undefined' && window.gtag) {
+    if (typeof window !== 'undefined' && isCategoryAllowed('analytics') && window.gtag) {
         window.gtag('event', 'generate_worksheet', {
             trigger: params.trigger || 'manual',
             worksheet_type: params.worksheet_type,
@@ -68,7 +70,7 @@ export function trackGenerateEvent(params: PrintEventParams & { trigger?: 'auto'
 
 /** Game engagement — mark `game_start` (optional) as a key event to rescue game landers from bounce. */
 export function trackGameStart(gameId: string, mode?: string): void {
-    if (typeof window !== 'undefined' && window.gtag) {
+    if (typeof window !== 'undefined' && isCategoryAllowed('analytics') && window.gtag) {
         window.gtag('event', 'game_start', {
             game_id: gameId,
             mode: mode || 'default',
@@ -86,7 +88,7 @@ export interface GameCompleteParams {
 
 /** Secondary conversion — mark `game_complete` as a GA4 key event. `value` = points. */
 export function trackGameComplete(params: GameCompleteParams): void {
-    if (typeof window !== 'undefined' && window.gtag) {
+    if (typeof window !== 'undefined' && isCategoryAllowed('analytics') && window.gtag) {
         window.gtag('event', 'game_complete', {
             value: params.score,
             game_id: params.gameId,
@@ -95,5 +97,15 @@ export function trackGameComplete(params: GameCompleteParams): void {
             accuracy: params.accuracy,
             duration_sec: params.durationSec,
         });
+    }
+}
+
+/** Measures intentional entry into an activity; existing consent controls still apply. */
+export function trackDiscoveryEvent(source: string, target: string): void {
+    if (!['header', 'footer', 'home', 'worksheet_catalog'].includes(source) || !/^[a-z0-9_-]{1,64}$/.test(target)) return;
+    try {
+        if (typeof window !== 'undefined' && isCategoryAllowed('analytics')) window.gtag?.('event', 'discover_activity', { source, target });
+    } catch (error) {
+        console.error('Activity discovery analytics failed', error);
     }
 }

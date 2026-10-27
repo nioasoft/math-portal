@@ -16,7 +16,10 @@
     "breadcrumb": "مسار التنقل",
     "privacy": "سياسة الخصوصية",
     "contact": "اتصل بنا",
-    "editorial": "إرشادات التحرير"
+    "editorial": "إرشادات التحرير",
+    "worksheets": "أوراق العمل",
+    "skipToContent": "انتقل إلى المحتوى الرئيسي",
+    "mainNavigation": "التنقل الرئيسي"
   },
   "grades": {
     "grade1": "الصف الأول",

@@ -2,7 +2,7 @@
   "hero": {
     "title": "Math Worksheets &",
     "titleHighlight": "Games",
-    "description": "Print custom math worksheets — or play interactive math games.",
+    "description": "Math practice for grades 1–6, on paper or on screen. Choose how to start.",
     "descriptionLine2": "For grades 1-6. Choose a topic, customize, print or play — all",
     "free": "Free",
     "trustPrint": "Direct Print",
@@ -10,8 +10,8 @@
     "trustFree": "100% Free",
     "worksheetCard": {
       "title": "Printable Worksheets",
-      "desc": "Written practice to follow up after the games",
-      "cta": "Start Creating"
+      "desc": "Choose a topic and level, then print and practise at your own pace.",
+      "cta": "Choose a worksheet"
     },
     "gamesCard": {
       "title": "Interactive Games",
@@ -33,28 +33,30 @@
     },
     "mulDiv": {
       "title": "Multiplication & Division",
-      "desc": "Times tables, long division, and powers"
+      "desc": "Times tables and division without remainders"
     },
     "fractions": {
       "title": "Fractions",
-      "desc": "Beginners to advanced, simplifying and expanding"
+      "desc": "Fraction operations and simplifying fractions"
     },
     "geometry": {
       "title": "Geometry",
-      "desc": "Areas, perimeters, and polygons"
+      "desc": "Area, perimeter and types of angles"
     },
     "percentage": {
       "title": "Percentages",
-      "desc": "Percentage calculations, discounts, and interest"
+      "desc": "Finding a percentage of a number"
     },
     "units": {
       "title": "Unit Conversions",
       "desc": "Length, weight, and time"
-    }
+    },
+    "all": "All worksheet topics"
   },
   "grades": {
     "label": "By Grade:",
-    "grade": "Grade"
+    "grade": "Grade",
+    "prompt": "Not sure where to start? Choose a grade:"
   },
   "help": {
     "badge": "Parent Guide",
@@ -90,8 +92,8 @@
   "gamesHub": {
     "badge": "Interactive games",
     "title": "{count} 3D learning games",
-    "subtitle": "Practice arithmetic, geometry, fractions and more — right in your browser, no downloads",
-    "cta": "Play now",
+    "subtitle": "Pick a game for a short practice session, or browse the catalog by grade and topic.",
+    "cta": "All games",
     "trust": "Free · No signup · Works on any device",
     "showAll": "All",
     "empty": "No games available yet"

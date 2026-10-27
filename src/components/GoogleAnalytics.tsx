@@ -16,7 +16,11 @@ export function GoogleAnalytics({ locale }: GoogleAnalyticsProps) {
   useEffect(() => {
     // Check initial consent state
     const checkConsent = () => {
-      setIsAllowed(isCategoryAllowed('analytics'));
+      const allowed = isCategoryAllowed('analytics');
+      // Removing a script cannot unload it; disable an already-loaded tag on revocation.
+      // https://developers.google.com/tag-platform/security/guides/privacy
+      Object.assign(window, { [`ga-disable-${GA_MEASUREMENT_ID}`]: !allowed });
+      setIsAllowed(allowed);
     };
 
     checkConsent();

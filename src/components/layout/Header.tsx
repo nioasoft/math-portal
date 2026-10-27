@@ -1,8 +1,8 @@
 'use client';
 
-import { Link } from '@/i18n/navigation';
-import { Calculator, Menu, X, ChevronDown, GraduationCap, BookOpen, Newspaper, Gamepad2 } from 'lucide-react';
-import { useState, useRef, useEffect } from 'react';
+import { Link, usePathname } from '@/i18n/navigation';
+import { Calculator, Menu, X, ChevronDown, GraduationCap, BookOpen, Newspaper, Gamepad2, Printer } from 'lucide-react';
+import { useState, useRef, useEffect, useId } from 'react';
 import { useTranslations } from 'next-intl';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
@@ -21,6 +21,22 @@ function getTabbables(container: HTMLElement | null): HTMLElement[] {
 
 export function Header() {
     const t = useTranslations('common');
+    const pathname = usePathname();
+    const menuId = useId();
+    const gradesId = useId();
+    const current = (href: string): 'page' | 'location' | undefined => {
+        if (pathname === href) return 'page';
+        if (href === '/worksheet' && ['/fractions', '/decimals', '/geometry', '/word-problems', '/series', '/units', '/percentage', '/ratio'].includes(pathname)) return 'location';
+        return href !== '/' && pathname.startsWith(`${href}/`) ? 'location' : undefined;
+    };
+    const skipToMain = (event: React.MouseEvent<HTMLAnchorElement>) => {
+        const main = document.querySelector('main');
+        if (!main) return;
+        event.preventDefault();
+        main.tabIndex = -1;
+        main.focus({ preventScroll: true });
+        main.scrollIntoView({ block: 'start' });
+    };
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isGradesOpen, setIsGradesOpen] = useState(false);
     const gradesRef = useRef<HTMLDivElement>(null);
@@ -30,15 +46,17 @@ export function Header() {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    // Lock body scroll when menu is open
+    // Restore existing scroll state and close the modal when switching to desktop.
     useEffect(() => {
-        if (isMenuOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
+        if (!isMenuOpen) return;
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        const desktop = window.matchMedia('(min-width: 768px)');
+        const onResize = () => { if (desktop.matches) setIsMenuOpen(false); };
+        desktop.addEventListener('change', onResize);
         return () => {
-            document.body.style.overflow = '';
+            document.body.style.overflow = previousOverflow;
+            desktop.removeEventListener('change', onResize);
         };
     }, [isMenuOpen]);
 
@@ -47,7 +65,7 @@ export function Header() {
     useEffect(() => {
         if (!isMenuOpen) return;
         const opener = document.activeElement as HTMLElement | null;
-        drawerRef.current?.focus();
+        getTabbables(drawerRef.current)[0]?.focus();
 
         function handleKeyDown(event: KeyboardEvent) {
             if (event.key === 'Escape') {
@@ -79,7 +97,10 @@ export function Header() {
     useEffect(() => {
         if (!isGradesOpen) return;
         function handleKeyDown(event: KeyboardEvent) {
-            if (event.key === 'Escape') setIsGradesOpen(false);
+            if (event.key === 'Escape') {
+                setIsGradesOpen(false);
+                gradesRef.current?.querySelector('button')?.focus();
+            }
         }
         document.addEventListener('keydown', handleKeyDown);
         return () => document.removeEventListener('keydown', handleKeyDown);
@@ -106,7 +127,8 @@ export function Header() {
     ];
 
     return (
-        <header className="bg-white/95 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50 shadow-sm">
+        <header className="bg-white border-b border-slate-100 sticky top-0 z-50 shadow-sm print:hidden">
+            <a href="#main-content" onClick={skipToMain} className="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-2 focus:z-[60] focus:rounded-lg focus:bg-white focus:p-3 focus:text-slate-900 focus:outline-2 focus:outline-orange-600">{t('nav.skipToContent')}</a>
             <div className="container-custom h-16 flex items-center justify-between">
                 {/* Menu Button - First for RTL (appears on right). `md:` not `lg:` so a
                     tablet in portrait (768-1023) gets the real nav instead of a drawer. */}
@@ -115,24 +137,31 @@ export function Header() {
                     onClick={toggleMenu}
                     aria-label={isMenuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
                     aria-expanded={isMenuOpen}
+                    aria-controls={menuId}
                 >
                     {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
                 </button>
 
-                {/* Desktop Nav. Help/Blog/About are parent-facing and stay `lg:`-only —
+                {/* Desktop Nav. Help/Blog/About are parent-facing and stay `xl:`-only —
                     showing all six links at 768px overflows the bar. */}
-                <nav className="hidden md:flex items-center gap-1">
+                <nav aria-label={t('nav.mainNavigation')} className="hidden md:flex items-center gap-1 [&_a[aria-current]]:ring-2 [&_a[aria-current]]:ring-orange-500 [&_a]:whitespace-nowrap">
                     <Link
-                        href="/"
-                        className="px-3 lg:px-4 py-2 text-sm font-semibold text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all"
+                        href="/" aria-current={current('/')} data-discovery-source="header" data-discovery-target="home"
+                        className="hidden xl:block px-3 py-2 text-sm font-semibold text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all"
                     >
                         {t('nav.home')}
+                    </Link>
+
+                    <Link href="/worksheet" aria-current={current('/worksheet')} data-discovery-source="header" data-discovery-target="worksheets" className="flex min-h-11 items-center gap-1.5 rounded-lg bg-orange-50 px-3 py-2 text-sm font-bold text-orange-800 hover:bg-orange-100">
+                        <Printer size={16} aria-hidden="true" />{t('nav.worksheets')}
                     </Link>
 
                     {/* Grades Dropdown */}
                     <div className="relative" ref={gradesRef}>
                         <button
                             onClick={() => setIsGradesOpen(!isGradesOpen)}
+                            aria-expanded={isGradesOpen}
+                            aria-controls={gradesId}
                             className={`flex items-center gap-1.5 px-3 lg:px-4 py-2 text-sm font-semibold rounded-lg transition-all ${isGradesOpen ? 'text-orange-600 bg-orange-50' : 'text-slate-600 hover:text-orange-600 hover:bg-orange-50'}`}
                         >
                             <GraduationCap size={16} />
@@ -141,11 +170,13 @@ export function Header() {
                         </button>
 
                         {/* Dropdown Menu */}
-                        <div className={`absolute top-full end-0 mt-2 bg-white rounded-xl shadow-xl border border-slate-100 py-2 min-w-[140px] transition-all ${isGradesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+                        <div id={gradesId} className={`absolute top-full start-0 mt-2 bg-white rounded-xl shadow-xl border border-slate-100 py-2 min-w-[140px] transition-all ${isGradesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
                             {grades.map((grade) => (
                                 <Link
                                     key={grade.href}
                                     href={grade.href}
+                                    aria-current={current(grade.href)}
+                                    data-discovery-source="header" data-discovery-target={`grade-${grade.href.split('/').pop()}`}
                                     onClick={() => setIsGradesOpen(false)}
                                     className="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-orange-600 hover:bg-orange-50 transition-colors"
                                 >
@@ -156,7 +187,7 @@ export function Header() {
                     </div>
 
                     <Link
-                        href="/play"
+                        href="/play" aria-current={current('/play')} data-discovery-source="header" data-discovery-target="games"
                         className="flex items-center gap-1.5 px-3 lg:px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 rounded-lg transition-all shadow-sm"
                     >
                         <Gamepad2 size={16} />
@@ -164,24 +195,24 @@ export function Header() {
                     </Link>
 
                     <Link
-                        href="/help"
-                        className="hidden lg:flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all"
+                        href="/help" aria-current={current('/help')} data-discovery-source="header" data-discovery-target="help"
+                        className="hidden xl:flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all"
                     >
                         <BookOpen size={16} />
                         {t('nav.help')}
                     </Link>
 
                     <Link
-                        href="/blog"
-                        className="hidden lg:flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50 rounded-lg transition-all"
+                        href="/blog" aria-current={current('/blog')} data-discovery-source="header" data-discovery-target="blog"
+                        className="hidden xl:flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50 rounded-lg transition-all"
                     >
                         <Newspaper size={16} />
                         {t('nav.blog')}
                     </Link>
 
                     <Link
-                        href="/about"
-                        className="hidden lg:block px-4 py-2 text-sm font-semibold text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all"
+                        href="/about" aria-current={current('/about')} data-discovery-source="header" data-discovery-target="about"
+                        className="hidden xl:block px-4 py-2 text-sm font-semibold text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-all"
                     >
                         {t('nav.about')}
                     </Link>
@@ -193,11 +224,11 @@ export function Header() {
                 </nav>
 
                 {/* Logo - Last for RTL (appears on left in desktop, but always visible) */}
-                <Link href="/" className="flex items-center gap-2.5 z-50 relative" onClick={() => setIsMenuOpen(false)}>
+                <Link aria-label={t('siteName')} href="/" aria-current={current('/')} data-discovery-source="header" data-discovery-target="home" className="flex items-center gap-2.5 z-50 relative" onClick={() => setIsMenuOpen(false)}>
                     <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-2 rounded-xl text-white shadow-md shadow-orange-200">
                         <Calculator size={22} />
                     </div>
-                    <span className="text-lg font-black text-slate-800 hidden sm:block">
+                    <span className="text-lg font-black text-slate-800 hidden lg:block">
                         {t('siteName')}
                     </span>
                 </Link>
@@ -211,13 +242,14 @@ export function Header() {
                     <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
                 </div>
                 <div
+                    id={menuId}
                     ref={drawerRef}
                     tabIndex={-1}
                     role="dialog"
                     aria-modal="true"
                     aria-label={t('nav.menu')}
                     inert={!isMenuOpen}
-                    className={`md:hidden fixed top-0 start-0 h-screen w-[280px] max-w-[85vw] bg-white z-50 shadow-2xl transform transition-transform duration-300 ease-out outline-none ${isMenuOpen ? 'translate-x-0' : 'ltr:-translate-x-full rtl:translate-x-full'}`}
+                    className={`md:hidden fixed top-0 start-0 h-dvh w-[300px] max-w-[85vw] bg-white z-50 shadow-2xl transform transition-transform duration-300 ease-out outline-none ${isMenuOpen ? 'translate-x-0' : 'ltr:-translate-x-full rtl:translate-x-full'}`}
                 >
                     {/* Menu Header */}
                     <div className="flex items-center justify-between p-4 border-b border-slate-100">
@@ -232,18 +264,22 @@ export function Header() {
                     </div>
 
                     {/* Menu Content */}
-                    <nav className="flex flex-col p-4 overflow-y-auto h-[calc(100%-65px)]">
+                    <nav aria-label={t('nav.mainNavigation')} className="flex flex-col p-4 overflow-y-auto h-[calc(100%-65px)] [&_a[aria-current]]:ring-2 [&_a[aria-current]]:ring-orange-500">
                         <Link
-                            href="/"
+                            href="/" aria-current={current('/')} data-discovery-source="header" data-discovery-target="home"
                             onClick={() => setIsMenuOpen(false)}
                             className="flex items-center gap-3 px-4 py-3 text-lg font-bold text-slate-700 hover:bg-orange-50 hover:text-orange-600 rounded-xl transition-colors"
                         >
                             {t('nav.home')}
                         </Link>
 
+                        <Link href="/worksheet" aria-current={current('/worksheet')} data-discovery-source="header" data-discovery-target="worksheets" onClick={() => setIsMenuOpen(false)} className="mt-2 flex items-center gap-3 rounded-xl bg-orange-50 px-4 py-3 text-lg font-bold text-orange-800 hover:bg-orange-100">
+                            <Printer size={22} aria-hidden="true" />{t('nav.worksheets')}
+                        </Link>
+
                         {/* Games Link - Prominent - Points to interactive games */}
                         <Link
-                            href="/play"
+                            href="/play" aria-current={current('/play')} data-discovery-source="header" data-discovery-target="games"
                             onClick={() => setIsMenuOpen(false)}
                             className="flex items-center gap-3 px-4 py-3 text-lg font-bold text-purple-700 bg-purple-50 hover:bg-purple-100 rounded-xl transition-colors mt-2"
                         >
@@ -260,6 +296,8 @@ export function Header() {
                                 <Link
                                     key={grade.href}
                                     href={grade.href}
+                                    aria-current={current(grade.href)}
+                                    data-discovery-source="header" data-discovery-target={`grade-${grade.href.split('/').pop()}`}
                                     onClick={() => setIsMenuOpen(false)}
                                     className="px-4 py-2.5 bg-slate-50 rounded-xl text-center font-bold text-slate-600 hover:bg-orange-50 hover:text-orange-600 transition-colors"
                                 >
@@ -271,7 +309,7 @@ export function Header() {
                         {/* Other Links */}
                         <div className="mt-4 border-t border-slate-100 pt-4">
                             <Link
-                                href="/help"
+                                href="/help" aria-current={current('/help')} data-discovery-source="header" data-discovery-target="help"
                                 onClick={() => setIsMenuOpen(false)}
                                 className="flex items-center gap-3 px-4 py-3 text-base font-semibold text-slate-600 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-colors"
                             >
@@ -280,7 +318,7 @@ export function Header() {
                             </Link>
 
                             <Link
-                                href="/blog"
+                                href="/blog" aria-current={current('/blog')} data-discovery-source="header" data-discovery-target="blog"
                                 onClick={() => setIsMenuOpen(false)}
                                 className="flex items-center gap-3 px-4 py-3 text-base font-semibold text-slate-600 hover:bg-sky-50 hover:text-sky-600 rounded-xl transition-colors"
                             >
@@ -289,7 +327,7 @@ export function Header() {
                             </Link>
 
                             <Link
-                                href="/about"
+                                href="/about" aria-current={current('/about')} data-discovery-source="header" data-discovery-target="about"
                                 onClick={() => setIsMenuOpen(false)}
                                 className="flex items-center gap-3 px-4 py-3 text-base font-semibold text-slate-600 hover:bg-orange-50 hover:text-orange-600 rounded-xl transition-colors"
                             >

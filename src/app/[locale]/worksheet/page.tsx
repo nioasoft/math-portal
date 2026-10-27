@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { BookOpen, ArrowLeft, Printer } from 'lucide-react';
+import { BookOpen, Printer } from 'lucide-react';
 import { Link, redirect } from '@/i18n/navigation';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
+import { WorksheetCatalog } from '@/components/worksheet/WorksheetCatalog';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
@@ -17,21 +20,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         twitter: generateTwitterMeta(title, description),
     };
 }
-
-const topics = [
-    { route: '/worksheet/math?op=add', title: 'operations.addition', description: 'content.description' },
-    { route: '/worksheet/math?op=sub', title: 'operations.subtraction', description: 'content.description' },
-    { route: '/worksheet/math?op=mul&range=100', title: 'operations.multiplication', description: 'content.description' },
-    { route: '/worksheet/math?op=div&range=100', title: 'operations.division', description: 'content.description' },
-    { route: '/fractions', title: 'fractions.title', description: 'fractions.content.description' },
-    { route: '/decimals', title: 'decimals.title', description: 'decimals.content.description' },
-    { route: '/geometry', title: 'geometry.title', description: 'geometry.content.description' },
-    { route: '/word-problems', title: 'wordProblems.title', description: 'wordProblems.content.description' },
-    { route: '/series', title: 'series.title', description: 'series.content.description' },
-    { route: '/units', title: 'units.title', description: 'units.content.description' },
-    { route: '/percentage', title: 'percentage.title', description: 'percentage.content.description' },
-    { route: '/ratio', title: 'ratio.title', description: 'ratio.content.description' },
-] as const;
 
 export default async function WorksheetPage({ params, searchParams }: {
     params: Promise<{ locale: string }>;
@@ -49,25 +37,30 @@ export default async function WorksheetPage({ params, searchParams }: {
     const t = await getTranslations('worksheet');
     const home = await getTranslations('home');
     return (
-        <main className="bg-slate-50 min-h-screen py-12 sm:py-16">
+        <>
+        <Header />
+        <main id="main-content" tabIndex={-1} className="bg-slate-50 min-h-screen py-8 sm:py-12">
             <div className="container-custom">
-                <div className="max-w-3xl mb-10">
+                <div className="max-w-3xl mb-6">
                     <Printer className="text-orange-600 mb-4" size={36} aria-hidden="true" />
                     <h1 className="text-3xl sm:text-5xl font-bold text-slate-900 mb-4">{home('generators.title')}</h1>
-                    <p className="text-lg text-slate-600 leading-relaxed">{home('generators.subtitle')}</p>
-                    <p className="mt-3 text-slate-600">{t('document.printHint')}</p>
+                    <p className="text-lg text-slate-600 leading-relaxed">{t('catalog.intro')}</p>
+
                 </div>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {topics.map(topic => (
-                        <Link key={topic.route} href={topic.route} className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 hover:border-orange-400 hover:shadow-md focus-visible:outline-2 focus-visible:outline-orange-600 transition">
-                            <h2 className="text-xl font-bold text-slate-900 mb-3">{t(topic.title)}</h2>
-                            <p className="text-sm text-slate-600 leading-relaxed mb-6 flex-1">{t(topic.description)}</p>
-                            <span className="flex items-center gap-2 font-bold text-orange-700">{home('generators.cta')}<ArrowLeft size={18} className="ltr:rotate-180" aria-hidden="true" /></span>
-                        </Link>
-                    ))}
-                </div>
-                <Link href="/help" className="mt-10 inline-flex items-center gap-2 text-emerald-800 underline"><BookOpen size={20} aria-hidden="true" />{t('controls.helpForParents')}</Link>
+                <details className="mb-8 rounded-xl border border-orange-100 bg-orange-50 p-4">
+                    <summary className="min-h-11 cursor-pointer py-2 font-bold text-orange-800 focus-visible:outline-2 focus-visible:outline-orange-700">{t('catalog.howTo')}</summary>
+                <ol className="mt-4 grid gap-4 sm:grid-cols-3">
+                    {['choose', 'customize', 'print'].map((step, index) => <li key={step} className="flex items-start gap-3 rounded-xl border border-orange-100 bg-orange-50 p-4">
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white font-bold text-orange-800" aria-hidden="true">{index + 1}</span>
+                        <div><h2 className="font-bold text-slate-900">{t(`catalog.steps.${step}.title`)}</h2><p className="mt-1 text-sm leading-relaxed text-slate-700">{t(`catalog.steps.${step}.text`)}</p></div>
+                    </li>)}
+                </ol>
+                </details>
+                <WorksheetCatalog />
+                <Link data-discovery-source="worksheet_catalog" data-discovery-target="parent-help" href="/help" className="mt-10 inline-flex items-center gap-2 text-emerald-800 underline"><BookOpen size={20} aria-hidden="true" />{t('controls.helpForParents')}</Link>
             </div>
         </main>
+        <Footer />
+        </>
     );
 }

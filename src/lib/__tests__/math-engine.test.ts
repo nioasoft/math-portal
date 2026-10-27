@@ -52,3 +52,19 @@ describe('arithmetic difficulty contracts', () => {
         }
     });
 });
+
+
+it('every accepted small range and narrow large interval has feasible multiplication facts', () => {
+    const ranges = [...Array.from({ length: 1100 }, (_, i) => i + 2), 10001, 100001, 999999];
+    for (const random of [0, 0.5, 0.999999]) {
+        vi.spyOn(Math, 'random').mockReturnValue(random);
+        for (const range of ranges) for (const operation of ['*', '/'] as MathOperation[]) {
+            const [p] = MathEngine.generateProblems(1, operation, range);
+            const anchor = operation === '*' ? p.num1 * p.num2 : p.num1;
+            expect(anchor, `${operation} at ${range}`).toBeGreaterThanOrEqual(MathEngine.difficultyFloor(range));
+            expect(anchor, `${operation} at ${range}`).toBeLessThanOrEqual(range);
+            expect(Number.isInteger(p.num1 / (operation === '/' ? p.num2 : 1))).toBe(true);
+        }
+        vi.restoreAllMocks();
+    }
+});

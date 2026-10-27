@@ -1,87 +1,39 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
-import { Gamepad2, ArrowLeft, Sparkles } from 'lucide-react';
-import { TopicShelf } from './TopicShelf';
-import { TOPIC_ORDER } from './topicMeta';
+import { Gamepad2, ArrowLeft } from 'lucide-react';
+import { GameCard } from './GameCard';
 import { getGameCards } from './gameCards';
-import type { GameCardData } from './GameCard';
 
-/**
- * Home-page "Games Hub": a prominent banner + one Netflix-style shelf per topic,
- * fed live from getRegisteredGames() so it auto-updates as games are added.
- * Server component (the registry is server-only). RTL-safe throughout.
- */
+/** A short introduction; the full searchable collection stays in the games catalog. */
 export async function GamesHub() {
-  const tHome = await getTranslations('home');
-  const tGames = await getTranslations('games3d');
+  const t = await getTranslations('home');
   const cards = await getGameCards(await getLocale());
-
-  // Group the resolved cards by topic.
-  const byTopic = new Map<string, GameCardData[]>();
-  for (const card of cards) {
-    const list = byTopic.get(card.topic) ?? [];
-    list.push(card);
-    byTopic.set(card.topic, list);
-  }
-
-  // Order shelves: known topics first (TOPIC_ORDER), then any unexpected ones.
-  const orderedTopics = [
-    ...TOPIC_ORDER.filter((t) => byTopic.has(t)),
-    ...[...byTopic.keys()].filter((t) => !TOPIC_ORDER.includes(t)),
-  ];
+  const starterIds = ['ten-frame-fill', 'fraction-slice', 'shape-sort-3d'];
+  const featured = starterIds.flatMap(id => {
+    const game = cards.find(card => card.id === id);
+    return game ? [game] : [];
+  });
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-purple-50 via-violet-50 to-indigo-50 py-12 md:py-16">
-      <div className="dot-pattern absolute inset-0 opacity-30" />
-      <div className="absolute -top-24 end-[-6rem] h-72 w-72 rounded-full bg-purple-200/40 blur-3xl" />
-      <div className="absolute -bottom-24 start-[-6rem] h-72 w-72 rounded-full bg-indigo-200/40 blur-3xl" />
-
-      <div className="container-custom relative z-10">
-        {/* Banner */}
-        <div className="mb-10 rounded-3xl border border-purple-200/70 bg-white/70 p-6 text-center shadow-lg backdrop-blur-sm md:p-8">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-1.5 text-sm font-bold text-purple-700">
-            <Sparkles size={16} />
-            {tHome('gamesHub.badge')}
+    <section className="bg-gradient-to-br from-purple-50 via-violet-50 to-indigo-50 py-10 md:py-14">
+      <div className="container-custom">
+        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="mb-2 text-sm font-bold text-purple-700">{t('gamesHub.badge')}</p>
+            <h2 className="mb-2 text-2xl font-black text-slate-800 md:text-3xl">{t('gamesHub.title', { count: cards.length })}</h2>
+            <p className="max-w-2xl text-slate-600">{t('gamesHub.subtitle')}</p>
           </div>
-          <h2 className="mb-3 text-2xl font-black text-slate-800 md:text-4xl text-display">
-            {tHome('gamesHub.title', { count: cards.length })}
-          </h2>
-          <p className="mx-auto mb-6 max-w-2xl text-base text-slate-600 md:text-lg">
-            {tHome('gamesHub.subtitle')}
-          </p>
-          <div className="flex flex-col items-center gap-3">
-            <Link
-              href="/play"
-              className="group inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 px-8 py-4 text-lg font-bold text-white shadow-xl shadow-purple-200/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
-            >
-              <Gamepad2 size={22} />
-              {tHome('gamesHub.cta')}
-              <ArrowLeft size={20} className="ltr:-scale-x-100" />
-            </Link>
-            <span className="text-xs font-medium text-slate-500">{tHome('gamesHub.trust')}</span>
-          </div>
+          <Link href="/play" data-discovery-source="home" data-discovery-target="all-games"
+            className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 self-start rounded-xl bg-purple-700 px-5 py-3 font-bold text-white hover:bg-purple-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-700">
+            <Gamepad2 size={20} aria-hidden="true" />{t('gamesHub.cta')}
+            <ArrowLeft size={18} className="ltr:-scale-x-100" aria-hidden="true" />
+          </Link>
         </div>
-
-        {/* Topic shelves */}
-        {orderedTopics.length > 0 ? (
-          orderedTopics.map((topic) => (
-            <TopicShelf
-              key={topic}
-              topic={topic}
-              topicLabel={tGames(`topics.${topic}`)}
-              games={byTopic.get(topic) ?? []}
-              showAllLabel={tHome('gamesHub.showAll')}
-            />
-          ))
-        ) : (
-          /* Empty state — should never happen while the registry has games, but Iron Law 7. */
-          <div className="rounded-2xl border border-dashed border-purple-200 bg-white/60 p-10 text-center">
-            <p className="mb-4 text-slate-600">{tHome('gamesHub.empty')}</p>
-            <Link href="/play" className="font-bold text-purple-600 hover:text-purple-700">
-              {tHome('gamesHub.cta')}
-            </Link>
+        {featured.length ? (
+          <div className="grid gap-4 sm:grid-cols-3">
+            {featured.map(game => <GameCard key={game.id} game={game} fixedWidth={false} />)}
           </div>
-        )}
+        ) : <p className="rounded-xl border border-purple-200 bg-white p-6 text-slate-600">{t('gamesHub.empty')}</p>}
       </div>
     </section>
   );

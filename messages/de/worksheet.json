@@ -465,6 +465,59 @@
     "printError": "Der Druckdialog konnte nicht geöffnet werden. Bitte erneut versuchen oder im Browsermenü drucken.",
     "density": "Druckdichte",
     "standard": "Standard",
-    "compact": "Kompakt — mehr Aufgaben pro Seite"
+    "compact": "Kompakt — mehr Aufgaben pro Seite",
+    "difficultyAddition": "Mindestens ein Summand ist {min} oder größer. Die Summe ist höchstens {max}.",
+    "difficultySubtraction": "Der Minuend liegt zwischen {min} und {max}. Die Ergebnisse sind nicht negativ.",
+    "difficultyMultiplication": "Das Produkt liegt zwischen {min} und {max}.",
+    "difficultyDivision": "Der Dividend liegt zwischen {min} und {max}. Die Division geht ohne Rest auf."
+  },
+  "catalog": {
+    "intro": "Thema wählen, das Blatt an Ihr Kind anpassen und kostenlos drucken. Im Druckdialog können Sie auch eine PDF speichern.",
+    "chooseTopic": "Was möchten Sie üben?",
+    "searchLabel": "Themen suchen",
+    "searchPlaceholder": "Zum Beispiel Brüche, Subtraktion oder Fläche",
+    "categoryLabel": "Nach Bereich filtern",
+    "resultCount": "Angezeigte Themen: {count}",
+    "reset": "Filter zurücksetzen",
+    "open": "Arbeitsblatt öffnen",
+    "noResults": "Keine passenden Themen",
+    "noResultsHint": "Versuchen Sie ein anderes Wort oder entfernen Sie die Filter.",
+    "showAll": "Alle Themen anzeigen",
+    "categories": {
+      "all": "Alle Themen",
+      "arithmetic": "Vier Grundrechenarten",
+      "parts": "Brüche, Dezimalzahlen und Verhältnisse",
+      "measurement": "Formen und Größen",
+      "thinking": "Denken und Textaufgaben"
+    },
+    "steps": {
+      "choose": {
+        "title": "Thema wählen",
+        "text": "Öffnen Sie den Bereich, den Sie üben möchten."
+      },
+      "customize": {
+        "title": "Blatt anpassen",
+        "text": "Passen Sie die verfügbaren Übungsoptionen, Aufgabenzahl und Druckdichte an."
+      },
+      "print": {
+        "title": "Drucken und üben",
+        "text": "Prüfen Sie die Vorschau und ergänzen Sie bei Bedarf ein Lösungsblatt."
+      }
+    },
+    "descriptions": {
+      "addition": "Zahlen im gewählten Zahlenraum addieren, von ersten Summen bis zu großen Zahlen.",
+      "subtraction": "Im gewählten Zahlenraum subtrahieren, ohne negative Ergebnisse.",
+      "multiplication": "Das Einmaleins üben und zu größeren Produkten übergehen.",
+      "division": "Ohne Rest im gewählten Zahlenraum dividieren.",
+      "fractions": "Bruchrechnen in verschiedenen Schwierigkeitsstufen üben.",
+      "decimals": "Dezimalzahlen addieren und subtrahieren.",
+      "percentage": "Prozentwerte berechnen und Teile eines Ganzen verstehen.",
+      "ratio": "Die fehlende Zahl in gleichwertigen Verhältnissen finden.",
+      "geometry": "Fläche und Umfang berechnen und Winkel anhand von Zeichnungen erkennen.",
+      "units": "Einheiten für Länge, Masse und Zeit umrechnen.",
+      "word-problems": "Eine kurze Geschichte lesen, die Rechenart wählen und lösen.",
+      "series": "Das Muster erkennen und die fehlende Zahl ergänzen."
+    },
+    "howTo": "Wie erstelle ich ein Arbeitsblatt?"
   }
 }

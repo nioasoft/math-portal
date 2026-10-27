@@ -2,7 +2,7 @@
   "hero": {
     "title": "Mathe-Arbeitsblätter &",
     "titleHighlight": "Spiele",
-    "description": "Drucke individuelle Mathe-Arbeitsblätter — oder spiele interaktive Mathespiele.",
+    "description": "Mathe üben für die Klassen 1–6, auf Papier oder am Bildschirm. Wähle deinen Einstieg.",
     "descriptionLine2": "Für die Klassen 1-6. Thema wählen, anpassen, drucken oder spielen — alles",
     "free": "kostenlos",
     "trustPrint": "Direkter Druck",
@@ -10,8 +10,8 @@
     "trustFree": "100% kostenlos",
     "worksheetCard": {
       "title": "Druckbare Arbeitsblätter",
-      "desc": "Schriftliche Übung als Ergänzung nach den Spielen",
-      "cta": "Jetzt erstellen"
+      "desc": "Thema und Niveau wählen, ausdrucken und im eigenen Tempo üben.",
+      "cta": "Arbeitsblatt auswählen"
     },
     "gamesCard": {
       "title": "Interaktive Spiele",
@@ -29,28 +29,30 @@
     },
     "mulDiv": {
       "title": "Multiplikation & Division",
-      "desc": "Einmaleins, schriftliche Division und Potenzen"
+      "desc": "Einmaleins und Division ohne Rest"
     },
     "fractions": {
       "title": "Brüche",
-      "desc": "Anfänger bis Fortgeschrittene, Kürzen und Erweitern"
+      "desc": "Rechnen mit Brüchen und Brüche kürzen"
     },
     "geometry": {
       "title": "Geometrie",
-      "desc": "Flächen, Umfänge und Vielecke"
+      "desc": "Flächeninhalt, Umfang und Winkelarten"
     },
     "percentage": {
       "title": "Prozentrechnung",
-      "desc": "Prozentberechnungen, Rabatte und Zinsen"
+      "desc": "Den Prozentanteil einer Zahl berechnen"
     },
     "units": {
       "title": "Einheitenumrechnung",
       "desc": "Länge, Gewicht und Zeit"
-    }
+    },
+    "all": "Alle Arbeitsblattthemen"
   },
   "grades": {
     "label": "Nach Klassenstufe:",
-    "grade": "Klasse"
+    "grade": "Klasse",
+    "prompt": "Wo anfangen? Wähle eine Klassenstufe:"
   },
   "help": {
     "badge": "Elternratgeber",
@@ -86,8 +88,8 @@
   "gamesHub": {
     "badge": "Interaktive Spiele",
     "title": "{count} 3D-Lernspiele",
-    "subtitle": "Übe Rechnen, Geometrie, Brüche und mehr — direkt im Browser, ohne Download",
-    "cta": "Jetzt spielen",
+    "subtitle": "Wähle ein Spiel für eine kurze Übung oder filtere den Katalog nach Klasse und Thema.",
+    "cta": "Alle Spiele",
     "trust": "Kostenlos · Ohne Anmeldung · Auf jedem Gerät",
     "showAll": "Alle",
     "empty": "Noch keine Spiele verfügbar"

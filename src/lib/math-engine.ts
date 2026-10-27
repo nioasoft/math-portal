@@ -22,27 +22,39 @@ export class MathEngine {
         operation: MathOperation,
         range: number
     ): { num1: number; num2: number } {
-        const min = range > 100 ? Math.floor(range / 10) : 1;
+        const floor = this.difficultyFloor(range);
         switch (operation) {
             case '+': {
-                const num1 = this.getRandomInt(min, range - min);
-                return { num1, num2: this.getRandomInt(min, range - num1) };
+                const larger = this.getRandomInt(floor, range - 1);
+                const smaller = this.getRandomInt(1, Math.min(larger, range - larger));
+                return Math.random() < 0.5 ? { num1: larger, num2: smaller } : { num1: smaller, num2: larger };
             }
             case '-': {
-                const num1 = this.getRandomInt(min + 1, range);
-                return { num1, num2: this.getRandomInt(1, num1) };
+                const num1 = this.getRandomInt(Math.max(2, floor), range);
+                return { num1, num2: this.getRandomInt(1, num1 - 1) };
             }
-            case '*': {
-                const num1 = this.getRandomInt(1, Math.floor(Math.sqrt(range)));
-                return { num1, num2: this.getRandomInt(1, Math.floor(range / num1)) };
-            }
-            case ':':
-            case '/': {
-                const num2 = this.getRandomInt(1, Math.min(30, range));
-                const answer = this.getRandomInt(1, Math.floor(range / num2));
-                return { num1: answer * num2, num2 };
+            default: {
+                const { factor, other } = this.generateFactors(range, floor);
+                return operation === '*'
+                    ? { num1: factor, num2: other }
+                    : { num1: factor * other, num2: factor };
             }
         }
+    }
+
+    /** Anchor the selected level to a place value, with 10–20 as its own early level. */
+    static difficultyFloor(range: number): number {
+        return range <= 10 ? 1 : 10 ** Math.floor(Math.log10(range - 1));
+    }
+
+    /** Inverse operations share a bounded fact family; up to 100 uses the times tables. */
+    private static generateFactors(range: number, floor: number): { factor: number; other: number } {
+        // Tiny legacy game ranges cannot contain a non-identity multiplication fact.
+        if (range < 4) return { factor: 1, other: range };
+        const factor = this.getRandomInt(2, Math.floor(Math.sqrt(range)));
+        const cap = range <= 100 ? 10 : Math.ceil(range / 10);
+        const other = this.getRandomInt(Math.max(2, Math.ceil(floor / factor)), Math.min(cap, Math.floor(range / factor)));
+        return Math.random() < 0.5 ? { factor, other } : { factor: other, other: factor };
     }
 
     /**

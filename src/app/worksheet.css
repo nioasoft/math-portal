@@ -31,8 +31,8 @@
 .worksheet-word .worksheet-problem .text-slate-400 { color: #475569; }
 .worksheet-geometry .worksheet-problem { padding-block-start: 0; }
 .worksheet-geometry .worksheet-problem .h-32 { height: 35mm; }
-.worksheet-geometry .worksheet-problem .mb-4 { margin-block-end: 8mm; }
-.worksheet-geometry .worksheet-problem .mt-6 { margin-block-start: 6mm; }
+.worksheet-geometry .worksheet-problem .mb-4 { margin-block-end: 4mm; }
+.worksheet-geometry .worksheet-problem .mt-6 { margin-block-start: 3mm; }
 .worksheet-workspace button:disabled { opacity: .5; cursor: wait; }
 .worksheet-workspace > div:first-child > div { gap: .75rem; }
 @media (max-width: 640px) {
@@ -69,3 +69,19 @@
 
 .worksheet-math .worksheet-problem, .worksheet-decimals .worksheet-problem { text-align: center; }
 .worksheet-math .inline-grid, .worksheet-decimals .inline-grid { align-items: end; }
+
+/* Compact mode adds rows, preserving columns and a readable writing area. */
+.worksheet-page[data-density="compact"] .worksheet-grid { row-gap: 2mm; }
+.worksheet-page[data-density="compact"] .worksheet-exercises { padding-block: 4mm; }
+.worksheet-page[data-density="compact"] .worksheet-problem { padding-block-start: 5mm; }
+.worksheet-page[data-density="compact"] .worksheet-problem > div { font-size: 18px; }
+.worksheet-page[data-density="compact"].worksheet-word .worksheet-problem { padding-block-start: 0; }
+.worksheet-page[data-density="compact"].worksheet-word .worksheet-problem p { font-size: 12pt; margin-block-end: 2mm; }
+.worksheet-page[data-density="compact"].worksheet-geometry .worksheet-problem { padding-block-start: 0; }
+.worksheet-page[data-density="compact"].worksheet-geometry .h-32 { height: 23mm; }
+.worksheet-page[data-density="compact"].worksheet-geometry .mb-4 { margin-block-end: 3mm; }
+.worksheet-page[data-density="compact"].worksheet-geometry .mt-6 { margin-block-start: 2mm; }
+.worksheet-page[data-density="compact"].worksheet-geometry .h-32 > * { zoom: .8; }
+.worksheet-page[data-density="compact"].worksheet-geometry .text-lg { font-size: 16px; line-height: 1.3; }
+.worksheet-page[data-density="compact"].worksheet-series .worksheet-problem { padding-block: 3mm 0; }
+.worksheet-page[data-density="compact"].worksheet-series .worksheet-problem > div:last-child { margin-block-start: 1mm; font-size: 10px; }

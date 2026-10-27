@@ -6,7 +6,7 @@ export interface DocumentSettings {
     title: string;
     name: string;
     limit: number;
-    spacious: boolean;
+    density: 'spacious' | 'standard' | 'compact';
     answersOnly: boolean;
 }
 interface WorksheetSettingsProps {
@@ -21,7 +21,7 @@ interface WorksheetSettingsProps {
 export function WorksheetSettings({ settings, onChange, count, perPage, pages, includeAnswers }: WorksheetSettingsProps): React.ReactElement {
     const t = useTranslations('worksheet');
     const update = (next: Partial<DocumentSettings>) => onChange({ ...settings, ...next });
-    const counts = [...new Set([4, 6, 8, 10, 12, 16, perPage].filter(n => n < count))].sort((a, b) => a - b);
+    const counts = [...new Set([4, 6, 8, 10, 12, 16, perPage, settings.limit].filter(n => n > 0 && n < count))].sort((a, b) => a - b);
     return (
         <div className="worksheet-settings print:hidden">
             <div className="worksheet-settings-fields">
@@ -33,7 +33,11 @@ export function WorksheetSettings({ settings, onChange, count, perPage, pages, i
                 </select></label>
             </div>
             <div className="worksheet-settings-options">
-                <label><input type="checkbox" checked={settings.spacious} onChange={e => update({ spacious: e.target.checked })} />{t('document.spacious')}</label>
+                <label>{t('document.density')}<select value={settings.density} onChange={e => update({ density: e.target.value as DocumentSettings['density'] })}>
+                    <option value="spacious">{t('document.spacious')}</option>
+                    <option value="standard">{t('document.standard')}</option>
+                    <option value="compact">{t('document.compact')}</option>
+                </select></label>
                 {includeAnswers && <label><input type="checkbox" checked={settings.answersOnly} onChange={e => update({ answersOnly: e.target.checked })} />{t('document.answersOnly')}</label>}
             </div>
             <p aria-live="polite">{t('document.summary', { count: settings.limit ? Math.min(settings.limit, count) : count, pages: includeAnswers && settings.answersOnly ? 0 : pages, answers: includeAnswers ? pages : 0 })}</p>

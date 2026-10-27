@@ -23,6 +23,8 @@ export function useWorksheetPrint(params: PrintEventParams): {
             // Analytics records a dialog request, not proof of a completed physical print.
             try {
                 trackPrintEvent({ ...params,
+                    density: document.querySelector('.worksheet-page')?.getAttribute('data-density') || 'standard',
+                    exercise_count: document.querySelectorAll('.worksheet-page[data-answers="false"] .worksheet-problem').length,
                     page_count: document.querySelectorAll('.worksheet-page').length,
                     answer_pages: document.querySelectorAll('.worksheet-page[data-answers="true"]').length,
                     preparation_ms: Math.round(performance.now() - start),

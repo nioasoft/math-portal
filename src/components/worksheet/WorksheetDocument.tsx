@@ -19,8 +19,9 @@ export function WorksheetDocument<T>({ title, instruction, items, perPage, varia
     const t = useTranslations('worksheet');
     const container = useRef<HTMLDivElement>(null);
     const [scale, setScale] = useState(1);
-    const [settings, setSettings] = useState<DocumentSettings>({ title: '', name: '', limit: perPage, spacious: false, answersOnly: false });
-    const pageSize = settings.spacious ? Math.max(2, Math.floor(perPage / 2)) : perPage;
+    const [settings, setSettings] = useState<DocumentSettings>({ title: '', name: '', limit: perPage, density: 'standard', answersOnly: false });
+    const compactSize = variant === 'geometry' ? 8 : variant === 'series' ? 10 : Math.floor(perPage * 1.5);
+    const pageSize = settings.density === 'spacious' ? Math.max(2, Math.floor(perPage / 2)) : settings.density === 'compact' ? compactSize : perPage;
     useEffect(() => {
         const element = container.current;
         if (!element) return;
@@ -37,7 +38,7 @@ export function WorksheetDocument<T>({ title, instruction, items, perPage, varia
             <WorksheetSettings settings={settings} onChange={setSettings} count={items.length} perPage={pageSize} pages={pages.length} includeAnswers={includeAnswers} />
             <div className="worksheet-preview" style={{ zoom: scale }}>
                 {[...(includeAnswers && settings.answersOnly ? [] : [false]), ...(includeAnswers ? [true] : [])].flatMap(answers => pages.map((page, index) => (
-                    <section className={`worksheet-page worksheet-${variant}`} key={`${answers}-${index}`} data-answers={answers}>
+                    <section className={`worksheet-page worksheet-${variant}`} key={`${answers}-${index}`} data-answers={answers} data-density={settings.density}>
                         <header className="worksheet-page-header">
                             <div className="worksheet-page-kicker"><span>{answers ? t('print.answerKey') : t('print.title')}</span><bdi>tirgul.net</bdi></div>
                             <h2>{settings.title.trim() || title}</h2>

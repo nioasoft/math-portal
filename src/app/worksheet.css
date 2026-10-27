@@ -31,8 +31,8 @@
 .worksheet-word .worksheet-problem .text-slate-400 { color: #475569; }
 .worksheet-geometry .worksheet-problem { padding-block-start: 0; }
 .worksheet-geometry .worksheet-problem .h-32 { height: 35mm; }
-.worksheet-geometry .worksheet-problem .mb-4 { margin-block-end: 8mm; }
-.worksheet-geometry .worksheet-problem .mt-6 { margin-block-start: 6mm; }
+.worksheet-geometry .worksheet-problem .mb-4 { margin-block-end: 4mm; }
+.worksheet-geometry .worksheet-problem .mt-6 { margin-block-start: 3mm; }
 .worksheet-workspace button:disabled { opacity: .5; cursor: wait; }
 .worksheet-workspace > div:first-child > div { gap: .75rem; }
 @media (max-width: 640px) {

@@ -85,11 +85,13 @@ for (const locale of ['en', 'ar', 'de', 'es', 'ru', 'zh']) {
     });
 }
 
-for (const route of ['fractions', 'geometry', 'series', 'units']) {
-    test(`${route}: all difficulty/topic variants fit their printed pages`, async ({ page }) => {
+for (const route of ['fractions', 'geometry', 'series', 'units']) for (const density of ['standard', 'compact']) {
+    test(`${route} ${density}: all difficulty/topic variants fit their printed pages`, async ({ page }) => {
         await page.goto(`/${route}`);
         await expect(page.locator('.worksheet-problem').first()).toBeVisible();
         await page.getByRole('button', { name: 'צרף דפי תשובות' }).click();
+        await page.getByLabel('מספר תרגילים').selectOption('0');
+        await page.getByLabel('צפיפות ההדפסה').selectOption(density);
         const tabs = page.locator('[role="tab"]');
         const selector = page.locator('select').first();
         const isTabs = await tabs.count() > 0;
@@ -99,7 +101,7 @@ for (const route of ['fractions', 'geometry', 'series', 'units']) {
             if (isTabs) await tabs.nth(index).click();
             else await selector.selectOption(values[index]);
             await page.emulateMedia({ media: 'print' });
-            expect(await page.locator('.worksheet-problem').evaluateAll(cards => cards.every(card => card.scrollWidth <= card.clientWidth + 2))).toBe(true);
+            expect(await page.locator('.worksheet-problem').evaluateAll(cards => cards.every(card => card.scrollWidth <= card.clientWidth + 2 && card.scrollHeight <= card.clientHeight + 2))).toBe(true);
             expect(await page.locator('.worksheet-page').evaluateAll(sheets => sheets.every(sheet => sheet.scrollHeight <= sheet.clientHeight + 1))).toBe(true);
         }
     });
@@ -111,7 +113,7 @@ test('all arithmetic operations and ranges print within page bounds', async ({ p
             await page.goto(`/worksheet/math?op=${op}&range=${range}`);
             await expect(page.locator('.worksheet-problem').first()).toBeVisible();
             await page.emulateMedia({ media: 'print' });
-            expect(await page.locator('.worksheet-problem').evaluateAll(cards => cards.every(card => card.scrollWidth <= card.clientWidth + 2))).toBe(true);
+            expect(await page.locator('.worksheet-problem').evaluateAll(cards => cards.every(card => card.scrollWidth <= card.clientWidth + 2 && card.scrollHeight <= card.clientHeight + 2))).toBe(true);
         }
     }
 });

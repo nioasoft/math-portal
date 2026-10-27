@@ -462,6 +462,9 @@
     "answersOnly": "Imprimir solo respuestas",
     "loading": "Preparando la hoja…",
     "circleHint": "Para círculos, usa la tecla π y redondea a dos decimales. Los dibujos no están a escala.",
-    "printError": "No se pudo abrir el diálogo de impresión. Inténtalo de nuevo o usa Imprimir en el menú del navegador."
+    "printError": "No se pudo abrir el diálogo de impresión. Inténtalo de nuevo o usa Imprimir en el menú del navegador.",
+    "density": "Densidad de impresión",
+    "standard": "Normal",
+    "compact": "Compacta — más ejercicios por página"
   }
 }

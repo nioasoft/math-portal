@@ -22,6 +22,8 @@ export interface PrintEventParams {
     difficulty?: string;
     operation?: string;
     range?: number;
+    density?: string;
+    exercise_count?: number;
     page_count?: number;
     answer_pages?: number;
     preparation_ms?: number;
@@ -35,6 +37,8 @@ export function trackPrintEvent(params: PrintEventParams): void {
     if (typeof window !== 'undefined' && window.gtag) {
         window.gtag('event', 'print_worksheet', {
             value: 1,
+            density: params.density,
+            exercise_count: params.exercise_count,
             page_count: params.page_count,
             answer_pages: params.answer_pages,
             preparation_ms: params.preparation_ms,

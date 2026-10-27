@@ -54,7 +54,7 @@ test('personalization, extra space, answers-only and print errors', async ({ pag
     await expect(page.locator('.worksheet-page-header h2').first()).toHaveText('התרגול של נועה');
     await expect(page.locator('.worksheet-personal').first()).toContainText('נועה');
     const before = await page.locator('.worksheet-page').count();
-    await page.getByLabel('ריווח מוגדל', { exact: false }).check();
+    await page.getByLabel('צפיפות ההדפסה').selectOption('spacious');
     expect(await page.locator('.worksheet-page').count()).toBeGreaterThan(before);
     await page.getByRole('button', { name: 'צרף דפי תשובות' }).click();
     await page.getByLabel('הדפסת תשובות בלבד').check();
@@ -115,3 +115,27 @@ test('all arithmetic operations and ranges print within page bounds', async ({ p
         }
     }
 });
+
+for (const route of routes) {
+    test(`${route}: compact density fits more exercises without print overlap`, async ({ page }) => {
+        await page.goto(`/${route}`);
+        await expect(page.locator('.worksheet-problem').first()).toBeVisible();
+        await page.getByLabel('מספר תרגילים').selectOption('0');
+        const standardCount = await page.locator('.worksheet-page').first().locator('.worksheet-problem').count();
+        await page.getByLabel('צפיפות ההדפסה').selectOption('compact');
+        expect(await page.locator('.worksheet-page').first().locator('.worksheet-problem').count()).toBeGreaterThan(standardCount);
+        await page.getByRole('button', { name: 'צרף דפי תשובות' }).click();
+        await page.emulateMedia({ media: 'print' });
+        await page.evaluate(() => document.fonts.ready);
+        const issues = await page.locator('.worksheet-page').evaluateAll(sheets => sheets.flatMap(sheet => {
+            const footer = sheet.querySelector('footer')!.getBoundingClientRect();
+            return [...sheet.querySelectorAll('.worksheet-problem')].filter(card => {
+                const rect = card.getBoundingClientRect();
+                return card.scrollWidth > card.clientWidth + 2 || card.scrollHeight > card.clientHeight + 2 || rect.bottom > footer.top;
+            }).map(card => card.textContent);
+        }));
+        expect(issues).toEqual([]);
+        const pdf = await page.pdf({ preferCSSPageSize: true });
+        expect(pdf.toString('latin1').match(/\/Type\s*\/Page\b/g)?.length).toBe(await page.locator('.worksheet-page').count());
+    });
+}

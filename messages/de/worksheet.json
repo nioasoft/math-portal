@@ -462,6 +462,9 @@
     "answersOnly": "Nur Lösungen drucken",
     "loading": "Arbeitsblatt wird vorbereitet…",
     "circleHint": "Bei Kreisen die π-Taste verwenden und auf zwei Dezimalstellen runden. Zeichnungen sind nicht maßstabsgetreu.",
-    "printError": "Der Druckdialog konnte nicht geöffnet werden. Bitte erneut versuchen oder im Browsermenü drucken."
+    "printError": "Der Druckdialog konnte nicht geöffnet werden. Bitte erneut versuchen oder im Browsermenü drucken.",
+    "density": "Druckdichte",
+    "standard": "Standard",
+    "compact": "Kompakt — mehr Aufgaben pro Seite"
   }
 }

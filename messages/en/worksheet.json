@@ -462,6 +462,9 @@
     "answersOnly": "Print answers only",
     "loading": "Preparing your worksheet…",
     "circleHint": "For circles, use the calculator π key and round to two decimal places. Diagrams are not to scale.",
-    "printError": "We could not open the print dialog. Try again or use Print in your browser menu."
+    "printError": "We could not open the print dialog. Try again or use Print in your browser menu.",
+    "density": "Print density",
+    "standard": "Standard",
+    "compact": "Compact — more exercises per page"
   }
 }

@@ -465,6 +465,59 @@
     "printError": "No se pudo abrir el diálogo de impresión. Inténtalo de nuevo o usa Imprimir en el menú del navegador.",
     "density": "Densidad de impresión",
     "standard": "Normal",
-    "compact": "Compacta — más ejercicios por página"
+    "compact": "Compacta — más ejercicios por página",
+    "difficultyAddition": "Al menos un sumando es {min} o mayor. La suma es como máximo {max}.",
+    "difficultySubtraction": "El minuendo está entre {min} y {max}. Los resultados no son negativos.",
+    "difficultyMultiplication": "El producto está entre {min} y {max}.",
+    "difficultyDivision": "El dividendo está entre {min} y {max}. Todas las divisiones son exactas."
+  },
+  "catalog": {
+    "intro": "Elige un tema, adapta la hoja a tu hijo o hija e imprime gratis. También puedes guardar un PDF desde el diálogo de impresión.",
+    "chooseTopic": "¿Qué quieres practicar?",
+    "searchLabel": "Buscar temas",
+    "searchPlaceholder": "Por ejemplo: fracciones, resta o área",
+    "categoryLabel": "Filtrar por área",
+    "resultCount": "Temas mostrados: {count}",
+    "reset": "Borrar filtros",
+    "open": "Abrir hoja de ejercicios",
+    "noResults": "No hay temas coincidentes",
+    "noResultsHint": "Prueba otra palabra o borra los filtros para ver todas las opciones.",
+    "showAll": "Ver todos los temas",
+    "categories": {
+      "all": "Todos los temas",
+      "arithmetic": "Cuatro operaciones",
+      "parts": "Fracciones, decimales y razones",
+      "measurement": "Formas y medidas",
+      "thinking": "Razonamiento y problemas"
+    },
+    "steps": {
+      "choose": {
+        "title": "Elige un tema",
+        "text": "Abre la habilidad que quieras practicar."
+      },
+      "customize": {
+        "title": "Adapta la hoja",
+        "text": "Ajusta las opciones de práctica disponibles, la cantidad de ejercicios y la densidad de impresión."
+      },
+      "print": {
+        "title": "Imprime y practica",
+        "text": "Revisa la vista previa y añade una hoja de respuestas si la necesitas."
+      }
+    },
+    "descriptions": {
+      "addition": "Suma números en el rango elegido, desde las primeras sumas hasta números grandes.",
+      "subtraction": "Resta en el nivel elegido, sin resultados negativos.",
+      "multiplication": "Practica las tablas de multiplicar y avanza hacia productos mayores.",
+      "division": "Divide sin resto en un rango de números a tu elección.",
+      "fractions": "Practica operaciones con fracciones en distintos niveles.",
+      "decimals": "Practica la suma y la resta de números decimales.",
+      "percentage": "Calcula un porcentaje de una cantidad y explora partes de un todo.",
+      "ratio": "Encuentra el número que falta en razones equivalentes.",
+      "geometry": "Calcula áreas y perímetros e identifica ángulos con dibujos.",
+      "units": "Convierte entre unidades de longitud, masa y tiempo.",
+      "word-problems": "Lee una historia corta, elige una operación y resuélvela.",
+      "series": "Descubre el patrón y completa el número que falta."
+    },
+    "howTo": "¿Cómo preparo una hoja de ejercicios?"
   }
 }

@@ -4,15 +4,13 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Link } from '@/i18n/navigation';
 import {
-  Calculator, Brain, ArrowLeft, Percent, Divide,
+  Calculator, ArrowLeft, Percent, Divide,
   Shapes, Scale, Star, BookOpen, GraduationCap, Printer, Zap, Gamepad2
 } from 'lucide-react';
 import { FeaturedPosts } from '@/components/FeaturedPosts';
 import { getBlogPosts, getHelpTopics } from '@/lib/content';
 import { getTranslations, getLocale } from 'next-intl/server';
 import { Locale, scriptTypography } from '@/i18n/config';
-import { getGameCards } from '@/components/games3d/gameCards';
-import { gameArt } from '@/components/games3d/gameArt';
 import { generateAlternates, generateOpenGraphMeta, generateTwitterMeta } from '@/lib/seo';
 
 const GamesHub = dynamic(() => import('@/components/games3d/GamesHub').then(m => m.GamesHub), {
@@ -37,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const getGenerators = (t: Awaited<ReturnType<typeof getTranslations<'home'>>>) => [
   {
-    href: "/grade/1",
+    href: "/worksheet/math?op=add&range=20",
     title: t('generators.addSubtract.title'),
     desc: t('generators.addSubtract.desc'),
     icon: Calculator,
@@ -47,7 +45,7 @@ const getGenerators = (t: Awaited<ReturnType<typeof getTranslations<'home'>>>) =
     iconColor: "text-sky-600"
   },
   {
-    href: "/grade/3",
+    href: "/worksheet/math?op=mul&range=100",
     title: t('generators.mulDiv.title'),
     desc: t('generators.mulDiv.desc'),
     icon: Divide,
@@ -98,18 +96,10 @@ const getGenerators = (t: Awaited<ReturnType<typeof getTranslations<'home'>>>) =
   },
 ];
 
-/**
- * Hero "quick play" chips: three 3D games spanning arithmetic, fractions and
- * geometry at the lowest difficulty, so a child can start playing in one tap.
- * Resolved against the live registry — an id that is renamed simply drops out
- * rather than rendering a dead link.
- */
-const QUICK_PLAY_IDS = ['ten-frame-fill', 'fraction-slice', 'shape-sort-3d'];
-
 // Floating math symbols for hero decoration
 function MathSymbol({ symbol, className }: { symbol: string; className: string }) {
   return (
-    <div className={`absolute text-4xl md:text-5xl font-black select-none pointer-events-none ${className}`}>
+    <div aria-hidden="true" className={`absolute text-4xl md:text-5xl font-black select-none pointer-events-none ${className}`}>
       {symbol}
     </div>
   );
@@ -120,17 +110,11 @@ export default async function Home() {
   const t = await getTranslations('home');
   const tCommon = await getTranslations('common');
   const generators = getGenerators(t);
-  const { gap, stop } = scriptTypography[locale];
+  const { gap } = scriptTypography[locale];
 
   // Fetch locale-specific content
   const allPosts = await getBlogPosts(locale);
   const helpTopics = await getHelpTopics(locale);
-  const gameCards = await getGameCards(locale);
-  const cardsById = new Map(gameCards.map((card) => [card.id, card]));
-  const quickPlay = QUICK_PLAY_IDS.flatMap((id) => {
-    const card = cardsById.get(id);
-    return card ? [card] : [];
-  });
   const featuredPosts = allPosts.slice(0, 6).map(p => ({
     slug: p.slug,
     title: p.title,
@@ -144,7 +128,7 @@ export default async function Home() {
     <div className="min-h-screen flex flex-col bg-[#fffbf5]">
       <Header />
 
-      <main className="flex-1">
+      <main id="main-content" tabIndex={-1} className="flex-1">
 
         {/* Hero Section - Warm & Inviting */}
         <section className="relative overflow-hidden pt-6 pb-10 md:pt-12 md:pb-16 min-h-0 flex items-center">
@@ -153,75 +137,59 @@ export default async function Home() {
           <div className="absolute inset-0 grid-pattern"></div>
 
           {/* Decorative blobs */}
-          <div className="absolute top-20 right-[10%] w-72 h-72 bg-orange-200/30 rounded-full blur-3xl animate-pulse-soft"></div>
-          <div className="absolute bottom-20 left-[10%] w-96 h-96 bg-sky-200/20 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-20 end-[10%] w-72 h-72 bg-orange-200/30 rounded-full blur-3xl animate-pulse-soft"></div>
+          <div className="absolute bottom-20 start-[10%] w-96 h-96 bg-sky-200/20 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: '2s' }}></div>
 
-          {/* Floating math symbols */}
-          <MathSymbol symbol="+" className="top-20 right-[12%] text-orange-300 animate-float opacity-70" />
-          <MathSymbol symbol="×" className="top-32 left-[8%] text-sky-300 animate-float-delayed opacity-60" />
-          <MathSymbol symbol="÷" className="bottom-36 right-[18%] text-emerald-300 animate-float-slow opacity-60" />
-          <MathSymbol symbol="−" className="bottom-44 left-[15%] text-violet-300 animate-float-fast opacity-55" />
-          <MathSymbol symbol="=" className="top-28 left-[22%] text-rose-300 animate-float opacity-50" />
-          <MathSymbol symbol="%" className="top-48 right-[25%] text-amber-300 animate-float-slow opacity-65" />
-          <MathSymbol symbol="π" className="bottom-28 left-[28%] text-cyan-300 animate-float-delayed opacity-55" />
-          <MathSymbol symbol="√" className="top-36 right-[8%] text-pink-300 animate-float-fast opacity-50" />
-          <MathSymbol symbol="∞" className="bottom-20 right-[10%] text-indigo-300 animate-float opacity-45" />
-          <MathSymbol symbol="½" className="top-52 left-[30%] text-teal-300 animate-float-slow opacity-55" />
-          <MathSymbol symbol="²" className="bottom-52 left-[8%] text-orange-200 animate-float-delayed opacity-50" />
-          <MathSymbol symbol="Σ" className="top-16 left-[35%] text-purple-300 animate-float-fast opacity-40" />
+          {/* Decoration stays at the edges so it never competes with the choices. */}
+          <MathSymbol symbol="+" className="top-10 end-[4%] text-orange-300 opacity-40" />
+          <MathSymbol symbol="×" className="top-12 start-[4%] text-sky-300 opacity-40" />
+          <MathSymbol symbol="=" className="bottom-12 end-[4%] text-emerald-300 opacity-40" />
+          <MathSymbol symbol="½" className="bottom-10 start-[4%] text-violet-300 opacity-40" />
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
               {/* Main headline */}
-              <h1 className="text-4xl md:text-7xl font-black text-slate-800 mb-3 leading-tight text-display animate-slide-up">
+              <h1 className="text-4xl md:text-7xl font-black text-slate-800 mb-3 leading-tight text-display">
                 {t('hero.title')}
                 <br className="sm:hidden" />
                 {gap ? <span className="hidden sm:inline">{gap}</span> : null}
                 <span className="text-gradient-warm">{t('hero.titleHighlight')}</span>
               </h1>
 
-              {/* Subheadline */}
-              <p className="text-lg md:text-2xl text-slate-600 mb-6 max-w-3xl md:max-w-4xl mx-auto leading-relaxed animate-slide-up delay-100">
+              <p className="text-lg md:text-xl text-slate-600 mb-6 max-w-3xl mx-auto leading-relaxed">
                 {t('hero.description')}
-                <br className="hidden sm:block" />
-                {/* `gap` cannot sit next to the `<br>`: JSX children of a void element are
-                    dropped. It only applies where the `<br>` is hidden, i.e. below `sm`. */}
-                {gap ? <span className="sm:hidden">{gap}</span> : null}
-                {t('hero.descriptionLine2')}
-                {gap}
-                <strong className="text-orange-600">{t('hero.free')}</strong>
-                {stop}
               </p>
 
               {/* Dual CTA Cards */}
-              <div className="flex flex-col sm:flex-row gap-4 md:gap-5 max-w-3xl md:max-w-4xl mx-auto animate-slide-up delay-200">
-                {/* Worksheets Card — first so worksheet-intent visitors (the dominant search
-                    intent) see their path at the RTL start. ponytail: stays an in-page anchor
-                    to #generators (same-page content 300px down) — a route navigation would be
-                    worse UX, not a real inconsistency to "fix". */}
-                <a
-                  href="#generators"
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-5 max-w-3xl md:max-w-4xl mx-auto">
+                {/* Both primary choices open a dedicated, filterable catalog. */}
+                <Link
+                  href="/worksheet"
+                  data-discovery-source="home"
+                  data-discovery-target="worksheets"
                   className="flex-1 bg-white border-2 border-orange-200 rounded-xl p-5 md:p-6 hover:border-orange-400 hover:shadow-lg transition-all group text-start"
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <Printer className="w-7 h-7 md:w-8 md:h-8 text-orange-500" />
-                    <h3 className="text-xl md:text-2xl font-bold text-slate-800">{t('hero.worksheetCard.title')}</h3>
+                    <h2 className="text-xl md:text-2xl font-bold text-slate-800">{t('hero.worksheetCard.title')}</h2>
                   </div>
                   <p className="text-base md:text-lg text-slate-600 mb-3">{t('hero.worksheetCard.desc')}</p>
-                  <span className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-bold text-base md:text-lg group-hover:-translate-y-0.5 transition-transform">
+                  <span className="inline-flex items-center gap-2 bg-orange-700 text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-bold text-base md:text-lg group-hover:-translate-y-0.5 transition-transform">
                     {t('hero.worksheetCard.cta')}
                     <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 ltr:-scale-x-100" />
                   </span>
-                </a>
+                </Link>
 
                 {/* Games Card */}
                 <Link
                   href="/play"
+                  data-discovery-source="home"
+                  data-discovery-target="games"
                   className="flex-1 bg-white border-2 border-purple-200 rounded-xl p-5 md:p-6 hover:border-purple-400 hover:shadow-lg transition-all group text-start"
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <Gamepad2 className="w-7 h-7 md:w-8 md:h-8 text-purple-500" />
-                    <h3 className="text-xl md:text-2xl font-bold text-slate-800">{t('hero.gamesCard.title')}</h3>
+                    <h2 className="text-xl md:text-2xl font-bold text-slate-800">{t('hero.gamesCard.title')}</h2>
                   </div>
                   <p className="text-base md:text-lg text-slate-600 mb-3">{t('hero.gamesCard.desc')}</p>
                   <span className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-bold text-base md:text-lg group-hover:-translate-y-0.5 transition-transform">
@@ -231,46 +199,20 @@ export default async function Home() {
                 </Link>
               </div>
 
-              {/* Quick Games Strip — live 3D games from the registry, so the hero
-                  points at the flagship experience instead of only the three
-                  legacy 2D quizzes (which stay reachable from /play). */}
-              {quickPlay.length > 0 && (
-                <div className="mt-4 text-center animate-slide-up delay-300">
-                  <div className="mb-2 flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1">
-                    <Gamepad2 className="w-4 h-4 text-purple-500" />
-                    <span className="text-sm font-bold text-slate-700">{t('quickGames.title')}</span>
-                    <span className="text-xs text-slate-400" aria-hidden="true">·</span>
-                    <span className="text-xs text-slate-500">{t('quickGames.subtitle')}</span>
-                  </div>
-
-                  <div className="flex flex-wrap justify-center gap-2">
-                    {quickPlay.map((game) => {
-                      const art = gameArt(game.id, game.topic);
-                      const Icon = art.icon;
-                      return (
-                        <Link
-                          key={game.id}
-                          href={`/play/${game.id}`}
-                          className="flex min-h-11 items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 shadow-sm transition-all hover:-translate-y-0.5 hover:border-transparent hover:shadow-md"
-                        >
-                          <span
-                            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-white"
-                            style={{ backgroundImage: `linear-gradient(135deg, ${art.from}, ${art.to})` }}
-                          >
-                            <Icon size={16} strokeWidth={2.4} />
-                          </span>
-                          <span className="max-w-[9rem] truncate text-xs font-bold text-slate-700">
-                            {game.title}
-                          </span>
-                        </Link>
-                      );
-                    })}
-                  </div>
+              <nav aria-label={t('grades.label')} className="mt-6 rounded-2xl border border-orange-100 bg-white/80 p-4">
+                <p className="mb-3 text-sm font-semibold text-slate-700">{t('grades.prompt')}</p>
+                <div className="flex flex-wrap items-center justify-center gap-2">
+                  {[1, 2, 3, 4, 5, 6].map(grade => (
+                    <Link key={grade} href={`/grade/${grade}`} data-discovery-source="home" data-discovery-target={`grade-${grade}`}
+                      className="inline-flex min-h-11 items-center rounded-xl border border-slate-200 bg-white px-4 py-2 font-bold text-slate-700 hover:border-orange-400 hover:bg-orange-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
+                      {tCommon(`grades.grade${grade}`)}
+                    </Link>
+                  ))}
                 </div>
-              )}
+              </nav>
 
               {/* Trust indicators */}
-              <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-500 animate-fade-in delay-400">
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-500">
                 <div className="flex items-center gap-1.5">
                   <Printer size={14} className="text-slate-400" />
                   <span>{t('hero.trustPrint')}</span>
@@ -290,6 +232,71 @@ export default async function Home() {
           </div>
         </section>
 
+        {/* Generators Grid - Card Design */}
+        <section id="generators" className="py-10 md:py-14 relative">
+          <div className="absolute inset-0 dot-pattern opacity-50"></div>
+
+          <div className="container-custom relative z-10">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4 text-display">
+                {t('generators.title')}
+              </h2>
+              <p className="text-lg text-slate-500">
+                {t('generators.subtitle')}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+              {generators.map((gen, i) => (
+                <Link
+                  key={i}
+                  href={gen.href}
+                  data-discovery-source="home"
+                  data-discovery-target={`worksheet-topic-${i}`}
+                  className="group relative bg-white rounded-2xl p-5 transition-all duration-300 border-2 border-slate-100 hover:border-transparent shadow-sm hover:shadow-2xl hover:shadow-slate-200/50 card-lift overflow-hidden"
+                >
+                  {/* Gradient overlay on hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${gen.color} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-300 rounded-3xl`}></div>
+
+                  {/* Corner decoration */}
+                  <div className={`absolute -top-12 -start-12 w-32 h-32 ${gen.bgColor} rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-150`}></div>
+
+                  <div className="relative z-10">
+                    {/* Icon container — the colour lives here, not on a
+                        `bg-clip-text text-transparent` wrapper: lucide icons
+                        stroke with currentColor, so clipping the background to
+                        the text made every glyph fully transparent. */}
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-3 ${gen.iconBg} ${gen.iconColor} group-hover:scale-110 transition-transform duration-300`}>
+                      {(() => { const Icon = gen.icon; return <Icon size={30} />; })()}
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-2xl font-bold text-slate-800 mb-2 group-hover:text-slate-900 transition-colors">
+                      {gen.title}
+                    </h3>
+                    <p className="text-slate-500 mb-5 leading-relaxed">
+                      {gen.desc}
+                    </p>
+
+                    {/* CTA */}
+                    <div className="flex items-center text-orange-800 font-bold text-sm group-hover:gap-2 transition-all">
+                      <span>{t('generators.cta')}</span>
+                      <ArrowLeft size={16} className="opacity-0 group-hover:opacity-100 transition-opacity ltr:-scale-x-100" />
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-6 text-center">
+              <Link href="/worksheet" data-discovery-source="home" data-discovery-target="all-worksheets" className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-orange-300 bg-white px-5 py-3 font-bold text-orange-800 hover:bg-orange-50">
+                {t('generators.all')}<ArrowLeft size={18} className="ltr:-scale-x-100" aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <GamesHub />
+
         {/* How it works - quick-start so first-timers know the flow (choose → customize → print/play) */}
         <section className="py-12 bg-white border-y border-slate-100">
           <div className="container-custom">
@@ -307,83 +314,6 @@ export default async function Home() {
                   <h3 className="text-lg font-bold mb-2 text-slate-800">{t(`howItWorks.step${s.n}.title`)}</h3>
                   <p className="text-slate-500 text-sm">{t(`howItWorks.step${s.n}.desc`)}</p>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Games Hub - prominent, fed live from the 3D games registry */}
-        <GamesHub />
-
-        {/* Generators Grid - Card Design */}
-        <section id="generators" className="py-20 md:py-28 relative">
-          <div className="absolute inset-0 dot-pattern opacity-50"></div>
-
-          <div className="container-custom relative z-10">
-            <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4 text-display">
-                {t('generators.title')}
-              </h2>
-              <p className="text-lg text-slate-500">
-                {t('generators.subtitle')}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-              {generators.map((gen, i) => (
-                <Link
-                  key={i}
-                  href={gen.href}
-                  className="group relative bg-white rounded-3xl p-7 transition-all duration-300 border-2 border-slate-100 hover:border-transparent shadow-sm hover:shadow-2xl hover:shadow-slate-200/50 card-lift overflow-hidden"
-                >
-                  {/* Gradient overlay on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${gen.color} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-300 rounded-3xl`}></div>
-
-                  {/* Corner decoration */}
-                  <div className={`absolute -top-12 -left-12 w-32 h-32 ${gen.bgColor} rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-150`}></div>
-
-                  <div className="relative z-10">
-                    {/* Icon container — the colour lives here, not on a
-                        `bg-clip-text text-transparent` wrapper: lucide icons
-                        stroke with currentColor, so clipping the background to
-                        the text made every glyph fully transparent. */}
-                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-5 ${gen.iconBg} ${gen.iconColor} group-hover:scale-110 transition-transform duration-300`}>
-                      {(() => { const Icon = gen.icon; return <Icon size={30} />; })()}
-                    </div>
-
-                    {/* Content */}
-                    <h3 className="text-2xl font-bold text-slate-800 mb-2 group-hover:text-slate-900 transition-colors">
-                      {gen.title}
-                    </h3>
-                    <p className="text-slate-500 mb-5 leading-relaxed">
-                      {gen.desc}
-                    </p>
-
-                    {/* CTA */}
-                    <div className="flex items-center text-orange-600 font-bold text-sm group-hover:gap-2 transition-all">
-                      <span>{t('generators.cta')}</span>
-                      <ArrowLeft size={16} className="opacity-0 group-hover:opacity-100 transition-opacity ltr:-scale-x-100" />
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Grade Levels Strip */}
-        <section className="py-12 border-y border-slate-100 bg-white">
-          <div className="container-custom">
-            <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
-              <span className="font-bold text-slate-500 text-sm">{t('grades.label')}</span>
-              {[1, 2, 3, 4, 5, 6].map((grade) => (
-                <Link
-                  key={grade}
-                  href={`/grade/${grade}`}
-                  className="px-5 py-2.5 bg-slate-50 rounded-full border border-slate-100 text-slate-600 font-bold hover:bg-orange-50 hover:border-orange-200 hover:text-orange-700 transition-all duration-200"
-                >
-                  {tCommon(`grades.grade${grade}`)}
-                </Link>
               ))}
             </div>
           </div>
@@ -432,128 +362,6 @@ export default async function Home() {
               <Link href="/help" className="inline-flex items-center gap-2 font-bold text-emerald-600">
                 {t('help.cta')} <ArrowLeft size={16} className="ltr:-scale-x-100" />
               </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Us Section */}
-        <section className="py-24 bg-gradient-to-b from-[#fffbf5] to-white relative overflow-hidden">
-          <div className="absolute inset-0 grid-pattern opacity-30"></div>
-
-          <div className="container-custom relative z-10">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-8 text-display leading-tight">
-                  {t('whyUs.title')}
-                  <br />
-                  <span className="text-gradient-warm">{t('whyUs.titleHighlight')}</span>
-                </h2>
-
-                <div className="space-y-6">
-                  <div className="flex gap-5 group">
-                    <div className="bg-emerald-100 w-14 h-14 rounded-2xl flex items-center justify-center text-emerald-600 shrink-0 group-hover:scale-110 transition-transform">
-                      <Brain size={26} />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-800 mb-2">{t('whyUs.feature1.title')}</h3>
-                      <p className="text-slate-600 leading-relaxed">
-                        {t('whyUs.feature1.desc')}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-5 group">
-                    <div className="bg-sky-100 w-14 h-14 rounded-2xl flex items-center justify-center text-sky-600 shrink-0 group-hover:scale-110 transition-transform">
-                      <Calculator size={26} />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-800 mb-2">{t('whyUs.feature2.title')}</h3>
-                      <p className="text-slate-600 leading-relaxed">
-                        {t('whyUs.feature2.desc')}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-5 group">
-                    <div className="bg-orange-100 w-14 h-14 rounded-2xl flex items-center justify-center text-orange-600 shrink-0 group-hover:scale-110 transition-transform">
-                      <Printer size={26} />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-800 mb-2">{t('whyUs.feature3.title')}</h3>
-                      <p className="text-slate-600 leading-relaxed">
-                        {t('whyUs.feature3.desc')}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Worksheet Preview */}
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-br from-orange-100 to-sky-100 rounded-[2.5rem] opacity-50 blur-2xl"></div>
-                <div className="relative bg-white p-5 rounded-3xl shadow-2xl shadow-slate-200/50 border border-slate-100">
-                  <div className="bg-gradient-to-b from-white to-slate-50 rounded-2xl p-5 border border-slate-100">
-                    {/* Worksheet Header */}
-                    <div className="flex items-center justify-between mb-4 pb-3 border-b border-dashed border-slate-200">
-                      <div>
-                        <h4 className="font-black text-slate-800 text-sm">{t('preview.title')}</h4>
-                        <p className="text-[10px] text-slate-400">{t('preview.subtitle')}</p>
-                      </div>
-                      <div className="text-start">
-                        <p className="text-[10px] text-slate-500">{t('preview.name')} _____________</p>
-                        <p className="text-[10px] text-slate-500">{t('preview.class')} ____</p>
-                      </div>
-                    </div>
-
-                    {/* Tip Box */}
-                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-2 mb-4">
-                      <p className="text-[10px] text-amber-700 font-medium">
-                        <span className="font-bold">{t('preview.tipLabel')}</span> {t('preview.tip')}
-                      </p>
-                    </div>
-
-                    {/* Problems */}
-                    <div className="space-y-2.5">
-                      {[
-                        { num: 1, problem: '24 + 15 =' },
-                        { num: 2, problem: '67 − 23 =' },
-                        { num: 3, problem: '38 + 47 =' },
-                        { num: 4, problem: '91 − 36 =' },
-                      ].map(item => (
-                        <div key={item.num} className="flex justify-between items-center bg-white rounded-lg px-3 py-2 border border-slate-100">
-                          <div className="flex items-center gap-2">
-                            <div className="w-5 h-5 bg-gradient-to-br from-orange-400 to-orange-500 rounded text-[10px] text-white flex items-center justify-center font-bold">{item.num}</div>
-                            <span className="text-slate-800 font-mono text-xs font-medium">{item.problem}</span>
-                          </div>
-                          <div className="w-10 h-5 border-b-2 border-dashed border-slate-300"></div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Footer */}
-                    <div className="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center">
-                      <div className="flex items-center gap-1">
-                        <div className="w-3 h-3 bg-emerald-100 rounded-full flex items-center justify-center">
-                          <span className="text-emerald-600 text-[8px]">✓</span>
-                        </div>
-                        <span className="text-[9px] text-slate-400">{t('preview.answerSheet')}</span>
-                      </div>
-                      <span className="text-[9px] text-slate-400 font-medium">{tCommon('siteName')}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating elements */}
-                <div className="absolute -top-3 -right-3 w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-200 animate-float">
-                  <span className="text-xl">✓</span>
-                </div>
-                <div className="absolute -bottom-3 -left-3 w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-emerald-200 animate-float-delayed">
-                  100
-                </div>
-                <div className="absolute top-1/2 -left-6 w-10 h-10 bg-gradient-to-br from-sky-400 to-sky-500 rounded-lg flex items-center justify-center text-white text-lg shadow-md shadow-sky-200 animate-float-slow">
-                  ★
-                </div>
-              </div>
             </div>
           </div>
         </section>

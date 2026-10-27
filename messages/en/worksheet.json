@@ -465,6 +465,59 @@
     "printError": "We could not open the print dialog. Try again or use Print in your browser menu.",
     "density": "Print density",
     "standard": "Standard",
-    "compact": "Compact — more exercises per page"
+    "compact": "Compact — more exercises per page",
+    "difficultyAddition": "At least one addend is {min} or more. The sum is at most {max}.",
+    "difficultySubtraction": "The number you subtract from is between {min} and {max}. Answers are non-negative.",
+    "difficultyMultiplication": "The product is between {min} and {max}.",
+    "difficultyDivision": "The dividend is between {min} and {max}. Every division has a whole-number answer."
+  },
+  "catalog": {
+    "intro": "Choose a topic, adapt the sheet to your child and print for free. You can also save a PDF from the print dialog.",
+    "chooseTopic": "What would you like to practice?",
+    "searchLabel": "Search topics",
+    "searchPlaceholder": "Try fractions, subtraction or area",
+    "categoryLabel": "Filter by subject",
+    "resultCount": "Topics shown: {count}",
+    "reset": "Clear filters",
+    "open": "Open worksheet",
+    "noResults": "No matching topics",
+    "noResultsHint": "Try another word or clear the filters to see all options.",
+    "showAll": "Show all topics",
+    "categories": {
+      "all": "All topics",
+      "arithmetic": "Four operations",
+      "parts": "Fractions, decimals and ratio",
+      "measurement": "Shapes and measurement",
+      "thinking": "Thinking and word problems"
+    },
+    "steps": {
+      "choose": {
+        "title": "Choose a topic",
+        "text": "Open the skill you want to practice."
+      },
+      "customize": {
+        "title": "Make it your own",
+        "text": "Adjust the available practice settings, exercise count and print density."
+      },
+      "print": {
+        "title": "Print and practice",
+        "text": "Check the preview and add a separate answer key if needed."
+      }
+    },
+    "descriptions": {
+      "addition": "Add numbers within your chosen range, from first sums to larger numbers.",
+      "subtraction": "Subtract numbers at your chosen level, with no negative answers.",
+      "multiplication": "Practice times tables and move on to larger products.",
+      "division": "Divide without remainders in a number range you choose.",
+      "fractions": "Practice fraction operations at different difficulty levels.",
+      "decimals": "Practice adding and subtracting decimal numbers.",
+      "percentage": "Find a percentage of a quantity and explore parts of a whole.",
+      "ratio": "Find the missing number in equivalent ratios.",
+      "geometry": "Calculate area and perimeter and identify angles using diagrams.",
+      "units": "Convert between units of length, mass and time.",
+      "word-problems": "Read a short story, choose an operation and solve it.",
+      "series": "Find the pattern and fill in the missing number."
+    },
+    "howTo": "How do I make a worksheet?"
   }
 }

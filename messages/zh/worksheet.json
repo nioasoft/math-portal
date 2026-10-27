@@ -465,6 +465,59 @@
     "printError": "无法打开打印窗口。请重试，或使用浏览器菜单中的打印功能。",
     "density": "打印密度",
     "standard": "标准",
-    "compact": "紧凑 — 每页更多练习"
+    "compact": "紧凑 — 每页更多练习",
+    "difficultyAddition": "至少一个加数不小于{min}，和不大于{max}。",
+    "difficultySubtraction": "被减数在{min}到{max}之间，结果不为负数。",
+    "difficultyMultiplication": "乘积在{min}到{max}之间。",
+    "difficultyDivision": "被除数在{min}到{max}之间，除法没有余数。"
+  },
+  "catalog": {
+    "intro": "选择主题，为孩子调整练习纸并免费打印。也可以在打印对话框中保存为PDF。",
+    "chooseTopic": "想练习什么？",
+    "searchLabel": "搜索主题",
+    "searchPlaceholder": "例如：分数、减法或面积",
+    "categoryLabel": "按类别筛选",
+    "resultCount": "显示主题：{count}",
+    "reset": "清除筛选",
+    "open": "打开练习纸",
+    "noResults": "没有匹配的主题",
+    "noResultsHint": "请尝试其他关键词，或清除筛选以查看全部主题。",
+    "showAll": "显示全部主题",
+    "categories": {
+      "all": "全部主题",
+      "arithmetic": "四则运算",
+      "parts": "分数、小数与比",
+      "measurement": "图形与测量",
+      "thinking": "思维与应用题"
+    },
+    "steps": {
+      "choose": {
+        "title": "选择主题",
+        "text": "打开想要练习的知识点。"
+      },
+      "customize": {
+        "title": "调整练习纸",
+        "text": "调整可用的练习选项、题目数量和打印密度。"
+      },
+      "print": {
+        "title": "打印并练习",
+        "text": "检查预览，需要时附上单独的答案页。"
+      }
+    },
+    "descriptions": {
+      "addition": "在所选范围内练习加法，从初步加法到大数运算。",
+      "subtraction": "按所选难度练习减法，结果不为负数。",
+      "multiplication": "练习乘法口诀，再学习更大的乘积。",
+      "division": "在所选数值范围内练习没有余数的除法。",
+      "fractions": "按不同难度练习分数运算。",
+      "decimals": "练习小数加减法。",
+      "percentage": "计算一个数的百分之几，理解部分与整体。",
+      "ratio": "补全相等比中的缺失数字。",
+      "geometry": "借助图形计算面积和周长，并识别角。",
+      "units": "换算长度、质量和时间单位。",
+      "word-problems": "阅读简短故事，选择运算并解决问题。",
+      "series": "找出规律，补全缺失的数字。"
+    },
+    "howTo": "如何制作练习纸？"
   }
 }

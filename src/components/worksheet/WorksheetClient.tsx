@@ -94,6 +94,8 @@ export default function WorksheetClient() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchParams, count]);
 
+    const difficultyKey = operation === '+' ? 'difficultyAddition' : operation === '-' ? 'difficultySubtraction' : operation === '*' ? 'difficultyMultiplication' : 'difficultyDivision';
+
     const { onPrint, printing, printError } = useWorksheetPrint({
             worksheet_type: 'math',
             operation: operation,
@@ -210,6 +212,9 @@ export default function WorksheetClient() {
             </div>
 
             {/* A4 Paper Preview Wrapper */}
+            <p className="container-custom mt-4 text-sm text-slate-700 print:hidden" aria-live="polite">
+                {t(`document.${difficultyKey}`, { min: formatNumber(MathEngine.difficultyFloor(range), locale), max: formatNumber(range, locale) })}
+            </p>
             <WorksheetActionBar count={problems.length} onRefresh={() => handleGenerate(operation, range, count, true)} />
             <WorksheetDocument title={title}
                 items={problems} perPage={12} variant="math" includeAnswers={showAnswers}

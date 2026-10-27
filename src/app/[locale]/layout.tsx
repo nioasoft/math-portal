@@ -1,3 +1,4 @@
+import { DiscoveryTracking } from '@/components/DiscoveryTracking';
 import type { Metadata, Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale, getTranslations } from "next-intl/server";
@@ -269,6 +270,7 @@ export default async function LocaleLayout({
         className={`${fontVar} antialiased font-sans bg-slate-50 text-slate-900`}
       >
         <NextIntlClientProvider messages={messages}>
+          <DiscoveryTracking />
           {children}
           <PWAInstallBanner />
           <CookieConsent />

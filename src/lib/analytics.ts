@@ -97,3 +97,13 @@ export function trackGameComplete(params: GameCompleteParams): void {
         });
     }
 }
+
+/** Measures intentional entry into an activity; existing consent controls still apply. */
+export function trackDiscoveryEvent(source: string, target: string): void {
+    if (!['header', 'footer', 'home', 'worksheet_catalog'].includes(source) || !/^[a-z0-9_-]{1,64}$/.test(target)) return;
+    try {
+        if (typeof window !== 'undefined') window.gtag?.('event', 'discover_activity', { source, target });
+    } catch (error) {
+        console.error('Activity discovery analytics failed', error);
+    }
+}

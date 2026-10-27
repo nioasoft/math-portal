@@ -6,9 +6,9 @@
   },
   "controls": {
     "print": "Drucken",
-    "refresh": "Aktualisieren",
-    "showAnswers": "Lösungen anzeigen",
-    "hideAnswers": "Lösungen verbergen",
+    "refresh": "Neue Aufgaben",
+    "showAnswers": "Lösungsseiten hinzufügen",
+    "hideAnswers": "Lösungsseiten entfernen",
     "settings": "Einstellungen",
     "problemCount": "Anzahl der Aufgaben",
     "selectOperation": "Rechenart wählen",
@@ -155,6 +155,24 @@
         "Zeichnen hilft! Ermutigen Sie Ihr Kind, die Aufgabe zu zeichnen, bevor es die Rechnung aufschreibt.",
         "Fragen Sie am Ende: 'Ergibt die Antwort Sinn?'. Wenn Danny am Ende eine Million Äpfel hat, ist wahrscheinlich ein Fehler passiert."
       ]
+    },
+    "engine": {
+      "addition": [
+        "In einer Schachtel sind {a} Stifte. Wir legen {b} Stifte dazu. Wie viele sind es jetzt?",
+        "Auf einem Regal stehen {a} Bücher. Wir stellen {b} dazu. Wie viele Bücher sind es jetzt?"
+      ],
+      "subtraction": [
+        "In einem Korb liegen {a} Äpfel. Wir nehmen {b} heraus. Wie viele bleiben übrig?",
+        "Ein Laden hat {a} Bälle und verkauft {b}. Wie viele bleiben übrig?"
+      ],
+      "multiplication": [
+        "Es gibt {b} Schachteln mit je {a} Stiften. Wie viele Stifte sind es insgesamt?",
+        "Eine Karte kostet {a} Münzen. Wie viel kosten {b} Karten?"
+      ],
+      "division": [
+        "Wir verteilen {a} Aufkleber gleichmäßig auf {b} Kinder. Wie viele bekommt jedes Kind?",
+        "Wir verteilen {a} Bücher gleichmäßig auf {b} Regale. Wie viele stehen auf jedem Regal?"
+      ]
     }
   },
   "series": {
@@ -168,8 +186,8 @@
       "hard": "Schwer"
     },
     "showHide": {
-      "show": "Anzeigen",
-      "hide": "Verbergen"
+      "show": "Lösungsseiten hinzufügen",
+      "hide": "Lösungsseiten entfernen"
     },
     "help": "Erklärungen",
     "rule": "Muster:",
@@ -231,8 +249,8 @@
       "days": "Tage"
     },
     "showHide": {
-      "show": "Anzeigen",
-      "hide": "Verbergen"
+      "show": "Lösungsseiten hinzufügen",
+      "hide": "Lösungsseiten entfernen"
     },
     "help": "Erklärungen",
     "content": {
@@ -430,5 +448,20 @@
   },
   "empty": {
     "message": "Es wurden keine Aufgaben erstellt. Versuche es erneut."
+  },
+  "document": {
+    "all": "Alle Aufgaben ({count})",
+    "onePage": "Eine Seite ({count} Aufgaben)",
+    "summary": "{count} Aufgaben · {pages} Übungsseiten · {answers} Lösungsseiten",
+    "printHint": "Auf A4 mit 100% Skalierung und ohne Browser-Kopf- und Fußzeilen drucken. Lösungsseiten werden nur auf Wunsch separat hinzugefügt.",
+    "page": "Seite {page} von {pages}",
+    "customTitle": "Eigener Titel",
+    "childName": "Name des Kindes",
+    "optional": "Optional",
+    "spacious": "Mehr Platz zum Schreiben — weniger Aufgaben pro Seite",
+    "answersOnly": "Nur Lösungen drucken",
+    "loading": "Arbeitsblatt wird vorbereitet…",
+    "circleHint": "Bei Kreisen die π-Taste verwenden und auf zwei Dezimalstellen runden. Zeichnungen sind nicht maßstabsgetreu.",
+    "printError": "Der Druckdialog konnte nicht geöffnet werden. Bitte erneut versuchen oder im Browsermenü drucken."
   }
 }

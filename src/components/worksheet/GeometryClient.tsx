@@ -3,11 +3,12 @@
 import { useState } from 'react';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { usePersistentToggle } from '@/lib/useWorksheetPrefs';
+import { useWorksheetProblems } from '@/lib/useWorksheetProblems';
+import { useWorksheetPrint } from '@/lib/useWorksheetPrint';
+import { WorksheetDocument } from './WorksheetDocument';
 import { WorksheetActionBar } from '@/components/worksheet/WorksheetActionBar';
 import ContentSection from '@/components/ContentSection';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { trackPrintEvent } from '@/lib/analytics';
 import { useTranslations } from 'next-intl';
 
 type GeomTopic = 'rect' | 'triangle' | 'angle' | 'circle';
@@ -33,7 +34,7 @@ interface GeomProblem {
 function createProblems(topic: GeomTopic): GeomProblem[] {
     const newProblems: GeomProblem[] = [];
     const generated = new Set<string>();
-    const count = 9; // Grid 3x3
+    const count = topic === 'circle' ? 8 : 9;
     const maxAttempts = count * 10;
     let attempts = 0;
 
@@ -99,8 +100,8 @@ export default function GeometryClient() {
     const t = useTranslations('worksheet');
     const metaT = useTranslations('meta');
     const [topic, setTopic] = useState<GeomTopic>('rect');
-    const [problems, setProblems] = useState<GeomProblem[]>(() => createProblems('rect'));
-    const [showAnswers, setShowAnswers] = usePersistentToggle('showAnswers');
+    const [problems, setProblems] = useWorksheetProblems(() => createProblems('rect'));
+    const [showAnswers, setShowAnswers] = useState(false);
 
     const regenerateProblems = () => {
         setProblems(createProblems(topic));
@@ -111,10 +112,7 @@ export default function GeometryClient() {
         setProblems(createProblems(newTopic));
     };
 
-    const onPrint = () => {
-        trackPrintEvent({ worksheet_type: 'geometry' });
-        window.print();
-    };
+    const { onPrint, printing, printError } = useWorksheetPrint({ worksheet_type: 'geometry' });
 
     const renderShape = (p: GeomProblem) => {
         const { data } = p;
@@ -122,15 +120,15 @@ export default function GeometryClient() {
 
         if (p.topic === 'rect' && data.width && data.height) {
             return (
-                <div className="relative border-4 border-slate-800 bg-white"
+                <div dir="ltr" className="relative border-4 border-slate-800 bg-white"
                     style={{
                         width: `${data.width * 15}px`,
                         height: `${data.height * 15}px`,
                         backgroundImage: 'linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px)',
                         backgroundSize: '15px 15px'
                     }}>
-                    <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-lg font-bold bg-white px-2 whitespace-nowrap">{data.width} {unit}</span>
-                    <span className="absolute -left-16 top-1/2 -translate-y-1/2 text-lg font-bold bg-white px-2 whitespace-nowrap">{data.height} {unit}</span>
+                    <span className="absolute -top-8 start-1/2 -translate-x-1/2 text-lg font-bold bg-white px-2 whitespace-nowrap"><bdi>{data.width}</bdi> {unit}</span>
+                    <span className="absolute -start-16 top-1/2 -translate-y-1/2 text-lg font-bold bg-white px-2 whitespace-nowrap">{data.height} {unit}</span>
                 </div>
             );
         }
@@ -138,14 +136,14 @@ export default function GeometryClient() {
         if (p.topic === 'triangle') {
             // Draw a standard triangle using SVG
             return (
-                <svg width="150" height="120" viewBox="0 0 150 120" className="overflow-visible">
+                <svg width="150" height="120" viewBox="0 0 150 145" className="overflow-visible">
                     {/* Triangle Path */}
                     <path d="M75 10 L140 110 L10 110 Z" fill="none" stroke="#1e293b" strokeWidth="3" />
                     {/* Height Line (Dashed) */}
                     <path d="M75 10 L75 110" stroke="#94a3b8" strokeWidth="2" strokeDasharray="5,3" />
                     {/* Labels */}
                     <text x="75" y="130" textAnchor="middle" className="text-sm font-bold">{t('geometry.labels.base')} {data.base}</text>
-                    <text x="80" y="60" textAnchor="start" className="text-sm font-bold text-slate-500">{t('geometry.labels.height')} {data.height}</text>
+                    <text x="80" y="60" textAnchor="start" className="text-sm font-bold" fill="#475569">{t('geometry.labels.height')} {data.height}</text>
                 </svg>
             );
         }
@@ -195,7 +193,7 @@ export default function GeometryClient() {
         return t('geometry.angleTypes.acute');
     };
 
-    const renderAnswer = (p: GeomProblem) => {
+    const renderAnswer = (p: GeomProblem, showAnswers: boolean) => {
         if (p.topic === 'rect' && p.data.width && p.data.height) {
             return (
                 <div className="text-lg space-y-1 w-40">
@@ -251,20 +249,20 @@ export default function GeometryClient() {
     }
 
     return (
-        <div className="min-h-screen bg-slate-100 font-sans text-slate-900 pb-20 print:bg-white">
+        <div className="worksheet-workspace min-h-screen bg-slate-100 text-slate-900 pb-20 print:bg-white">
             {/* Toolbar */}
             <div className="bg-white border-b border-slate-200 sticky top-0 z-40 print:hidden shadow-sm">
                 <div className="container-custom py-4 flex flex-wrap items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
-                        <Link href="/" className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
-                            <ArrowLeft size={20} />
+                        <Link href="/worksheet" aria-label={metaT('breadcrumb.worksheets')} className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
+                            <ArrowLeft size={20} className="rtl:rotate-180" />
                         </Link>
                         <h1 className="text-xl font-bold text-slate-800">{t('geometry.title')}</h1>
                     </div>
 
                     <div className="flex items-center gap-4 flex-1 justify-center">
                         <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 p-1.5 rounded-lg">
-                            <span className="text-xs text-slate-400 mr-2" id="topic-label">{t('geometry.topicLabel')}</span>
+                            <span className="text-xs text-slate-400 ms-2" id="topic-label">{t('geometry.topicLabel')}</span>
                             <select
                                 className="bg-transparent text-sm font-medium px-2 py-1 outline-none cursor-pointer"
                                 value={topic}
@@ -283,16 +281,17 @@ export default function GeometryClient() {
                             className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-blue-700 transition"
                         >
                             <RefreshCw size={16} />
-                            <span className="hidden sm:inline">{t('controls.refresh')}</span>
+                            <span>{t('controls.refresh')}</span>
                         </button>
 
                         <button
                             onClick={() => setShowAnswers(!showAnswers)}
                             className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition shadow-sm ${showAnswers ? 'bg-amber-100 text-amber-700 border border-amber-200' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}
                             aria-pressed={showAnswers}
+                            aria-label={showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}
                         >
                             {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
-                            <span className="hidden sm:inline">{showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}</span>
+                            <span>{showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}</span>
                         </button>
                     </div>
 
@@ -301,10 +300,10 @@ export default function GeometryClient() {
                         className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-emerald-200 transition shadow-sm"
                     >
                         <HelpCircle size={16} />
-                        <span className="hidden sm:inline">{t('controls.helpForParents')}</span>
+                        <span>{t('controls.helpForParents')}</span>
                     </Link>
                     <button
-                        onClick={onPrint}
+                        onClick={onPrint} disabled={printing || problems.length === 0}
                         className="bg-slate-900 text-white px-6 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-slate-800 transition"
                     >
                         <Printer size={16} />
@@ -313,6 +312,7 @@ export default function GeometryClient() {
                 </div>
             </div>
 
+            {printError && <p role="alert" className="container-custom py-3 text-red-700 print:hidden">{t('document.printError')}</p>}
             {/* Breadcrumbs */}
             <div className="container-custom py-3 print:hidden">
                 <Breadcrumb
@@ -327,19 +327,14 @@ export default function GeometryClient() {
             {/* A4 Paper Wrapper */}
             <WorksheetActionBar count={problems.length} onRefresh={regenerateProblems} />
 
-            <div className="w-full overflow-x-auto pb-12 print:pb-0 print:overflow-visible custom-scrollbar">
-                <div className="min-w-[210mm] max-w-[210mm] mx-auto mt-8 bg-white shadow-xl min-h-[297mm] p-[20mm] print:p-[10mm] print:shadow-none print:mt-0 print:mx-0 print:w-full print:min-h-0 print:h-auto print:overflow-visible">
-                    <div className="text-center border-b-2 border-slate-100 pb-8 mb-12 print:mb-4 print:pb-2 print:border-b">
-                        <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">
-                            {getTitle()}
-                        </h2>
-                    </div>
-
-                    <div className="grid grid-cols-3 gap-y-12 gap-x-8" dir="rtl">
-                        {problems.map((prob, idx) => (
-                            <div key={prob.id} className="break-inside-avoid page-break-inside-avoid flex flex-col items-center">
+            <WorksheetDocument title={getTitle()} instruction={topic === 'circle' ? t('document.circleHint') : undefined}
+                items={problems} perPage={6} variant="geometry" includeAnswers={showAnswers}
+                renderPage={(pageItems, showAnswers, offset) => (
+                    <div className="worksheet-grid">
+                        {pageItems.map((prob, idx) => (
+                            <div key={prob.id} dir="inherit" className="worksheet-problem worksheet-numbered flex flex-col items-center">
                                 <div className="w-full flex justify-between px-2 mb-4">
-                                    <span className="bg-slate-100 text-slate-500 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">{idx + 1}</span>
+                                    <span className="bg-slate-100 text-slate-500 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">{offset + idx + 1}</span>
                                 </div>
 
                                 <div className="h-32 flex items-center justify-center w-full">
@@ -347,17 +342,13 @@ export default function GeometryClient() {
                                 </div>
 
                                 <div className="mt-6 w-full flex justify-center">
-                                    {renderAnswer(prob)}
+                                    {renderAnswer(prob, showAnswers)}
                                 </div>
                             </div>
                         ))}
                     </div>
-
-                    <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
-                        {t('print.copyright')}
-                    </div>
-                </div>
-            </div>
+                )}
+            />
 
             <ContentSection
                 title={t('geometry.content.title')}

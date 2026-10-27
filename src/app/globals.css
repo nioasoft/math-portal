@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./worksheet.css";
 
 /* `static` so every token below is emitted into :root even when it is only
    reached through var() in this file rather than through a utility class. */

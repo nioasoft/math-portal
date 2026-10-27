@@ -1,7 +1,10 @@
 'use client';
 
+import { useSyncExternalStore } from 'react';
 import { RefreshCw, ArrowDown } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+
+const subscribe = () => () => {};
 
 interface WorksheetActionBarProps {
     /** Number of problems currently rendered. 0 → show the empty-state fallback. */
@@ -18,6 +21,8 @@ interface WorksheetActionBarProps {
  */
 export function WorksheetActionBar({ count, onRefresh }: WorksheetActionBarProps): React.ReactElement {
     const t = useTranslations('worksheet');
+    const mounted = useSyncExternalStore(subscribe, () => true, () => false);
+    if (!mounted) return <p className="container-custom py-6 print:hidden" role="status">{t('document.loading')}</p>;
 
     if (count === 0) {
         return (

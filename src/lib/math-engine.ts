@@ -22,74 +22,27 @@ export class MathEngine {
         operation: MathOperation,
         range: number
     ): { num1: number; num2: number } {
-        let num1 = 0;
-        let num2 = 0;
-
+        const min = range > 100 ? Math.floor(range / 10) : 1;
         switch (operation) {
-            case '+':
-                if (range <= 100) {
-                    num1 = this.getRandomInt(10, range - 10);
-                    num2 = this.getRandomInt(1, range - num1);
-                } else {
-                    // For larger ranges, ensure we don't just get small numbers
-                    const minStart = range / 10;
-                    num1 = this.getRandomInt(minStart, range - minStart);
-                    num2 = this.getRandomInt(minStart, range - num1);
-                }
-                break;
-
-            case '-':
-                // Ensure positive result
-                if (range <= 100) {
-                    num1 = this.getRandomInt(20, range);
-                    num2 = this.getRandomInt(1, num1 - 1);
-                } else {
-                    const minStart = range / 10;
-                    num1 = this.getRandomInt(minStart, range);
-                    num2 = this.getRandomInt(minStart, num1 - minStart);
-                }
-                break;
-
-            case '*':
-                // Multiplication
-                // Range acts as "up to X table" or "result up to X"
-                // Let's assume for Grade 2-3, range 100 means result up to 100
-                if (range <= 100) {
-                    num1 = this.getRandomInt(2, 10);
-                    num2 = this.getRandomInt(1, 10); // 10x10=100
-                } else {
-                    // Larger multiplication
-                    num1 = this.getRandomInt(10, Math.sqrt(range));
-                    num2 = this.getRandomInt(2, range / num1);
-                }
-                break;
-
+            case '+': {
+                const num1 = this.getRandomInt(min, range - min);
+                return { num1, num2: this.getRandomInt(min, range - num1) };
+            }
+            case '-': {
+                const num1 = this.getRandomInt(min + 1, range);
+                return { num1, num2: this.getRandomInt(1, num1) };
+            }
+            case '*': {
+                const num1 = this.getRandomInt(1, Math.floor(Math.sqrt(range)));
+                return { num1, num2: this.getRandomInt(1, Math.floor(range / num1)) };
+            }
             case ':':
-            case '/':
-                // Division (Exact division for now)
-                // Generate multiplication first then flip
-                if (range <= 100) {
-                    const res = this.getRandomInt(2, 10);
-                    const factor = this.getRandomInt(2, 10);
-                    num1 = res * factor;
-                    num2 = factor;
-                } else {
-                    // Division for larger numbers
-                    // We want the Dividend (num1) to be large, up to Range.
-                    // Divisor (num2/factor) should be reasonable (e.g., 2-20 or 2-100 depending on complexity).
-                    // Let's keep one number relatively small (2-50) so it's solvable
-                    const factor = this.getRandomInt(2, 30);
-                    const maxRes = Math.floor(range / factor);
-                    const minRes = Math.floor(maxRes / 10);
-                    const res = this.getRandomInt(Math.max(2, minRes), maxRes);
-
-                    num1 = res * factor;
-                    num2 = factor;
-                }
-                break;
+            case '/': {
+                const num2 = this.getRandomInt(1, Math.min(30, range));
+                const answer = this.getRandomInt(1, Math.floor(range / num2));
+                return { num1: answer * num2, num2 };
+            }
         }
-
-        return { num1, num2 };
     }
 
     /**
@@ -100,6 +53,11 @@ export class MathEngine {
         operation: MathOperation,
         range: number
     ): MathProblem[] {
+        if (!Number.isInteger(range) || range < 2 || range > 1000000 ||
+            !Number.isInteger(count) || count < 1 || count > 100 ||
+            !['+', '-', '*', '/', ':'].includes(operation)) {
+            throw new RangeError('Invalid worksheet arithmetic settings');
+        }
         const problems: MathProblem[] = [];
         const generated = new Set<string>();
         const maxAttempts = count * 10; // Prevent infinite loops

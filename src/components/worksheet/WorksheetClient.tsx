@@ -7,12 +7,17 @@ import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-r
 import { Link } from '@/i18n/navigation';
 import ContentSection from '@/components/ContentSection';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { trackPrintEvent, trackGenerateEvent } from '@/lib/analytics';
-import { usePersistentToggle } from '@/lib/useWorksheetPrefs';
-import { useTranslations } from 'next-intl';
+import { trackGenerateEvent } from '@/lib/analytics';
+import { useWorksheetPrint } from '@/lib/useWorksheetPrint';
+import { WorksheetDocument } from './WorksheetDocument';
+import { useTranslations, useLocale } from 'next-intl';
+import { getDivisionSymbol, formatNumber } from '@/lib/math-notation';
+import type { Locale } from '@/i18n/config';
+import { WorksheetActionBar } from './WorksheetActionBar';
 
 export default function WorksheetClient() {
     const t = useTranslations('worksheet');
+    const locale = useLocale() as Locale;
     const metaT = useTranslations('meta');
     const searchParams = useSearchParams();
     const router = useRouter();
@@ -24,7 +29,7 @@ export default function WorksheetClient() {
     const [range, setRange] = useState<number>(10);
     const [count] = useState<number>(20); // Problems per page
     const [title, setTitle] = useState<string>(t('generator.defaultWorksheetTitle'));
-    const [showAnswers, setShowAnswers] = usePersistentToggle('showAnswers');
+    const [showAnswers, setShowAnswers] = useState(false);
 
     const updateUrl = (newOp: MathOperation, newRange: number) => {
         const params = new URLSearchParams(searchParams);
@@ -50,7 +55,7 @@ export default function WorksheetClient() {
 
     const updateTitle = (op: MathOperation, r: number) => {
         const opText = getOperationText(op);
-        setTitle(t('generator.titleFormat', { operation: opText, range: r.toLocaleString() }));
+        setTitle(t('generator.titleFormat', { operation: opText, range: formatNumber(r, locale) }));
     };
 
     const handleGenerate = (op: MathOperation, r: number, c: number, trackEvent = false) => {
@@ -78,7 +83,8 @@ export default function WorksheetClient() {
         if (opParam === 'mul') initialOp = '*';
         if (opParam === 'div') initialOp = ':';
 
-        const initialRange = rangeParam ? parseInt(rangeParam) : 10;
+        const parsedRange = Number(rangeParam);
+        const initialRange = [10, 20, 100, 1000, 10000, 100000, 1000000].includes(parsedRange) ? parsedRange : 10;
 
         setOperation(initialOp);
         setRange(initialRange);
@@ -88,24 +94,21 @@ export default function WorksheetClient() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchParams, count]);
 
-    const onPrint = () => {
-        trackPrintEvent({
+    const { onPrint, printing, printError } = useWorksheetPrint({
             worksheet_type: 'math',
             operation: operation,
             range: range,
         });
-        window.print();
-    };
 
     return (
-        <div className="min-h-screen bg-slate-100 font-sans text-slate-900 pb-20 print:bg-white">
+        <div className="worksheet-workspace min-h-screen bg-slate-100 text-slate-900 pb-20 print:bg-white">
 
             {/* Configure Toolbar (Hidden on Print) */}
             <div className="bg-white border-b border-slate-200 sticky top-0 z-40 print:hidden shadow-sm">
                 <div className="container-custom py-4 flex flex-wrap items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
-                        <Link href="/" className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
-                            <ArrowLeft size={20} />
+                        <Link href="/worksheet" aria-label={metaT('breadcrumb.worksheets')} className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
+                            <ArrowLeft size={20} className="rtl:rotate-180" />
                         </Link>
                         <h1 className="text-xl font-bold text-slate-800 hidden sm:block">{t('generator.title')}</h1>
                     </div>
@@ -131,7 +134,7 @@ export default function WorksheetClient() {
                         </div>
 
                         <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 p-1.5 rounded-lg">
-                            <span className="text-xs text-slate-400 mr-2" id="range-label">{t('range.label')}</span>
+                            <span className="text-xs text-slate-400 ms-2" id="range-label">{t('range.label')}</span>
                             <select
                                 className="bg-transparent text-sm font-medium px-2 py-1 outline-none cursor-pointer"
                                 value={range}
@@ -157,16 +160,17 @@ export default function WorksheetClient() {
                             className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-blue-700 transition shadow-sm"
                         >
                             <RefreshCw size={16} />
-                            <span className="hidden sm:inline">{t('controls.refresh')}</span>
+                            <span>{t('controls.refresh')}</span>
                         </button>
 
                         <button
                             onClick={() => setShowAnswers(!showAnswers)}
                             className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition shadow-sm ${showAnswers ? 'bg-amber-100 text-amber-700 border border-amber-200' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}
                             aria-pressed={showAnswers}
+                            aria-label={showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}
                         >
                             {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
-                            <span className="hidden sm:inline">{showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}</span>
+                            <span>{showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}</span>
                         </button>
                     </div>
 
@@ -175,10 +179,10 @@ export default function WorksheetClient() {
                         className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-emerald-200 transition shadow-sm"
                     >
                         <HelpCircle size={16} />
-                        <span className="hidden sm:inline">{t('controls.helpForParents')}</span>
+                        <span>{t('controls.helpForParents')}</span>
                     </Link>
                     <button
-                        onClick={onPrint}
+                        onClick={onPrint} disabled={printing || problems.length === 0}
                         className="bg-slate-900 text-white px-6 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-slate-800 transition shadow-sm"
                     >
                         <Printer size={16} />
@@ -187,6 +191,7 @@ export default function WorksheetClient() {
                 </div>
             </div>
 
+            {printError && <p role="alert" className="container-custom py-3 text-red-700 print:hidden">{t('document.printError')}</p>}
             {/* Breadcrumbs */}
             <div className="container-custom py-3 print:hidden">
                 <Breadcrumb
@@ -205,20 +210,12 @@ export default function WorksheetClient() {
             </div>
 
             {/* A4 Paper Preview Wrapper */}
-            <div className="w-full overflow-x-auto pb-12 print:pb-0 print:overflow-visible custom-scrollbar">
-                <div className="min-w-[210mm] max-w-[210mm] mx-auto mt-8 bg-white shadow-xl min-h-[297mm] p-[20mm] print:p-[10mm] print:shadow-none print:mt-0 print:mx-0 print:w-full print:min-h-0 print:h-auto print:overflow-visible">
-
-                    {/* Worksheet Header */}
-                    <div className="text-center border-b-2 border-slate-100 pb-8 mb-12 print:mb-4 print:pb-2 print:border-b">
-                        <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">{title}</h2>
-                        <div className="flex justify-between mt-8 text-lg print:hidden">
-                            <div className="text-slate-400 text-sm">tirgul.net</div>
-                        </div>
-                    </div>
-
-                    {/* Problems Grid */}
-                    <div className="grid grid-cols-4 gap-y-16 gap-x-12" dir="ltr">
-                        {problems.map((prob) => {
+            <WorksheetActionBar count={problems.length} onRefresh={() => handleGenerate(operation, range, count, true)} />
+            <WorksheetDocument title={title}
+                items={problems} perPage={12} variant="math" includeAnswers={showAnswers}
+                renderPage={(pageItems, showAnswers, offset) => (
+                    <div className="worksheet-grid">
+                        {pageItems.map((prob, index) => {
                             let result = 0;
                             switch (prob.operator) {
                                 case '+': result = prob.num1 + prob.num2; break;
@@ -228,33 +225,34 @@ export default function WorksheetClient() {
                             }
 
                             return (
-                                <div key={prob.id} className="break-inside-avoid page-break-inside-avoid">
-                                    <div className="inline-grid grid-cols-[auto_1fr] text-3xl font-medium font-mono leading-none ml-auto content-end w-fit">
+                                <div key={prob.id} dir="ltr" className="worksheet-problem">
+                                    <span className="worksheet-number">{offset + index + 1}</span>
+                                    {prob.operator === ':' || prob.operator === '/' ? (
+                                        <div className="text-xl font-mono flex flex-wrap items-center gap-2" dir="ltr">
+                                            <span>{formatNumber(prob.num1, locale)} {getDivisionSymbol(locale)} {formatNumber(prob.num2, locale)} =</span>
+                                            <span className="inline-block min-w-12 border-b border-slate-600">{showAnswers ? formatNumber(result, locale) : '\u00a0'}</span>
+                                        </div>
+                                    ) : <div className="inline-grid grid-cols-[auto_1fr] text-3xl font-medium font-mono leading-none me-auto content-end w-fit">
                                         {/* Row 1 */}
                                         <div></div>
-                                        <div className="text-right pb-1">{prob.num1.toLocaleString()}</div>
+                                        <div className="text-right pb-1">{formatNumber(prob.num1, locale)}</div>
 
                                         {/* Row 2 */}
-                                        <div className="text-2xl pt-1 pr-3 border-b-2 border-slate-900 pb-2">{prob.operator}</div>
-                                        <div className="text-right border-b-2 border-slate-900 pb-2">{prob.num2.toLocaleString()}</div>
+                                        <div className="text-2xl pt-1 pe-3 border-b-2 border-slate-900 pb-2">{prob.operator === '*' ? '×' : prob.operator}</div>
+                                        <div className="text-right border-b-2 border-slate-900 pb-2">{formatNumber(prob.num2, locale)}</div>
 
                                         {/* Result Row (Answer Key) - always rendered to prevent CLS */}
                                         <div></div>
                                         <div className={`text-right pt-2 text-red-600 font-bold min-h-[1.5em] ${showAnswers ? 'visible' : 'invisible'}`}>
-                                            {result.toLocaleString()}
+                                            {formatNumber(result, locale)}
                                         </div>
-                                    </div>
+                                    </div>}
                                 </div>
                             );
                         })}
                     </div>
-
-                    {/* Footer / Copyright on Paper */}
-                    <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
-                        {t('print.copyright')}
-                    </div>
-                </div>
-            </div>
+                )}
+            />
 
             {/* Helper Text */}
             <div className="text-center mt-8 text-slate-500 text-sm print:hidden">

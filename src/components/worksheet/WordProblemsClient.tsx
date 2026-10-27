@@ -1,14 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { WordProblemEngine, Operation } from '@/lib/word-problem-engine';
+import { WordProblemEngine, Operation, type WordProblemCopy } from '@/lib/word-problem-engine';
 import { Printer, RefreshCw, ArrowLeft, Eye, EyeOff, HelpCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { usePersistentToggle } from '@/lib/useWorksheetPrefs';
+import { useWorksheetProblems } from '@/lib/useWorksheetProblems';
+import { useWorksheetPrint } from '@/lib/useWorksheetPrint';
+import { WorksheetDocument } from './WorksheetDocument';
 import { WorksheetActionBar } from '@/components/worksheet/WorksheetActionBar';
 import ContentSection from '@/components/ContentSection';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { trackPrintEvent } from '@/lib/analytics';
 import { useTranslations } from 'next-intl';
 
 interface QuestionState {
@@ -17,7 +18,7 @@ interface QuestionState {
     answer: number;
 }
 
-function createQuestions(selectedGrade: number): QuestionState[] {
+function createQuestions(selectedGrade: number, copy: WordProblemCopy): QuestionState[] {
     const newQuestions: QuestionState[] = [];
     const generatedTexts = new Set<string>();
     // Mix of operations suitable for the grade
@@ -35,7 +36,7 @@ function createQuestions(selectedGrade: number): QuestionState[] {
     while (newQuestions.length < 8 && attempts < maxAttempts) { // 8 questions per page for word problems (they take more space)
         attempts++;
         const op = ops[Math.floor(Math.random() * ops.length)];
-        const q = WordProblemEngine.generateProblem(selectedGrade, op);
+        const q = WordProblemEngine.generateProblem(selectedGrade, op, copy);
 
         if (!generatedTexts.has(q.question)) {
             generatedTexts.add(q.question);
@@ -52,39 +53,37 @@ function createQuestions(selectedGrade: number): QuestionState[] {
 export default function WordProblemsClient() {
     const t = useTranslations('worksheet');
     const metaT = useTranslations('meta');
+    const copy = t.raw('wordProblems.engine') as WordProblemCopy;
     const [grade, setGrade] = useState<number>(1);
-    const [questions, setQuestions] = useState<QuestionState[]>(() => createQuestions(1));
-    const [showAnswers, setShowAnswers] = usePersistentToggle('showAnswers');
+    const [questions, setQuestions] = useWorksheetProblems(() => createQuestions(1, copy));
+    const [showAnswers, setShowAnswers] = useState(false);
 
     const regenerateQuestions = () => {
-        setQuestions(createQuestions(grade));
+        setQuestions(createQuestions(grade, copy));
     };
 
     const handleGradeChange = (newGrade: number) => {
         setGrade(newGrade);
-        setQuestions(createQuestions(newGrade));
+        setQuestions(createQuestions(newGrade, copy));
     };
 
-    const onPrint = () => {
-        trackPrintEvent({ worksheet_type: 'word-problems' });
-        window.print();
-    };
+    const { onPrint, printing, printError } = useWorksheetPrint({ worksheet_type: 'word-problems' });
 
     return (
-        <div className="min-h-screen bg-slate-100 font-sans text-slate-900 pb-20 print:bg-white">
+        <div className="worksheet-workspace min-h-screen bg-slate-100 text-slate-900 pb-20 print:bg-white">
             {/* Toolbar */}
             <div className="bg-white border-b border-slate-200 sticky top-0 z-40 print:hidden shadow-sm">
                 <div className="container-custom py-4 flex flex-wrap items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
-                        <Link href="/" className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
-                            <ArrowLeft size={20} />
+                        <Link href="/worksheet" aria-label={metaT('breadcrumb.worksheets')} className="bg-slate-100 p-2 rounded-lg hover:bg-slate-200 transition">
+                            <ArrowLeft size={20} className="rtl:rotate-180" />
                         </Link>
                         <h1 className="text-xl font-bold text-slate-800">{t('wordProblems.title')}</h1>
                     </div>
 
                     <div className="flex items-center gap-4 flex-1 justify-center">
                         <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 p-1.5 rounded-lg">
-                            <span className="text-xs text-slate-400 mr-2" id="grade-label">{t('wordProblems.gradeLabel')}</span>
+                            <span className="text-xs text-slate-400 ms-2" id="grade-label">{t('wordProblems.gradeLabel')}</span>
                             <select
                                 className="bg-transparent text-sm font-medium px-2 py-1 outline-none cursor-pointer"
                                 value={grade}
@@ -102,16 +101,17 @@ export default function WordProblemsClient() {
                             className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-blue-700 transition"
                         >
                             <RefreshCw size={16} />
-                            <span className="hidden sm:inline">{t('controls.refresh')}</span>
+                            <span>{t('controls.refresh')}</span>
                         </button>
 
                         <button
                             onClick={() => setShowAnswers(!showAnswers)}
                             className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition shadow-sm ${showAnswers ? 'bg-amber-100 text-amber-700 border border-amber-200' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}
                             aria-pressed={showAnswers}
+                            aria-label={showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}
                         >
                             {showAnswers ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
-                            <span className="hidden sm:inline">{showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}</span>
+                            <span>{showAnswers ? t('controls.hideAnswers') : t('controls.showAnswers')}</span>
                         </button>
                     </div>
 
@@ -120,10 +120,10 @@ export default function WordProblemsClient() {
                         className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-emerald-200 transition shadow-sm"
                     >
                         <HelpCircle size={16} />
-                        <span className="hidden sm:inline">{t('controls.helpForParents')}</span>
+                        <span>{t('controls.helpForParents')}</span>
                     </Link>
                     <button
-                        onClick={onPrint}
+                        onClick={onPrint} disabled={printing || questions.length === 0}
                         className="bg-slate-900 text-white px-6 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-slate-800 transition"
                     >
                         <Printer size={16} />
@@ -132,6 +132,7 @@ export default function WordProblemsClient() {
                 </div>
             </div>
 
+            {printError && <p role="alert" className="container-custom py-3 text-red-700 print:hidden">{t('document.printError')}</p>}
             {/* Breadcrumbs */}
             <div className="container-custom py-3 print:hidden">
                 <Breadcrumb
@@ -146,30 +147,25 @@ export default function WordProblemsClient() {
             {/* A4 Paper Wrapper */}
             <WorksheetActionBar count={questions.length} onRefresh={regenerateQuestions} />
 
-            <div className="w-full overflow-x-auto pb-12 print:pb-0 print:overflow-visible custom-scrollbar">
-                <div className="min-w-[210mm] max-w-[210mm] mx-auto mt-8 bg-white shadow-xl min-h-[297mm] p-[20mm] print:p-[10mm] print:shadow-none print:mt-0 print:mx-0 print:w-full print:min-h-0 print:h-auto print:overflow-visible">
-
-                    <div className="text-center border-b-2 border-slate-100 pb-8 mb-12 print:mb-4 print:pb-2 print:border-b">
-                        <h2 className="text-3xl font-bold text-slate-800 mb-2 print:text-2xl print:mb-0">{t('wordProblems.worksheetTitle')}</h2>
-                        <p className="text-slate-500 print:hidden text-lg">{t('wordProblems.instruction')}</p>
-                    </div>
-
-                    <div className="space-y-12" dir="rtl">
-                        {questions.map((q, index) => (
-                            <div key={q.id} className="break-inside-avoid page-break-inside-avoid relative">
+            <WorksheetDocument title={t('wordProblems.worksheetTitle')} instruction={t('wordProblems.instruction')}
+                items={questions} perPage={4} variant="word" includeAnswers={showAnswers}
+                renderPage={(pageItems, showAnswers, offset) => (
+                    <div className="worksheet-grid">
+                        {pageItems.map((q, index) => (
+                            <div key={q.id} dir="inherit" className="worksheet-problem worksheet-numbered relative">
                                 <div className="flex gap-4">
                                     <div className="bg-slate-100 text-slate-600 font-bold w-10 h-10 rounded-full flex items-center justify-center shrink-0">
-                                        {index + 1}
+                                        {offset + index + 1}
                                     </div>
                                     <div className="flex-1">
-                                        <p className="text-xl font-medium leading-relaxed mb-6 pl-8">{q.text}</p>
+                                        <p className="text-xl font-medium leading-relaxed mb-6 ps-8">{q.text}</p>
 
                                         {/* Answer Area */}
                                         <div className="flex items-center gap-4">
                                             <span className="font-bold text-slate-400">{t('wordProblems.exercise')}</span>
                                             <div className="border-b-2 border-slate-200 border-dashed w-48 h-8"></div>
 
-                                            <span className="font-bold text-slate-400 mr-8">{t('wordProblems.answer')}</span>
+                                            <span className="font-bold text-slate-400 ms-8">{t('wordProblems.answer')}</span>
                                             <div className="border-b-2 border-slate-200 border-dashed w-24 h-8 relative flex items-center justify-center">
                                                 {showAnswers && (
                                                     <span className="text-red-600 font-bold text-xl absolute -top-1">{q.answer}</span>
@@ -181,12 +177,8 @@ export default function WordProblemsClient() {
                             </div>
                         ))}
                     </div>
-
-                    <div className="mt-20 text-center text-slate-300 text-xs print:fixed print:bottom-4 print:left-0 print:right-0 bg-white print:text-slate-400">
-                        {t('print.copyright')}
-                    </div>
-                </div>
-            </div>
+                )}
+            />
 
             <ContentSection
                 title={t('wordProblems.content.title')}

@@ -33,7 +33,7 @@ export async function FeaturedTopicGames({
   const style = topicStyle(topic);
 
   return (
-    <section className="bg-white py-10">
+    <section className="bg-white py-10 print:hidden">
       <div className="container-custom">
         <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
           <div>

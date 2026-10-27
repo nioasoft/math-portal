@@ -6,9 +6,9 @@
   },
   "controls": {
     "print": "Imprimir",
-    "refresh": "Actualizar",
-    "showAnswers": "Mostrar Respuestas",
-    "hideAnswers": "Ocultar Respuestas",
+    "refresh": "Nuevos ejercicios",
+    "showAnswers": "Incluir páginas de respuestas",
+    "hideAnswers": "Quitar páginas de respuestas",
     "settings": "Configuración",
     "problemCount": "Número de ejercicios",
     "selectOperation": "Seleccionar operación",
@@ -155,6 +155,24 @@
         "¡Dibujar ayuda! Anima a tu hijo a dibujar el problema antes de escribir la ecuación.",
         "Pregunta al final: '¿Tiene sentido la respuesta?'. Si Danny terminó con un millón de manzanas, probablemente hay un error."
       ]
+    },
+    "engine": {
+      "addition": [
+        "Una caja tiene {a} lápices. Añadimos {b} lápices. ¿Cuántos hay ahora?",
+        "Hay {a} libros en un estante. Añadimos {b} libros. ¿Cuántos hay ahora?"
+      ],
+      "subtraction": [
+        "Una cesta tiene {a} manzanas. Sacamos {b}. ¿Cuántas quedan?",
+        "Una tienda tiene {a} pelotas y vende {b}. ¿Cuántas quedan?"
+      ],
+      "multiplication": [
+        "Hay {b} cajas con {a} lápices en cada una. ¿Cuántos lápices hay en total?",
+        "Una entrada cuesta {a} monedas. ¿Cuánto cuestan {b} entradas?"
+      ],
+      "division": [
+        "Repartimos {a} pegatinas por igual entre {b} niños. ¿Cuántas recibe cada uno?",
+        "Repartimos {a} libros por igual en {b} estantes. ¿Cuántos hay en cada estante?"
+      ]
     }
   },
   "series": {
@@ -168,8 +186,8 @@
       "hard": "Difícil"
     },
     "showHide": {
-      "show": "Mostrar",
-      "hide": "Ocultar"
+      "show": "Incluir páginas de respuestas",
+      "hide": "Quitar páginas de respuestas"
     },
     "help": "Explicaciones",
     "rule": "Patrón:",
@@ -231,8 +249,8 @@
       "days": "días"
     },
     "showHide": {
-      "show": "Mostrar",
-      "hide": "Ocultar"
+      "show": "Incluir páginas de respuestas",
+      "hide": "Quitar páginas de respuestas"
     },
     "help": "Explicaciones",
     "content": {
@@ -430,5 +448,20 @@
   },
   "empty": {
     "message": "No se generaron ejercicios. Inténtalo de nuevo."
+  },
+  "document": {
+    "all": "Todos los ejercicios ({count})",
+    "onePage": "Una página ({count} ejercicios)",
+    "summary": "{count} ejercicios · {pages} páginas de práctica · {answers} páginas de respuestas",
+    "printHint": "Imprime en A4 al 100%, sin encabezados ni pies del navegador. Las respuestas se añaden en páginas separadas solo si las seleccionas.",
+    "page": "Página {page} de {pages}",
+    "customTitle": "Título personalizado",
+    "childName": "Nombre del niño o niña",
+    "optional": "Opcional",
+    "spacious": "Más espacio para escribir — menos ejercicios por página",
+    "answersOnly": "Imprimir solo respuestas",
+    "loading": "Preparando la hoja…",
+    "circleHint": "Para círculos, usa la tecla π y redondea a dos decimales. Los dibujos no están a escala.",
+    "printError": "No se pudo abrir el diálogo de impresión. Inténtalo de nuevo o usa Imprimir en el menú del navegador."
   }
 }

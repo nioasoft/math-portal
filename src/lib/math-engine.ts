@@ -51,8 +51,12 @@ export class MathEngine {
     private static generateFactors(range: number, floor: number): { factor: number; other: number } {
         // Tiny legacy game ranges cannot contain a non-identity multiplication fact.
         if (range < 4) return { factor: 1, other: range };
-        const factor = this.getRandomInt(2, Math.floor(Math.sqrt(range)));
         const cap = range <= 100 ? 10 : Math.ceil(range / 10);
+        const feasible = [];
+        for (let candidate = 2; candidate <= Math.floor(Math.sqrt(range)); candidate++) {
+            if (Math.max(2, Math.ceil(floor / candidate)) <= Math.min(cap, Math.floor(range / candidate))) feasible.push(candidate);
+        }
+        const factor = feasible[this.getRandomInt(0, feasible.length - 1)];
         const other = this.getRandomInt(Math.max(2, Math.ceil(floor / factor)), Math.min(cap, Math.floor(range / factor)));
         return Math.random() < 0.5 ? { factor, other } : { factor: other, other: factor };
     }
